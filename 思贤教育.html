@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>思贤教育 · 商河本地家教</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #f8f9fc; color: #2d3436; line-height: 1.6; overflow-x: hidden; }
+
+        /* ── Nav ── */
+        .nav { background: #1a1a2e; padding: 0 20px; display: flex; justify-content: center; align-items: center; gap: 4px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .nav .logo { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; margin-right: auto; padding: 14px 0; }
+        .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
+        .nav a:hover { color: #fff; }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+            color: #fff; padding: 60px 20px 80px; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.04) 0%, transparent 60%);
+        }
+        .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 48px; position: relative; z-index: 1; }
+        .hero-text { flex: 1; min-width: 280px; }
+        .hero-text h1 { font-size: 38px; font-weight: 700; letter-spacing: 3px; margin-bottom: 14px; }
+        .hero-text p { font-size: 16px; opacity: 0.8; margin-bottom: 28px; max-width: 440px; line-height: 1.7; }
+        .hero-text .btn { display: inline-block; background: #fff; color: #1a1a2e; padding: 12px 36px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; margin: 4px 10px 4px 0; transition: transform 0.2s, box-shadow 0.2s; }
+        .hero-text .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.2); }
+        .hero-text .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.5); color: #fff; }
+        .hero-text .btn-outline:hover { border-color: #fff; box-shadow: none; }
+
+        .hero-visual { flex: 0 0 380px; position: relative; }
+        .hero-visual img {
+            width: 100%; height: auto; border-radius: 20px; display: block;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: float 5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+
+        .section-title { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+        .section-title span { display: inline-block; padding-bottom: 8px; border-bottom: 3px solid #1a1a2e; }
+
+        /* ── About ── */
+        .about-wrap { display: flex; align-items: center; gap: 48px; margin-bottom: 20px; }
+        .about-visual { flex: 0 0 320px; }
+        .about-visual img { width: 100%; height: auto; border-radius: 16px; display: block; }
+        .about-text { flex: 1; }
+        .about-text p { font-size: 15px; color: #555; margin-bottom: 14px; line-height: 1.9; }
+        .about-text .highlight { color: #1a1a2e; font-weight: 600; }
+
+        /* ── 装饰分割 ── */
+        .deco-divider { text-align: center; padding: 10px 0 30px; }
+        .deco-divider img { width: 100%; max-width: 160px; height: auto; border-radius: 12px; opacity: 0.7; }
+
+        /* ── Features ── */
+        .features-row { display: flex; gap: 24px; margin-bottom: 48px; align-items: stretch; }
+        .features-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .feature-card {
+            background: #fff; border-radius: 14px; padding: 28px 22px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-align: center; transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+        .feature-card .icon { font-size: 32px; margin-bottom: 10px; }
+        .feature-card h3 { font-size: 16px; margin-bottom: 6px; }
+        .feature-card p { font-size: 13px; color: #888; }
+
+        .features-accent { flex: 0 0 200px; display: flex; align-items: center; }
+        .features-accent img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block; min-height: 200px; }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+            border-radius: 20px; padding: 48px 40px; display: flex; align-items: center; gap: 40px;
+            overflow: hidden; position: relative;
+        }
+        .cta-text { flex: 1; }
+        .cta-text h2 { color: #fff; font-size: 24px; margin-bottom: 8px; }
+        .cta-text p { color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 20px; }
+        .cta-text .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .cta-text .btn { display: inline-block; padding: 12px 32px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: transform 0.2s; }
+        .cta-text .btn:hover { transform: translateY(-2px); }
+        .cta-text .btn-light { background: #fff; color: #1a1a2e; }
+        .cta-text .btn-outline { border: 2px solid rgba(255,255,255,0.5); color: #fff; }
+        .cta-visual { flex: 0 0 220px; }
+        .cta-visual img { width: 100%; height: auto; border-radius: 14px; display: block; }
+
+        /* ── Footer ── */
+        .footer { text-align: center; padding: 28px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-text p { margin: 0 auto 28px; }
+            .hero-text .btn { margin: 4px 6px; }
+            .hero-visual { flex: 0 0 auto; width: 280px; }
+
+            .about-wrap { flex-direction: column; text-align: center; }
+            .about-visual { flex: 0 0 auto; width: 250px; }
+
+            .features-row { flex-direction: column; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+            .features-accent { flex: 0 0 auto; max-height: 200px; }
+            .features-accent img { max-height: 180px; }
+
+            .cta-section { flex-direction: column; text-align: center; padding: 36px 24px; }
+            .cta-text .btn-group { justify-content: center; }
+            .cta-visual { flex: 0 0 auto; width: 200px; }
+
+            .hero-text h1 { font-size: 28px; }
+            .section-title { font-size: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-visual { width: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">思贤教育</div>
+    <a href="思贤教育.html">主页</a>
+    <a href="老师.html">选老师</a>
+    <a href="加入思贤.html">加入思贤</a>
+</div>
+
+<!-- ════ Hero ════ -->
+<div class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>思贤教育</h1>
+            <p>济南商河 · 本地上门辅导<br>让每个孩子都能找到合适的老师</p>
+            <a class="btn" href="老师.html">选择老师</a>
+            <a class="btn btn-outline" href="#about">了解更多</a>
+        </div>
+        <div class="hero-visual">
+            <img src="images/deco-1.png" alt="思贤教育">
+        </div>
+    </div>
+</div>
+
+<div class="container" id="about">
+    <!-- ════ About ════ -->
+    <div class="section-title"><span>关于思贤</span></div>
+    <div class="about-wrap">
+        <div class="about-visual">
+            <img src="images/deco-2.png" alt="关于思贤">
+        </div>
+        <div class="about-text">
+            <p>思贤教育成立于<span class="highlight">商河县</span>，是一家专注于中小学上门辅导的本地教育工作室。我们以"让每个孩子都能找到合适的老师"为使命，致力于为商河家庭提供优质、便捷、个性化的一对一辅导服务。</p>
+            <p>与传统辅导机构不同，我们采用<span class="highlight">上门辅导</span>模式，省去家长接送奔波，让孩子在熟悉的环境中高效学习。同时，扁平化的运营方式使得我们的课时费远低于市场同类机构，真正让家长把钱花在教学质量上。</p>
+            <p>目前思贤教育拥有多名经验丰富的授课老师，涵盖小学至高中各学科。我们严格筛选师资，确保每一位加入的老师都具备扎实的学科功底和良好的教学能力。</p>
+        </div>
+    </div>
+
+    <!-- ════ 装饰分割 ════ -->
+    <div class="deco-divider">
+        <img src="images/deco-3.png" alt="">
+    </div>
+
+    <!-- ════ Features ════ -->
+    <div class="section-title"><span>为什么选择思贤</span></div>
+    <div class="features-row">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">🏠</div>
+                <h3>上门辅导</h3>
+                <p>老师上门授课<br>省去接送麻烦</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💰</div>
+                <h3>价格透明</h3>
+                <p>无中间环节<br>低于机构定价</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>个性化教学</h3>
+                <p>一对一量身定制<br>辅导方案</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📞</div>
+                <h3>本地服务</h3>
+                <p>商河本地团队<br>沟通更顺畅</p>
+            </div>
+        </div>
+        <div class="features-accent">
+            <img src="images/deco-4.png" alt="">
+        </div>
+    </div>
+
+    <!-- ════ CTA ════ -->
+    <div class="cta-section">
+        <div class="cta-text">
+            <h2>免费试听一节课</h2>
+            <p>先体验，满意再报名</p>
+            <div class="btn-group">
+                <a class="btn btn-light" href="老师.html">选择老师</a>
+                <a class="btn btn-outline" href="加入思贤.html">成为思贤老师</a>
+            </div>
+        </div>
+        <div class="cta-visual">
+            <img src="images/deco-1.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>思贤教育 · 济南市商河县 · 电话 155-6412-8008</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择老师 · 思贤教育</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #f8f9fc; color: #2d3436; line-height: 1.6; }
+
+        .nav { background: #1a1a2e; padding: 0 20px; display: flex; justify-content: center; align-items: center; gap: 4px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .nav .logo { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; margin-right: auto; padding: 14px 0; }
+        .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
+        .nav a:hover { color: #fff; }
+
+        .page-title { text-align: center; padding: 40px 20px 20px; }
+        .page-title h1 { font-size: 26px; margin-bottom: 6px; }
+        .page-title p { font-size: 14px; color: #888; }
+
+        /* ── 纯 CSS 筛选 ── */
+        .filter-area { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .filter-area input[type="radio"] { display: none; }
+
+        .filter-bar { display: flex; gap: 8px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+        .filter-bar label {
+            display: inline-block; padding: 8px 24px; border-radius: 20px; font-size: 14px;
+            cursor: pointer; transition: all 0.2s; background: #fff; color: #555;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06); user-select: none;
+        }
+        .filter-bar label:hover { background: #eef0f4; }
+
+        #f-all:checked ~ .filter-bar label[for="f-all"],
+        #f-primary:checked ~ .filter-bar label[for="f-primary"],
+        #f-middle:checked ~ .filter-bar label[for="f-middle"],
+        #f-high:checked ~ .filter-bar label[for="f-high"] {
+            background: #1a1a2e; color: #fff;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px 40px; }
+
+        /* ── 卡片网格 ── */
+        .teacher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .teacher-card { display: none; flex-direction: column; background: #fff; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden; transition: box-shadow 0.2s; }
+        .teacher-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+        .teacher-card.placeholder { border: 2px dashed #e0e0e0; box-shadow: none; }
+        .teacher-card.placeholder:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+
+        #f-all:checked ~ .container .teacher-card { display: flex; }
+        #f-primary:checked ~ .container .teacher-card.primary { display: flex; }
+        #f-middle:checked ~ .container .teacher-card.middle { display: flex; }
+        #f-high:checked ~ .container .teacher-card.high { display: flex; }
+
+        .card-top { padding: 28px 24px 16px; text-align: center; position: relative; }
+        .card-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #f0f0f0; margin: 0 auto 12px; display: block; }
+        .avatar-placeholder {
+            width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 12px;
+            background: #eef0f4; display: flex; align-items: center; justify-content: center;
+            font-size: 28px; color: #999; border: 3px solid #f0f0f0;
+        }
+        .card-name { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+        .card-edu { font-size: 13px; color: #888; margin-bottom: 10px; }
+        .card-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+        .card-tags .tag { font-size: 12px; background: #eef0f4; color: #555; padding: 3px 12px; border-radius: 14px; }
+
+        .card-badges { position: absolute; top: 12px; right: 12px; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; max-width: 120px; }
+        .badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+        .badge-level { background: #1a1a2e; color: #fff; }
+        .badge-coming { background: #f39c12; color: #fff; }
+
+        .card-bottom { padding: 0 24px 24px; text-align: center; }
+        .card-bottom .btn {
+            display: inline-block; background: #1a1a2e; color: #fff; padding: 10px 32px;
+            border-radius: 8px; font-size: 14px; text-decoration: none; font-weight: 600; transition: opacity 0.2s;
+        }
+        .card-bottom .btn:hover { opacity: 0.85; }
+        .card-bottom .btn-placeholder { background: #b0b0b0; pointer-events: none; cursor: default; }
+
+        .cta-banner { max-width: 960px; margin: 0 auto 40px; background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 100%); border-radius: 16px; padding: 28px 32px; text-align: center; }
+        .cta-banner p { color: #fff; font-size: 15px; margin-bottom: 16px; }
+        .cta-banner .btn { display: inline-block; background: #fff; color: #1a1a2e; padding: 10px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+
+        .footer { text-align: center; padding: 24px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
+
+        @media (max-width: 680px) {
+            .teacher-grid { grid-template-columns: 1fr; }
+            .page-title h1 { font-size: 22px; }
+            .filter-bar label { padding: 6px 18px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">思贤教育</div>
+    <a href="思贤教育.html">主页</a>
+    <a href="老师.html">选老师</a>
+    <a href="加入思贤.html">加入思贤</a>
+</div>
+
+<div class="page-title">
+    <h1>选择老师</h1>
+    <p>按学段筛选，帮孩子找到最合适的老师</p>
+</div>
+
+<div class="filter-area">
+    <input type="radio" name="filter" id="f-all" checked>
+    <input type="radio" name="filter" id="f-primary">
+    <input type="radio" name="filter" id="f-middle">
+    <input type="radio" name="filter" id="f-high">
+
+    <div class="filter-bar">
+        <label for="f-all">全部老师</label>
+        <label for="f-primary">小学</label>
+        <label for="f-middle">初中</label>
+        <label for="f-high">高中</label>
+    </div>
+
+    <div class="container">
+        <div class="teacher-grid">
+
+            <!-- ─── 刘老师 · 已上线 ─── -->
+            <div class="teacher-card primary middle high">
+                <div class="card-top">
+                    <img class="card-avatar" src="images/001.jpg" alt="刘老师">
+                    <div class="card-name">刘老师</div>
+                    <div class="card-edu">山东师范大学 毕业 · 教龄 4 年</div>
+                    <div class="card-tags">
+                        <span class="tag">小学全科</span>
+                        <span class="tag">初中全科</span>
+                        <span class="tag">高中数学</span>
+                        <span class="tag">高中英语</span>
+                        <span class="tag">高中物理</span>
+                        <span class="tag">高中化学</span>
+                        <span class="tag">考前冲刺</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">小学</span>
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn" href="老师信息/老师-刘老师.html">查看详情 →</a>
+                </div>
+            </div>
+
+            <!-- ─── 张老师 · 数学 ─── -->
+            <div class="teacher-card middle high placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">张</div>
+                    <div class="card-name">张老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">山东大学 数学系 本科</div>
+                    <div class="card-tags">
+                        <span class="tag">初中数学</span>
+                        <span class="tag">高中数学</span>
+                        <span class="tag">中考冲刺</span>
+                        <span class="tag">高考冲刺</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-张老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- ─── 王老师 · 英语 ─── -->
+            <div class="teacher-card primary middle placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">王</div>
+                    <div class="card-name">王老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">济南大学 英语专业 研究生</div>
+                    <div class="card-tags">
+                        <span class="tag">小学英语</span>
+                        <span class="tag">初中英语</span>
+                        <span class="tag">英语口语</span>
+                        <span class="tag">语法专项</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">小学</span>
+                        <span class="badge badge-level">初中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-王老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- ─── 李老师 · 物理/化学 ─── -->
+            <div class="teacher-card middle high placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">李</div>
+                    <div class="card-name">李老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">山东师范大学 物理系 研究生</div>
+                    <div class="card-tags">
+                        <span class="tag">初中物理</span>
+                        <span class="tag">高中物理</span>
+                        <span class="tag">高中化学</span>
+                        <span class="tag">实验专项</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-李老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- ─── 赵老师 · 语文 ─── -->
+            <div class="teacher-card primary middle placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">赵</div>
+                    <div class="card-name">赵老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">师范院校 汉语言文学专业 本科</div>
+                    <div class="card-tags">
+                        <span class="tag">小学语文</span>
+                        <span class="tag">初中语文</span>
+                        <span class="tag">阅读专项</span>
+                        <span class="tag">作文辅导</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">小学</span>
+                        <span class="badge badge-level">初中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-赵老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- ─── 陈老师 · 理科综合 ─── -->
+            <div class="teacher-card middle high placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">陈</div>
+                    <div class="card-name">陈老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">中国海洋大学 化学工程 研究生</div>
+                    <div class="card-tags">
+                        <span class="tag">初中数学</span>
+                        <span class="tag">初中化学</span>
+                        <span class="tag">高中化学</span>
+                        <span class="tag">生物基础</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-陈老师.html">信息待完善</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="cta-banner" style="margin-top: 0;">
+    <p>拿不准选哪位老师？先免费试听一节课</p>
+    <a class="btn" href="tel:15564128008">电话 155-6412-8008</a>
+</div>
+
+<div class="footer">
+    <p>思贤教育 · 济南市商河县 · 电话 155-6412-8008</p>
+</div>
+
+</body>
+</html>

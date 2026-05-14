@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘老师 · 思贤教育</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #f8f9fc; color: #2d3436; line-height: 1.6; }
+
+        .nav { background: #1a1a2e; padding: 0 20px; display: flex; justify-content: center; align-items: center; gap: 4px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .nav .logo { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; margin-right: auto; padding: 14px 0; }
+        .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
+        .nav a:hover { color: #fff; }
+
+        .back-link { max-width: 800px; margin: 0 auto; padding: 20px 20px 0; }
+        .back-link a { color: #888; font-size: 14px; text-decoration: none; }
+        .back-link a:hover { color: #1a1a2e; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 20px 20px 48px; }
+
+        .profile { background: #fff; border-radius: 16px; padding: 36px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 28px; display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
+        .profile .avatar-wrapper { flex-shrink: 0; }
+        .profile .avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid #f0f0f0; }
+        .profile .info { flex: 1; min-width: 200px; }
+        .profile .name { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+        .profile .title { font-size: 14px; color: #636e72; margin-bottom: 12px; }
+        .profile .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+        .profile .tag { font-size: 13px; background: #eef0f4; color: #2d3436; padding: 4px 14px; border-radius: 20px; }
+        .profile .contact-row { display: flex; gap: 16px; flex-wrap: wrap; }
+        .profile .contact-item { font-size: 14px; color: #636e72; }
+        .profile .contact-item strong { color: #2d3436; }
+
+        .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #1a1a2e; display: inline-block; }
+
+        .card { background: #fff; border-radius: 16px; padding: 28px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 28px; }
+        .card p { font-size: 14px; color: #555; margin-bottom: 10px; }
+        .card ul { padding-left: 20px; }
+        .card ul li { font-size: 14px; color: #555; margin-bottom: 6px; }
+
+        .price-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        .price-table th, .price-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+        .price-table th { font-weight: 600; color: #636e72; font-size: 13px; letter-spacing: 1px; }
+        .price-table td:last-child { font-weight: 700; font-size: 18px; }
+        .price-table td:last-child small { font-size: 13px; font-weight: 400; color: #888; }
+        .price-table .free-row { background: #f8f9fc; }
+        .price-table .free-row td { color: #e74c3c; font-weight: 600; }
+
+        .review-item { padding: 18px 0; border-bottom: 1px solid #f0f0f0; }
+        .review-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .review-item .review-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+        .review-item .review-name { font-weight: 600; font-size: 14px; }
+        .review-item .review-meta { font-size: 12px; color: #888; }
+        .review-item .review-text { font-size: 14px; color: #555; line-height: 1.7; }
+        .review-item .review-rating { color: #f39c12; font-size: 13px; letter-spacing: 2px; }
+
+        .cta-banner { background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 100%); border-radius: 16px; padding: 28px 32px; text-align: center; }
+        .cta-banner p { color: #fff; font-size: 15px; margin-bottom: 16px; }
+        .cta-banner .btn { display: inline-block; background: #fff; color: #1a1a2e; padding: 10px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+
+        .footer { text-align: center; padding: 24px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
+
+        @media (max-width: 600px) {
+            .profile { flex-direction: column; align-items: center; text-align: center; padding: 28px 20px; }
+            .profile .contact-row { justify-content: center; }
+            .profile .tag-list { justify-content: center; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">思贤教育</div>
+    <a href="../思贤教育.html">主页</a>
+    <a href="../老师.html">选老师</a>
+    <a href="../加入思贤.html">加入思贤</a>
+</div>
+
+<div class="back-link">
+    <a href="../老师.html">← 返回老师列表</a>
+</div>
+
+<div class="container">
+    <div class="profile">
+        <div class="avatar-wrapper">
+            <img class="avatar" src="../images/001.jpg" alt="刘老师">
+        </div>
+        <div class="info">
+            <div class="name">刘老师</div>
+            <div class="title">山东师范大学 毕业 · 教龄 4 年 · 累计辅导学生 60+ 人次</div>
+            <div class="tag-list">
+                <span class="tag">小学全科</span>
+                <span class="tag">初中全科</span>
+                <span class="tag">高中数学</span>
+                <span class="tag">高中英语</span>
+                <span class="tag">高中物理</span>
+                <span class="tag">高中化学</span>
+                <span class="tag">考前冲刺</span>
+            </div>
+            <div class="contact-row">
+                <div class="contact-item">电话 <strong>155-6412-8008</strong></div>
+                <div class="contact-item">微信 <strong>同电话</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="section-title">个人简介</div>
+        <p>山东师范大学理科专业毕业，持有高级中学教师资格证（备考中）。从事家教工作四年，累计辅导学生 60 余人次，涵盖小学至高中各学段。</p>
+        <p>熟悉各年级教材体系及中考、高考命题规律。曾帮助多名学生在短期内实现成绩跃升，其中 2024 年高考辅导学生数学单科提分 35 分，顺利考入重点本科院校。</p>
+        <p>教学风格严谨而不失亲和，善于发现学生的薄弱环节并针对性突破。注重培养学习习惯和逻辑思维能力。</p>
+    </div>
+
+    <div class="card">
+        <div class="section-title">收费标准</div>
+        <table class="price-table">
+            <thead>
+                <tr><th>年级</th><th>科目</th><th>收费标准</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>小学</td><td>全科辅导、作业辅导</td><td>100 <small>元/小时</small></td></tr>
+                <tr><td>初中</td><td>全科（含数理化英）</td><td>150 <small>元/小时</small></td></tr>
+                <tr><td>高中</td><td>数学 / 英语 / 物理 / 化学</td><td>200 <small>元/小时</small></td></tr>
+                <tr class="free-row"><td colspan="2">首次体验</td><td>免费试听一节课</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="section-title">家长反馈</div>
+        <div class="review-item">
+            <div class="review-header">
+                <span class="review-name">王妈妈</span>
+                <span class="review-rating">★★★★★</span>
+            </div>
+            <div class="review-meta">初三 · 数学、物理（辅导半年）</div>
+            <div class="review-text">刘老师是朋友推荐给我的，确实名不虚传。孩子数理化基础比较弱，刘老师从基础知识入手一点点补，耐心特别好。中考数学从平时的 70 多分提到了 102 分，物理也考了 A 等。</div>
+        </div>
+        <div class="review-item">
+            <div class="review-header">
+                <span class="review-name">李爸爸</span>
+                <span class="review-rating">★★★★★</span>
+            </div>
+            <div class="review-meta">高一 · 英语、物理（辅导一学期）</div>
+            <div class="review-text">朋友介绍找到刘老师，孩子刚上高一跟不上。刘老师经验丰富，知道衔接点在哪里，帮孩子顺利过渡了。期末英语班级前十，物理从不及格提到了 75 分。</div>
+        </div>
+        <div class="review-item">
+            <div class="review-header">
+                <span class="review-name">赵先生</span>
+                <span class="review-rating">★★★★★</span>
+            </div>
+            <div class="review-meta">高三 · 数学（考前冲刺三个月）</div>
+            <div class="review-text">高考前三个月找到刘老师做冲刺辅导，当时孩子数学 80 分的水平。刘老师帮孩子梳理框架、专攻常考题型，最后高考考了 115 分，三个月提了 35 分。</div>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <p>免费试听一节课，满意再报名</p>
+        <a class="btn" href="tel:15564128008">电话 155-6412-8008</a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>思贤教育 · 济南市商河县 · 电话 155-6412-8008</p>
+</div>
+
+</body>
+</html>
