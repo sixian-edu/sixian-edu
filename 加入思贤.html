@@ -61,6 +61,7 @@
     <a href="思贤教育.html">主页</a>
     <a href="老师.html">选老师</a>
     <a href="加入思贤.html">加入思贤</a>
+    <a href="思贤公约.html">思贤公约</a>
 </div>
 
 <div class="hero">
@@ -118,26 +119,26 @@
 
     <div class="card">
         <div class="section-title">申请加入</div>
-        <form>
+        <form id="applyForm">
             <div class="form-group">
                 <label>姓名</label>
-                <input type="text" placeholder="请输入你的姓名" required>
+                <input type="text" id="f_name" placeholder="请输入你的姓名" required>
             </div>
             <div class="form-group">
                 <label>学校 / 学历</label>
-                <input type="text" placeholder="例如：山东师范大学 本科毕业">
+                <input type="text" id="f_edu" placeholder="例如：山东师范大学 本科毕业">
             </div>
             <div class="form-group">
                 <label>电话 / 微信</label>
-                <input type="text" placeholder="留下联系方式，方便我们联系你" required>
+                <input type="text" id="f_contact" placeholder="留下联系方式，方便我们联系你" required>
             </div>
             <div class="form-group">
                 <label>擅长的学科</label>
-                <input type="text" placeholder="例如：数学、英语、物理">
+                <input type="text" id="f_subject" placeholder="例如：数学、英语、物理">
             </div>
             <div class="form-group">
                 <label>可授课年级</label>
-                <select>
+                <select id="f_grade">
                     <option>小学</option>
                     <option>初中</option>
                     <option>高中</option>
@@ -148,14 +149,39 @@
             </div>
             <div class="form-group">
                 <label>个人简介</label>
-                <textarea placeholder="简单介绍一下自己，如有家教经历请说明"></textarea>
+                <textarea id="f_intro" placeholder="简单介绍一下自己，如有家教经历请说明"></textarea>
             </div>
-            <button class="submit-btn" type="button" onclick="alert('感谢你的申请！我们会尽快联系你。\n你也可以直接电话/微信：155-6412-8008')">提交申请</button>
+            <button class="submit-btn" type="button" onclick="submitApply()">提交申请</button>
         </form>
         <div class="contact-info">
             或直接联系：<a href="tel:15564128008">155-6412-8008</a>（微信同号）
         </div>
     </div>
+</div>
+
+<script>
+function submitApply() {
+    var name = document.getElementById('f_name').value.trim();
+    var edu = document.getElementById('f_edu').value.trim();
+    var contact = document.getElementById('f_contact').value.trim();
+    var subject = document.getElementById('f_subject').value.trim();
+    var grade = document.getElementById('f_grade').value.trim();
+    var intro = document.getElementById('f_intro').value.trim();
+
+    if (!name) { alert('请填写姓名'); return; }
+    if (!contact) { alert('请填写电话或微信'); return; }
+
+    var body = '新老师申请 - 思贤教育\n\n'
+        + '姓名：' + name + '\n'
+        + '学校/学历：' + (edu || '未填') + '\n'
+        + '电话/微信：' + contact + '\n'
+        + '擅长学科：' + (subject || '未填') + '\n'
+        + '可授课年级：' + grade + '\n'
+        + '个人简介：' + (intro || '未填');
+
+    window.location.href = 'mailto:2134229507@qq.com?subject=思贤教育·新老师申请&body=' + encodeURIComponent(body);
+}
+</script>
 </div>
 
 <div class="footer">

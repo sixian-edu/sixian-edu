@@ -18,7 +18,7 @@
         /* ── Hero ── */
         .hero {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
-            color: #fff; padding: 60px 20px 80px; position: relative; overflow: hidden;
+            color: #fff; padding: 60px 20px 80px; position: relative;
         }
         .hero::before {
             content: ''; position: absolute; inset: 0;
@@ -34,11 +34,34 @@
         .hero-text .btn-outline:hover { border-color: #fff; box-shadow: none; }
 
         .hero-visual { flex: 0 0 380px; position: relative; }
-        .hero-visual img {
-            width: 100%; height: auto; border-radius: 20px; display: block;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        .carousel-wrap {
+            width: 100%; aspect-ratio: 4 / 3; position: relative;
             animation: float 5s ease-in-out infinite;
         }
+        .carousel {
+            width: 100%; height: 100%; position: relative;
+        }
+        .carousel-slide {
+            position: absolute; width: 56%; height: 76%; left: 22%; top: 12%;
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .carousel-slide img {
+            width: 100%; height: 100%; display: block; border-radius: 16px;
+            object-fit: cover;
+        }
+        .carousel-dots {
+            position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 8px; z-index: 10;
+        }
+        .carousel-dots span {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: rgba(255,255,255,0.35);
+            cursor: pointer; transition: background 0.3s;
+        }
+        .carousel-dots span.active { background: #fff; }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
@@ -101,7 +124,7 @@
             .hero-inner { flex-direction: column; text-align: center; }
             .hero-text p { margin: 0 auto 28px; }
             .hero-text .btn { margin: 4px 6px; }
-            .hero-visual { flex: 0 0 auto; width: 280px; }
+            .hero-visual { flex: 0 0 auto; width: 320px; }
 
             .about-wrap { flex-direction: column; text-align: center; }
             .about-visual { flex: 0 0 auto; width: 250px; }
@@ -132,6 +155,7 @@
     <a href="思贤教育.html">主页</a>
     <a href="老师.html">选老师</a>
     <a href="加入思贤.html">加入思贤</a>
+    <a href="思贤公约.html">思贤公约</a>
 </div>
 
 <!-- ════ Hero ════ -->
@@ -144,7 +168,20 @@
             <a class="btn btn-outline" href="#about">了解更多</a>
         </div>
         <div class="hero-visual">
-            <img src="images/deco-1.png" alt="思贤教育">
+            <div class="carousel-wrap" id="heroCarousel">
+                <div class="carousel">
+                    <div class="carousel-slide"><img src="images/deco-1.png" alt="思贤教育"></div>
+                    <div class="carousel-slide"><img src="images/deco-5.png" alt="思贤教育"></div>
+                    <div class="carousel-slide"><img src="images/deco-6.png" alt="思贤教育"></div>
+                    <div class="carousel-slide"><img src="images/deco-7.png" alt="思贤教育"></div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -217,6 +254,65 @@
 <div class="footer">
     <p>思贤教育 · 济南市商河县 · 电话 155-6412-8008</p>
 </div>
+
+<script>
+(function() {
+    var wrap = document.getElementById('heroCarousel');
+    var inner = wrap.querySelector('.carousel');
+    var slides = inner.querySelectorAll('.carousel-slide');
+    var dots = wrap.querySelectorAll('.carousel-dots span');
+    if (!slides.length) return;
+
+    var num = slides.length, current = 0, timer;
+
+    function layout() {
+        var cw = inner.offsetWidth;
+        var sw = cw * 0.56;
+        var gap = sw * 0.88;
+        var ty = cw * 0.045;
+
+        var pos = [
+            { tx: 0,        ty: 0,   sc: 1,    zi: 4, op: 1 },     // offset 0: center
+            { tx: gap,      ty: ty,  sc: 0.78, zi: 3, op: 0.65 },  // offset 1: right
+            { tx: -gap*1.3, ty: ty*2, sc: 0.55, zi: 1, op: 0.15 }, // offset 2: far left
+            { tx: -gap,     ty: ty,  sc: 0.78, zi: 2, op: 0.65 },  // offset 3: left
+        ];
+
+        for (var i = 0; i < num; i++) {
+            var offset = (i - current + num) % num;
+            var p = pos[offset];
+            slides[i].style.transform = 'translateX(' + p.tx + 'px) translateY(' + p.ty + 'px) scale(' + p.sc + ')';
+            slides[i].style.zIndex = p.zi;
+            slides[i].style.opacity = p.op;
+        }
+    }
+
+    function goTo(idx) {
+        dots[current].classList.remove('active');
+        current = (idx + num) % num;
+        dots[current].classList.add('active');
+        layout();
+    }
+
+    function next() { goTo(current + 1); }
+    function start() { timer = setInterval(next, 3800); }
+    function stop() { clearInterval(timer); }
+
+    for (var i = 0; i < num; i++) {
+        dots[i].addEventListener('click', function(j) {
+            return function() { stop(); goTo(j); start(); };
+        }(i));
+    }
+
+    dots[current].classList.add('active');
+    layout();
+    var rt;
+    window.addEventListener('resize', function() {
+        clearTimeout(rt); rt = setTimeout(layout, 200);
+    });
+    start();
+})();
+</script>
 
 </body>
 </html>
