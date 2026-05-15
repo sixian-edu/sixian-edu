@@ -39,8 +39,15 @@
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1a1a2e; }
         .form-group textarea { resize: vertical; min-height: 70px; }
-        .submit-btn { width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none; border-radius: 10px; font-size: 15px; cursor: pointer; }
+        .submit-btn { width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none; border-radius: 10px; font-size: 15px; cursor: pointer; transition: opacity 0.2s; }
         .submit-btn:hover { opacity: 0.9; }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .success-msg {
+            display: none; text-align: center; padding: 32px 20px;
+        }
+        .success-msg .icon { font-size: 48px; margin-bottom: 12px; }
+        .success-msg h3 { font-size: 18px; margin-bottom: 6px; color: #1a1a2e; }
+        .success-msg p { font-size: 14px; color: #888; }
 
         .contact-info { text-align: center; margin-top: 16px; font-size: 14px; color: #888; }
         .contact-info a { color: #1a1a2e; font-weight: 600; text-decoration: none; }
@@ -118,28 +125,33 @@
         </ul>
     </div>
 
-    <div class="card">
+    <div class="card" id="applyCard">
         <div class="section-title">申请加入</div>
-        <form id="applyForm">
+
+        <!-- ── 表单 ── -->
+        <form id="applyForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1c354c45-1cd9-466e-ba73-b63687c0df67">
+            <input type="hidden" name="subject" value="思贤教育·新老师申请">
+
             <div class="form-group">
                 <label>姓名</label>
-                <input type="text" id="f_name" placeholder="请输入你的姓名" required>
+                <input type="text" name="姓名" placeholder="请输入你的姓名" required>
             </div>
             <div class="form-group">
                 <label>学校 / 学历</label>
-                <input type="text" id="f_edu" placeholder="例如：山东师范大学 本科毕业">
+                <input type="text" name="学校学历" placeholder="例如：山东师范大学 本科毕业">
             </div>
             <div class="form-group">
                 <label>电话 / 微信</label>
-                <input type="text" id="f_contact" placeholder="留下联系方式，方便我们联系你" required>
+                <input type="text" name="联系方式" placeholder="留下联系方式，方便我们联系你" required>
             </div>
             <div class="form-group">
                 <label>擅长的学科</label>
-                <input type="text" id="f_subject" placeholder="例如：数学、英语、物理">
+                <input type="text" name="擅长学科" placeholder="例如：数学、英语、物理">
             </div>
             <div class="form-group">
                 <label>可授课年级</label>
-                <select id="f_grade">
+                <select name="可授课年级">
                     <option>小学</option>
                     <option>初中</option>
                     <option>高中</option>
@@ -150,10 +162,18 @@
             </div>
             <div class="form-group">
                 <label>个人简介</label>
-                <textarea id="f_intro" placeholder="简单介绍一下自己，如有家教经历请说明"></textarea>
+                <textarea name="个人简介" placeholder="简单介绍一下自己，如有家教经历请说明"></textarea>
             </div>
-            <button class="submit-btn" type="button" onclick="submitApply()">提交申请</button>
+            <button class="submit-btn" type="submit" id="submitBtn">提交申请</button>
         </form>
+
+        <!-- ── 成功提示 ── -->
+        <div class="success-msg" id="successMsg">
+            <div class="icon">✅</div>
+            <h3>提交成功</h3>
+            <p>感谢你的申请！思贤教育会在 1-2 个工作日内联系你。</p>
+        </div>
+
         <div class="contact-info">
             或直接联系：<a href="tel:15564128008">155-6412-8008</a>（微信同号）
         </div>
@@ -161,27 +181,33 @@
 </div>
 
 <script>
-function submitApply() {
-    var name = document.getElementById('f_name').value.trim();
-    var edu = document.getElementById('f_edu').value.trim();
-    var contact = document.getElementById('f_contact').value.trim();
-    var subject = document.getElementById('f_subject').value.trim();
-    var grade = document.getElementById('f_grade').value.trim();
-    var intro = document.getElementById('f_intro').value.trim();
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var form = this;
+    var formData = new FormData(form);
 
-    if (!name) { alert('请填写姓名'); return; }
-    if (!contact) { alert('请填写电话或微信'); return; }
+    btn.disabled = true;
+    btn.textContent = '提交中...';
 
-    var body = '新老师申请 - 思贤教育\n\n'
-        + '姓名：' + name + '\n'
-        + '学校/学历：' + (edu || '未填') + '\n'
-        + '电话/微信：' + contact + '\n'
-        + '擅长学科：' + (subject || '未填') + '\n'
-        + '可授课年级：' + grade + '\n'
-        + '个人简介：' + (intro || '未填');
-
-    window.location.href = 'mailto:2134229507@qq.com?subject=思贤教育·新老师申请&body=' + encodeURIComponent(body);
-}
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    }).then(function(r) { return r.json(); }).then(function(data) {
+        if (data.success) {
+            form.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        } else {
+            alert('提交失败，请重试或直接电话联系 ' + (document.querySelector('.contact-info a') ? document.querySelector('.contact-info a').textContent : '155-6412-8008'));
+            btn.disabled = false;
+            btn.textContent = '提交申请';
+        }
+    }).catch(function() {
+        alert('网络异常，请直接电话联系 155-6412-8008');
+        btn.disabled = false;
+        btn.textContent = '提交申请';
+    });
+});
 </script>
 </div>
 
