@@ -1,0 +1,40 @@
+/* ── 思贤家教 · 公共样式 ── */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #f8f9fc; color: #2d3436; line-height: 1.6;
+}
+
+/* ── 导航栏 ── */
+.nav {
+    background: #1a1a2e; padding: 0 20px;
+    display: flex; justify-content: center; align-items: center;
+    gap: 4px; flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 100;
+}
+.nav .logo { height: 40px; margin-right: auto; display: block; }
+.nav .logo-text { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; margin-right: auto; padding: 14px 0; text-decoration: none; }
+.nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
+.nav a:hover { color: #fff; }
+.nav .nav-tag {
+    display: inline-block; font-size: 10px; background: #e67e22; color: #fff;
+    padding: 1px 7px; border-radius: 8px; margin-left: 4px;
+    vertical-align: middle; font-weight: 600; letter-spacing: 0.5px;
+}
+
+/* ── 容器 ── */
+.container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+
+/* ── 段落标题 ── */
+.section-title { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+.section-title span { display: inline-block; padding-bottom: 8px; border-bottom: 3px solid #1a1a2e; }
+
+/* ── 页脚 ── */
+.footer { text-align: center; padding: 28px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
+
+/* ── 响应式（导航自适应） ── */
+@media (max-width: 680px) {
+    .nav a { padding: 12px 12px; font-size: 13px; }
+}

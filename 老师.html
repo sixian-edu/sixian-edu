@@ -6,16 +6,8 @@
     <link rel="icon" href="images/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>选择老师 · 思贤家教</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #f8f9fc; color: #2d3436; line-height: 1.6; }
-
-        .nav { background: #1a1a2e; padding: 0 20px; display: flex; justify-content: center; align-items: center; gap: 4px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
-        .nav .logo { height: 40px; margin-right: auto; display: block; }
-        .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
-        .nav a:hover { color: #fff; }
-        .nav .nav-tag { display: inline-block; font-size: 10px; background: #e67e22; color: #fff; padding: 1px 7px; border-radius: 8px; margin-left: 4px; vertical-align: middle; font-weight: 600; letter-spacing: 0.5px; }
-
         .page-title { text-align: center; padding: 40px 20px 20px; }
         .page-title h1 { font-size: 26px; margin-bottom: 6px; }
         .page-title p { font-size: 14px; color: #888; }
@@ -38,8 +30,6 @@
         #f-high:checked ~ .filter-bar label[for="f-high"] {
             background: #1a1a2e; color: #fff;
         }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px 40px; }
 
         /* ── 卡片网格 ── */
         .teacher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
@@ -82,8 +72,6 @@
         .cta-banner p { color: #fff; font-size: 15px; margin-bottom: 16px; }
         .cta-banner .btn { display: inline-block; background: #fff; color: #1a1a2e; padding: 10px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
 
-        .footer { text-align: center; padding: 24px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
-
         @media (max-width: 680px) {
             .teacher-grid { grid-template-columns: 1fr; }
             .page-title h1 { font-size: 22px; }
@@ -97,6 +85,7 @@
     <a href="思贤教育.html">主页</a>
     <a href="老师.html">选老师</a>
     <a href="算法助学.html">算法助学 <span class="nav-tag">免费体验</span></a>
+    <a href="思贤公约.html">思贤公约</a>
 </div>
 
 <div class="page-title">
@@ -171,6 +160,94 @@
                 </div>
             </div>
 
+
+            <!-- --- 张老师 · 数学 --- -->
+            <div class="teacher-card middle high placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">张</div>
+                    <div class="card-name">张老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">山东大学 数学系 本科</div>
+                    <div class="card-tags">
+                        <span class="tag">初中数学</span>
+                        <span class="tag">高中数学</span>
+                        <span class="tag">中考冲刺</span>
+                        <span class="tag">高考冲刺</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-张老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- --- 李老师 · 物理/化学 --- -->
+            <div class="teacher-card middle high placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">李</div>
+                    <div class="card-name">李老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">山东师范大学 物理系 研究生</div>
+                    <div class="card-tags">
+                        <span class="tag">初中物理</span>
+                        <span class="tag">高中物理</span>
+                        <span class="tag">高中化学</span>
+                        <span class="tag">实验专项</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-李老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- --- 赵老师 · 语文 --- -->
+            <div class="teacher-card primary middle placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">赵</div>
+                    <div class="card-name">赵老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">师范院校 汉语言文学专业 本科</div>
+                    <div class="card-tags">
+                        <span class="tag">小学语文</span>
+                        <span class="tag">初中语文</span>
+                        <span class="tag">阅读专项</span>
+                        <span class="tag">作文辅导</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">小学</span>
+                        <span class="badge badge-level">初中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-赵老师.html">信息待完善</a>
+                </div>
+            </div>
+
+            <!-- --- 陈老师 · 理科综合 --- -->
+            <div class="teacher-card middle high placeholder">
+                <div class="card-top">
+                    <div class="avatar-placeholder">陈</div>
+                    <div class="card-name">陈老师 <span class="badge badge-coming">即将上线</span></div>
+                    <div class="card-edu">中国海洋大学 化学工程 研究生</div>
+                    <div class="card-tags">
+                        <span class="tag">初中数学</span>
+                        <span class="tag">初中化学</span>
+                        <span class="tag">高中化学</span>
+                        <span class="tag">生物基础</span>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge badge-level">初中</span>
+                        <span class="badge badge-level">高中</span>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <a class="btn btn-placeholder" href="老师信息/老师-陈老师.html">信息待完善</a>
+                </div>
+            </div>
 
         </div>
     </div>
