@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预约试听 · 思贤家教</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #f8f9fc; color: #2d3436; line-height: 1.6; }
+
+        .nav { background: #1a1a2e; padding: 0 20px; display: flex; justify-content: center; align-items: center; gap: 4px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .nav .logo { height: 40px; margin-right: auto; display: block; }
+        .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
+        .nav a:hover { color: #fff; }
+        .nav .nav-tag { display: inline-block; font-size: 10px; background: #e67e22; color: #fff; padding: 1px 7px; border-radius: 8px; margin-left: 4px; vertical-align: middle; font-weight: 600; letter-spacing: 0.5px; }
+
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 64px 20px; text-align: center; }
+        .hero h1 { font-size: 32px; margin-bottom: 8px; }
+        .hero p { font-size: 15px; opacity: 0.8; max-width: 500px; margin: 0 auto; }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px 48px; }
+        .card { background: #fff; border-radius: 16px; padding: 28px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 24px; }
+
+        .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #1a1a2e; display: inline-block; }
+
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; font-family: inherit;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1a1a2e; }
+        .form-group textarea { resize: vertical; min-height: 70px; }
+        .submit-btn { width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none; border-radius: 10px; font-size: 15px; cursor: pointer; transition: opacity 0.2s; }
+        .submit-btn:hover { opacity: 0.9; }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .success-msg { display: none; text-align: center; padding: 32px 20px; }
+        .success-msg .icon { font-size: 48px; margin-bottom: 12px; }
+        .success-msg h3 { font-size: 18px; margin-bottom: 6px; color: #1a1a2e; }
+        .success-msg p { font-size: 14px; color: #888; }
+
+        .contact-info { text-align: center; margin-top: 16px; font-size: 14px; color: #888; }
+        .contact-info a { color: #1a1a2e; font-weight: 600; text-decoration: none; }
+
+        .footer { text-align: center; padding: 24px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 24px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <img class="logo" src="images/logo.jpg" alt="思贤家教">
+    <a href="思贤家教.html">主页</a>
+    <a href="老师.html">选老师</a>
+    <a href="算法助学.html">算法助学 <span class="nav-tag">免费体验</span></a>
+    <a href="加入思贤.html">加入思贤</a>
+    <a href="预约试听.html">预约试听</a>
+    <a href="思贤公约.html">思贤公约</a>
+</div>
+
+<div class="hero">
+    <h1>预约试听</h1>
+    <p>商河本地 · 上门辅导 · 先试听再决定</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="section-title">预约信息</div>
+
+        <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1c354c45-1cd9-466e-ba73-b63687c0df67">
+            <input type="hidden" name="subject" value="思贤家教·预约试听">
+
+            <div class="form-group">
+                <label>家长姓名</label>
+                <input type="text" name="家长姓名" placeholder="请输入您的姓名" required>
+            </div>
+            <div class="form-group">
+                <label>联系电话</label>
+                <input type="text" name="联系电话" placeholder="方便我们联系您" required>
+            </div>
+            <div class="form-group">
+                <label>学生年级</label>
+                <select name="学生年级">
+                    <option>小学</option>
+                    <option>初一</option>
+                    <option>初二</option>
+                    <option>初三</option>
+                    <option>高一</option>
+                    <option>高二</option>
+                    <option>高三</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>辅导科目</label>
+                <input type="text" name="辅导科目" placeholder="例如：数学、英语、物理">
+            </div>
+            <div class="form-group">
+                <label>备注</label>
+                <textarea name="备注" placeholder="有什么想了解的，可以在这里说"></textarea>
+            </div>
+            <button class="submit-btn" type="submit" id="submitBtn">提交预约</button>
+        </form>
+
+        <div class="success-msg" id="successMsg">
+            <div class="icon">✅</div>
+            <h3>预约成功</h3>
+            <p>感谢您的信任！我们会尽快联系您安排试听。</p>
+        </div>
+
+        <div class="contact-info">
+            或直接联系：<a href="tel:15564128008">155-6412-8008</a>（微信同号）
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var form = this;
+    var formData = new FormData(form);
+
+    btn.disabled = true;
+    btn.textContent = '提交中...';
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    }).then(function(r) { return r.json(); }).then(function(data) {
+        if (data.success) {
+            form.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        } else {
+            alert('提交失败，请重试或直接电话联系 155-6412-8008');
+            btn.disabled = false;
+            btn.textContent = '提交预约';
+        }
+    }).catch(function() {
+        alert('网络异常，请直接电话联系 155-6412-8008');
+        btn.disabled = false;
+        btn.textContent = '提交预约';
+    });
+});
+</script>
+
+<div class="footer">
+    <p>思贤家教 · 济南市商河县 · 电话 155-6412-8008</p>
+</div>
+
+</body>
+</html>
