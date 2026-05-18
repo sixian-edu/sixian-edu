@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中考数学几何模型 · 思贤家教</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #f5f7fa;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #1a73e8;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 3px solid #1a73e8;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #1a73e8;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.card .models {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.model-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  background: #fafbfc;
+  border-radius: 6px;
+}
+.model-item svg {
+  flex-shrink: 0;
+}
+.model-desc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+.model-desc .tag {
+  font-weight: 600;
+  color: #333;
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .model-item { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+<div style="max-width:1400px;margin:0 auto 12px;padding:0 10px"><a href="../资料库.html" style="color:#888;font-size:13px;text-decoration:none">← 返回资料库</a></div>
+<h1>中考数学常考几何模型</h1>
+<div class="grid">
+
+<!-- 1. 手拉手模型 -->
+<div class="card">
+  <div class="card-title">手拉手模型（全等）</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .ln3 { stroke: #2ecc71; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <!-- △ABD and △ACE sharing A -->
+    <line x1="120" y1="15" x2="50" y2="120" class="ln"/>
+    <line x1="120" y1="15" x2="190" y2="120" class="ln"/>
+    <line x1="50" y1="120" x2="120" y2="80" class="ln"/>
+    <line x1="190" y1="120" x2="120" y2="80" class="ln"/>
+    <!-- Equal side marks on AB=AC -->
+    <line x1="78" y1="53" x2="85" y2="48" class="ln3" stroke-width="1"/>
+    <line x1="155" y1="53" x2="162" y2="48" class="ln3" stroke-width="1"/>
+    <!-- Equal side marks on AD=AE -->
+    <line x1="120" y1="80" x2="50" y2="120" class="ln3"/>
+    <line x1="120" y1="80" x2="190" y2="120" class="ln3"/>
+    <line x1="75" y1="105" x2="82" y2="98" class="ln3" stroke-width="1"/>
+    <line x1="158" y1="105" x2="165" y2="98" class="ln3" stroke-width="1"/>
+    <!-- Points -->
+    <circle cx="120" cy="15" r="2.5" class="pt"/>
+    <circle cx="50" cy="120" r="2.5" class="pt"/>
+    <circle cx="190" cy="120" r="2.5" class="pt"/>
+    <circle cx="120" cy="80" r="2.5" class="pt"/>
+    <!-- Labels -->
+    <text x="117" y="12" class="lab" text-anchor="middle">A</text>
+    <text x="44" y="137" class="lab" text-anchor="middle">B</text>
+    <text x="196" y="137" class="lab" text-anchor="middle">C</text>
+    <text x="117" y="76" class="lab" text-anchor="middle">D</text>
+    <text x="136" y="106" class="lab" text-anchor="end">E</text>
+    <!-- 旋转弧线 -->
+    <path d="M 70 100 Q 90 55 170 100" class="ln2" stroke-dasharray="3,2"/>
+    <text x="120" y="50" class="lab" text-anchor="middle" font-size="10">旋转</text>
+  </svg>
+  <div class="model-desc">共顶点双等腰，<span class="tag">AB=AC</span>、<span class="tag">AD=AE</span>，△ABD≌△ACE</div>
+</div>
+
+<!-- 2. 一线三等角 -->
+<div class="card">
+  <div class="card-title">一线三等角（K字型）</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <line x1="20" y1="100" x2="220" y2="100" class="ln"/>
+    <line x1="40" y1="100" x2="70" y2="30" class="ln"/>
+    <line x1="120" y1="100" x2="140" y2="25" class="ln"/>
+    <line x1="200" y1="100" x2="210" y2="30" class="ln"/>
+    <circle cx="40" cy="100" r="2.5" class="pt"/>
+    <circle cx="120" cy="100" r="2.5" class="pt"/>
+    <circle cx="200" cy="100" r="2.5" class="pt"/>
+    <circle cx="70" cy="30" r="2.5" class="pt"/>
+    <circle cx="140" cy="25" r="2.5" class="pt"/>
+    <circle cx="210" cy="30" r="2.5" class="pt"/>
+    <text x="40" y="118" class="lab" text-anchor="middle">B</text>
+    <text x="120" y="118" class="lab" text-anchor="middle">C</text>
+    <text x="200" y="118" class="lab" text-anchor="middle">D</text>
+    <text x="60" y="26" class="lab" text-anchor="middle">A</text>
+    <text x="150" y="22" class="lab" text-anchor="middle">E</text>
+    <text x="220" y="26" class="lab" text-anchor="middle">F</text>
+    <!-- 等角标记 -->
+    <path d="M 40 94 L 46 94 L 46 100" class="ln2" stroke-width="1"/>
+    <path d="M 120 94 L 126 94 L 126 100" class="ln2" stroke-width="1"/>
+    <path d="M 200 94 L 206 94 L 206 100" class="ln2" stroke-width="1"/>
+    <text x="52" y="90" class="lab" font-size="10">α</text>
+    <text x="128" y="90" class="lab" font-size="10">α</text>
+    <text x="208" y="90" class="lab" font-size="10">α</text>
+  </svg>
+  <div class="model-desc">B、C、D 共线，<span class="tag">∠B=∠C=∠D=α</span>，△ABC∽△CDE∽△BDE</div>
+</div>
+
+<!-- 3. 三垂直模型 -->
+<div class="card">
+  <div class="card-title">三垂直模型</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #2ecc71; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <!-- 三垂直 K 形 -->
+    <rect x="50" y="30" width="140" height="90" fill="none" class="ln2" stroke-dasharray="4,2"/>
+    <line x1="50" y1="30" x2="190" y2="120" class="ln"/>
+    <line x1="50" y1="120" x2="50" y2="30" class="ln"/>
+    <line x1="50" y1="120" x2="190" y2="120" class="ln"/>
+    <line x1="50" y1="120" x2="190" y2="30" class="ln2"/>
+    <circle cx="50" cy="30" r="2.5" class="pt"/>
+    <circle cx="50" cy="120" r="2.5" class="pt"/>
+    <circle cx="190" cy="120" r="2.5" class="pt"/>
+    <circle cx="190" cy="30" r="2.5" class="pt"/>
+    <!-- 直角符号 -->
+    <line x1="50" y1="40" x2="60" y2="40" class="ln2" stroke-width="1"/>
+    <line x1="60" y1="40" x2="60" y2="30" class="ln2" stroke-width="1"/>
+    <line x1="50" y1="110" x2="60" y2="110" class="ln2" stroke-width="1"/>
+    <line x1="60" y1="110" x2="60" y2="120" class="ln2" stroke-width="1"/>
+    <line x1="180" y1="110" x2="190" y2="110" class="ln2" stroke-width="1"/>
+    <line x1="180" y1="110" x2="180" y2="120" class="ln2" stroke-width="1"/>
+    <text x="40" y="26" class="lab" text-anchor="middle">A</text>
+    <text x="40" y="137" class="lab" text-anchor="middle">B</text>
+    <text x="196" y="137" class="lab" text-anchor="middle">C</text>
+    <text x="200" y="26" class="lab" text-anchor="middle">D</text>
+  </svg>
+  <div class="model-desc">∠A=∠B=∠C=90°，<span class="tag">AB+CD=BC</span>，△ABE≌△ECD（K形全等）</div>
+</div>
+
+<!-- 4. 倍长中线 -->
+<div class="card">
+  <div class="card-title">倍长中线模型</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; stroke-dasharray: 4,2; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <polygon points="40,130 200,130 120,15" class="ln"/>
+    <line x1="40" y1="130" x2="200" y2="130" class="ln"/>
+    <!-- 中线 AM 并倍长 -->
+    <line x1="120" y1="15" x2="120" y2="130" class="ln"/>
+    <line x1="120" y1="130" x2="200" y2="15" class="ln2"/>
+    <!-- 中点标记 -->
+    <circle cx="120" cy="130" r="2.5" class="pt"/>
+    <circle cx="120" cy="15" r="2.5" class="pt"/>
+    <circle cx="40" cy="130" r="2.5" class="pt"/>
+    <circle cx="200" cy="130" r="2.5" class="pt"/>
+    <circle cx="200" cy="15" r="2.5" class="pt"/>
+    <!-- 等分标记 -->
+    <line x1="115" y1="76" x2="125" y2="76" class="ln2" stroke-width="1"/>
+    <line x1="115" y1="120" x2="125" y2="120" class="ln2" stroke-width="1"/>
+    <text x="120" y="10" class="lab" text-anchor="middle">A</text>
+    <text x="30" y="147" class="lab" text-anchor="middle">B</text>
+    <text x="200" y="147" class="lab" text-anchor="middle">C</text>
+    <text x="116" y="147" class="lab" text-anchor="middle">M</text>
+    <text x="206" y="12" class="lab" text-anchor="middle">D</text>
+  </svg>
+  <div class="model-desc"><span class="tag">AM 中线</span>，延长至 D 使 MD=AM，△ABM≌△DCM，可证 AB∥CD</div>
+</div>
+
+<!-- 5. 角平分线模型 -->
+<div class="card">
+  <div class="card-title">角平分线模型</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <!-- ∠A 角平分线 -->
+    <line x1="50" y1="130" x2="120" y2="15" class="ln"/>
+    <line x1="120" y1="15" x2="210" y2="130" class="ln"/>
+    <line x1="120" y1="15" x2="130" y2="130" class="ln2"/>
+    <!-- 垂直距离 -->
+    <line x1="120" y1="80" x2="85" y2="105" class="ln" stroke-dasharray="3,2"/>
+    <line x1="120" y1="80" x2="155" y2="105" class="ln" stroke-dasharray="3,2"/>
+    <!-- 直角 -->
+    <line x1="112" y1="88" x2="120" y2="80" class="ln" stroke-width="1"/>
+    <line x1="120" y1="88" x2="112" y2="80" class="ln" stroke-width="1"/>
+    <line x1="128" y1="88" x2="120" y2="80" class="ln" stroke-width="1"/>
+    <line x1="120" y1="88" x2="128" y2="80" class="ln" stroke-width="1"/>
+    <!-- 等距标记 -->
+    <line x1="120" y1="75" x2="128" y2="82" class="pt"/>
+    <line x1="120" y1="75" x2="112" y2="82" class="pt"/>
+    <text x="120" y="10" class="lab" text-anchor="middle">A</text>
+    <text x="40" y="147" class="lab" text-anchor="middle">B</text>
+    <text x="216" y="147" class="lab" text-anchor="middle">C</text>
+    <text x="80" y="100" class="lab" text-anchor="middle">E</text>
+    <text x="156" y="100" class="lab" text-anchor="middle">F</text>
+    <text x="136" y="147" class="lab" text-anchor="middle">D</text>
+  </svg>
+  <div class="model-desc">AD 平分∠A，<span class="tag">DE⊥AB</span>、<span class="tag">DF⊥AC</span>，DE=DF，AE=AF</div>
+</div>
+
+<!-- 6. A字型相似 -->
+<div class="card">
+  <div class="card-title">A字型相似</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <polygon points="120,15 30,130 210,130" class="ln"/>
+    <line x1="70" y1="80" x2="170" y2="80" class="ln2"/>
+    <circle cx="120" cy="15" r="2.5" class="pt"/>
+    <circle cx="30" cy="130" r="2.5" class="pt"/>
+    <circle cx="210" cy="130" r="2.5" class="pt"/>
+    <circle cx="70" cy="80" r="2.5" class="pt"/>
+    <circle cx="170" cy="80" r="2.5" class="pt"/>
+    <!-- 平行标记 -->
+    <line x1="100" y1="72" x2="105" y2="78" class="ln" stroke-width="1"/>
+    <line x1="106" y1="72" x2="111" y2="78" class="ln" stroke-width="1"/>
+    <text x="120" y="10" class="lab" text-anchor="middle">A</text>
+    <text x="20" y="147" class="lab" text-anchor="middle">B</text>
+    <text x="216" y="147" class="lab" text-anchor="middle">C</text>
+    <text x="60" y="76" class="lab" text-anchor="middle">D</text>
+    <text x="172" y="76" class="lab" text-anchor="middle">E</text>
+  </svg>
+  <div class="model-desc"><span class="tag">DE∥BC</span>，△ADE∽△ABC，AD/AB=AE/AC=DE/BC</div>
+</div>
+
+<!-- 7. 8字型相似 -->
+<div class="card">
+  <div class="card-title">8字型相似</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <line x1="30" y1="20" x2="210" y2="130" class="ln"/>
+    <line x1="210" y1="20" x2="30" y2="130" class="ln"/>
+    <!-- 平行线 -->
+    <line x1="30" y1="20" x2="210" y2="20" class="ln2"/>
+    <line x1="30" y1="130" x2="210" y2="130" class="ln2"/>
+    <!-- 交点 -->
+    <line x1="30" y1="20" x2="30" y2="130" class="ln" stroke-dasharray="2,2"/>
+    <line x1="210" y1="20" x2="210" y2="130" class="ln" stroke-dasharray="2,2"/>
+    <circle cx="30" cy="20" r="2.5" class="pt"/>
+    <circle cx="210" cy="20" r="2.5" class="pt"/>
+    <circle cx="30" cy="130" r="2.5" class="pt"/>
+    <circle cx="210" cy="130" r="2.5" class="pt"/>
+    <circle cx="120" cy="75" r="2.5" class="pt"/>
+    <text x="24" y="16" class="lab" text-anchor="middle">A</text>
+    <text x="216" y="16" class="lab" text-anchor="middle">B</text>
+    <text x="24" y="147" class="lab" text-anchor="middle">C</text>
+    <text x="216" y="147" class="lab" text-anchor="middle">D</text>
+    <text x="120" y="70" class="lab" text-anchor="middle">O</text>
+  </svg>
+  <div class="model-desc"><span class="tag">AB∥CD</span>，△AOB∽△COD，AO/OC=BO/OD=AB/CD</div>
+</div>
+
+<!-- 8. 射影定理（母子三角形） -->
+<div class="card">
+  <div class="card-title">射影定理（母子△）</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <!-- Right triangle with altitude -->
+    <polygon points="200,130 40,130 120,15" class="ln"/>
+    <line x1="120" y1="15" x2="120" y2="130" class="ln2"/>
+    <!-- 直角符号 -->
+    <line x1="120" y1="24" x2="129" y2="24" class="ln" stroke-width="1"/>
+    <line x1="129" y1="24" x2="129" y2="15" class="ln" stroke-width="1"/>
+    <line x1="120" y1="120" x2="130" y2="120" class="ln" stroke-width="1"/>
+    <line x1="130" y1="120" x2="130" y2="130" class="ln" stroke-width="1"/>
+    <!-- 直角标记在顶点A -->
+    <line x1="164" y1="99" x2="158" y2="93" class="ln" stroke-width="1"/>
+    <line x1="158" y1="99" x2="164" y2="93" class="ln" stroke-width="1"/>
+    <circle cx="200" cy="130" r="2.5" class="pt"/>
+    <circle cx="40" cy="130" r="2.5" class="pt"/>
+    <circle cx="120" cy="15" r="2.5" class="pt"/>
+    <circle cx="120" cy="130" r="2.5" class="pt"/>
+    <text x="200" y="147" class="lab" text-anchor="middle">B</text>
+    <text x="30" y="147" class="lab" text-anchor="middle">C</text>
+    <text x="120" y="10" class="lab" text-anchor="middle">A</text>
+    <text x="116" y="147" class="lab" text-anchor="middle">D</text>
+  </svg>
+  <div class="model-desc">Rt△ABC 中 <span class="tag">AD⊥BC</span>，AD²=BD·CD，AB²=BD·BC，AC²=CD·BC</div>
+</div>
+
+<!-- 9. 半角模型 -->
+<div class="card">
+  <div class="card-title">半角模型（90°+45°）</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <!-- Square ABCD -->
+    <rect x="30" y="15" width="120" height="120" class="ln"/>
+    <!-- ∠EAF = 45° -->
+    <line x1="150" y1="15" x2="60" y2="135" class="ln2"/>
+    <line x1="150" y1="15" x2="110" y2="135" class="ln2"/>
+    <circle cx="150" cy="15" r="2.5" class="pt"/>
+    <circle cx="60" cy="135" r="2.5" class="pt"/>
+    <circle cx="110" cy="135" r="2.5" class="pt"/>
+    <circle cx="30" cy="15" r="2.5" class="pt"/>
+    <circle cx="150" cy="135" r="2.5" class="pt"/>
+    <!-- 45° 标记 -->
+    <path d="M 140 30 L 148 22 L 153 28" class="ln" stroke-width="1" fill="none"/>
+    <text x="155" y="24" class="lab" font-size="10">45°</text>
+    <text x="150" y="10" class="lab" text-anchor="middle">A</text>
+    <text x="24" y="12" class="lab" text-anchor="middle">B</text>
+    <text x="24" y="150" class="lab" text-anchor="middle">C</text>
+    <text x="156" y="150" class="lab" text-anchor="middle">D</text>
+    <text x="54" y="150" class="lab" text-anchor="middle">E</text>
+    <text x="104" y="150" class="lab" text-anchor="middle">F</text>
+  </svg>
+  <div class="model-desc">正方形中 <span class="tag">∠EAF=45°</span>，BE+DF=EF</div>
+</div>
+
+<!-- 10. 将军饮马 -->
+<div class="card">
+  <div class="card-title">将军饮马（最短路径）</div>
+  <svg width="240" height="150" viewBox="0 0 240 150">
+    <style>
+      .ln { stroke: #333; stroke-width: 1.5; fill: none; }
+      .ln2 { stroke: #e74c3c; stroke-width: 1.5; fill: none; }
+      .ln3 { stroke: #2ecc71; stroke-width: 1.5; fill: none; stroke-dasharray: 4,2; }
+      .pt { fill: #333; }
+      .lab { font-size: 11px; fill: #333; font-family: sans-serif; }
+    </style>
+    <!-- 直线 l -->
+    <line x1="20" y1="90" x2="220" y2="90" class="ln"/>
+    <!-- 点 A -->
+    <circle cx="60" cy="30" r="3" class="pt" fill="#e74c3c"/>
+    <!-- 点 B -->
+    <circle cx="180" cy="45" r="3" class="pt" fill="#e74c3c"/>
+    <!-- A' 对称点 -->
+    <circle cx="60" cy="150" r="3" class="pt" fill="#aaa"/>
+    <!-- 最短路径 A→P→B -->
+    <line x1="60" y1="30" x2="90" y2="90" class="ln3"/>
+    <line x1="90" y1="90" x2="180" y2="45" class="ln3"/>
+    <!-- A→A' 垂线 -->
+    <line x1="60" y1="30" x2="60" y2="150" class="ln" stroke-dasharray="2,2"/>
+    <line x1="180" y1="45" x2="90" y2="90" class="ln2"/>
+    <!-- 反射连线 -->
+    <line x1="60" y1="150" x2="180" y2="45" class="ln" stroke-dasharray="2,2" opacity="0.3"/>
+    <circle cx="90" cy="90" r="3" class="pt" fill="#2ecc71"/>
+    <!-- 直角 -->
+    <line x1="54" y1="90" x2="54" y2="84" class="ln" stroke-width="1"/>
+    <line x1="54" y1="84" x2="60" y2="84" class="ln" stroke-width="1"/>
+    <text x="55" y="26" class="lab" text-anchor="middle">A</text>
+    <text x="185" y="42" class="lab" text-anchor="middle">B</text>
+    <text x="60" y="168" class="lab" text-anchor="middle">A'</text>
+    <text x="80" y="86" class="lab" text-anchor="middle">P</text>
+    <text x="130" y="60" class="lab" text-anchor="middle">l  (河)</text>
+  </svg>
+  <div class="model-desc">作 A 关于直线 l 的对称点 A'，连接 A'B 与 l 交于 P，<span class="tag">AP+BP 最短</span></div>
+</div>
+
+</div>
+</body>
+</html>
