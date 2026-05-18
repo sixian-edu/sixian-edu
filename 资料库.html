@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料库 · 思贤家教</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-title { text-align: center; padding: 40px 20px 20px; }
+        .page-title h1 { font-size: 26px; margin-bottom: 6px; }
+        .page-title p { font-size: 14px; color: #888; }
+
+        .subj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+
+        .subj-card {
+            background: #fff; border-radius: 16px; overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-decoration: none; color: inherit; display: flex; flex-direction: column;
+        }
+        .subj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+
+        .subj-cover {
+            height: 120px; display: flex; align-items: center; justify-content: center;
+            font-size: 48px; position: relative; overflow: hidden;
+        }
+        .subj-cover::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.06));
+        }
+        .subj-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+        .subj-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .subj-desc { font-size: 13px; color: #888; line-height: 1.6; flex: 1; margin-bottom: 12px; }
+        .subj-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+        .subj-meta span {
+            font-size: 11px; padding: 3px 10px; border-radius: 10px;
+            background: #eef0f4; color: #666;
+        }
+
+        .subj-card.physics .subj-cover { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        .subj-card.chemistry .subj-cover { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+        .subj-card.biology .subj-cover { background: linear-gradient(135deg, #2d7d46, #27ae60); }
+        .subj-card.geography .subj-cover { background: linear-gradient(135deg, #1a6fc4, #3498db); }
+        .subj-card.politics .subj-cover { background: linear-gradient(135deg, #d35400, #e67e22); }
+
+        .coming-soon { text-align: center; padding: 20px 0; }
+        .coming-soon p { font-size: 14px; color: #aaa; }
+
+        @media (max-width: 600px) {
+            .subj-grid { grid-template-columns: 1fr; }
+            .page-title h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="思贤家教.html" class="logo-text">思贤家教</a>
+    <a href="思贤家教.html">主页</a>
+    <a href="老师.html">选老师</a>
+    <a href="预约试听.html">预约试听</a>
+    <a href="算法助学.html">算法助学 <span class="nav-tag">免费体验</span></a>
+    <a href="真题.html">真题库</a>
+    <a href="资料库.html" class="nav-active">资料库</a>
+    <a href="加入思贤.html">加入思贤</a>
+    <a href="思贤公约.html">思贤公约</a>
+</div>
+
+<div class="page-title">
+    <h1>学习资料库</h1>
+    <p>初中各科知识点大全 · 复习备考好帮手</p>
+</div>
+
+<div class="container" style="padding-top: 10px;">
+    <div class="subj-grid">
+
+        <a class="subj-card physics" href="资料/初中物理知识点大全.html">
+            <div class="subj-cover">⚡</div>
+            <div class="subj-body">
+                <div class="subj-name">初中物理</div>
+                <div class="subj-desc">力学、电学、热学、光学、声学<br>中考核心考点全覆盖</div>
+                <div class="subj-meta">
+                    <span>九年级全一册</span>
+                    <span>中考复习</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="subj-card chemistry" href="资料/初中化学知识点大全.html">
+            <div class="subj-cover">🧪</div>
+            <div class="subj-body">
+                <div class="subj-name">初中化学</div>
+                <div class="subj-desc">物质变化、元素、方程式、酸碱盐<br>实验与计算全面梳理</div>
+                <div class="subj-meta">
+                    <span>九年级全一册</span>
+                    <span>中考复习</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="subj-card biology" href="资料/初中生物知识点大全.html">
+            <div class="subj-cover">🧬</div>
+            <div class="subj-body">
+                <div class="subj-name">初中生物</div>
+                <div class="subj-desc">细胞、植物、人体、遗传、免疫<br>七八年级四册全收录</div>
+                <div class="subj-meta">
+                    <span>七八年级全四册</span>
+                    <span>中考复习</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="subj-card geography" href="资料/初中地理知识点大全.html">
+            <div class="subj-cover">🌍</div>
+            <div class="subj-body">
+                <div class="subj-name">初中地理</div>
+                <div class="subj-desc">世界地理、中国地理、气候地形<br>七八年级四册全收录</div>
+                <div class="subj-meta">
+                    <span>七八年级全四册</span>
+                    <span>中考复习</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="subj-card politics" href="资料/初中政治知识点大全.html">
+            <div class="subj-cover">📜</div>
+            <div class="subj-body">
+                <div class="subj-name">道德与法治</div>
+                <div class="subj-desc">宪法制度、权利义务、国情国策<br>七至九年级六册全收录</div>
+                <div class="subj-meta">
+                    <span>七~九年级全六册</span>
+                    <span>中考复习</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="coming-soon">
+        <p>📚 更多学科资料持续更新中……</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>思贤家教 · 济南市商河县 · 电话 155-6412-8008</p>
+</div>
+
+<style>
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>
