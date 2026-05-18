@@ -167,6 +167,49 @@
 
             .cta-section { padding: 36px 24px; }
         }
+
+        /* ── 分享墙弹窗 ── */
+        .share-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+        }
+        .share-overlay.active { display: flex; }
+        .share-modal {
+            background: #fff; border-radius: 20px; padding: 36px 32px;
+            max-width: 400px; width: 100%; text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: shareIn 0.3s ease;
+        }
+        @keyframes shareIn {
+            from { transform: scale(0.9) translateY(20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .share-modal .share-icon { font-size: 48px; margin-bottom: 12px; }
+        .share-modal h3 { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+        .share-modal .share-desc { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.7; }
+        .share-modal .share-desc strong { color: #1a1a2e; }
+        .share-msg-box {
+            background: #f8f9fc; border-radius: 12px; padding: 14px 16px;
+            margin-bottom: 16px; text-align: left; border: 1px solid #eee;
+        }
+        .share-msg-box p { font-size: 13px; color: #555; line-height: 1.8; margin: 0; }
+        .copy-btn {
+            width: 100%; padding: 12px; border: 2px solid #1a1a2e;
+            background: transparent; border-radius: 10px; font-size: 14px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s; margin-bottom: 6px;
+        }
+        .copy-btn:hover { background: #1a1a2e; color: #fff; }
+        .copy-btn.copied { background: #059669; border-color: #059669; color: #fff; }
+        .copy-hint { font-size: 12px; color: #999; margin-bottom: 20px; }
+        .shared-btn {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            color: #fff; border: none; border-radius: 10px; font-size: 15px;
+            font-weight: 600; cursor: pointer; transition: opacity 0.2s;
+        }
+        .shared-btn:hover { opacity: 0.9; }
+        .shared-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+        .shared-hint { font-size: 12px; color: #999; margin-top: 10px; }
+        .chance-indicator { font-size: 12px; color: #999; text-align: center; margin-top: 8px; }
     </style>
 </head>
 <body>
@@ -273,6 +316,7 @@
             </div>
 
             <button class="submit-btn" type="submit" id="submitBtn">免费体验 →</button>
+            <p class="chance-indicator" id="chanceIndicator">💡 分享网站即可获得免费体验机会</p>
         </form>
 
         <div class="success-msg" id="successMsg">
@@ -332,6 +376,22 @@
     </div>
 </div>
 
+<!-- 分享墙弹窗 -->
+<div class="share-overlay" id="shareOverlay">
+    <div class="share-modal">
+        <div class="share-icon">🔗</div>
+        <h3>分享即可免费体验</h3>
+        <p class="share-desc">将此网站分享给微信好友或发到朋友圈，即可获得 <strong>1 次</strong> AI 分析体验机会</p>
+        <div class="share-msg-box">
+            <p id="shareText"></p>
+        </div>
+        <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+        <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+        <button class="shared-btn" id="sharedBtn" disabled>我已分享，立即体验 →</button>
+        <p class="shared-hint">还可体验 <span id="chanceDisplay">0</span> 次</p>
+    </div>
+</div>
+
 <div class="footer">
     <p>思贤家教 · 济南市商河县 · 电话 155-6412-8008</p>
 </div>
@@ -384,18 +444,61 @@ dropZone.addEventListener('drop', function(e) {
     updatePreview();
 });
 
-document.getElementById('algoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+/* ── 分享墙逻辑 ── */
+var siteUrl = window.location.origin + window.location.pathname;
+var shareText = '📚 发现一个超好用的学习工具！思贤家教·算法助学——拍照上传错题，AI自动分析薄弱点，自动生成变式训练题，举一反三巩固知识。商河的家长朋友们一定要试试～ ' + siteUrl;
+var hasCopied = false;
+
+function getChances() {
+    return parseInt(localStorage.getItem('sixian_algo_chances') || '0');
+}
+
+function setChances(n) {
+    localStorage.setItem('sixian_algo_chances', String(n));
+}
+
+function updateChanceDisplay() {
+    var d = document.getElementById('chanceDisplay');
+    if (d) d.textContent = getChances();
+}
+
+function updateChanceIndicator() {
+    var ind = document.getElementById('chanceIndicator');
+    if (ind) {
+        var c = getChances();
+        ind.textContent = c > 0
+            ? '✨ 剩余体验次数：' + c + ' 次'
+            : '💡 分享网站即可获得免费体验机会';
+    }
+}
+
+function doSubmit() {
     var btn = document.getElementById('submitBtn');
-    var form = this;
+    var form = document.getElementById('algoForm');
     var formData = new FormData(form);
 
     files.forEach(function(f) {
         formData.append('file', f);
     });
 
+    /* 消耗一次体验机会 */
+    var chances = getChances();
+    if (chances > 0) {
+        setChances(chances - 1);
+    }
+    updateChanceIndicator();
+
     btn.disabled = true;
     btn.textContent = '提交中...';
+
+    /* 本地测试：直接模拟成功 */
+    if (window.location.protocol === 'file:') {
+        setTimeout(function() {
+            form.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        }, 1500);
+        return;
+    }
 
     fetch(form.action, {
         method: 'POST',
@@ -405,16 +508,99 @@ document.getElementById('algoForm').addEventListener('submit', function(e) {
             form.style.display = 'none';
             document.getElementById('successMsg').style.display = 'block';
         } else {
+            setChances(getChances() + 1);
+            updateChanceIndicator();
             alert('提交失败，请重试或直接微信联系 155-6412-8008');
             btn.disabled = false;
             btn.textContent = '免费体验 →';
         }
     }).catch(function() {
+        setChances(getChances() + 1);
+        updateChanceIndicator();
         alert('网络错误，请重试或直接微信联系 155-6412-8008');
         btn.disabled = false;
         btn.textContent = '免费体验 →';
     });
+}
+
+document.getElementById('algoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    /* 验证是否已上传照片 */
+    if (files.length === 0) {
+        alert('请先上传错题照片');
+        return;
+    }
+
+    /* 检查体验次数 */
+    if (getChances() <= 0) {
+        document.getElementById('shareText').textContent = shareText;
+        document.getElementById('shareOverlay').classList.add('active');
+        updateChanceDisplay();
+        return;
+    }
+
+    doSubmit();
 });
+
+document.getElementById('copyBtn').addEventListener('click', function() {
+    var text = document.getElementById('shareText').textContent;
+
+    /* 清除上次的计时器 */
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+
+    function onCopyDone() {
+        var btn = document.getElementById('copyBtn');
+        btn.textContent = '✅ 已复制';
+        btn.classList.add('copied');
+
+        var hint = document.getElementById('copyHint');
+        var sharedBtn = document.getElementById('sharedBtn');
+
+        hint.textContent = '⏳ 检测到转发朋友圈，自动获得体验机会...';
+
+        /* 清除上次的计时器 */
+        if (window._shareTimeout) clearTimeout(window._shareTimeout);
+
+        window._shareTimeout = setTimeout(function() {
+            hasCopied = true;
+            sharedBtn.disabled = false;
+            hint.textContent = '✅ 已获得体验机会，点击下方按钮继续';
+        }, 10000);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onCopyDone);
+    } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        onCopyDone();
+    }
+});
+
+document.getElementById('sharedBtn').addEventListener('click', function() {
+    if (!hasCopied) return;
+    var c = getChances();
+    setChances(c + 1);
+    updateChanceDisplay();
+    document.getElementById('shareOverlay').classList.remove('active');
+    updateChanceIndicator();
+    doSubmit();
+});
+
+document.getElementById('shareOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.classList.remove('active');
+    }
+});
+
+updateChanceIndicator();
 </script>
 
 <style>
