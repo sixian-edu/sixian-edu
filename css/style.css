@@ -36,6 +36,29 @@ body {
 .footer { text-align: center; padding: 28px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
 
 /* ── 响应式（导航自适应） ── */
-@media (max-width: 680px) {
-    .nav a { padding: 12px 12px; font-size: 13px; }
+@media (max-width: 768px) {
+    .nav {
+        justify-content: center;
+        gap: 0;
+        padding: 0 12px;
+    }
+    .nav .logo-text {
+        flex: 0 0 100%;
+        text-align: center;
+        margin-right: 0;
+        padding: 14px 0 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        margin-bottom: 2px;
+        font-size: 15px;
+    }
+    .nav a:not(.logo-text) {
+        flex: 0 0 25%;
+        text-align: center;
+        padding: 10px 4px;
+        font-size: 13px;
+    }
+    .nav .nav-tag {
+        font-size: 9px;
+        padding: 1px 5px;
+    }
 }
