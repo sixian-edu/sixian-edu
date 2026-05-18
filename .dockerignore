@@ -1,0 +1,8 @@
+.git
+.claude
+__pycache__
+*.pyc
+.env
+instance/
+sixian.db
+.gitignore
