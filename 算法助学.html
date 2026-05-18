@@ -210,6 +210,16 @@
         .shared-btn:disabled { opacity: 0.35; cursor: not-allowed; }
         .shared-hint { font-size: 12px; color: #999; margin-top: 10px; }
         .chance-indicator { font-size: 12px; color: #999; text-align: center; margin-top: 8px; }
+        .wechat-card {
+            background: #f8f9fc; border-radius: 16px; padding: 24px 20px;
+            max-width: 300px; margin: 0 auto; border: 1px solid #eee;
+        }
+        .wechat-card .wechat-num {
+            font-size: 24px; font-weight: 700; color: #1a1a2e; margin-bottom: 2px;
+            cursor: pointer; transition: opacity 0.2s;
+        }
+        .wechat-card .wechat-num:active { opacity: 0.6; }
+        .wechat-card .wechat-tip { font-size: 13px; color: #888; }
     </style>
 </head>
 <body>
@@ -319,10 +329,17 @@
             <p class="chance-indicator" id="chanceIndicator">💡 分享网站即可获得免费体验机会</p>
         </form>
 
-        <div class="success-msg" id="successMsg">
-            <div class="icon">✅</div>
-            <h3>提交成功！</h3>
-            <p>已收到你的错题照片，我们会尽快分析并联系你反馈结果。</p>
+        <div class="success-msg" id="wechatMsg" style="display:none;">
+            <div class="icon">🎉</div>
+            <h3>已获得免费体验资格！</h3>
+            <p style="margin-bottom:16px;">请添加老师微信，发送错题照片获取专属学情分析</p>
+            <div class="wechat-card">
+                <p class="wechat-num">155-6412-8008</p>
+                <p class="wechat-tip">☝️ 点击号码可复制</p>
+                <img src="images/sixian二维码.png" alt="思贤家教微信二维码" style="width:160px;height:160px;margin:12px auto;border-radius:8px;display:block;">
+                <p style="font-size:13px;color:#666;">或扫描二维码添加微信</p>
+            </div>
+            <p style="font-size:12px;color:#999;margin-top:16px;">添加时请备注"算法助学"</p>
         </div>
     </div>
 </div>
@@ -388,7 +405,7 @@
         <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
         <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
         <button class="shared-btn" id="sharedBtn" disabled>我已分享，立即体验 →</button>
-        <p class="shared-hint">还可体验 <span id="chanceDisplay">0</span> 次</p>
+        <p class="shared-hint" style="visibility:hidden;">占位</p>
     </div>
 </div>
 
@@ -465,66 +482,35 @@ function updateChanceDisplay() {
 function updateChanceIndicator() {
     var ind = document.getElementById('chanceIndicator');
     if (ind) {
-        var c = getChances();
-        ind.textContent = c > 0
-            ? '✨ 剩余体验次数：' + c + ' 次'
+        ind.textContent = getChances() > 0
+            ? '✨ 已获得体验资格，点击提交查看联系方式'
             : '💡 分享网站即可获得免费体验机会';
     }
 }
 
-function doSubmit() {
-    var btn = document.getElementById('submitBtn');
-    var form = document.getElementById('algoForm');
-    var formData = new FormData(form);
-
-    files.forEach(function(f) {
-        formData.append('file', f);
-    });
-
-    /* 消耗一次体验机会 */
-    var chances = getChances();
-    if (chances > 0) {
-        setChances(chances - 1);
-    }
-    updateChanceIndicator();
-
-    btn.disabled = true;
-    btn.textContent = '提交中...';
-
-    /* 本地测试：直接模拟成功 */
-    if (window.location.protocol === 'file:') {
-        setTimeout(function() {
-            form.style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-        }, 1500);
-        return;
-    }
-
-    fetch(form.action, {
-        method: 'POST',
-        body: formData
-    }).then(function(r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-    }).then(function(data) {
-        if (data.success) {
-            form.style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-        } else {
-            setChances(getChances() + 1);
-            updateChanceIndicator();
-            alert('提交失败（' + (data.message || '未知错误') + '），请微信联系 155-6412-8008');
-            btn.disabled = false;
-            btn.textContent = '免费体验 →';
-        }
-    }).catch(function(err) {
-        setChances(getChances() + 1);
-        updateChanceIndicator();
-        alert('网络错误（' + err.message + '），请微信联系 155-6412-8008');
-        btn.disabled = false;
-        btn.textContent = '免费体验 →';
-    });
+function showWechatScreen() {
+    document.getElementById('algoForm').style.display = 'none';
+    document.getElementById('wechatMsg').style.display = 'block';
 }
+
+/* 点击微信号复制 */
+document.addEventListener('click', function(e) {
+    var t = e.target;
+    if (t.classList.contains('wechat-num')) {
+        var text = t.textContent.trim();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text);
+        } else {
+            var ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+            document.body.removeChild(ta);
+        }
+        var orig = t.textContent;
+        t.textContent = '已复制 ✓';
+        setTimeout(function() { t.textContent = orig; }, 1500);
+    }
+});
 
 document.getElementById('algoForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -535,15 +521,16 @@ document.getElementById('algoForm').addEventListener('submit', function(e) {
         return;
     }
 
-    /* 检查体验次数 */
-    if (getChances() <= 0) {
-        document.getElementById('shareText').textContent = shareText;
-        document.getElementById('shareOverlay').classList.add('active');
-        updateChanceDisplay();
+    /* 有资格 → 直接显示微信 */
+    if (getChances() > 0) {
+        showWechatScreen();
         return;
     }
 
-    doSubmit();
+    /* 无资格 → 弹出分享墙 */
+    document.getElementById('shareText').textContent = shareText;
+    document.getElementById('shareOverlay').classList.add('active');
+    updateChanceDisplay();
 });
 
 document.getElementById('copyBtn').addEventListener('click', function() {
@@ -589,12 +576,10 @@ document.getElementById('copyBtn').addEventListener('click', function() {
 
 document.getElementById('sharedBtn').addEventListener('click', function() {
     if (!hasCopied) return;
-    var c = getChances();
-    setChances(c + 1);
+    setChances(getChances() + 1);
     updateChanceDisplay();
     document.getElementById('shareOverlay').classList.remove('active');
-    updateChanceIndicator();
-    doSubmit();
+    showWechatScreen();
 });
 
 document.getElementById('shareOverlay').addEventListener('click', function(e) {
