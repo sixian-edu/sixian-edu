@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}加入思贤 · 思贤家教{% endblock %}
+{% block head %}
+<style>
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff; padding: 60px 20px; text-align: center;
+}
+.hero h1 { font-size: 32px; margin-bottom: 8px; }
+.hero p { font-size: 15px; opacity: 0.8; }
+.content { max-width: 700px; margin: 0 auto; padding: 48px 20px; }
+.content p { font-size: 15px; color: #555; line-height: 1.9; margin-bottom: 16px; }
+.contact-card { background: #fff; border-radius: 16px; padding: 28px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-top: 24px; text-align: center; }
+.contact-card .phone { font-size: 24px; font-weight: 700; color: #1a1a2e; margin: 8px 0; }
+.contact-card .note { font-size: 13px; color: #888; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="hero">
+    <h1>加入思贤</h1>
+    <p>如果你是商河的老师，愿意做家教辅导</p>
+</div>
+<div class="content">
+    <p>思贤家教是一个商河本地的家教老师合作团队。我们正在寻找更多优秀的本地老师加入，一起为商河的家庭提供优质的上门辅导服务。</p>
+    <p>如果你：</p>
+    <p>✅ 在商河本地居住或工作<br>
+    ✅ 具备扎实的学科知识基础<br>
+    ✅ 有耐心、负责任、喜欢和孩子打交道<br>
+    ✅ 有教学或辅导经验（优先）</p>
+    <p>欢迎联系我们，合作方式灵活，课时费透明。</p>
+
+    <div class="contact-card">
+        <p style="margin-bottom:4px;">联系老师</p>
+        <div class="phone">155-6412-8008</div>
+        <p class="note">微信同号 · 请备注"加入思贤"</p>
+    </div>
+</div>
+{% endblock %}

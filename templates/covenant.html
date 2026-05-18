@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}思贤公约 · 思贤家教{% endblock %}
+{% block head %}
+<style>
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff; padding: 60px 20px; text-align: center;
+}
+.hero h1 { font-size: 32px; margin-bottom: 8px; }
+.hero p { font-size: 15px; opacity: 0.8; }
+.content { max-width: 700px; margin: 0 auto; padding: 48px 20px; }
+.content h2 { font-size: 18px; margin: 28px 0 12px; color: #1a1a2e; }
+.content p { font-size: 15px; color: #555; line-height: 1.9; margin-bottom: 12px; }
+.content ul { padding-left: 20px; margin-bottom: 12px; }
+.content ul li { font-size: 15px; color: #555; line-height: 1.9; margin-bottom: 4px; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="hero">
+    <h1>思贤公约</h1>
+    <p>我们的基本约定与准则</p>
+</div>
+<div class="content">
+    <p>思贤家教是一个商河本地的家教老师合作团队。以下是我们共同遵守的基本约定：</p>
+
+    <h2>一、教学准则</h2>
+    <ul>
+        <li>认真备课，按时上课，不迟到不早退</li>
+        <li>根据学生实际情况制定个性化辅导方案</li>
+        <li>每次课后与家长沟通学习进度和情况</li>
+        <li>不断学习和提升自身教学水平</li>
+    </ul>
+
+    <h2>二、收费约定</h2>
+    <ul>
+        <li>课时费公开透明，无隐藏费用</li>
+        <li>试听课程不收取费用</li>
+        <li>按次或按月结算，灵活选择</li>
+    </ul>
+
+    <h2>三、家长须知</h2>
+    <ul>
+        <li>请为孩子提供安静的学习环境</li>
+        <li>如需取消或调整课程，请提前告知</li>
+        <li>如有任何意见或建议，欢迎随时反馈</li>
+    </ul>
+
+    <h2>四、免责声明</h2>
+    <p>思贤家教是一个老师合作团队，每位老师独立开展教学服务。我们努力为家长和学生匹配最合适的老师，但不承担具体的教学质量责任。如对教学有任何不满，请及时与我们沟通协调。</p>
+</div>
+{% endblock %}

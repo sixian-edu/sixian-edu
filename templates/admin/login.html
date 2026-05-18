@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理员登录 · 思贤家教</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "Microsoft YaHei", sans-serif; background: #f8f9fc; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.card { background: #fff; border-radius: 16px; padding: 40px 36px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); width: 360px; max-width: 90vw; }
+h1 { font-size: 20px; text-align: center; margin-bottom: 24px; color: #1a1a2e; }
+label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+input[type="password"] { width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; margin-bottom: 16px; }
+input:focus { border-color: #1a1a2e; }
+button { width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none; border-radius: 10px; font-size: 15px; cursor: pointer; }
+button:hover { opacity: 0.9; }
+.flash { text-align: center; font-size: 14px; color: #e74c3c; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>思贤家教 · 管理后台</h1>
+    {% if get_flashed_messages() %}
+    <div class="flash">{{ get_flashed_messages()[-1] }}</div>
+    {% endif %}
+    <form method="POST">
+        <label>管理员密码</label>
+        <input type="password" name="password" placeholder="输入密码" required>
+        <button type="submit">登录</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}控制台 · 管理后台{% endblock %}
+{% block content %}
+<h1>控制台</h1>
+
+<div class="stats">
+    <div class="stat-card">
+        <div class="stat-num">{{ teacher_count }}</div>
+        <div class="stat-label">老师</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num">{{ pending_bookings }}</div>
+        <div class="stat-label">待处理预约</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num">{{ total_bookings }}</div>
+        <div class="stat-label">总预约</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num">{{ testimonial_count }}</div>
+        <div class="stat-label">家长评价</div>
+    </div>
+</div>
+
+<h2 style="margin: 32px 0 16px; font-size: 16px;">最近预约</h2>
+<table>
+    <thead>
+        <tr><th>家长</th><th>电话</th><th>年级</th><th>科目</th><th>状态</th><th>时间</th></tr>
+    </thead>
+    <tbody>
+        {% for b in latest_bookings %}
+        <tr>
+            <td>{{ b.parent_name }}</td>
+            <td>{{ b.phone }}</td>
+            <td>{{ b.grade }}</td>
+            <td>{{ b.subject }}</td>
+            <td><span class="status status-{{ b.status }}">{{ {"pending":"待处理","confirmed":"已确认","completed":"已完成","cancelled":"已取消"}.get(b.status, b.status) }}</span></td>
+            <td>{{ b.created_at.strftime("%m-%d %H:%M") }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6" style="text-align:center;color:#999;">暂无预约</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

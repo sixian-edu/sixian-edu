@@ -1,1 +1,7 @@
 .claude/
+__pycache__/
+*.pyc
+.env
+sixian.db
+instance/
+

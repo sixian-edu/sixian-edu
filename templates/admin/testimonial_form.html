@@ -1,0 +1,37 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}{{ "编辑评价" if testimonial else "添加评价" }}{% endblock %}
+{% block content %}
+<h1>{{ "编辑评价" if testimonial else "添加评价" }}</h1>
+
+<form method="POST" style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 8px rgba(0,0,0,0.04);max-width:600px;">
+    <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:14px;font-weight:600;margin-bottom:4px;">评价人</label>
+        <input type="text" name="author" value="{{ testimonial.author if testimonial else '' }}" placeholder="如：王同学妈妈" style="width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+    </div>
+    <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:14px;font-weight:600;margin-bottom:4px;">评价内容 *</label>
+        <textarea name="content" rows="4" required style="width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;">{{ testimonial.content if testimonial else '' }}</textarea>
+    </div>
+    <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:14px;font-weight:600;margin-bottom:4px;">学生年级</label>
+        <input type="text" name="student_grade" value="{{ testimonial.student_grade if testimonial else '' }}" placeholder="如：初二" style="width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+    </div>
+    <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:14px;font-weight:600;margin-bottom:4px;">科目</label>
+        <input type="text" name="subject" value="{{ testimonial.subject if testimonial else '' }}" placeholder="如：数学" style="width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+    </div>
+    <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:14px;font-weight:600;margin-bottom:4px;">提分效果</label>
+        <input type="text" name="improvement" value="{{ testimonial.improvement if testimonial else '' }}" placeholder="如：数学 65→92" style="width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+    </div>
+    <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:14px;font-weight:600;margin-bottom:4px;">排序</label>
+        <input type="number" name="sort_order" value="{{ testimonial.sort_order if testimonial else 0 }}" style="width:80px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+    </div>
+    <div style="margin-bottom:14px;">
+        <label style="font-size:13px;"><input type="checkbox" name="is_active" {% if not testimonial or testimonial.is_active %}checked{% endif %}> 显示</label>
+    </div>
+    <button type="submit" class="btn btn-primary" style="padding:10px 32px;font-size:14px;">保存</button>
+    <a href="/admin/testimonials" style="margin-left:12px;color:#888;font-size:14px;">取消</a>
+</form>
+{% endblock %}

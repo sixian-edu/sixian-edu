@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block title %}真题库 · 思贤家教{% endblock %}
+{% block head %}
+<style>
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+    color: #fff; padding: 60px 20px 70px; text-align: center; position: relative; overflow: hidden;
+}
+.hero h1 { font-size: 38px; font-weight: 700; letter-spacing: 3px; margin-bottom: 10px; position: relative; z-index: 1; }
+.hero p { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+.tab-bar { display: flex; justify-content: center; gap: 0; margin: 48px auto 0; max-width: 400px; border-radius: 12px; overflow: hidden; border: 2px solid #1a1a2e; }
+.tab-btn { flex: 1; padding: 12px 0; font-size: 16px; font-weight: 600; cursor: pointer; border: none; background: #fff; color: #1a1a2e; transition: background 0.25s, color 0.25s; }
+.tab-btn.active { background: #1a1a2e; color: #fff; }
+.subject-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 28px auto 36px; max-width: 700px; }
+.subject-btn { padding: 6px 20px; border-radius: 20px; font-size: 14px; cursor: pointer; border: 1.5px solid #ddd; background: #fff; color: #555; transition: all 0.2s; }
+.subject-btn:hover { border-color: #1a1a2e; color: #1a1a2e; }
+.subject-btn.active { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+.paper-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 48px; }
+.paper-card { background: #fff; border-radius: 14px; padding: 18px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+.paper-icon { flex: 0 0 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; }
+.paper-icon.zhongkao { background: #27ae60; }
+.paper-icon.gaokao { background: #e67e22; }
+.paper-info { flex: 1; min-width: 0; }
+.paper-info .paper-title { font-size: 14px; font-weight: 600; color: #2d3436; margin-bottom: 2px; }
+.paper-info .paper-meta { font-size: 12px; color: #999; }
+.paper-info .paper-meta .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; margin-right: 4px; background: #f0f0f0; color: #666; }
+.paper-action a { display: inline-block; padding: 6px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; background: #1a1a2e; color: #fff; transition: transform 0.2s; }
+.paper-action a:hover { transform: translateY(-1px); }
+.paper-action a.disabled { background: #e0e0e0; color: #aaa; cursor: not-allowed; pointer-events: none; }
+.empty-state { text-align: center; padding: 60px 20px; color: #999; display: none; }
+.empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+.stats-row { display: flex; justify-content: center; gap: 48px; margin: 48px 0 32px; flex-wrap: wrap; }
+.stat-item { text-align: center; }
+.stat-item .num { font-size: 32px; font-weight: 700; color: #1a1a2e; }
+.stat-item .label { font-size: 13px; color: #888; }
+.hidden { display: none !important; }
+@media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .paper-grid { grid-template-columns: 1fr; }
+    .stats-row { gap: 24px; }
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="hero">
+    <h1>真题库</h1>
+    <p>中考 · 高考历年真题，免费下载练习</p>
+</div>
+
+<div class="container">
+    <div class="stats-row">
+        <div class="stat-item"><div class="num">120+</div><div class="label">套真题</div></div>
+        <div class="stat-item"><div class="num">9</div><div class="label">个学科覆盖</div></div>
+        <div class="stat-item"><div class="num">2021-2024</div><div class="label">近四年真题</div></div>
+    </div>
+
+    <div class="tab-bar" id="tabBar">
+        <button class="tab-btn active" data-tab="zhongkao">中考真题</button>
+        <button class="tab-btn" data-tab="gaokao">高考真题</button>
+    </div>
+
+    <div class="subject-bar" id="subjectBar">
+        <button class="subject-btn active" data-subject="all">全部</button>
+        <button class="subject-btn" data-subject="语文">语文</button>
+        <button class="subject-btn" data-subject="数学">数学</button>
+        <button class="subject-btn" data-subject="英语">英语</button>
+        <button class="subject-btn" data-subject="物理">物理</button>
+        <button class="subject-btn" data-subject="化学">化学</button>
+        <button class="subject-btn" data-subject="生物">生物</button>
+        <button class="subject-btn" data-subject="历史">历史</button>
+        <button class="subject-btn" data-subject="地理">地理</button>
+        <button class="subject-btn" data-subject="政治">政治</button>
+    </div>
+
+    <div id="zhongkaoPapers">
+        <div class="paper-grid">
+            {% set zhongkao = [
+                ("语文","2024 济南市中考 · 语文"), ("数学","2024 济南市中考 · 数学"), ("英语","2024 济南市中考 · 英语"),
+                ("物理","2024 济南市中考 · 物理"), ("化学","2024 济南市中考 · 化学"), ("历史","2024 济南市中考 · 历史"),
+                ("政治","2024 济南市中考 · 道德与法治"), ("地理","2024 济南市中考 · 地理"), ("生物","2024 济南市中考 · 生物"),
+                ("数学","2023 济南市中考 · 数学"), ("语文","2023 济南市中考 · 语文"), ("英语","2023 济南市中考 · 英语"),
+                ("物理","2023 济南市中考 · 物理"), ("化学","2023 济南市中考 · 化学"),
+                ("数学","2022 济南市中考 · 数学"), ("语文","2022 济南市中考 · 语文"), ("英语","2022 济南市中考 · 英语"),
+                ("数学","2021 济南市中考 · 数学"),
+            ] %}
+            {% for subject, title in zhongkao %}
+            <div class="paper-card" data-subject="{{ subject }}">
+                <div class="paper-icon zhongkao">{{ subject[0] }}</div>
+                <div class="paper-info">
+                    <div class="paper-title">{{ title }}</div>
+                    <div class="paper-meta"><span class="tag">中考</span>济南</div>
+                </div>
+                <div class="paper-action"><a href="#" class="disabled" onclick="alert('文件准备中，敬请期待'); return false;">查看</a></div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="empty-state" id="zhongkaoEmpty">
+            <div class="icon">📭</div>
+            <p>该学科暂无中考真题</p>
+        </div>
+    </div>
+
+    <div id="gaokaoPapers" class="hidden">
+        <div class="paper-grid">
+            {% set gaokao = [
+                ("语文","2024 全国新课标Ⅰ卷 · 语文"), ("数学","2024 全国新课标Ⅰ卷 · 数学"), ("英语","2024 全国新课标Ⅰ卷 · 英语"),
+                ("物理","2024 山东省高考 · 物理"), ("化学","2024 山东省高考 · 化学"), ("生物","2024 山东省高考 · 生物"),
+                ("历史","2024 山东省高考 · 历史"), ("地理","2024 山东省高考 · 地理"), ("政治","2024 山东省高考 · 政治"),
+                ("数学","2023 全国新课标Ⅰ卷 · 数学"), ("语文","2023 全国新课标Ⅰ卷 · 语文"), ("英语","2023 全国新课标Ⅰ卷 · 英语"),
+                ("物理","2023 山东省高考 · 物理"), ("化学","2023 山东省高考 · 化学"),
+                ("数学","2022 全国新课标Ⅰ卷 · 数学"),
+            ] %}
+            {% for subject, title in gaokao %}
+            <div class="paper-card" data-subject="{{ subject }}">
+                <div class="paper-icon gaokao">{{ subject[0] }}</div>
+                <div class="paper-info">
+                    <div class="paper-title">{{ title }}</div>
+                    <div class="paper-meta"><span class="tag">高考</span>山东/新课标Ⅰ</div>
+                </div>
+                <div class="paper-action"><a href="#" class="disabled" onclick="alert('文件准备中，敬请期待'); return false;">查看</a></div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="empty-state" id="gaokaoEmpty">
+            <div class="icon">📭</div>
+            <p>该学科暂无高考真题</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 20px 0 10px; color: #aaa; font-size: 13px;">真题持续更新中 · 如需纸质版可联系老师打印</div>
+</div>
+
+<script>
+(function() {
+    var tabBtns = document.querySelectorAll('.tab-btn');
+    var zhongkaoDiv = document.getElementById('zhongkaoPapers');
+    var gaokaoDiv = document.getElementById('gaokaoPapers');
+    tabBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            tabBtns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            if (btn.dataset.tab === 'zhongkao') { zhongkaoDiv.classList.remove('hidden'); gaokaoDiv.classList.add('hidden'); }
+            else { zhongkaoDiv.classList.add('hidden'); gaokaoDiv.classList.remove('hidden'); }
+            var as = document.querySelector('.subject-btn.active');
+            if (as) filterPapers(as.dataset.subject);
+        });
+    });
+    var subjectBtns = document.querySelectorAll('.subject-btn');
+    subjectBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            subjectBtns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            filterPapers(btn.dataset.subject);
+        });
+    });
+    function filterPapers(subject) {
+        var tab = document.querySelector('.tab-btn.active').dataset.tab;
+        var container = tab === 'zhongkao' ? zhongkaoDiv : gaokaoDiv;
+        var cards = container.querySelectorAll('.paper-card');
+        var empty = container.querySelector('.empty-state');
+        var visible = 0;
+        cards.forEach(function(c) {
+            if (subject === 'all' || c.dataset.subject === subject) { c.style.display = ''; visible++; }
+            else { c.style.display = 'none'; }
+        });
+        empty.style.display = visible === 0 ? '' : 'none';
+    }
+})();
+</script>
+{% endblock %}

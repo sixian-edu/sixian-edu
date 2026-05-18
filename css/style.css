@@ -18,6 +18,7 @@ body {
 .nav .logo-text { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 1px; margin-right: auto; padding: 14px 0; text-decoration: none; }
 .nav a { color: rgba(255,255,255,0.75); text-decoration: none; padding: 14px 18px; font-size: 14px; transition: color 0.2s; }
 .nav a:hover { color: #fff; }
+.nav a.nav-active { color: #fff; font-weight: 600; }
 .nav .nav-tag {
     display: inline-block; font-size: 10px; background: #e67e22; color: #fff;
     padding: 1px 7px; border-radius: 8px; margin-left: 4px;

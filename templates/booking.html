@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}预约试听 · 思贤家教{% endblock %}
+{% block head %}
+<style>
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff; padding: 64px 20px; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(52,152,219,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(155,89,182,0.12) 0%, transparent 50%);
+}
+.hero h1 { font-size: 32px; margin-bottom: 8px; position: relative; z-index: 1; }
+.hero p { font-size: 15px; opacity: 0.8; max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
+.container { max-width: 600px; margin: 0 auto; padding: 40px 20px 48px; }
+.card { background: #fff; border-radius: 16px; padding: 28px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 24px; }
+.stitle { font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #1a1a2e; display: inline-block; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; font-family: inherit;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1a1a2e; }
+.form-group textarea { resize: vertical; min-height: 70px; }
+.submit-btn { width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none; border-radius: 10px; font-size: 15px; cursor: pointer; transition: opacity 0.2s; }
+.submit-btn:hover { opacity: 0.9; }
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.success-msg { display: none; text-align: center; padding: 32px 20px; }
+.success-msg .icon { font-size: 48px; margin-bottom: 12px; }
+.success-msg h3 { font-size: 18px; margin-bottom: 6px; color: #1a1a2e; }
+.success-msg p { font-size: 14px; color: #888; }
+.contact-info { text-align: center; margin-top: 16px; font-size: 14px; color: #888; }
+.contact-info a { color: #1a1a2e; font-weight: 600; text-decoration: none; }
+@media (max-width: 600px) {
+    .hero h1 { font-size: 24px; }
+    .card { padding: 20px; }
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="hero">
+    <h1>预约试听</h1>
+    <p>商河本地 · 上门辅导 · 先试听再决定</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="stitle">预约信息</div>
+
+        {% if submitted %}
+        <div class="success-msg" style="display:block;">
+            <div class="icon">✅</div>
+            <h3>预约成功</h3>
+            <p>感谢您的信任！我们会尽快联系您安排试听。</p>
+        </div>
+        {% else %}
+        <form id="bookingForm" method="POST" action="/booking">
+            <div class="form-group">
+                <label>家长姓名</label>
+                <input type="text" name="parent_name" placeholder="请输入您的姓名" required>
+            </div>
+            <div class="form-group">
+                <label>联系电话</label>
+                <input type="text" name="phone" placeholder="方便我们联系您" required>
+            </div>
+            <div class="form-group">
+                <label>学生年级</label>
+                <select name="grade">
+                    <option>小学</option>
+                    <option>初一</option>
+                    <option>初二</option>
+                    <option>初三</option>
+                    <option>高一</option>
+                    <option>高二</option>
+                    <option>高三</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>辅导科目</label>
+                <input type="text" name="subject" placeholder="例如：数学、英语、物理" value="{{ request.args.get('teacher', '') }}">
+            </div>
+            <div class="form-group">
+                <label>备注</label>
+                <textarea name="notes" placeholder="有什么想了解的，可以在这里说"></textarea>
+            </div>
+            <button class="submit-btn" type="submit" id="submitBtn">提交预约</button>
+        </form>
+        {% endif %}
+
+        <div class="contact-info">
+            或直接联系：<a href="tel:15564128008">155-6412-8008</a>（微信同号）
+        </div>
+    </div>
+</div>
+{% endblock %}

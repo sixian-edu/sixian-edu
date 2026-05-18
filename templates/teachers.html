@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}选择老师 · 思贤家教{% endblock %}
+{% block head %}
+<style>
+.page-title { text-align: center; padding: 40px 20px 20px; }
+.page-title h1 { font-size: 26px; margin-bottom: 6px; }
+.page-title p { font-size: 14px; color: #888; }
+.filter-area { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.filter-area input[type="radio"] { display: none; }
+.filter-bar { display: flex; gap: 8px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+.filter-bar label {
+    display: inline-block; padding: 8px 24px; border-radius: 20px; font-size: 14px;
+    cursor: pointer; transition: all 0.2s; background: #fff; color: #555;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06); user-select: none;
+}
+.filter-bar label:hover { background: #eef0f4; }
+#f-all:checked ~ .filter-bar label[for="f-all"],
+#f-primary:checked ~ .filter-bar label[for="f-primary"],
+#f-middle:checked ~ .filter-bar label[for="f-middle"],
+#f-high:checked ~ .filter-bar label[for="f-high"] { background: #1a1a2e; color: #fff; }
+.teacher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.teacher-card { display: none; flex-direction: column; background: #fff; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden; transition: box-shadow 0.2s; }
+.teacher-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+.teacher-card.placeholder { border: 2px dashed #e0e0e0; box-shadow: none; }
+.teacher-card.placeholder:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+#f-all:checked ~ .container .teacher-card { display: flex; }
+#f-primary:checked ~ .container .teacher-card.primary { display: flex; }
+#f-middle:checked ~ .container .teacher-card.middle { display: flex; }
+#f-high:checked ~ .container .teacher-card.high { display: flex; }
+.card-top { padding: 28px 24px 16px; text-align: center; position: relative; }
+.card-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #f0f0f0; margin: 0 auto 12px; display: block; }
+.avatar-placeholder {
+    width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 12px;
+    background: #eef0f4; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; color: #999; border: 3px solid #f0f0f0;
+}
+.card-name { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+.card-edu { font-size: 13px; color: #888; margin-bottom: 10px; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.card-tags .tag { font-size: 12px; background: #eef0f4; color: #555; padding: 3px 12px; border-radius: 14px; }
+.card-badges { position: absolute; top: 12px; right: 12px; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; max-width: 120px; }
+.badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+.badge-level { background: #1a1a2e; color: #fff; }
+.badge-coming { background: #f39c12; color: #fff; }
+.badge-special {
+    font-size: 11px; padding: 3px 12px; border-radius: 12px; font-weight: 700;
+    background: linear-gradient(90deg, #e67e22, #f39c12); color: #fff;
+    box-shadow: 0 2px 6px rgba(230,126,34,0.3);
+}
+.card-bottom { padding: 0 24px 24px; text-align: center; }
+.card-bottom .btn {
+    display: inline-block; background: #1a1a2e; color: #fff; padding: 10px 32px;
+    border-radius: 8px; font-size: 14px; text-decoration: none; font-weight: 600; transition: opacity 0.2s;
+}
+.card-bottom .btn:hover { opacity: 0.85; }
+.card-bottom .btn-placeholder { background: #b0b0b0; pointer-events: none; cursor: default; }
+.cta-banner { max-width: 960px; margin: 0 auto 40px; background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 100%); border-radius: 16px; padding: 28px 32px; text-align: center; margin-top: 40px; }
+.cta-banner p { color: #fff; font-size: 15px; margin-bottom: 16px; }
+.cta-banner .btn { display: inline-block; background: #fff; color: #1a1a2e; padding: 10px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+@media (max-width: 680px) {
+    .teacher-grid { grid-template-columns: 1fr; }
+    .page-title h1 { font-size: 22px; }
+    .filter-bar label { padding: 6px 18px; font-size: 13px; }
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="page-title">
+    <h1>选择老师</h1>
+    <p>按学段筛选，帮孩子找到最合适的老师</p>
+</div>
+
+<div class="filter-area">
+    <input type="radio" name="filter" id="f-all" checked>
+    <input type="radio" name="filter" id="f-primary">
+    <input type="radio" name="filter" id="f-middle">
+    <input type="radio" name="filter" id="f-high">
+
+    <div class="filter-bar">
+        <label for="f-all">全部老师</label>
+        <label for="f-primary">小学</label>
+        <label for="f-middle">初中</label>
+        <label for="f-high">高中</label>
+    </div>
+
+    <div class="container" style="padding-top: 0;">
+        <div class="teacher-grid">
+            {% for t in teachers %}
+            {% set grade_classes = t.grade_list()|join(" ") %}
+            <div class="teacher-card {{ grade_classes }}{% if t.is_placeholder %} placeholder{% endif %}">
+                <div class="card-top">
+                    {% if t.avatar %}
+                    <img class="card-avatar" src="/{{ t.avatar }}" alt="{{ t.name }}老师">
+                    {% else %}
+                    <div class="avatar-placeholder">{{ t.name[0] }}</div>
+                    {% endif %}
+                    <div class="card-name">{{ t.name }}{% if t.is_placeholder %} <span class="badge badge-coming">即将上线</span>{% endif %}</div>
+                    <div class="card-edu">{{ t.education }}{% if t.experience %} · {{ t.experience }}{% endif %}</div>
+                    <div class="card-tags">
+                        {% for s in t.subject_list() %}
+                        <span class="tag">{{ s }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="card-badges">
+                        {% if t.special_badge %}<span class="badge badge-special">{{ t.special_badge }}</span>{% endif %}
+                        {% for g in t.grade_list() %}
+                        <span class="badge badge-level">{{ {"primary":"小学","middle":"初中","high":"高中"}.get(g, g) }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    {% if not t.is_placeholder %}
+                    <a class="btn" href="/teachers/{{ t.slug }}">查看详情 →</a>
+                    {% else %}
+                    <a class="btn btn-placeholder" href="#">信息待完善</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="cta-banner">
+    <p>拿不准选哪位老师？先免费试听一节课</p>
+    <a class="btn" href="tel:15564128008">电话 155-6412-8008</a>
+</div>
+{% endblock %}
