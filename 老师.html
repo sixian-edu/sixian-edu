@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>选择老师 · 思贤家教</title>
     <link rel="stylesheet" href="css/style.css">
@@ -66,7 +66,14 @@
             border-radius: 8px; font-size: 14px; text-decoration: none; font-weight: 600; transition: opacity 0.2s;
         }
         .card-bottom .btn:hover { opacity: 0.85; }
-        .card-bottom .btn-placeholder { background: #b0b0b0; pointer-events: none; cursor: default; }
+        .card-bottom .btn-placeholder { background: #b0b0b0; }
+
+        /* ── 擅长标签 ── */
+        .badge-special {
+            font-size: 11px; padding: 3px 12px; border-radius: 12px; font-weight: 700;
+            background: linear-gradient(90deg, #e67e22, #f39c12); color: #fff;
+            box-shadow: 0 2px 6px rgba(230,126,34,0.3);
+        }
 
         .cta-banner { max-width: 960px; margin: 0 auto 40px; background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 100%); border-radius: 16px; padding: 28px 32px; text-align: center; }
         .cta-banner p { color: #fff; font-size: 15px; margin-bottom: 16px; }
@@ -87,6 +94,7 @@
     <a href="老师.html">选老师</a>
     <a href="预约试听.html">预约试听</a>
     <a href="算法助学.html">算法助学 <span class="nav-tag">免费体验</span></a>
+    <a href="真题.html">真题库</a>
     <a href="加入思贤.html">加入思贤</a>
     <a href="思贤公约.html">思贤公约</a>
 </div>
@@ -115,7 +123,7 @@
             <!-- ─── 刘老师 · 已上线 ─── -->
             <div class="teacher-card primary middle high">
                 <div class="card-top">
-                    <img class="card-avatar" src="images/001.jpg" alt="刘老师">
+                    <img class="card-avatar" src="images/liulaoshi.jpg" alt="刘老师">
                     <div class="card-name">刘老师</div>
                     <div class="card-edu">山东师范大学 毕业 · 教龄 4 年</div>
                     <div class="card-tags">
@@ -128,6 +136,7 @@
                         <span class="tag">考前冲刺</span>
                     </div>
                     <div class="card-badges">
+                        <span class="badge badge-special">数学 · 物理</span>
                         <span class="badge badge-level">小学</span>
                         <span class="badge badge-level">初中</span>
                         <span class="badge badge-level">高中</span>
@@ -141,7 +150,7 @@
             <!-- ─── 邸老师 · 英语 ─── -->
             <div class="teacher-card primary middle high">
                 <div class="card-top">
-                    <img class="card-avatar" src="images/di.jpg" alt="邸老师">
+                    <img class="card-avatar" src="images/dilaoshi.jpg" alt="邸老师">
                     <div class="card-name">邸老师</div>
                     <div class="card-edu">青岛大学 毕业 · 教龄 3 年</div>
                     <div class="card-tags">
@@ -153,6 +162,7 @@
                         <span class="tag">高中数学</span>
                     </div>
                     <div class="card-badges">
+                        <span class="badge badge-special">英语专项</span>
                         <span class="badge badge-level">小学</span>
                         <span class="badge badge-level">初中</span>
                         <span class="badge badge-level">高中</span>

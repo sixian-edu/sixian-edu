@@ -1,40 +1,38 @@
 # 思贤家教 · 商河本地上门辅导
 
-商河本地家教老师静态展示网站。
+商河本地家教网站。静态页面发布到 GitHub Pages，Flask 后端用于后台管理。
 
 ## 项目结构
 
 ```
 sixian-edu/
-├── images/               # 图片资源
-│   ├── 001.jpg           # 刘老师头像
-│   ├── di.jpg            # 邸老师头像
-│   ├── logo.jpg          # Logo（含"思贤教育"文字，需更换）
-│   ├── favicon.png
-│   ├── deco-1.webp       # 装饰图
-│   ├── deco-2.webp
-│   ├── deco-3.webp
-│   ├── deco-4.webp
-│   ├── deco-5.jpg
-│   ├── deco-6.jpg
-│   └── deco-7.jpg
-├── 老师信息/             # 老师详情页
-│   ├── 老师-刘老师.html  # 刘老师（已上线）
-│   ├── 老师-邸老师.html  # 邸老师（已上线）
-│   ├── 老师-张老师.html  # 占位 · 数学
-│   ├── 老师-王老师.html  # 占位 · 英语
-│   ├── 老师-李老师.html  # 占位 · 物理/化学
-│   ├── 老师-赵老师.html  # 占位 · 语文
-│   └── 老师-陈老师.html  # 占位 · 理科综合
-├── 思贤家教.html         # 主页
-├── 老师.html             # 选老师列表页
-├── 算法助学.html         # AI 错题分析介绍
-├── 加入思贤.html         # 合作联系
-├── 预约试听.html         # 预约试听
-├── 思贤公约.html         # 家教公约
-├── 算法助学-分享图.html  # 分享用海报
-├── 转发文案-算法助学.html# 转发用文案页
-├── index.html            # 根 URL 重定向
+├── server/                 # Flask 后端
+│   ├── app.py             # 主应用
+│   ├── models.py          # 数据库模型
+│   ├── config.py          # 配置
+│   ├── seed.py            # 数据填充脚本
+│   ├── requirements.txt   # Python 依赖
+│   ├── Dockerfile
+│   ├── .env               # 环境变量
+│   ├── templates/         # Jinja2 模板
+│   │   ├── index.html     # 首页模板
+│   │   ├── teachers.html  # 老师列表
+│   │   ├── admin/         # 后台管理模板
+│   │   └── ...
+│   └── instance/          # SQLite 数据库
+├── images/                # 图片资源
+│   ├── liulaoshi.jpg
+│   ├── dilaoshi.jpg
+│   └── ...
+├── 老师信息/              # 老师静态详情页
+├── index.html             # 根 URL 重定向
+├── 思贤家教.html          # 静态主页
+├── 老师.html              # 静态老师列表页
+├── 算法助学.html          # AI 错题分析
+├── 加入思贤.html          # 合作联系
+├── 预约试听.html          # 预约试听
+├── 思贤公约.html          # 家教公约
+├── 真题.html              # 历年真题
 ├── .claude/
 ├── .gitignore
 ├── CLAUDE.md
@@ -43,13 +41,8 @@ sixian-edu/
 
 ## 部署
 
-- 托管于 GitHub Pages（从 master 分支根目录自动部署）
-
-## 技术栈
-
-- 纯静态 HTML + CSS（无框架/无后端）
-- 无 JavaScript 依赖（表单用 onclick alert 模拟）
-- 无构建工具，直接浏览器打开即可运行
+- **静态站**: GitHub Pages（master 分支根目录自动部署）
+- **后端**: Flask 应用，本地或 Docker 运行
 
 ## 设计规范
 
