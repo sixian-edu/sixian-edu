@@ -387,7 +387,7 @@
         <h2>让错题成为进步的台阶</h2>
         <p>电子版 20 元，纸质版 30 元包邮 · 购买家教服务免费赠送</p>
         <div class="btn-group">
-            <a class="btn btn-light" href="tel:15564128008">电话咨询</a>
+            <a class="btn btn-light" onclick="openContactWall()" style="cursor:pointer">获取联系方式</a>
             <a class="btn btn-outline" href="老师.html">了解家教服务</a>
         </div>
     </div>
@@ -410,7 +410,7 @@
 </div>
 
 <div class="footer">
-    <p>思贤家教 · 济南市商河县 · 电话 155-6412-8008</p>
+    <p>思贤家教 · 济南市商河县 · <span class="contact-trigger" onclick="openContactWall()">获取联系方式</span></p>
 </div>
 
 <script>
@@ -598,5 +598,80 @@ updateChanceIndicator();
 </style>
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<style>.contact-trigger{color:#1a1a2e;text-decoration:underline;cursor:pointer}.contact-trigger:hover{opacity:.7}</style>
+<div class="share-overlay" id="contactOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="contactShareText"></p></div>
+    <button class="copy-btn" id="contactCopyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="contactCopyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="contactSharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📚 思贤家教——商河本地专业上门家教！优秀老师一对一辅导，量身定制学习计划，让孩子成绩稳步提升。快来了解～ ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('contactOverlay');
+  var shareTextEl = document.getElementById('contactShareText');
+  var copyBtn = document.getElementById('contactCopyBtn');
+  var copyHint = document.getElementById('contactCopyHint');
+  var sharedBtn = document.getElementById('contactSharedBtn');
+
+  window.openContactWall = function() {
+    if (window._contactTimeout) clearTimeout(window._contactTimeout);
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('active');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+  };
+
+  copyBtn.addEventListener('click', function() {
+    if (window._contactTimeout) clearTimeout(window._contactTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._contactTimeout = setTimeout(function() {
+        hasCopied = true;
+        sharedBtn.disabled = false;
+        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    overlay.classList.remove('active');
+    if (window._contactTimeout) clearTimeout(window._contactTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      overlay.classList.remove('active');
+      if (window._contactTimeout) clearTimeout(window._contactTimeout);
+    }
+  });
+})();
+</script>
 </body>
 </html>
