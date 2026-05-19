@@ -119,7 +119,7 @@
             .stats-row { gap: 24px; }
             .stat-item .num { font-size: 26px; }
         }
-        .share-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px}.share-overlay.active{display:flex}.share-modal{background:#fff;border-radius:20px;padding:36px 32px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:shareIn .3s ease}@keyframes shareIn{from{transform:scale(.9) translateY(20px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}.share-modal .share-icon{font-size:48px;margin-bottom:12px}.share-modal h3{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:8px}.share-modal .share-desc{font-size:14px;color:#666;margin-bottom:20px;line-height:1.7}.share-msg-box{background:#f8f9fc;border-radius:12px;padding:14px 16px;margin-bottom:16px;text-align:left;border:1px solid #eee}.share-msg-box p{font-size:13px;color:#555;line-height:1.8;margin:0}.copy-btn{width:100%;padding:12px;border:2px solid #1a1a2e;background:transparent;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:6px}.copy-btn:hover{background:#1a1a2e;color:#fff}.copy-btn.copied{background:#059669;border-color:#059669;color:#fff}.copy-hint{font-size:12px;color:#999;margin-bottom:20px}.shared-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1a1a2e,#0f3460);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.shared-btn:hover{opacity:.9}.shared-btn:disabled{opacity:.35;cursor:not-allowed}.contact-trigger{color:#1a1a2e;text-decoration:underline;cursor:pointer}.contact-trigger:hover{opacity:.7}
+        .paper-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px}.paper-overlay.active{display:flex}.paper-viewer{background:#fff;border-radius:20px;padding:36px 32px;max-width:92vw;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;animation:shareIn .3s ease}@media(min-width:768px){.paper-viewer{max-width:1000px}}.paper-close{position:absolute;top:12px;right:16px;font-size:28px;background:none;border:none;cursor:pointer;color:#999;padding:4px 8px;line-height:1}.paper-close:hover{color:#333}.share-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px}.share-overlay.active{display:flex}.share-modal{background:#fff;border-radius:20px;padding:36px 32px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:shareIn .3s ease}@keyframes shareIn{from{transform:scale(.9) translateY(20px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}.share-modal .share-icon{font-size:48px;margin-bottom:12px}.share-modal h3{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:8px}.share-modal .share-desc{font-size:14px;color:#666;margin-bottom:20px;line-height:1.7}.share-msg-box{background:#f8f9fc;border-radius:12px;padding:14px 16px;margin-bottom:16px;text-align:left;border:1px solid #eee}.share-msg-box p{font-size:13px;color:#555;line-height:1.8;margin:0}.copy-btn{width:100%;padding:12px;border:2px solid #1a1a2e;background:transparent;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:6px}.copy-btn:hover{background:#1a1a2e;color:#fff}.copy-btn.copied{background:#059669;border-color:#059669;color:#fff}.copy-hint{font-size:12px;color:#999;margin-bottom:20px}.shared-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1a1a2e,#0f3460);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.shared-btn:hover{opacity:.9}.shared-btn:disabled{opacity:.35;cursor:not-allowed}.contact-trigger{color:#1a1a2e;text-decoration:underline;cursor:pointer}.contact-trigger:hover{opacity:.7}
     </style>
 </head>
 <body>
@@ -170,16 +170,40 @@
         <button class="subject-btn" data-subject="政治">政治</button>
     </div>
 
-    <!-- ════ 中考真题 ════ -->
+        <!-- ════ 中考真题 ════ -->
     <div id="zhongkaoPapers">
         <div class="paper-grid">
+            <div class="paper-card" data-subject="语文">
+                <div class="paper-icon zhongkao">语</div>
+                <div class="paper-info">
+                    <div class="paper-title">中考语文模拟卷（一）</div>
+                    <div class="paper-meta"><span class="tag">模拟</span>2024</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="openPaper('images/practice-cn-full.pdf'); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="数学">
+                <div class="paper-icon zhongkao">数</div>
+                <div class="paper-info">
+                    <div class="paper-title">中考数学模拟卷（一）</div>
+                    <div class="paper-meta"><span class="tag">模拟</span>2024</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="openPaper('images/practice-math-full.pdf'); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="英语">
+                <div class="paper-icon zhongkao">英</div>
+                <div class="paper-info">
+                    <div class="paper-title">中考英语模拟卷（一）</div>
+                    <div class="paper-meta"><span class="tag">模拟</span>2024</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="openPaper('images/practice-eng-full.pdf'); return false;">查看</a></div>
+            </div>
             <div class="paper-card" data-subject="语文">
                 <div class="paper-icon zhongkao">语</div>
                 <div class="paper-info">
                     <div class="paper-title">2024 济南市中考 · 语文</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="数学">
                 <div class="paper-icon zhongkao">数</div>
@@ -187,7 +211,7 @@
                     <div class="paper-title">2024 济南市中考 · 数学</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="英语">
                 <div class="paper-icon zhongkao">英</div>
@@ -195,7 +219,7 @@
                     <div class="paper-title">2024 济南市中考 · 英语</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="物理">
                 <div class="paper-icon zhongkao">物</div>
@@ -203,7 +227,7 @@
                     <div class="paper-title">2024 济南市中考 · 物理</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="化学">
                 <div class="paper-icon zhongkao">化</div>
@@ -211,7 +235,7 @@
                     <div class="paper-title">2024 济南市中考 · 化学</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="历史">
                 <div class="paper-icon zhongkao">史</div>
@@ -219,15 +243,15 @@
                     <div class="paper-title">2024 济南市中考 · 历史</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="政治">
                 <div class="paper-icon zhongkao">政</div>
                 <div class="paper-info">
-                    <div class="paper-title">2024 济南市中考 · 道德与法治</div>
+                    <div class="paper-title">2024 济南市中考 · 政治</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="地理">
                 <div class="paper-icon zhongkao">地</div>
@@ -235,7 +259,7 @@
                     <div class="paper-title">2024 济南市中考 · 地理</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="生物">
                 <div class="paper-icon zhongkao">生</div>
@@ -243,7 +267,7 @@
                     <div class="paper-title">2024 济南市中考 · 生物</div>
                     <div class="paper-meta"><span class="tag">中考</span>2024 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="数学">
                 <div class="paper-icon zhongkao">数</div>
@@ -251,7 +275,7 @@
                     <div class="paper-title">2023 济南市中考 · 数学</div>
                     <div class="paper-meta"><span class="tag">中考</span>2023 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="语文">
                 <div class="paper-icon zhongkao">语</div>
@@ -259,7 +283,7 @@
                     <div class="paper-title">2023 济南市中考 · 语文</div>
                     <div class="paper-meta"><span class="tag">中考</span>2023 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="英语">
                 <div class="paper-icon zhongkao">英</div>
@@ -267,7 +291,7 @@
                     <div class="paper-title">2023 济南市中考 · 英语</div>
                     <div class="paper-meta"><span class="tag">中考</span>2023 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="物理">
                 <div class="paper-icon zhongkao">物</div>
@@ -275,7 +299,7 @@
                     <div class="paper-title">2023 济南市中考 · 物理</div>
                     <div class="paper-meta"><span class="tag">中考</span>2023 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="化学">
                 <div class="paper-icon zhongkao">化</div>
@@ -283,15 +307,7 @@
                     <div class="paper-title">2023 济南市中考 · 化学</div>
                     <div class="paper-meta"><span class="tag">中考</span>2023 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
-            </div>
-            <div class="paper-card" data-subject="数学">
-                <div class="paper-icon zhongkao">数</div>
-                <div class="paper-info">
-                    <div class="paper-title">2022 济南市中考 · 数学</div>
-                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
-                </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="语文">
                 <div class="paper-icon zhongkao">语</div>
@@ -299,7 +315,15 @@
                     <div class="paper-title">2022 济南市中考 · 语文</div>
                     <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="数学">
+                <div class="paper-icon zhongkao">数</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 数学</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="英语">
                 <div class="paper-icon zhongkao">英</div>
@@ -307,7 +331,63 @@
                     <div class="paper-title">2022 济南市中考 · 英语</div>
                     <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="物理">
+                <div class="paper-icon zhongkao">物</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 物理</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="化学">
+                <div class="paper-icon zhongkao">化</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 化学</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="历史">
+                <div class="paper-icon zhongkao">史</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 历史</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="政治">
+                <div class="paper-icon zhongkao">政</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 政治</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="地理">
+                <div class="paper-icon zhongkao">地</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 地理</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="生物">
+                <div class="paper-icon zhongkao">生</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 济南市中考 · 生物</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2022 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="语文">
+                <div class="paper-icon zhongkao">语</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 语文</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="数学">
                 <div class="paper-icon zhongkao">数</div>
@@ -315,9 +395,106 @@
                     <div class="paper-title">2021 济南市中考 · 数学</div>
                     <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="英语">
+                <div class="paper-icon zhongkao">英</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 英语</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="物理">
+                <div class="paper-icon zhongkao">物</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 物理</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="化学">
+                <div class="paper-icon zhongkao">化</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 化学</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="历史">
+                <div class="paper-icon zhongkao">史</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 历史</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="政治">
+                <div class="paper-icon zhongkao">政</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 政治</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="地理">
+                <div class="paper-icon zhongkao">地</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 地理</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="生物">
+                <div class="paper-icon zhongkao">生</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 济南市中考 · 生物</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2021 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="语文">
+                <div class="paper-icon zhongkao">语</div>
+                <div class="paper-info">
+                    <div class="paper-title">2020 济南市中考 · 语文</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2020 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="数学">
+                <div class="paper-icon zhongkao">数</div>
+                <div class="paper-info">
+                    <div class="paper-title">2020 济南市中考 · 数学</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2020 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="英语">
+                <div class="paper-icon zhongkao">英</div>
+                <div class="paper-info">
+                    <div class="paper-title">2020 济南市中考 · 英语</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2020 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="物理">
+                <div class="paper-icon zhongkao">物</div>
+                <div class="paper-info">
+                    <div class="paper-title">2020 济南市中考 · 物理</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2020 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="化学">
+                <div class="paper-icon zhongkao">化</div>
+                <div class="paper-info">
+                    <div class="paper-title">2020 济南市中考 · 化学</div>
+                    <div class="paper-meta"><span class="tag">中考</span>2020 · 济南</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
         </div>
+
         <div class="empty-state" id="zhongkaoEmpty">
             <div class="icon">📭</div>
             <p>该学科暂无中考真题</p>
@@ -333,7 +510,7 @@
                     <div class="paper-title">2024 全国新课标Ⅰ卷 · 语文</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="数学">
                 <div class="paper-icon gaokao">数</div>
@@ -341,7 +518,7 @@
                     <div class="paper-title">2024 全国新课标Ⅰ卷 · 数学</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="英语">
                 <div class="paper-icon gaokao">英</div>
@@ -349,7 +526,7 @@
                     <div class="paper-title">2024 全国新课标Ⅰ卷 · 英语</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="物理">
                 <div class="paper-icon gaokao">物</div>
@@ -357,7 +534,7 @@
                     <div class="paper-title">2024 山东省高考 · 物理</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="化学">
                 <div class="paper-icon gaokao">化</div>
@@ -365,7 +542,7 @@
                     <div class="paper-title">2024 山东省高考 · 化学</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="生物">
                 <div class="paper-icon gaokao">生</div>
@@ -373,7 +550,7 @@
                     <div class="paper-title">2024 山东省高考 · 生物</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="历史">
                 <div class="paper-icon gaokao">史</div>
@@ -381,7 +558,7 @@
                     <div class="paper-title">2024 山东省高考 · 历史</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="地理">
                 <div class="paper-icon gaokao">地</div>
@@ -389,7 +566,7 @@
                     <div class="paper-title">2024 山东省高考 · 地理</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="政治">
                 <div class="paper-icon gaokao">政</div>
@@ -397,7 +574,7 @@
                     <div class="paper-title">2024 山东省高考 · 政治</div>
                     <div class="paper-meta"><span class="tag">高考</span>2024 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="数学">
                 <div class="paper-icon gaokao">数</div>
@@ -405,7 +582,7 @@
                     <div class="paper-title">2023 全国新课标Ⅰ卷 · 数学</div>
                     <div class="paper-meta"><span class="tag">高考</span>2023 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="语文">
                 <div class="paper-icon gaokao">语</div>
@@ -413,7 +590,7 @@
                     <div class="paper-title">2023 全国新课标Ⅰ卷 · 语文</div>
                     <div class="paper-meta"><span class="tag">高考</span>2023 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="英语">
                 <div class="paper-icon gaokao">英</div>
@@ -421,7 +598,7 @@
                     <div class="paper-title">2023 全国新课标Ⅰ卷 · 英语</div>
                     <div class="paper-meta"><span class="tag">高考</span>2023 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="物理">
                 <div class="paper-icon gaokao">物</div>
@@ -429,7 +606,7 @@
                     <div class="paper-title">2023 山东省高考 · 物理</div>
                     <div class="paper-meta"><span class="tag">高考</span>2023 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="化学">
                 <div class="paper-icon gaokao">化</div>
@@ -437,7 +614,39 @@
                     <div class="paper-title">2023 山东省高考 · 化学</div>
                     <div class="paper-meta"><span class="tag">高考</span>2023 · 山东</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="生物">
+                <div class="paper-icon gaokao">生</div>
+                <div class="paper-info">
+                    <div class="paper-title">2023 山东省高考 · 生物</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2023 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="历史">
+                <div class="paper-icon gaokao">史</div>
+                <div class="paper-info">
+                    <div class="paper-title">2023 山东省高考 · 历史</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2023 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="地理">
+                <div class="paper-icon gaokao">地</div>
+                <div class="paper-info">
+                    <div class="paper-title">2023 山东省高考 · 地理</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2023 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="政治">
+                <div class="paper-icon gaokao">政</div>
+                <div class="paper-info">
+                    <div class="paper-title">2023 山东省高考 · 政治</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2023 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
             <div class="paper-card" data-subject="数学">
                 <div class="paper-icon gaokao">数</div>
@@ -445,9 +654,146 @@
                     <div class="paper-title">2022 全国新课标Ⅰ卷 · 数学</div>
                     <div class="paper-meta"><span class="tag">高考</span>2022 · 新课标Ⅰ</div>
                 </div>
-                <div class="paper-action"><a href="#" onclick="alert('文件准备中，敬请期待'); return false;" class="disabled">查看</a></div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="语文">
+                <div class="paper-icon gaokao">语</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 全国新课标Ⅰ卷 · 语文</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 新课标Ⅰ</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="英语">
+                <div class="paper-icon gaokao">英</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 全国新课标Ⅰ卷 · 英语</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 新课标Ⅰ</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="物理">
+                <div class="paper-icon gaokao">物</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 山东省高考 · 物理</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="化学">
+                <div class="paper-icon gaokao">化</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 山东省高考 · 化学</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="生物">
+                <div class="paper-icon gaokao">生</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 山东省高考 · 生物</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="历史">
+                <div class="paper-icon gaokao">史</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 山东省高考 · 历史</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="地理">
+                <div class="paper-icon gaokao">地</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 山东省高考 · 地理</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="政治">
+                <div class="paper-icon gaokao">政</div>
+                <div class="paper-info">
+                    <div class="paper-title">2022 山东省高考 · 政治</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2022 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="数学">
+                <div class="paper-icon gaokao">数</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 全国新课标Ⅰ卷 · 数学</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 新课标Ⅰ</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="语文">
+                <div class="paper-icon gaokao">语</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 全国新课标Ⅰ卷 · 语文</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 新课标Ⅰ</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="英语">
+                <div class="paper-icon gaokao">英</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 全国新课标Ⅰ卷 · 英语</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 新课标Ⅰ</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="物理">
+                <div class="paper-icon gaokao">物</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 山东省高考 · 物理</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="化学">
+                <div class="paper-icon gaokao">化</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 山东省高考 · 化学</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="生物">
+                <div class="paper-icon gaokao">生</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 山东省高考 · 生物</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="历史">
+                <div class="paper-icon gaokao">史</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 山东省高考 · 历史</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="地理">
+                <div class="paper-icon gaokao">地</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 山东省高考 · 地理</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
+            </div>
+            <div class="paper-card" data-subject="政治">
+                <div class="paper-icon gaokao">政</div>
+                <div class="paper-info">
+                    <div class="paper-title">2021 山东省高考 · 政治</div>
+                    <div class="paper-meta"><span class="tag">高考</span>2021 · 山东</div>
+                </div>
+                <div class="paper-action"><a href="#" onclick="paywall(); return false;">查看</a></div>
             </div>
         </div>
+
         <div class="empty-state" id="gaokaoEmpty">
             <div class="icon">📭</div>
             <p>该学科暂无高考真题</p>
@@ -527,6 +873,60 @@
 </style>
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<!-- ── 付费解锁弹窗 ── -->
+<div class="paper-overlay" id="paywallOverlay" onclick="if(event.target===this)closePaywall()">
+    <div class="paper-viewer" style="max-width:440px;text-align:center;padding:40px 32px">
+        <button class="paper-close" onclick="closePaywall()">×</button>
+        <div style="font-size:48px;margin-bottom:12px">🔒</div>
+        <h3 style="font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:6px">付费解锁</h3>
+        <p style="font-size:14px;color:#666;margin-bottom:8px;line-height:1.7">此资料需付费购买</p>
+        <p style="font-size:13px;color:#999;margin-bottom:24px">联系老师咨询价格 · 微信发卷</p>
+        <button class="shared-btn" onclick="closePaywall();openShareWall()" style="margin-bottom:8px">📱 获取老师微信</button>
+        <p style="font-size:12px;color:#bbb">先获取联系方式 → 加微信咨询购买</p>
+    </div>
+</div>
+
+<!-- ── 试卷预览弹窗 ── -->
+<div class="paper-overlay" id="paperOverlay" onclick="if(event.target===this)closePaper()">
+    <div class="paper-viewer">
+        <button class="paper-close" onclick="closePaper()">×</button>
+        <img id="paperImage" src="" alt="试卷预览" style="display:none">
+        <iframe id="paperPdf" src="" style="display:none;width:100%;height:90vh;border:none;border-radius:8px"></iframe>
+    </div>
+</div>
+
+<script>
+function paywall() {
+    document.getElementById('paywallOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closePaywall() {
+    document.getElementById('paywallOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+function openPaper(src) {
+    var isPdf = src.toLowerCase().endsWith('.pdf');
+    document.getElementById('paperImage').style.display = isPdf ? 'none' : '';
+    document.getElementById('paperPdf').style.display = isPdf ? '' : 'none';
+    if (isPdf) {
+        document.getElementById('paperPdf').src = src;
+    } else {
+        document.getElementById('paperImage').src = src;
+    }
+    document.getElementById('paperOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closePaper() {
+    document.getElementById('paperOverlay').classList.remove('active');
+    document.getElementById('paperPdf').src = '';
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { closePaywall(); closePaper(); }
+});
+</script>
+
 <div class="share-overlay" id="shareOverlay">
   <div class="share-modal">
     <div class="share-icon">🔗</div>
