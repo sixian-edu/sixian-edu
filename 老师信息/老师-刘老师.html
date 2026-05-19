@@ -201,7 +201,16 @@
   var copyHint = document.getElementById('copyHint');
   var sharedBtn = document.getElementById('sharedBtn');
 
+  // 已分享过则直接显示联系方式
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  }
+
   window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
     if (window._shareTimeout) clearTimeout(window._shareTimeout);
     shareTextEl.textContent = shareTxt;
     overlay.classList.add('active');
@@ -210,12 +219,23 @@
     copyBtn.textContent = '📋 复制分享文案';
     copyBtn.classList.remove('copied');
     copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+
+    // 离开后再回来：检查之前是否复制过
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) {
+      hasCopied = true;
+      sharedBtn.disabled = false;
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+    }
   };
 
   copyBtn.addEventListener('click', function() {
     if (window._shareTimeout) clearTimeout(window._shareTimeout);
     var text = shareTextEl.textContent;
     function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
       copyBtn.textContent = '✅ 已复制';
       copyBtn.classList.add('copied');
       copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
@@ -237,6 +257,7 @@
 
   sharedBtn.addEventListener('click', function() {
     if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
     overlay.classList.remove('active');
     if (window._shareTimeout) clearTimeout(window._shareTimeout);
     var triggers = document.querySelectorAll('.contact-trigger');
