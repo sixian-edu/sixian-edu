@@ -247,9 +247,13 @@
                     <div class="carousel-slide"><img src="images/deco-5.jpg" alt="思贤家教"></div>
                     <div class="carousel-slide"><img src="images/deco-6.jpg" alt="思贤家教"></div>
                     <div class="carousel-slide"><img src="images/deco-7.jpg" alt="思贤家教"></div>
+                    <div class="carousel-slide"><img src="images/deco-8.jpg" alt="思贤家教"></div>
+                    <div class="carousel-slide"><img src="images/deco-9.jpg" alt="思贤家教"></div>
                 </div>
                 <div class="carousel-dots">
                     <span class="active"></span>
+                    <span></span>
+                    <span></span>
                     <span></span>
                     <span></span>
                 </div>
@@ -388,10 +392,11 @@
         var ty = cw * 0.045;
 
         var pos = [
-            { tx: 0,        ty: 0,   sc: 1,    zi: 4, op: 1 },     // offset 0: center
-            { tx: gap,      ty: ty,  sc: 0.78, zi: 3, op: 0.65 },  // offset 1: right
-            { tx: -gap,     ty: ty,  sc: 0.78, zi: 2, op: 0.65 },  // offset 2: left
-            { tx: -gap,     ty: ty,  sc: 0.78, zi: 2, op: 0.65 },  // offset 3: left (unused)
+            { tx: 0,        ty: 0,   sc: 1,    zi: 10, op: 1 },     // 0: center
+            { tx: gap,      ty: ty,  sc: 0.78, zi: 6,  op: 0.65 },  // 1: right
+            { tx: -gap,     ty: ty,  sc: 0.78, zi: 5,  op: 0.65 },  // 2: left
+            { tx: gap*1.7,  ty: ty*2,sc: 0.5,  zi: 4,  op: 0 },     // 3: far right (hidden)
+            { tx: -gap*1.7, ty: ty*2,sc: 0.5,  zi: 3,  op: 0 },     // 4: far left (hidden)
         ];
 
         for (var i = 0; i < num; i++) {
