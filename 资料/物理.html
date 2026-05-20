@@ -15,27 +15,107 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .tab-btn{padding:10px 28px;font-size:15px;font-weight:600;cursor:pointer;border:none;background:#fff;color:#888;transition:all .2s;border-radius:8px 8px 0 0;margin-bottom:-2px}
 .tab-btn:hover{color:#c0392b}
 .tab-btn.active{background:#c0392b;color:#fff}
-.body{max-width:1000px;margin:0 auto;background:#fff;min-height:500px;padding:24px}
+.body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none}
 .pane.active{display:block}
-.load{text-align:center;padding:60px 20px;color:#999;font-size:14px}
+/* Model cards */
+.cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #c0392b}
+.cd .t{font-weight:700;font-size:14px;color:#c0392b;margin-bottom:4px}
+.cd .d{font-size:13px;color:#555;line-height:1.7}
+.tg{display:inline-block;font-size:11px;background:#fef0ef;color:#c0392b;padding:1px 8px;border-radius:4px;margin:2px}
+/* Knowledge styles */
+.kb{max-width:800px;margin:0 auto}
+.kb h2{font-size:20px;margin:28px 0 12px;padding-left:12px;border-left:4px solid #e74c3c;color:#2d3436}
+.kb h3{font-size:16px;margin:16px 0 8px;color:#444}
+.kb p{margin-bottom:8px;text-indent:2em;font-size:14px;line-height:1.9;color:#2d3436}
+.kb ul{padding-left:2em;margin-bottom:10px}
+.kb .hl{color:#e74c3c;font-weight:700}
+.kb .fm{text-align:center;padding:6px 16px;margin:8px 0;background:#f9f9f9;border-radius:6px;font-size:15px;font-weight:600}
+.kb .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.kb .g2 div{background:#fafafa;padding:10px 14px;border-radius:8px;border-left:3px solid #e74c3c}
+.kb .g2 div .t{font-weight:700;font-size:13px;color:#e74c3c}
+.kb .g2 div .d{font-size:13px;color:#555;margin-top:2px}
+@media(max-width:600px){.kb .g2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中物理</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model')">⚡ 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge')">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">⚡ 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
-  <div class="pane active" id="tabModel"><div class="load">加载中...</div></div>
-  <div class="pane" id="tabKnowledge"><div class="load">加载中...</div></div>
+
+<div class="pane active" id="tabModel">
+<div class="cd"><div class="t">🔹 受力分析模型</div><div class="d">步骤：<span class="tg">一重二弹三摩擦</span>。先画重力（竖直向下），再画支持力/拉力（接触面法线方向），最后画摩擦力（与相对运动方向相反）。匀速直线运动或静止时合力为零。</div></div>
+<div class="cd"><div class="t">🔹 压强模型</div><div class="d"><b>固体</b>：p=F/S。<b>液体</b>：p=ρgh（同液同深各处相等）。<b>大气压</b>：托里拆利实验 p₀=1.013×10⁵Pa，海拔越高气压越小。</div></div>
+<div class="cd"><div class="t">🔹 浮力模型</div><div class="d">阿基米德原理 F浮=ρ液gV排。<span class="tg">F浮&gt;G</span>上浮(漂浮F浮=G)；<span class="tg">F浮=G</span>悬浮；<span class="tg">F浮&lt;G</span>下沉。</div></div>
+<div class="cd"><div class="t">🔹 简单机械模型</div><div class="d"><b>杠杆</b>：F₁L₁=F₂L₂。<b>滑轮组</b>：F=G总/n，s=nh。<b>斜面</b>：FL=Gh，越缓越省力。</div></div>
+<div class="cd"><div class="t">🔹 功与机械能</div><div class="d">W=Fs。P=W/t=Fv。η=W有/W总×100%。<b>机械能守恒</b>：动能和势能相互转化（滚摆、单摆）。</div></div>
+<div class="cd"><div class="t">🔹 电路分析模型</div><div class="d">欧姆定律 I=U/R。<span class="tg">串联</span>I相等，U分压 U₁/U₂=R₁/R₂。<span class="tg">并联</span>U相等，I分流 I₁/I₂=R₂/R₁。电功率 P=UI=I²R=U²/R。</div></div>
+<div class="cd"><div class="t">🔹 伏安法测电阻/功率</div><div class="d">R=U/I，P=UI。故障：<b>断路</b>→电流表无示数、电压表有示数；<b>短路</b>→电流表有示数、电压表无示数。</div></div>
+<div class="cd"><div class="t">🔹 光学模型</div><div class="d"><b>光的反射</b>：入射角=反射角。平面镜等大等距正立虚像。<b>凸透镜成像</b>：u&gt;2f 倒立缩小实像；f&lt;u&lt;2f 倒立放大实像；u&lt;f 正立放大虚像。</div></div>
+</div>
+
+<div class="pane" id="tabKnowledge">
+<div class="kb">
+<h2>一、机械运动</h2>
+<p><span class="hl">长度与时间测量</span>：长度单位 m，刻度尺估读到分度值下一位。时间单位 s。</p>
+<p><span class="hl">速度</span>：v=s/t。1 m/s=3.6 km/h。匀速直线运动：速度不变，路线为直线。</p>
+<h2>二、声现象</h2>
+<p>声音由振动产生，真空不能传声。15℃空气中声速 340 m/s。</p>
+<p><b>声音特性</b>：音调（频率）、响度（振幅）、音色（发声体本身决定）。</p>
+<p>超声波（&gt;20000Hz）：B超、声呐。次声波（&lt;20Hz）：地震预警。</p>
+<h2>三、光现象</h2>
+<p>光在同种均匀介质中沿直线传播（影子、日食、小孔成像）。c=3×10⁸ m/s。</p>
+<p><b>光的反射定律</b>：三线共面、两线分居、两角相等。镜面反射与漫反射都遵循。</p>
+<p><b>平面镜成像</b>：等大、等距、正立、虚像。</p>
+<p><b>光的折射</b>：空气→水折射角小于入射角。池水变浅。</p>
+<p><b>光的色散</b>：白→红橙黄绿蓝靛紫。光的三原色：红、绿、蓝。</p>
+<h2>四、透镜及其应用</h2>
+<p>凸透镜对光有会聚作用，凹透镜有发散作用。</p>
+<p><b>凸透镜成像规律</b>：</p>
+<div class="g2">
+<div><span class="t">u&gt;2f</span><div class="d">f&lt;v&lt;2f，倒立缩小实像——照相机</div></div>
+<div><span class="t">u=2f</span><div class="d">v=2f，倒立等大实像——测焦距</div></div>
+<div><span class="t">f&lt;u&lt;2f</span><div class="d">v&gt;2f，倒立放大实像——投影仪</div></div>
+<div><span class="t">u=f</span><div class="d">不成像——平行光源</div></div>
+<div><span class="t">u&lt;f</span><div class="d">正立放大虚像——放大镜</div></div>
+</div>
+<p>近视眼配凹透镜，远视眼配凸透镜。</p>
+<h2>五、质量与密度</h2>
+<p>质量是物体属性，不随形状、状态、位置变化。ρ=m/V。1 g/cm³=10³ kg/m³。</p>
+<h2>六、力与运动</h2>
+<p>牛顿第一定律（惯性定律）：一切物体在不受力时总保持静止或匀速直线运动。</p>
+<p><b>二力平衡</b>：同体、等大、反向、共线。相互作用力：不同体。</p>
+<p><b>重力</b>：G=mg（g≈9.8 N/kg）。<b>摩擦力</b>：增大压力/粗糙度增大摩擦。</p>
+<h2>七、压强与浮力</h2>
+<p>固体 p=F/S。液体 p=ρgh。大气压 p₀=1.013×10⁵Pa（托里拆利实验）。</p>
+<p>阿基米德原理 F浮=ρ液gV排。浮沉：ρ液&gt;ρ物上浮；ρ液=ρ物悬浮；ρ液&lt;ρ物下沉。</p>
+<h2>八、简单机械</h2>
+<p>杠杆 F₁L₁=F₂L₂。滑轮组 F=G/n，s=nh。机械效率 η=W有/W总。</p>
+<h2>九、功和机械能</h2>
+<p>W=Fs。P=W/t=Fv。动能 Ek=½mv²（速度越大、质量越大动能越大）。重力势能（越高越重越大）。弹性势能（弹性形变越大越大）。</p>
+<h2>十、内能</h2>
+<p>做功和热传递可以改变内能。Q=cmΔt。热值 q=Q/m。热机效率 η=W/Q。</p>
+<h2>十一、电路</h2>
+<p>串联 I=I₁=I₂，U=U₁+U₂。并联 I=I₁+I₂，U=U₁=U₂。欧姆定律 I=U/R。</p>
+<p><b>电功率</b>：P=UI=W/t。焦耳定律 Q=I²Rt。</p>
+<h2>十二、电与磁</h2>
+<p>磁极：同名相斥异名相吸。地磁：N极在地理南极附近。</p>
+<p>奥斯特实验：通电导线周围存在磁场（电生磁）。电磁铁：电流越大、匝数越多磁性越强。</p>
+<p>电动机：通电线圈在磁场中受力转动——电能→机械能。发电机：电磁感应——机械能→电能。</p>
+</div>
+</div>
+
 </div>
 <script>
-var loaded={};
-function switchTab(n){document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});event.target.classList.add('active');document.getElementById('tab'+n.charAt(0).toUpperCase()+n.slice(1)).classList.add('active');if(!loaded[n]){loaded[n]=true;loadTab(n)}}
-function loadTab(n){var m={model:{u:'物理模型.html',i:'tabModel'},knowledge:{u:'初中物理知识点大全.html',i:'tabKnowledge'}};var t=m[n];if(!t)return;fetch(t.u).then(function(r){return r.text()}).then(function(h){var b=h.match(/<body[^>]*>([\s\S]*?)<\/body>/i);if(b)document.getElementById(t.i).innerHTML=b[1]}).catch(function(){document.getElementById(t.i).innerHTML='<div style="text-align:center;padding:40px;color:#999">加载失败</div>'})}
-loadTab('model');
+function switchTab(name, btn){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
+  btn.classList.add('active');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
 </script>
 </body>
 </html>

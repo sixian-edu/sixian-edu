@@ -15,27 +15,74 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .tab-btn{padding:10px 28px;font-size:15px;font-weight:600;cursor:pointer;border:none;background:#fff;color:#888;transition:all .2s;border-radius:8px 8px 0 0;margin-bottom:-2px}
 .tab-btn:hover{color:#27ae60}
 .tab-btn.active{background:#27ae60;color:#fff}
-.body{max-width:1000px;margin:0 auto;background:#fff;min-height:500px;padding:24px}
+.body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none}
 .pane.active{display:block}
-.load{text-align:center;padding:60px 20px;color:#999;font-size:14px}
+.cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
+.cd .t{font-weight:700;font-size:14px;color:#27ae60;margin-bottom:4px}
+.cd .d{font-size:13px;color:#555;line-height:1.7}
+.tg{display:inline-block;font-size:11px;background:#edf7f0;color:#27ae60;padding:1px 8px;border-radius:4px;margin:2px}
+.kb{max-width:800px;margin:0 auto}
+.kb h2{font-size:20px;margin:28px 0 12px;padding-left:12px;border-left:4px solid #e74c3c;color:#2d3436}
+.kb h3{font-size:16px;margin:16px 0 8px;color:#444}
+.kb p{margin-bottom:8px;text-indent:2em;font-size:14px;line-height:1.9}
+.kb .hl{color:#e74c3c;font-weight:700}
+.kb ul{padding-left:2em;margin-bottom:10px}
+@media(max-width:600px){.kb .g2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中生物</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model')">🧬 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge')">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">🧬 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
-  <div class="pane active" id="tabModel"><div class="load">加载中...</div></div>
-  <div class="pane" id="tabKnowledge"><div class="load">加载中...</div></div>
+
+<div class="pane active" id="tabModel">
+<div class="cd"><div class="t">🔹 显微镜使用模型</div><div class="d">步骤：取镜→对光→放玻片→调粗准焦→调细准焦→观察。呈倒像，放大倍数=目镜×物镜。倍数越大视野越暗。</div></div>
+<div class="cd"><div class="t">🔹 细胞结构模型</div><div class="d">植物特有：<span class="tg">细胞壁</span>（支持保护）、<span class="tg">叶绿体</span>（光合作用）、<span class="tg">液泡</span>（储存物质）。细胞核含染色体（DNA+蛋白质），是遗传信息库。</div></div>
+<div class="cd"><div class="t">🔹 光合与呼吸模型</div><div class="d">光合：CO₂+H₂O→(光能/叶绿体)→有机物+O₂。呼吸：有机物+O₂→CO₂+H₂O+能量。白天光合&gt;呼吸积累有机物，晚上只呼吸。</div></div>
+<div class="cd"><div class="t">🔹 遗传模型</div><div class="d">基因控制性状。显性A×隐性a→子代Aa。Aa×Aa→AA:Aa:aa=1:2:1（显性:隐性=3:1）。女性XX，男性XY，生男生女各50%。</div></div>
+<div class="cd"><div class="t">🔹 生态系统模型</div><div class="d">非生物+生物（生产者→消费者→分解者）。能量单向流动逐级递减（10%-20%）。碳循环：CO₂→光合→有机物→呼吸/燃烧→CO₂。</div></div>
+<div class="cd"><div class="t">🔹 人体生理模型</div><div class="d">消化：口腔→胃→小肠（主要吸收）。循环：体循环（左心室→全身→右心房），肺循环（右心室→肺→左心房）。尿液：肾小球滤过→肾小管重吸收。反射弧：感受器→传入→中枢→传出→效应器。</div></div>
+</div>
+
+<div class="pane" id="tabKnowledge">
+<div class="kb">
+<h2>一、认识生物</h2>
+<p><b>生物特征</b>：需要营养、能呼吸、排出废物、对外界有反应、能繁殖、有遗传变异、除病毒外由细胞构成。</p>
+<h2>二、细胞</h2>
+<p>细胞是生命活动的基本单位。植物细胞：细胞壁、细胞膜、细胞质、细胞核、液泡、叶绿体。动物细胞无细胞壁、液泡、叶绿体。</p>
+<p>细胞分裂：一个变两个，遗传物质先复制再均分。细胞分化：形成不同组织。</p>
+<h2>三、生物圈中的绿色植物</h2>
+<p>藻类（无根茎叶分化）、苔藓（假根、有茎叶）、蕨类（有根茎叶、孢子繁殖）、种子植物（裸子+被子）。</p>
+<p>光合作用：叶绿体，产物有机物+O₂。呼吸作用：线粒体，分解有机物释放能量。</p>
+<p>蒸腾作用：气孔散失水分，促进吸水和无机盐运输。</p>
+<h2>四、生物圈中的人</h2>
+<p>消化系统：口腔→咽→食道→胃→小肠→大肠→肛门。小肠是主要吸收器官。</p>
+<p>呼吸系统：鼻→咽→喉→气管→支气管→肺。肺泡是气体交换场所。</p>
+<p>循环系统：心脏（左心室壁最厚）→血管（动脉、静脉、毛细血管）→血液（红细胞运输氧、白细胞防御、血小板止血）。</p>
+<p>泌尿系统：肾脏（肾单位→肾小球滤过→肾小管重吸收）→输尿管→膀胱→尿道。</p>
+<p>神经调节：反射弧。条件反射（后天学习）与非条件反射（先天）。</p>
+<h2>五、生物圈中的其他生物</h2>
+<p>无脊椎动物（腔肠、扁形、线形、环节、软体、节肢）和脊椎动物（鱼、两栖、爬行、鸟、哺乳）。</p>
+<p>细菌：无成形细胞核（原核生物），分裂生殖。真菌：有细胞核，孢子生殖。病毒：无细胞结构，寄生。</p>
+<h2>六、遗传与进化</h2>
+<p>相对性状：同种生物同一性状的不同表现。基因控制性状，显性基因（A）和隐性基因（a）。</p>
+<p>人类基因组：23对染色体（22对常染色体+1对性染色体）。</p>
+<p>自然选择：过度繁殖→生存斗争→遗传变异→适者生存。自然选择决定生物进化方向。</p>
+</div>
+</div>
+
 </div>
 <script>
-var loaded={};
-function switchTab(n){document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});event.target.classList.add('active');document.getElementById('tab'+n.charAt(0).toUpperCase()+n.slice(1)).classList.add('active');if(!loaded[n]){loaded[n]=true;loadTab(n)}}
-function loadTab(n){var m={model:{u:'生物模型.html',i:'tabModel'},knowledge:{u:'初中生物知识点大全.html',i:'tabKnowledge'}};var t=m[n];if(!t)return;fetch(t.u).then(function(r){return r.text()}).then(function(h){var b=h.match(/<body[^>]*>([\s\S]*?)<\/body>/i);if(b)document.getElementById(t.i).innerHTML=b[1]}).catch(function(){document.getElementById(t.i).innerHTML='<div style="text-align:center;padding:40px;color:#999">加载失败</div>'})}
-loadTab('model');
+function switchTab(name, btn){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
+  btn.classList.add('active');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
 </script>
 </body>
 </html>
