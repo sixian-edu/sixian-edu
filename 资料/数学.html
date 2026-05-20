@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中数学 · 思贤家教</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
+.page-head{max-width:1000px;margin:0 auto;padding:20px 20px 0}
+.page-head a{color:#888;font-size:13px;text-decoration:none}
+.page-head h1{font-size:26px;color:#1a1a2e;margin:8px 0 16px}
+
+.tab-bar{display:flex;gap:0;max-width:1000px;margin:0 auto;border-bottom:2px solid #1a1a2e}
+.tab-btn{
+  padding:10px 28px;font-size:15px;font-weight:600;cursor:pointer;
+  border:none;background:#fff;color:#888;transition:all .2s;
+  border-radius:8px 8px 0 0;margin-bottom:-2px;
+}
+.tab-btn:hover{color:#1a1a2e}
+.tab-btn.active{background:#1a1a2e;color:#fff;border-radius:8px 8px 0 0}
+
+.tab-body{max-width:1000px;margin:0 auto;background:#fff;min-height:500px;padding:24px}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+.loading{text-align:center;padding:60px 20px;color:#999;font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <a href="../资料库.html">← 返回资料库</a>
+  <h1>初中数学</h1>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('model')">📐 几何模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge')">📖 知识点大全</button>
+</div>
+
+<div class="tab-body">
+  <div class="tab-pane active" id="tabModel"><div class="loading">加载中...</div></div>
+  <div class="tab-pane" id="tabKnowledge"><div class="loading">加载中...</div></div>
+</div>
+
+<script>
+var loaded = {};
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('.tab-pane').forEach(function(p){p.classList.remove('active')});
+  event.target.classList.add('active');
+  document.getElementById('tab' + name.charAt(0).toUpperCase() + name.slice(1)).classList.add('active');
+  if (!loaded[name]) {
+    loaded[name] = true;
+    loadTab(name);
+  }
+}
+
+function loadTab(name) {
+  var map = {
+    model: {url:'中考数学几何模型.html', id:'tabModel'},
+    knowledge: {url:'中考数学知识点大全.html', id:'tabKnowledge'}
+  };
+  var t = map[name];
+  if (!t) return;
+  fetch(t.url).then(function(r){return r.text()}).then(function(html){
+    var m = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    if (m) document.getElementById(t.id).innerHTML = m[1];
+  }).catch(function(){
+    document.getElementById(t.id).innerHTML = '<div style="text-align:center;padding:40px;color:#999">加载失败，请刷新重试</div>';
+  });
+}
+
+// Load first tab on page load
+loadTab('model');
+</script>
+
+</body>
+</html>

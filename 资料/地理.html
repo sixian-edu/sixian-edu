@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中地理 · 思贤家教</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
+.head{max-width:1000px;margin:0 auto;padding:20px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head h1{font-size:26px;color:#1a1a2e;margin:8px 0 16px}
+.tab-bar{display:flex;gap:0;max-width:1000px;margin:0 auto;border-bottom:2px solid #3498db}
+.tab-btn{padding:10px 28px;font-size:15px;font-weight:600;cursor:pointer;border:none;background:#fff;color:#888;transition:all .2s;border-radius:8px 8px 0 0;margin-bottom:-2px}
+.tab-btn:hover{color:#3498db}
+.tab-btn.active{background:#3498db;color:#fff}
+.body{max-width:1000px;margin:0 auto;background:#fff;min-height:500px;padding:24px}
+.pane{display:none}
+.pane.active{display:block}
+.load{text-align:center;padding:60px 20px;color:#999;font-size:14px}
+</style>
+</head>
+<body>
+<div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中地理</h1></div>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('model')">🌍 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge')">📖 知识点大全</button>
+</div>
+<div class="body">
+  <div class="pane active" id="tabModel"><div class="load">加载中...</div></div>
+  <div class="pane" id="tabKnowledge"><div class="load">加载中...</div></div>
+</div>
+<script>
+var loaded={};
+function switchTab(n){document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});event.target.classList.add('active');document.getElementById('tab'+n.charAt(0).toUpperCase()+n.slice(1)).classList.add('active');if(!loaded[n]){loaded[n]=true;loadTab(n)}}
+function loadTab(n){var m={model:{u:'地理模型.html',i:'tabModel'},knowledge:{u:'初中地理知识点大全.html',i:'tabKnowledge'}};var t=m[n];if(!t)return;fetch(t.u).then(function(r){return r.text()}).then(function(h){var b=h.match(/<body[^>]*>([\s\S]*?)<\/body>/i);if(b)document.getElementById(t.i).innerHTML=b[1]}).catch(function(){document.getElementById(t.i).innerHTML='<div style="text-align:center;padding:40px;color:#999">加载失败</div>'})}
+loadTab('model');
+</script>
+</body>
+</html>
