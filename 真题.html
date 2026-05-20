@@ -874,6 +874,42 @@
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 
+<style>
+/* ── 试卷查看器（翻页 + 涂鸦） ── */
+.pv-header{display:flex;align-items:center;justify-content:space-between;padding:0 0 12px;border-bottom:1px solid #eee;margin-bottom:12px}
+.pv-title{font-size:16px;font-weight:600;color:#1a1a2e;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pv-header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.pv-btn{background:none;border:1px solid #ddd;border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;opacity:.5;transition:all .2s}
+.pv-btn:hover{opacity:.8}
+.pv-btn.active{opacity:1;border-color:#1a1a2e;background:#1a1a2e;color:#fff}
+.pv-close{background:none;border:none;font-size:24px;cursor:pointer;color:#999;padding:0 4px;line-height:1}
+.pv-close:hover{color:#333}
+.pv-draw-toolbar{display:flex;align-items:center;gap:6px;padding:8px 0 12px;flex-wrap:wrap;border-bottom:1px solid #eee}
+.pv-draw-btn{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;transition:all .2s;flex-shrink:0}
+.pv-draw-btn.active{border-color:#1a1a2e;transform:scale(1.15)}
+.pv-draw-tool{background:none;border:1px solid #ddd;border-radius:8px;padding:4px 8px;cursor:pointer;font-size:16px;opacity:.4;transition:all .2s}
+.pv-draw-tool:hover{opacity:.8}
+.pv-draw-tool.active{opacity:1;border-color:#1a1a2e}
+.pv-draw-sep{width:1px;height:20px;background:#ddd;margin:0 4px;flex-shrink:0}
+.pv-body{overflow:auto;text-align:center;position:relative;min-height:300px;-webkit-overflow-scrolling:touch}
+.pv-page-wrap{position:relative;display:inline-block;margin:0 auto;max-width:100%}
+.pv-image{max-width:100%;height:auto;display:block;user-select:none;-webkit-user-select:none}
+.pv-draw-canvas{position:absolute;top:0;left:0;pointer-events:none;touch-action:none}
+.pv-draw-canvas.active{pointer-events:auto}
+.pv-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 0 0;border-top:1px solid #eee;margin-top:12px}
+.pv-nav-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid #ddd;background:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;color:#555}
+.pv-nav-btn:hover:not(:disabled){border-color:#1a1a2e;color:#1a1a2e}
+.pv-nav-btn:disabled{opacity:.25;cursor:not-allowed}
+.pv-page-info{font-size:14px;font-weight:600;color:#555;min-width:65px;text-align:center}
+@media(max-width:768px){
+    .pv-title{font-size:14px}
+    .pv-draw-toolbar{gap:4px;padding:6px 0 10px}
+    .pv-draw-btn{width:24px;height:24px}
+    .pv-nav-btn{width:36px;height:36px;font-size:20px}
+    .pv-page-info{font-size:13px;min-width:55px}
+}
+</style>
+
 <!-- ── 付费解锁弹窗 ── -->
 <div class="paper-overlay" id="paywallOverlay" onclick="if(event.target===this)closePaywall()">
     <div class="paper-viewer" style="max-width:440px;text-align:center;padding:40px 32px">
@@ -887,16 +923,53 @@
     </div>
 </div>
 
-<!-- ── 试卷预览弹窗 ── -->
+<!-- ── 试卷查看器（翻页 + 涂鸦） ── -->
 <div class="paper-overlay" id="paperOverlay" onclick="if(event.target===this)closePaper()">
-    <div class="paper-viewer">
-        <button class="paper-close" onclick="closePaper()">×</button>
-        <img id="paperImage" src="" alt="试卷预览" style="display:none">
-        <iframe id="paperPdf" src="" style="display:none;width:100%;height:90vh;border:none;border-radius:8px"></iframe>
+    <div class="paper-viewer" onclick="event.stopPropagation()">
+        <div class="pv-header">
+            <span class="pv-title" id="pvTitle">试卷预览</span>
+            <div class="pv-header-actions">
+                <button class="pv-btn" id="drawToggle" onclick="toggleDraw()" title="涂鸦标注">✏️</button>
+                <button class="pv-close" onclick="closePaper()">×</button>
+            </div>
+        </div>
+        <div class="pv-draw-toolbar" id="drawToolbar" style="display:none">
+            <button class="pv-draw-btn active" data-color="#e74c3c" style="background:#e74c3c" onclick="setDrawColor('#e74c3c',this)"></button>
+            <button class="pv-draw-btn" data-color="#2ecc71" style="background:#2ecc71" onclick="setDrawColor('#2ecc71',this)"></button>
+            <button class="pv-draw-btn" data-color="#3498db" style="background:#3498db" onclick="setDrawColor('#3498db',this)"></button>
+            <button class="pv-draw-btn" data-color="#f39c12" style="background:#f39c12" onclick="setDrawColor('#f39c12',this)"></button>
+            <button class="pv-draw-btn" data-color="#e67e22" style="background:#e67e22" onclick="setDrawColor('#e67e22',this)"></button>
+            <button class="pv-draw-btn" data-color="#2c3e50" style="background:#2c3e50" onclick="setDrawColor('#2c3e50',this)"></button>
+            <span class="pv-draw-sep"></span>
+            <button class="pv-draw-tool active" id="toolPen" onclick="setDrawTool('pen')">🖊</button>
+            <button class="pv-draw-tool" id="toolEraser" onclick="setDrawTool('eraser')">🧹</button>
+            <span class="pv-draw-sep"></span>
+            <button class="pv-draw-tool" onclick="clearDraw()" title="清除全部涂鸦">🗑</button>
+        </div>
+        <div class="pv-body" id="pvBody">
+            <div class="pv-page-wrap">
+                <img id="pvImage" class="pv-image" alt="试卷页" draggable="false">
+                <canvas id="drawCanvas" class="pv-draw-canvas"></canvas>
+            </div>
+        </div>
+        <div class="pv-nav">
+            <button class="pv-nav-btn" id="prevBtn" onclick="prevPage()">‹</button>
+            <span class="pv-page-info" id="pageInfo">1 / 1</span>
+            <button class="pv-nav-btn" id="nextBtn" onclick="nextPage()">›</button>
+        </div>
     </div>
 </div>
 
 <script>
+var paperDB = {
+    'images/practice-cn-full.pdf': {pages:7,prefix:'images/practice-cn',title:'中考语文模拟卷（一）'},
+    'images/practice-math-full.pdf': {pages:3,prefix:'images/practice-math',title:'中考数学模拟卷（一）'},
+    'images/practice-eng-full.pdf': {pages:5,prefix:'images/practice-eng',title:'中考英语模拟卷（一）'}
+};
+
+var curPaper = null, curPage = 1, drawMode = false, drawColor = '#e74c3c', drawTool = 'pen';
+var drawing = false, ctx = null;
+
 function paywall() {
     document.getElementById('paywallOverlay').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -905,23 +978,134 @@ function closePaywall() {
     document.getElementById('paywallOverlay').classList.remove('active');
     document.body.style.overflow = '';
 }
-function openPaper(src) {
-    var isPdf = src.toLowerCase().endsWith('.pdf');
-    document.getElementById('paperImage').style.display = isPdf ? 'none' : '';
-    document.getElementById('paperPdf').style.display = isPdf ? '' : 'none';
-    if (isPdf) {
-        document.getElementById('paperPdf').src = src;
-    } else {
-        document.getElementById('paperImage').src = src;
-    }
+
+function openPaper(url) {
+    var p = paperDB[url];
+    if (!p) return;
+    curPaper = p; curPage = 1;
+    document.getElementById('pvTitle').textContent = p.title;
+    loadPage(1);
     document.getElementById('paperOverlay').classList.add('active');
     document.body.style.overflow = 'hidden';
+    drawMode = false;
+    document.getElementById('drawToolbar').style.display = 'none';
+    document.getElementById('drawToggle').classList.remove('active');
 }
+
+function loadPage(n) {
+    if (!curPaper) return;
+    var img = document.getElementById('pvImage');
+    img.src = curPaper.prefix + '-' + n + '.jpg';
+    document.getElementById('pageInfo').textContent = n + ' / ' + curPaper.pages;
+    document.getElementById('prevBtn').disabled = n <= 1;
+    document.getElementById('nextBtn').disabled = n >= curPaper.pages;
+
+    function sizeCanvas() {
+        var c = document.getElementById('drawCanvas');
+        var pw = document.querySelector('.pv-page-wrap');
+        var w = pw.offsetWidth;
+        var h = w * (img.naturalHeight / img.naturalWidth) || img.offsetHeight;
+        c.width = w;
+        c.height = h;
+        c.style.width = w + 'px';
+        c.style.height = h + 'px';
+        ctx = c.getContext('2d');
+        document.getElementById('drawCanvas').classList.toggle('active', drawMode);
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+        sizeCanvas();
+    } else {
+        img.onload = sizeCanvas;
+    }
+}
+
+function prevPage() { if (curPage > 1) { curPage--; loadPage(curPage); } }
+function nextPage() { if (curPage < curPaper.pages) { curPage++; loadPage(curPage); } }
+
 function closePaper() {
     document.getElementById('paperOverlay').classList.remove('active');
-    document.getElementById('paperPdf').src = '';
     document.body.style.overflow = '';
+    curPaper = null; drawMode = false;
+    document.getElementById('drawToolbar').style.display = 'none';
+    document.getElementById('drawToggle').classList.remove('active');
+    var c = document.getElementById('drawCanvas');
+    ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, c.width, c.height);
 }
+
+function toggleDraw() {
+    drawMode = !drawMode;
+    document.getElementById('drawToolbar').style.display = drawMode ? '' : 'none';
+    document.getElementById('drawToggle').classList.toggle('active', drawMode);
+    document.getElementById('drawCanvas').classList.toggle('active', drawMode);
+}
+
+function setDrawColor(c, btn) {
+    drawColor = c;
+    document.querySelectorAll('.pv-draw-btn').forEach(function(b){b.classList.remove('active')});
+    if (btn) btn.classList.add('active');
+    if (drawTool === 'eraser') setDrawTool('pen');
+}
+
+function setDrawTool(t) {
+    drawTool = t;
+    document.getElementById('toolPen').classList.toggle('active', t === 'pen');
+    document.getElementById('toolEraser').classList.toggle('active', t === 'eraser');
+}
+
+function getPos(e) {
+    var c = document.getElementById('drawCanvas');
+    var r = c.getBoundingClientRect();
+    var t = e.touches ? e.touches[0] : e;
+    return {x: (t.clientX - r.left) * (c.width / r.width), y: (t.clientY - r.top) * (c.height / r.height)};
+}
+
+function startDraw(e) {
+    if (!drawMode || !ctx) return;
+    e.preventDefault();
+    drawing = true;
+    var p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+}
+
+function moveDraw(e) {
+    if (!drawing || !ctx) return;
+    e.preventDefault();
+    var p = getPos(e);
+    ctx.lineWidth = drawTool === 'eraser' ? 30 : 3;
+    ctx.strokeStyle = drawTool === 'eraser' ? '#ffffff' : drawColor;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+}
+
+function endDraw(e) {
+    if (!drawing) return;
+    drawing = false;
+    ctx && ctx.beginPath();
+}
+
+function clearDraw() {
+    if (!ctx || !curPaper) return;
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
+
+(function() {
+    var c = document.getElementById('drawCanvas');
+    c.addEventListener('mousedown', startDraw);
+    c.addEventListener('mousemove', moveDraw);
+    c.addEventListener('mouseup', endDraw);
+    c.addEventListener('mouseleave', endDraw);
+    c.addEventListener('touchstart', startDraw, {passive:false});
+    c.addEventListener('touchmove', moveDraw, {passive:false});
+    c.addEventListener('touchend', endDraw);
+})();
+
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') { closePaywall(); closePaper(); }
 });
