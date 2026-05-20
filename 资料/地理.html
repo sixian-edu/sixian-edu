@@ -18,12 +18,16 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none;position:relative}
 .pane.active{display:block}
-.lock-overlay{display:none;position:absolute;inset:0;background:rgba(255,255,255,0.93);flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;min-height:260px;border-radius:10px;padding:20px}
-.lock-overlay.show{display:flex}
-.lock-overlay .lock-icon{font-size:40px;margin-bottom:8px}
-.lock-overlay .lock-title{font-size:19px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-overlay .lock-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
-.lock-overlay .lock-phone{font-size:16px;color:#e74c3c;background:#fef0ef;padding:10px 28px;border-radius:8px;font-weight:700;display:inline-block}
+.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
+.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
+.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
+.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
+.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
+.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.lock-screen .lk-box .lb-btn:hover{opacity:.85}
+.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
 .cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #3498db}
 .cd .t{font-weight:700;font-size:14px;color:#3498db;margin-bottom:4px}
 .cd .d{font-size:13px;color:#555;line-height:1.7}
@@ -38,76 +42,60 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中地理</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)" data-tab="model" data-locked="true">🌍 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)" data-tab="knowledge" data-locked="true">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">🌍 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
 
 <div class="pane active" id="tabModel">
-<div class="cd"><div class="t">🔹 经纬网模型</div><div class="d">经线等长指示南北，纬线赤道最长向两极递减。纬度北增北纬(N)南增南纬(S)。经度东增东经(E)西增西经(W)。东西半球：<span class="tg">20°W→160°E</span>东半球。</div></div>
-<div class="cd"><div class="t">🔹 等高线模型</div><div class="d">密集坡度陡、稀疏坡度缓。<span class="tg">山谷</span>向高处凸（易发育河流），<span class="tg">山脊</span>向低处凸。海拔每升100m气温降0.6℃。</div></div>
-<div class="cd"><div class="t">🔹 世界气候模型</div><div class="d">最冷月&gt;15℃热带，0-15℃亚热带/温带海洋，&lt;0℃温带/寒带。亚洲气候复杂多样季风显著，非洲热带大陆对称分布，欧洲温带海洋性强。</div></div>
-<div class="cd"><div class="t">🔹 地球运动模型</div><div class="d"><b>自转</b>：周期24小时，产生昼夜更替、时间差异。<b>公转</b>：周期一年，产生四季、昼夜长短变化、五带。春分(3.21)→夏至(6.22)→秋分(9.23)→冬至(12.22)。</div></div>
-<div class="cd"><div class="t">🔹 中国地理模型</div><div class="d">三级阶梯：青藏高原→高原盆地→平原丘陵。气候复杂多样，季风气候显著。四大区域：北方（旱作）、南方（水田）、西北（畜牧）、青藏（高寒）。</div></div>
-<div class="cd"><div class="t">🔹 人口城市模型</div><div class="d">黑河-腾冲线以东稠密。<span class="tg">城市化问题</span>：交通拥堵、住房紧张、环境污染、就业困难。</div></div>
-</div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
 
+
 <div class="pane" id="tabKnowledge">
-<div class="kb">
-<h2>一、地球与地图</h2>
-<p>地球形状：两极稍扁赤道略鼓的不规则球体。赤道周长约4万km。</p>
-<p>经纬网定位。比例尺=图上距离/实际距离。方向：指向标定向、经纬网定向、一般定向（上北下南左西右东）。</p>
-<h2>二、世界地理</h2>
-<p>七大洲：亚非北南美，南极欧大洋。四大洋：太平洋（最大）、大西洋、印度洋、北冰洋（最小）。</p>
-<p>亚洲：面积最大、人口最多、地势中部高四周低。非洲：高原大陆、热带大陆。欧洲：以平原为主、温带海洋性气候显著。</p>
-<p>主要国家：日本（多火山地震、加工贸易）、美国（农业生产专业化、高新技术产业）、巴西（热带雨林、咖啡）、澳大利亚（骑在羊背上的国家、坐在矿车上的国家）。</p>
-<h2>三、中国地理</h2>
-<p>中国位于北半球东半球，疆域辽阔（960万km²），34个省级行政区（23省、5自治区、4直辖市、2特别行政区）。</p>
-<p>人口14亿+，汉族占多数，少数民族主要分布在西南、西北、东北。地势西高东低三级阶梯。</p>
-<p><b>气候</b>：温带季风（北方）、亚热带季风（南方）、温带大陆性（西北）、高山高原（青藏）。</p>
-<p><b>河流</b>：长江（最长，6300km，水能宝库）、黄河（含沙量大，地上河）。</p>
-<p><b>自然资源</b>：总量丰富、人均不足。南水北调、西气东输、西电东送四大工程。</p>
-<h2>四、中国区域地理</h2>
-<p>北方：温带季风、旱作农业（小麦玉米）、煤铁石油丰富。南方：亚热带季风、水田农业（水稻）、有色金属丰富。西北：干旱、绿洲农业、畜牧业。青藏：高寒、牦牛、青稞。</p>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
-</div>
+
 
 </div>
 <script>
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  document.querySelectorAll('.lock-overlay').forEach(function(o){o.classList.remove('show')});
-  var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-  pane.classList.add('active');
   btn.classList.add('active');
-  if (btn.getAttribute('data-locked') === 'true') {
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
+function copyTxt(){
+  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+  var hint = document.querySelector('.pane.active .lk-hint');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    hint.textContent = '✅ 已复制，分享给好友吧！';
   }
 }
-// Init: show lock if active tab is locked
-document.querySelectorAll('.tab-btn.active').forEach(function(btn){
-  if (btn.getAttribute('data-locked') === 'true') {
-    var name = btn.getAttribute('data-tab');
-    var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
-  }
-});
 </script>
 </body>
 </html>

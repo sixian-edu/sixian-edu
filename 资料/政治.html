@@ -18,12 +18,16 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none;position:relative}
 .pane.active{display:block}
-.lock-overlay{display:none;position:absolute;inset:0;background:rgba(255,255,255,0.93);flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;min-height:260px;border-radius:10px;padding:20px}
-.lock-overlay.show{display:flex}
-.lock-overlay .lock-icon{font-size:40px;margin-bottom:8px}
-.lock-overlay .lock-title{font-size:19px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-overlay .lock-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
-.lock-overlay .lock-phone{font-size:16px;color:#e74c3c;background:#fef0ef;padding:10px 28px;border-radius:8px;font-weight:700;display:inline-block}
+.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
+.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
+.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
+.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
+.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
+.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.lock-screen .lk-box .lb-btn:hover{opacity:.85}
+.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
 .cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #e67e22}
 .cd .t{font-weight:700;font-size:14px;color:#e67e22;margin-bottom:4px}
 .cd .d{font-size:13px;color:#555;line-height:1.7}
@@ -38,82 +42,60 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>道德与法治</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)" data-tab="model" data-locked="true">📜 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)" data-tab="knowledge" data-locked="true">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">📜 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
 
 <div class="pane active" id="tabModel">
-<div class="cd"><div class="t">🔹 法律体系模型</div><div class="d">违法分类：<span class="tg">行政违法</span>（如闯红灯）、<span class="tg">民事违法</span>（如侵犯名誉权）、<span class="tg">刑事违法</span>（犯罪）。犯罪三特征：严重社会危害性、刑事违法性、应受刑罚处罚性。刑罚：主刑+附加刑。</div></div>
-<div class="cd"><div class="t">🔹 公民权利模型</div><div class="d">政治权利（选举权/监督权/政治自由）、人身权利（生命健康/自由/人格尊严）、经济权利（财产/继承/劳动）、文化教育权。维权：协商→调解→仲裁→<span class="tg">诉讼</span>（最后屏障）。</div></div>
-<div class="cd"><div class="t">🔹 公民义务模型</div><div class="d">遵守宪法法律、维护国家统一、服兵役、纳税、受教育、劳动。权利与义务<span class="tg">统一不可分割</span>。法律要求做的必须做，禁止做的坚决不做。</div></div>
-<div class="cd"><div class="t">🔹 宪法与国家制度</div><div class="d">宪法是国家根本法，最高法律效力。根本政治制度：<span class="tg">人民代表大会制度</span>。基本政治制度：政党协商、民族区域自治、基层群众自治。基本经济制度：公有制为主体、多种所有制共同发展。</div></div>
-<div class="cd"><div class="t">🔹 国情国策模型</div><div class="d">主要矛盾：人民美好生活需要和不平衡不充分发展。发展理念：创新协调绿色开放共享。基本国策：<span class="tg">节约资源和保护环境</span>。中国梦：国家富强、民族振兴、人民幸福。</div></div>
-<div class="cd"><div class="t">🔹 道德修养模型</div><div class="d">核心价值观：富强民主文明和谐（国家）；自由平等公正法治（社会）；爱国敬业诚信友善（个人）。公德：文明礼貌助人为乐。美德：尊老爱幼勤俭持家。</div></div>
-</div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
 
+
 <div class="pane" id="tabKnowledge">
-<div class="kb">
-<h2>一、成长的节拍</h2>
-<p>中学时代是人生发展新阶段。正确认识自己（自我评价+他人评价），接纳与欣赏自己，做更好的自己。</p>
-<h2>二、友谊与师长</h2>
-<p>友谊特质：平等双向心灵相遇。友谊需要信任忠诚、讲原则。孝亲敬长是中华民族传统美德。</p>
-<h2>三、生命与安全</h2>
-<p>生命是宝贵的，敬畏生命、珍爱生命。守护生命：爱护身体、养护精神。生命有韧劲——在挫折中发掘力量。</p>
-<h2>四、法律基础</h2>
-<p>法律特征：国家制定/认可、国家强制力保证、普遍约束力。法律对全体社会成员具有普遍约束力。</p>
-<p>违法与犯罪：一般违法≠犯罪，但都损害社会。犯罪三特征需同时具备。防范犯罪：杜绝不良行为、增强法治观念。</p>
-<h2>五、宪法制度</h2>
-<p>宪法是国家根本法。人民代表大会制度是根本政治制度。国家尊重和保障人权。</p>
-<h2>六、权利义务</h2>
-<p>公民权利广泛：政治权利和自由、人身自由、社会经济文化权利。公民义务：遵守宪法法律、维护国家利益、依法服兵役、依法纳税。</p>
-<p>权利和义务相统一，相互依存相互促进。</p>
-<h2>七、国情教育</h2>
-<p>中国特色社会主义进入新时代。主要矛盾：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。</p>
-<p>共同富裕：中国特色社会主义的本质要求。创新是引领发展的第一动力。</p>
-<p>绿色发展：坚持节约资源和保护环境的基本国策，建设美丽中国。</p>
-<p>民族团结：铸牢中华民族共同体意识。</p>
-<h2>八、中国担当</h2>
-<p>构建人类命运共同体。中国始终做世界和平的建设者、全球发展的贡献者、国际秩序的维护者。</p>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
-</div>
+
 
 </div>
 <script>
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  document.querySelectorAll('.lock-overlay').forEach(function(o){o.classList.remove('show')});
-  var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-  pane.classList.add('active');
   btn.classList.add('active');
-  if (btn.getAttribute('data-locked') === 'true') {
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
+function copyTxt(){
+  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+  var hint = document.querySelector('.pane.active .lk-hint');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    hint.textContent = '✅ 已复制，分享给好友吧！';
   }
 }
-// Init: show lock if active tab is locked
-document.querySelectorAll('.tab-btn.active').forEach(function(btn){
-  if (btn.getAttribute('data-locked') === 'true') {
-    var name = btn.getAttribute('data-tab');
-    var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
-  }
-});
 </script>
 </body>
 </html>

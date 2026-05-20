@@ -18,12 +18,16 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none;position:relative}
 .pane.active{display:block}
-.lock-overlay{display:none;position:absolute;inset:0;background:rgba(255,255,255,0.93);flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;min-height:260px;border-radius:10px;padding:20px}
-.lock-overlay.show{display:flex}
-.lock-overlay .lock-icon{font-size:40px;margin-bottom:8px}
-.lock-overlay .lock-title{font-size:19px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-overlay .lock-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
-.lock-overlay .lock-phone{font-size:16px;color:#e74c3c;background:#fef0ef;padding:10px 28px;border-radius:8px;font-weight:700;display:inline-block}
+.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
+.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
+.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
+.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
+.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
+.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.lock-screen .lk-box .lb-btn:hover{opacity:.85}
+.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
 .cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #8e44ad}
 .cd .t{font-weight:700;font-size:14px;color:#8e44ad;margin-bottom:4px}
 .cd .d{font-size:13px;color:#555;line-height:1.7}
@@ -44,85 +48,60 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中化学</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)" data-tab="model" data-locked="true">🧪 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)" data-tab="knowledge" data-locked="true">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">🧪 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
 
 <div class="pane active" id="tabModel">
-<div class="cd"><div class="t">🔹 物质分类模型</div><div class="d">纯净物（单质+化合物） vs 混合物。化合物分氧化物、酸、碱、盐。金属活动性顺序：K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。</div></div>
-<div class="cd"><div class="t">🔹 化学用语模型</div><div class="d">化合价口诀：一价钾钠氯氢银，二价氧钙钡镁锌，三铝四硅五价磷，二三铁、二四碳，二四六硫都齐全。化学式：正价在前负价在后，交叉约简。</div></div>
-<div class="cd"><div class="t">🔹 反应类型模型</div><div class="d"><b>化合</b>A+B→AB；<b>分解</b>AB→A+B；<b>置换</b>A+BC→AC+B；<b>复分解</b>AB+CD→AD+CB（条件：沉淀/气体/水生成）。</div></div>
-<div class="cd"><div class="t">🔹 金属活动性模型</div><div class="d">验证三种金属活动性：中间金属+两边盐溶液 或 两边金属+中间盐溶液。除杂原则：不增、不减、易分离。</div></div>
-<div class="cd"><div class="t">🔹 溶液模型</div><div class="d">溶解度曲线：陡升型（KNO₃）降温结晶；缓升型（NaCl）蒸发结晶。ω=m溶质/m溶液×100%。</div></div>
-<div class="cd"><div class="t">🔹 气体制取模型</div><div class="d"><b>O₂</b>：2KMnO₄→K₂MnO₄+MnO₂+O₂↑ 或 2H₂O₂→2H₂O+O₂↑。<b>CO₂</b>：CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑。<b>H₂</b>：Zn+H₂SO₄→ZnSO₄+H₂↑。</div></div>
-<div class="cd"><div class="t">🔹 推断题模型</div><div class="d"><b>颜色</b>：CuO黑、Fe₂O₃红、CuSO₄蓝、FeCl₃黄。<b>沉淀</b>：BaSO₄/AgCl白不溶酸；CaCO₃/BaCO₃白溶酸。<b>三角转化</b>：Ca(OH)₂←CaO←CaCO₃→Ca(OH)₂。</div></div>
-<div class="cd"><div class="t">🔹 计算题模型</div><div class="d">步骤：设未知数→写方程式→列比例→求解→答。含杂质计算用纯物质质量。质量守恒法：总质量不变。</div></div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
 
+
 <div class="pane" id="tabKnowledge">
-<div class="kb">
-<h2>一、物质的变化与性质</h2>
-<p><b>物理变化</b>：没有新物质生成（挥发、熔化、溶解等）。<b>化学变化</b>：有新物质生成（燃烧、分解、复分解等），常伴随发光放热、颜色变化、气体沉淀等现象。</p>
-<h2>二、空气与氧气</h2>
-<p>空气组成：N₂78%、O₂21%、稀有气体0.94%、CO₂0.03%。</p>
-<p>O₂性质：无色无味，密度比空气略大，不易溶于水，能支持燃烧、供给呼吸。</p>
-<h2>三、碳及其化合物</h2>
-<p>金刚石（最硬）、石墨（软、导电）、C₆₀（足球烯）。CO₂：不燃烧不支持呼吸，与水反应生成碳酸，与石灰水反应变浑浊。CO：有毒，可燃，有还原性。</p>
-<h2>四、燃烧与灭火</h2>
-<p>燃烧三条件：可燃物、氧气、温度达着火点。灭火：破坏任一条件。缓慢氧化→自燃。</p>
-<h2>五、物质构成的奥秘</h2>
-<p>分子（保持化学性质的最小粒子）、原子（化学变化中不可分）、离子（得失电子形成）。</p>
-<p>原子由原子核（质子+中子）和核外电子构成。相对原子质量≈质子数+中子数。</p>
-<h2>六、化学方程式</h2>
-<p>质量守恒定律：参加反应的各物质质量总和等于生成物质量总和。遵循六不变、两变。</p>
-<p>配平方法：最小公倍数法、奇数配偶法、观察法。</p>
-<h2>七、溶液</h2>
-<p>饱和溶液与不饱和溶液。溶解度：一定温度下100g溶剂最多溶解溶质的质量。溶质质量分数 ω=m溶质/m溶液×100%。</p>
-<h2>八、酸与碱</h2>
-<p>酸（H⁺）：HCl、H₂SO₄、HNO₃。碱（OH⁻）：NaOH、Ca(OH)₂。酸碱中和：H⁺+OH⁻→H₂O。</p>
-<p>pH：&lt;7酸性，=7中性，&gt;7碱性。</p>
-<h2>九、盐与化肥</h2>
-<p>盐：金属离子+酸根离子。复分解反应条件：生成沉淀、气体或水。</p>
-<p>化肥：氮肥（叶）、磷肥（根）、钾肥（茎）。复合肥含两种以上元素。</p>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
-</div>
+
 
 </div>
 <script>
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  document.querySelectorAll('.lock-overlay').forEach(function(o){o.classList.remove('show')});
-  var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-  pane.classList.add('active');
   btn.classList.add('active');
-  if (btn.getAttribute('data-locked') === 'true') {
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
+function copyTxt(){
+  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+  var hint = document.querySelector('.pane.active .lk-hint');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    hint.textContent = '✅ 已复制，分享给好友吧！';
   }
 }
-// Init: show lock if active tab is locked
-document.querySelectorAll('.tab-btn.active').forEach(function(btn){
-  if (btn.getAttribute('data-locked') === 'true') {
-    var name = btn.getAttribute('data-tab');
-    var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
-  }
-});
 </script>
 </body>
 </html>

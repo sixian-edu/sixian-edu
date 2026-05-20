@@ -18,12 +18,16 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none;position:relative}
 .pane.active{display:block}
-.lock-overlay{display:none;position:absolute;inset:0;background:rgba(255,255,255,0.93);flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;min-height:260px;border-radius:10px;padding:20px}
-.lock-overlay.show{display:flex}
-.lock-overlay .lock-icon{font-size:40px;margin-bottom:8px}
-.lock-overlay .lock-title{font-size:19px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-overlay .lock-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
-.lock-overlay .lock-phone{font-size:16px;color:#e74c3c;background:#fef0ef;padding:10px 28px;border-radius:8px;font-weight:700;display:inline-block}
+.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
+.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
+.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
+.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
+.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
+.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.lock-screen .lk-box .lb-btn:hover{opacity:.85}
+.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
 .cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
 .cd .t{font-weight:700;font-size:14px;color:#27ae60;margin-bottom:4px}
 .cd .d{font-size:13px;color:#555;line-height:1.7}
@@ -40,83 +44,60 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中生物</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)" data-tab="model" data-locked="true">🧬 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)" data-tab="knowledge" data-locked="true">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">🧬 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
 
 <div class="pane active" id="tabModel">
-<div class="cd"><div class="t">🔹 显微镜使用模型</div><div class="d">步骤：取镜→对光→放玻片→调粗准焦→调细准焦→观察。呈倒像，放大倍数=目镜×物镜。倍数越大视野越暗。</div></div>
-<div class="cd"><div class="t">🔹 细胞结构模型</div><div class="d">植物特有：<span class="tg">细胞壁</span>（支持保护）、<span class="tg">叶绿体</span>（光合作用）、<span class="tg">液泡</span>（储存物质）。细胞核含染色体（DNA+蛋白质），是遗传信息库。</div></div>
-<div class="cd"><div class="t">🔹 光合与呼吸模型</div><div class="d">光合：CO₂+H₂O→(光能/叶绿体)→有机物+O₂。呼吸：有机物+O₂→CO₂+H₂O+能量。白天光合&gt;呼吸积累有机物，晚上只呼吸。</div></div>
-<div class="cd"><div class="t">🔹 遗传模型</div><div class="d">基因控制性状。显性A×隐性a→子代Aa。Aa×Aa→AA:Aa:aa=1:2:1（显性:隐性=3:1）。女性XX，男性XY，生男生女各50%。</div></div>
-<div class="cd"><div class="t">🔹 生态系统模型</div><div class="d">非生物+生物（生产者→消费者→分解者）。能量单向流动逐级递减（10%-20%）。碳循环：CO₂→光合→有机物→呼吸/燃烧→CO₂。</div></div>
-<div class="cd"><div class="t">🔹 人体生理模型</div><div class="d">消化：口腔→胃→小肠（主要吸收）。循环：体循环（左心室→全身→右心房），肺循环（右心室→肺→左心房）。尿液：肾小球滤过→肾小管重吸收。反射弧：感受器→传入→中枢→传出→效应器。</div></div>
-</div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
 
+
 <div class="pane" id="tabKnowledge">
-<div class="kb">
-<h2>一、认识生物</h2>
-<p><b>生物特征</b>：需要营养、能呼吸、排出废物、对外界有反应、能繁殖、有遗传变异、除病毒外由细胞构成。</p>
-<h2>二、细胞</h2>
-<p>细胞是生命活动的基本单位。植物细胞：细胞壁、细胞膜、细胞质、细胞核、液泡、叶绿体。动物细胞无细胞壁、液泡、叶绿体。</p>
-<p>细胞分裂：一个变两个，遗传物质先复制再均分。细胞分化：形成不同组织。</p>
-<h2>三、生物圈中的绿色植物</h2>
-<p>藻类（无根茎叶分化）、苔藓（假根、有茎叶）、蕨类（有根茎叶、孢子繁殖）、种子植物（裸子+被子）。</p>
-<p>光合作用：叶绿体，产物有机物+O₂。呼吸作用：线粒体，分解有机物释放能量。</p>
-<p>蒸腾作用：气孔散失水分，促进吸水和无机盐运输。</p>
-<h2>四、生物圈中的人</h2>
-<p>消化系统：口腔→咽→食道→胃→小肠→大肠→肛门。小肠是主要吸收器官。</p>
-<p>呼吸系统：鼻→咽→喉→气管→支气管→肺。肺泡是气体交换场所。</p>
-<p>循环系统：心脏（左心室壁最厚）→血管（动脉、静脉、毛细血管）→血液（红细胞运输氧、白细胞防御、血小板止血）。</p>
-<p>泌尿系统：肾脏（肾单位→肾小球滤过→肾小管重吸收）→输尿管→膀胱→尿道。</p>
-<p>神经调节：反射弧。条件反射（后天学习）与非条件反射（先天）。</p>
-<h2>五、生物圈中的其他生物</h2>
-<p>无脊椎动物（腔肠、扁形、线形、环节、软体、节肢）和脊椎动物（鱼、两栖、爬行、鸟、哺乳）。</p>
-<p>细菌：无成形细胞核（原核生物），分裂生殖。真菌：有细胞核，孢子生殖。病毒：无细胞结构，寄生。</p>
-<h2>六、遗传与进化</h2>
-<p>相对性状：同种生物同一性状的不同表现。基因控制性状，显性基因（A）和隐性基因（a）。</p>
-<p>人类基因组：23对染色体（22对常染色体+1对性染色体）。</p>
-<p>自然选择：过度繁殖→生存斗争→遗传变异→适者生存。自然选择决定生物进化方向。</p>
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
-</div>
+
 
 </div>
 <script>
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  document.querySelectorAll('.lock-overlay').forEach(function(o){o.classList.remove('show')});
-  var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-  pane.classList.add('active');
   btn.classList.add('active');
-  if (btn.getAttribute('data-locked') === 'true') {
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
+function copyTxt(){
+  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+  var hint = document.querySelector('.pane.active .lk-hint');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    hint.textContent = '✅ 已复制，分享给好友吧！';
   }
 }
-// Init: show lock if active tab is locked
-document.querySelectorAll('.tab-btn.active').forEach(function(btn){
-  if (btn.getAttribute('data-locked') === 'true') {
-    var name = btn.getAttribute('data-tab');
-    var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
-  }
-});
 </script>
 </body>
 </html>

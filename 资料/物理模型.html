@@ -40,5 +40,26 @@ h2{font-size:18px;color:#c0392b;margin:24px 0 10px;padding-left:12px;border-left
 <div class="card"><div class="t">🔹 光学模型</div><div class="d"><b>光的反射</b>：入射角=反射角。平面镜成像——等大等距正立虚像。<br><b>光的折射</b>：空气→水（折射角&lt;入射角）。池水变浅、筷子折断。<br><b>凸透镜成像</b>：<span class="tag">u&gt;2f</span>倒立缩小实像（照相机）；<span class="tag">f&lt;u&lt;2f</span>倒立放大实像（投影仪）；<span class="tag">u&lt;f</span>正立放大虚像（放大镜）。</div></div>
 
 </div>
+<script>
+function switchTab(name, btn){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
+  btn.classList.add('active');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
+function copyTxt(){
+  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+  var hint = document.querySelector('.pane.active .lk-hint');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    hint.textContent = '✅ 已复制，分享给好友吧！';
+  }
+}
+</script>
 </body>
 </html>

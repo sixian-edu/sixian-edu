@@ -18,12 +18,16 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
 .pane{display:none;position:relative}
 .pane.active{display:block}
-.lock-overlay{display:none;position:absolute;inset:0;background:rgba(255,255,255,0.93);flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;min-height:260px;border-radius:10px;padding:20px}
-.lock-overlay.show{display:flex}
-.lock-overlay .lock-icon{font-size:40px;margin-bottom:8px}
-.lock-overlay .lock-title{font-size:19px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-overlay .lock-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
-.lock-overlay .lock-phone{font-size:16px;color:#e74c3c;background:#fef0ef;padding:10px 28px;border-radius:8px;font-weight:700;display:inline-block}
+.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
+.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
+.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
+.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
+.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
+.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.lock-screen .lk-box .lb-btn:hover{opacity:.85}
+.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
 
 /* Model grid */
 .m-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
@@ -56,8 +60,8 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中数学</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)" data-tab="model">📐 几何模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)" data-tab="knowledge" data-locked="true">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)">📐 几何模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
 </div>
 <div class="body">
 <div class="pane active" id="tabModel">
@@ -256,97 +260,40 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 </div>
 
 <div class="pane" id="tabKnowledge">
-<div class="k-body">
-
-<h2>一、数与式</h2>
-<h3>1. 实数</h3>
-<p><span class="hl">分类</span>：有理数（整数、分数）和无理数（无限不循环小数）。按正负分正数、零、负数。</p>
-<p><span class="hl">数轴</span>：向右增大，实数与数轴上点一一对应。</p>
-<p><span class="hl">相反数</span>：a+b=0 ⇔ a、b 互为相反数。0 的相反数是 0。</p>
-<p><span class="hl">绝对值</span>：|a|≥0；|a|=a（a≥0），|a|=-a（a&lt;0）。</p>
-<p><span class="hl">科学记数法</span>：a×10ⁿ（1≤|a|&lt;10）。</p>
-
-<h3>2. 整式与因式分解</h3>
-<p><span class="hl">幂的运算</span>：<span class="fm">aᵐ·aⁿ=aᵐ⁺ⁿ &nbsp; (aᵐ)ⁿ=aᵐⁿ &nbsp; (ab)ⁿ=aⁿbⁿ &nbsp; aᵐ÷aⁿ=aᵐ⁻ⁿ</span></p>
-<p><span class="hl">乘法公式</span>：(a+b)(a-b)=a²-b²，(a±b)²=a²±2ab+b²。</p>
-<p><span class="hl">因式分解</span>：提公因式、公式法（平方差、完全平方）、十字相乘法。</p>
-
-<h3>3. 分式与二次根式</h3>
-<p>分式分母≠0 有意义。二次根式 √a（a≥0）。性质：(√a)²=a；√a²=|a|；√ab=√a·√b。</p>
-
-<h2>二、方程与不等式</h2>
-<h3>1. 一元一次方程</h3>
-<p>ax+b=0（a≠0）。解法：去分母→去括号→移项→合并→系数化1。</p>
-
-<h3>2. 一元二次方程</h3>
-<p>ax²+bx+c=0（a≠0）。求根公式：<span class="fm">x=(-b±√(b²-4ac))/(2a)</span></p>
-<p>判别式 Δ=b²-4ac：Δ&gt;0 两不等实根；Δ=0 两相等实根；Δ&lt;0 无实根。</p>
-
-<h3>3. 不等式（组）</h3>
-<p>乘除负数方向<span class="hl">改变</span>。解集：同大取大、同小取小、大小小大中间找、大大小小无解。</p>
-
-<h2>三、函数</h2>
-<h3>1. 一次函数 y=kx+b（k≠0）</h3>
-<p>k&gt;0 增，k&lt;0 减。b 决定与 y 轴交点。</p>
-
-<h3>2. 反比例函数 y=k/x（k≠0）</h3>
-<p>双曲线。k&gt;0 一三象限减，k&lt;0 二四象限增。|k| 几何意义：矩形面积。</p>
-
-<h3>3. 二次函数 y=ax²+bx+c（a≠0）</h3>
-<p>顶点 (-b/(2a), (4ac-b²)/(4a))。对称轴 x=-b/(2a)。a&gt;0 开口向上，a&lt;0 向下。</p>
-
-<h2>四、几何</h2>
-<h3>1. 三角形</h3>
-<p>内角和180°。全等判定：SSS、SAS、ASA、AAS、HL。相似判定：两角对应相等、两边成比例夹角相等、三边成比例。</p>
-<p><span class="hl">勾股定理</span>：<span class="fm">a²+b²=c²</span></p>
-
-<h3>2. 四边形</h3>
-<p>平行四边形（对边平行相等、对角相等、对角线平分）；矩形（四个直角、对角线相等）；菱形（四边相等、对角线垂直平分）；正方形（四边相等四角90°、对角线相等垂直平分）。</p>
-
-<h3>3. 圆</h3>
-<p>垂径定理、同弧所对圆周角相等且等于圆心角一半、直径所对圆周角=90°。切线：过半径外端且垂直于半径。</p>
-
-<h3>4. 锐角三角函数</h3>
-<p><span class="fm">sinA=对边/斜边 &nbsp; cosA=邻边/斜边 &nbsp; tanA=对边/邻边</span></p>
-
-<h2>五、统计与概率</h2>
-<p>平均数、中位数、众数。方差反映波动大小。概率 P(A)=结果数/总数。</p>
-
-<h2>六、常用数学思想</h2>
-<p>数形结合、分类讨论、整体代入、转化思想、方程思想、函数思想、建模思想。</p>
-
+<div class="lock-screen">
+  <div class="lk-icon">🔒</div>
+  <div class="lk-title">内容未解锁</div>
+  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
+  <div class="lk-box">
+    <div class="lb-t">📋 转发文案</div>
+    <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
+    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+  </div>
+  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
-<div class="lock-overlay">
-  <div class="lock-icon">🔒</div>
-  <div class="lock-title">内容已加密</div>
-  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
-  <div class="lock-phone">解锁请联系 155-6412-8008</div>
-</div>
-</div>
+
 </div>
 
 <script>
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  document.querySelectorAll('.lock-overlay').forEach(function(o){o.classList.remove('show')});
-  var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-  pane.classList.add('active');
   btn.classList.add('active');
-  if (btn.getAttribute('data-locked') === 'true') {
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
+  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+}
+function copyTxt(){
+  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+  var hint = document.querySelector('.pane.active .lk-hint');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    hint.textContent = '✅ 已复制，分享给好友吧！';
   }
 }
-// Init: show lock if active tab is locked
-document.querySelectorAll('.tab-btn.active').forEach(function(btn){
-  if (btn.getAttribute('data-locked') === 'true') {
-    var name = btn.getAttribute('data-tab');
-    var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
-    var overlay = pane.querySelector('.lock-overlay');
-    if (overlay) overlay.classList.add('show');
-  }
-});
 </script>
 </body>
 </html>
