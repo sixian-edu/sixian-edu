@@ -47,14 +47,211 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <div class="body">
 
 <div class="pane active" id="tabModel">
-<div class="cd"><div class="t">🔹 受力分析模型</div><div class="d">步骤：<span class="tg">一重二弹三摩擦</span>。先画重力（竖直向下），再画支持力/拉力（接触面法线方向），最后画摩擦力（与相对运动方向相反）。匀速直线运动或静止时合力为零。</div></div>
-<div class="cd"><div class="t">🔹 压强模型</div><div class="d"><b>固体</b>：p=F/S。<b>液体</b>：p=ρgh（同液同深各处相等）。<b>大气压</b>：托里拆利实验 p₀=1.013×10⁵Pa，海拔越高气压越小。</div></div>
-<div class="cd"><div class="t">🔹 浮力模型</div><div class="d">阿基米德原理 F浮=ρ液gV排。<span class="tg">F浮&gt;G</span>上浮(漂浮F浮=G)；<span class="tg">F浮=G</span>悬浮；<span class="tg">F浮&lt;G</span>下沉。</div></div>
-<div class="cd"><div class="t">🔹 简单机械模型</div><div class="d"><b>杠杆</b>：F₁L₁=F₂L₂。<b>滑轮组</b>：F=G总/n，s=nh。<b>斜面</b>：FL=Gh，越缓越省力。</div></div>
-<div class="cd"><div class="t">🔹 功与机械能</div><div class="d">W=Fs。P=W/t=Fv。η=W有/W总×100%。<b>机械能守恒</b>：动能和势能相互转化（滚摆、单摆）。</div></div>
-<div class="cd"><div class="t">🔹 电路分析模型</div><div class="d">欧姆定律 I=U/R。<span class="tg">串联</span>I相等，U分压 U₁/U₂=R₁/R₂。<span class="tg">并联</span>U相等，I分流 I₁/I₂=R₂/R₁。电功率 P=UI=I²R=U²/R。</div></div>
-<div class="cd"><div class="t">🔹 伏安法测电阻/功率</div><div class="d">R=U/I，P=UI。故障：<b>断路</b>→电流表无示数、电压表有示数；<b>短路</b>→电流表有示数、电压表无示数。</div></div>
-<div class="cd"><div class="t">🔹 光学模型</div><div class="d"><b>光的反射</b>：入射角=反射角。平面镜等大等距正立虚像。<b>凸透镜成像</b>：u&gt;2f 倒立缩小实像；f&lt;u&lt;2f 倒立放大实像；u&lt;f 正立放大虚像。</div></div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.d{fill:#e74c3c;font-size:11px;font-family:sans-serif;font-weight:700}
+    .arw{fill:#333}.arw2{fill:#e74c3c}</style>
+    <line x1="20" y1="110" x2="180" y2="110" class="a"/>
+    <rect x="60" y="50" width="80" height="40" fill="#f5f5f5" stroke="#333" stroke-width="1.5" rx="3"/>
+    <line x1="100" y1="70" x2="100" y2="100" class="a"/>
+    <polygon points="100,100 95,92 105,92" class="arw"/>
+    <text x="110" y="92" class="c">G</text>
+    <line x1="100" y1="70" x2="100" y2="45" class="a"/>
+    <polygon points="100,45 95,53 105,53" class="arw"/>
+    <text x="110" y="52" class="c">N</text>
+    <line x1="100" y1="70" x2="140" y2="70" class="b"/>
+    <polygon points="140,70 132,66 132,74" class="arw2"/>
+    <text x="143" y="66" class="d">F</text>
+    <line x1="100" y1="70" x2="60" y2="70" class="b"/>
+    <polygon points="60,70 68,66 68,74" class="arw2"/>
+    <text x="28" y="66" class="d">f</text>
+    <circle cx="100" cy="70" r="2" fill="#333"/>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 受力分析模型</div>
+    <div class="d">步骤：<span class="tg">一重二弹三摩擦</span>。先画重力 G（竖直向下），再画支持力 N（垂直接触面向上），最后画摩擦力 f 和外力 F。匀速直线运动或静止时合力为零。注意：f 方向与相对运动方向相反。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.arw2{fill:#e74c3c}.w{fill:rgba(52,152,219,0.2)}</style>
+    <rect x="45" y="20" width="120" height="95" class="a" fill="none"/>
+    <rect x="45" y="50" width="120" height="65" class="w"/>
+    <line x1="45" y1="50" x2="165" y2="50" stroke="#3498db" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="45" y1="62" x2="57" y2="62" class="b"/><polygon points="57,62 53,59 53,65" class="arw2"/>
+    <line x1="45" y1="74" x2="62" y2="74" class="b"/><polygon points="62,74 56,71 56,77" class="arw2"/>
+    <line x1="45" y1="86" x2="68" y2="86" class="b"/><polygon points="68,86 60,83 60,89" class="arw2"/>
+    <line x1="45" y1="100" x2="76" y2="100" class="b"/><polygon points="76,100 67,97 67,103" class="arw2"/>
+    <text x="120" y="105" class="c" font-size="12" font-weight="700">p=ρgh</text>
+    <line x1="165" y1="50" x2="175" y2="50" stroke="#999" stroke-width="0.8"/>
+    <line x1="165" y1="100" x2="175" y2="100" stroke="#999" stroke-width="0.8"/>
+    <line x1="172" y1="50" x2="172" y2="100" stroke="#999" stroke-width="0.8" stroke-dasharray="2,2"/>
+    <text x="176" y="64" class="c" font-size="9" fill="#999">h</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 压强模型</div>
+    <div class="d"><b>固体</b>：p=F/S（受力面积取接触面积）。<b>液体</b>：p=ρgh（深度越大压强越大，同液同深各处相等）。<b>大气压</b>：托里拆利实验 p₀=1.013×10⁵Pa，海拔越高气压越小。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.d{fill:#e74c3c;font-size:11px;font-family:sans-serif;font-weight:700}
+    .arw{fill:#333}.arw2{fill:#e74c3c}.w{fill:rgba(52,152,219,0.2)}</style>
+    <rect x="40" y="25" width="125" height="95" class="a" fill="none"/>
+    <rect x="40" y="55" width="125" height="65" class="w"/>
+    <line x1="40" y1="55" x2="165" y2="55" stroke="#3498db" stroke-width="1" stroke-dasharray="4,3"/>
+    <rect x="80" y="60" width="45" height="35" fill="#fff" stroke="#333" stroke-width="1.5" rx="3"/>
+    <line x1="102.5" y1="77.5" x2="102.5" y2="52" class="b"/>
+    <polygon points="102.5,52 98,59 107,59" class="arw2"/>
+    <text x="110" y="58" class="d">F浮</text>
+    <line x1="102.5" y1="77.5" x2="102.5" y2="108" class="a"/>
+    <polygon points="102.5,108 98,100 107,100" class="arw"/>
+    <text x="110" y="102" class="c">G</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 浮力模型</div>
+    <div class="d">阿基米德原理 <span class="tg">F浮=ρ液gV排</span>。<span class="tg">F浮&gt;G</span> 上浮（最终漂浮 F浮=G）；<span class="tg">F浮=G</span> 悬浮；<span class="tg">F浮&lt;G</span> 下沉。密度计漂浮，示数下大上小。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:2;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.d{fill:#e74c3c;font-size:11px;font-family:sans-serif;font-weight:700}
+    .arw{fill:#333}.arw2{fill:#e74c3c}</style>
+    <polygon points="95,115 105,115 100,90" fill="#333"/>
+    <line x1="40" y1="90" x2="175" y2="90" class="a"/>
+    <line x1="65" y1="90" x2="65" y2="118" class="b"/>
+    <polygon points="65,118 61,110 69,110" class="arw2"/>
+    <text x="52" y="114" class="d">F₁</text>
+    <line x1="140" y1="90" x2="140" y2="118" class="b"/>
+    <polygon points="140,118 136,110 144,110" class="arw2"/>
+    <text x="148" y="114" class="d">F₂</text>
+    <line x1="60" y1="125" x2="100" y2="125" stroke="#999" stroke-width="0.8"/>
+    <line x1="60" y1="122" x2="60" y2="128" stroke="#999" stroke-width="0.8"/>
+    <line x1="100" y1="122" x2="100" y2="128" stroke="#999" stroke-width="0.8"/>
+    <text x="72" y="122" class="c" font-size="10" fill="#999">L₁</text>
+    <line x1="100" y1="125" x2="145" y2="125" stroke="#999" stroke-width="0.8"/>
+    <line x1="145" y1="122" x2="145" y2="128" stroke="#999" stroke-width="0.8"/>
+    <text x="118" y="122" class="c" font-size="10" fill="#999">L₂</text>
+    <text x="106" y="86" class="c">O</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 简单机械模型</div>
+    <div class="d"><b>杠杆平衡</b>：<span class="tg">F₁L₁=F₂L₂</span>。省力杠杆（L₁&gt;L₂，如撬棍）、费力（L₁&lt;L₂，如镊子）、等臂（如天平）。<b>滑轮组</b>：F=G总/n，s=nh。<b>斜面</b>：FL=Gh，越缓越省力。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.arw{fill:#333}</style>
+    <rect x="65" y="80" width="55" height="35" fill="#f5f5f5" stroke="#333" stroke-width="1.5" rx="3"/>
+    <rect x="65" y="30" width="55" height="35" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3" rx="3"/>
+    <line x1="92.5" y1="62" x2="92.5" y2="42" class="b"/>
+    <polygon points="92.5,42 88,50 97,50" class="arw"/>
+    <text x="100" y="49" class="c" fill="#e74c3c" font-weight="700">F</text>
+    <line x1="92.5" y1="80" x2="92.5" y2="75" class="a"/>
+    <line x1="120" y1="55" x2="120" y2="80" class="a"/>
+    <line x1="92.5" y1="55" x2="120" y2="55" stroke="#999" stroke-width="0.8"/>
+    <line x1="92.5" y1="52" x2="92.5" y2="58" stroke="#999" stroke-width="0.8"/>
+    <line x1="120" y1="52" x2="120" y2="58" stroke="#999" stroke-width="0.8"/>
+    <text x="102" y="52" class="c" font-size="10" fill="#999">h</text>
+    <text x="55" y="118" class="c" font-size="12">W = F·s = Gh</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 功与机械能</div>
+    <div class="d"><b>功</b>：W=Fs（F与s同向）。不做功：有力无距、有距无力、力与距垂直。<b>功率</b>：P=W/t=Fv。<b>机械效率</b>：η=W有/W总×100%。<b>机械能守恒</b>：动能和势能相互转化（滚摆、单摆）。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.d{fill:#e74c3c;font-size:11px;font-family:sans-serif;font-weight:700}.arw{fill:#333}</style>
+    <rect x="55" y="90" width="14" height="28" fill="#333" rx="2"/>
+    <rect x="55" y="90" width="14" height="5" fill="#666"/>
+    <line x1="62" y1="90" x2="62" y2="118" stroke="#333" stroke-width="1"/>
+    <rect x="55" y="118" width="14" height="5" fill="#999" rx="1"/>
+    <line x1="130" y1="25" x2="145" y2="25" stroke="#333" stroke-width="1.5"/>
+    <path d="M 145,25 L 150,17 L 158,33 L 166,17 L 174,33 L 179,25" class="a"/>
+    <line x1="179" y1="25" x2="190" y2="25" stroke="#333" stroke-width="1.5"/>
+    <line x1="130" y1="25" x2="130" y2="105" stroke="#333" stroke-width="1.5"/>
+    <line x1="55" y1="118" x2="130" y2="118" stroke="#333" stroke-width="1.5"/>
+    <line x1="55" y1="28" x2="130" y2="28" stroke="#333" stroke-width="1.5"/>
+    <line x1="130" y1="105" x2="145" y2="105" stroke="#333" stroke-width="1.5"/>
+    <line x1="179" y1="105" x2="190" y2="105" stroke="#333" stroke-width="1.5"/>
+    <rect x="145" y="98" width="34" height="14" fill="none" stroke="#333" stroke-width="1" rx="2"/>
+    <text x="152" y="109" class="c" font-size="9">R</text>
+    <line x1="62" y1="28" x2="62" y2="62" stroke="#bdc3c7" stroke-width="1"/>
+    <circle cx="62" cy="70" r="8" fill="none" stroke="#333" stroke-width="1.2"/>
+    <text x="58" y="73" class="c" font-size="9">A</text>
+    <line x1="62" y1="78" x2="62" y2="90" stroke="#bdc3c7" stroke-width="1"/>
+    <polygon points="140,70 130,66 130,74" class="arw"/>
+    <text x="112" y="66" class="d">I</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 电路分析模型</div>
+    <div class="d">欧姆定律 <span class="tg">I=U/R</span>。<span class="tg">串联</span>I相等，U分压 U₁/U₂=R₁/R₂。<span class="tg">并联</span>U相等，I分流 I₁/I₂=R₂/R₁。电功率 P=UI=I²R=U²/R。动态电路：滑动变阻器→总电阻→总电流→分压分流变化。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.d{fill:#e74c3c;font-size:11px;font-family:sans-serif}</style>
+    <rect x="30" y="95" width="14" height="28" fill="#333" rx="2"/>
+    <rect x="30" y="95" width="14" height="5" fill="#666"/>
+    <line x1="37" y1="95" x2="37" y2="123"/>
+    <rect x="30" y="123" width="14" height="5" fill="#999" rx="1"/>
+    <line x1="30" y1="105" x2="100" y2="105" class="a"/>
+    <line x1="30" y1="25" x2="170" y2="25" class="a"/>
+    <line x1="37" y1="25" x2="37" y2="55" class="a"/>
+    <path d="M 120,25 L 125,17 L 133,33 L 141,17 L 149,33 L 157,17 L 162,25" class="a"/>
+    <line x1="162" y1="25" x2="170" y2="25" class="a"/>
+    <line x1="170" y1="25" x2="170" y2="85" class="a"/>
+    <line x1="100" y1="105" x2="100" y2="85" class="a"/>
+    <line x1="100" y1="85" x2="170" y2="85" class="a"/>
+    <circle cx="135" cy="85" r="9" fill="none" stroke="#333" stroke-width="1.2"/>
+    <text x="131" y="89" class="c" font-size="9">V</text>
+    <circle cx="60" cy="105" r="9" fill="none" stroke="#333" stroke-width="1.2"/>
+    <line x1="60" y1="96" x2="60" y2="55" class="a" stroke="#bdc3c7"/>
+    <circle cx="60" cy="65" r="9" fill="none" stroke="#333" stroke-width="1.2"/>
+    <text x="56" y="69" class="c" font-size="9">A</text>
+    <line x1="60" y1="56" x2="60" y2="25" class="a"/>
+    <text x="125" y="22" class="c" font-size="10">R</text>
+    <text x="150" y="108" class="c" font-size="9">V</text>
+    <text x="38" y="108" class="c" font-size="9">A</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 伏安法测电阻/功率</div>
+    <div class="d">R=U/I，P=UI。电压表<span class="tg">并联</span>测电压 V，电流表<span class="tg">串联</span>测电流 A。<b>断路</b>：电流表无示数、电压表有示数（测电源）。<b>短路</b>：电流表有示数、电压表无示数。测小灯泡功率：调滑动变阻器使电压=额定电压。</div>
+  </div>
+</div>
+
+<div class="cd" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+  <svg width="200" height="130" viewBox="0 0 200 130">
+    <style>.a{stroke:#333;stroke-width:1.5;fill:none}.b{stroke:#e74c3c;stroke-width:1.5;fill:none}.c{fill:#333;font-size:11px;font-family:sans-serif}.d{fill:#e74c3c;font-size:11px;font-family:sans-serif}</style>
+    <line x1="20" y1="65" x2="180" y2="65" class="a" stroke-dasharray="6,3"/>
+    <path d="M 88,25 Q 95,65 88,105" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M 112,25 Q 105,65 112,105" fill="none" stroke="#333" stroke-width="2"/>
+    <circle cx="60" cy="30" r="2.5" fill="#e74c3c"/>
+    <circle cx="60" cy="100" r="2.5" fill="#e74c3c"/>
+    <line x1="60" y1="30" x2="90" y2="55" class="b" marker-end=""/>
+    <polygon points="90,55 82,52 85,60" fill="#e74c3c"/>
+    <line x1="60" y1="100" x2="90" y2="75" class="b"/>
+    <polygon points="90,75 82,78 85,70" fill="#e74c3c"/>
+    <text x="48" y="28" class="c">S</text>
+    <text x="46" y="116" class="c">S'</text>
+    <text x="90" y="55" class="c" fill="#e74c3c" font-size="9">反射</text>
+    <text x="130" y="28" class="d" font-weight="700">平面镜</text>
+    <text x="118" y="118" class="c" font-size="9" fill="#888">入射角=反射角</text>
+  </svg>
+  <div style="flex:1;min-width:180px">
+    <div class="t">🔹 光学模型</div>
+    <div class="d"><b>光的反射</b>：入射角=反射角（三线共面、两线分居、两角相等）。平面镜：等大等距正立虚像（对称）。<b>凸透镜成像</b>：<span class="tg">u&gt;2f</span> 倒立缩小实像（照相机）；<span class="tg">f&lt;u&lt;2f</span> 倒立放大实像（投影仪）；<span class="tg">u&lt;f</span> 正立放大虚像（放大镜）。</div>
+  </div>
+</div>
+
 </div>
 
 <div class="pane" id="tabKnowledge">
