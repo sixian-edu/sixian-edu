@@ -28,6 +28,17 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
 .lock-screen .lk-box .lb-btn:hover{opacity:.85}
 .lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
+.lock-screen .lk-contact{display:none;margin-top:14px;width:100%;max-width:360px;text-align:center}
+.lock-screen .lk-contact.show{display:block}
+.lock-screen .lc-dv{height:1px;background:#eee;margin-bottom:12px}
+.lock-screen .lc-t{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+.lock-screen .lc-d{font-size:12px;color:#999;margin-bottom:10px}
+.lock-screen .lc-wx{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.lock-screen .lc-wx label{font-size:13px;color:#666}
+.lock-screen .lc-wx strong{font-size:15px;color:#e74c3c}
+.lock-screen .lc-wx-btn{padding:5px 14px;background:#fff;border:1px solid #e74c3c;color:#e74c3c;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600}
+.lock-screen .lc-wx-btn:hover{background:#e74c3c;color:#fff}
+
 .cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #8e44ad}
 .cd .t{font-weight:700;font-size:14px;color:#8e44ad;margin-bottom:4px}
 .cd .d{font-size:13px;color:#555;line-height:1.7}
@@ -61,8 +72,18 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
   <div class="lk-box">
     <div class="lb-t">📋 转发文案</div>
     <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
-    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+    <button class="lb-btn" onclick="copyTxt(this)">复制文案 · 分享给好友</button>
   </div>
+  <div class="lk-contact">
+    <div class="lc-dv"></div>
+    <div class="lc-t">📞 已分享？联系老师</div>
+    <div class="lc-d">将截图发给老师，验证后即可解锁</div>
+    <div class="lc-wx">
+      <label>微信号：</label><strong>155-6412-8008</strong>
+      <button class="lc-wx-btn" onclick="copyWx()">复制微信号</button>
+    </div>
+  </div>
+
   <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
 
@@ -75,8 +96,18 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
   <div class="lk-box">
     <div class="lb-t">📋 转发文案</div>
     <div class="lb-txt">我家孩子在用思贤家教的辅导资料，数学几何模型和物理模型都有图解，各科知识点整理得很全，老师也很负责。推荐给有需要的家长，可以加微信了解一下~</div>
-    <button class="lb-btn" onclick="copyTxt()">复制文案 · 分享给好友</button>
+    <button class="lb-btn" onclick="copyTxt(this)">复制文案 · 分享给好友</button>
   </div>
+  <div class="lk-contact">
+    <div class="lc-dv"></div>
+    <div class="lc-t">📞 已分享？联系老师</div>
+    <div class="lc-d">将截图发给老师，验证后即可解锁</div>
+    <div class="lc-wx">
+      <label>微信号：</label><strong>155-6412-8008</strong>
+      <button class="lc-wx-btn" onclick="copyWx()">复制微信号</button>
+    </div>
+  </div>
+
   <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
 </div>
 
@@ -89,18 +120,37 @@ function switchTab(name, btn){
   btn.classList.add('active');
   document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
 }
-function copyTxt(){
-  var txt = document.querySelector('.pane.active .lb-txt').textContent;
+function copyTxt(btn){
+  var txt = btn.closest('.lk-box').querySelector('.lb-txt').textContent;
   var hint = document.querySelector('.pane.active .lk-hint');
+  var contact = document.querySelector('.pane.active .lk-contact');
   if(navigator.clipboard){
-    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
+    navigator.clipboard.writeText(txt).then(function(){
+      btn.textContent = '\u2705 \u5df2\u590d\u5236\uff0c\u5206\u4eab\u540e\u8054\u7cfb\u8001\u5e08\u89e3\u9501\u5168\u90e8\u5185\u5bb9';
+      hint.textContent = '\u2705 \u5df2\u590d\u5236\uff01\u5206\u4eab\u540e\u6dfb\u52a0\u8001\u5e08\u5fae\u4fe1\u89e3\u9501';
+      if(contact) contact.classList.add('show');
+    });
   } else {
     var ta = document.createElement('textarea');
     ta.value = txt; document.body.appendChild(ta);
     ta.select(); document.execCommand('copy');
     document.body.removeChild(ta);
-    hint.textContent = '✅ 已复制，分享给好友吧！';
+    btn.textContent = '\u2705 \u5df2\u590d\u5236\u3000\u8054\u7cfb\u8001\u5e08\u89e3\u9501';
+    hint.textContent = '\u2705 \u5df2\u590d\u5236\uff01\u5206\u4eab\u540e\u6dfb\u52a0\u8001\u5e08\u5fae\u4fe1\u89e3\u9501';
+    if(contact) contact.classList.add('show');
   }
+}
+function copyWx(){
+  var wx = document.querySelector('.pane.active .lc-wx strong').textContent;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(wx);
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = wx; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  alert('\u5fae\u4fe1\u53f7\u5df2\u590d\u5236\uff0c\u53bb\u5fae\u4fe1\u6dfb\u52a0\u8001\u5e08\u5427\uff01');
 }
 </script>
 </body>
