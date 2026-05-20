@@ -16,8 +16,14 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 .tab-btn:hover{color:#27ae60}
 .tab-btn.active{background:#27ae60;color:#fff}
 .body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
-.pane{display:none}
+.pane{display:none;position:relative}
 .pane.active{display:block}
+.lock-overlay{display:none;position:absolute;inset:0;background:rgba(255,255,255,0.93);flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;min-height:260px;border-radius:10px;padding:20px}
+.lock-overlay.show{display:flex}
+.lock-overlay .lock-icon{font-size:40px;margin-bottom:8px}
+.lock-overlay .lock-title{font-size:19px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.lock-overlay .lock-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
+.lock-overlay .lock-phone{font-size:16px;color:#e74c3c;background:#fef0ef;padding:10px 28px;border-radius:8px;font-weight:700;display:inline-block}
 .cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
 .cd .t{font-weight:700;font-size:14px;color:#27ae60;margin-bottom:4px}
 .cd .d{font-size:13px;color:#555;line-height:1.7}
@@ -34,8 +40,8 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <body>
 <div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中生物</h1></div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)">🧬 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
+  <button class="tab-btn active" onclick="switchTab('model',this)" data-tab="model" data-locked="true">🧬 模型</button>
+  <button class="tab-btn" onclick="switchTab('knowledge',this)" data-tab="knowledge" data-locked="true">📖 知识点大全</button>
 </div>
 <div class="body">
 
@@ -46,6 +52,13 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <div class="cd"><div class="t">🔹 遗传模型</div><div class="d">基因控制性状。显性A×隐性a→子代Aa。Aa×Aa→AA:Aa:aa=1:2:1（显性:隐性=3:1）。女性XX，男性XY，生男生女各50%。</div></div>
 <div class="cd"><div class="t">🔹 生态系统模型</div><div class="d">非生物+生物（生产者→消费者→分解者）。能量单向流动逐级递减（10%-20%）。碳循环：CO₂→光合→有机物→呼吸/燃烧→CO₂。</div></div>
 <div class="cd"><div class="t">🔹 人体生理模型</div><div class="d">消化：口腔→胃→小肠（主要吸收）。循环：体循环（左心室→全身→右心房），肺循环（右心室→肺→左心房）。尿液：肾小球滤过→肾小管重吸收。反射弧：感受器→传入→中枢→传出→效应器。</div></div>
+</div>
+<div class="lock-overlay">
+  <div class="lock-icon">🔒</div>
+  <div class="lock-title">内容已加密</div>
+  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
+  <div class="lock-phone">解锁请联系 155-6412-8008</div>
+</div>
 </div>
 
 <div class="pane" id="tabKnowledge">
@@ -73,6 +86,12 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 <p>人类基因组：23对染色体（22对常染色体+1对性染色体）。</p>
 <p>自然选择：过度繁殖→生存斗争→遗传变异→适者生存。自然选择决定生物进化方向。</p>
 </div>
+<div class="lock-overlay">
+  <div class="lock-icon">🔒</div>
+  <div class="lock-title">内容已加密</div>
+  <div class="lock-desc">您尚未购买思贤家教的<br><strong>上门一对一辅导服务</strong></div>
+  <div class="lock-phone">解锁请联系 155-6412-8008</div>
+</div>
 </div>
 
 </div>
@@ -80,9 +99,24 @@ body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.lock-overlay').forEach(function(o){o.classList.remove('show')});
+  var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
+  pane.classList.add('active');
   btn.classList.add('active');
-  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
+  if (btn.getAttribute('data-locked') === 'true') {
+    var overlay = pane.querySelector('.lock-overlay');
+    if (overlay) overlay.classList.add('show');
+  }
 }
+// Init: show lock if active tab is locked
+document.querySelectorAll('.tab-btn.active').forEach(function(btn){
+  if (btn.getAttribute('data-locked') === 'true') {
+    var name = btn.getAttribute('data-tab');
+    var pane = document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1));
+    var overlay = pane.querySelector('.lock-overlay');
+    if (overlay) overlay.classList.add('show');
+  }
+});
 </script>
 </body>
 </html>
