@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时间管理入门 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f3e5f5;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:800px;margin:0 auto}
+.back{color:#666;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+h1{text-align:center;font-size:28px;color:#7b1fa2;margin-bottom:4px}
+.sub{text-align:center;font-size:14px;color:#888;margin-bottom:20px}
+.card{background:#fff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.card .t{font-weight:700;font-size:18px;color:#7b1fa2;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .d{font-size:15px;color:#444;line-height:1.9}
+.card .d b{color:#7b1fa2}
+.tag{display:inline-block;font-size:12px;padding:3px 12px;border-radius:20px;margin:3px;background:#f3e5f5;color:#7b1fa2}
+.tag.red{background:#ffebee;color:#c62828}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.green{background:#e8f5e9;color:#2e7d32}
+.tip-box{background:#fff8e1;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:14px;color:#e65100}
+.tip-box .tip-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.sec-title{font-size:20px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #7b1fa2}
+.time-block{display:flex;align-items:center;gap:10px;padding:8px 12px;margin:6px 0;border-radius:8px;font-size:14px}
+.time-block .tm{flex:0 0 70px;font-weight:700;color:#7b1fa2}
+.time-block .desc{flex:1}
+.schedule{background:#f3e5f5;border-radius:12px;padding:14px;margin:10px 0}
+.schedule .sched-t{font-weight:700;font-size:14px;color:#7b1fa2;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
+<h1>📅 时间管理入门</h1>
+<p class="sub">学会管理时间，做时间的小主人</p>
+
+<div class="card">
+  <div class="t">⏳ 时间是什么？</div>
+  <div class="d">
+    时间就像一个小沙漏，<b>流走了就不会回来</b>。<br><br>
+    每天我们都有 <b>24 小时 = 1440 分钟</b>，有的人能用好这些时间，有的人却总觉得"时间不够用"。<br><br>
+    不会管理时间的小朋友：作业写到很晚，没时间玩，还被妈妈催 😫<br>
+    会管理时间的小朋友：作业早早做完，还能看课外书、玩游戏 😊<br><br>
+    <b>区别在哪里？</b> 不是谁更聪明，而是谁更会"管理时间"！
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">🤔 你的时间都去哪了？</div>
+  <div class="d">
+    先来做个小测试——回想一个普通的放学后的傍晚：<br><br>
+    <div class="schedule">
+      <div class="sched-t">⏰ 放学后的时间去哪里了？</div>
+      <div class="time-block" style="background:#fff3e0"><span class="tm">4:00-4:30</span><span class="desc">🚶 回家路上</span></div>
+      <div class="time-block" style="background:#fff8e1"><span class="tm">4:30-4:45</span><span class="desc">🍪 吃零食、休息</span></div>
+      <div class="time-block" style="background:#fff3e0"><span class="tm">4:45-5:00</span><span class="desc">📱 玩了一下手机</span></div>
+      <div class="time-block" style="background:#fff8e1"><span class="tm">5:00-5:15</span><span class="desc">🚽 上厕所、喝水、磨蹭</span></div>
+      <div class="time-block" style="background:#fce4ec"><span class="tm">5:15</span><span class="desc">😱 哎？怎么这么晚了！才开始写作业！</span></div>
+    </div>
+    是不是很熟悉？这就是"时间小偷"偷走了你的时间！
+  </div>
+</div>
+
+<div class="sec-title">🎯 时间管理的四大法宝</div>
+
+<div class="card">
+  <div class="t">📋 法宝一：列任务清单"To-Do List"</div>
+  <div class="d">
+    每天花 <b>5 分钟</b> 列一个任务清单，就像给自己画一张"藏宝图"：<br><br>
+    <div style="background:#f3e5f5;border-radius:10px;padding:14px;max-width:350px;margin:0 auto">
+      <div style="font-weight:700;color:#7b1fa2;margin-bottom:6px">📝 今天的任务清单</div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0">
+        <span style="color:#2e7d32">✅</span> 语文生字抄写
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0">
+        <span style="color:#2e7d32">✅</span> 数学练习册 P20-21
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0">
+        <span>⬜</span> 英语朗读 15 分钟
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0">
+        <span>⬜</span 整理书包
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0">
+        <span>⬜</span> 阅读课外书 20 分钟
+      </div>
+    </div>
+    <div class="tip-box" style="margin-top:10px">
+      <div class="tip-t">💡 小秘诀</div>
+      <div class="tip-d">做完一项就划掉一项，看着清单一点点变短，超级有成就感！</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">🐸 法宝二：先吃"最丑的青蛙"</div>
+  <div class="d">
+    马克·吐温说过："如果你每天早上必须吃掉一只活青蛙，那么你可以一整天都不去想这件糟心事了。"<br><br>
+    什么意思呢？<br>
+    <b>"最丑的青蛙" = 最难/最不想做的任务</b><br><br>
+    把它放在 <b>第一位</b> 去做！为什么？<br><br>
+    · 早上/刚回家精力最好，最适合解决难题<br>
+    · 做完最难的任务，后面的都会觉得"好简单"<br>
+    · 不会一整天都在担心"还有一件难事没做"<br><br>
+    <span class="tag green">推荐顺序：</span> 先做最难的 → 再做简单的 → 最后做最喜欢的<br>
+    <span class="tag red">避免：</span> 一直做简单的，把难的留到最后——结果难的没时间做了
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">⚡ 法宝三："三只青蛙"时间管理表</div>
+  <div class="d">
+    每天选出最重要的三件事（三只"青蛙"），优先完成它们：<br><br>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0">
+      <div style="background:#e8f5e9;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">🐸</div>
+        <b>青蛙 1</b>
+        <div style="font-size:12px;color:#888">最重要的事</div>
+      </div>
+      <div style="background:#e3f2fd;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">🐸</div>
+        <b>青蛙 2</b>
+        <div style="font-size:12px;color:#888">第二重要的事</div>
+      </div>
+      <div style="background:#fff3e0;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">🐸</div>
+        <b>青蛙 3</b>
+        <div style="font-size:12px;color:#888">第三重要的事</div>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:14px;color:#555">
+      <b>完成了这三只"青蛙"，今天就是胜利的一天！</b>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">🧩 法宝四：给任务分分类</div>
+  <div class="d">
+    用"重要/紧急"四象限来给任务分类：<br><br>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:480px;margin:0 auto">
+      <div style="background:#ffebee;border-radius:10px;padding:12px;text-align:center">
+        <b style="color:#c62828">紧急又重要</b><br>
+        <span style="font-size:12px;color:#666">明天要交的作业</span>
+      </div>
+      <div style="background:#fff3e0;border-radius:10px;padding:12px;text-align:center">
+        <b style="color:#e65100">重要不紧急</b><br>
+        <span style="font-size:12px;color:#666">每天阅读、练字</span>
+      </div>
+      <div style="background:#e3f2fd;border-radius:10px;padding:12px;text-align:center">
+        <b style="color:#1565c0">紧急不重要</b><br>
+        <span style="font-size:12px;color:#666">帮同学拿个东西</span>
+      </div>
+      <div style="background:#f5f5f5;border-radius:10px;padding:12px;text-align:center">
+        <b style="color:#999">不紧急不重要</b><br>
+        <span style="font-size:12px;color:#666">无目的地刷手机</span>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:13px;color:#888;text-align:center">
+      先做"紧急又重要"的事，多做"重要不紧急"的事（这是让你进步的关键！）
+    </div>
+  </div>
+</div>
+
+<div class="sec-title">📊 小学生一日时间表（参考）</div>
+
+<div class="card">
+  <div class="d">
+    这是一份"理想时间表"，你可以根据自己的情况调整：<br><br>
+    <div class="time-block" style="background:#e8f5e9"><span class="tm">🌅 7:00</span><span class="desc">起床、洗漱、吃早餐</span></div>
+    <div class="time-block" style="background:#e3f2fd"><span class="tm">🏫 8:00-16:00</span><span class="desc">在学校上课</span></div>
+    <div class="time-block" style="background:#fff8e1"><span class="tm">🚶 16:00-16:30</span><span class="desc">回家、休息、吃点点心</span></div>
+    <div class="time-block" style="background:#fce4ec"><span class="tm">📝 16:30-17:30</span><span class="desc"><b>写作业时间（一）</b> 语文 + 数学</span></div>
+    <div class="time-block" style="background:#e8f5e9"><span class="tm">🏃 17:30-18:00</span><span class="desc">户外活动、运动一下</span></div>
+    <div class="time-block" style="background:#fff3e0"><span class="tm">🍚 18:00-18:30</span><span class="desc">吃晚饭</span></div>
+    <div class="time-block" style="background:#fce4ec"><span class="tm">📝 18:30-19:00</span><span class="desc"><b>写作业时间（二）</b> 英语 + 其他</span></div>
+    <div class="time-block" style="background:#f3e5f5"><span class="tm">🌙 19:00-19:30</span><span class="desc">课外阅读、练字</span></div>
+    <div class="time-block" style="background:#e3f2fd"><span class="tm">🛁 19:30-20:00</span><span class="desc">洗漱、准备明天书包</span></div>
+    <div class="time-block" style="background:#e8f5e9"><span class="tm">📖 20:00-20:30</span><span class="desc">亲子阅读、听故事</span></div>
+    <div class="time-block" style="background:#f3e5f5"><span class="tm">😴 20:30-21:00</span><span class="desc">上床睡觉</span></div>
+    <div class="tip-box">
+      <div class="tip-t">💡 小提醒</div>
+      <div class="tip-d">不用完全按照这个来！重点是：<b>每天固定时间做固定的事</b>，养成习惯最重要。</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-title">🌟 时间管理小工具</div>
+
+<div class="card">
+  <div class="d">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="background:#e3f2fd;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">⏰</div>
+        <b>计时器/闹钟</b>
+        <div style="font-size:13px;color:#888">用番茄钟法定时</div>
+      </div>
+      <div style="background:#fff3e0;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">📋</div>
+        <b>便利贴</b>
+        <div style="font-size:13px;color:#888">写任务贴在显眼处</div>
+      </div>
+      <div style="background:#e8f5e9;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">📅</div>
+        <b>日历</b>
+        <div style="font-size:13px;color:#888">标记重要日期和考试</div>
+      </div>
+      <div style="background:#f3e5f5;border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:28px">📱</div>
+        <b>时间管理APP</b>
+        <div style="font-size:13px;color:#888">在爸爸妈妈手机上用</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">⚠️ 时间管理的"不要"</div>
+  <div class="d">
+    <div style="background:#ffebee;border-radius:10px;padding:12px;margin:6px 0">
+      ❌ <b>不要把时间排得太满</b> — 留一些自由玩耍的时间
+    </div>
+    <div style="background:#ffebee;border-radius:10px;padding:12px;margin:6px 0">
+      ❌ <b>不要做完一件事才做下一件</b> — 灵活调整，计划赶不上变化
+    </div>
+    <div style="background:#ffebee;border-radius:10px;padding:12px;margin:6px 0">
+      ❌ <b>不要追求完美</b> — 完成比完美更重要
+    </div>
+    <div style="background:#ffebee;border-radius:10px;padding:12px;margin:6px 0">
+      ❌ <b>不要忘了休息</b> — 大脑需要休息才能更高效
+    </div>
+  </div>
+</div>
+
+<div class="card" style="background:#f3e5f5;border-top-color:#7b1fa2">
+  <div class="d" style="text-align:center;font-size:16px">
+    <b>🌟 时间管理小名言 🌟</b><br><br>
+    <span style="color:#7b1fa2;font-size:18px">"时间就像海绵里的水，</span><br>
+    <span style="color:#7b1fa2;font-size:18px">只要愿挤，总还是有的。"</span><br><br>
+    <span style="color:#888;font-size:13px">—— 鲁迅</span><br><br>
+    <span style="font-size:14px">学会管理时间，你会发现：原来一天可以做这么多事！</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
