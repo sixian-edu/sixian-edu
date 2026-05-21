@@ -11,17 +11,24 @@
         /* ── Hero ── */
         .m-hero {
             text-align: center; padding: 50px 20px 36px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff; margin-bottom: 10px;
+            background: var(--hero-gradient);
+            color: #fff; margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .m-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(86,136,204,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(115,191,170,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
         }
         .m-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
-        .m-hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+        .m-hero p { font-size: 14px; color: #E0E0E0; max-width: 480px; margin: 0 auto; line-height: 1.7; }
         .m-hero .tags {
             display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
         }
         .m-hero .tags span {
             font-size: 12px; padding: 4px 14px; border-radius: 12px;
-            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
+            background: rgba(200,224,240,0.12); color: #C8E0F0; border: 1px solid rgba(200,224,240,0.35);
         }
 
         /* ── Nav bar ── */
@@ -54,19 +61,19 @@
         }
 
         /* colors */
-        .m-time .m-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
-        .m-eff .m-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
-        .m-memory .m-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
-        .m-note .m-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
-        .m-sleep .m-header { background: linear-gradient(135deg, #2c3e50, #34495e); }
-        .m-phone .m-header { background: linear-gradient(135deg, #d35400, #e67e22); }
+        .m-time .m-header { background: linear-gradient(135deg, #D18080, #BD6E6E); }
+        .m-eff .m-header { background: linear-gradient(135deg, #5688CC, #4A7AB8); }
+        .m-memory .m-header { background: linear-gradient(135deg, #8899CC, #7A88C0); }
+        .m-note .m-header { background: linear-gradient(135deg, #73BFAA, #5EA890); }
+        .m-sleep .m-header { background: linear-gradient(135deg, #5A6A80, #4A5E70); }
+        .m-phone .m-header { background: linear-gradient(135deg, #D0A060, #B88848); }
 
         /* ── Card Grid ── */
         .m-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
         }
         .m-card {
-            background: #fff; border-radius: 14px; padding: 20px 20px 18px;
+            background: #F8FAFD; border-radius: 14px; padding: 20px 20px 18px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.05);
             transition: transform .2s, box-shadow .2s;
             text-decoration: none; color: inherit; display: flex; flex-direction: column;
@@ -82,9 +89,9 @@
         .m-card .mc-tags span {
             font-size: 10px; padding: 2px 10px; border-radius: 8px;
         }
-        .tag-done { background: #e6f7e6; color: #2d7d46; }
+        .tag-done { background: rgba(136,192,152,0.15); color: #5EA890; }
         .tag-wip { background: #f0f0f0; color: #999; }
-        .tag-hot { background: #fff3d6; color: #b8860b; }
+        .tag-hot { background: rgba(217,168,104,0.15); color: #B88848; }
 
         /* ── Footer trust ── */
         .m-footer {
@@ -99,7 +106,7 @@
             .method-nav { margin-left: 12px; margin-right: 12px; }
         }
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -110,7 +117,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html">资源库</a>
     <a href="成长社区.html">成长社区</a>
-    <a href="关于.html">关于</a>
+    <a href="关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="m-hero">

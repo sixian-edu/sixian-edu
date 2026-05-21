@@ -9,27 +9,28 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+            background: var(--hero-gradient);
             color: #fff; padding: 60px 20px 68px; text-align: center; position: relative; overflow: hidden;
         }
         .hero::before {
             content: ''; position: absolute; inset: 0;
             background:
-                radial-gradient(ellipse at 30% 30%, rgba(52,152,219,0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 70%, rgba(155,89,182,0.1) 0%, transparent 50%);
+                radial-gradient(ellipse at 30% 30%, rgba(86,136,204,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(115,191,170,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
         }
         .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
         .hero h1 { font-size: 34px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
-        .hero p { font-size: 15px; opacity: .75; line-height: 1.8; }
+        .hero p { font-size: 15px; color: #E0E0E0; line-height: 1.8; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 48px 20px 60px; }
 
-        .zone { margin-bottom: 40px; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+        .zone { margin-bottom: 40px; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
         .zone-header { padding: 22px 28px; display: flex; align-items: center; gap: 16px; color: #fff; }
         .zone-header .z-icon { font-size: 34px; }
         .zone-header h2 { font-size: 20px; font-weight: 700; }
         .zone-header p { font-size: 14px; opacity: .85; margin-top: 2px; }
-        .zone-body { background: #fff; padding: 20px 28px 24px; }
+        .zone-body { background: #F8FAFD; padding: 20px 28px 24px; }
 
         .topic-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
         .topic-card {
@@ -60,8 +61,8 @@
             display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px;
             font-weight: 600; margin-left: 6px; vertical-align: middle;
         }
-        .status-tag.ready { background: #e8f5e9; color: #2e7d32; }
-        .status-tag.soon { background: #fff3e0; color: #e65100; }
+        .status-tag.ready { background: rgba(136,192,152,0.15); color: #5EA890; }
+        .status-tag.soon { background: rgba(217,168,104,0.15); color: #B88848; }
 
         @media (max-width: 768px) {
             .topic-grid { grid-template-columns: 1fr 1fr; }
@@ -71,7 +72,7 @@
             .topic-grid { grid-template-columns: 1fr; }
         }
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -82,7 +83,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html">资源库</a>
     <a href="成长社区.html">成长社区</a>
-    <a href="关于.html">关于</a>
+    <a href="关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="hero">
@@ -96,7 +97,7 @@
 
     <!-- ════════════ 小学成长 ════════════ -->
     <div class="zone">
-        <div class="zone-header" style="background:linear-gradient(135deg,#43a047,#2e7d32)">
+        <div class="zone-header" style="background:linear-gradient(135deg,#73BFAA,#5EA890)">
             <div class="z-icon">🌱</div>
             <div>
                 <h2>小学成长</h2>
@@ -107,32 +108,32 @@
 
             <div class="topic-section-title">📌 学习习惯</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="资料/小学/如何提升专注力.html"><div class="tc-icon" style="background:#43a047">🧘</div><div class="tc-body"><h4>如何提升专注力<span class="status-tag ready">已上线</span></h4><p>让孩子坐得住、听得进的实用方法</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/小学/作业拖延怎么办.html"><div class="tc-icon" style="background:#66bb6a">⏰</div><div class="tc-body"><h4>作业拖延怎么办<span class="status-tag ready">已上线</span></h4><p>告别磨蹭，高效完成作业的策略</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/小学/错题本使用指南.html"><div class="tc-icon" style="background:#81c784">📓</div><div class="tc-body"><h4>错题本使用指南<span class="status-tag ready">已上线</span></h4><p>让错题本真正发挥作用的技巧</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/小学/时间管理入门.html"><div class="tc-icon" style="background:#a5d6a7">📅</div><div class="tc-body"><h4>时间管理入门<span class="status-tag ready">已上线</span></h4><p>培养孩子自主管理时间的能力</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/如何提升专注力.html"><div class="tc-icon" style="background:#73BFAA">🧘</div><div class="tc-body"><h4>如何提升专注力<span class="status-tag ready">已上线</span></h4><p>让孩子坐得住、听得进的实用方法</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/作业拖延怎么办.html"><div class="tc-icon" style="background:#95C8A4">⏰</div><div class="tc-body"><h4>作业拖延怎么办<span class="status-tag ready">已上线</span></h4><p>告别磨蹭，高效完成作业的策略</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/错题本使用指南.html"><div class="tc-icon" style="background:#A8D8B4">📓</div><div class="tc-body"><h4>错题本使用指南<span class="status-tag ready">已上线</span></h4><p>让错题本真正发挥作用的技巧</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/时间管理入门.html"><div class="tc-icon" style="background:#BDE8C8">📅</div><div class="tc-body"><h4>时间管理入门<span class="status-tag ready">已上线</span></h4><p>培养孩子自主管理时间的能力</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 数学思维</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#43a047">🧮</div><div class="tc-body"><h4>速算技巧</h4><p>口算心算提速，计算不丢分</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#66bb6a">📊</div><div class="tc-body"><h4>应用题专项</h4><p>审题、建模、解题，三步通吃</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#81c784">📐</div><div class="tc-body"><h4>图形题精讲</h4><p>几何图形入门与空间思维训练</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#a5d6a7">🎲</div><div class="tc-body"><h4>趣味数学</h4><p>激发数学兴趣的烧脑小游戏</p></div></div>
+                <a class="topic-card link" href="资料/小学/速算技巧.html"><div class="tc-icon" style="background:#73BFAA">🧮</div><div class="tc-body"><h4>速算技巧<span class="status-tag ready">已上线</span></h4><p>口算心算提速，计算不丢分</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/应用题专项.html"><div class="tc-icon" style="background:#95C8A4">📊</div><div class="tc-body"><h4>应用题专项<span class="status-tag ready">已上线</span></h4><p>审题、建模、解题，三步通吃</p></div><div class="tc-arrow">→</div></a>
+                <div class="topic-card"><div class="tc-icon" style="background:#A8D8B4">📐</div><div class="tc-body"><h4>图形题精讲</h4><p>几何图形入门与空间思维训练</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#BDE8C8">🎲</div><div class="tc-body"><h4>趣味数学</h4><p>激发数学兴趣的烧脑小游戏</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 阅读积累</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#43a047">📚</div><div class="tc-body"><h4>好书推荐</h4><p>分龄书单，让孩子爱上阅读</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#66bb6a">✏️</div><div class="tc-body"><h4>作文素材</h4><p>好词好句、写作素材每日积累</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#81c784">📖</div><div class="tc-body"><h4>阅读方法</h4><p>精读、泛读、批注，提升阅读效率</p></div></div>
+                <a class="topic-card link" href="资料/小学/好书推荐.html"><div class="tc-icon" style="background:#73BFAA">📚</div><div class="tc-body"><h4>好书推荐<span class="status-tag ready">已上线</span></h4><p>分龄书单，让孩子爱上阅读</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/作文素材.html"><div class="tc-icon" style="background:#95C8A4">✏️</div><div class="tc-body"><h4>作文素材<span class="status-tag ready">已上线</span></h4><p>好词好句、写作素材每日积累</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/小学/阅读方法.html"><div class="tc-icon" style="background:#A8D8B4">📖</div><div class="tc-body"><h4>阅读方法<span class="status-tag ready">已上线</span></h4><p>精读、泛读、批注，提升阅读效率</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 英语启蒙</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#43a047">🔤</div><div class="tc-body"><h4>单词记忆方法</h4><p>自然拼读、联想记忆，高效背单词</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#66bb6a">🗣️</div><div class="tc-body"><h4>自然拼读</h4><p>见词能读、听音能写的拼读规则</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#81c784">📺</div><div class="tc-body"><h4>动画推荐</h4><p>适合小学生的英语启蒙动画清单</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#73BFAA">🔤</div><div class="tc-body"><h4>单词记忆方法</h4><p>自然拼读、联想记忆，高效背单词</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#95C8A4">🗣️</div><div class="tc-body"><h4>自然拼读</h4><p>见词能读、听音能写的拼读规则</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#A8D8B4">📺</div><div class="tc-body"><h4>动画推荐</h4><p>适合小学生的英语启蒙动画清单</p></div></div>
             </div>
 
         </div>
@@ -140,7 +141,7 @@
 
     <!-- ════════════ 初中学习 ════════════ -->
     <div class="zone">
-        <div class="zone-header" style="background:linear-gradient(135deg,#1565c0,#0d47a1)">
+        <div class="zone-header" style="background:linear-gradient(135deg,#D18080,#BD6E6E)">
             <div class="z-icon">📚</div>
             <div>
                 <h2>初中学习</h2>
@@ -151,43 +152,44 @@
 
             <div class="topic-section-title">📌 数学</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="资料/初中函数大全.html"><div class="tc-icon" style="background:#1565c0">📈</div><div class="tc-body"><h4>函数<span class="status-tag ready">已上线</span></h4><p>一次函数 · 二次函数 · 反比例函数</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中几何大全.html"><div class="tc-icon" style="background:#1e88e5">📐</div><div class="tc-body"><h4>几何<span class="status-tag ready">已上线</span></h4><p>三角形 · 四边形 · 圆 · 几何模型</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中方程大全.html"><div class="tc-icon" style="background:#42a5f5">✖️</div><div class="tc-body"><h4>方程<span class="status-tag ready">已上线</span></h4><p>一元二次 · 二元一次 · 分式方程</p></div><div class="tc-arrow">→</div></a>
-                <div class="topic-card"><div class="tc-icon" style="background:#64b5f6">🎯</div><div class="tc-body"><h4>压轴题<span class="status-tag soon">整理中</span></h4><p>中考压轴题精讲与解题策略</p></div></div>
+                <a class="topic-card link" href="资料/初中函数大全.html"><div class="tc-icon" style="background:#D18080">📈</div><div class="tc-body"><h4>函数<span class="status-tag ready">已上线</span></h4><p>一次函数 · 二次函数 · 反比例函数</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中几何大全.html"><div class="tc-icon" style="background:#C46565">📐</div><div class="tc-body"><h4>几何<span class="status-tag ready">已上线</span></h4><p>三角形 · 四边形 · 圆 · 几何模型</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中方程大全.html"><div class="tc-icon" style="background:#D48484">✖️</div><div class="tc-body"><h4>方程<span class="status-tag ready">已上线</span></h4><p>一元二次 · 二元一次 · 分式方程</p></div><div class="tc-arrow">→</div></a>
+<div class="topic-card"><div class="tc-icon" style="background:#D09888">🎯</div><div class="tc-body"><h4>压轴题<span class="status-tag soon">整理中</span></h4><p>中考压轴题精讲与解题策略</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 物理</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="资料/初中物理力学大全.html"><div class="tc-icon" style="background:#1565c0">⚡</div><div class="tc-body"><h4>力学<span class="status-tag ready">已上线</span></h4><p>受力分析 · 压强 · 浮力 · 简单机械</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中物理电学大全.html"><div class="tc-icon" style="background:#1e88e5">💡</div><div class="tc-body"><h4>电学<span class="status-tag ready">已上线</span></h4><p>电路 · 欧姆定律 · 电功率</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中物理光学大全.html"><div class="tc-icon" style="background:#42a5f5">🔦</div><div class="tc-body"><h4>光学<span class="status-tag ready">已上线</span></h4><p>光的反射 · 折射 · 透镜成像</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中物理热学大全.html"><div class="tc-icon" style="background:#64b5f6">🔥</div><div class="tc-body"><h4>热学<span class="status-tag ready">已上线</span></h4><p>内能 · 比热容 · 热机</p></div><div class="tc-arrow">→</div></a>
-                <div class="topic-card"><div class="tc-icon" style="background:#90caf9">⚠️</div><div class="tc-body"><h4>易错题<span class="status-tag ready">已上线</span></h4><p>物理常见易错题型与避坑指南</p></div></div>
+                <a class="topic-card link" href="资料/初中物理力学大全.html"><div class="tc-icon" style="background:#D18080">⚡</div><div class="tc-body"><h4>力学<span class="status-tag ready">已上线</span></h4><p>受力分析 · 压强 · 浮力 · 简单机械</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中物理电学大全.html"><div class="tc-icon" style="background:#C46565">💡</div><div class="tc-body"><h4>电学<span class="status-tag ready">已上线</span></h4><p>电路 · 欧姆定律 · 电功率</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中物理光学大全.html"><div class="tc-icon" style="background:#D48484">🔦</div><div class="tc-body"><h4>光学<span class="status-tag ready">已上线</span></h4><p>光的反射 · 折射 · 透镜成像</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中物理热学大全.html"><div class="tc-icon" style="background:#D09888">🔥</div><div class="tc-body"><h4>热学<span class="status-tag ready">已上线</span></h4><p>内能 · 比热容 · 热机</p></div><div class="tc-arrow">→</div></a>
+                <div class="topic-card"><div class="tc-icon" style="background:#D8A8A0">⚠️</div><div class="tc-body"><h4>易错题<span class="status-tag ready">已上线</span></h4><p>物理常见易错题型与避坑指南</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 化学</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="资料/化学方程式大全.html"><div class="tc-icon" style="background:#1565c0">🧪</div><div class="tc-body"><h4>化学方程式<span class="status-tag ready">已上线</span></h4><p>配平 · 计算 · 反应类型归纳</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/化学实验专项.html"><div class="tc-icon" style="background:#1e88e5">🔬</div><div class="tc-body"><h4>实验专项<span class="status-tag ready">已上线</span></h4><p>气体制取 · 检验 · 探究实验</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/化学记忆技巧.html"><div class="tc-icon" style="background:#42a5f5">🧠</div><div class="tc-body"><h4>记忆技巧<span class="status-tag ready">已上线</span></h4><p>元素周期表 · 价态 · 口诀记忆</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/化学方程式大全.html"><div class="tc-icon" style="background:#D18080">🧪</div><div class="tc-body"><h4>化学方程式<span class="status-tag ready">已上线</span></h4><p>配平 · 计算 · 反应类型归纳</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/化学实验专项.html"><div class="tc-icon" style="background:#C46565">🔬</div><div class="tc-body"><h4>实验专项<span class="status-tag ready">已上线</span></h4><p>气体制取 · 检验 · 探究实验</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/化学记忆技巧.html"><div class="tc-icon" style="background:#D48484">🧠</div><div class="tc-body"><h4>记忆技巧<span class="status-tag ready">已上线</span></h4><p>元素周期表 · 价态 · 口诀记忆</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/工艺流程专项.html"><div class="tc-icon" style="background:#BD6E6E">🏭</div><div class="tc-body"><h4>工艺流程<span class="status-tag ready">已上线</span></h4><p>工业流程模型 · 解题方法 · 专练</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 英语</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="资料/初中英语语法大全.html"><div class="tc-icon" style="background:#1565c0">📝</div><div class="tc-body"><h4>语法<span class="status-tag ready">已上线</span></h4><p>词性 · 时态 · 语态 · 从句 · 非谓语</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中英语阅读大全.html"><div class="tc-icon" style="background:#1e88e5">📖</div><div class="tc-body"><h4>阅读<span class="status-tag ready">已上线</span></h4><p>题型分类 · 解题技巧 · 体裁策略</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中英语完形填空大全.html"><div class="tc-icon" style="background:#42a5f5">✍️</div><div class="tc-body"><h4>完型填空<span class="status-tag ready">已上线</span></h4><p>解题方法 · 考点归纳 · 示例练习</p></div><div class="tc-arrow">→</div></a>
-                <a class="topic-card link" href="资料/初中英语作文大全.html"><div class="tc-icon" style="background:#64b5f6">📄</div><div class="tc-body"><h4>作文<span class="status-tag ready">已上线</span></h4><p>体裁模板 · 高分句型 · 话题范文</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中英语语法大全.html"><div class="tc-icon" style="background:#D18080">📝</div><div class="tc-body"><h4>语法<span class="status-tag ready">已上线</span></h4><p>词性 · 时态 · 语态 · 从句 · 非谓语</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中英语阅读大全.html"><div class="tc-icon" style="background:#C46565">📖</div><div class="tc-body"><h4>阅读<span class="status-tag ready">已上线</span></h4><p>题型分类 · 解题技巧 · 体裁策略</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中英语完形填空大全.html"><div class="tc-icon" style="background:#D48484">✍️</div><div class="tc-body"><h4>完型填空<span class="status-tag ready">已上线</span></h4><p>解题方法 · 考点归纳 · 示例练习</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/初中英语作文大全.html"><div class="tc-icon" style="background:#D09888">📄</div><div class="tc-body"><h4>作文<span class="status-tag ready">已上线</span></h4><p>体裁模板 · 高分句型 · 话题范文</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 中考专区</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">📝</div><div class="tc-body"><h4>中考真题<span class="status-tag ready">已上线</span></h4><p>历年真题免费下载练习</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#1565c0">📊</div><div class="tc-body"><h4>中考数学知识点<span class="status-tag ready">已上线</span></h4><p>完整梳理·考前查漏补缺</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">📅</div><div class="tc-body"><h4>时间规划<span class="status-tag soon">整理中</span></h4><p>中考复习时间线与阶段性计划</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#bf360c">🚀</div><div class="tc-body"><h4>冲刺方法<span class="status-tag soon">整理中</span></h4><p>考前冲刺策略与提分技巧</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ff7043">💡</div><div class="tc-body"><h4>中考经验<span class="status-tag soon">整理中</span></h4><p>过来人的备考经验与教训</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#D18080">📝</div><div class="tc-body"><h4>中考真题<span class="status-tag ready">已上线</span></h4><p>历年真题免费下载练习</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#D18080">📊</div><div class="tc-body"><h4>中考数学知识点<span class="status-tag ready">已上线</span></h4><p>完整梳理·考前查漏补缺</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#D18080">📅</div><div class="tc-body"><h4>时间规划<span class="status-tag soon">整理中</span></h4><p>中考复习时间线与阶段性计划</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#C46565">🚀</div><div class="tc-body"><h4>冲刺方法<span class="status-tag soon">整理中</span></h4><p>考前冲刺策略与提分技巧</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#D48484">💡</div><div class="tc-body"><h4>中考经验<span class="status-tag soon">整理中</span></h4><p>过来人的备考经验与教训</p></div></div>
             </div>
 
         </div>
@@ -195,7 +197,7 @@
 
     <!-- ════════════ 高中提升 ════════════ -->
     <div class="zone">
-        <div class="zone-header" style="background:linear-gradient(135deg,#e65100,#bf360c)">
+        <div class="zone-header" style="background:linear-gradient(135deg,#5688CC,#4A7AB8)">
             <div class="z-icon">🚀</div>
             <div>
                 <h2>高中提升</h2>
@@ -206,50 +208,50 @@
 
             <div class="topic-section-title">📌 数学</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">📊</div><div class="tc-body"><h4>数列<span class="status-tag soon">整理中</span></h4><p>等差 · 等比 · 数列求和与证明</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">📈</div><div class="tc-body"><h4>导数<span class="status-tag soon">整理中</span></h4><p>导数计算 · 单调性 · 极值与最值</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#f57c00">🔄</div><div class="tc-body"><h4>圆锥曲线<span class="status-tag soon">整理中</span></h4><p>椭圆 · 双曲线 · 抛物线 · 综合题</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ff9800">📐</div><div class="tc-body"><h4>函数深化<span class="status-tag soon">整理中</span></h4><p>函数性质 · 图像变换 · 零点问题</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">📊</div><div class="tc-body"><h4>数列<span class="status-tag soon">整理中</span></h4><p>等差 · 等比 · 数列求和与证明</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📈</div><div class="tc-body"><h4>导数<span class="status-tag soon">整理中</span></h4><p>导数计算 · 单调性 · 极值与最值</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#6E9ED4">🔄</div><div class="tc-body"><h4>圆锥曲线<span class="status-tag soon">整理中</span></h4><p>椭圆 · 双曲线 · 抛物线 · 综合题</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#7AA8DC">📐</div><div class="tc-body"><h4>函数深化<span class="status-tag soon">整理中</span></h4><p>函数性质 · 图像变换 · 零点问题</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 物理</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">⚡</div><div class="tc-body"><h4>电磁学<span class="status-tag soon">整理中</span></h4><p>电场 · 磁场 · 电磁感应 · 综合</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">⚖️</div><div class="tc-body"><h4>力学模型<span class="status-tag soon">整理中</span></h4><p>牛顿定律 · 板块模型 · 传送带</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">⚡</div><div class="tc-body"><h4>电磁学<span class="status-tag soon">整理中</span></h4><p>电场 · 磁场 · 电磁感应 · 综合</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">⚖️</div><div class="tc-body"><h4>力学模型<span class="status-tag soon">整理中</span></h4><p>牛顿定律 · 板块模型 · 传送带</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 生物</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">🧬</div><div class="tc-body"><h4>遗传专题<span class="status-tag soon">整理中</span></h4><p>遗传定律 · 系谱图 · 基因工程</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">📊</div><div class="tc-body"><h4>图像题专项<span class="status-tag soon">整理中</span></h4><p>细胞分裂图 · 代谢图 · 生态图</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">🧬</div><div class="tc-body"><h4>遗传专题<span class="status-tag soon">整理中</span></h4><p>遗传定律 · 系谱图 · 基因工程</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📊</div><div class="tc-body"><h4>图像题专项<span class="status-tag soon">整理中</span></h4><p>细胞分裂图 · 代谢图 · 生态图</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 化学</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">🏭</div><div class="tc-body"><h4>工艺流程<span class="status-tag soon">整理中</span></h4><p>工业流程题解题思路与模板</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">🔬</div><div class="tc-body"><h4>实验题精讲<span class="status-tag soon">整理中</span></h4><p>化学实验设计与探究题突破</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#f57c00">⚗️</div><div class="tc-body"><h4>化学方程式<span class="status-tag soon">整理中</span></h4><p>高中方程式分类与记忆方法</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">🏭</div><div class="tc-body"><h4>工艺流程<span class="status-tag soon">整理中</span></h4><p>工业流程题解题思路与模板</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">🔬</div><div class="tc-body"><h4>实验题精讲<span class="status-tag soon">整理中</span></h4><p>化学实验设计与探究题突破</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#6E9ED4">⚗️</div><div class="tc-body"><h4>化学方程式<span class="status-tag soon">整理中</span></h4><p>高中方程式分类与记忆方法</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 英语</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">📄</div><div class="tc-body"><h4>作文模板<span class="status-tag soon">整理中</span></h4><p>应用文 · 读后续写 · 高分句型</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">📖</div><div class="tc-body"><h4>阅读技巧<span class="status-tag soon">整理中</span></h4><p>七选五 · 阅读理解 · 长难句分析</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">📄</div><div class="tc-body"><h4>作文模板<span class="status-tag soon">整理中</span></h4><p>应用文 · 读后续写 · 高分句型</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📖</div><div class="tc-body"><h4>阅读技巧<span class="status-tag soon">整理中</span></h4><p>七选五 · 阅读理解 · 长难句分析</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 语文</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">📝</div><div class="tc-body"><h4>作文素材<span class="status-tag soon">整理中</span></h4><p>热点素材 · 人物事例 · 金句积累</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">📖</div><div class="tc-body"><h4>阅读理解<span class="status-tag soon">整理中</span></h4><p>现代文 · 文言文 · 诗歌鉴赏</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#f57c00">📜</div><div class="tc-body"><h4>文言文<span class="status-tag soon">整理中</span></h4><p>实词 · 虚词 · 翻译 · 断句技巧</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">📝</div><div class="tc-body"><h4>作文素材<span class="status-tag soon">整理中</span></h4><p>热点素材 · 人物事例 · 金句积累</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📖</div><div class="tc-body"><h4>阅读理解<span class="status-tag soon">整理中</span></h4><p>现代文 · 文言文 · 诗歌鉴赏</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#6E9ED4">📜</div><div class="tc-body"><h4>文言文<span class="status-tag soon">整理中</span></h4><p>实词 · 虚词 · 翻译 · 断句技巧</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 高考专区</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="真题.html"><div class="tc-icon" style="background:#bf360c">📝</div><div class="tc-body"><h4>高考真题<span class="status-tag ready">已上线</span></h4><p>历年高考真题免费下载</p></div><div class="tc-arrow">→</div></a>
-                <div class="topic-card"><div class="tc-icon" style="background:#e65100">💡</div><div class="tc-body"><h4>高考经验<span class="status-tag soon">整理中</span></h4><p>学霸经验分享与备考建议</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ef6c00">🧠</div><div class="tc-body"><h4>备考心态<span class="status-tag soon">整理中</span></h4><p>压力管理 · 心态调整 · 考前状态</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#f57c00">📅</div><div class="tc-body"><h4>时间安排<span class="status-tag soon">整理中</span></h4><p>高三全年规划 · 各阶段复习策略</p></div></div>
+                <a class="topic-card link" href="真题.html"><div class="tc-icon" style="background:#3D78B8">📝</div><div class="tc-body"><h4>高考真题<span class="status-tag ready">已上线</span></h4><p>历年高考真题免费下载</p></div><div class="tc-arrow">→</div></a>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">💡</div><div class="tc-body"><h4>高考经验<span class="status-tag soon">整理中</span></h4><p>学霸经验分享与备考建议</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">🧠</div><div class="tc-body"><h4>备考心态<span class="status-tag soon">整理中</span></h4><p>压力管理 · 心态调整 · 考前状态</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#6E9ED4">📅</div><div class="tc-body"><h4>时间安排<span class="status-tag soon">整理中</span></h4><p>高三全年规划 · 各阶段复习策略</p></div></div>
             </div>
 
         </div>
@@ -257,7 +259,7 @@
 
     <!-- ════════════ 大学专区 ════════════ -->
     <div class="zone">
-        <div class="zone-header" style="background:linear-gradient(135deg,#7b1fa2,#4a148c)">
+        <div class="zone-header" style="background:linear-gradient(135deg,#8899CC,#7A88C0)">
             <div class="z-icon">🎓</div>
             <div>
                 <h2>大学专区</h2>
@@ -268,35 +270,35 @@
 
             <div class="topic-section-title">📌 概率论</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#7b1fa2">🎲</div><div class="tc-body"><h4>概率论基础<span class="status-tag soon">整理中</span></h4><p>随机变量 · 分布 · 大数定律 · 中心极限定理</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#9c27b0">📊</div><div class="tc-body"><h4>数理统计<span class="status-tag soon">整理中</span></h4><p>参数估计 · 假设检验 · 回归分析</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#8899CC">🎲</div><div class="tc-body"><h4>概率论基础<span class="status-tag soon">整理中</span></h4><p>随机变量 · 分布 · 大数定律 · 中心极限定理</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#B89AD4">📊</div><div class="tc-body"><h4>数理统计<span class="status-tag soon">整理中</span></h4><p>参数估计 · 假设检验 · 回归分析</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 Python</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#7b1fa2">🐍</div><div class="tc-body"><h4>Python 入门<span class="status-tag soon">整理中</span></h4><p>语法基础 · 数据结构 · 函数与模块</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#9c27b0">📊</div><div class="tc-body"><h4>数据分析<span class="status-tag soon">整理中</span></h4><p>NumPy · Pandas · Matplotlib</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ab47bc">🤖</div><div class="tc-body"><h4>AI 编程实践<span class="status-tag soon">整理中</span></h4><p>用 AI 辅助写代码 · 调试 · 项目实战</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#8899CC">🐍</div><div class="tc-body"><h4>Python 入门<span class="status-tag soon">整理中</span></h4><p>语法基础 · 数据结构 · 函数与模块</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#B89AD4">📊</div><div class="tc-body"><h4>数据分析<span class="status-tag soon">整理中</span></h4><p>NumPy · Pandas · Matplotlib</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#C8AAE0">🤖</div><div class="tc-body"><h4>AI 编程实践<span class="status-tag soon">整理中</span></h4><p>用 AI 辅助写代码 · 调试 · 项目实战</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 MATLAB</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#7b1fa2">📐</div><div class="tc-body"><h4>MATLAB 基础<span class="status-tag soon">整理中</span></h4><p>矩阵运算 · 绘图 · 脚本编写</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#9c27b0">📈</div><div class="tc-body"><h4>科学计算<span class="status-tag soon">整理中</span></h4><p>数值计算 · 仿真模拟 · 信号处理</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#8899CC">📐</div><div class="tc-body"><h4>MATLAB 基础<span class="status-tag soon">整理中</span></h4><p>矩阵运算 · 绘图 · 脚本编写</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#B89AD4">📈</div><div class="tc-body"><h4>科学计算<span class="status-tag soon">整理中</span></h4><p>数值计算 · 仿真模拟 · 信号处理</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 教师资格证</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#7b1fa2">🎤</div><div class="tc-body"><h4>面试指导<span class="status-tag soon">整理中</span></h4><p>试讲技巧 · 答辩策略 · 面试礼仪</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#9c27b0">📋</div><div class="tc-body"><h4>结构化问答<span class="status-tag soon">整理中</span></h4><p>六大题型模板 · 高频真题解析</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ab47bc">📝</div><div class="tc-body"><h4>教案设计<span class="status-tag soon">整理中</span></h4><p>教案模板 · 教学设计思路</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#8899CC">🎤</div><div class="tc-body"><h4>面试指导<span class="status-tag soon">整理中</span></h4><p>试讲技巧 · 答辩策略 · 面试礼仪</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#B89AD4">📋</div><div class="tc-body"><h4>结构化问答<span class="status-tag soon">整理中</span></h4><p>六大题型模板 · 高频真题解析</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#C8AAE0">📝</div><div class="tc-body"><h4>教案设计<span class="status-tag soon">整理中</span></h4><p>教案模板 · 教学设计思路</p></div></div>
             </div>
 
             <div class="topic-section-title">📌 AI 学习工具</div>
             <div class="topic-grid">
-                <a class="topic-card link" href="算法助学.html"><div class="tc-icon" style="background:#7b1fa2">🧠</div><div class="tc-body"><h4>GPT 辅助学习<span class="status-tag ready">已上线</span></h4><p>用 AI 学知识、做题、整理笔记</p></div><div class="tc-arrow">→</div></a>
-                <div class="topic-card"><div class="tc-icon" style="background:#9c27b0">🤖</div><div class="tc-body"><h4>AI 做题<span class="status-tag soon">整理中</span></h4><p>AI 自动解题 · 步骤解析 · 举一反三</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#ab47bc">📝</div><div class="tc-body"><h4>AI 整理笔记<span class="status-tag soon">整理中</span></h4><p>AI 总结 · 思维导图 · 知识库构建</p></div></div>
+                <a class="topic-card link" href="算法助学.html"><div class="tc-icon" style="background:#8899CC">🧠</div><div class="tc-body"><h4>GPT 辅助学习<span class="status-tag ready">已上线</span></h4><p>用 AI 学知识、做题、整理笔记</p></div><div class="tc-arrow">→</div></a>
+                <div class="topic-card"><div class="tc-icon" style="background:#B89AD4">🤖</div><div class="tc-body"><h4>AI 做题<span class="status-tag soon">整理中</span></h4><p>AI 自动解题 · 步骤解析 · 举一反三</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#C8AAE0">📝</div><div class="tc-body"><h4>AI 整理笔记<span class="status-tag soon">整理中</span></h4><p>AI 总结 · 思维导图 · 知识库构建</p></div></div>
             </div>
 
         </div>
@@ -304,7 +306,7 @@
 
     <!-- ════════════ AI 学习 ════════════ -->
     <div class="zone">
-        <div class="zone-header" style="background:linear-gradient(135deg,#0f3460,#1a1a2e)">
+        <div class="zone-header" style="background:linear-gradient(135deg,#5688CC,#73BFAA)">
             <div class="z-icon">🤖</div>
             <div>
                 <h2>AI 学习</h2>
@@ -313,16 +315,16 @@
         </div>
         <div class="zone-body">
             <div class="topic-grid">
-                <a class="topic-card link" href="算法助学.html"><div class="tc-icon" style="background:#0f3460">🧠</div><div class="tc-body"><h4>算法助学 <span class="status-tag ready">免费体验</span></h4><p>拍照录入错题，AI 生成变式训练，输出专属学习报告</p></div><div class="tc-arrow">→</div></a>
-                <div class="topic-card"><div class="tc-icon" style="background:#1a1a2e">📝</div><div class="tc-body"><h4>AI 错题本 <span class="status-tag soon">整理中</span></h4><p>自动归类错题，精准定位薄弱知识点</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#16213e">📊</div><div class="tc-body"><h4>学情报告 <span class="status-tag soon">整理中</span></h4><p>数据化分析学习情况，进步看得见</p></div></div>
+                <a class="topic-card link" href="算法助学.html"><div class="tc-icon" style="background:#3D78B8">🧠</div><div class="tc-body"><h4>算法助学 <span class="status-tag ready">免费体验</span></h4><p>拍照录入错题，AI 生成变式训练，输出专属学习报告</p></div><div class="tc-arrow">→</div></a>
+                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📝</div><div class="tc-body"><h4>AI 错题本 <span class="status-tag soon">整理中</span></h4><p>自动归类错题，精准定位薄弱知识点</p></div></div>
+                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">📊</div><div class="tc-body"><h4>学情报告 <span class="status-tag soon">整理中</span></h4><p>数据化分析学习情况，进步看得见</p></div></div>
             </div>
         </div>
     </div>
 
     <!-- ════════════ 学习资源 ════════════ -->
     <div class="zone">
-        <div class="zone-header" style="background:linear-gradient(135deg,#2d3436,#1a1a2e)">
+        <div class="zone-header" style="background:linear-gradient(135deg,#5688CC,#73BFAA)">
             <div class="z-icon">📖</div>
             <div>
                 <h2>学习资源</h2>

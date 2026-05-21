@@ -11,19 +11,26 @@
         /* ── Hero ── */
         .res-hero {
             text-align: center; padding: 50px 20px 36px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff; margin-bottom: 10px;
+            background: var(--hero-gradient);
+            color: #fff; margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .res-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(86,136,204,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(115,191,170,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
         }
         .res-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
-        .res-hero p { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .res-hero p { font-size: 14px; color: #E0E0E0; }
         .res-hero .tags {
             display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
         }
         .res-hero .tags span {
             font-size: 12px; padding: 4px 14px; border-radius: 12px;
-            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
+            background: rgba(200,224,240,0.12); color: #C8E0F0; border: 1px solid rgba(200,224,240,0.35);
         }
-        .res-hero .tags span.highlight { background: #e8b83a; color: #1a1a2e; font-weight: 600; }
+        .res-hero .tags span.highlight { background: rgba(200,224,240,0.2); color: #C8E0F0; font-weight: 600; border-color: rgba(200,224,240,0.4); }
 
         /* ── Branch Navigation ── */
         .branch-nav {
@@ -44,7 +51,7 @@
             display: flex; align-items: center; gap: 14px;
             padding: 20px 24px; border-radius: 14px;
             color: #fff; margin-bottom: 16px;
-            background: #1a1a2e;
+            background: #5688CC;
         }
         .branch-header .b-icon { font-size: 32px; line-height: 1; }
         .branch-header .b-info { flex: 1; }
@@ -55,12 +62,12 @@
             background: rgba(255,255,255,0.15); white-space: nowrap;
         }
 
-        .branch-colors.pdf .branch-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
-        .branch-colors.note .branch-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
-        .branch-colors.formula .branch-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
-        .branch-colors.lab .branch-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
-        .branch-colors.exam .branch-header { background: linear-gradient(135deg, #d35400, #e67e22); }
-        .branch-colors.plan .branch-header { background: linear-gradient(135deg, #b8860b, #daa520); }
+        .branch-colors.pdf .branch-header { background: linear-gradient(135deg, #D18080, #BD6E6E); }
+        .branch-colors.note .branch-header { background: linear-gradient(135deg, #5688CC, #4A7AB8); }
+        .branch-colors.formula .branch-header { background: linear-gradient(135deg, #8899CC, #7A88C0); }
+        .branch-colors.lab .branch-header { background: linear-gradient(135deg, #73BFAA, #5EA890); }
+        .branch-colors.exam .branch-header { background: linear-gradient(135deg, #D0A060, #B88848); }
+        .branch-colors.plan .branch-header { background: linear-gradient(135deg, #B8A870, #A89050); }
 
         /* ── Resource Grid ── */
         .res-grid {
@@ -68,7 +75,7 @@
         }
 
         .res-card {
-            background: #fff; border-radius: 14px; padding: 18px 18px 16px;
+            background: #F8FAFD; border-radius: 14px; padding: 18px 18px 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.05);
             transition: transform .2s, box-shadow .2s;
             display: flex; flex-direction: column;
@@ -87,17 +94,17 @@
         .res-card .rc-meta span {
             font-size: 10px; padding: 2px 10px; border-radius: 8px;
         }
-        .tag-online { background: #e6f7e6; color: #2d7d46; }
+        .tag-online { background: rgba(136,192,152,0.15); color: #5EA890; }
         .tag-draft { background: #f0f0f0; color: #999; }
-        .tag-new { background: #fff3d6; color: #b8860b; }
+        .tag-new { background: rgba(217,168,104,0.15); color: #B88848; }
 
         /* subject badges */
-        .tag-math { background: #e3edf7; color: #1a6fc4; }
-        .tag-physics { background: #fde8e8; color: #c0392b; }
-        .tag-chemistry { background: #f3e8f9; color: #8e44ad; }
-        .tag-biology { background: #e6f7e6; color: #2d7d46; }
-        .tag-geography { background: #e3f0fa; color: #1a6fc4; }
-        .tag-politics { background: #fdeed6; color: #d35400; }
+        .tag-math { background: rgba(136,168,217,0.12); color: #6E8FC4; }
+        .tag-physics { background: rgba(217,136,136,0.12); color: #BD6E6E; }
+        .tag-chemistry { background: rgba(168,138,200,0.12); color: #7A88C0; }
+        .tag-biology { background: rgba(136,192,152,0.12); color: #5EA890; }
+        .tag-geography { background: rgba(136,168,217,0.12); color: #6E8FC4; }
+        .tag-politics { background: rgba(217,168,104,0.12); color: #B88848; }
 
         /* ── Exam special row ── */
         .exam-row {
@@ -125,7 +132,7 @@
             .res-grid { grid-template-columns: 1fr; }
         }
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -136,7 +143,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html" class="nav-active">资源库</a>
     <a href="成长社区.html">成长社区</a>
-    <a href="关于.html">关于</a>
+    <a href="关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="res-hero">

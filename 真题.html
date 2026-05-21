@@ -12,21 +12,22 @@
 
         /* ── Hero ── */
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+            background: var(--hero-gradient);
             color: #fff; padding: 60px 20px 70px; text-align: center; position: relative; overflow: hidden;
         }
         .hero::before {
             content: ''; position: absolute; inset: 0;
             background:
-                radial-gradient(ellipse at 20% 40%, rgba(52,152,219,0.15) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 60%, rgba(155,89,182,0.12) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 40%, rgba(86,136,204,0.15) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 60%, rgba(115,191,170,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
         }
         .hero::after {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
         }
         .hero h1 { font-size: 38px; font-weight: 700; letter-spacing: 3px; margin-bottom: 10px; position: relative; z-index: 1; }
-        .hero p { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+        .hero p { font-size: 16px; color: #E0E0E0; max-width: 500px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
 
         /* ── Tab Switcher ── */
         .tab-bar {
@@ -121,7 +122,7 @@
         }
         .paper-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px}.paper-overlay.active{display:flex}.paper-viewer{background:#fff;border-radius:20px;padding:36px 32px;max-width:92vw;width:100%;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;animation:shareIn .3s ease}@media(min-width:768px){.paper-viewer{max-width:1000px}}.paper-close{position:absolute;top:12px;right:16px;font-size:28px;background:none;border:none;cursor:pointer;color:#999;padding:4px 8px;line-height:1}.paper-close:hover{color:#333}
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -132,7 +133,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html" class="nav-active">资源库</a>
     <a href="成长社区.html">成长社区</a>
-    <a href="关于.html">关于</a>
+    <a href="关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="hero">

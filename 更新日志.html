@@ -8,9 +8,16 @@
     <title>更新日志 · 思贤学习站</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .page-hero { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 56px 20px; text-align: center; }
+        .page-hero { background: var(--hero-gradient); color: #fff; padding: 56px 20px; text-align: center; position: relative; overflow: hidden; }
+        .page-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(86,136,204,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(115,191,170,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
+        }
         .page-hero h1 { font-size: 30px; margin-bottom: 8px; }
-        .page-hero p { font-size: 15px; opacity: .8; }
+        .page-hero p { font-size: 15px; color: #E0E0E0; }
 
         .container { max-width: 700px; }
 
@@ -29,7 +36,7 @@
             .entry::before { left: -18px; width: 10px; height: 10px; }
         }
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -40,7 +47,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html">资源库</a>
     <a href="成长社区.html">成长社区</a>
-    <a href="关于.html">关于</a>
+    <a href="关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="page-hero">
@@ -53,70 +60,76 @@
 
         <div class="entry">
             <div class="date">2026-05-21</div>
-            <div class="title">💡 "关于思贤"全新改版，6大主干全部落成</div>
+            <div class="title">小学模块上线 · 模型整合优化 · 安全加固</div>
             <ul>
-                <li>关于页面重构：为什么做这个网站 · 学习理念 · 网站更新 · 联系方式</li>
-                <li>网站6大主干完成：学习专区 · 学习方法 · AI工具 · 资料库 · 成长社区 · 关于思贤</li>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <div class="date">2026-05-21</div>
-            <div class="title">🌱 新增"成长社区"页面</div>
-            <ul>
-                <li>新增成长社区页面：学习打卡 · 学习日志 · 学生分享 · 留言交流</li>
-                <li>导航新增"成长社区"入口</li>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <div class="date">2026-05-21</div>
-            <div class="title">📖 新增"学习方法"页面，资料库升级为6大资源分支</div>
-            <ul>
-                <li>新增学习方法页面：时间管理 · 高效学习 · 记忆方法 · 做笔记 · 科学作息 · 戒手机</li>
-                <li>资料库全面改造：PDF资料 · 笔记 · 公式整理 · 实验模板 · 真题 · 学习计划表</li>
-                <li>导航新增"学习方法"入口</li>
-                <li>AI工具页面上线（AI工具推荐 · AI学习方法 · AI写作 · AI编程 · 算法助学）</li>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <div class="date">2026-05-21</div>
-            <div class="title">🚀 全新改版：思贤家教 → 思贤学习站</div>
-            <ul>
-                <li>品牌升级为学习型个人品牌</li>
-                <li>导航重构为8大板块</li>
-                <li>新增学习专区、关于、学习交流、更新日志页面</li>
-                <li>真题库整合进资源库</li>
-                <li>全站品牌名称统一更新</li>
+                <li>小学成长模块上线：速算技巧、应用题专项、好书推荐、作文素材、阅读方法</li>
+                <li>数学模型合并至中考数学知识点大全，新增应用题模型章节</li>
+                <li>精选资源各页返回路径优化，统一返回首页而非资料库</li>
+                <li>成长社区/关于页面联系方式保护，采用分享墙机制隐藏号码</li>
+                <li>各科模型页持续扩容（化学/物理/生物新增大量内容）</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="date">2026-05-20</div>
-            <div class="title">📚 新增老师：李老师（华东理工大学）</div>
+            <div class="title">理科模型汇总发布 · 工艺流程专项上线</div>
             <ul>
-                <li>新增李老师专职页面（数理化生全能型）</li>
-                <li>新增中考冲刺宣传素材</li>
+                <li>化学、物理、生物三大模型页大幅扩容（表格+公式+图示全面升级）</li>
+                <li>初中化学工艺流程专项页面上线（6大工业流程+3例题+8练习）</li>
+                <li>物理热学/电学内容扩充至550+行，新增SVG图示与练习</li>
+                <li>初中几何/函数/方程专项页面发布</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="date">2026-05-19</div>
-            <div class="title">📖 上线资料库与模型汇总</div>
+            <div class="title">"关于思贤"全新改版 · 老师页面上线</div>
+            <ul>
+                <li>关于页面重构：为什么做这个网站 · 学习理念 · 网站更新 · 联系方式</li>
+                <li>新增李老师专职页面（华东理工大学，数理化生全能型）</li>
+                <li>6大主干全部落成：学习专区 · 学习方法 · AI工具 · 资料库 · 成长社区 · 关于思贤</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="date">2026-05-18</div>
+            <div class="title">新增"成长社区" · "学习方法"页面</div>
+            <ul>
+                <li>新增成长社区页面：学习打卡 · 学习日志 · 学生分享 · 留言交流</li>
+                <li>新增学习方法页面：时间管理 · 高效学习 · 记忆方法 · 做笔记 · 科学作息 · 戒手机</li>
+                <li>AI工具页面上线（AI工具推荐 · AI学习方法 · AI写作 · AI编程 · 算法助学）</li>
+                <li>导航新增"成长社区""学习方法""AI工具"入口</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="date">2026-05-17</div>
+            <div class="title">上线资料库与知识点大全</div>
             <ul>
                 <li>初中各科知识点大全上线（数学、物理、化学、生物、地理、政治）</li>
-                <li>理科模型汇总页面发布</li>
                 <li>历年真题库页面上线</li>
+                <li>资料库全面改造为6大分支：PDF资料 · 笔记 · 公式 · 实验 · 真题 · 计划表</li>
+                <li>各科资料主页面（数学/物理/化学/生物/地理/政治）上线</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="date">2026-05-16</div>
+            <div class="title">品牌升级：思贤家教 → 思贤学习站</div>
+            <ul>
+                <li>品牌升级为学习型个人品牌，新增"学习专区"主干页面</li>
+                <li>导航重构为7大板块（首页 · 学习专区 · 学习方法 · AI工具 · 资源库 · 成长社区 · 关于）</li>
+                <li>全站品牌名称统一更新</li>
+                <li>首页全新改版：Hero区+精选资源+AI工具区+关于&家教区</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="date">2026-05-15</div>
-            <div class="title">🌐 网站建立</div>
+            <div class="title">网站建立</div>
             <ul>
                 <li>思贤家教首版上线</li>
-                <li>老师列表与详情页</li>
+                <li>老师列表与详情页（8位老师）</li>
                 <li>算法助学 AI 功能发布</li>
                 <li>预约试听功能上线</li>
             </ul>
@@ -138,7 +151,7 @@
     <h3>分享即可获取联系方式</h3>
     <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
     <div class="share-msg-box"><p id="shareText"></p></div>
-    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
     <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
     <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
   </div>
@@ -146,7 +159,7 @@
 <script>
 (function() {
   var url = window.location.origin + window.location.pathname;
-  var shareTxt = '📚 思贤学习站——学习资源 · AI 工具 · 课程笔记 · 考试整理，陪你一起成长。 ' + url;
+  var shareTxt = '思贤学习站——学习资源 · AI 工具 · 课程笔记 · 考试整理，陪你一起成长。 ' + url;
   var hasCopied = false;
   var overlay = document.getElementById('shareOverlay');
   var shareTextEl = document.getElementById('shareText');
@@ -168,7 +181,7 @@
     overlay.classList.add('active');
     hasCopied = false;
     sharedBtn.disabled = true;
-    copyBtn.textContent = '📋 复制分享文案';
+    copyBtn.textContent = '复制分享文案';
     copyBtn.classList.remove('copied');
     copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
 
@@ -176,9 +189,9 @@
     if (t && Date.now() - Number(t) >= 10000) {
       hasCopied = true;
       sharedBtn.disabled = false;
-      copyBtn.textContent = '✅ 已复制';
+      copyBtn.textContent = '已复制';
       copyBtn.classList.add('copied');
-      copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      copyHint.textContent = '点击下方按钮查看联系方式';
     }
   };
 
@@ -187,13 +200,13 @@
     var text = shareTextEl.textContent;
     function done() {
       localStorage.setItem('sx_copy_time', Date.now());
-      copyBtn.textContent = '✅ 已复制';
+      copyBtn.textContent = '已复制';
       copyBtn.classList.add('copied');
-      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      copyHint.textContent = '检测到转发朋友圈，自动获取联系方式...';
       window._shareTimeout = setTimeout(function() {
         hasCopied = true;
         sharedBtn.disabled = false;
-        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+        copyHint.textContent = '点击下方按钮查看联系方式';
       }, 10000);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {

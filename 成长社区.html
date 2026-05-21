@@ -11,17 +11,24 @@
         /* ── Hero ── */
         .c-hero {
             text-align: center; padding: 50px 20px 36px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff; margin-bottom: 10px;
+            background: var(--hero-gradient);
+            color: #fff; margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .c-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(86,136,204,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(115,191,170,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
         }
         .c-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
-        .c-hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+        .c-hero p { font-size: 14px; color: #E0E0E0; max-width: 480px; margin: 0 auto; line-height: 1.7; }
         .c-hero .tags {
             display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
         }
         .c-hero .tags span {
             font-size: 12px; padding: 4px 14px; border-radius: 12px;
-            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
+            background: rgba(200,224,240,0.12); color: #C8E0F0; border: 1px solid rgba(200,224,240,0.35);
         }
 
         .c-nav {
@@ -52,17 +59,17 @@
             background: rgba(255,255,255,0.15); white-space: nowrap;
         }
 
-        .c-clock .c-header { background: linear-gradient(135deg, #e67e22, #f39c12); }
-        .c-journal .c-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
-        .c-share .c-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
-        .c-msg .c-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
+        .c-clock .c-header { background: linear-gradient(135deg, #D0A060, #B88848); }
+        .c-journal .c-header { background: linear-gradient(135deg, #5688CC, #4A7AB8); }
+        .c-share .c-header { background: linear-gradient(135deg, #8899CC, #7A88C0); }
+        .c-msg .c-header { background: linear-gradient(135deg, #73BFAA, #5EA890); }
 
         /* ── Card Grid ── */
         .c-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
         }
         .c-card {
-            background: #fff; border-radius: 14px; padding: 22px 20px 20px;
+            background: #F8FAFD; border-radius: 14px; padding: 22px 20px 20px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.05);
             transition: transform .2s, box-shadow .2s;
             display: flex; flex-direction: column;
@@ -111,7 +118,7 @@
             .c-nav { margin-left: 12px; margin-right: 12px; }
         }
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -122,7 +129,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html">资源库</a>
     <a href="成长社区.html" class="nav-active">成长社区</a>
-    <a href="关于.html">关于</a>
+    <a href="关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="c-hero">
@@ -264,11 +271,11 @@
             <div class="ccount">微信交流</div>
         </div>
 
-        <div class="wx-card">
+        <div class="wx-card" id="contactWxCard">
             <div class="wx-icon">💬</div>
             <h3>加入我们的学习交流群</h3>
             <p>添加微信，拉你进群<br>和更多学习者一起打卡、交流、进步</p>
-            <div class="wx-num">155-6412-8008</div>
+            <div class="wx-num"><span class="contact-trigger" onclick="openShareWall()" style="cursor:pointer;color:#1a1a2e;text-decoration:underline">获取联系方式</span></div>
             <p style="margin-top: 12px; font-size: 12px; color: #bbb;">添加时备注"学习交流"</p>
         </div>
 

@@ -11,17 +11,24 @@
         /* ── Hero ── */
         .a-hero {
             text-align: center; padding: 50px 20px 36px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff; margin-bottom: 10px;
+            background: var(--hero-gradient);
+            color: #fff; margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .a-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(86,136,204,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(115,191,170,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(86,136,204,0.08) 0%, transparent 50%);
         }
         .a-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
-        .a-hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 450px; margin: 0 auto; line-height: 1.7; }
+        .a-hero p { font-size: 14px; color: #E0E0E0; max-width: 450px; margin: 0 auto; line-height: 1.7; }
         .a-hero .tags {
             display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
         }
         .a-hero .tags span {
             font-size: 12px; padding: 4px 14px; border-radius: 12px;
-            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
+            background: rgba(200,224,240,0.12); color: #C8E0F0; border: 1px solid rgba(200,224,240,0.35);
         }
 
         .a-nav {
@@ -48,14 +55,14 @@
         .a-header .ainfo h2 { font-size: 18px; margin-bottom: 2px; }
         .a-header .ainfo p { font-size: 12px; opacity: 0.75; }
 
-        .a-why .a-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
-        .a-belief .a-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
-        .a-update .a-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
-        .a-contact .a-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
+        .a-why .a-header { background: linear-gradient(135deg, #D18080, #BD6E6E); }
+        .a-belief .a-header { background: linear-gradient(135deg, #5688CC, #4A7AB8); }
+        .a-update .a-header { background: linear-gradient(135deg, #8899CC, #7A88C0); }
+        .a-contact .a-header { background: linear-gradient(135deg, #73BFAA, #5EA890); }
 
         /* ── Content Cards ── */
         .a-card {
-            background: #fff; border-radius: 14px; padding: 24px 26px;
+            background: #F8FAFD; border-radius: 14px; padding: 24px 26px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.05);
             margin-bottom: 14px;
         }
@@ -105,7 +112,7 @@
             .a-nav { margin-left: 12px; margin-right: 12px; }
         }
     </style>
-</head>
+<script src="js/theme.js"></script></head>
 <body>
 
 <div class="nav">
@@ -116,7 +123,7 @@
     <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
     <a href="资料库.html">资源库</a>
     <a href="成长社区.html">成长社区</a>
-    <a href="关于.html" class="nav-active">关于</a>
+    <a href="关于.html" class="nav-active">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
 </div>
 
 <div class="a-hero">
@@ -237,7 +244,7 @@
                 <div class="contact-item">
                     <div class="ci-icon">📱</div>
                     <div class="ci-label">电话 / 微信</div>
-                    <div class="ci-value">155-6412-8008</div>
+                    <div class="ci-value"><span class="contact-trigger" onclick="openShareWall()" style="cursor:pointer;color:#1a1a2e;text-decoration:underline">分享后获取</span></div>
                 </div>
                 <div class="contact-item">
                     <div class="ci-icon">📍</div>

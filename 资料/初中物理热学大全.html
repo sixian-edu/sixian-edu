@@ -3,120 +3,551 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>初中物理·热学 · 思贤学习站</title>
+<title>初中物理·热学·思贤学习站</title>
 <link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
 .wrap{max-width:880px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px}
 .sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
-.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #e67e22}
+.card .t{font-weight:700;font-size:16px;color:#e67e22;margin-bottom:8px}
 .card .d{font-size:13px;color:#555;line-height:1.8}
 .card .d b{color:#333}
 .tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
-.svg-wrap{text-align:center;margin:12px 0 6px}
-.svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto}
-.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
-.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.svg-wrap{text-align:center;margin:12px 0}
+.svg-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#fff8e1;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#e65100;font-weight:600;font-family:monospace}
+.formula.blue{background:#e8f0fe;color:#1a6fc4}
+.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #e67e22}
+.step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:8px 12px;background:#f9fbe7;border-radius:8px}
+.step-num{flex:0 0 26px;height:26px;border-radius:50%;background:#e67e22;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.step-c{flex:1;font-size:13px;color:#555;line-height:1.7}
+.step-c b{color:#e67e22}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
+th{background:#e67e22;color:#fff;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.example-q{background:#f8f9fc;border-radius:8px;padding:14px;margin:10px 0;border-left:3px solid #e74c3c}
+.example-q .eq-t{font-weight:700;font-size:14px;color:#c0392b;margin-bottom:4px}
+.example-q .eq-d{font-size:13px;color:#555;line-height:1.8}
+.solution{background:#e6f7e6;border-radius:8px;padding:12px 14px;margin:10px 0;border-left:3px solid #2d7d46;display:none}
+.solution .sol-t{font-weight:700;font-size:13px;color:#2d7d46;margin-bottom:4px}
+.solution .sol-d{font-size:13px;color:#444;line-height:1.8}
+.sol-btn{display:inline-block;padding:4px 16px;background:#e8f0fe;color:#1a6fc4;border:1px solid #1a6fc4;border-radius:6px;font-size:12px;cursor:pointer;margin-top:6px}
+.sol-btn:hover{background:#1a6fc4;color:#fff}
+@media(max-width:640px){
+  h1{font-size:22px}
+  td,th{padding:5px;font-size:12px}
+}
 </style>
+<script src="../js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
 <a class="back" href="../学习专区.html">← 返回学习专区</a>
-<h1>🔥 初中物理 · 热学</h1>
-<p class="sub">物态变化 · 内能 · 比热容 · 热机 · 中考必备</p>
+<h1>🔥 初中物理 · 热学大全</h1>
+<p class="sub">温度·物态变化·分子热运动·内能·比热容·热机·能量守恒</p>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 温度与温度计</div>
+<!-- ═══════════ 温度  ═══════════ -->
+<div class="sec-title">一、温度与温度计</div>
+<div class="card">
+  <div class="t">🌡️ 温度与温标</div>
   <div class="d">
-    温度表示物体的冷热程度。常用的温度计根据液体的<b>热胀冷缩</b>原理制成。<br>
-    <span class="tag red">摄氏温度</span> 标准大气压下冰水混合物为0℃，沸水为100℃<br>
-    <span class="tag orange">温度计使用</span> 玻璃泡全部浸入、不碰容器底和壁、稳定后读数、不取出读数
+    温度是表示物体 <b>冷热程度</b> 的物理量。<br><br>
+    <span class="tag red">摄氏温标（℃）</span> 标准大气压下，冰水混合物为 0℃，沸水为 100℃，之间分 100 等份。<br>
+    <span class="tag orange">华氏温标（℉）</span> 32℉ ~ 212℉，中间分 180 等份。<br>
+    <span class="tag green">热力学温标（K）</span> T = t + 273.15，1K 和 1℃ 温差相同。
   </div>
-  <div class="formula">t / ℃ &nbsp;|&nbsp; 液体温度计：热胀冷缩</div>
+  <div class="formula">T = t + 273 &nbsp;|&nbsp; 0K = −273.15℃（绝对零度，不可达到）</div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 物态变化</div>
+<div class="card">
+  <div class="t">🌡️ 温度计的原理与使用</div>
   <div class="d">
-    六种物态变化：<br>
-    <span class="tag red">熔化</span> 固态→液态（吸热）<span class="tag green">凝固</span> 液态→固态（放热）<br>
-    <span class="tag red">汽化</span> 液态→气态（吸热）<span class="tag green">液化</span> 气态→液态（放热）<br>
-    <span class="tag red">升华</span> 固态→气态（吸热）<span class="tag green">凝华</span> 气态→固态（放热）
+    常用液体温度计原理：<b>液体的热胀冷缩</b>。<br><br>
+    <b>三种温度计对比：</b>
+    <table>
+      <tr><th></th><th>实验室温度计</th><th>体温计</th><th>寒暑表</th></tr>
+      <tr><td><b>量程</b></td><td>−20 ~ 110℃</td><td>35 ~ 42℃</td><td>−30 ~ 50℃</td></tr>
+      <tr><td><b>分度值</b></td><td>1℃</td><td>0.1℃</td><td>1℃</td></tr>
+      <tr><td><b>用途</b></td><td>实验、测量</td><td>体温</td><td>气温</td></tr>
+      <tr><td><b>可否离开读数</b></td><td>❌ 不能</td><td>✅ 可以（有缩口）</td><td>❌ 不能</td></tr>
+    </table>
+  </div>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-c"><b>看量程分度值</b> — 选择合适量程的温度计</div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-c"><b>玻璃泡全浸入</b> — 全部浸入被测液体中，<b>不碰</b>容器底和壁</div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-c"><b>稳定后读数</b> — 示数稳定后读数，视线与液柱上表面相平</div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-c"><b>不取出读数</b> — 读数时温度计玻璃泡不能离开液体</div>
+  </div>
+</div>
+
+<!-- ═══════════ 物态变化  ═══════════ -->
+<div class="sec-title">二、物态变化</div>
+<div class="card">
+  <div class="t">🧊 六种物态变化</div>
+  <div class="svg-wrap">
+    <svg width="600" height="200" viewBox="0 0 600 200">
+      <rect x="40" y="20" width="100" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+      <text x="90" y="55" text-anchor="middle" font-size="14" fill="#1565c0" font-weight="700">固态</text>
+      <rect x="250" y="20" width="100" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+      <text x="300" y="55" text-anchor="middle" font-size="14" fill="#1565c0" font-weight="700">液态</text>
+      <rect x="460" y="20" width="100" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+      <text x="510" y="55" text-anchor="middle" font-size="14" fill="#1565c0" font-weight="700">气态</text>
+      <!-- 熔化 -->
+      <text x="175" y="16" font-size="12" fill="#c0392b" text-anchor="middle">熔化（吸热）</text>
+      <polygon points="150,42 165,35 165,49" fill="#c0392b"/>
+      <polygon points="250,42 235,35 235,49" fill="#c0392b"/>
+      <!-- 凝固 -->
+      <text x="175" y="86" font-size="12" fill="#1565c0" text-anchor="middle">凝固（放热）</text>
+      <polygon points="250,77 235,70 235,84" fill="#1565c0"/>
+      <polygon points="150,77 165,70 165,84" fill="#1565c0"/>
+      <!-- 汽化 -->
+      <text x="420" y="16" font-size="12" fill="#c0392b" text-anchor="middle">汽化（吸热）</text>
+      <polygon points="360,42 375,35 375,49" fill="#c0392b"/>
+      <polygon points="450,42 435,35 435,49" fill="#c0392b"/>
+      <!-- 液化 -->
+      <text x="420" y="86" font-size="12" fill="#1565c0" text-anchor="middle">液化（放热）</text>
+      <polygon points="450,77 435,70 435,84" fill="#1565c0"/>
+      <polygon points="360,77 375,70 375,84" fill="#1565c0"/>
+      <!-- 升华 -->
+      <text x="300" y="130" font-size="12" fill="#c0392b" text-anchor="middle">升华（吸热）</text>
+      <polygon points="140,130 125,120 125,140" fill="#c0392b"/>
+      <polygon points="460,130 475,120 475,140" fill="#c0392b"/>
+      <!-- 凝华 -->
+      <text x="300" y="175" font-size="12" fill="#1565c0" text-anchor="middle">凝华（放热）</text>
+      <polygon points="460,168 475,158 475,178" fill="#1565c0"/>
+      <polygon points="140,168 125,158 125,178" fill="#1565c0"/>
+      <!-- 箭头线 升华凝华 -->
+      <line x1="140" y1="80" x2="90" y2="120" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="90" y1="125" x2="140" y2="165" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="460" y1="80" x2="510" y2="120" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="510" y1="125" x2="460" y2="165" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5,3"/>
+    </svg>
   </div>
   <div class="formula">吸热：熔化、汽化、升华 &nbsp;|&nbsp; 放热：凝固、液化、凝华</div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 晶体与非晶体熔化</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_09_melting_curve.svg" width="420" height="263" alt="晶体熔化曲线"></div>
+<div class="card">
+  <div class="t">📌 物态变化生活实例</div>
   <div class="d">
-    <span class="tag red">晶体</span> 有固定的熔化温度（熔点），熔化时不断吸热但温度不变。<br>
-    <span class="tag green">非晶体</span> 没有固定的熔点，熔化时温度持续上升。<br>
-    常见晶体：冰、海波、各种金属；非晶体：蜡、玻璃、沥青、松香。
+    <table>
+      <tr><th>变化</th><th>方向</th><th>吸/放热</th><th>生活实例</th></tr>
+      <tr><td><b>熔化</b></td><td>固→液</td><td><span style="color:#c0392b">吸热</span></td><td>冰化成水、蜡烛熔化、铁熔化</td></tr>
+      <tr><td><b>凝固</b></td><td>液→固</td><td><span style="color:#1565c0">放热</span></td><td>水结冰、下雪不冷化雪冷、做冰棍</td></tr>
+      <tr><td><b>汽化</b></td><td>液→气</td><td><span style="color:#c0392b">吸热</span></td><td>水烧开、洒水降温、汗水蒸发</td></tr>
+      <tr><td><b>液化</b></td><td>气→液</td><td><span style="color:#1565c0">放热</span></td><td>露水、白气、冬天呼出"白雾"、冰箱外壁出水</td></tr>
+      <tr><td><b>升华</b></td><td>固→气</td><td><span style="color:#c0392b">吸热</span></td><td>干冰人工降雨、樟脑丸变小、冰冻衣服变干</td></tr>
+      <tr><td><b>凝华</b></td><td>气→固</td><td><span style="color:#1565c0">放热</span></td><td>霜、雪、雾凇、窗花（冰花）</td></tr>
+    </table>
   </div>
-  <div class="formula">晶体熔化条件：①达到熔点 ②继续吸热 &nbsp;|&nbsp; 熔化时温度不变</div>
+  <div class="tip-box">
+    <div class="tip-t">💡 解题关键</div>
+    <div class="tip-d">看到"白气""白雾"——不是水蒸气（水蒸气无色透明），而是 <b>水蒸气液化</b> 形成的小水珠！</div>
+  </div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 汽化与液化</div>
-  <div class="d">
-    汽化的两种方式：<span class="tag red">蒸发</span> 在任何温度下进行，发生在液体表面<br>
-    <span class="tag green">沸腾</span> 在一定温度下进行，液体表面和内部同时发生<br>
-    影响蒸发快慢的因素：<span class="tag">温度</span><span class="tag">表面积</span><span class="tag">空气流速</span>
-    <br>液化的两种方法：<span class="tag">降低温度</span><span class="tag">压缩体积</span>
+<!-- ═══════════ 晶体熔化图像  ═══════════ -->
+<div class="card">
+  <div class="t">📈 晶体熔化图像分析</div>
+  <div class="svg-wrap">
+    <svg width="480" height="280" viewBox="0 0 480 280">
+      <rect x="0" y="0" width="480" height="280" fill="#fff" rx="4"/>
+      <!-- 坐标轴 -->
+      <line x1="60" y1="230" x2="450" y2="230" stroke="#333" stroke-width="2"/>
+      <line x1="60" y1="230" x2="60" y2="20" stroke="#333" stroke-width="2"/>
+      <polygon points="60,20 55,32 65,32" fill="#333"/>
+      <polygon points="450,230 438,225 438,235" fill="#333"/>
+      <text x="250" y="268" text-anchor="middle" font-size="14" fill="#333">时间 / min</text>
+      <text x="20" y="130" text-anchor="middle" font-size="14" fill="#333" transform="rotate(-90,20,130)">温度 / ℃</text>
+      <!-- 刻度 -->
+      <text x="55" y="248" font-size="12" fill="#666" text-anchor="end">0</text>
+      <text x="50" y="140" font-size="12" fill="#666" text-anchor="end">t₀</text>
+      <text x="50" y="60" font-size="12" fill="#666" text-anchor="end">t₁</text>
+      <!-- 熔化曲线 -->
+      <polyline points="70,200 150,200 210,120 310,120 380,70 440,50" fill="none" stroke="#e74c3c" stroke-width="3" stroke-linejoin="round"/>
+      <!-- 阶段标注 -->
+      <text x="110" y="215" font-size="11" fill="#888" text-anchor="middle">固态</text>
+      <text x="260" y="112" font-size="11" fill="#e67e22" text-anchor="middle" font-weight="700">熔化过程</text>
+      <text x="345" y="100" font-size="11" fill="#888" text-anchor="middle">液态</text>
+      <text x="410" y="65" font-size="11" fill="#888" text-anchor="middle">液态升温</text>
+      <!-- 温度标注 -->
+      <line x1="200" y1="120" x2="60" y2="120" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="260" y="138" font-size="11" fill="#e67e22">熔点：晶体熔化时的温度</text>
+      <text x="120" y="185" font-size="10" fill="#888">固态升温</text>
+    </svg>
   </div>
-  <div class="formula">蒸发吸热制冷 &nbsp;|&nbsp; 液化放热</div>
+  <div class="d">
+    <b>图像分段分析（以冰熔化为例）：</b><br><br>
+    <span class="tag">AB段</span> 固态，温度上升（冰从−5℃→0℃）<br>
+    <span class="tag orange">BC段</span> <b>固液共存</b>，温度不变=0℃，持续吸热（熔化过程，冰水混合物）<br>
+    <span class="tag">CD段</span> 液态，温度上升（水从0℃→升温）<br><br>
+    <b>晶体熔化条件：</b>① 达到熔点 ② 继续吸热（缺一不可）<br>
+    <b>晶体熔化特点：</b>温度不变，持续吸热，固液共存
+  </div>
+  <div class="formula">晶体熔化图像 → &nbsp;水平段对应熔点，非晶体无水平段</div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 水沸腾实验</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_10_boiling_curve.svg" width="420" height="263" alt="水沸腾曲线"></div>
-  <div class="d">
-    水沸腾时的特点：<b>持续吸热，温度不变</b>（保持沸点）。<br>
-    <span class="tag red">沸点与气压有关</span> 气压越高，沸点越高；气压越低，沸点越低。<br>
-    标准大气压下水的沸点为<b>100℃</b>。沸腾条件：①达到沸点 ②继续吸热。
+<div class="card">
+  <div class="t">📈 水沸腾图像分析</div>
+  <div class="svg-wrap">
+    <svg width="480" height="280" viewBox="0 0 480 280">
+      <rect x="0" y="0" width="480" height="280" fill="#fff" rx="4"/>
+      <line x1="60" y1="230" x2="450" y2="230" stroke="#333" stroke-width="2"/>
+      <line x1="60" y1="230" x2="60" y2="20" stroke="#333" stroke-width="2"/>
+      <polygon points="60,20 55,32 65,32" fill="#333"/>
+      <polygon points="450,230 438,225 438,235" fill="#333"/>
+      <text x="250" y="268" text-anchor="middle" font-size="14" fill="#333">时间 / min</text>
+      <text x="20" y="130" text-anchor="middle" font-size="14" fill="#333" transform="rotate(-90,20,130)">温度 / ℃</text>
+      <text x="55" y="248" font-size="12" fill="#666" text-anchor="end">0</text>
+      <text x="50" y="72" font-size="12" fill="#666" text-anchor="end">100</text>
+      <!-- 沸腾曲线 -->
+      <polyline points="70,220 130,200 200,175 260,120 320,72 380,72 440,72" fill="none" stroke="#e74c3c" stroke-width="3" stroke-linejoin="round"/>
+      <text x="165" y="195" font-size="11" fill="#888" text-anchor="middle">加热升温</text>
+      <text x="260" y="108" font-size="11" fill="#888" text-anchor="middle">开始沸腾</text>
+      <text x="380" y="64" font-size="11" fill="#e67e22" text-anchor="middle" font-weight="700">沸腾（吸热不升温）</text>
+      <!-- 沸点线 -->
+      <line x1="60" y1="72" x2="310" y2="72" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="280" y="88" font-size="11" fill="#e67e22">沸点 = 100℃（标准大气压下）</text>
+    </svg>
   </div>
-  <div class="formula">沸腾特点：吸热不升温 &nbsp;|&nbsp; 沸点随气压增大而升高</div>
+  <div class="d">
+    <b>水沸腾的特点（重要！）：</b><br>
+    <span class="tag red">① 持续吸热</span>
+    <span class="tag green">② 温度保持不变（保持沸点）</span>
+    <span class="tag orange">③ 气泡由小变大，到水面破裂</span>
+    <br><br>
+    <b>沸点与气压的关系：</b><br>
+    气压越高 → 沸点越高（高压锅原理：约120℃）<br>
+    气压越低 → 沸点越低（高山上煮不熟饭）<br><br>
+    <b>沸腾条件：</b>① 达到沸点 ② 继续吸热（与晶体熔化条件类似！）
+  </div>
+  <div class="formula">沸腾特点：吸热不升温 &nbsp;|&nbsp; 气压↑ 沸点↑ &nbsp;|&nbsp; 高压锅：提高沸点</div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 分子热运动</div>
+<!-- ═══════════ 蒸发与沸腾  ═══════════ -->
+<div class="card">
+  <div class="t">💧 蒸发与沸腾对比</div>
   <div class="d">
-    一切物质的分子都在不停地做<b>无规则运动</b>。<br>
-    <span class="tag red">扩散现象</span> 不同物质彼此进入对方的现象（温度越高越快）<br>
-    <span class="tag green">分子间作用力</span> 引力和斥力同时存在，随距离增大而减小。
+    <table>
+      <tr><th>比较项</th><th>蒸发</th><th>沸腾</th></tr>
+      <tr><td><b>发生部位</b></td><td>液体表面</td><td>液体表面和内部同时</td></tr>
+      <tr><td><b>温度条件</b></td><td>任何温度下</td><td>必须达到沸点</td></tr>
+      <tr><td><b>剧烈程度</b></td><td>缓慢</td><td>剧烈</td></tr>
+      <tr><td><b>影响因素</b></td><td>温度、表面积、空气流速</td><td>气压</td></tr>
+      <tr><td><b>共同点</b></td><td colspan="2">都是汽化现象，都要吸热</td></tr>
+    </table>
+    <b>影响蒸发快慢的三要素：</b><br>
+    <span class="tag">① 液体温度越高，蒸发越快</span>
+    <span class="tag">② 液体表面积越大，蒸发越快</span>
+    <span class="tag">③ 液体表面空气流速越大，蒸发越快</span>
+    <br><br>
+    <b>蒸发吸热有制冷作用：</b>夏天洒水降温、医生用酒精擦皮肤降温、出汗后感觉凉快。
   </div>
-  <div class="formula">扩散：温度↑ 扩散↑ &nbsp;|&nbsp; r = r₀ 时引斥力平衡</div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 内能与比热容</div>
+<div class="card">
+  <div class="t">💨 液化的两种方法</div>
   <div class="d">
-    物体内部所有分子热运动的动能与分子势能的总和叫内能。<br>
-    <span class="tag red">改变内能的方式</span> 做功和热传递（等效）<br>
-    <span class="tag green">比热容 c</span> 单位质量的物质温度升高1℃所吸收的热量。<br>
-    水的比热容最大：<b>c水 = 4.2×10³ J/(kg·℃)</b>
+    <span class="tag red">降低温度</span> 水蒸气遇冷液化成小水珠（露水、雾、白气）<br>
+    <span class="tag green">压缩体积</span> 液化石油气（LPG）、打火机中的丁烷<br><br>
+    <b>液化放热——应用：</b>
+    <span class="tag">冬天手哈气取暖（水蒸气液化放热）</span>
+    <span class="tag">被100℃水蒸气烫伤比100℃开水更严重（液化放热+水降温放热）</span>
   </div>
-  <div class="formula">Q = cmΔt &nbsp;|&nbsp; 水的比热容大 → 常用作冷却剂</div>
+  <div class="example-q">
+    <div class="eq-t">📌 常考易错</div>
+    <div class="eq-d">
+      "白气"、雾、露水都是 <b>液化</b> 现象（不是汽化！）<br>
+      冬天看到的"白气"是呼出的水蒸气遇冷液化形成的。<br>
+      冰箱打开冒"白气"是空气中的水蒸气遇冷液化。
+    </div>
+  </div>
 </div>
 
-<div class="card" style="border-top-color:#e67e22">
-  <div class="t" style="color:#e67e22">🔹 热机</div>
+<!-- ═══════════ 热传递  ═══════════ -->
+<div class="sec-title">三、热传递</div>
+<div class="card">
+  <div class="t">🔥 三种热传递方式</div>
   <div class="d">
-    将内能转化为机械能的机器。常见热机：<span class="tag">汽油机</span><span class="tag">柴油机</span><br>
-    四冲程：<b>吸气→压缩→做功→排气</b>，一个工作循环曲轴转2圈，活塞往复2次。<br>
-    <span class="tag red">压缩冲程</span> 机械能→内能 <span class="tag green">做功冲程</span> 内能→机械能
+    <table>
+      <tr><th>方式</th><th>原理</th><th>发生条件</th><th>介质</th><th>实例</th></tr>
+      <tr><td><b>热传导</b></td><td>分子碰撞传热</td><td>物体直接接触</td><td>固体（金属良导体）</td><td>铁勺一端放火中，另一端变烫</td></tr>
+      <tr><td><b>热对流</b></td><td>流体流动传热</td><td>液体/气体中</td><td>液体、气体</td><td>烧水时水循环、暖气片使室内变暖</td></tr>
+      <tr><td><b>热辐射</b></td><td>电磁波传热</td><td>不需要介质</td><td>真空也能传</td><td>太阳光、烤火取暖</td></tr>
+    </table>
+    冬天穿羽绒服：不是"发热"，而是 <b>阻止热传递</b>（空气是热的不良导体）<br>
+    <span class="tag red">冰棒冒"白气"</span> 空气中的水蒸气遇到冰棒附近的冷空气液化
   </div>
-  <div class="formula">四冲程：吸→压→做→排 &nbsp;|&nbsp; 做功冲程提供动力</div>
 </div>
 
+<!-- ═══════════ 分子热运动  ═══════════ -->
+<div class="sec-title">四、分子热运动与内能</div>
+<div class="card">
+  <div class="t">🧪 分子热运动与扩散</div>
+  <div class="d">
+    <b>扩散现象：</b>不同物质彼此进入对方的现象。<br>
+    <span class="tag orange">扩散说明</span> ①分子在不停地做无规则运动 ②分子间有间隙<br>
+    <span class="tag red">温度越高，扩散越快</span>——分子运动越剧烈<br><br>
+    <b>扩散举例：</b>
+    <span class="tag">闻到花香</span>
+    <span class="tag">墨水在水中扩散</span>
+    <span class="tag">做饭时厨房飘香</span>
+    <span class="tag">糖放入水中整杯变甜</span>
+    <br><br>
+    <b>分子间作用力：</b><br>
+    <span class="tag green">引力</span> 当 r = r₀ 时，引力和斥力平衡<br>
+    <span class="tag red">斥力</span> 当 r < r₀ 时，斥力占主导<br>
+    <span class="tag purple">引力和斥力同时存在</span> 随距离增大而减小
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">⚡ 内能</div>
+  <div class="d">
+    物体内部 <b>所有分子热运动的动能与分子势能的总和</b> 叫内能。<br><br>
+    <b>内能的特点：</b><br>
+    <span class="tag red">一切物体都有内能</span>（即使温度为0℃，分子也在运动）<br>
+    <span class="tag green">内能大小与温度、质量、状态、材料有关</span><br>
+    <span class="tag orange">温度越高，分子热运动越剧烈，内能越大</span><br><br>
+    <b>改变内能的两种方式（等效）：</b><br>
+    <span class="tag purple">做功</span> 对物体做功（压缩、摩擦）→内能增大；物体对外做功→内能减小<br>
+    <span class="tag">热传递</span> 吸热→内能增大；放热→内能减小<br><br>
+    <b>注意：</b>温度升高 → 内能一定增大；但内能增大 → 温度不一定升高<br>
+    （如晶体熔化吸热，内能增大但温度不变，温度与内能不是一一对应的！）
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 中考易错</div>
+    <div class="eq-d">
+      ❌ "温度高的物体内能一定大" — 错！内能还与质量、状态等有关<br>
+      ❌ "0℃的物体没有内能" — 错！一切物体都有内能<br>
+      ❌ "物体吸热温度一定升高" — 错！晶体熔化、水沸腾时吸热但温度不变
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 比热容  ═══════════ -->
+<div class="sec-title">五、比热容与热值</div>
+<div class="card">
+  <div class="t">💧 比热容</div>
+  <div class="d">
+    单位质量的某种物质温度升高（或降低）1℃所吸收（或放出）的热量。<br>
+    符号：<b>c</b>；单位：<b>J/(kg·℃)</b><br><br>
+    <span class="tag red">水的比热容：c水 = 4.2×10³ J/(kg·℃)</span>
+    <span class="tag orange">含意：1kg水温度升高1℃需要吸收4.2×10³J的热量</span>
+    <br><br>
+    <b>水的比热容大的应用：</b><br>
+    <span class="tag">冬季用热水取暖（水降温放热多）</span>
+    <span class="tag">汽车发动机用水做冷却剂（水升温吸热多）</span>
+    <span class="tag">沿海地区昼夜温差小（水比热容大）</span>
+  </div>
+  <div class="formula blue">Q<sub>吸</sub> = cm(t − t₀) &nbsp;|&nbsp; Q<sub>放</sub> = cm(t₀ − t) &nbsp;|&nbsp; 统一：Q = cmΔt</div>
+  <div class="example-q">
+    <div class="eq-t">📌 典型计算</div>
+    <div class="eq-d">
+      <b>例：</b>将 2kg 水从 20℃ 加热到 100℃，需要吸收多少热量？<br>
+      c = 4.2×10³ J/(kg·℃)，m = 2kg，Δt = 100−20 = 80℃<br>
+      Q = cmΔt = 4.2×10³ × 2 × 80 = <b>6.72×10⁵ J</b>
+    </div>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 比热容实验</button>
+  <div class="solution">
+    <div class="sol-t">✅ 探究不同物质的吸热能力</div>
+    <div class="sol-d">
+      <b>控制变量法：</b>相同质量的不同物质，吸收相同的热量，比较温度变化。<br>
+      <b>实验器材：</b>铁架台、酒精灯、石棉网、烧杯、温度计、计时器、搅拌棒<br>
+      <b>结论：</b>质量相同的水和食用油，吸收相同热量，<b>水升温慢</b>（比热容大）。<br>
+      <b>转换法：</b>加热时间反映吸收热量的多少。<br>
+      <b>注意：</b>实验中要确保加热方式相同（相同的酒精灯或加热器）。
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="t">🔥 热值与燃料燃烧</div>
+  <div class="d">
+    燃料完全燃烧放出的热量：<b>Q = mq</b><br>
+    q — 热值，单位 J/kg，表示 1kg 燃料完全燃烧放出的热量<br><br>
+    <span class="tag red">注意：热值是燃料的 <b>固有属性</b></span>
+    <span class="tag orange">与燃料质量、是否完全燃烧无关</span>
+    <br><br>
+    <span class="tag">常用热值：</span>
+    干木柴 ≈ 1.2×10⁷ J/kg，煤 ≈ 3×10⁷ J/kg，汽油 ≈ 4.6×10⁷ J/kg<br>
+    天然气 ≈ 8×10⁷ J/m³（气体燃料用 J/m³）
+  </div>
+  <div class="formula blue">Q<sub>放</sub> = mq &nbsp;|&nbsp; 完全燃烧放热公式</div>
+</div>
+
+<!-- ═══════════ 热机  ═══════════ -->
+<div class="sec-title">六、热机</div>
+<div class="card">
+  <div class="t">🏭 汽油机四冲程</div>
+  <div class="svg-wrap">
+    <svg width="560" height="140" viewBox="0 0 560 140">
+      <!-- 吸气冲程 -->
+      <rect x="10" y="10" width="90" height="80" rx="4" fill="#fff" stroke="#1a6fc4" stroke-width="2"/>
+      <text x="55" y="52" text-anchor="middle" font-size="11" fill="#1a6fc4">吸入<br>空气+汽油</text>
+      <text x="55" y="110" text-anchor="middle" font-size="12" fill="#e74c3c" font-weight="700">吸气</text>
+      <line x1="100" y1="50" x2="115" y2="50" stroke="#999" stroke-width="1.5"/>
+      <polygon points="115,50 108,44 108,56" fill="#999"/>
+      <!-- 压缩冲程 -->
+      <rect x="140" y="10" width="90" height="80" rx="4" fill="#fff" stroke="#e65100" stroke-width="2"/>
+      <text x="185" y="52" text-anchor="middle" font-size="11" fill="#e65100">压缩<br>（温度↑）</text>
+      <text x="185" y="110" text-anchor="middle" font-size="12" fill="#e74c3c" font-weight="700">压缩</text>
+      <line x1="230" y1="50" x2="245" y2="50" stroke="#999" stroke-width="1.5"/>
+      <polygon points="245,50 238,44 238,56" fill="#999"/>
+      <!-- 做功冲程 -->
+      <rect x="270" y="10" width="90" height="80" rx="4" fill="#fff" stroke="#c0392b" stroke-width="2"/>
+      <text x="315" y="52" text-anchor="middle" font-size="11" fill="#c0392b">火花塞点火<br>→ 燃烧膨胀</text>
+      <text x="315" y="110" text-anchor="middle" font-size="12" fill="#e74c3c" font-weight="700">做功</text>
+      <line x1="360" y1="50" x2="375" y2="50" stroke="#999" stroke-width="1.5"/>
+      <polygon points="375,50 368,44 368,56" fill="#999"/>
+      <!-- 排气冲程 -->
+      <rect x="400" y="10" width="90" height="80" rx="4" fill="#fff" stroke="#2d7d46" stroke-width="2"/>
+      <text x="445" y="52" text-anchor="middle" font-size="11" fill="#2d7d46">排出<br>废气</text>
+      <text x="445" y="110" text-anchor="middle" font-size="12" fill="#e74c3c" font-weight="700">排气</text>
+    </svg>
+  </div>
+  <div class="d">
+    <b>四冲程汽油机：吸气 → 压缩 → 做功 → 排气</b><br><br>
+    <table>
+      <tr><th>冲程</th><th>能量转化</th><th>进气门</th><th>排气门</th><th>活塞运动</th></tr>
+      <tr><td>吸气</td><td>—</td><td>开</td><td>关</td><td>向下</td></tr>
+      <tr><td>压缩</td><td><b>机械能→内能</b></td><td>关</td><td>关</td><td>向上</td></tr>
+      <tr><td>做功</td><td><b>内能→机械能</b></td><td>关</td><td>关</td><td>向下</td></tr>
+      <tr><td>排气</td><td>—</td><td>关</td><td>开</td><td>向上</td></tr>
+    </table>
+    <b>重要数字关系：</b><br>
+    一个工作循环：<span class="tag">曲轴转 2 圈</span><span class="tag">活塞往复 2 次</span><span class="tag">做功 1 次</span>
+  </div>
+  <div class="formula">压缩冲程：机械能→内能 &nbsp;|&nbsp; 做功冲程：内能→机械能</div>
+</div>
+
+<div class="card">
+  <div class="t">📐 热机效率</div>
+  <div class="d">
+    热机工作时，用来做有用功的能量与燃料完全燃烧放出的热量之比。<br><br>
+    <span class="tag red">η = (Q<sub>有用</sub> / Q<sub>总</sub>) × 100%</span>
+    <span class="tag orange">η = (W<sub>有</sub> / Q<sub>放</sub>) × 100%</span>
+    <br><br>
+    蒸汽机效率约 6%~15%，汽油机 20%~30%，柴油机 30%~45%。<br>
+    <b>提高效率的方法：</b>使燃料充分燃烧、减小摩擦、减少热量散失。
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 典型计算</div>
+    <div class="eq-d">
+      <b>例：</b>一台汽油机消耗 2kg 汽油，完全燃烧放热 9.2×10⁷ J，其中做有用功 2.76×10⁷ J，求效率。<br>
+      η = (2.76×10⁷) / (9.2×10⁷) × 100% = <b>30%</b>
+    </div>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 综合计算题</button>
+  <div class="solution">
+    <div class="sol-t">✅ 综合计算</div>
+    <div class="sol-d">
+      <b>例：</b>汽车发动机用水做冷却剂，若水箱中有 5kg 水，温度从 20℃ 升到 40℃，<br>
+      (1) 水吸收了多少热量？(2) 这些热量需要完全燃烧多少汽油？（q<sub>汽油</sub>=4.6×10⁷ J/kg）<br><br>
+      <b>解：</b><br>
+      (1) Q<sub>吸</sub> = cmΔt = 4.2×10³ × 5 × (40−20) = <b>4.2×10⁵ J</b><br>
+      (2) Q<sub>放</sub> = Q<sub>吸</sub> = 4.2×10⁵ J &nbsp;（假设无热损失）<br>
+      m = Q<sub>放</sub> / q = 4.2×10⁵ / 4.6×10⁷ ≈ <b>0.0091 kg = 9.1 g</b>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 能量守恒  ═══════════ -->
+<div class="sec-title">七、能量守恒定律</div>
+<div class="card">
+  <div class="t">🔋 能量既不会凭空产生，也不会凭空消失</div>
+  <div class="d">
+    能量守恒定律：能量既不会凭空产生，也不会凭空消失，它只会从一种形式 <b>转化</b> 为另一种形式，或从一个物体 <b>转移</b> 到另一个物体，能量的总量保持不变。<br><br>
+    <b>常见能量转化：</b><br>
+    <span class="tag">摩擦生热：机械能→内能</span>
+    <span class="tag">电热器：电能→内能</span>
+    <span class="tag">电动机：电能→机械能</span>
+    <span class="tag">发电机：机械能→电能</span>
+    <span class="tag">太阳能电池：光能→电能</span>
+    <span class="tag">光合作用：光能→化学能</span>
+    <br><br>
+    <b>注意："永动机"不可能实现</b> — 违背能量守恒定律！
+  </div>
+  <div class="formula blue">能量守恒定律：E<sub>总</sub> = 恒定 &nbsp;|&nbsp; 适用于一切能量转化过程</div>
+</div>
+
+<!-- ═══════════ 练习题  ═══════════ -->
+<div class="sec-title">✍️ 综合练习</div>
+<div class="card" style="border-top-color:#444">
+  <div class="t" style="color:#444">练习 1</div>
+  <div class="d">
+    下列现象中属于液化的是（ ）<br>
+    A. 冰化成水 &nbsp; B. 霜的形成 &nbsp; C. 露水的形成 &nbsp; D. 樟脑丸变小
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d"><b>C</b>。A熔化，B凝华，C液化，D升华。</div></div>
+</div>
+<div class="card" style="border-top-color:#444">
+  <div class="t" style="color:#444">练习 2</div>
+  <div class="d">
+    水沸腾时，继续加热，水的温度（ ）<br>A. 升高 &nbsp; B. 降低 &nbsp; C. 不变 &nbsp; D. 先升高后不变
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d"><b>C</b>。水沸腾时吸热但温度不变（保持沸点）。</div></div>
+</div>
+<div class="card" style="border-top-color:#444">
+  <div class="t" style="color:#444">练习 3</div>
+  <div class="d">
+    质量为 2kg 的水，温度从 90℃ 降到 30℃，放出多少热量？
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">Q = cmΔt = 4.2×10³ × 2 × (90−30) = <b>5.04×10⁵ J</b></div></div>
+</div>
+<div class="card" style="border-top-color:#444">
+  <div class="t" style="color:#444">练习 4</div>
+  <div class="d">
+    四冲程汽油机，曲轴转速为 3600 转/分，则每秒对外做功多少次？
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
+    3600 转/分 = 60 转/秒。<br>
+    每 2 转做功 1 次 → 每秒做功 = 60÷2 = <b>30 次</b>
+  </div></div>
+</div>
+<div class="card" style="border-top-color:#444">
+  <div class="t" style="color:#444">练习 5</div>
+  <div class="d">
+    完全燃烧 0.5kg 的酒精（q=3×10⁷ J/kg）放出的热量，若全部被水吸收，可使多少 kg 的水从 20℃ 升高到 70℃？
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
+    Q<sub>放</sub> = mq = 0.5 × 3×10⁷ = 1.5×10⁷ J<br>
+    Q<sub>吸</sub> = Q<sub>放</sub> = 1.5×10⁷ J<br>
+    m = Q/(cΔt) = 1.5×10⁷ / (4.2×10³ × 50) ≈ <b>71.4 kg</b>
+  </div></div>
+</div>
+
+<script>
+function toggleSol(btn) {
+  const sol = btn.nextElementSibling;
+  sol.classList.toggle('show');
+  btn.textContent = sol.classList.contains('show') ? '🙈 收起答案' : '👁️ 看答案';
+}
+</script>
 </div>
 </body>
 </html>

@@ -8,53 +8,182 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
-.wrap{max-width:800px;margin:0 auto}
+.wrap{max-width:860px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:24px;color:#27ae60;margin-bottom:20px;letter-spacing:2px}
-.card{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
-.card .t{font-weight:700;font-size:14px;color:#27ae60;margin-bottom:4px}
-.card .d{font-size:13px;color:#555;line-height:1.6}
-.tag{display:inline-block;font-size:11px;background:#edf7f0;color:#27ae60;padding:1px 8px;border-radius:4px;margin:2px}
+h1{text-align:center;font-size:24px;color:#27ae60;margin-bottom:6px}
+.sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
+.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
+.card .t{font-weight:700;font-size:15px;color:#27ae60;margin-bottom:6px}
+.card .d{font-size:13px;color:#555;line-height:1.8}
+.card .d b{color:#333}
+.tag{display:inline-block;font-size:11px;background:#edf7f0;color:#27ae60;padding:2px 10px;border-radius:4px;margin:2px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.sec-title{font-size:17px;font-weight:700;color:#333;margin:22px 0 10px;padding-left:12px;border-left:4px solid #27ae60}
+.formula{background:#f8f9fc;border-radius:6px;padding:8px 12px;margin:6px 0;font-size:13px;text-align:center;color:#27ae60;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
+td,th{border:1px solid #ddd;padding:6px 8px;text-align:center}
+th{background:#27ae60;color:#fff;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.step{display:flex;align-items:flex-start;gap:8px;margin:6px 0;padding:6px 10px;background:#f9fbe7;border-radius:6px}
+.step-num{flex:0 0 22px;height:22px;border-radius:50%;background:#27ae60;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
+.step-c{flex:1;font-size:12px;color:#555;line-height:1.6}
+@media(max-width:640px){h1{font-size:20px}}
 </style>
+<script src="../js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../资料库.html">← 返回资料库</a>
-<h1>初中生物常考模型</h1>
+<a class="back" href="../思贤学习站.html">← 返回首页</a>
+<h1>🧬 初中生物常考模型</h1>
+<p class="sub">细胞·遗传·生态系统·人体生理·实验探究·中考全覆盖</p>
 
-<div class="card"><div class="t">🔹 显微镜使用模型</div><div class="d"><b>操作步骤</b>：取镜安放→对光（低倍物镜、大光圈）→放置玻片→调粗准焦螺旋（下看）→调细准焦螺旋（上看）→观察。<br><b>成像特点</b>：倒像（上下左右均相反），玻片移动方向与物像移动方向相反。<br><b>放大倍数</b>：目镜×物镜。倍数越大，视野越暗、细胞越大、数量越少。<br><b>污点判断</b>：移动玻片污点动→在玻片；转动目镜污点动→在目镜；都不动→在物镜。</div></div>
+<div class="sec-title">一、生物体结构模型</div>
+<div class="card"><div class="t">🔹 显微镜使用模型</div><div class="d">
+<b>操作步骤七步：</b>取镜安放→对光（低倍物镜+大光圈）→放置玻片→调粗准焦（下看）→看目镜调粗准焦→调细准焦→观察<br>
+<b>成像：</b>倒像（上下左右全部相反），玻片移动方向与物像移动方向相反<br>
+<b>放大倍数：</b>目镜×物镜。倍数越大→视野越暗、细胞越大、数量越少<br>
+<b>污点判断法：</b>移动玻片污点动→在玻片；转动目镜污点动→在目镜；都不动→在物镜<br>
+<b>物镜与玻片距离：</b>倍率越大，镜头离玻片越近
+</div></div>
 
-<div class="card"><div class="t">🔹 细胞结构模型</div><div class="d"><b>植物细胞特有的是</b>：细胞壁（支持和保护）、叶绿体（光合作用）、液泡（储存物质、含色素）。<br><b>动物细胞有</b>：细胞膜、细胞质、细胞核。<br><b>细胞核</b>：含染色体（DNA+蛋白质），是遗传信息库，控制生命活动。<br><b>细胞生活需要物质和能量</b>：叶绿体（光能→化学能），线粒体（分解有机物释放能量）。</div></div>
+<div class="card"><div class="t">🔹 细胞结构模型</div><div class="d">
+<table>
+<tr><th>结构</th><th>植物细胞</th><th>动物细胞</th><th>功能</th></tr>
+<tr><td>细胞壁</td><td>✔</td><td>✘</td><td>支持和保护（全透性）</td></tr>
+<tr><td>细胞膜</td><td>✔</td><td>✔</td><td>控制物质进出（选择性）</td></tr>
+<tr><td>细胞质</td><td>✔</td><td>✔</td><td>进行生命活动的场所</td></tr>
+<tr><td>细胞核</td><td>✔</td><td>✔</td><td>遗传信息库，控制生命活动</td></tr>
+<tr><td>叶绿体</td><td>✔</td><td>✘</td><td>光合作用的场所</td></tr>
+<tr><td>线粒体</td><td>✔</td><td>✔</td><td>呼吸作用释放能量</td></tr>
+<tr><td>液泡</td><td>✔</td><td>✘</td><td>储存物质，维持渗透压</td></tr>
+</table>
+<b>细胞生活需要物质和能量：</b>
+<span class="tag blue">叶绿体</span> 光能→化学能（储存能量）
+<span class="tag orange">线粒体</span> 化学能→生命活动能量（释放能量）
+</div></div>
 
-<div class="card"><div class="t">🔹 光合与呼吸模型</div><div class="d"><b>光合作用</b>：CO₂+H₂O→(光能/叶绿体)→有机物+O₂。原料CO₂和水，条件光照，场所叶绿体。<br><b>呼吸作用</b>：有机物+O₂→CO₂+H₂O+能量。场所线粒体，时刻都在进行。<br><b>关系</b>：光合作用储存能量，呼吸作用释放能量。白天光合＞呼吸积累有机物；晚上只有呼吸消耗。<br><b>应用</b>：增加光照/CO₂浓度提高产量；低温/低氧储存果蔬抑制呼吸。</div></div>
+<div class="card"><div class="t">🔹 细胞分裂与生长</div><div class="d">
+<b>细胞分裂过程：</b>核分裂→质分裂→形成新细胞壁（植物）<br>
+<b>染色体变化：</b>复制→均分→两个新细胞与原细胞染色体形态数目相同<br>
+<b>分裂意义：</b>使细胞数量增多（生长、修复、繁殖）<br>
+<b>细胞分化：</b>形成不同组织（形态结构功能发生差异性变化）<br>
+<b>组织类型：</b>植物（保护、营养、分生、输导、机械）；动物（上皮、肌肉、神经、结缔）
+</div></div>
 
-<div class="card"><div class="t">🔹 遗传模型</div><div class="d"><b>基因与性状</b>：基因控制性状。显性基因（大写A）控制显性性状；隐性基因（小写a）控制隐性性状。<br><b>遗传图解</b>：亲本 AA×aa → 子一代 Aa（全显性）。子一代 Aa×Aa → 子二代 AA:Aa:aa=1:2:1，显性:隐性=3:1。<br><b>禁止近亲结婚</b>：隐性疾病致病基因纯合概率增加。<br><b>性别决定</b>：女性XX，男性XY。生男生女概率各50%。</div></div>
+<div class="sec-title">二、生理与代谢模型</div>
+<div class="card"><div class="t">🔹 光合作用与呼吸作用模型</div><div class="d">
+<table>
+<tr><th></th><th>光合作用</th><th>呼吸作用</th></tr>
+<tr><td><b>场所</b></td><td>叶绿体</td><td>线粒体</td></tr>
+<tr><td><b>条件</b></td><td>光照下</td><td>时时刻刻</td></tr>
+<tr><td><b>原料</b></td><td>CO₂+H₂O</td><td>有机物+O₂</td></tr>
+<tr><td><b>产物</b></td><td>有机物+O₂</td><td>CO₂+H₂O+能量</td></tr>
+<tr><td><b>能量变化</b></td><td>光能→化学能（储存）</td><td>化学能→其他能（释放）</td></tr>
+</table>
+<b>关系：</b>光合作用制造有机物储存能量，呼吸作用分解有机物释放能量<br>
+<b>应用：</b>
+<span class="tag blue">增加光照/CO₂浓度→提高产量</span>
+<span class="tag orange">低温低氧储存果蔬→抑制呼吸</span>
+<span class="tag green">植物夜晚→只有呼吸（不能进行光合）</span>
+</div>
+<div class="formula">光合：CO₂+H₂O →(光/叶绿体) 有机物+O₂ &nbsp;|&nbsp; 呼吸：有机物+O₂ → CO₂+H₂O+能量</div></div>
 
-<div class="card"><div class="t">🔹 生态系统模型</div><div class="d"><b>组成</b>：非生物部分（光、水、空气等）+生物部分（生产者→消费者→分解者）。<br><b>食物链</b>：草→虫→鸟→鹰。箭头指向捕食者。起点是生产者。<br><b>能量流动</b>：单向流动，逐级递减（每级约10%-20%传到下一级）。<br><b>物质循环</b>：碳循环——大气CO₂→光合作用→有机物→呼吸/燃烧→CO₂。<br><b>生态平衡</b>：有一定自动调节能力，能力大小与生物种类多少有关。</div></div>
+<div class="card"><div class="t">🔹 人体营养与消化</div><div class="d">
+<b>六大营养素：</b>糖类（主要供能）、蛋白质（修复细胞）、脂肪（备用能源）、维生素（调节）、水、无机盐<br>
+<b>消化系统：</b>口腔（淀粉初步消化）→咽→食道→胃（蛋白质初步消化）→小肠（主要吸收）→大肠→肛门<br>
+<b>消化腺：</b>唾液腺（唾液淀粉酶）、胃腺（胃蛋白酶）、肝脏（胆汁，乳化脂肪）、胰腺（多种酶）、肠腺<br>
+<b>小肠适于吸收的特点：</b>长（5-6米）、大（皱襞+绒毛增大面积）、薄（壁薄易透过）、多（含多种消化液）
+</div></div>
 
-<div class="card"><div class="t">🔹 人体生理模型</div><div class="d"><b>消化系统</b>：口腔（淀粉初步消化）→食道→胃（蛋白质初步消化）→小肠（主要吸收场所）→大肠。<br><b>血液循环</b>：体循环（左心室→主动脉→全身→上下腔静脉→右心房）；肺循环（右心室→肺动脉→肺→肺静脉→左心房）。<br><b>尿液形成</b>：肾小球滤过（血细胞和大分子蛋白不过）→肾小管重吸收（全部葡萄糖、大部分水、部分无机盐）。<br><b>神经调节</b>：反射弧——感受器→传入神经→神经中枢→传出神经→效应器。</div></div>
+<div class="card"><div class="t">🔹 血液循环模型</div><div class="d">
+<b>体循环：</b>左心室→主动脉→全身毛细血管→上下腔静脉→右心房（动脉血变静脉血）<br>
+<b>肺循环：</b>右心室→肺动脉→肺毛细血管→肺静脉→左心房（静脉血变动脉血）<br>
+<b>血液成分：</b>
+<span class="tag red">红细胞</span> 含血红蛋白，运输O₂（含铁，低铁贫血）
+<span class="tag blue">白细胞</span> 吞噬病菌，防御（含量多→炎症）
+<span class="tag orange">血小板</span> 止血凝血
+<span class="tag">血浆</span> 运输营养和废物
+<br><b>血管三种：</b>
+<span class="tag">动脉</span> 壁厚弹性大，离心血流快
+<span class="tag green">静脉</span> 壁薄弹性小，回流有静脉瓣
+<span class="tag">毛细血管</span> 单层细胞，连通最小动脉静脉
+</div></div>
+
+<div class="card"><div class="t">🔹 呼吸与泌尿模型</div><div class="d">
+<b>呼吸：</b>吸气→膈肌收缩、膈顶下降、胸腔扩大→肺内压降低→气体入肺<br>
+<b>气体交换：</b>肺泡壁薄（单层细胞）+ 毛细血管壁薄 = 气体易通过（扩散作用）<br>
+<b>尿液形成：</b>
+<span class="tag blue">肾小球滤过</span> 血细胞和大分子蛋白不能滤过→原尿
+<span class="tag orange">肾小管重吸收</span> 全部葡萄糖、大部分水、部分无机盐→尿液
+<br><b>排尿意义：</b>排出废物、调节水和无机盐平衡、维持组织细胞正常功能
+</div></div>
+
+<div class="card"><div class="t">🔹 神经调节模型</div><div class="d">
+<b>反射弧：</b>感受器→传入神经→神经中枢（脊髓/脑）→传出神经→效应器（肌肉/腺体）<br>
+<b>反射类型：</b>
+<span class="tag red">非条件反射</span> 生来就有（膝跳反射、缩手反射、眨眼）
+<span class="tag blue">条件反射</span> 后天形成（望梅止渴、谈虎色变）<br>
+<b>大脑皮层功能区：</b>运动中枢、感觉中枢、视觉中枢、听觉中枢、语言中枢<br>
+<b>感觉器官：</b>眼（晶状体+视网膜）、耳（鼓膜+耳蜗听小骨）
+</div></div>
+
+<div class="sec-title">三、遗传与进化模型</div>
+<div class="card"><div class="t">🔹 遗传模型</div><div class="d">
+<b>基因与性状：</b>基因控制生物性状。显性基因（A）控制显性性状，隐性基因（a）控制隐性性状<br>
+<b>遗传图解（豌豆高矮茎）：</b>
+亲本：AA×aa → 子一代：Aa（全高茎）
+Aa×Aa → 子二代：AA:Aa:aa=1:2:1，高:矮=3:1<br>
+<b>禁止近亲结婚原因：</b>近亲携带同种隐性致病基因概率大→纯合子概率大→患病率增加<br>
+<b>性别决定：</b>女性XX，男性XY。精子类型决定性别（X或Y），概率各50%<br>
+<b>基因与染色体：</b>基因在染色体上（DNA+蛋白质），体细胞中成对存在，生殖细胞中成单存在
+</div>
+<div class="formula">AA×aa→全Aa &nbsp;|&nbsp; Aa×Aa→3:1 &nbsp;|&nbsp; Aa×aa→1:1（测交）</div></div>
+
+<div class="card"><div class="t">🔹 生物进化模型</div><div class="d">
+<b>自然选择学说（达尔文）：</b>过度繁殖→生存斗争→遗传变异→适者生存<br>
+<b>进化证据：</b>化石（最直接）、比较解剖学（同源器官）、分子生物学（DNA相似度）<br>
+<b>进化趋势：</b>简单→复杂、低等→高等、水生→陆生<br>
+<b>人工选择：</b>根据人类需求选育（如高产奶牛、不同品种的狗）
+</div></div>
+
+<div class="sec-title">四、生态与环境模型</div>
+<div class="card"><div class="t">🔹 生态系统模型</div><div class="d">
+<b>组成：</b>
+<span class="tag green">生产者（植物）</span> 制造有机物
+<span class="tag orange">消费者（动物）</span> 直接/间接吃植物
+<span class="tag purple">分解者（细菌真菌）</span> 分解有机物为无机物
++ 非生物部分（光、水、空气、温度等）
+<br><b>食物链：</b>草→虫→鸟→鹰（箭头指向捕食者，起点是生产者）<br>
+<b>能量流动特点：</b>单向流动、逐级递减（10%-20%传到下一级）<br>
+<b>物质循环：</b>CO₂→光合→有机物→呼吸/燃烧→CO₂（碳循环）<br>
+<b>生态平衡：</b>有一定自动调节能力，生物种类越多调节能力越强
+</div></div>
+
+<div class="card"><div class="t">🔹 生物圈中的绿色植物</div><div class="d">
+<b>种子萌发条件：</b>适宜温度、一定水分、充足空气（缺一不可）<br>
+<b>根尖结构：</b>根冠→分生区→伸长区→成熟区（根毛吸水）<br>
+<b>水分运输：</b>根毛→导管→茎→叶（蒸腾作用提供动力）<br>
+<b>蒸腾作用：</b>水分从叶片气孔散失——促进吸水、降低温度、促进运输<br>
+<b>三大作用对比：</b>
+<span class="tag green">光合→制造有机物，只在白天</span>
+<span class="tag orange">呼吸→分解有机物，时刻进行</span>
+<span class="tag blue">蒸腾→运输水分，白天为主</span>
+</div></div>
+
+<div class="card"><div class="t">🔹 健康生活模型</div><div class="d">
+<b>传染病三环节：</b>传染源（病原体携带者）→传播途径（空气/饮食/接触/血液）→易感人群<br>
+<b>预防三措施：</b>控制传染源（隔离病人）、切断传播途径（消毒戴口罩）、保护易感人群（疫苗）<br>
+<b>免疫类型：</b>
+<span class="tag blue">非特异性（天生）</span> 皮肤屏障、吞噬细胞、溶菌酶
+<span class="tag orange">特异性（后天）</span> 抗体+抗原，第三道防线<br>
+<b>疫苗原理：</b>灭活病原体→刺激产生抗体→记忆细胞长期保留<br>
+<b>健康三要素：</b>身体健康、心理健康、社会适应良好
+</div></div>
 
 </div>
-<script>
-function switchTab(name, btn){
-  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
-  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  btn.classList.add('active');
-  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
-}
-function copyTxt(){
-  var txt = document.querySelector('.pane.active .lb-txt').textContent;
-  var hint = document.querySelector('.pane.active .lk-hint');
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = txt; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-    hint.textContent = '✅ 已复制，分享给好友吧！';
-  }
-}
-</script>
 </body>
 </html>

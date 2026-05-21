@@ -21,7 +21,12 @@ p{margin-bottom:8px;text-indent:2em}
 ul{padding-left:2em;margin-bottom:10px}
 ul li{margin-bottom:3px}
 ol{padding-left:2em;margin-bottom:10px}
-.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:3px;margin-left:4px}
+.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:3px;margin:2px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
 .highlight{color:#e74c3c;font-weight:700}
 .formula{
   text-align:center;padding:6px 16px;margin:8px 0;background:#f9f9f9;
@@ -31,28 +36,38 @@ ol{padding-left:2em;margin-bottom:10px}
 .grid2 div{background:#fafafa;padding:10px 14px;border-radius:8px;border-left:3px solid #e74c3c}
 .grid2 div .t{font-weight:700;font-size:13px;color:#e74c3c}
 .grid2 div .d{font-size:13px;color:#555;margin-top:2px}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
+td,th{border:1px solid #ddd;padding:6px 8px;text-align:center}
+th{background:#e74c3c;color:#fff;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.step{display:flex;align-items:flex-start;gap:8px;margin:6px 0;padding:6px 10px;background:#fef0ef;border-radius:6px}
+.step-num{flex:0 0 22px;height:22px;border-radius:50%;background:#e74c3c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
+.step-c{flex:1;font-size:12px;color:#555;line-height:1.6}
 @media print{
   body{padding:0}
   h2{page-break-after:avoid}
   h3{page-break-after:avoid}
 }
 </style>
+<script src="../js/theme.js"></script>
 </head>
 <body>
-<div style="max-width:820px;margin:0 auto 8px;padding:0 10px"><a href="../资料库.html" style="color:#888;font-size:13px;text-decoration:none">← 返回资料库</a></div>
+<div style="max-width:820px;margin:0 auto 8px;padding:0 10px"><a href="../思贤学习站.html" style="color:#888;font-size:13px;text-decoration:none">← 返回首页</a></div>
 
 <h1>中考数学知识点大全</h1>
-<p class="sub">中考总复习 · 系统梳理 · 济南考区适用</p>
+<p class="sub">中考总复习 · 系统梳理 · 模型归纳 · 济南考区适用</p>
 
 <!-- ════════════════════════════════════════ -->
 <h2>一、数与式</h2>
 
 <h3>1. 实数</h3>
-<p><span class="highlight">分类</span>：按定义分有理数（整数、分数）和无理数（无限不循环小数）。按正负分正数、零、负数。</p>
-<p><span class="highlight">数轴</span>：规定了原点、正方向和单位长度的直线。实数与数轴上的点一一对应。数轴上右边的数总比左边的大。</p>
+<p><span class="highlight">分类</span>：按定义分有理数（整数、分数）和无理数（无限不循环小数如 π、√2、√3、0.101001…）。按正负分正数、零、负数。</p>
+<p><span class="highlight">数轴</span>：规定了原点、正方向和单位长度的直线。实数与数轴上的点一一对应。右边的数总比左边的大。</p>
 <p><span class="highlight">相反数</span>：只有符号不同的两个数互为相反数。0 的相反数是 0。a+b=0 ⇔ a、b 互为相反数。</p>
 <p><span class="highlight">绝对值</span>：数轴上表示数 a 的点与原点的距离，记作 |a|。性质：|a|≥0；|a|=a（a≥0），|a|=-a（a&lt;0）。</p>
-<p><span class="highlight">科学记数法</span>：a×10ⁿ（1≤|a|&lt;10，n 为整数）。大数 n=位数-1；小数 n=第一个非零数前零的个数的相反数。</p>
+<p><span class="highlight">科学记数法</span>：a×10ⁿ（1≤|a|&lt;10）。<span class="tag blue">大数 n=整数位数-1</span> <span class="tag orange">小数 n=第一个非零数前零的个数的相反数</span></p>
+<p><span class="highlight">比大小方法</span>：数轴比较法、差值法（a-b>0→a>b）、平方法（√a与√b→比较a与b）、中间量法。</p>
+<p><span class="highlight">常见无理数估算</span>：√2≈1.414 &nbsp; √3≈1.732 &nbsp; √5≈2.236 &nbsp; π≈3.1416 &nbsp; √10≈3.162</p>
 
 <h3>2. 实数的运算</h3>
 <p><span class="highlight">运算律</span>：加法交换律 a+b=b+a；加法结合律 (a+b)+c=a+(b+c)；乘法交换律 ab=ba；乘法结合律 (ab)c=a(bc)；乘法分配律 a(b+c)=ab+ac。</p>
@@ -61,111 +76,143 @@ ol{padding-left:2em;margin-bottom:10px}
 
 <h3>3. 整式与因式分解</h3>
 <p><span class="highlight">整式运算</span>：合并同类项（系数相加，字母及指数不变）；去括号法则（括号前是+"不变号"，是"﹣"全变号）。</p>
-<p><span class="highlight">幂的运算</span>：<span class="formula">aᵐ·aⁿ = aᵐ⁺ⁿ &nbsp;&nbsp; (aᵐ)ⁿ = aᵐⁿ &nbsp;&nbsp; (ab)ⁿ = aⁿbⁿ &nbsp;&nbsp; aᵐ÷aⁿ = aᵐ⁻ⁿ（a≠0）</span></p>
+<p><span class="highlight">幂的运算法则</span>：</p>
+<div class="grid2">
+  <div><span class="t">同底数幂乘除</span><div class="d">aᵐ·aⁿ=aᵐ⁺ⁿ &nbsp; aᵐ÷aⁿ=aᵐ⁻ⁿ</div></div>
+  <div><span class="t">幂的乘方/积的乘方</span><div class="d">(aᵐ)ⁿ=aᵐⁿ &nbsp; (ab)ⁿ=aⁿbⁿ</div></div>
+  <div><span class="t">零指数/负指数</span><div class="d">a⁰=1(a≠0) &nbsp; a⁻ⁿ=1/aⁿ</div></div>
+</div>
 <p><span class="highlight">乘法公式</span>：</p>
 <div class="grid2">
-  <div><span class="t">平方差公式</span><div class="d">(a+b)(a-b) = a²-b²</div></div>
-  <div><span class="t">完全平方公式</span><div class="d">(a±b)² = a²±2ab+b²</div></div>
+  <div><span class="t">平方差公式</span><div class="d">(a+b)(a-b)=a²-b²</div></div>
+  <div><span class="t">完全平方公式</span><div class="d">(a±b)²=a²±2ab+b²</div></div>
+  <div><span class="t">立方和/差</span><div class="d">(a±b)(a²∓ab+b²)=a³±b³</div></div>
 </div>
-<p><span class="highlight">因式分解</span>：提取公因式法 ma+mb+mc=m(a+b+c)；公式法（平方差 a²-b²=(a+b)(a-b)，完全平方 a²±2ab+b²=(a±b)²）；十字相乘法 x²+(p+q)x+pq=(x+p)(x+q)。</p>
+<p><span class="highlight">因式分解步骤</span>：一提公因式 → 二用公式 → 三十字相乘/分组<br>
+十字相乘：x²+(p+q)x+pq=(x+p)(x+q)</p>
 
 <h3>4. 分式与二次根式</h3>
-<p><span class="highlight">分式</span>：分母含字母的式子。分母≠0 时有意义。分式值为 0 ⇔ 分子=0 且分母≠0。基本性质：分子分母同乘（除）非零整式，值不变。</p>
-<p><span class="highlight">二次根式</span>：√a（a≥0）。性质：(√a)²=a（a≥0）；√a²=|a|；√ab=√a·√b（a,b≥0）；√(a/b)=√a/√b（a≥0,b&gt;0）。最简二次根式：被开方数不含分母、不含开得尽的因式。</p>
+<p><span class="highlight">分式</span>：分母含字母的式子。分母≠0 时有意义。分式值为0 ⇔ 分子=0 且分母≠0。基本性质：分子分母同乘（除）非零整式，值不变。</p>
+<p><span class="highlight">二次根式性质</span>：(√a)²=a（a≥0）；√a²=|a|；√(ab)=√a·√b（a,b≥0）；√(a/b)=√a/√b（a≥0,b>0）。</p>
+<p><span class="tag red">最简二次根式条件</span>：被开方数不含分母、不含开得尽方的因数因式。</p>
+<p><span class="highlight">分母有理化</span>：1/√a=√a/a &nbsp; &nbsp; 1/(√a+√b)=(√a-√b)/(a-b)</p>
 
 <!-- ════════════════════════════════════════ -->
 <h2>二、方程与不等式</h2>
 
 <h3>1. 一元一次方程</h3>
-<p>形式 ax+b=0（a≠0）。解法：去分母→去括号→移项→合并→系数化 1。应用题步骤：审→设→列→解→验→答。</p>
+<p>形式 ax+b=0（a≠0），解 x=-b/a。<br>
+解法步骤：<span class="tag">去分母</span>→<span class="tag orange">去括号</span>→<span class="tag blue">移项</span>→<span class="tag green">合并同类项</span>→<span class="tag red">系数化为1</span><br>
+<span class="tag red">去分母每一项都要乘最小公倍数；移项要变号</span></p>
+<p>应用题六步：审题→设未知数→列方程→解方程→检验→作答。</p>
 
 <h3>2. 二元一次方程组</h3>
-<p><span class="highlight">代入消元法</span>：将一式变形成 y=... 代入另一式。<span class="highlight">加减消元法</span>：两式加减消去一个未知数。<span class="formula">解的一般形式：{x=a, y=b}</span></p>
+<p><span class="highlight">代入消元法</span>：将一式变形成 y=... 代入另一式。<span class="highlight">加减消元法</span>：两式加减消去一个未知数。</p>
+<p>三元一次方程组：逐步消元，先化为二元一次方程组。</p>
 
 <h3>3. 分式方程</h3>
 <p>去分母（乘最简公分母）化为整式方程。⭐<span class="highlight">必验根</span>：使最简公分母=0 的根为增根，舍去。</p>
 
 <h3>4. 一元二次方程</h3>
 <p>一般形式 ax²+bx+c=0（a≠0）。</p>
-<p><span class="highlight">解法</span>：直接开平方、配方法、公式法、因式分解法（十字相乘）。</p>
-<p><span class="highlight">求根公式</span>：<span class="formula">x = (-b ± √(b²-4ac)) / (2a)</span></p>
-<p><span class="highlight">判别式</span> Δ=b²-4ac：Δ&gt;0 两个不等实根；Δ=0 两个相等实根；Δ&lt;0 无实根。</p>
-<p><span class="highlight">韦达定理</span>：x₁+x₂=-b/a，x₁x₂=c/a（Δ≥0 时适用）。</p>
+<p><span class="highlight">解法</span>：<span class="tag blue">直接开平方</span> <span class="tag green">配方法</span> <span class="tag orange">公式法</span> <span class="tag">因式分解法（十字相乘）</span></p>
+<p><span class="highlight">求根公式</span>：<span class="formula">x = [-b ± √(b²-4ac)] / (2a)</span></p>
+<p><span class="highlight">判别式</span> Δ=b²-4ac：<span class="tag green">Δ>0 两个不等实根</span> <span class="tag orange">Δ=0 两个相等实根</span> <span class="tag red">Δ<0 无实根</span></p>
+<p><span class="highlight">韦达定理</span>：x₁+x₂=-b/a，x₁x₂=c/a（Δ≥0 时适用）。应用：<span class="tag">已知一根求另一根</span><span class="tag blue">求对称式值</span></p>
 
 <h3>5. 不等式（组）</h3>
 <p><span class="highlight">基本性质</span>：加减同一数不等号方向不变；乘除正数方向不变；乘除负数方向<span class="highlight">改变</span>。</p>
-<p><span class="highlight">解集在数轴表示</span>：≥或≤用实心点，&gt;或&lt;用空心圈。不等式组解集：同大取大、同小取小、大小小大中间找、大大小小无解。</p>
+<p><span class="highlight">解集在数轴表示</span>：≥或≤用实心点，>或<用空心圈。</p>
+<p><span class="tag blue">口诀：同大取大、同小取小、大小小大中间找、大大小小无解</span></p>
 
 <!-- ════════════════════════════════════════ -->
 <h2>三、函数</h2>
 
 <h3>1. 平面直角坐标系</h3>
-<p>各象限符号：第一象限（+，+）、第二象限（﹣，+）、第三象限（﹣，﹣）、第四象限（+，﹣）。坐标轴上的点不属于任何象限。点 P(a,b) 到 x 轴距离 |b|，到 y 轴距离 |a|。</p>
+<p>象限符号：<span class="tag">一(+,+)</span> <span class="tag orange">二(-,+)</span> <span class="tag green">三(-,-)</span> <span class="tag blue">四(+,-)</span></p>
+<p><span class="highlight">对称规律</span>：<span class="tag">关于x轴(x,y)→(x,-y)</span> <span class="tag orange">关于y轴(x,y)→(-x,y)</span> <span class="tag purple">关于原点(x,y)→(-x,-y)</span></p>
+<p>两点间距离 d=√[(x₁-x₂)²+(y₁-y₂)²]，中点坐标((x₁+x₂)/2,(y₁+y₂)/2)。</p>
 
 <h3>2. 一次函数 y=kx+b（k≠0）</h3>
 <div class="grid2">
-  <div><span class="t">k&gt;0</span><div class="d">过一、三象限，y 随 x 增大而增大</div></div>
-  <div><span class="t">k&lt;0</span><div class="d">过二、四象限，y 随 x 增大而减小</div></div>
-  <div><span class="t">b&gt;0</span><div class="d">与 y 轴正半轴相交</div></div>
-  <div><span class="t">b&lt;0</span><div class="d">与 y 轴负半轴相交</div></div>
+  <div><span class="t">k>0</span><div class="d">过一、三象限，y 随 x 增大而增大（↗）</div></div>
+  <div><span class="t">k<0</span><div class="d">过二、四象限，y 随 x 增大而减小（↘）</div></div>
+  <div><span class="t">b>0</span><div class="d">与 y 轴正半轴相交</div></div>
+  <div><span class="t">b<0</span><div class="d">与 y 轴负半轴相交</div></div>
 </div>
-<p>正比例函数 y=kx（b=0，k≠0），图象过原点。求解析式：待定系数法（找两个点）。</p>
+<p>|k|越大→直线越陡。正比例函数 y=kx（b=0），图象过原点。求解析式：待定系数法（两点）。<br>
+平移：左加右减（x），上加下减（y）。</p>
 
 <h3>3. 反比例函数 y=k/x（k≠0）</h3>
+<p>图象是双曲线，与坐标轴无交点。</p>
 <div class="grid2">
-  <div><span class="t">k&gt;0</span><div class="d">一、三象限，每个象限内 y 随 x 增大而减小</div></div>
-  <div><span class="t">k&lt;0</span><div class="d">二、四象限，每个象限内 y 随 x 增大而增大</div></div>
+  <div><span class="t">k>0</span><div class="d">一、三象限，每个象限内 y 随 x 增大而减小</div></div>
+  <div><span class="t">k<0</span><div class="d">二、四象限，每个象限内 y 随 x 增大而增大</div></div>
 </div>
-<p>图象是双曲线，与坐标轴无交点。|k| 的几何意义：过双曲线上任一点作 x、y 轴垂线，矩形面积为 |k|。</p>
+<p>|k|的几何意义：过双曲线上任一点作 x、y 轴垂线，矩形面积为 |k|。<br>
+<span class="tag orange">易错：必须强调"在每个象限内"</span></p>
 
 <h3>4. 二次函数 y=ax²+bx+c（a≠0）</h3>
-<p><span class="highlight">顶点式</span>：y=a(x-h)²+k，顶点 (h,k)。一般式顶点坐标：(-b/(2a), (4ac-b²)/(4a))。</p>
-<p><span class="highlight">对称轴</span>：x=-b/(2a)。a&gt;0 开口向上，有最小值；a&lt;0 开口向下，有最大值。</p>
-<p><span class="highlight">与 x 轴交点</span>：Δ&gt;0 两个交点；Δ=0 一个交点（顶点在 x 轴上）；Δ&lt;0 无交点。</p>
-<p><span class="highlight">平移规律</span>：左加右减（x），上加下减（y）。</p>
+<p><span class="highlight">三种形式</span>：一般式 y=ax²+bx+c；顶点式 y=a(x-h)²+k，顶点(h,k)；交点式 y=a(x-x₁)(x-x₂)。</p>
+<p><span class="highlight">对称轴</span>：x=-b/(2a)。顶点坐标 (-b/(2a), (4ac-b²)/(4a))。</p>
+<div class="grid2">
+  <div><span class="t">a>0</span><div class="d">开口向上，有最小值</div></div>
+  <div><span class="t">a<0</span><div class="d">开口向下，有最大值</div></div>
+  <div><span class="t">|a|越大</span><div class="d">开口越小</div></div>
+</div>
+<p>与 y 轴交点：(0,c)。与 x 轴交点：Δ>0 两个交点；Δ=0 一个交点；Δ<0 无交点。</p>
+<p><span class="highlight">平移</span>：y=ax² → 左加右减 → y=a(x-h)² → 上加下减 → y=a(x-h)²+k</p>
+<p><span class="highlight">应用</span>：面积最大、利润最大（求顶点得最值）。<br>
+系数符号判断：开口定a，对称轴与y轴相对位置定a、b同号/异号，与y轴交点定c。</p>
 
 <!-- ════════════════════════════════════════ -->
 <h2>四、几何</h2>
 
 <h3>1. 线与角</h3>
 <p><span class="highlight">平行线性质与判定</span>：同位角相等⇔两直线平行；内错角相等⇔两直线平行；同旁内角互补⇔两直线平行。</p>
-<p><span class="highlight">垂线</span>：过一点有且只有一条直线与已知直线垂直。垂线段最短（垂线段长度即点到直线的距离）。</p>
+<p><span class="highlight">垂线</span>：过一点有且只有一条直线与已知直线垂直。垂线段最短。</p>
 <p><span class="highlight">角平分线</span>：角平分线上的点到角两边距离相等。到角两边距离相等的点在角平分线上。</p>
 
 <h3>2. 三角形</h3>
-<p><span class="highlight">内角和</span>：180°。外角等于不相邻两内角和。任意两边之和＞第三边，任意两边之差＜第三边。</p>
-<p><span class="highlight">全等判定</span>：SSS、SAS、ASA、AAS、HL（Rt△）。<span class="highlight">性质</span>：对应边相等、对应角相等、对应线段（中线、高、角平分线）相等。</p>
-<p><span class="highlight">相似判定</span>：两角对应相等、两边对应成比例且夹角相等、三边对应成比例。<span class="highlight">性质</span>：对应角相等、对应边成比例、周长比=相似比、面积比=相似比的平方。</p>
-<p><span class="highlight">特殊三角形</span>：等腰三角形（两腰相等、两底角相等、三线合一）；等边三角形（三边相等、三角均60°）；直角三角形（30°所对直角边=斜边一半、中线等于斜边一半）。</p>
-<p><span class="highlight">勾股定理</span>：<span class="formula">a² + b² = c²</span>（直角三角形两直角边平方和等于斜边平方）。勾股数：（3,4,5）、（5,12,13）、（6,8,10）、（7,24,25）、（8,15,17）。</p>
+<p><span class="highlight">内角和</span>：180°。外角等于不相邻两内角和。三边关系：任意两边之和>第三边，之差<第三边。</p>
+<p><span class="highlight">重要线段</span>：<span class="tag blue">中线</span>等分面积，重心(2:1) <span class="tag green">高线</span>垂心 <span class="tag orange">角平分线</span>内心 <span class="tag purple">中位线</span>平行且等于第三边一半</p>
+<p><span class="highlight">等腰三角形</span>：等边对等角、三线合一。<span class="highlight">等边三角形</span>：三边相等、三角60°。<span class="highlight">直角三角形</span>：勾股定理 a²+b²=c²；30°角对边=斜边一半；斜边中线=斜边一半。</p>
+<p><span class="highlight">全等判定</span>：SSS、SAS、ASA、AAS、HL（Rt△）。<span class="tag green">倍长中线、截长补短、旋转构造</span>是常用辅助线。</p>
+<p><span class="highlight">相似判定</span>：<span class="tag">两角对应相等AA</span> <span class="tag orange">两边成比例且夹角相等SAS</span> <span class="tag blue">三边成比例SSS</span></p>
+<p><span class="highlight">相似性质</span>：面积比=相似比的平方，周长比=相似比。<span class="tag red">A字型与8字型</span>是两大基本相似模型。<span class="tag purple">射影定理</span>：直角△斜边上的高→三个相似直角△。</p>
 
 <h3>3. 四边形</h3>
-<div class="grid2">
-  <div><span class="t">平行四边形</span><div class="d">对边平行且相等；对角相等；对角线互相平分</div></div>
-  <div><span class="t">矩形</span><div class="d">四个角90°；对角线相等且互相平分</div></div>
-  <div><span class="t">菱形</span><div class="d">四边相等；对角线互相垂直平分；每条对角线平分一组对角</div></div>
-  <div><span class="t">正方形</span><div class="d">四边相等、四个角90°；对角线相等垂直互相平分</div></div>
-</div>
-<p>中位线定理：三角形中位线平行第三边且等于第三边一半。梯形中位线平行两底且等于上下底和的一半。</p>
-<p>n 边形内角和=(n-2)×180°，外角和=360°。正 n 边形每个内角=(n-2)×180°/n。</p>
+<table>
+<tr><th>图形</th><th>边</th><th>角</th><th>对角线</th><th>对称性</th></tr>
+<tr><td>平行四边形</td><td>对边平行且相等</td><td>对角相等</td><td>互相平分</td><td>中心对称</td></tr>
+<tr><td>矩形</td><td>对边平行且相等</td><td>四个90°</td><td>相等且平分</td><td>轴+中心</td></tr>
+<tr><td>菱形</td><td>四边相等</td><td>对角相等</td><td>垂直平分</td><td>轴+中心</td></tr>
+<tr><td>正方形</td><td>四边相等</td><td>四个90°</td><td>相等垂直平分</td><td>轴+中心</td></tr>
+</table>
+<p><span class="highlight">判定脉络</span>：<span class="tag blue">平行四边形→矩形：对角线相等或一角90°</span> <span class="tag green">平行四边形→菱形：对角线垂直或邻边相等</span></p>
+<p>三角形中位线平行第三边且等于第三边一半。梯形中位线=(上底+下底)/2。<br>
+n 边形内角和=(n-2)×180°，外角和=360°。<span class="tag purple">中点四边形：任意四边形中点连成平行四边形</span></p>
 
 <h3>4. 圆</h3>
-<p><span class="highlight">基本性质</span>：垂径定理（过圆心垂直弦的直径平分弦及所对弧）。同弧所对圆周角相等，等于圆心角一半。直径所对圆周角=90°。</p>
-<p><span class="highlight">位置关系</span>：点与圆（d&lt;r 在内、d=r 在上、d&gt;r 在外）。直线与圆（d&lt;r 相交、d=r 相切、d&gt;r 相离）。</p>
-<p><span class="highlight">切线的判定与性质</span>：过半径外端且垂直于半径的直线是切线。切线垂直于过切点的半径。切线长定理：从圆外一点引两条切线长相等。</p>
+<p><span class="highlight">垂径定理</span>：过圆心垂直弦的直径平分弦及所对弧。</p>
+<p><span class="highlight">圆周角</span>：同弧所对圆周角=圆心角一半，直径所对圆周角=90°。同弧所对圆周角相等。</p>
+<p><span class="highlight">位置关系</span>：点与圆（d&lt;r在内、d=r在上、d&gt;r在外）。直线与圆（d&lt;r相交、d=r相切、d&gt;r相离）。</p>
+<p><span class="highlight">切线的判定与性质</span>：过半径外端且垂直于半径的直线是切线。切线垂直于过切点的半径。切线长定理：圆外一点引两条切线长相等。</p>
+<p><span class="highlight">圆内接四边形</span>：对角互补 + 外角=内对角。</p>
 <p><span class="highlight">弧长与扇形</span>：弧长 l=nπr/180。扇形面积 S=nπr²/360=lr/2。圆锥侧面积 S=πrl（l 为母线）。</p>
 
 <h3>5. 解直角三角形</h3>
 <p><span class="highlight">锐角三角函数</span>：<span class="formula">sinA=对边/斜边 &nbsp; cosA=邻边/斜边 &nbsp; tanA=对边/邻边</span></p>
-<p>特殊角三角函数值：</p>
-<div class="grid2">
-  <div><span class="t">30°</span><div class="d">sin=½，cos=√3/2，tan=√3/3</div></div>
-  <div><span class="t">45°</span><div class="d">sin=√2/2，cos=√2/2，tan=1</div></div>
-  <div><span class="t">60°</span><div class="d">sin=√3/2，cos=½，tan=√3</div></div>
-</div>
+<table>
+<tr><th>角度</th><th>30°</th><th>45°</th><th>60°</th></tr>
+<tr><td>sin</td><td>½</td><td>√2/2</td><td>√3/2</td></tr>
+<tr><td>cos</td><td>√3/2</td><td>√2/2</td><td>½</td></tr>
+<tr><td>tan</td><td>√3/3</td><td>1</td><td>√3</td></tr>
+</table>
+<p><span class="highlight">应用模型</span>：<span class="tag blue">仰角/俯角</span> <span class="tag orange">坡度 i=tanα</span> <span class="tag green">方位角</span> <span class="tag red">影子测高</span></p>
 
 <h3>6. 图形的变换</h3>
-<p><span class="highlight">平移</span>：形状大小不变，各点平移方向距离相同。轴对称（翻折）：对应点连线被对称轴垂直平分。旋转：对应点到旋转中心距离相等，旋转角相等。中心对称：旋转180°，对应点连线过对称中心且被平分。</p>
+<p><span class="highlight">平移</span>：形状大小不变，各点平移方向距离相同。轴对称（翻折）：对应点连线被对称轴垂直平分。旋转：对应点到旋转中心距离相等。中心对称：旋转180°，对应点连线过对称中心且被平分。</p>
 <p><span class="highlight">位似</span>：对应点连线交于一点，位似比=相似比。位似图形面积比=位似比的平方。</p>
 
 <!-- ════════════════════════════════════════ -->
@@ -173,23 +220,59 @@ ol{padding-left:2em;margin-bottom:10px}
 
 <h3>1. 统计</h3>
 <p><span class="highlight">数据的收集</span>：普查（全面调查）与抽样调查（总体、个体、样本、样本容量）。</p>
-<p><span class="highlight">统计图</span>：条形图（展示具体数量）、折线图（展示变化趋势）、扇形图（展示比例）。</p>
-<p><span class="highlight">统计量</span>：平均数（x̄=(x₁+x₂+...+xₙ)/n）、中位数（排序后中间的数）、众数（出现次数最多的数）。方差 S²=Σ(xᵢ-x̄)²/n——反映数据波动大小，方差越大波动越大。</p>
+<p><span class="highlight">统计图</span>：<span class="tag">条形图→比较数量</span> <span class="tag orange">折线图→看变化趋势</span> <span class="tag blue">扇形图→看占比</span></p>
+<p><span class="highlight">集中趋势</span>：平均数（易受极端值影响）、中位数（不受极端值影响）、众数（可能多个）。</p>
+<p><span class="highlight">离散程度</span>：极差=最大值-最小值。方差 s²=[(x₁-x̄)²+…+(xₙ-x̄)²]/n <span class="tag red">方差越小→越稳定</span></p>
 
 <h3>2. 概率</h3>
-<p><span class="highlight">概率公式</span>：<span class="formula">P(A) = 事件 A 发生的结果数 / 所有等可能结果总数</span></p>
-<p>取值范围：0≤P(A)≤1。P=0 为不可能事件，P=1 为必然事件。</p>
-<p><span class="highlight">计算方法</span>：列举法（树状图、列表法）。频率估计概率：大量重复试验时，频率稳定于概率。</p>
+<p><span class="highlight">概率公式</span>：<span class="formula">P(A)=事件A发生的结果数/所有等可能结果总数</span></p>
+<p>取值范围 0≤P(A)≤1。P=0 为不可能事件，P=1 为必然事件。</p>
+<p>两步用列表法，三步及以上用树状图。<span class="tag blue">放回：每次情况相同</span> <span class="tag orange">不放回：总数递减</span></p>
 
 <!-- ════════════════════════════════════════ -->
 <h2>六、常用数学思想方法</h2>
 <p><span class="highlight">数形结合</span>：将代数问题转化为几何图形，或将几何问题用代数方法解决。</p>
 <p><span class="highlight">分类讨论</span>：当问题有多种可能时，分情况讨论，不重不漏。</p>
 <p><span class="highlight">整体代入</span>：将一个代数式视为整体代入求值，简化计算。</p>
-<p><span class="highlight">转化思想</span>：将未知转化为已知，将复杂转化为简单，如分式方程化为整式方程。</p>
+<p><span class="highlight">转化思想</span>：将未知转化为已知，将复杂转化为简单。</p>
 <p><span class="highlight">方程思想</span>：设未知数列方程，通过解方程解决问题。</p>
 <p><span class="highlight">函数思想</span>：建立函数关系，利用函数性质解决问题（最值、增减性等）。</p>
 <p><span class="highlight">建模思想</span>：将实际问题抽象为数学问题（方程模型、函数模型、几何模型等）。</p>
+
+<!-- ════════════════════════════════════════ -->
+<h2>七、应用题模型（中考重点）</h2>
+
+<h3>1. 行程问题</h3>
+<p><span class="highlight">基本公式</span>：路程=速度×时间（s=vt）</p>
+<div class="grid2">
+  <div><span class="t">相遇问题</span><div class="d">甲路程+乙路程=总路程，时间相等</div></div>
+  <div><span class="t">追及问题</span><div class="d">速度差×时间=初始距离差</div></div>
+  <div><span class="t">环形跑道</span><div class="d">同向：路程差=一圈；反向：路程和=一圈</div></div>
+  <div><span class="t">流水行船</span><div class="d">顺水=静水+水速；逆水=静水-水速</div></div>
+  <div><span class="t">火车过桥</span><div class="d">总路程=桥长+车长，时间=(桥长+车长)/速度</div></div>
+</div>
+<p><span class="tag red">易错：火车过桥要算车长，人过桥不算车长</span></p>
+
+<h3>2. 工程与效率问题</h3>
+<p><span class="highlight">基本公式</span>：工作量=工作效率×工作时间。常设整个工程为单位"1"，效率=1/完成时间。</p>
+<p>合作时间 = 1 / (1/t₁ + 1/t₂ + …)。<span class="tag orange">注水放水：进水管效率为正，出水管效率为负</span></p>
+
+<h3>3. 利润与经济问题</h3>
+<p><span class="highlight">核心公式</span>：<span class="tag blue">利润=售价-进价</span> <span class="tag orange">利润率=利润/进价×100%</span> <span class="tag green">售价=进价×(1+利润率)</span></p>
+<p><span class="highlight">打折</span>：实际售价=标价×折扣/10（八折=标价×0.8）</p>
+<p><span class="highlight">增长率</span>：连续两次增长（降低）a(1±x)²=b</p>
+<p><span class="highlight">利润最值</span>：利润=单件利润×销量→二次函数求顶点→最大利润</p>
+
+<h3>4. 方案设计与优化</h3>
+<p>常见类型：运输调配、购买选择、租车租房、生产安排。</p>
+<p><span class="highlight">建模步骤</span>：设未知数→列不等式组→确定取值范围→列函数关系式→求最值→验证方案</p>
+<p><span class="tag orange">结果要符合实际意义（人数为整数、车辆数为非负整数等）</span></p>
+
+<h3>5. 几何应用问题</h3>
+<p><span class="tag blue">相似三角形测高</span>：利用影子/标杆/镜子构造相似三角形</p>
+<p><span class="tag green">勾股定理应用</span>：最短路径（展开图）、梯子滑动、折竹问题</p>
+<p><span class="tag orange">动态几何</span>：点在线段上运动→分类讨论→列方程/函数</p>
+<p><span class="tag red">面积问题</span>：花坛设计、篱笆围栏→二次函数最值</p>
 
 <script>
 function switchTab(name, btn){
