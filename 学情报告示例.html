@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>学情诊断报告 · 思贤学习站</title>
+<style>
+@page { margin: 2cm 1.8cm; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 11pt;
+  color: #1a1a2e;
+  line-height: 1.8;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media print {
+  body { padding: 0; }
+}
+.header {
+  display: flex; justify-content: space-between;
+  border-bottom: 3px solid #1a73e8;
+  padding-bottom: 14px; margin-bottom: 24px;
+}
+.header .logo { font-size: 18pt; font-weight: 700; color: #1a1a2e; }
+.header .logo span { color: #1a73e8; }
+.header .meta { font-size: 9pt; color: #999; text-align: right; }
+.header .meta strong { color: #555; }
+h1 { font-size: 20pt; font-weight: 800; margin-bottom: 2px; }
+.subtitle { font-size: 10pt; color: #888; margin-bottom: 20px; }
+
+.section { margin-bottom: 24px; }
+.section-title {
+  font-size: 14pt; font-weight: 700; color: #1a73e8;
+  margin-bottom: 8px; padding-bottom: 4px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.card {
+  border-radius: 6px; padding: 12px 16px; margin-bottom: 10px;
+}
+.card.red { background: #fef2f2; border-left: 4px solid #dc2626; }
+.card.amber { background: #fffbeb; border-left: 4px solid #d97706; }
+.card.green { background: #f0fdf4; border-left: 4px solid #16a34a; }
+.card.blue { background: #eff6ff; border-left: 4px solid #1a73e8; }
+.card h4 { font-size: 11pt; margin-bottom: 4px; color: #1a1a2e; }
+.card p, .card ul { font-size: 10pt; color: #555; }
+.card ul { padding-left: 18px; }
+.card ul li { margin-bottom: 2px; }
+
+.kp-table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+.kp-table th {
+  text-align: left; font-size: 9pt; color: #888; font-weight: 600;
+  padding: 6px 8px; border-bottom: 2px solid #e0e0e0;
+}
+.kp-table td {
+  padding: 8px; border-bottom: 1px solid #f0f0f0; font-size: 10pt;
+}
+.kp-table td:first-child { font-weight: 600; }
+.bar { height: 8px; border-radius: 4px; background: #e0e0e0; overflow: hidden; width: 100px; }
+.bar .fill { height: 100%; border-radius: 4px; }
+.bar .fill.high { background: #16a34a; width: 80%; }
+.bar .fill.mid { background: #d97706; width: 45%; }
+.bar .fill.low { background: #dc2626; width: 25%; }
+
+.v-card {
+  border: 1.5px solid #e0e0e0; border-radius: 8px;
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.v-card .v-hd {
+  display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 9pt;
+}
+.v-card .v-hd .tag { font-weight: 700; color: #1a73e8; }
+.v-card .v-hd .diff { color: #999; }
+.v-card .q { font-size: 11pt; color: #333; }
+.v-card .tip { font-size: 9pt; color: #999; margin-top: 4px; }
+
+.rec { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+.rec .num {
+  width: 22px; height: 22px; border-radius: 50%; background: #1a73e8;
+  color: #fff; text-align: center; line-height: 22px;
+  font-size: 10pt; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+}
+.rec .text { font-size: 10pt; color: #555; line-height: 1.7; }
+.rec .text strong { color: #1a1a2e; }
+
+.footer {
+  margin-top: 28px; padding-top: 12px; border-top: 1px solid #e0e0e0;
+  font-size: 8pt; color: #bbb; text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">思贤<span>家教</span></div>
+  <div class="meta">
+    <strong>学情诊断报告</strong><br>
+    2026-05-21<br>
+    报告编号: SR-20260521001
+  </div>
+</div>
+
+<h1>学情诊断报告</h1>
+<p class="subtitle">思贤智学引擎 · AI 错题深度分析 | 初中数学 八年级</p>
+
+<!-- ════ 一、错题分析 ════ -->
+<div class="section">
+  <div class="section-title">一、错题分析</div>
+
+  <div class="card red">
+    <h4>题目：解方程 x² - 5x + 6 = 0</h4>
+    <p><strong>学生作答：</strong>(x - 2)(x + 3) = 0 → x = 2 或 x = -3</p>
+    <p><strong>正确答案：</strong>(x - 2)(x - 3) = 0 → x = 2 或 x = 3</p>
+  </div>
+
+  <div class="card amber">
+    <h4>错误定位</h4>
+    <p>因式分解符号错误。(x - 2)(x + 3) 展开得 x² + x - 6，与原式 x² - 5x + 6 对比，一次项系数和常数项均不匹配。</p>
+  </div>
+
+  <div class="card amber">
+    <h4>错误根源</h4>
+    <p>对十字相乘的符号规律理解不牢固。常数项为正时两个因式常数项同号，一次项系数为负时两个因式常数项都为负。此外缺少验算习惯——展开后与原式不符却没有发现。</p>
+  </div>
+
+  <div class="card green">
+    <h4>正确解题步骤</h4>
+    <ul>
+      <li>确定系数：a = 1, b = -5, c = 6</li>
+      <li>找两数相乘得 +6、相加得 -5 → 同为负 → -2 和 -3</li>
+      <li>因式分解：(x - 2)(x - 3) = 0</li>
+      <li>零积性质：x - 2 = 0 或 x - 3 = 0</li>
+      <li>解得：x = 2 或 x = 3</li>
+      <li>验算：2² - 5×2 + 6 = 0 ✓，3² - 5×3 + 6 = 0 ✓</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════ 二、薄弱知识点诊断 ════ -->
+<div class="section">
+  <div class="section-title">二、薄弱知识点诊断</div>
+
+  <table class="kp-table">
+    <tr>
+      <th style="width:28%">知识点</th>
+      <th style="width:18%">掌握度</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>十字相乘法因式分解</td>
+      <td><div class="bar"><div class="fill mid"></div></div></td>
+      <td>符号判断靠记忆而非理解</td>
+    </tr>
+    <tr>
+      <td>整式乘法展开验算</td>
+      <td><div class="bar"><div class="fill low"></div></div></td>
+      <td>缺乏反向验证习惯</td>
+    </tr>
+    <tr>
+      <td>一元二次方程求解</td>
+      <td><div class="bar"><div class="fill high"></div></div></td>
+      <td>基本方法已掌握但准确率不够</td>
+    </tr>
+  </table>
+
+  <div class="card amber">
+    <h4>关联知识点预警</h4>
+    <ul>
+      <li>二次函数图像与 x 轴交点——如果符号问题不解决，后续二次函数章节会遇到更大困难</li>
+      <li>不等式求解中的因式分解应用——用因式分解法解不等式需要同样的符号判断能力</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════ 三、变式训练 ════ -->
+<div class="section">
+  <div class="section-title">三、变式训练 · 举一反三</div>
+
+  <div class="v-card">
+    <div class="v-hd">
+      <span class="tag">变式一（巩固符号规律）</span>
+      <span class="diff">★☆☆ 基础</span>
+    </div>
+    <div class="q">解方程：x² - 7x + 12 = 0</div>
+    <div class="tip">提示：常数项 +12，一次项系数 -7 → 两因式常数项同为负</div>
+  </div>
+
+  <div class="v-card">
+    <div class="v-hd">
+      <span class="tag">变式二（异号混合）</span>
+      <span class="diff">★★☆ 进阶</span>
+    </div>
+    <div class="q">解方程：x² + x - 12 = 0</div>
+    <div class="tip">提示：常数项 -12 → 两因式常数项异号。找差为 +1 的组合</div>
+  </div>
+
+  <div class="v-card">
+    <div class="v-hd">
+      <span class="tag">变式三（含参数）</span>
+      <span class="diff">★★★ 拓展</span>
+    </div>
+    <div class="q">若关于 x 的方程 x² - (k+1)x + k = 0 的一个根为 2，求 k 的值及另一个根。</div>
+    <div class="tip">提示：先把 x = 2 代入求 k，再用因式分解或韦达定理求另一根</div>
+  </div>
+</div>
+
+<!-- ════ 四、学情建议 ════ -->
+<div class="section">
+  <div class="section-title">四、学情综合建议</div>
+
+  <div class="rec">
+    <div class="num">1</div>
+    <div class="text"><strong>优先攻克符号判断</strong>——十字相乘的符号规律是二次方程和后续二次函数的基石，必须先解决。每天花 10 分钟专门练符号判断。</div>
+  </div>
+
+  <div class="rec">
+    <div class="num">2</div>
+    <div class="text"><strong>每天 5 道变符号练习</strong>——连续 3 天做不同符号组合的因式分解题（正正、负正、负负），建立条件反射，不再靠猜。</div>
+  </div>
+
+  <div class="rec">
+    <div class="num">3</div>
+    <div class="text"><strong>培养验算习惯</strong>——每道因式分解做完后展开验证，坚持 2 周。这道题如果验算了，展开 (x-2)(x+3) = x²+x-6 立刻就能发现不对。</div>
+  </div>
+
+  <div class="rec">
+    <div class="num">4</div>
+    <div class="text"><strong>预警：持续出错要回退</strong>——如果符号问题经练习仍反复出现，需回到整式乘法重新建立理解。不要跳过基础去死记硬背十字相乘技巧。</div>
+  </div>
+</div>
+
+<div class="footer">
+  思贤学习站 · 济南市商河县 · 本报告由 AI 自动生成，仅供参考，具体教学建议请以老师评估为准。<br>
+  联系方式：155-6412-8008（微信同号）
+</div>
+
+<script>
+// 浏览器中直接打印即可导出为 PDF（Ctrl+P → 另存为 PDF）
+window.onload = function() { window.print(); }
+</script>
+
+</body>
+</html>

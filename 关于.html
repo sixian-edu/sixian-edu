@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于思贤 · 思贤学习站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Hero ── */
+        .a-hero {
+            text-align: center; padding: 50px 20px 36px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff; margin-bottom: 10px;
+        }
+        .a-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
+        .a-hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 450px; margin: 0 auto; line-height: 1.7; }
+        .a-hero .tags {
+            display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+        }
+        .a-hero .tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
+        }
+
+        .a-nav {
+            display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+            padding: 16px 20px; background: #fff; border-radius: 14px;
+            margin: -24px auto 30px; max-width: 600px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07); position: relative; z-index: 2;
+        }
+        .a-nav a {
+            font-size: 13px; padding: 6px 14px; border-radius: 8px;
+            color: #555; text-decoration: none; transition: all .2s;
+        }
+        .a-nav a:hover { background: #1a1a2e; color: #fff; }
+
+        /* ── Section ── */
+        .a-section { margin-bottom: 36px; }
+        .a-header {
+            display: flex; align-items: center; gap: 14px;
+            padding: 20px 24px; border-radius: 14px;
+            color: #fff; margin-bottom: 16px;
+        }
+        .a-header .ai { font-size: 30px; line-height: 1; }
+        .a-header .ainfo { flex: 1; }
+        .a-header .ainfo h2 { font-size: 18px; margin-bottom: 2px; }
+        .a-header .ainfo p { font-size: 12px; opacity: 0.75; }
+
+        .a-why .a-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        .a-belief .a-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
+        .a-update .a-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+        .a-contact .a-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
+
+        /* ── Content Cards ── */
+        .a-card {
+            background: #fff; border-radius: 14px; padding: 24px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            margin-bottom: 14px;
+        }
+        .a-card:last-child { margin-bottom: 0; }
+        .a-card h3 {
+            font-size: 16px; font-weight: 700; margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .a-card p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 8px; }
+        .a-card p:last-child { margin-bottom: 0; }
+
+        .a-card .highlight { color: #1a1a2e; font-weight: 600; }
+
+        /* ── Timeline mini ── */
+        .mini-tl { list-style: none; padding: 0; }
+        .mini-tl li {
+            position: relative; padding: 0 0 14px 20px; font-size: 14px; color: #555;
+        }
+        .mini-tl li::before {
+            content: ''; position: absolute; left: 0; top: 7px;
+            width: 8px; height: 8px; border-radius: 50%; background: #ddd;
+        }
+        .mini-tl li .tl-date { font-size: 12px; color: #aaa; margin-right: 6px; }
+        .mini-tl li:last-child { padding-bottom: 0; }
+
+        /* ── Contact block ── */
+        .contact-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+        .contact-item {
+            background: #f8f9fc; border-radius: 12px; padding: 18px;
+            text-align: center;
+        }
+        .contact-item .ci-icon { font-size: 28px; margin-bottom: 6px; }
+        .contact-item .ci-label { font-size: 12px; color: #888; margin-bottom: 2px; }
+        .contact-item .ci-value { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+
+        .a-footer {
+            text-align: center; padding: 28px 20px 10px;
+            font-size: 13px; color: #999; line-height: 1.8;
+        }
+        .a-footer strong { color: #555; }
+
+        @media (max-width: 600px) {
+            .a-hero h1 { font-size: 24px; }
+            .contact-row { grid-template-columns: 1fr; }
+            .a-nav { margin-left: 12px; margin-right: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="思贤学习站.html">首页</a>
+    <a href="学习专区.html">学习专区</a>
+    <a href="学习方法.html">学习方法</a>
+    <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="资料库.html">资源库</a>
+    <a href="成长社区.html">成长社区</a>
+    <a href="关于.html" class="nav-active">关于</a>
+</div>
+
+<div class="a-hero">
+    <h1>关于思贤</h1>
+    <p>学会学习，比学习本身更重要</p>
+    <div class="tags">
+        <span>💡 为什么做这个网站</span>
+        <span>📖 学习理念</span>
+        <span>🔄 网站更新</span>
+        <span>📞 联系方式</span>
+    </div>
+</div>
+
+<div class="a-nav">
+    <a href="#why">💡 为什么</a>
+    <a href="#belief">📖 理念</a>
+    <a href="#update">🔄 更新</a>
+    <a href="#contact">📞 联系</a>
+</div>
+
+<div class="container">
+
+    <!-- ══════ 为什么做这个网站 ══════ -->
+    <div class="a-section a-why" id="why">
+        <div class="a-header">
+            <div class="ai">💡</div>
+            <div class="ainfo">
+                <h2>为什么做这个网站</h2>
+                <p>一个想法，一步步变成现实</p>
+            </div>
+        </div>
+
+        <div class="a-card">
+            <h3>🎯 初衷</h3>
+            <p>做这个网站的原因很简单：<span class="highlight">好的学习资源不应该被锁在付费墙后面</span>。</p>
+            <p>在商河做家教的这几年，我见过太多学生——不是不努力，而是不知道该怎么学。没有好用的工具、没有清晰的方法、没有靠谱的资源。他们需要的不是一个补习班，而是一套能自己用起来的体系。</p>
+            <p>所以有了思贤学习站：把各科知识点整理好，把学习方法讲清楚，把AI工具带到每个学生面前。全部免费，持续更新。</p>
+        </div>
+
+        <div class="a-card">
+            <h3>🌱 成长</h3>
+            <p>从最开始只是一个简单的老师介绍页，到后来加入算法助学、各科资料、学习方法……每一步都是因为发现"这个也可以加进来帮助学生"。没有刻意规划，只是顺着需求长成了现在的样子。</p>
+            <p>网站的变化记录在 <a href="更新日志.html" style="color:#1a6fc4">更新日志</a>，每一步都看得见。</p>
+        </div>
+
+        <div class="a-card">
+            <h3>🔮 未来</h3>
+            <p>这个网站不会停止。更多学科内容、更多学习方法、更多AI工具——目标是让它成为每一个学习者随时可以打开的"学习工具箱"。</p>
+        </div>
+    </div>
+
+    <!-- ══════ 学习理念 ══════ -->
+    <div class="a-section a-belief" id="belief">
+        <div class="a-header">
+            <div class="ai">📖</div>
+            <div class="ainfo">
+                <h2>学习理念</h2>
+                <p>我们相信什么</p>
+            </div>
+        </div>
+
+        <div class="a-card">
+            <h3>📌 学会学习，比学习本身更重要</h3>
+            <p>知识更新得越来越快，但学习方法是通用的。掌握了时间管理、记忆方法、笔记技巧——学什么都能更快上手。这也是为什么我们把"学习方法"单独作为一个主干。</p>
+        </div>
+
+        <div class="a-card">
+            <h3>📌 主动学习 > 被动输入</h3>
+            <p>听课只是第一步。真正的学习发生在你<strong>自己整理、自己讲解、自己练习</strong>的时候。这个网站的所有资源都在鼓励主动学习——做笔记、刷真题、用AI当学习助手，而不是替你学。</p>
+        </div>
+
+        <div class="a-card">
+            <h3>📌 适合的才是最好的</h3>
+            <p>小学有小学的学法，高中有高中的节奏，成人有成人的需求。我们不搞"一套方案所有人"，而是提供足够丰富的选择——每个学习者找到适合自己的那条路。</p>
+        </div>
+
+        <div class="a-card">
+            <h3>📌 坚持比天赋重要</h3>
+            <p>学习不是短跑，是马拉松。打卡、日志、社群——这些功能的目的只有一个：<strong>帮你把学习变成习惯</strong>。每天做一点，比某一天猛做十个小时有效得多。</p>
+        </div>
+    </div>
+
+    <!-- ══════ 网站更新 ══════ -->
+    <div class="a-section a-update" id="update">
+        <div class="a-header">
+            <div class="ai">🔄</div>
+            <div class="ainfo">
+                <h2>网站更新</h2>
+                <p>从开始到现在</p>
+            </div>
+        </div>
+
+        <div class="a-card">
+            <h3>📋 重要节点</h3>
+            <ul class="mini-tl">
+                <li><span class="tl-date">2026-05-21</span>🌱 成长社区上线，学习方法页面发布</li>
+                <li><span class="tl-date">2026-05-21</span>📖 资料库升级为6大分支，AI工具页面上线</li>
+                <li><span class="tl-date">2026-05-21</span>🚀 品牌升级：思贤家教 → 思贤学习站，导航重构</li>
+                <li><span class="tl-date">2026-05-19</span>📚 资料库上线，各科知识点大全发布</li>
+                <li><span class="tl-date">2026-05-15</span>🌐 网站建立，首版上线</li>
+            </ul>
+            <p style="margin-top: 12px;">完整更新记录 → <a href="更新日志.html" style="color:#1a6fc4">查看更新日志</a></p>
+        </div>
+    </div>
+
+    <!-- ══════ 联系方式 ══════ -->
+    <div class="a-section a-contact" id="contact">
+        <div class="a-header">
+            <div class="ai">📞</div>
+            <div class="ainfo">
+                <h2>联系方式</h2>
+                <p>随时联系，欢迎交流</p>
+            </div>
+        </div>
+
+        <div class="a-card">
+            <div class="contact-row">
+                <div class="contact-item">
+                    <div class="ci-icon">📱</div>
+                    <div class="ci-label">电话 / 微信</div>
+                    <div class="ci-value">155-6412-8008</div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon">📍</div>
+                    <div class="ci-label">服务区域</div>
+                    <div class="ci-value">济南市商河县</div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon">💬</div>
+                    <div class="ci-label">学习交流</div>
+                    <div class="ci-value" style="font-size:13px">添加微信，拉你进群</div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon">🌐</div>
+                    <div class="ci-label">网站</div>
+                    <div class="ci-value" style="font-size:13px">sixian-edu.github.io</div>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top: 14px; font-size: 13px; color: #999;">
+                如有任何问题或建议，欢迎通过微信联系
+            </p>
+        </div>
+    </div>
+
+    <div class="a-footer">
+        <strong>思贤学习站 · 陪你一起成长</strong><br>
+        济南市商河县 · 学习资源 · AI 工具 · 学习方法 · 上门家教
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>思贤学习站 · 济南市商河县 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📚 思贤学习站——学会学习，比学习本身更重要。学习资源 · AI 工具 · 学习方法 · 上门家教。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  }
+
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('active');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) {
+      hasCopied = true;
+      sharedBtn.disabled = false;
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+    }
+  };
+
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() {
+        hasCopied = true;
+        sharedBtn.disabled = false;
+        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      overlay.classList.remove('active');
+      if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    }
+  });
+}());
+</script>
+</body>
+</html>

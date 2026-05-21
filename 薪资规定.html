@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>授课薪资规定 · 思贤学习站</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.container { max-width: 820px; padding: 50px 20px 60px; }
+
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d3436 100%);
+  color: #fff; padding: 60px 20px 70px; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 40%, rgba(52,152,219,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 60%, rgba(155,89,182,0.12) 0%, transparent 50%);
+}
+.hero h1 { font-size: 34px; font-weight: 700; letter-spacing: 3px; position: relative; z-index: 1; }
+.hero p { font-size: 15px; opacity: 0.8; margin-top: 10px; position: relative; z-index: 1; }
+.hero .updated { font-size: 13px; opacity: 0.5; margin-top: 8px; position: relative; z-index: 1; }
+
+.rule-section { margin-bottom: 44px; }
+.rule-section-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e8e8ee;
+}
+.rule-section-header .num {
+  flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #1a1a2e;
+  color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;
+}
+.rule-section-header h2 { font-size: 20px; color: #1a1a2e; }
+
+.rule-section p, .rule-section li { font-size: 15px; color: #444; line-height: 1.9; }
+.rule-section ul, .rule-section ol { padding-left: 22px; }
+.rule-section li { margin-bottom: 4px; }
+
+.highlight-box {
+  background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 0 8px 8px 0;
+  padding: 18px 22px; margin: 18px 0;
+}
+.highlight-box h4 { color: #166534; font-size: 15px; margin-bottom: 6px; }
+.highlight-box p, .highlight-box li { font-size: 14px; color: #374151; }
+.highlight-box.blue { background: #eff6ff; border-left-color: #1a73e8; }
+.highlight-box.blue h4 { color: #1e40af; }
+.highlight-box.amber { background: #fffbeb; border-left-color: #d97706; }
+.highlight-box.amber h4 { color: #92400e; }
+
+table.rate-table {
+  width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px;
+}
+table.rate-table th {
+  background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: center; font-weight: 600;
+}
+table.rate-table td {
+  padding: 10px 14px; text-align: center; border-bottom: 1px solid #e8e8ee;
+}
+table.rate-table tr:nth-child(even) td { background: #f8f9fc; }
+table.rate-table tr:last-child td { border-bottom: 2px solid #1a1a2e; font-weight: 600; background: #f0fdf4; }
+table.rate-table .highlight-row td { background: #f0fdf4 !important; font-weight: 600; }
+
+.example-box {
+  background: #f8f9fc; border-radius: 12px; padding: 18px 22px; margin: 16px 0; border: 1px solid #e8e8ee;
+}
+.example-box h4 { font-size: 14px; color: #1a1a2e; margin-bottom: 8px; }
+.example-box p { font-size: 14px; color: #555; line-height: 1.8; }
+.example-box .math { font-family: 'Courier New', monospace; background: #fff; padding: 8px 12px; border-radius: 6px; display: inline-block; margin: 4px 0; border: 1px solid #eee; font-size: 13px; }
+
+table.compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+table.compare-table th {
+  background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: center; font-weight: 600;
+}
+table.compare-table td {
+  padding: 10px 14px; text-align: center; border-bottom: 1px solid #e8e8ee;
+}
+table.compare-table tr:nth-child(even) td { background: #f8f9fc; }
+
+@media print {
+  body { background: #fff; }
+  .container { max-width: 100%; padding: 20px; }
+  .hero { padding: 30px 20px; }
+  .hero h1 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>思贤学习站 · 授课薪资规定</h1>
+  <p>本规定适用于思贤平台所有上门授课老师，自发布之日起执行</p>
+  <div class="updated">版本 V1.0 &nbsp;|&nbsp; 2026-05-21</div>
+</div>
+
+<div class="container">
+
+  <!-- ════ 第一条 ════ -->
+  <div class="rule-section">
+    <div class="rule-section-header">
+      <div class="num">1</div>
+      <h2>薪资构成</h2>
+    </div>
+    <p>老师的薪资按以下公式计算：</p>
+    <div class="highlight-box blue">
+      <h4>薪资 = 课时费 × 当前薪资比例</h4>
+      <p>其中：</p>
+      <ul>
+        <li><strong>课时费</strong>——该课程在平台上的挂牌价格（家长支付的标准课时费）</li>
+        <li><strong>当前薪资比例</strong>——根据您已完成的授课次数确定的百分比</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ════ 第二条 ════ -->
+  <div class="rule-section">
+    <div class="rule-section-header">
+      <div class="num">2</div>
+      <h2>初始比例与增长机制</h2>
+    </div>
+    <p><strong>初始比例：</strong>新老师从 <strong>60%</strong> 起薪。</p>
+    <p><strong>增长规则：</strong>每完成 <strong>1 次授课</strong>，薪资比例提升 <strong>5 个百分点</strong>。</p>
+    <p style="margin-top:10px;">即：</p>
+    <div class="math" style="display:inline-block;background:#f8f9fc;padding:8px 18px;border-radius:6px;border:1px solid #e8e8ee;font-size:15px;margin:6px 0;">
+      当前比例 = 60% + (已完成授课次数 × 5%)
+    </div>
+
+    <table class="rate-table">
+      <tr>
+        <th>已完成授课次数</th>
+        <th>当前薪资比例</th>
+        <th>说明</th>
+      </tr>
+      <tr>
+        <td>0 次（初始）</td>
+        <td><strong>60%</strong></td>
+        <td>首次授课按此比例结算</td>
+      </tr>
+      <tr>
+        <td>1 次</td>
+        <td><strong>65%</strong></td>
+        <td>完成第 1 次后自动升级</td>
+      </tr>
+      <tr>
+        <td>2 次</td>
+        <td><strong>70%</strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3 次</td>
+        <td><strong>75%</strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>4 次及以上</td>
+        <td><strong>80%</strong></td>
+        <td>达到上限，不再增长</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>上限说明</h4>
+      <p>薪资比例最高为 <strong>80%</strong>。完成第 4 次授课后比例达到 80%，此后无论授课多少次，均按 80% 结算。</p>
+    </div>
+  </div>
+
+  <!-- ════ 第三条：举例 ════ -->
+  <div class="rule-section">
+    <div class="rule-section-header">
+      <div class="num">3</div>
+      <h2>计算示例</h2>
+    </div>
+    <p>假设某老师的课程在平台上挂牌课时费为 <strong>100 元/小时</strong>：</p>
+
+    <table class="compare-table">
+      <tr>
+        <th>授课次数</th>
+        <th>薪资比例</th>
+        <th>单次薪资</th>
+        <th>累计薪资</th>
+      </tr>
+      <tr>
+        <td>第 1 次</td>
+        <td>60%</td>
+        <td>60 元</td>
+        <td>60 元</td>
+      </tr>
+      <tr>
+        <td>第 2 次</td>
+        <td>65%</td>
+        <td>65 元</td>
+        <td>125 元</td>
+      </tr>
+      <tr>
+        <td>第 3 次</td>
+        <td>70%</td>
+        <td>70 元</td>
+        <td>195 元</td>
+      </tr>
+      <tr>
+        <td>第 4 次</td>
+        <td>75%</td>
+        <td>75 元</td>
+        <td>270 元</td>
+      </tr>
+      <tr>
+        <td>第 5 次</td>
+        <td>80%</td>
+        <td>80 元</td>
+        <td>350 元</td>
+      </tr>
+      <tr>
+        <td>第 6 次起</td>
+        <td>80%</td>
+        <td>80 元/次</td>
+        <td>每课递增 80 元</td>
+      </tr>
+    </table>
+
+    <div class="example-box">
+      <h4>📐 公式一览</h4>
+      <p class="math">第 N 次授课薪资 = 课时费 × min(60% + N × 5%, 80%)</p>
+      <p style="margin-top:8px;">其中 N 从 0 开始计数（第 1 次即 N=0，第 2 次即 N=1，以此类推）。</p>
+    </div>
+  </div>
+
+  <!-- ════ 第四条 ════ -->
+  <div class="rule-section">
+    <div class="rule-section-header">
+      <div class="num">4</div>
+      <h2>适用范围</h2>
+    </div>
+    <ul>
+      <li>本规定适用于思贤学习站平台上的 <strong>所有授课老师</strong>，不区分科目与年级。</li>
+      <li><strong>授课次数</strong> 从老师在平台上完成的第一单起累计，跨科目、跨学员的授课次数合并计算。</li>
+      <li>如老师中途离开平台后重新回归，已积累的授课次数 <strong>保留</strong>，从离场时的比例继续向上增长。</li>
+    </ul>
+  </div>
+
+  <!-- ════ 第五条 ════ -->
+  <div class="rule-section">
+    <div class="rule-section-header">
+      <div class="num">5</div>
+      <h2>结算与发放</h2>
+    </div>
+    <ul>
+      <li>每次授课完成后的 <strong>24 小时内</strong>，系统自动计算该次薪资并记入老师账户。</li>
+      <li>按月统一发放，具体发放日期为 <strong>每月 10 日</strong>（遇节假日顺延）。</li>
+      <li>老师可在后台随时查看自己的授课次数、当前比例和每笔薪资明细。</li>
+    </ul>
+  </div>
+
+  <!-- ════ 第六条 ════ -->
+  <div class="rule-section">
+    <div class="rule-section-header">
+      <div class="num">6</div>
+      <h2>附则</h2>
+    </div>
+    <ul>
+      <li>本规定最终解释权归思贤学习站所有。</li>
+      <li>思贤学习站保留根据运营情况调整薪资规则的权利，调整前将提前 <strong>7 天</strong> 通知全体老师。</li>
+      <li>如有疑问，请联系思贤学习站（微信同号：<strong>155-6412-8008</strong>）。</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

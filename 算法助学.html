@@ -5,52 +5,67 @@
     <meta name="robots" content="noindex">
     <link rel="icon" href="images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>算法助学 · 思贤家教</title>
+    <title>AI 学习 · 思贤学习站</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #f8f9fc; color: #2d3436; line-height: 1.6; }
+
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 30%, #16213e 60%, #2d3436 100%);
-            color: #fff; padding: 72px 20px 80px; text-align: center; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #0a0a1a 0%, #0f3460 40%, #1a1a2e 70%, #2d3436 100%);
+            color: #fff; padding: 64px 20px 72px; text-align: center; position: relative; overflow: hidden;
         }
         .hero::before {
             content: ''; position: absolute; inset: 0;
             background:
                 radial-gradient(ellipse at 20% 30%, rgba(52,152,219,0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(155,89,182,0.12) 0%, transparent 50%);
+                radial-gradient(ellipse at 80% 70%, rgba(155,89,182,0.10) 0%, transparent 50%);
         }
-        .hero::after {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-        }
-        .hero-badge {
-            display: inline-block; background: rgba(100,181,246,0.12); border: 1px solid rgba(100,181,246,0.25);
-            padding: 4px 18px; border-radius: 20px; font-size: 11px; letter-spacing: 2px;
-            margin-bottom: 20px; position: relative; z-index: 1; backdrop-filter: blur(4px); color: rgba(255,255,255,0.8);
-        }
-        .hero h1 { font-size: 42px; font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; position: relative; z-index: 1; }
-        .hero h1 em { font-style: normal; background: linear-gradient(90deg, #64b5f6, #a78bfa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; }
-        .hero .sub { font-size: 16px; opacity: 0.85; max-width: 620px; margin: 0 auto 12px; line-height: 1.9; position: relative; z-index: 1; }
-        .hero .tech-tag {
-            display: inline-flex; gap: 20px; justify-content: center; flex-wrap: wrap;
-            margin-top: 20px; position: relative; z-index: 1;
-        }
-        .hero .tech-tag span {
-            font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 1px;
-            padding: 2px 14px; border-radius: 12px; background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-        .hero .btn-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; position: relative; z-index: 1; }
-        .hero .btn { display: inline-block; padding: 12px 36px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; transition: transform 0.2s; }
-        .hero .btn:hover { transform: translateY(-2px); }
-        .hero .btn-light { background: #fff; color: #1a1a2e; }
-        .hero .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff; }
-        .hero .btn-outline:hover { border-color: #fff; }
+        .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero h1 { font-size: 36px; font-weight: 800; letter-spacing: 3px; margin-bottom: 10px; }
+        .hero h1 em { font-style: normal; background: linear-gradient(90deg, #64b5f6, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 15px; opacity: .8; line-height: 1.8; margin-bottom: 24px; }
+        .hero .tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; font-size: 12px; opacity: .5; }
+        .hero .tags span { padding: 3px 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; }
 
-        /* ── AI 引擎介绍 ── */
+        .container { max-width: 1000px; margin: 0 auto; padding: 48px 20px; }
+        .section-title { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 32px; }
+        .section-title span { display: inline-block; padding-bottom: 8px; border-bottom: 3px solid #1a1a2e; }
+
+        /* ── AI 功能卡片区 ── */
+        .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 48px; }
+        .ai-card {
+            background: #fff; border-radius: 16px; padding: 28px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform .25s, box-shadow .25s;
+        }
+        .ai-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .ai-card .ac-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+        .ai-card .ac-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff;
+        }
+        .ai-card .ac-header h3 { font-size: 17px; font-weight: 700; }
+        .ai-card .ac-body p { font-size: 13px; color: #666; line-height: 1.7; }
+        .ai-card .ac-body .ac-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+        .ai-card .ac-body .ac-links a {
+            display: inline-block; font-size: 12px; padding: 4px 12px; border-radius: 8px;
+            text-decoration: none; transition: all .2s;
+        }
+
+        .ai-sub-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+        .ai-sub-item {
+            background: #f8f9fc; border-radius: 10px; padding: 14px 12px; text-align: center;
+            text-decoration: none; color: inherit; transition: background .2s;
+        }
+        .ai-sub-item:hover { background: #eef0f4; }
+        .ai-sub-item .asi-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+        .ai-sub-item .asi-name { font-size: 13px; font-weight: 600; }
+        .ai-sub-item .asi-desc { font-size: 11px; color: #999; margin-top: 2px; }
+
+        /* ── 算法助学引擎区 ── */
         .engine-section {
             background: linear-gradient(135deg, #f8f9fc 0%, #eef2ff 50%, #f5f0ff 100%);
-            border-radius: 24px; padding: 48px 40px; margin-bottom: 48px;
-            position: relative; overflow: hidden;
+            border-radius: 24px; padding: 48px 40px; margin-bottom: 48px; position: relative; overflow: hidden;
         }
         .engine-section::before {
             content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px;
@@ -61,238 +76,296 @@
             padding: 4px 16px; border-radius: 12px; margin-bottom: 12px;
             background: linear-gradient(90deg, #1a1a2e, #0f3460); color: #fff;
         }
-        .engine-section h2 { font-size: 26px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
-        .engine-section .engine-sub { font-size: 14px; color: #888; margin-bottom: 28px; }
-        .engine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .engine-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+        .engine-section .engine-sub { font-size: 14px; color: #888; margin-bottom: 24px; }
+        .engine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .engine-card {
             background: rgba(255,255,255,0.8); backdrop-filter: blur(8px);
-            border-radius: 16px; padding: 28px 24px; border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 16px; padding: 24px 22px; border: 1px solid rgba(255,255,255,0.6);
         }
-        .engine-card .e-icon { font-size: 28px; margin-bottom: 8px; }
-        .engine-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
-        .engine-card h3 .pill {
-            display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 10px;
-            border-radius: 10px; margin-left: 6px; vertical-align: middle;
-        }
+        .engine-card .e-icon { font-size: 26px; margin-bottom: 8px; }
+        .engine-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+        .engine-card h3 .pill { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 10px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
         .engine-card h3 .pill.blue { background: #dbeafe; color: #1d4ed8; }
         .engine-card h3 .pill.purple { background: #ede9fe; color: #7c3aed; }
         .engine-card h3 .pill.green { background: #d1fae5; color: #059669; }
         .engine-card p { font-size: 13px; color: #666; line-height: 1.8; }
 
+        /* ── 上传区域 ── */
+        .upload-section {
+            background: #fff; border-radius: 16px; padding: 36px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 48px;
+        }
+        .upload-section .upload-desc { font-size: 14px; color: #888; margin-bottom: 20px; text-align: center; }
+        .drop-zone {
+            border: 2px dashed #ccc; border-radius: 12px; padding: 36px 20px;
+            text-align: center; cursor: pointer; transition: all .2s; position: relative;
+        }
+        .drop-zone:hover { border-color: #1a1a2e; background: #fafbfc; }
+        .drop-zone.dragover { border-color: #1a1a2e; background: #f0f4ff; }
+        .drop-zone .icon { font-size: 32px; margin-bottom: 6px; }
+        .drop-zone p { font-size: 14px; color: #888; }
+        .drop-zone .hint { font-size: 12px; color: #bbb; }
+        .drop-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+        .preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; margin-top: 14px; }
+        .preview-grid .preview-item { position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+        .preview-grid .preview-item img { width: 100%; height: 100%; object-fit: cover; }
+        .preview-grid .preview-item .remove-btn { position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%; background: rgba(0,0,0,0.5); color: #fff; border: none; font-size: 12px; cursor: pointer; line-height: 20px; text-align: center; }
+        .upload-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .upload-form .form-group { margin-bottom: 12px; }
+        .upload-form .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+        .upload-form .form-group input, .upload-form .form-group select, .upload-form .form-group textarea {
+            width: 100%; padding: 9px 12px; border: 1px solid #ddd; border-radius: 8px;
+            font-size: 14px; outline: none; font-family: inherit; box-sizing: border-box;
+        }
+        .upload-form .form-group input:focus, .upload-form .form-group select:focus, .upload-form .form-group textarea:focus { border-color: #1a1a2e; }
+        .upload-form .form-group textarea { resize: vertical; min-height: 54px; }
+        .submit-btn {
+            width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none;
+            border-radius: 10px; font-size: 15px; cursor: pointer; transition: opacity .2s;
+        }
+        .submit-btn:hover { opacity: .9; }
+        .submit-btn:disabled { opacity: .5; cursor: not-allowed; }
+        .success-msg { display: none; text-align: center; padding: 28px 20px; }
+        .success-msg .icon { font-size: 44px; margin-bottom: 10px; }
+        .success-msg h3 { font-size: 17px; margin-bottom: 6px; color: #1a1a2e; }
+        .success-msg p { font-size: 14px; color: #888; }
 
-	/* ── 上传区域 ── */
-	.upload-section {
-		background: #fff; border-radius: 16px; padding: 40px 36px;
-		box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 48px;
-	}
-	.upload-section .section-title { margin-bottom: 8px; }
-	.upload-section .upload-desc { font-size: 14px; color: #888; margin-bottom: 24px; }
-	.drop-zone {
-		border: 2px dashed #ccc; border-radius: 12px; padding: 40px 20px;
-		text-align: center; cursor: pointer; transition: all 0.2s; position: relative;
-	}
-	.drop-zone:hover { border-color: #1a1a2e; background: #fafbfc; }
-	.drop-zone.dragover { border-color: #1a1a2e; background: #f0f4ff; }
-	.drop-zone .icon { font-size: 36px; margin-bottom: 8px; }
-	.drop-zone p { font-size: 14px; color: #888; margin-bottom: 4px; }
-	.drop-zone .hint { font-size: 12px; color: #bbb; }
-	.drop-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-	.preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 16px; }
-	.preview-grid .preview-item {
-		position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden; border: 1px solid #eee;
-	}
-	.preview-grid .preview-item img { width: 100%; height: 100%; object-fit: cover; }
-	.preview-grid .preview-item .remove-btn {
-		position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%;
-		background: rgba(0,0,0,0.5); color: #fff; border: none; font-size: 12px;
-		cursor: pointer; line-height: 20px; text-align: center;
-	}
-	.upload-form .form-group { margin-bottom: 16px; }
-	.upload-form .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 5px; }
-	.upload-form .form-group input, .upload-form .form-group textarea {
-		width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px;
-		font-size: 14px; outline: none; font-family: inherit; box-sizing: border-box;
-	}
-	.upload-form .form-group input:focus, .upload-form .form-group textarea:focus { border-color: #1a1a2e; }
-	.upload-form .form-group textarea { resize: vertical; min-height: 60px; }
-	.submit-btn {
-		width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none;
-		border-radius: 10px; font-size: 15px; cursor: pointer; transition: opacity 0.2s;
-	}
-	.submit-btn:hover { opacity: 0.9; }
-	.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-	.success-msg { display: none; text-align: center; padding: 32px 20px; }
-	.success-msg .icon { font-size: 48px; margin-bottom: 12px; }
-	.success-msg h3 { font-size: 18px; margin-bottom: 6px; color: #1a1a2e; }
-	.success-msg p { font-size: 14px; color: #888; }
-        .scenario-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .scenario-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 48px; }
         .scenario-card {
-            background: #fff; border-radius: 14px; padding: 24px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            text-align: center; transition: transform 0.2s;
+            background: #fff; border-radius: 14px; padding: 22px 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-align: center; transition: transform .2s;
         }
         .scenario-card:hover { transform: translateY(-3px); }
-        .scenario-card .icon { font-size: 30px; margin-bottom: 8px; }
-        .scenario-card h3 { font-size: 15px; margin-bottom: 4px; }
-        .scenario-card p { font-size: 13px; color: #888; }
+        .scenario-card .icon { font-size: 28px; margin-bottom: 6px; }
+        .scenario-card h3 { font-size: 14px; margin-bottom: 4px; }
+        .scenario-card p { font-size: 12px; color: #888; }
 
-        /* ── CTA ── */
         .cta-section {
             background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #2d3436 100%);
-            border-radius: 20px; padding: 48px 40px; text-align: center; position: relative; overflow: hidden;
+            border-radius: 20px; padding: 40px 32px; text-align: center; position: relative; overflow: hidden;
         }
-        .cta-section::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(52,152,219,0.08) 0%, transparent 60%);
-        }
-        .cta-section h2 { color: #fff; font-size: 24px; margin-bottom: 8px; position: relative; z-index: 1; }
-        .cta-section p { color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 20px; position: relative; z-index: 1; }
-        .cta-section .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
-        .cta-section .btn { display: inline-block; padding: 12px 32px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: transform 0.2s; }
+        .cta-section h2 { color: #fff; font-size: 22px; margin-bottom: 8px; }
+        .cta-section p { color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 18px; }
+        .cta-section .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .cta-section .btn { display: inline-block; padding: 11px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: transform .2s; }
         .cta-section .btn:hover { transform: translateY(-2px); }
         .cta-section .btn-light { background: #fff; color: #1a1a2e; }
         .cta-section .btn-outline { border: 2px solid rgba(255,255,255,0.5); color: #fff; }
         .cta-section .btn-outline:hover { border-color: #fff; }
 
-        /* ── Responsive ── */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
-            .hero { padding: 52px 20px 60px; }
-            .section-title { font-size: 20px; }
+        .wechat-card {
+            background: #f8f9fc; border-radius: 16px; padding: 20px;
+            max-width: 280px; margin: 0 auto; border: 1px solid #eee;
+        }
+        .wechat-card .wechat-num { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 2px; cursor: pointer; }
+        .wechat-card .wechat-tip { font-size: 12px; color: #888; }
+        .chance-indicator { font-size: 12px; color: #999; text-align: center; margin-top: 8px; }
 
+        .status-tag {
+            display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px;
+            font-weight: 600; margin-left: 6px; vertical-align: middle;
+        }
+        .status-tag.new { background: #e8f5e9; color: #2e7d32; }
+        .status-tag.soon { background: #fff3e0; color: #e65100; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 26px; }
+            .ai-grid { grid-template-columns: 1fr; }
+            .ai-sub-grid { grid-template-columns: 1fr 1fr; }
             .engine-grid { grid-template-columns: 1fr; }
             .engine-section { padding: 32px 24px; }
-            .engine-section h2 { font-size: 22px; }
-
+            .scenario-grid { grid-template-columns: 1fr 1fr; }
+            .upload-form .form-row { grid-template-columns: 1fr; }
+            .section-title { font-size: 18px; }
+        }
+        @media (max-width: 480px) {
+            .ai-sub-grid { grid-template-columns: 1fr; }
             .scenario-grid { grid-template-columns: 1fr; }
-
-            .cta-section { padding: 36px 24px; }
         }
-
-        /* ── 分享墙弹窗 ── */
-        .share-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-            z-index: 1000; align-items: center; justify-content: center; padding: 20px;
-        }
-        .share-overlay.active { display: flex; }
-        .share-modal {
-            background: #fff; border-radius: 20px; padding: 36px 32px;
-            max-width: 400px; width: 100%; text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: shareIn 0.3s ease;
-        }
-        @keyframes shareIn {
-            from { transform: scale(0.9) translateY(20px); opacity: 0; }
-            to { transform: scale(1) translateY(0); opacity: 1; }
-        }
-        .share-modal .share-icon { font-size: 48px; margin-bottom: 12px; }
-        .share-modal h3 { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
-        .share-modal .share-desc { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.7; }
-        .share-modal .share-desc strong { color: #1a1a2e; }
-        .share-msg-box {
-            background: #f8f9fc; border-radius: 12px; padding: 14px 16px;
-            margin-bottom: 16px; text-align: left; border: 1px solid #eee;
-        }
-        .share-msg-box p { font-size: 13px; color: #555; line-height: 1.8; margin: 0; }
-        .copy-btn {
-            width: 100%; padding: 12px; border: 2px solid #1a1a2e;
-            background: transparent; border-radius: 10px; font-size: 14px;
-            font-weight: 600; cursor: pointer; transition: all 0.2s; margin-bottom: 6px;
-        }
-        .copy-btn:hover { background: #1a1a2e; color: #fff; }
-        .copy-btn.copied { background: #059669; border-color: #059669; color: #fff; }
-        .copy-hint { font-size: 12px; color: #999; margin-bottom: 20px; }
-        .shared-btn {
-            width: 100%; padding: 14px; background: linear-gradient(135deg, #1a1a2e, #0f3460);
-            color: #fff; border: none; border-radius: 10px; font-size: 15px;
-            font-weight: 600; cursor: pointer; transition: opacity 0.2s;
-        }
-        .shared-btn:hover { opacity: 0.9; }
-        .shared-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-        .shared-hint { font-size: 12px; color: #999; margin-top: 10px; }
-        .chance-indicator { font-size: 12px; color: #999; text-align: center; margin-top: 8px; }
-        .wechat-card {
-            background: #f8f9fc; border-radius: 16px; padding: 24px 20px;
-            max-width: 300px; margin: 0 auto; border: 1px solid #eee;
-        }
-        .wechat-card .wechat-num {
-            font-size: 24px; font-weight: 700; color: #1a1a2e; margin-bottom: 2px;
-            cursor: pointer; transition: opacity 0.2s;
-        }
-        .wechat-card .wechat-num:active { opacity: 0.6; }
-        .wechat-card .wechat-tip { font-size: 13px; color: #888; }
     </style>
 </head>
 <body>
 
 <div class="nav">
-    <a href="思贤家教.html" class="logo-text">思贤家教</a>
-    <a href="思贤家教.html">主页</a>
-    <a href="老师.html">选老师</a>
-    <a href="预约试听.html">预约试听</a>
-    <a href="算法助学.html">算法助学 <span class="nav-tag">免费体验</span></a>
-    <a href="真题.html">真题库</a>
-    <a href="资料库.html">资料库</a>
-    <a href="加入思贤.html">加入思贤</a>
-    <a href="思贤公约.html">思贤公约</a>
+    <a href="思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="思贤学习站.html">首页</a>
+    <a href="学习专区.html">学习专区</a>
+    <a href="学习方法.html">学习方法</a>
+    <a href="算法助学.html" class="nav-active">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="资料库.html">资源库</a>
+    <a href="成长社区.html">成长社区</a>
+    <a href="关于.html">关于</a>
 </div>
 
+<!-- ════ Hero ════ -->
 <div class="hero">
-    <div class="hero-badge">⚡ 思贤智学引擎 · 学科大模型</div>
-    <h1>错题变活题，学习有<em>算法</em></h1>
-    <p class="sub">拍照录入错题，智学引擎实时分析——定位知识薄弱点，自动生成变式训练题。<br>基于先进大模型技术，专门面向 K12 学科辅导场景深度优化。</p>
-    <div class="tech-tag">
-        <span>大模型驱动</span>
-        <span>学科知识图谱</span>
-        <span>智能变式出题</span>
-        <span>学情诊断分析</span>
-    </div>
-    <div class="btn-group">
-        <a class="btn btn-light" href="#engine">了解引擎</a>
-        <a class="btn btn-outline" href="#upload">免费体验</a>
-    </div>
-</div>
-
-<!-- ════ AI 引擎介绍 ════ -->
-<div class="container" id="engine">
-    <div class="engine-section">
-        <div class="engine-badge">思贤智学引擎 · XianMind</div>
-        <h2>为 K12 学科辅导而生的 AI 引擎</h2>
-        <p class="engine-sub">不是通用聊天机器人，而是专门为学科错题巩固打造的智能出题与分析系统</p>
-
-        <div class="engine-grid">
-            <div class="engine-card">
-                <div class="e-icon">🧠</div>
-                <h3>学科大模型 <span class="pill blue">核心引擎</span></h3>
-                <p>基于大规模预训练语言模型，针对 K12 九大学科（语数英物化生史地政）的知识体系和题型特征进行专项训练。深度理解各学科知识点脉络和出题逻辑，擅长从学生的错误答案反推思维误区，精准定位薄弱环节。</p>
-            </div>
-            <div class="engine-card">
-                <div class="e-icon">🔗</div>
-                <h3>学科知识图谱 <span class="pill purple">结构化推理</span></h3>
-                <p>内置完整的 K12 知识点图谱，涵盖数千个学科知识点及其关联关系。AI 引擎不仅仅识别"这道题错了"，更能分析"这个知识点前置掌握情况如何"、"哪些关联知识点也需要注意"，给出全局视角的学情诊断。</p>
-            </div>
-            <div class="engine-card">
-                <div class="e-icon">🔄</div>
-                <h3>智能变式出题 <span class="pill green">举一反三</span></h3>
-                <p>引擎分析错题的核心考点后，自动生成多个维度的变式题：改变数字条件、变换题型表述、调整设问角度。同一知识点从不同侧面反复巩固，真正做到举一反三。每道变式题都配有难度标识和解题提示。</p>
-            </div>
-            <div class="engine-card">
-                <div class="e-icon">📊</div>
-                <h3>学情诊断模型 <span class="pill blue">量化分析</span></h3>
-                <p>综合错题数据、变式训练完成情况和知识点关联结构，AI 引擎输出多维度学情报告：知识点掌握度雷达图、薄弱板块排名、易错题型归类、针对性学习路径规划——让学情看得见、可量化。</p>
-            </div>
+    <div class="hero-inner">
+        <h1>AI <em>学习</em></h1>
+        <p>工具推荐 · 使用方法 · 实战技巧<br>让 AI 成为你的学习加速器</p>
+        <div class="tags">
+            <span>ChatGPT</span>
+            <span>Claude</span>
+            <span>Notion AI</span>
+            <span>AI 写作</span>
+            <span>AI 编程</span>
+            <span>算法助学</span>
         </div>
     </div>
 </div>
 
-<div class="container" id="upload">
-    <!-- ════ 拍照上传 ════ -->
-    <div class="upload-section">
+<div class="container">
+
+    <!-- ════════ AI 工具推荐 ════════ -->
+    <div class="section-title"><span>🤖 AI 工具推荐</span></div>
+    <div class="ai-grid">
+        <div class="ai-card">
+            <div class="ac-header">
+                <div class="ac-icon" style="background:linear-gradient(135deg,#10a37f,#0d8c6f)">C</div>
+                <h3>ChatGPT</h3>
+            </div>
+            <div class="ac-body">
+                <p>OpenAI 推出的对话式 AI 助手，擅长问答、写作、翻译、编程辅导等多种任务。支持上传图片和文件进行分析。</p>
+                <div class="ac-links">
+                    <span class="status-tag new">热门</span>
+                </div>
+            </div>
+        </div>
+        <div class="ai-card">
+            <div class="ac-header">
+                <div class="ac-icon" style="background:linear-gradient(135deg,#d97706,#b45309)">C</div>
+                <h3>Claude</h3>
+            </div>
+            <div class="ac-body">
+                <p>Anthropic 出品的 AI 助手，长文本处理能力强，适合阅读长篇文档、分析论文、辅助编程学习与创作。</p>
+                <div class="ac-links">
+                    <span class="status-tag new">推荐</span>
+                </div>
+            </div>
+        </div>
+        <div class="ai-card">
+            <div class="ac-header">
+                <div class="ac-icon" style="background:linear-gradient(135deg,#6366f1,#4338ca)">N</div>
+                <h3>Notion AI</h3>
+            </div>
+            <div class="ac-body">
+                <p>集成在 Notion 笔记中的 AI 功能，支持自动生成笔记摘要、续写内容、翻译、润色，适合学习笔记管理。</p>
+                <div class="ac-links">
+                    <span class="status-tag soon">整理中</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════ AI 学习方法 ════════ -->
+    <div class="section-title"><span>🧠 AI 学习方法</span></div>
+    <div class="ai-grid">
+        <div class="ai-card">
+            <div class="ac-header">
+                <div class="ac-icon" style="background:linear-gradient(135deg,#0f3460,#1a1a2e)">📖</div>
+                <h3>AI 辅助复习</h3>
+            </div>
+            <div class="ac-body">
+                <p>用 AI 生成复习提纲、知识点总结、记忆卡片。把课本笔记交给 AI 梳理，快速抓住重点，提高复习效率。</p>
+                <div class="ac-links">
+                    <span class="status-tag soon">整理中</span>
+                </div>
+            </div>
+        </div>
+        <div class="ai-card">
+            <div class="ac-header">
+                <div class="ac-icon" style="background:linear-gradient(135deg,#0f3460,#1a1a2e)">📝</div>
+                <h3>AI 整理错题</h3>
+            </div>
+            <div class="ac-body">
+                <p>上传错题照片，AI 自动识别题目内容、分析错误原因、归类知识点、生成同类变式题，精准巩固薄弱环节。</p>
+                <div class="ac-links">
+                    <span class="status-tag new">可用</span>
+                    <a href="#upload" style="background:#1a1a2e;color:#fff">立即体验 →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════ AI 写作 ════════ -->
+    <div class="section-title"><span>✍ AI 写作</span></div>
+    <div class="ai-sub-grid" style="max-width:700px;margin:0 auto 48px">
+        <div class="ai-sub-item">
+            <span class="asi-icon">📄</span>
+            <span class="asi-name">作文辅导</span>
+            <span class="asi-desc">AI 帮你审题、列提纲、润色</span>
+        </div>
+        <div class="ai-sub-item">
+            <span class="asi-icon">📊</span>
+            <span class="asi-name">PPT 制作</span>
+            <span class="asi-desc">AI 生成大纲与内容排版</span>
+        </div>
+        <div class="ai-sub-item">
+            <span class="asi-icon">📝</span>
+            <span class="asi-name">学习总结</span>
+            <span class="asi-desc">AI 提炼笔记与章节重点</span>
+        </div>
+    </div>
+
+    <!-- ════════ AI 编程 ════════ -->
+    <div class="section-title"><span>💻 AI 编程</span></div>
+    <div class="ai-sub-grid" style="max-width:700px;margin:0 auto 48px">
+        <div class="ai-sub-item">
+            <span class="asi-icon">🐍</span>
+            <span class="asi-name">Python</span>
+            <span class="asi-desc">AI 辅助代码学习与调试</span>
+        </div>
+        <div class="ai-sub-item">
+            <span class="asi-icon">🌐</span>
+            <span class="asi-name">HTML / CSS</span>
+            <span class="asi-desc">AI 帮你写网页与样式</span>
+        </div>
+        <div class="ai-sub-item">
+            <span class="asi-icon">🛠️</span>
+            <span class="asi-name">网站制作</span>
+            <span class="asi-desc">从零到一搭网站全流程</span>
+        </div>
+    </div>
+
+    <!-- ════════ 算法助学（核心功能） ════════ -->
+    <div class="section-title"><span>⚡ 算法助学 · AI 错题分析引擎</span></div>
+
+    <div class="engine-section" id="engine">
+        <div class="engine-badge">思贤智学引擎 · XianMind</div>
+        <h2>为 K12 学科辅导而生的 AI 引擎</h2>
+        <p class="engine-sub">不是通用聊天机器人，而是专门为学科错题巩固打造的智能出题与分析系统</p>
+        <div class="engine-grid">
+            <div class="engine-card">
+                <div class="e-icon">🧠</div>
+                <h3>学科大模型 <span class="pill blue">核心引擎</span></h3>
+                <p>基于大规模预训练语言模型，针对 K12 九大学科的知识体系和题型特征进行专项训练。深度理解各学科知识点脉络和出题逻辑，擅长从学生的错误答案反推思维误区，精准定位薄弱环节。</p>
+            </div>
+            <div class="engine-card">
+                <div class="e-icon">🔗</div>
+                <h3>学科知识图谱 <span class="pill purple">结构化推理</span></h3>
+                <p>内置完整的 K12 知识点图谱，涵盖数千个学科知识点及其关联关系。AI 引擎不仅仅识别"这道题错了"，更能分析前置掌握情况和关联知识点，给出全局视角的学情诊断。</p>
+            </div>
+            <div class="engine-card">
+                <div class="e-icon">🔄</div>
+                <h3>智能变式出题 <span class="pill green">举一反三</span></h3>
+                <p>引擎分析错题的核心考点后，自动生成多个维度的变式题：改变数字条件、变换题型表述、调整设问角度。同一知识点从不同侧面反复巩固，真正做到举一反三。</p>
+            </div>
+            <div class="engine-card">
+                <div class="e-icon">📊</div>
+                <h3>学情诊断模型 <span class="pill blue">量化分析</span></h3>
+                <p>综合错题数据、变式训练完成情况和知识点关联结构，输出多维度学情报告：知识点掌握度雷达图、薄弱板块排名、易错题型归类——让学情看得见、可量化。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ 上传体验区域 ════ -->
+    <div class="upload-section" id="upload">
         <div class="section-title"><span>拍照上传，免费体验</span></div>
-        <p class="upload-desc">把孩子做错的题拍下来上传，我们会根据错题分析薄弱环节，给你反馈学情报告和举一反三的练习题。</p>
+        <p class="upload-desc">把孩子做错的题拍下来上传，AI 自动分析薄弱环节，生成变式训练题和学情报告。</p>
 
         <form class="upload-form" id="algoForm" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="access_key" value="1c354c45-1cd9-466e-ba73-b63687c0df67">
-            <input type="hidden" name="subject" value="思贤家教·算法助学体验">
+            <input type="hidden" name="subject" value="思贤学习站·算法助学体验">
 
             <div class="drop-zone" id="dropZone">
                 <div class="icon">📸</div>
@@ -302,19 +375,21 @@
             </div>
             <div class="preview-grid" id="previewGrid"></div>
 
-            <div style="height:20px;"></div>
+            <div style="height:16px;"></div>
 
-            <div class="form-group">
-                <label>学生年级</label>
-                <select name="年级" style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;font-size:14px;outline:none;">
-                    <option>小学</option>
-                    <option>初中</option>
-                    <option>高中</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>科目（选填）</label>
-                <input type="text" name="科目" placeholder="例如：数学、英语、物理">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>学生年级</label>
+                    <select name="年级">
+                        <option>小学</option>
+                        <option>初中</option>
+                        <option>高中</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>科目（选填）</label>
+                    <input type="text" name="科目" placeholder="例如：数学、英语、物理">
+                </div>
             </div>
             <div class="form-group">
                 <label>家长电话（选填，方便我们反馈分析结果）</label>
@@ -329,22 +404,20 @@
             <p class="chance-indicator" id="chanceIndicator">💡 分享网站即可获得免费体验机会</p>
         </form>
 
-        <div class="success-msg" id="wechatMsg" style="display:none;">
+        <div class="success-msg" id="wechatMsg">
             <div class="icon">🎉</div>
             <h3>已获得免费体验资格！</h3>
-            <p style="margin-bottom:16px;">请添加老师微信，发送错题照片获取专属学情分析</p>
+            <p style="margin-bottom:14px;">请添加老师微信，发送错题照片获取专属学情分析</p>
             <div class="wechat-card">
                 <p class="wechat-num">155-6412-8008</p>
                 <p class="wechat-tip">☝️ 点击号码可复制</p>
-                <img src="images/sixian二维码.png" alt="思贤家教微信二维码" style="width:160px;height:160px;margin:12px auto;border-radius:8px;display:block;">
-                <p style="font-size:13px;color:#666;">或扫描二维码添加微信</p>
+                <img src="images/sixian二维码.png" alt="思贤学习站微信二维码" style="width:150px;height:150px;margin:10px auto;border-radius:8px;display:block;">
+                <p style="font-size:12px;color:#666;">或扫描二维码添加微信</p>
             </div>
-            <p style="font-size:12px;color:#999;margin-top:16px;">添加时请备注"算法助学"</p>
+            <p style="font-size:12px;color:#999;margin-top:14px;">添加时请备注"算法助学"</p>
         </div>
     </div>
-</div>
 
-<div class="container">
     <!-- ════ 适用场景 ════ -->
     <div class="section-title"><span>适合这样的孩子</span></div>
     <div class="scenario-grid">
@@ -376,22 +449,28 @@
         <div class="scenario-card">
             <div class="icon">👨‍👩‍👧</div>
             <h3>家长帮不上忙</h3>
-            <p>家长想辅导但力不从心，让智学引擎来当助教</p>
+            <p>家长想辅导但力不从心，让 AI 来当助教</p>
+        </div>
+    </div>
+
+    <!-- ════ CTA ════ -->
+    <div class="cta-section">
+        <h2>让 AI 成为你的学习加速器</h2>
+        <p>免费体验 · 让错题成为进步的台阶</p>
+        <div class="btn-group">
+            <a class="btn btn-light" href="#upload">免费体验</a>
+            <a class="btn btn-outline" href="学习专区.html">浏览学习专区</a>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <!-- ════ CTA ════ -->
-    <div class="cta-section">
-        <h2>让错题成为进步的台阶</h2>
-        <p>电子版 20 元，纸质版 30 元包邮 · 购买家教服务免费赠送</p>
-        <div class="btn-group">
-            <a class="btn btn-light" onclick="openContactWall()" style="cursor:pointer">获取联系方式</a>
-            <a class="btn btn-outline" href="老师.html">了解家教服务</a>
-        </div>
-    </div>
+<div class="footer">
+    <p>思贤学习站 · 陪你一起成长 · <span class="contact-trigger" onclick="openContactWall()">获取联系方式</span></p>
 </div>
+
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 
 <!-- 分享墙弹窗 -->
 <div class="share-overlay" id="shareOverlay">
@@ -399,23 +478,95 @@
         <div class="share-icon">🔗</div>
         <h3>分享即可免费体验</h3>
         <p class="share-desc">将此网站分享给微信好友或发到朋友圈，即可获得 <strong>1 次</strong> AI 分析体验机会</p>
-        <div class="share-msg-box">
-            <p id="shareText"></p>
-        </div>
+        <div class="share-msg-box"><p id="shareText"></p></div>
         <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
         <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
         <button class="shared-btn" id="sharedBtn" disabled>我已分享，立即体验 →</button>
-        <p class="shared-hint" style="visibility:hidden;">占位</p>
     </div>
 </div>
 
-<div class="footer">
-    <p>思贤家教 · 济南市商河县 · <span class="contact-trigger" onclick="openContactWall()">获取联系方式</span></p>
-</div>
+<script>
+(function() {
+  var siteUrl = window.location.origin + window.location.pathname;
+  var shareTxt = '🤖 发现一个 AI 学习工具站！ChatGPT·Claude·AI写作·AI编程·错题分析，让 AI 成为学习加速器。 ' + siteUrl;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  }
+
+  window.openContactWall = function() { openShareWall(); };
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('active');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) {
+      hasCopied = true; sharedBtn.disabled = false;
+      copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+    }
+  };
+
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() {
+        hasCopied = true; sharedBtn.disabled = false;
+        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    if (window._shareTimeout) clearWindowTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      overlay.classList.remove('active');
+      if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    }
+  });
+})();
+</script>
 
 <script>
 var files = [];
-
 function updatePreview() {
     var grid = document.getElementById('previewGrid');
     grid.innerHTML = '';
@@ -433,241 +584,23 @@ function updatePreview() {
         grid.appendChild(div);
     });
 }
-
 document.getElementById('fileInput').addEventListener('change', function(e) {
-    for (var i = 0; i < e.target.files.length; i++) {
-        files.push(e.target.files[i]);
-    }
-    updatePreview();
-    this.value = '';
+    for (var i = 0; i < e.target.files.length; i++) files.push(e.target.files[i]);
+    updatePreview(); this.value = '';
 });
-
 var dropZone = document.getElementById('dropZone');
-dropZone.addEventListener('dragover', function(e) {
-    e.preventDefault();
-    this.classList.add('dragover');
-});
-dropZone.addEventListener('dragleave', function() {
-    this.classList.remove('dragover');
-});
+dropZone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', function() { this.classList.remove('dragover'); });
 dropZone.addEventListener('drop', function(e) {
-    e.preventDefault();
-    this.classList.remove('dragover');
-    for (var i = 0; i < e.dataTransfer.files.length; i++) {
-        if (e.dataTransfer.files[i].type.startsWith('image/')) {
-            files.push(e.dataTransfer.files[i]);
-        }
-    }
+    e.preventDefault(); this.classList.remove('dragover');
+    for (var i = 0; i < e.dataTransfer.files.length; i++) files.push(e.dataTransfer.files[i]);
     updatePreview();
 });
-
-/* ── 分享墙逻辑 ── */
-var siteUrl = window.location.origin + window.location.pathname;
-var shareText = '📚 发现一个超好用的学习工具！思贤家教·算法助学——拍照上传错题，AI自动分析薄弱点，自动生成变式训练题，举一反三巩固知识。商河的家长朋友们一定要试试～ ' + siteUrl;
-var hasCopied = false;
-
-function getChances() {
-    return parseInt(localStorage.getItem('sixian_algo_chances') || '0');
-}
-
-function setChances(n) {
-    localStorage.setItem('sixian_algo_chances', String(n));
-}
-
-function updateChanceDisplay() {
-    var d = document.getElementById('chanceDisplay');
-    if (d) d.textContent = getChances();
-}
-
-function updateChanceIndicator() {
-    var ind = document.getElementById('chanceIndicator');
-    if (ind) {
-        ind.textContent = getChances() > 0
-            ? '✨ 已获得体验资格，点击提交查看联系方式'
-            : '💡 分享网站即可获得免费体验机会';
-    }
-}
-
-function showWechatScreen() {
-    document.getElementById('algoForm').style.display = 'none';
-    document.getElementById('wechatMsg').style.display = 'block';
-}
-
-/* 点击微信号复制 */
-document.addEventListener('click', function(e) {
-    var t = e.target;
-    if (t.classList.contains('wechat-num')) {
-        var text = t.textContent.trim();
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text);
-        } else {
-            var ta = document.createElement('textarea');
-            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-            document.body.appendChild(ta); ta.select(); document.execCommand('copy');
-            document.body.removeChild(ta);
-        }
-        var orig = t.textContent;
-        t.textContent = '已复制 ✓';
-        setTimeout(function() { t.textContent = orig; }, 1500);
-    }
-});
-
 document.getElementById('algoForm').addEventListener('submit', function(e) {
     e.preventDefault();
-
-    /* 验证是否已上传照片 */
-    if (files.length === 0) {
-        alert('请先上传错题照片');
-        return;
-    }
-
-    /* 有资格 → 直接显示微信 */
-    if (getChances() > 0) {
-        showWechatScreen();
-        return;
-    }
-
-    /* 无资格 → 弹出分享墙 */
-    document.getElementById('shareText').textContent = shareText;
-    document.getElementById('shareOverlay').classList.add('active');
-    updateChanceDisplay();
+    document.getElementById('algoForm').style.display = 'none';
+    document.getElementById('wechatMsg').style.display = 'block';
 });
-
-document.getElementById('copyBtn').addEventListener('click', function() {
-    var text = document.getElementById('shareText').textContent;
-
-    /* 清除上次的计时器 */
-    if (window._shareTimeout) clearTimeout(window._shareTimeout);
-
-    function onCopyDone() {
-        var btn = document.getElementById('copyBtn');
-        btn.textContent = '✅ 已复制';
-        btn.classList.add('copied');
-
-        var hint = document.getElementById('copyHint');
-        var sharedBtn = document.getElementById('sharedBtn');
-
-        hint.textContent = '⏳ 检测到转发朋友圈，自动获得体验机会...';
-
-        /* 清除上次的计时器 */
-        if (window._shareTimeout) clearTimeout(window._shareTimeout);
-
-        window._shareTimeout = setTimeout(function() {
-            hasCopied = true;
-            sharedBtn.disabled = false;
-            hint.textContent = '✅ 已获得体验机会，点击下方按钮继续';
-        }, 10000);
-    }
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(onCopyDone);
-    } else {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        onCopyDone();
-    }
-});
-
-document.getElementById('sharedBtn').addEventListener('click', function() {
-    if (!hasCopied) return;
-    setChances(getChances() + 1);
-    updateChanceDisplay();
-    document.getElementById('shareOverlay').classList.remove('active');
-    showWechatScreen();
-});
-
-document.getElementById('shareOverlay').addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.classList.remove('active');
-    }
-});
-
-updateChanceIndicator();
-</script>
-
-
-<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
-<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
-<style>.contact-trigger{color:#1a1a2e;text-decoration:underline;cursor:pointer}.contact-trigger:hover{opacity:.7}</style>
-<div class="share-overlay" id="contactOverlay">
-  <div class="share-modal">
-    <div class="share-icon">🔗</div>
-    <h3>分享即可获取联系方式</h3>
-    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
-    <div class="share-msg-box"><p id="contactShareText"></p></div>
-    <button class="copy-btn" id="contactCopyBtn">📋 复制分享文案</button>
-    <p class="copy-hint" id="contactCopyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
-    <button class="shared-btn" id="contactSharedBtn" disabled>我已分享，查看联系方式 →</button>
-  </div>
-</div>
-<script>
-(function() {
-  var url = window.location.origin + window.location.pathname;
-  var shareTxt = '📚 思贤家教——商河本地专业上门家教！优秀老师一对一辅导，量身定制学习计划，让孩子成绩稳步提升。快来了解～ ' + url;
-  var hasCopied = false;
-  var overlay = document.getElementById('contactOverlay');
-  var shareTextEl = document.getElementById('contactShareText');
-  var copyBtn = document.getElementById('contactCopyBtn');
-  var copyHint = document.getElementById('contactCopyHint');
-  var sharedBtn = document.getElementById('contactSharedBtn');
-
-  window.openContactWall = function() {
-    if (window._contactTimeout) clearTimeout(window._contactTimeout);
-    shareTextEl.textContent = shareTxt;
-    overlay.classList.add('active');
-    hasCopied = false;
-    sharedBtn.disabled = true;
-    copyBtn.textContent = '📋 复制分享文案';
-    copyBtn.classList.remove('copied');
-    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
-  };
-
-  copyBtn.addEventListener('click', function() {
-    if (window._contactTimeout) clearTimeout(window._contactTimeout);
-    var text = shareTextEl.textContent;
-    function done() {
-      copyBtn.textContent = '✅ 已复制';
-      copyBtn.classList.add('copied');
-      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
-      window._contactTimeout = setTimeout(function() {
-        hasCopied = true;
-        sharedBtn.disabled = false;
-        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
-      }, 10000);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done);
-    } else {
-      var ta = document.createElement('textarea');
-      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
-      document.body.removeChild(ta); done();
-    }
-  });
-
-  sharedBtn.addEventListener('click', function() {
-    if (!hasCopied) return;
-    overlay.classList.remove('active');
-    if (window._contactTimeout) clearTimeout(window._contactTimeout);
-    var triggers = document.querySelectorAll('.contact-trigger');
-    for (var i = 0; i < triggers.length; i++) {
-      triggers[i].outerHTML = '<b>155-6412-8008</b>';
-    }
-  });
-
-  overlay.addEventListener('click', function(e) {
-    if (e.target === this) {
-      overlay.classList.remove('active');
-      if (window._contactTimeout) clearTimeout(window._contactTimeout);
-    }
-  });
-})();
 </script>
 </body>
 </html>

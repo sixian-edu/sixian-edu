@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习交流 · 思贤学习站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 56px 20px; text-align: center; }
+        .page-hero h1 { font-size: 30px; margin-bottom: 8px; }
+        .page-hero p { font-size: 15px; opacity: .8; }
+
+        .container { max-width: 600px; text-align: center; }
+        .card { background: #fff; border-radius: 16px; padding: 36px 32px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .card .big-icon { font-size: 56px; margin-bottom: 12px; }
+        .card h2 { font-size: 20px; margin-bottom: 8px; }
+        .card p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+        .wechat-card { background: #f8f9fc; border-radius: 12px; padding: 20px; max-width: 300px; margin: 0 auto; }
+        .wechat-card .label { font-size: 13px; color: #888; margin-bottom: 6px; }
+        .wechat-card .num { font-size: 22px; font-weight: 700; color: #1a1a2e; }
+        .wechat-card .note { font-size: 12px; color: #aaa; margin-top: 6px; }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="思贤学习站.html">首页</a>
+    <a href="学习专区.html">学习专区</a>
+    <a href="学习方法.html">学习方法</a>
+    <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="资料库.html">资源库</a>
+    <a href="成长社区.html">成长社区</a>
+    <a href="关于.html">关于</a>
+</div>
+
+<div class="page-hero">
+    <h1>学习交流</h1>
+    <p>一起学习，一起成长</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="big-icon">💬</div>
+        <h2>学习交流群</h2>
+        <p>欢迎加入思贤学习站的学习交流群。<br>获取最新学习资源、参与讨论、一起进步。</p>
+        <div class="wechat-card">
+            <div class="label">添加微信（备注"学习交流"）</div>
+            <div class="num">155-6412-8008</div>
+            <div class="note">同电话 · 也可直接来电咨询</div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>思贤学习站 · 陪你一起成长 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📚 思贤学习站——学习资源 · AI 工具 · 课程笔记 · 考试整理，陪你一起成长。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  }
+
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('active');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) {
+      hasCopied = true;
+      sharedBtn.disabled = false;
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+    }
+  };
+
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() {
+        hasCopied = true;
+        sharedBtn.disabled = false;
+        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      overlay.classList.remove('active');
+      if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    }
+  });
+})();
+</script>
+</body>
+</html>

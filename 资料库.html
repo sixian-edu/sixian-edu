@@ -5,165 +5,427 @@
     <meta name="robots" content="noindex">
     <link rel="icon" href="images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资料库 · 思贤家教</title>
+    <title>资料库 · 思贤学习站</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .page-title { text-align: center; padding: 40px 20px 20px; }
-        .page-title h1 { font-size: 26px; margin-bottom: 6px; }
-        .page-title p { font-size: 14px; color: #888; }
-
-        .subj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-
-        .subj-card {
-            background: #fff; border-radius: 16px; overflow: hidden;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-            transition: transform 0.25s, box-shadow 0.25s;
-            text-decoration: none; color: inherit; display: flex; flex-direction: column;
+        /* ── Hero ── */
+        .res-hero {
+            text-align: center; padding: 50px 20px 36px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff; margin-bottom: 10px;
         }
-        .subj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
-
-        .subj-cover {
-            height: 120px; display: flex; align-items: center; justify-content: center;
-            font-size: 48px; position: relative; overflow: hidden;
+        .res-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
+        .res-hero p { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .res-hero .tags {
+            display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
         }
-        .subj-cover::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.06));
+        .res-hero .tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
         }
-        .subj-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
-        .subj-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-        .subj-desc { font-size: 13px; color: #888; line-height: 1.6; flex: 1; margin-bottom: 12px; }
-        .subj-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-        .subj-meta span {
-            font-size: 11px; padding: 3px 10px; border-radius: 10px;
-            background: #eef0f4; color: #666;
+        .res-hero .tags span.highlight { background: #e8b83a; color: #1a1a2e; font-weight: 600; }
+
+        /* ── Branch Navigation ── */
+        .branch-nav {
+            display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+            padding: 16px 20px; background: #fff; border-radius: 14px;
+            margin: -24px auto 30px; max-width: 780px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07); position: relative; z-index: 2;
+        }
+        .branch-nav a {
+            font-size: 13px; padding: 6px 14px; border-radius: 8px;
+            color: #555; text-decoration: none; transition: all .2s;
+        }
+        .branch-nav a:hover { background: #1a1a2e; color: #fff; }
+
+        /* ── Branch Section ── */
+        .branch { margin-bottom: 36px; }
+        .branch-header {
+            display: flex; align-items: center; gap: 14px;
+            padding: 20px 24px; border-radius: 14px;
+            color: #fff; margin-bottom: 16px;
+            background: #1a1a2e;
+        }
+        .branch-header .b-icon { font-size: 32px; line-height: 1; }
+        .branch-header .b-info { flex: 1; }
+        .branch-header .b-info h2 { font-size: 18px; margin-bottom: 2px; }
+        .branch-header .b-info p { font-size: 12px; opacity: 0.75; }
+        .branch-header .b-count {
+            font-size: 13px; padding: 4px 14px; border-radius: 10px;
+            background: rgba(255,255,255,0.15); white-space: nowrap;
         }
 
-        .subj-card.physics .subj-cover { background: linear-gradient(135deg, #c0392b, #e74c3c); }
-        .subj-card.chemistry .subj-cover { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
-        .subj-card.biology .subj-cover { background: linear-gradient(135deg, #2d7d46, #27ae60); }
-        .subj-card.geography .subj-cover { background: linear-gradient(135deg, #1a6fc4, #3498db); }
-        .subj-card.politics .subj-cover { background: linear-gradient(135deg, #d35400, #e67e22); }
+        .branch-colors.pdf .branch-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        .branch-colors.note .branch-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
+        .branch-colors.formula .branch-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+        .branch-colors.lab .branch-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
+        .branch-colors.exam .branch-header { background: linear-gradient(135deg, #d35400, #e67e22); }
+        .branch-colors.plan .branch-header { background: linear-gradient(135deg, #b8860b, #daa520); }
 
-        .coming-soon { text-align: center; padding: 20px 0; }
-        .coming-soon p { font-size: 14px; color: #aaa; }
+        /* ── Resource Grid ── */
+        .res-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px;
+        }
+
+        .res-card {
+            background: #fff; border-radius: 14px; padding: 18px 18px 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: transform .2s, box-shadow .2s;
+            display: flex; flex-direction: column;
+            text-decoration: none; color: inherit;
+        }
+        .res-card.clickable:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+        }
+        .res-card .rc-icon { font-size: 28px; margin-bottom: 6px; }
+        .res-card .rc-name { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+        .res-card .rc-desc { font-size: 12px; color: #888; line-height: 1.5; flex: 1; }
+        .res-card .rc-meta {
+            display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px;
+        }
+        .res-card .rc-meta span {
+            font-size: 10px; padding: 2px 10px; border-radius: 8px;
+        }
+        .tag-online { background: #e6f7e6; color: #2d7d46; }
+        .tag-draft { background: #f0f0f0; color: #999; }
+        .tag-new { background: #fff3d6; color: #b8860b; }
+
+        /* subject badges */
+        .tag-math { background: #e3edf7; color: #1a6fc4; }
+        .tag-physics { background: #fde8e8; color: #c0392b; }
+        .tag-chemistry { background: #f3e8f9; color: #8e44ad; }
+        .tag-biology { background: #e6f7e6; color: #2d7d46; }
+        .tag-geography { background: #e3f0fa; color: #1a6fc4; }
+        .tag-politics { background: #fdeed6; color: #d35400; }
+
+        /* ── Exam special row ── */
+        .exam-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+        .exam-row .res-card { text-align: center; align-items: center; padding: 24px; }
+        .exam-row .res-card .rc-icon { font-size: 36px; }
+        .exam-row .res-card .rc-name { font-size: 16px; }
+        .exam-row .res-card .rc-desc { font-size: 12px; color: #999; }
+
+        /* ── Footer note ── */
+        .res-trust {
+            text-align: center; padding: 28px 20px 10px;
+            font-size: 13px; color: #999; line-height: 1.8;
+        }
+        .res-trust strong { color: #555; }
 
         @media (max-width: 600px) {
-            .subj-grid { grid-template-columns: 1fr; }
-            .page-title h1 { font-size: 22px; }
+            .res-hero h1 { font-size: 24px; }
+            .branch-nav { margin-left: 12px; margin-right: 12px; }
+            .res-grid { grid-template-columns: 1fr 1fr; }
+            .exam-row { grid-template-columns: 1fr; }
         }
-        
+        @media (max-width: 400px) {
+            .res-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <div class="nav">
-    <a href="思贤家教.html" class="logo-text">思贤家教</a>
-    <a href="思贤家教.html">主页</a>
-    <a href="老师.html">选老师</a>
-    <a href="预约试听.html">预约试听</a>
-    <a href="算法助学.html">算法助学 <span class="nav-tag">免费体验</span></a>
-    <a href="真题.html">真题库</a>
-    <a href="资料库.html" class="nav-active">资料库</a>
-    <a href="加入思贤.html">加入思贤</a>
-    <a href="思贤公约.html">思贤公约</a>
+    <a href="思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="思贤学习站.html">首页</a>
+    <a href="学习专区.html">学习专区</a>
+    <a href="学习方法.html">学习方法</a>
+    <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="资料库.html" class="nav-active">资源库</a>
+    <a href="成长社区.html">成长社区</a>
+    <a href="关于.html">关于</a>
 </div>
 
-<div class="page-title">
-    <h1>学习资料库</h1>
-    <p>初中各科知识点大全 · 复习备考好帮手</p>
+<div class="res-hero">
+    <h1>📚 资料库</h1>
+    <p>海量学习资源 · 持续更新 · 全部免费</p>
+    <div class="tags">
+        <span class="highlight">PDF资料</span>
+        <span>笔记</span>
+        <span>公式整理</span>
+        <span>实验模板</span>
+        <span>真题</span>
+        <span>学习计划表</span>
+    </div>
 </div>
 
-<div class="container" style="padding-top: 10px;">
-    <div class="subj-grid">
+<div class="branch-nav">
+    <a href="#pdf">📄 PDF</a>
+    <a href="#note">📝 笔记</a>
+    <a href="#formula">📚 公式</a>
+    <a href="#lab">📊 实验</a>
+    <a href="#exam">🎯 真题</a>
+    <a href="#plan">📂 计划表</a>
+</div>
 
-        <a class="subj-card" href="资料/数学.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);transition:transform .25s,box-shadow .25s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-            <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(135deg,#1a73e8,#0d47a1);position:relative;overflow:hidden">
-                📐
-                <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.06))"></div>
+<div class="container">
+
+    <!-- ══════ PDF资料 ══════ -->
+    <div class="branch branch-colors pdf" id="pdf">
+        <div class="branch-header">
+            <div class="b-icon">📄</div>
+            <div class="b-info">
+                <h2>PDF资料</h2>
+                <p>各学科专题PDF · 可下载打印</p>
             </div>
-            <div style="padding:18px 20px 20px;flex:1;display:flex;flex-direction:column">
-                <div style="font-size:18px;font-weight:700;margin-bottom:4px">初中数学</div>
-                <div style="font-size:13px;color:#888;line-height:1.6;flex:1;margin-bottom:12px">几何模型 + 知识点大全<br>手拉手、K字型、三垂直、倍长中线等</div>
-                <div style="display:flex;gap:8px;flex-wrap:wrap">
-                    <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#eef0f4;color:#666">中考复习</span>
-                    <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#eef0f4;color:#666">几何专题</span>
-                    <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#eef0f4;color:#666">知识点</span>
+            <div class="b-count">6 份资源</div>
+        </div>
+        <div class="res-grid">
+            <a class="res-card clickable" href="资料/数学.html">
+                <div class="rc-icon">📐</div>
+                <div class="rc-name">初中数学专题</div>
+                <div class="rc-desc">几何模型·代数综合·函数专题</div>
+                <div class="rc-meta">
+                    <span class="tag-online">已上线</span>
+                    <span class="tag-math">数学</span>
                 </div>
-            </div>
-        </a>
-
-        <a class="subj-card physics" href="资料/物理.html">
-            <div class="subj-cover">⚡</div>
-            <div class="subj-body">
-                <div class="subj-name">初中物理</div>
-                <div class="subj-desc">力学、电学、热学、光学、声学<br>中考核心考点全覆盖</div>
-                <div class="subj-meta">
-                    <span>九年级全一册</span>
-                    <span>中考复习</span>
+            </a>
+            <a class="res-card clickable" href="资料/物理.html">
+                <div class="rc-icon">⚡</div>
+                <div class="rc-name">初中物理专题</div>
+                <div class="rc-desc">力学·电学·热学·光学·声学</div>
+                <div class="rc-meta">
+                    <span class="tag-online">已上线</span>
+                    <span class="tag-physics">物理</span>
                 </div>
-            </div>
-        </a>
-
-        <a class="subj-card chemistry" href="资料/化学.html">
-            <div class="subj-cover">🧪</div>
-            <div class="subj-body">
-                <div class="subj-name">初中化学</div>
-                <div class="subj-desc">物质变化、元素、方程式、酸碱盐<br>实验与计算全面梳理</div>
-                <div class="subj-meta">
-                    <span>九年级全一册</span>
-                    <span>中考复习</span>
+            </a>
+            <a class="res-card clickable" href="资料/化学.html">
+                <div class="rc-icon">🧪</div>
+                <div class="rc-name">初中化学专题</div>
+                <div class="rc-desc">物质变化·方程式·酸碱盐</div>
+                <div class="rc-meta">
+                    <span class="tag-online">已上线</span>
+                    <span class="tag-chemistry">化学</span>
                 </div>
-            </div>
-        </a>
-
-        <a class="subj-card biology" href="资料/生物.html">
-            <div class="subj-cover">🧬</div>
-            <div class="subj-body">
-                <div class="subj-name">初中生物</div>
-                <div class="subj-desc">细胞、植物、人体、遗传、免疫<br>七八年级四册全收录</div>
-                <div class="subj-meta">
-                    <span>七八年级全四册</span>
-                    <span>中考复习</span>
+            </a>
+            <a class="res-card clickable" href="资料/生物.html">
+                <div class="rc-icon">🧬</div>
+                <div class="rc-name">初中生物专题</div>
+                <div class="rc-desc">细胞·遗传·人体·生态</div>
+                <div class="rc-meta">
+                    <span class="tag-online">已上线</span>
+                    <span class="tag-biology">生物</span>
                 </div>
-            </div>
-        </a>
-
-        <a class="subj-card geography" href="资料/地理.html">
-            <div class="subj-cover">🌍</div>
-            <div class="subj-body">
-                <div class="subj-name">初中地理</div>
-                <div class="subj-desc">世界地理、中国地理、气候地形<br>七八年级四册全收录</div>
-                <div class="subj-meta">
-                    <span>七八年级全四册</span>
-                    <span>中考复习</span>
+            </a>
+            <a class="res-card clickable" href="资料/地理.html">
+                <div class="rc-icon">🌍</div>
+                <div class="rc-name">初中地理专题</div>
+                <div class="rc-desc">世界地理·中国地理·气候地形</div>
+                <div class="rc-meta">
+                    <span class="tag-online">已上线</span>
+                    <span class="tag-geography">地理</span>
                 </div>
-            </div>
-        </a>
-
-        <a class="subj-card politics" href="资料/政治.html">
-            <div class="subj-cover">📜</div>
-            <div class="subj-body">
-                <div class="subj-name">道德与法治</div>
-                <div class="subj-desc">宪法制度、权利义务、国情国策<br>七至九年级六册全收录</div>
-                <div class="subj-meta">
-                    <span>七~九年级全六册</span>
-                    <span>中考复习</span>
+            </a>
+            <a class="res-card clickable" href="资料/政治.html">
+                <div class="rc-icon">📜</div>
+                <div class="rc-name">道德与法治专题</div>
+                <div class="rc-desc">宪法·权利义务·国情国策</div>
+                <div class="rc-meta">
+                    <span class="tag-online">已上线</span>
+                    <span class="tag-politics">政治</span>
                 </div>
-            </div>
-        </a>
-
+            </a>
+        </div>
     </div>
 
-    <div class="coming-soon">
-        <p>📚 更多学科资料持续更新中……</p>
+    <!-- ══════ 笔记 ══════ -->
+    <div class="branch branch-colors note" id="note">
+        <div class="branch-header">
+            <div class="b-icon">📝</div>
+            <div class="b-info">
+                <h2>学习笔记</h2>
+                <p>精讲精练 · 学霸笔记 · 考点梳理</p>
+            </div>
+            <div class="b-count">整理中</div>
+        </div>
+        <div class="res-grid">
+            <div class="res-card">
+                <div class="rc-icon">📐</div>
+                <div class="rc-name">数学笔记 · 几何篇</div>
+                <div class="rc-desc">三角形、四边形、圆——核心定理与模型</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-math">数学</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">⚡</div>
+                <div class="rc-name">物理笔记 · 力学篇</div>
+                <div class="rc-desc">力与运动 · 压强 · 浮力 · 简单机械</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-physics">物理</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🧪</div>
+                <div class="rc-name">化学笔记 · 元素篇</div>
+                <div class="rc-desc">元素周期表 · 化合价 · 反应类型</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-chemistry">化学</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🧬</div>
+                <div class="rc-name">生物笔记 · 细胞篇</div>
+                <div class="rc-desc">细胞结构 · 光合呼吸 · 遗传基础</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-biology">生物</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🌍</div>
+                <div class="rc-name">地理笔记 · 地图篇</div>
+                <div class="rc-desc">经纬网 · 等高线 · 气候类型</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-geography">地理</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">📜</div>
+                <div class="rc-name">政治笔记 · 宪法篇</div>
+                <div class="rc-desc">国家制度 · 公民权利 · 法律体系</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-politics">政治</span></div>
+            </div>
+        </div>
     </div>
+
+    <!-- ══════ 公式整理 ══════ -->
+    <div class="branch branch-colors formula" id="formula">
+        <div class="branch-header">
+            <div class="b-icon">📚</div>
+            <div class="b-info">
+                <h2>公式整理</h2>
+                <p>数理化公式大全 · 一目了然</p>
+            </div>
+            <div class="b-count">整理中</div>
+        </div>
+        <div class="res-grid">
+            <div class="res-card">
+                <div class="rc-icon">📐</div>
+                <div class="rc-name">初中几何公式大全</div>
+                <div class="rc-desc">面积·体积·勾股·三角函数·圆</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-math">数学</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">📊</div>
+                <div class="rc-name">代数公式汇总</div>
+                <div class="rc-desc">整式·分式·方程·不等式·函数</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-math">数学</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">⚡</div>
+                <div class="rc-name">物理公式汇总</div>
+                <div class="rc-desc">力学·电学·热学·光学公式全集</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-physics">物理</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🧪</div>
+                <div class="rc-name">化学方程式汇总</div>
+                <div class="rc-desc">化合·分解·置换·复分解·离子</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-chemistry">化学</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ 实验模板 ══════ -->
+    <div class="branch branch-colors lab" id="lab">
+        <div class="branch-header">
+            <div class="b-icon">📊</div>
+            <div class="b-info">
+                <h2>实验模板</h2>
+                <p>物化生实验报告模板 · 实验步骤 · 考点分析</p>
+            </div>
+            <div class="b-count">整理中</div>
+        </div>
+        <div class="res-grid">
+            <div class="res-card">
+                <div class="rc-icon">⚡</div>
+                <div class="rc-name">物理实验报告模板</div>
+                <div class="rc-desc">测密度·测电阻·凸透镜成像·杠杆平衡</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-physics">物理</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🧪</div>
+                <div class="rc-name">化学实验报告模板</div>
+                <div class="rc-desc">气体制取·酸碱中和·金属性质</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-chemistry">化学</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🧬</div>
+                <div class="rc-name">生物实验报告模板</div>
+                <div class="rc-desc">显微镜·叶片结构·唾液消化</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-biology">生物</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ 真题 ══════ -->
+    <div class="branch branch-colors exam" id="exam">
+        <div class="branch-header">
+            <div class="b-icon">🎯</div>
+            <div class="b-info">
+                <h2>历年真题</h2>
+                <p>中考 · 高考真题 · 免费下载练习</p>
+            </div>
+            <div class="b-count">已上线</div>
+        </div>
+        <div class="exam-row">
+            <a class="res-card clickable" href="真题.html">
+                <div class="rc-icon">📝</div>
+                <div class="rc-name">中考真题</div>
+                <div class="rc-desc">山东济南 · 历年中考全科真题</div>
+                <div class="rc-meta" style="justify-content:center"><span class="tag-online">进入真题库 →</span></div>
+            </a>
+            <div class="res-card">
+                <div class="rc-icon">🎓</div>
+                <div class="rc-name">高考真题</div>
+                <div class="rc-desc">全国卷 · 新高考真题集锦</div>
+                <div class="rc-meta" style="justify-content:center"><span class="tag-draft">整理中</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ 学习计划表 ══════ -->
+    <div class="branch branch-colors plan" id="plan">
+        <div class="branch-header">
+            <div class="b-icon">📂</div>
+            <div class="b-info">
+                <h2>学习计划表</h2>
+                <p>科学规划 · 高效执行 · 进步可见</p>
+            </div>
+            <div class="b-count">整理中</div>
+        </div>
+        <div class="res-grid">
+            <div class="res-card">
+                <div class="rc-icon">🌞</div>
+                <div class="rc-name">暑期学习计划表</div>
+                <div class="rc-desc">暑假每日学习安排 · 弯道超车</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">🏃</div>
+                <div class="rc-name">考前冲刺计划</div>
+                <div class="rc-desc">30天 · 15天 · 7天冲刺方案</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">📋</div>
+                <div class="rc-name">日常学习计划模板</div>
+                <div class="rc-desc">周计划 · 月计划 · 目标管理</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span></div>
+            </div>
+            <div class="res-card">
+                <div class="rc-icon">✅</div>
+                <div class="rc-name">打卡追踪表</div>
+                <div class="rc-desc">每日习惯打卡 · 学习时长记录</div>
+                <div class="rc-meta"><span class="tag-draft">整理中</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="res-trust">
+        <strong>📌 资料库持续更新中</strong><br>
+        目前已上线 <strong>6 科 PDF 专题资料</strong> + <strong>中考真题库</strong>，更多笔记、公式、模板陆续整理<br>
+        全部资源免费提供，助力每一位学习者
+    </div>
+
 </div>
 
 <div class="footer">
-    <p>思贤家教 · 济南市商河县 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+    <p>思贤学习站 · 济南市商河县 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
 </div>
-
 
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
@@ -181,7 +443,7 @@
 <script>
 (function() {
   var url = window.location.origin + window.location.pathname;
-  var shareTxt = '📚 思贤家教——商河本地专业上门家教！优秀老师一对一辅导，量身定制学习计划，让孩子成绩稳步提升。快来了解～ ' + url;
+  var shareTxt = '📚 思贤学习站——海量学习资源 · AI 工具 · 各科知识点 · 真题。全部免费，快来学习～ ' + url;
   var hasCopied = false;
   var overlay = document.getElementById('shareOverlay');
   var shareTextEl = document.getElementById('shareText');
@@ -189,7 +451,6 @@
   var copyHint = document.getElementById('copyHint');
   var sharedBtn = document.getElementById('sharedBtn');
 
-  // 已分享过则直接显示联系方式
   if (localStorage.getItem('sx_shared')) {
     var ts = document.querySelectorAll('.contact-trigger');
     for (var i = 0; i < ts.length; i++) {
@@ -207,8 +468,6 @@
     copyBtn.textContent = '📋 复制分享文案';
     copyBtn.classList.remove('copied');
     copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
-
-    // 离开后再回来：检查之前是否复制过
     var t = localStorage.getItem('sx_copy_time');
     if (t && Date.now() - Number(t) >= 10000) {
       hasCopied = true;

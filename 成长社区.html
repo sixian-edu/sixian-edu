@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成长社区 · 思贤学习站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Hero ── */
+        .c-hero {
+            text-align: center; padding: 50px 20px 36px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff; margin-bottom: 10px;
+        }
+        .c-hero h1 { font-size: 32px; margin-bottom: 6px; letter-spacing: 2px; }
+        .c-hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+        .c-hero .tags {
+            display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+        }
+        .c-hero .tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
+        }
+
+        .c-nav {
+            display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+            padding: 16px 20px; background: #fff; border-radius: 14px;
+            margin: -24px auto 30px; max-width: 640px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07); position: relative; z-index: 2;
+        }
+        .c-nav a {
+            font-size: 13px; padding: 6px 14px; border-radius: 8px;
+            color: #555; text-decoration: none; transition: all .2s;
+        }
+        .c-nav a:hover { background: #1a1a2e; color: #fff; }
+
+        /* ── Section ── */
+        .c-section { margin-bottom: 36px; }
+        .c-header {
+            display: flex; align-items: center; gap: 14px;
+            padding: 20px 24px; border-radius: 14px;
+            color: #fff; margin-bottom: 16px;
+        }
+        .c-header .ci { font-size: 30px; line-height: 1; }
+        .c-header .cinfo { flex: 1; }
+        .c-header .cinfo h2 { font-size: 18px; margin-bottom: 2px; }
+        .c-header .cinfo p { font-size: 12px; opacity: 0.75; }
+        .c-header .ccount {
+            font-size: 12px; padding: 4px 14px; border-radius: 10px;
+            background: rgba(255,255,255,0.15); white-space: nowrap;
+        }
+
+        .c-clock .c-header { background: linear-gradient(135deg, #e67e22, #f39c12); }
+        .c-journal .c-header { background: linear-gradient(135deg, #1a6fc4, #3498db); }
+        .c-share .c-header { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+        .c-msg .c-header { background: linear-gradient(135deg, #2d7d46, #27ae60); }
+
+        /* ── Card Grid ── */
+        .c-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
+        }
+        .c-card {
+            background: #fff; border-radius: 14px; padding: 22px 20px 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: transform .2s, box-shadow .2s;
+            display: flex; flex-direction: column;
+        }
+        .c-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+        }
+        .c-card .cc-icon { font-size: 28px; margin-bottom: 8px; }
+        .c-card .cc-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .c-card .cc-desc { font-size: 12px; color: #888; line-height: 1.6; flex: 1; }
+        .c-card .cc-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+        .c-card .cc-meta span {
+            font-size: 10px; padding: 2px 10px; border-radius: 8px;
+        }
+
+        .tag-ready { background: #e6f7e6; color: #2d7d46; }
+        .tag-soon { background: #f0f0f0; color: #999; }
+        .tag-hot { background: #fff3d6; color: #b8860b; }
+
+        /* ── WeChat Card ── */
+        .wx-card {
+            background: #fff; border-radius: 16px; padding: 28px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            text-align: center; margin-bottom: 20px;
+        }
+        .wx-card .wx-icon { font-size: 48px; margin-bottom: 10px; }
+        .wx-card h3 { font-size: 17px; margin-bottom: 4px; }
+        .wx-card p { font-size: 13px; color: #888; line-height: 1.6; }
+        .wx-card .wx-num {
+            display: inline-block; margin-top: 12px;
+            font-size: 20px; font-weight: 700; color: #1a1a2e;
+            background: #f5f7fa; padding: 10px 28px; border-radius: 10px;
+            letter-spacing: 2px;
+        }
+
+        .c-footer {
+            text-align: center; padding: 28px 20px 10px;
+            font-size: 13px; color: #999; line-height: 1.8;
+        }
+        .c-footer strong { color: #555; }
+
+        @media (max-width: 600px) {
+            .c-hero h1 { font-size: 24px; }
+            .c-grid { grid-template-columns: 1fr; }
+            .c-nav { margin-left: 12px; margin-right: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="思贤学习站.html">首页</a>
+    <a href="学习专区.html">学习专区</a>
+    <a href="学习方法.html">学习方法</a>
+    <a href="算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="资料库.html">资源库</a>
+    <a href="成长社区.html" class="nav-active">成长社区</a>
+    <a href="关于.html">关于</a>
+</div>
+
+<div class="c-hero">
+    <h1>🌱 成长社区</h1>
+    <p>一个人学得累，一群人走得远<br>在这里记录成长、分享经验、互相激励</p>
+    <div class="tags">
+        <span>📸 学习打卡</span>
+        <span>📖 学习日志</span>
+        <span>🎓 学生分享</span>
+        <span>💬 留言交流</span>
+    </div>
+</div>
+
+<div class="c-nav">
+    <a href="#clock">📸 打卡</a>
+    <a href="#journal">📖 日志</a>
+    <a href="#share">🎓 分享</a>
+    <a href="#msg">💬 留言</a>
+</div>
+
+<div class="container">
+
+    <!-- ══════ 学习打卡 ══════ -->
+    <div class="c-section c-clock" id="clock">
+        <div class="c-header">
+            <div class="ci">📸</div>
+            <div class="cinfo">
+                <h2>学习打卡</h2>
+                <p>每天打卡，见证坚持的力量</p>
+            </div>
+            <div class="ccount">即将开启</div>
+        </div>
+        <div class="c-grid">
+            <div class="c-card">
+                <div class="cc-icon">📅</div>
+                <div class="cc-title">每日学习打卡</div>
+                <div class="cc-desc">记录今天学了什么、学了多久、状态如何。每天一小步，进步看得见</div>
+                <div class="cc-meta"><span class="tag-soon">即将上线</span><span class="tag-hot">热门</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">🏆</div>
+                <div class="cc-title">打卡排行榜</div>
+                <div class="cc-desc">看看谁是坚持最久的打卡达人，互相激励共同进步</div>
+                <div class="cc-meta"><span class="tag-soon">即将上线</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">🔥</div>
+                <div class="cc-title">连续打卡挑战</div>
+                <div class="cc-desc">7天 · 21天 · 60天 · 100天，挑战自己的坚持极限</div>
+                <div class="cc-meta"><span class="tag-soon">即将上线</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ 学习日志 ══════ -->
+    <div class="c-section c-journal" id="journal">
+        <div class="c-header">
+            <div class="ci">📖</div>
+            <div class="cinfo">
+                <h2>学习日志</h2>
+                <p>记录学习路上的思考与成长</p>
+            </div>
+            <div class="ccount">整理中</div>
+        </div>
+        <div class="c-grid">
+            <div class="c-card">
+                <div class="cc-icon">✍️</div>
+                <div class="cc-title">学习周记模板</div>
+                <div class="cc-desc">每周复盘：学了什么 · 哪里卡住 · 下周计划</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">📝</div>
+                <div class="cc-title">错题反思模板</div>
+                <div class="cc-desc">错题不可怕，可怕的是不知道错在哪。结构化反思法</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span><span class="tag-hot">热门</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">🎯</div>
+                <div class="cc-title">目标拆解指南</div>
+                <div class="cc-desc">大目标 → 小目标 → 每日任务，让梦想变得可执行</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">💡</div>
+                <div class="cc-title">学习感悟</div>
+                <div class="cc-desc">分享你的学习心得、顿悟时刻，也许能帮到另一个正在迷茫的人</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ 学生分享 ══════ -->
+    <div class="c-section c-share" id="share">
+        <div class="c-header">
+            <div class="ci">🎓</div>
+            <div class="cinfo">
+                <h2>学生分享</h2>
+                <p>真实的学习故事，看得见的进步</p>
+            </div>
+            <div class="ccount">整理中</div>
+        </div>
+        <div class="c-grid">
+            <div class="c-card">
+                <div class="cc-icon">📈</div>
+                <div class="cc-title">提分案例分享</div>
+                <div class="cc-desc">真实学员的成绩提升故事，方法可复制</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span><span class="tag-hot">热门</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">🎯</div>
+                <div class="cc-title">学霸经验谈</div>
+                <div class="cc-desc">各科学霸的学习方法、备考策略、心态调整</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">🔄</div>
+                <div class="cc-title">逆袭故事</div>
+                <div class="cc-desc">从学渣到学霸，他们做对了什么？</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">📚</div>
+                <div class="cc-title">好书推荐</div>
+                <div class="cc-desc">学生们推荐的学习好书 · 读后感悟</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ 留言交流 ══════ -->
+    <div class="c-section c-msg" id="msg">
+        <div class="c-header">
+            <div class="ci">💬</div>
+            <div class="cinfo">
+                <h2>留言交流</h2>
+                <p>有问题？有想法？一起聊聊</p>
+            </div>
+            <div class="ccount">微信交流</div>
+        </div>
+
+        <div class="wx-card">
+            <div class="wx-icon">💬</div>
+            <h3>加入我们的学习交流群</h3>
+            <p>添加微信，拉你进群<br>和更多学习者一起打卡、交流、进步</p>
+            <div class="wx-num">155-6412-8008</div>
+            <p style="margin-top: 12px; font-size: 12px; color: #bbb;">添加时备注"学习交流"</p>
+        </div>
+
+        <div class="c-grid">
+            <div class="c-card">
+                <div class="cc-icon">❓</div>
+                <div class="cc-title">学习问答</div>
+                <div class="cc-desc">学习上遇到问题？这里可以提问，大家一起帮忙解答</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+            <div class="c-card">
+                <div class="cc-icon">💬</div>
+                <div class="cc-title">自由讨论</div>
+                <div class="cc-desc">聊学习、聊方法、聊未来——学习者的自由交流空间</div>
+                <div class="cc-meta"><span class="tag-soon">整理中</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-footer">
+        <strong>🌱 成长社区，正在生长</strong><br>
+        打卡、日志、分享、交流——每一个板块都在逐步完善<br>
+        一个人的努力是加法，一群人的努力是乘法
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>思贤学习站 · 济南市商河县 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '🌱 思贤学习站——成长社区 · 学习打卡 · 经验分享 · 一起进步。一个人学得累，一群人走得远。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  }
+
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('active');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) {
+      hasCopied = true;
+      sharedBtn.disabled = false;
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+    }
+  };
+
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() {
+        hasCopied = true;
+        sharedBtn.disabled = false;
+        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      overlay.classList.remove('active');
+      if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    }
+  });
+}());
+</script>
+</body>
+</html>
