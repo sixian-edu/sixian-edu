@@ -68,17 +68,10 @@
         .hero .btn-outline:hover { border-color: #fff; }
         .hero .tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; font-size: 13px; opacity: 0.6; }
         .hero .tags span { padding: 3px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; }
-
-        /* ── 科目速查 ── */
-        .subj-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 48px; }
-        .subj-card {
-            background: #fff; border-radius: 14px; padding: 24px 12px; text-align: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-decoration: none; color: inherit;
-            transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; align-items: center; gap: 8px;
+        .hero .tags .hero-tutor-tag {
+            background: rgba(230,126,34,0.2); border: 1px solid rgba(230,126,34,0.5);
+            color: #ffd699; font-weight: 600;
         }
-        .subj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
-        .subj-card .icon { font-size: 28px; }
-        .subj-card .name { font-size: 14px; font-weight: 600; }
 
         /* ── 精选资源 ── */
         .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
@@ -123,12 +116,31 @@
 
         /* ── 关于 & 家教 ── */
         .about-tutor-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 48px; }
-        .about-card, .tutor-card {
-            background: #fff; border-radius: 16px; padding: 28px 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
+        .about-card { background: #fff; border-radius: 16px; padding: 28px 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
         .about-card h3, .tutor-card h3 { font-size: 17px; margin-bottom: 10px; }
         .about-card p, .tutor-card p { font-size: 14px; color: #555; line-height: 1.8; }
-        .tutor-card .tutor-link { display: inline-block; margin-top: 12px; color: #1a1a2e; font-weight: 600; font-size: 14px; text-decoration: underline; }
+        .tutor-card {
+            background: linear-gradient(135deg, #fff8f0, #fff3e0); border-radius: 16px; padding: 28px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1.5px solid #f0c27a;
+            position: relative; transition: transform .25s, box-shadow .25s;
+        }
+        .tutor-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+        .tutor-card h3 { color: #c67b00; }
+        .tutor-card p { color: #7a5d00; }
+        .tutor-card .hot-badge {
+            position: absolute; top: -10px; right: 20px;
+            background: linear-gradient(135deg, #e67e22, #d35400); color: #fff;
+            padding: 3px 14px; border-radius: 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(211,84,0,0.3);
+        }
+        .tutor-card .tutor-link {
+            display: inline-block; margin-top: 14px;
+            background: linear-gradient(135deg, #e67e22, #d35400); color: #fff;
+            padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+            text-decoration: none; transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 2px 8px rgba(211,84,0,0.25);
+        }
+        .tutor-card .tutor-link:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(211,84,0,0.35); }
 
         /* ── CTA ── */
         .cta-section {
@@ -184,41 +196,12 @@
             <span>🤖 AI 工具</span>
             <span>📝 考试整理</span>
             <span>📖 各科知识点</span>
-            <span>🏠 上门家教</span>
+            <span class="hero-tutor-tag">🏠 上门家教</span>
         </div>
     </div>
 </div>
 
 <div class="container" id="resources">
-
-    <!-- ════ 科目速查 ════ -->
-    <div class="section-title"><span>科目资料速查</span></div>
-    <div class="subj-grid">
-        <a class="subj-card" href="资料/数学.html">
-            <span class="icon">📐</span>
-            <span class="name">数学</span>
-        </a>
-        <a class="subj-card" href="资料/物理.html">
-            <span class="icon">⚡</span>
-            <span class="name">物理</span>
-        </a>
-        <a class="subj-card" href="资料/化学.html">
-            <span class="icon">🧪</span>
-            <span class="name">化学</span>
-        </a>
-        <a class="subj-card" href="资料/生物.html">
-            <span class="icon">🧬</span>
-            <span class="name">生物</span>
-        </a>
-        <a class="subj-card" href="资料/地理.html">
-            <span class="icon">🌍</span>
-            <span class="name">地理</span>
-        </a>
-        <a class="subj-card" href="资料/政治.html">
-            <span class="icon">📜</span>
-            <span class="name">政治</span>
-        </a>
-    </div>
 
     <!-- ════ 精选资源 ════ -->
     <div class="section-title"><span>精选资源</span></div>
@@ -267,41 +250,6 @@
         </a>
     </div>
 
-    <!-- ════ 学习资源分类 ════ -->
-    <div class="section-title"><span>学习资源</span></div>
-    <div class="resource-grid">
-        <div class="resource-card">
-            <div class="icon">📖</div>
-            <h3>课程笔记</h3>
-            <p>各科知识点整理<br>复习备考好帮手</p>
-        </div>
-        <div class="resource-card">
-            <div class="icon">🧠</div>
-            <h3>学习方法</h3>
-            <p>高效学习策略<br>知识管理技巧</p>
-        </div>
-        <div class="resource-card">
-            <div class="icon">🤖</div>
-            <h3>AI 工具指南</h3>
-            <p>效率工具推荐<br>AI 辅助学习教程</p>
-        </div>
-        <div class="resource-card">
-            <div class="icon">📖</div>
-            <h3>各科知识点</h3>
-            <p>重点难点梳理<br>复习查漏补缺</p>
-        </div>
-        <div class="resource-card">
-            <div class="icon">📝</div>
-            <h3>考试整理</h3>
-            <p>真题 · 知识点梳理<br>考前冲刺必备</p>
-        </div>
-        <div class="resource-card">
-            <div class="icon">🔄</div>
-            <h3>持续更新</h3>
-            <p>内容不断丰富<br>关注即得最新资源</p>
-        </div>
-    </div>
-
     <!-- ════ AI 学习工具 ════ -->
     <div class="ai-section">
         <div class="section-title"><span>AI 学习工具</span></div>
@@ -322,8 +270,9 @@
             <p>我们是一个以学习型个人品牌为核心的成长平台。持续整理和分享优质学习资源——课程笔记、学习方法、AI 工具指南、考试真题与解析、各科知识点梳理。好的学习资源应该免费、高效、持续更新。</p>
         </div>
         <div class="tutor-card">
+            <span class="hot-badge">商河家长推荐</span>
             <h3>🏠 上门家教服务</h3>
-            <p>商河本地一对一上门辅导，优秀老师匹配，免费试听一节课。涵盖小学到高中各学科，灵活安排时间。这是我们的线下服务之一，适合需要面对面学习支持的学生。</p>
+            <p>商河本地一对一上门辅导，优秀老师匹配，免费试听一节课。涵盖小学到高中各学科，灵活安排时间。</p>
             <a class="tutor-link" href="老师.html">查看老师详情 →</a>
         </div>
     </div>

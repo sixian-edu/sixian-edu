@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中几何大全 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:880px;margin:0 auto}
+.back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+.sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
+.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
+.card .d{font-size:13px;color:#555;line-height:1.8}
+.card .d b{color:#333}
+.tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.svg-wrap{text-align:center;margin:12px 0 6px}
+.svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto}
+.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
+.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
+<h1>📐 初中数学 · 几何模型大全</h1>
+<p class="sub">全等 · 相似 · 圆 · 经典模型 · 中考几何解题利器</p>
+
+<div class="sec-title">🔷 全等与相似</div>
+
+<!-- 1. 手拉手模型 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🔹 手拉手模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_01_handshake.svg" width="420" height="263" alt="手拉手模型"></div>
+  <div class="d">
+    两个等腰三角形共顶点，<b>旋转全等</b>。<br>
+    <span class="tag red">AB = AC</span>
+    <span class="tag green">AD = AE</span>
+    <span class="tag">△ABD ≌ △ACE (SSS)</span>
+  </div>
+  <div class="formula">AB = AC, AD = AE ⇒ △ABD ≅ △ACE</div>
+</div>
+
+<!-- 2. 一线三等角（K字型） -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 一线三等角（K字型）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_02_k_shape.svg" width="420" height="263" alt="K字型模型"></div>
+  <div class="d">
+    同一直线上三个角相等，构造<b>相似三角形</b>。<br>
+    <span class="tag red">∠ABC = ∠ECD = ∠FDC</span>
+  </div>
+  <div class="formula">三等角 → 三角形相似</div>
+</div>
+
+<!-- 3. 三垂直模型 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 三垂直模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_03_three_perp.svg" width="420" height="263" alt="三垂直模型"></div>
+  <div class="d">
+    利用三个直角关系，构造<b>全等或相似三角形</b>。<br>
+    <span class="tag">矩形 + 垂线</span>
+    <span class="tag green">K字全等</span>
+  </div>
+  <div class="formula">三垂直 → △相似/全等</div>
+</div>
+
+<!-- 4. 倍长中线模型 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🔹 倍长中线模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_04_median_double.svg" width="420" height="263" alt="倍长中线模型"></div>
+  <div class="d">
+    延长中线至一倍长度，构造<b>平行四边形</b>。<br>
+    <span class="tag red">AM = MD</span>
+    <span class="tag green">四边形ABDC为平行四边形</span>
+  </div>
+  <div class="formula">倍长中线 → △全等 → 平行四边</div>
+</div>
+
+<div class="sec-title">🔷 角平分线与相似</div>
+
+<!-- 5. 角平分线模型 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 角平分线模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_05_angle_bisector.svg" width="420" height="263" alt="角平分线模型"></div>
+  <div class="d">
+    角平分线上的点到角两边距离<b>相等</b>。<br>
+    <span class="tag red">AD是角平分线</span>
+    <span class="tag green">DE = DF</span>
+  </div>
+  <div class="formula">AD平分∠BAC ⇒ DE = DF</div>
+</div>
+
+<!-- 6. A字型相似 -->
+<div class="card" style="border-top-color:#2ecc71">
+  <div class="t" style="color:#2ecc71">🔹 A字型相似</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_06_a_similar.svg" width="420" height="263" alt="A字型相似"></div>
+  <div class="d">
+    DE ∥ BC ⇒ <b>△ADE ∼ △ABC</b>（A字型）。<br>
+    <span class="tag red">DE ∥ BC</span>
+    <span class="tag green">AD/AB = AE/AC = DE/BC</span>
+  </div>
+  <div class="formula">DE∥BC ⇒ △ADE ∽ △ABC</div>
+</div>
+
+<!-- 7. 8字型相似 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🔹 8字型相似</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_07_8_similar.svg" width="420" height="263" alt="8字型相似"></div>
+  <div class="d">
+    AB ∥ CD ⇒ <b>△AOB ∼ △COD</b>（8字型）。<br>
+    <span class="tag red">AB ∥ CD</span>
+    <span class="tag green">对应边成比例</span>
+  </div>
+  <div class="formula">AB∥CD ⇒ △AOB ∽ △COD</div>
+</div>
+
+<!-- 8. 射影定理 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 射影定理（母子型相似）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_08_projection.svg" width="420" height="263" alt="射影定理"></div>
+  <div class="d">
+    Rt△ABC中，AD ⊥ BC，得三个<b>相似三角形</b>。<br>
+    <span class="tag red">∠BAC = 90°</span>
+    <span class="tag green">AD² = BD·CD</span>
+    <span class="tag orange">母子型相似</span>
+  </div>
+  <div class="formula">AD² = BD·CD &nbsp;|&nbsp; AB² = BD·BC &nbsp;|&nbsp; AC² = CD·BC</div>
+</div>
+
+<div class="sec-title">🔷 经典模型</div>
+
+<!-- 9. 半角模型 -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 半角模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_09_half_angle.svg" width="420" height="263" alt="半角模型"></div>
+  <div class="d">
+    含45°角（≦90°之半）的几何问题。<br>
+    <span class="tag red">∠EAF = 45°</span>
+    <span class="tag green">BE + DF = EF</span>
+  </div>
+  <div class="formula">45°半角 &nbsp;|&nbsp; BE + DF = EF</div>
+</div>
+
+<!-- 10. 将军饮马 -->
+<div class="card" style="border-top-color:#2d7d46">
+  <div class="t" style="color:#2d7d46">🔹 将军饮马（最短路径）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_10_jiangjun.svg" width="420" height="263" alt="将军饮马"></div>
+  <div class="d">
+    找点P在直线l上，使<b>AP + BP</b>最小。<br>
+    <span class="tag red">作对称点A'</span>
+    <span class="tag green">AP + BP = A'P + BP 最小值</span>
+  </div>
+  <div class="formula">作A关于l的对称点A'，连接A'B交l于P</div>
+</div>
+
+<!-- 11. 胡不归模型 -->
+<div class="card" style="border-top-color:#e65100">
+  <div class="t" style="color:#e65100">🔹 胡不归模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_11_huguigui.svg" width="420" height="263" alt="胡不归模型"></div>
+  <div class="d">
+    不同速度区域中的<b>最优路径</b>问题。<br>
+    <span class="tag red">沙地速度v'</span>
+    <span class="tag green">驿道速度v</span>
+    <span class="tag orange">sinα = v'/v</span>
+  </div>
+  <div class="formula">sinα = v'/v &nbsp;|&nbsp; T点使路径最短</div>
+</div>
+
+<!-- 12. 阿氏圆 -->
+<div class="card" style="border-top-color:#7b1fa2">
+  <div class="t" style="color:#7b1fa2">🔹 阿波罗尼斯圆（阿氏圆）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_12_apollonius.svg" width="420" height="263" alt="阿氏圆"></div>
+  <div class="d">
+    到两定点距离之比为定值的点P的轨迹。<br>
+    <span class="tag red">PA : PB = k</span>
+    <span class="tag purple">k > 0, k ≠ 1</span>
+  </div>
+  <div class="formula">PA / PB = k &nbsp;|&nbsp; P的轨迹为圆</div>
+</div>
+
+<div class="sec-title">🔷 拓展与中考压轴</div>
+
+<!-- 13. 费马点 -->
+<div class="card" style="border-top-color:#c0392b">
+  <div class="t" style="color:#c0392b">🔹 费马点</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_13_fermat.svg" width="420" height="263" alt="费马点"></div>
+  <div class="d">
+    三角形内到三顶点距离之和最小的点P。<br>
+    <span class="tag red">∠APB = ∠BPC = ∠CPA = 120°</span>
+    <span class="tag">PA + PB + PC 最小</span>
+  </div>
+  <div class="formula">PA+PB+PC最小 &nbsp;|&nbsp; 各角120°</div>
+</div>
+
+<!-- 14. 隐圆模型 -->
+<div class="card" style="border-top-color:#2ecc71">
+  <div class="t" style="color:#2ecc71">🔹 隐圆模型</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_14_hidden_circle.svg" width="420" height="263" alt="隐圆模型"></div>
+  <div class="d">
+    定点定角 → 点P轨迹为<b>隐圆</b>。<br>
+    <span class="tag red">∠APB恒定</span>
+    <span class="tag green">同一弧所对圆周角相等</span>
+  </div>
+  <div class="formula">∠APB = α ⇒ P在固定圆上</div>
+</div>
+
+<!-- 15. 瓜豆原理 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 瓜豆原理（主从联动）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_15_guadou.svg" width="420" height="263" alt="瓜豆原理"></div>
+  <div class="d">
+    主动点P沿圆运动，从动点Q沿<b>相似轨迹</b>运动。<br>
+    <span class="tag red">主动点P</span>
+    <span class="tag green">从动点Q</span>
+    <span class="tag orange">种瓜得瓜</span>
+  </div>
+  <div class="formula">Q = O + k·R(θ)·(P−O) &nbsp;|&nbsp; Q轨迹与P相似</div>
+</div>
+
+<!-- 16. 折叠模型 -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 折叠模型（轴对称变换）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/model_16_fold.svg" width="420" height="263" alt="折叠模型"></div>
+  <div class="d">
+    折叠前后<b>全等</b>，折痕是<b>垂直平分线</b>。<br>
+    <span class="tag red">△AEF ≌ △A'EF</span>
+    <span class="tag green">折痕⊥AA'且平分AA'</span>
+  </div>
+  <div class="formula">折叠 → 全等 &nbsp;|&nbsp; 折痕为垂直平分线</div>
+</div>
+
+</div>
+</body>
+</html>

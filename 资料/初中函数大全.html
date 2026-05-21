@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中函数大全 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:880px;margin:0 auto}
+.back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+.sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
+.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
+.card .d{font-size:13px;color:#555;line-height:1.8}
+.card .d b{color:#333}
+.tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+.svg-wrap{text-align:center;margin:12px 0 6px}
+.svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto}
+.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
+<h1>📈 初中数学 · 函数大全</h1>
+<p class="sub">一次函数 · 正比例函数 · 反比例函数 · 二次函数 · 图像与性质</p>
+
+<!-- 1. 一次函数 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🔹 一次函数 y = kx + b（k≠0）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_01_linear.svg" width="420" height="263" alt="一次函数"></div>
+  <div class="d">
+    <span class="tag red">k>0 上升</span>
+    <span class="tag green">k&lt;0 下降</span>
+    <span class="tag">b>0 交y轴正半轴</span>
+    <span class="tag">b&lt;0 交y轴负半轴</span>
+  </div>
+  <div class="formula">一般式：y = kx + b &nbsp;|&nbsp; k = Δy/Δx &nbsp;|&nbsp; b = y轴截距</div>
+</div>
+
+<!-- 2. 正比例函数 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 正比例函数 y = kx（k≠0）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_02_proportional.svg" width="420" height="263" alt="正比例函数"></div>
+  <div class="d">
+    <span class="tag red">k>0 一三象限</span>
+    <span class="tag green">k&lt;0 二四象限</span>
+    正比例函数是一次函数的特例（b=0），图像必过原点。
+  </div>
+  <div class="formula">y = kx &nbsp;|&nbsp; 过原点 &nbsp;|&nbsp; |k|越大越陡</div>
+</div>
+
+<!-- 3. 一次函数 k 的几何意义 -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 k 的几何意义</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_09_linear_k.svg" width="420" height="263" alt="k的几何意义"></div>
+  <div class="d">
+    <b>k</b>（斜率）决定直线的倾斜程度：<span class="tag">|k|越大</span>直线越陡；<span class="tag">|k|越小</span>直线越平缓。
+    k>0时，从左到右上升；k&lt;0时，从左到右下降。
+  </div>
+</div>
+
+<!-- 4. 反比例函数 -->
+<div class="card" style="border-top-color:#2ecc71">
+  <div class="t" style="color:#2ecc71">🔹 反比例函数 y = k/x（k≠0）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_03_inverse.svg" width="420" height="263" alt="反比例函数"></div>
+  <div class="d">
+    <span class="tag red">k>0 一三象限</span>
+    <span class="tag green">k&lt;0 二四象限</span>
+    图像为双曲线，与坐标轴无限接近但永不相交。
+  </div>
+  <div class="formula">y = k/x &nbsp;|&nbsp; x≠0 &nbsp;|&nbsp; 双曲线</div>
+</div>
+
+<!-- 5. 反比例函数 |k| 的几何意义 -->
+<div class="card" style="border-top-color:#27ae60">
+  <div class="t" style="color:#27ae60">🔹 反比例函数 |k| 的几何意义</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_10_inverse_k.svg" width="420" height="263" alt="|k|几何意义"></div>
+  <div class="d">
+    在双曲线上任取一点，向坐标轴作垂线，围成的矩形面积 = <b>|k|</b>。
+    <span class="tag orange">|k|越大</span> 双曲线离原点越远。
+  </div>
+</div>
+
+<!-- 6. 二次函数 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 二次函数 y = ax² + bx + c（a≠0）</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_04_quadratic.svg" width="420" height="263" alt="二次函数"></div>
+  <div class="d">
+    <span class="tag red">a>0 开口向上</span>
+    <span class="tag green">a&lt;0 开口向下</span>
+    <span class="tag">|a|越大开口越小</span>
+  </div>
+  <div class="formula">一般式：y = ax² + bx + c &nbsp;|&nbsp; 对称轴：x = -b/2a</div>
+</div>
+
+<!-- 7. 顶点式 -->
+<div class="card" style="border-top-color:#8e44ad">
+  <div class="t" style="color:#8e44ad">🔹 二次函数顶点式</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_05_vertex.svg" width="420" height="263" alt="顶点式"></div>
+  <div class="d">
+    顶点式 <b>y = a(x-h)² + k</b>，顶点坐标为 <b>(h, k)</b>。
+    对称轴为直线 <b>x = h</b>。
+  </div>
+  <div class="formula">顶点式：y = a(x-h)² + k &nbsp;|&nbsp; 顶点 (h, k)</div>
+</div>
+
+<!-- 8. 函数图像平移 -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 二次函数图像平移</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_08_translate.svg" width="420" height="263" alt="图像平移"></div>
+  <div class="d">
+    平移规律：<span class="tag">左加右减</span><span class="tag">上加下减</span>
+    <br>y = x² → y = (x-2)²+1：向右平移2个单位，向上平移1个单位。
+  </div>
+</div>
+
+<!-- 9. 判别式 -->
+<div class="card" style="border-top-color:#c0392b">
+  <div class="t" style="color:#c0392b">🔹 判别式 Δ = b² - 4ac</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_07_discriminant.svg" width="420" height="263" alt="判别式"></div>
+  <div class="d">
+    <span class="tag red">Δ > 0</span> 抛物线与x轴有两个交点<br>
+    <span class="tag green">Δ = 0</span> 抛物线与x轴相切（一个交点）<br>
+    <span class="tag orange">Δ < 0</span> 抛物线与x轴无交点
+  </div>
+</div>
+
+<!-- 10. 函数交点 -->
+<div class="card" style="border-top-color:#1a6fc4">
+  <div class="t" style="color:#1a6fc4">🔹 函数交点问题</div>
+  <div class="svg-wrap"><img src="../gen_svg_out/func_06_intersect.svg" width="420" height="263" alt="函数交点"></div>
+  <div class="d">
+    一次函数与二次函数的交点：联立方程 <b>ax² + bx + c = kx + b</b>，解得的x即为交点横坐标。
+    <span class="tag">联立求解</span>
+    <span class="tag">Δ判断交点个数</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

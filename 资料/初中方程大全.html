@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中方程大全 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:880px;margin:0 auto}
+.back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+.sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
+.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
+.card .d{font-size:13px;color:#555;line-height:1.8}
+.card .d b{color:#333}
+.tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
+.formula.sm{font-size:13px;font-weight:400}
+.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
+<h1>✖️ 初中数学 · 方程大全</h1>
+<p class="sub">一元一次 · 二元一次 · 一元二次 · 分式 · 根式 · 绝对值 · 不等式 · 含参</p>
+
+<div class="sec-title">一元一次方程</div>
+
+<!-- 1 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🔹 一元一次方程</div>
+  <div class="d">
+    标准形式：<b>ax + b = 0</b>（a≠0），有且只有<b>一个解</b>。<br>
+    解法步骤：<span class="tag">去括号</span><span class="tag">移项</span><span class="tag">合并同类项</span><span class="tag">系数化为1</span>
+  </div>
+  <div class="formula">ax + b = 0 &nbsp;⇒&nbsp; x = -b/a &nbsp;（a≠0）</div>
+</div>
+
+<!-- 2 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🔹 去分母解法</div>
+  <div class="d">
+    方程中含有分母时，两边同乘各分母的<b>最小公倍数</b>去分母。<br>
+    <span class="tag red">注意</span> 分子是多顶式时要加括号，去分母后勿漏乘不含分母的项。
+  </div>
+  <div class="formula">x/2 + 1 = x/3 − 2 &nbsp;→&nbsp; 3x+6=2x−12 &nbsp;→&nbsp; x = −18</div>
+</div>
+
+<div class="sec-title">二元一次方程组</div>
+
+<!-- 3 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 二元一次方程</div>
+  <div class="d">
+    标准形式：<b>ax + by = c</b>（a,b不同时为0）。<br>
+    有无数组解，每一组解对应平面直角坐标系中<b>一条直线</b>上的点。
+  </div>
+  <div class="formula">ax + by = c &nbsp;|&nbsp; 解为直线上的点</div>
+</div>
+
+<!-- 4 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 代入消元法</div>
+  <div class="d">
+    将一个方程中的某个未知数用含另一个未知数的式子表示，代入另一个方程消元。<br>
+    <span class="tag">变形</span><span class="tag">代入</span><span class="tag">回代</span>
+  </div>
+  <div class="formula">{ x+y=5, x−y=1 } → y=5−x → x−(5−x)=1 → x=3, y=2</div>
+</div>
+
+<!-- 5 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 加减消元法</div>
+  <div class="d">
+    使某一未知数的系数相等或相反，两方程<b>相加或相减</b>消去该未知数。<br>
+    <span class="tag">同号相减</span><span class="tag">异号相加</span>
+  </div>
+  <div class="formula">{ 3x+2y=7, x−2y=5 } → 相加得 4x=12 → x=3, y=−1</div>
+</div>
+
+<!-- 6 -->
+<div class="card" style="border-top-color:#3498db">
+  <div class="t" style="color:#3498db">🔹 三元一次方程组</div>
+  <div class="d">
+    含有三个未知数，每个方程含未知数的项次数为1。<br>
+    <b>消元策略</b>：<span class="tag">三元 → 二元</span><span class="tag">二元 → 一元</span><br>
+    选两个方程消去一个未知数，再选两个方程消去<b>同一个未知数</b>。
+  </div>
+  <div class="formula">三元消元 → 二元一次方程组 → 一元一次方程</div>
+</div>
+
+<div class="sec-title">一元二次方程</div>
+
+<!-- 7 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 一元二次方程·一般式</div>
+  <div class="d">
+    标准形式：<b>ax² + bx + c = 0</b>（a≠0）。<br>
+    核心解法四种：<span class="tag">配方法</span><span class="tag">公式法</span><span class="tag">因式分解法</span><span class="tag">直接开平方法</span>
+  </div>
+  <div class="formula">ax² + bx + c = 0 &nbsp;（a≠0）</div>
+</div>
+
+<!-- 8 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 配方法</div>
+  <div class="d">
+    通过配方将方程化为 <b>(x + m)² = n</b> 的形式，再开平方求解。<br>
+    <span class="tag">移常数项</span><span class="tag">两边加(b/2)²</span><span class="tag">开平方</span>
+  </div>
+  <div class="formula">x²+6x+5=0 → (x+3)²=4 → x+3=±2 → x₁=−1, x₂=−5</div>
+</div>
+
+<!-- 9 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 公式法</div>
+  <div class="d">
+    利用求根公式直接求解，适用于<b>所有</b>一元二次方程。<br>
+    <span class="tag red">Δ = b²−4ac</span><span class="tag green">Δ ≥ 0</span>
+  </div>
+  <div class="formula">x = [−b ± √(b² − 4ac)] / 2a &nbsp;（a≠0, Δ≥0）</div>
+</div>
+
+<!-- 10 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 因式分解法</div>
+  <div class="d">
+    将方程化为 <b>(x − x₁)(x − x₂) = 0</b> 的形式。<br>
+    十字相乘法：<span class="tag">x²+(p+q)x+pq = (x+p)(x+q)</span><br>
+    提取公因式：<span class="tag">ax²+bx = x(ax+b)</span><span class="tag">平方差公式</span>
+  </div>
+  <div class="formula">(x − x₁)(x − x₂) = 0 &nbsp;⇒&nbsp; x = x₁ 或 x = x₂</div>
+</div>
+
+<!-- 11 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 判别式 Δ = b² − 4ac</div>
+  <div class="d">
+    判断一元二次方程根的情况：<br>
+    <span class="tag red">Δ > 0</span> 两个<b>不相等</b>的实数根<br>
+    <span class="tag orange">Δ = 0</span> 两个<b>相等</b>的实数根（重根）<br>
+    <span class="tag">Δ < 0</span> <b>无</b>实数根（有共轭复数根）
+  </div>
+  <div class="formula">Δ = b² − 4ac &nbsp;|&nbsp; Δ≥0 有实根 &nbsp;|&nbsp; Δ<0 无实根</div>
+</div>
+
+<!-- 12 -->
+<div class="card" style="border-top-color:#9b59b6">
+  <div class="t" style="color:#9b59b6">🔹 韦达定理（根与系数关系）</div>
+  <div class="d">
+    若 x₁, x₂ 为 ax²+bx+c=0 的两根，则：<br>
+    <span class="tag red">x₁ + x₂ = −b/a</span><span class="tag green">x₁·x₂ = c/a</span><br>
+    应用：<span class="tag">已知一根求另一根</span><span class="tag">求对称式值</span><span class="tag">构造方程</span>
+  </div>
+  <div class="formula">x₁ + x₂ = −b/a &nbsp;|&nbsp; x₁·x₂ = c/a</div>
+</div>
+
+<div class="sec-title">分式方程</div>
+
+<!-- 13 -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 分式方程·解法</div>
+  <div class="d">
+    分母中含未知数的方程。两边同乘<b>最简公分母</b>化为整式方程求解。<br>
+    <span class="tag red">重要</span> 必须<b>验根</b>！
+  </div>
+  <div class="formula">2/(x+1) = 3/x &nbsp;→&nbsp; 2x = 3(x+1) &nbsp;→&nbsp; x = −3</div>
+</div>
+
+<!-- 14 -->
+<div class="card" style="border-top-color:#e67e22">
+  <div class="t" style="color:#e67e22">🔹 分式方程·增根</div>
+  <div class="d">
+    去分母后整式方程的根若使<b>最简公分母为0</b>，则为<b>增根</b>，舍去。<br>
+    <span class="tag orange">增根不是原方程的根</span><span class="tag red">必须验根！</span>
+  </div>
+  <div class="formula">检验：代入最简公分母 ≠ 0 &nbsp;⇒&nbsp; 是原方程的根</div>
+</div>
+
+<div class="sec-title">根式与绝对值方程</div>
+
+<!-- 15 -->
+<div class="card" style="border-top-color:#2ecc71">
+  <div class="t" style="color:#2ecc71">🔹 根式（无理）方程</div>
+  <div class="d">
+    根号内含有未知数的方程。通过<b>两边平方</b>去根号。<br>
+    <span class="tag red">注意</span> 平方可能产生增根，<b>必须检验</b>。<br>
+    步骤：<span class="tag">移项使根号单独</span><span class="tag">平方</span><span class="tag">解方程</span><span class="tag">验根</span>
+  </div>
+  <div class="formula">√(2x+3) = 5 &nbsp;→&nbsp; 2x+3 = 25 &nbsp;→&nbsp; x = 11</div>
+</div>
+
+<!-- 16 -->
+<div class="card" style="border-top-color:#2ecc71">
+  <div class="t" style="color:#2ecc71">🔹 绝对值方程</div>
+  <div class="d">
+    利用绝对值的定义，<b>分类讨论</b>脱去绝对值符号。<br>
+    <span class="tag">|x| = a (a≥0) ⇒ x = ±a</span><span class="tag">|x−a| = b (b≥0) ⇒ x = a±b</span>
+  </div>
+  <div class="formula">|x − 3| = 5 &nbsp;→&nbsp; x−3 = 5 或 x−3 = −5 &nbsp;→&nbsp; x = 8 或 x = −2</div>
+</div>
+
+<div class="sec-title">换元法与特殊方程</div>
+
+<!-- 17 -->
+<div class="card" style="border-top-color:#7b1fa2">
+  <div class="t" style="color:#7b1fa2">🔹 换元法</div>
+  <div class="d">
+    设辅助未知数 t 简化方程，实现<b>降次</b>或<b>化繁为简</b>。<br>
+    常用于：<span class="tag">高次方程</span><span class="tag">分式方程</span><span class="tag">根式方程</span><span class="tag">对称式</span>
+  </div>
+  <div class="formula">(x²−3x)² − 2(x²−3x) − 8 = 0 &nbsp;→&nbsp; 令 t=x²−3x &nbsp;→&nbsp; t=4 或 t=−2</div>
+</div>
+
+<!-- 18 -->
+<div class="card" style="border-top-color:#7b1fa2">
+  <div class="t" style="color:#7b1fa2">🔹 双二次方程</div>
+  <div class="d">
+    形式：<b>ax⁴ + bx² + c = 0</b>（a≠0）。<br>
+    令 <b>t = x²</b>（t ≥ 0），化为 at² + bt + c = 0，解出 t 后回代求 x。<br>
+    <span class="tag orange">注意 t ≥ 0</span>
+  </div>
+  <div class="formula">x⁴ − 5x² + 4 = 0 &nbsp;→&nbsp; t=x² &nbsp;→&nbsp; t²−5t+4=0 &nbsp;→&nbsp; x=±1, ±2</div>
+</div>
+
+<div class="sec-title">不等式</div>
+
+<!-- 19 -->
+<div class="card" style="border-top-color:#c0392b">
+  <div class="t" style="color:#c0392b">🔹 一元一次不等式</div>
+  <div class="d">
+    解法与一元一次方程类似，但需注意：<br>
+    <span class="tag red">乘除负数要变号！</span>
+    解集在数轴上表示：<span class="tag">空心圈不含等</span><span class="tag">实心圈含等</span>
+  </div>
+  <div class="formula">−2x > 4 &nbsp;→&nbsp; x < −2 &nbsp;（注意变号）</div>
+</div>
+
+<!-- 20 -->
+<div class="card" style="border-top-color:#c0392b">
+  <div class="t" style="color:#c0392b">🔹 不等式组</div>
+  <div class="d">
+    口诀：<br>
+    <span class="tag">同大取大</span><span class="tag">同小取小</span><span class="tag">大小小大中间找</span><span class="tag">大大小小找不到</span><br>
+    解集是各不等式解集的<b>公共部分</b>。
+  </div>
+  <div class="formula">{ x > 2, x ≤ 5 } &nbsp;→&nbsp; 2 < x ≤ 5</div>
+</div>
+
+<!-- 21 -->
+<div class="card" style="border-top-color:#c0392b">
+  <div class="t" style="color:#c0392b">🔹 一元二次不等式</div>
+  <div class="d">
+    结合二次函数图像求解（a>0 时）：<br>
+    <span class="tag">ax²+bx+c > 0 ⇒ x < x₁ 或 x > x₂</span><span class="tag">ax²+bx+c < 0 ⇒ x₁ < x < x₂</span><br>
+    <b>口诀</b>：大于取两边，小于取中间。
+  </div>
+  <div class="formula">x² − x − 6 > 0 &nbsp;→&nbsp; (x−3)(x+2) > 0 &nbsp;→&nbsp; x < −2 或 x > 3</div>
+</div>
+
+<div class="sec-title">含参方程</div>
+
+<!-- 22 -->
+<div class="card" style="border-top-color:#1a6fc4">
+  <div class="t" style="color:#1a6fc4">🔹 含参数方程·分类讨论</div>
+  <div class="d">
+    参数使最高次系数可能为0时，需<b>分类讨论</b>：<br>
+    <span class="tag red">系数=0</span> 降次为一元一次或更低<br>
+    <span class="tag green">系数≠0</span> 按一元二次方程求解，结合Δ讨论根的情况
+  </div>
+  <div class="formula sm">(k−1)x² − 2kx + k + 2 = 0 &nbsp;|&nbsp; k=1: 一元一次 &nbsp;|&nbsp; k≠1: 用Δ讨论</div>
+</div>
+
+</div>
+</body>
+</html>
