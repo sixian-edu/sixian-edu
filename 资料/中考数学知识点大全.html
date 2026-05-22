@@ -7,292 +7,674 @@
 <link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'PingFang SC','Microsoft YaHei','SimSun',serif;
-  color:#2d3436;line-height:1.9;padding:40px;max-width:800px;margin:0 auto;font-size:14px;
-}
-h1{text-align:center;font-size:28px;margin-bottom:6px;padding-bottom:12px;border-bottom:3px double #2d3436}
-.sub{text-align:center;font-size:13px;color:#888;margin-bottom:30px;margin-top:8px}
-h2{
-  font-size:20px;margin:28px 0 12px;padding-left:12px;border-left:4px solid #e74c3c;color:#2d3436;
-}
-h3{font-size:16px;margin:16px 0 8px;color:#444}
-p{margin-bottom:8px;text-indent:2em}
-ul{padding-left:2em;margin-bottom:10px}
-ul li{margin-bottom:3px}
-ol{padding-left:2em;margin-bottom:10px}
-.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:3px;margin:2px}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:880px;margin:0 auto}
+.back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+h1{text-align:center;font-size:28px;color:#c0392b;margin-bottom:4px;letter-spacing:2px}
+.sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
+.sec-title{font-size:19px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #c0392b}
+.kp{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid #c0392b}
+.kp .kp-t{font-weight:700;font-size:16px;color:#c0392b;margin-bottom:8px}
+.kp .kp-d{font-size:14px;color:#444;line-height:1.9}
+.kp .kp-d b{color:#c0392b}
+.tag{display:inline-block;font-size:12px;background:#fef0ef;color:#c0392b;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
 .tag.blue{background:#e3f2fd;color:#1565c0}
 .tag.purple{background:#f3e8ff;color:#7b1fa2}
-.highlight{color:#e74c3c;font-weight:700}
-.formula{
-  text-align:center;padding:6px 16px;margin:8px 0;background:#f9f9f9;
-  border-radius:6px;font-size:15px;font-weight:600;letter-spacing:1px;
-}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
-.grid2 div{background:#fafafa;padding:10px 14px;border-radius:8px;border-left:3px solid #e74c3c}
-.grid2 div .t{font-weight:700;font-size:13px;color:#e74c3c}
-.grid2 div .d{font-size:13px;color:#555;margin-top:2px}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
-td,th{border:1px solid #ddd;padding:6px 8px;text-align:center}
-th{background:#e74c3c;color:#fff;font-weight:600}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#fef0ef;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;text-align:center;color:#c0392b;font-weight:600;font-family:monospace}
+.formula.b{background:#e3f2fd;color:#1565c0}
+.formula.g{background:#e6f7e6;color:#2d7d46}
+.formula.o{background:#fff3e0;color:#e65100}
+.ex{background:#fff5f5;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #c0392b}
+.ex .q{font-size:14px;color:#444;line-height:1.8}
+.ex .q .hl{color:#c0392b;font-weight:700}
+.ex .q .hl2{color:#1565c0;font-weight:700}
+.ex .a{background:#e6f7e6;border-radius:8px;padding:10px 14px;margin:10px 0 0;font-size:14px;color:#2d7d46;line-height:1.8;display:none}
+.ex .a.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#fff;color:#c0392b;border:1px solid #c0392b;border-radius:6px;font-size:12px;cursor:pointer;margin-top:8px}
+.sol-btn:hover{background:#c0392b;color:#fff}
+.hw{background:#f8f9fc;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #7f8c8d}
+.hw .hw-q{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.hw .hw-a{font-size:14px;color:#27ae60;line-height:1.8;display:none}
+.hw .hw-a.show{display:block}
+.step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:8px 12px;background:#f9fbe7;border-radius:8px}
+.step-num{flex:0 0 26px;height:26px;border-radius:50%;background:#c0392b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.step-c{flex:1;font-size:13px;color:#555;line-height:1.7}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
+th{background:#c0392b;color:#fff;font-weight:600}
 tr:nth-child(even){background:#f9f9f9}
-.step{display:flex;align-items:flex-start;gap:8px;margin:6px 0;padding:6px 10px;background:#fef0ef;border-radius:6px}
-.step-num{flex:0 0 22px;height:22px;border-radius:50%;background:#e74c3c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
-.step-c{flex:1;font-size:12px;color:#555;line-height:1.6}
-@media print{
-  body{padding:0}
-  h2{page-break-after:avoid}
-  h3{page-break-after:avoid}
-}
+.tip-box{background:#fff8e1;border-radius:10px;padding:10px 14px;margin:10px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
+.tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#c0392b);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.grid2 div{background:#fafafa;padding:10px 14px;border-radius:8px;border-left:3px solid #c0392b}
+.grid2 div .t{font-weight:700;font-size:13px;color:#c0392b}
+.grid2 div .d{font-size:13px;color:#555;margin-top:2px}
+@media(max-width:640px){h1{font-size:24px}.kp{padding:14px 16px}}
+.share-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:none;align-items:center;justify-content:center}
+.share-overlay.active{display:flex}
+.share-modal{background:#fff;border-radius:16px;padding:32px 28px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,0.2)}
+.share-icon{font-size:40px;margin-bottom:10px}
+.share-modal h3{font-size:18px;color:#333;margin-bottom:6px}
+.share-desc{font-size:13px;color:#999;margin-bottom:16px}
+.share-msg-box{background:#f5f7fa;border-radius:10px;padding:12px;margin-bottom:14px;text-align:left}
+.share-msg-box p{font-size:13px;color:#555;line-height:1.6;word-break:break-all}
+.copy-btn{display:block;width:100%;padding:12px;background:#c0392b;color:#fff;border:none;border-radius:10px;font-size:15px;cursor:pointer;font-weight:600}
+.copy-btn:hover{opacity:.9}
+.copy-btn.copied{background:#27ae60}
+.copy-hint{font-size:12px;color:#aaa;margin-top:8px}
+.shared-btn{display:block;width:100%;padding:12px;background:#eee;color:#999;border:none;border-radius:10px;font-size:15px;cursor:not-allowed;margin-top:10px;font-weight:600}
+.shared-btn:not(:disabled){background:#27ae60;color:#fff;cursor:pointer}
+.shared-btn:not(:disabled):hover{opacity:.9}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
-<div style="max-width:820px;margin:0 auto 8px;padding:0 10px"><a href="../思贤学习站.html" style="color:#888;font-size:13px;text-decoration:none">← 返回首页</a></div>
+<div class="wrap">
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
+<h1>📐 中考数学知识点大全</h1>
+<p class="sub">数与式 · 方程与不等式 · 函数 · 几何 · 统计与概率 · 数学思想 · 应用模型 · 中考全覆盖</p>
 
-<h1>中考数学知识点大全</h1>
-<p class="sub">中考总复习 · 系统梳理 · 模型归纳 · 济南考区适用</p>
+<!-- ═══════════ 一、数与式 ═══════════ -->
+<div class="sec-title">一、数与式</div>
 
-<!-- ════════════════════════════════════════ -->
-<h2>一、数与式</h2>
-
-<h3>1. 实数</h3>
-<p><span class="highlight">分类</span>：按定义分有理数（整数、分数）和无理数（无限不循环小数如 π、√2、√3、0.101001…）。按正负分正数、零、负数。</p>
-<p><span class="highlight">数轴</span>：规定了原点、正方向和单位长度的直线。实数与数轴上的点一一对应。右边的数总比左边的大。</p>
-<p><span class="highlight">相反数</span>：只有符号不同的两个数互为相反数。0 的相反数是 0。a+b=0 ⇔ a、b 互为相反数。</p>
-<p><span class="highlight">绝对值</span>：数轴上表示数 a 的点与原点的距离，记作 |a|。性质：|a|≥0；|a|=a（a≥0），|a|=-a（a&lt;0）。</p>
-<p><span class="highlight">科学记数法</span>：a×10ⁿ（1≤|a|&lt;10）。<span class="tag blue">大数 n=整数位数-1</span> <span class="tag orange">小数 n=第一个非零数前零的个数的相反数</span></p>
-<p><span class="highlight">比大小方法</span>：数轴比较法、差值法（a-b>0→a>b）、平方法（√a与√b→比较a与b）、中间量法。</p>
-<p><span class="highlight">常见无理数估算</span>：√2≈1.414 &nbsp; √3≈1.732 &nbsp; √5≈2.236 &nbsp; π≈3.1416 &nbsp; √10≈3.162</p>
-
-<h3>2. 实数的运算</h3>
-<p><span class="highlight">运算律</span>：加法交换律 a+b=b+a；加法结合律 (a+b)+c=a+(b+c)；乘法交换律 ab=ba；乘法结合律 (ab)c=a(bc)；乘法分配律 a(b+c)=ab+ac。</p>
-<p><span class="highlight">乘方与开方</span>：aⁿ 表示 n 个 a 相乘。a² 的平方根为 ±√a（a≥0），算术平方根为 √a（a≥0）。立方根 ∛a。</p>
-<p><span class="highlight">混合运算顺序</span>：先乘方开方，再乘除，后加减；有括号先算括号内。同级运算从左到右。</p>
-
-<h3>3. 整式与因式分解</h3>
-<p><span class="highlight">整式运算</span>：合并同类项（系数相加，字母及指数不变）；去括号法则（括号前是+"不变号"，是"﹣"全变号）。</p>
-<p><span class="highlight">幂的运算法则</span>：</p>
-<div class="grid2">
-  <div><span class="t">同底数幂乘除</span><div class="d">aᵐ·aⁿ=aᵐ⁺ⁿ &nbsp; aᵐ÷aⁿ=aᵐ⁻ⁿ</div></div>
-  <div><span class="t">幂的乘方/积的乘方</span><div class="d">(aᵐ)ⁿ=aᵐⁿ &nbsp; (ab)ⁿ=aⁿbⁿ</div></div>
-  <div><span class="t">零指数/负指数</span><div class="d">a⁰=1(a≠0) &nbsp; a⁻ⁿ=1/aⁿ</div></div>
+<div class="kp">
+  <div class="kp-t">🔹 实数</div>
+  <div class="kp-d">
+    <b>分类</b>：按定义分有理数（整数、分数）和无理数（无限不循环小数如 π、√2、√3、0.101001…）。按正负分正数、零、负数。<br>
+    <b>数轴</b>：规定了原点、正方向和单位长度的直线。实数与数轴上的点一一对应。<br>
+    <b>相反数</b>：只有符号不同的两个数互为相反数。0 的相反数是 0。a+b=0 ⇔ a、b 互为相反数。<br>
+    <b>绝对值</b>：|a|≥0；|a|=a（a≥0），|a|=-a（a&lt;0）。<br>
+    <b>科学记数法</b>：a×10ⁿ（1≤|a|&lt;10）。
+    <span class="tag blue">大数 n=整数位数-1</span>
+    <span class="tag orange">小数 n=第一个非零数前零的个数的相反数</span><br>
+    <b>比大小</b>：数轴比较法、差值法、平方法、中间量法。<br>
+    <b>常见无理数估算</b>：√2≈1.414 &nbsp; √3≈1.732 &nbsp; √5≈2.236 &nbsp; π≈3.1416 &nbsp; √10≈3.162
+  </div>
 </div>
-<p><span class="highlight">乘法公式</span>：</p>
-<div class="grid2">
-  <div><span class="t">平方差公式</span><div class="d">(a+b)(a-b)=a²-b²</div></div>
-  <div><span class="t">完全平方公式</span><div class="d">(a±b)²=a²±2ab+b²</div></div>
-  <div><span class="t">立方和/差</span><div class="d">(a±b)(a²∓ab+b²)=a³±b³</div></div>
+
+<div class="kp">
+  <div class="kp-t">🔹 实数的运算</div>
+  <div class="kp-d">
+    <b>运算律</b>：加法交换律 a+b=b+a；加法结合律 (a+b)+c=a+(b+c)；乘法分配律 a(b+c)=ab+ac。<br>
+    <b>乘方与开方</b>：aⁿ 表示 n 个 a 相乘。a² 的平方根为 ±√a（a≥0），算术平方根为 √a（a≥0）。立方根 ∛a。<br>
+    <b>混合运算顺序</b>：先乘方开方，再乘除，后加减；有括号先算括号内。
+  </div>
 </div>
-<p><span class="highlight">因式分解步骤</span>：一提公因式 → 二用公式 → 三十字相乘/分组<br>
-十字相乘：x²+(p+q)x+pq=(x+p)(x+q)</p>
 
-<h3>4. 分式与二次根式</h3>
-<p><span class="highlight">分式</span>：分母含字母的式子。分母≠0 时有意义。分式值为0 ⇔ 分子=0 且分母≠0。基本性质：分子分母同乘（除）非零整式，值不变。</p>
-<p><span class="highlight">二次根式性质</span>：(√a)²=a（a≥0）；√a²=|a|；√(ab)=√a·√b（a,b≥0）；√(a/b)=√a/√b（a≥0,b>0）。</p>
-<p><span class="tag red">最简二次根式条件</span>：被开方数不含分母、不含开得尽方的因数因式。</p>
-<p><span class="highlight">分母有理化</span>：1/√a=√a/a &nbsp; &nbsp; 1/(√a+√b)=(√a-√b)/(a-b)</p>
-
-<!-- ════════════════════════════════════════ -->
-<h2>二、方程与不等式</h2>
-
-<h3>1. 一元一次方程</h3>
-<p>形式 ax+b=0（a≠0），解 x=-b/a。<br>
-解法步骤：<span class="tag">去分母</span>→<span class="tag orange">去括号</span>→<span class="tag blue">移项</span>→<span class="tag green">合并同类项</span>→<span class="tag red">系数化为1</span><br>
-<span class="tag red">去分母每一项都要乘最小公倍数；移项要变号</span></p>
-<p>应用题六步：审题→设未知数→列方程→解方程→检验→作答。</p>
-
-<h3>2. 二元一次方程组</h3>
-<p><span class="highlight">代入消元法</span>：将一式变形成 y=... 代入另一式。<span class="highlight">加减消元法</span>：两式加减消去一个未知数。</p>
-<p>三元一次方程组：逐步消元，先化为二元一次方程组。</p>
-
-<h3>3. 分式方程</h3>
-<p>去分母（乘最简公分母）化为整式方程。⭐<span class="highlight">必验根</span>：使最简公分母=0 的根为增根，舍去。</p>
-
-<h3>4. 一元二次方程</h3>
-<p>一般形式 ax²+bx+c=0（a≠0）。</p>
-<p><span class="highlight">解法</span>：<span class="tag blue">直接开平方</span> <span class="tag green">配方法</span> <span class="tag orange">公式法</span> <span class="tag">因式分解法（十字相乘）</span></p>
-<p><span class="highlight">求根公式</span>：<span class="formula">x = [-b ± √(b²-4ac)] / (2a)</span></p>
-<p><span class="highlight">判别式</span> Δ=b²-4ac：<span class="tag green">Δ>0 两个不等实根</span> <span class="tag orange">Δ=0 两个相等实根</span> <span class="tag red">Δ<0 无实根</span></p>
-<p><span class="highlight">韦达定理</span>：x₁+x₂=-b/a，x₁x₂=c/a（Δ≥0 时适用）。应用：<span class="tag">已知一根求另一根</span><span class="tag blue">求对称式值</span></p>
-
-<h3>5. 不等式（组）</h3>
-<p><span class="highlight">基本性质</span>：加减同一数不等号方向不变；乘除正数方向不变；乘除负数方向<span class="highlight">改变</span>。</p>
-<p><span class="highlight">解集在数轴表示</span>：≥或≤用实心点，>或<用空心圈。</p>
-<p><span class="tag blue">口诀：同大取大、同小取小、大小小大中间找、大大小小无解</span></p>
-
-<!-- ════════════════════════════════════════ -->
-<h2>三、函数</h2>
-
-<h3>1. 平面直角坐标系</h3>
-<p>象限符号：<span class="tag">一(+,+)</span> <span class="tag orange">二(-,+)</span> <span class="tag green">三(-,-)</span> <span class="tag blue">四(+,-)</span></p>
-<p><span class="highlight">对称规律</span>：<span class="tag">关于x轴(x,y)→(x,-y)</span> <span class="tag orange">关于y轴(x,y)→(-x,y)</span> <span class="tag purple">关于原点(x,y)→(-x,-y)</span></p>
-<p>两点间距离 d=√[(x₁-x₂)²+(y₁-y₂)²]，中点坐标((x₁+x₂)/2,(y₁+y₂)/2)。</p>
-
-<h3>2. 一次函数 y=kx+b（k≠0）</h3>
-<div class="grid2">
-  <div><span class="t">k>0</span><div class="d">过一、三象限，y 随 x 增大而增大（↗）</div></div>
-  <div><span class="t">k<0</span><div class="d">过二、四象限，y 随 x 增大而减小（↘）</div></div>
-  <div><span class="t">b>0</span><div class="d">与 y 轴正半轴相交</div></div>
-  <div><span class="t">b<0</span><div class="d">与 y 轴负半轴相交</div></div>
+<div class="kp">
+  <div class="kp-t">🔹 整式与因式分解</div>
+  <div class="kp-d">
+    <b>整式运算</b>：合并同类项（系数相加，字母及指数不变）；去括号法则（括号前是"+"不变号，是"﹣"全变号）。<br>
+    <b>幂的运算法则</b>：aᵐ·aⁿ=aᵐ⁺ⁿ &nbsp; aᵐ÷aⁿ=aᵐ⁻ⁿ &nbsp; (aᵐ)ⁿ=aᵐⁿ &nbsp; (ab)ⁿ=aⁿbⁿ &nbsp; a⁰=1(a≠0) &nbsp; a⁻ⁿ=1/aⁿ<br>
+    <b>乘法公式</b>：
+  </div>
+  <div class="formula">(a+b)(a-b)=a²-b² &nbsp;|&nbsp; (a±b)²=a²±2ab+b² &nbsp;|&nbsp; (a±b)(a²∓ab+b²)=a³±b³</div>
+  <div class="kp-d">
+    <b>因式分解步骤</b>：一提公因式 → 二用公式 → 三十字相乘/分组<br>
+    十字相乘：x²+(p+q)x+pq=(x+p)(x+q)
+  </div>
 </div>
-<p>|k|越大→直线越陡。正比例函数 y=kx（b=0），图象过原点。求解析式：待定系数法（两点）。<br>
-平移：左加右减（x），上加下减（y）。</p>
 
-<h3>3. 反比例函数 y=k/x（k≠0）</h3>
-<p>图象是双曲线，与坐标轴无交点。</p>
-<div class="grid2">
-  <div><span class="t">k>0</span><div class="d">一、三象限，每个象限内 y 随 x 增大而减小</div></div>
-  <div><span class="t">k<0</span><div class="d">二、四象限，每个象限内 y 随 x 增大而增大</div></div>
+<div class="kp">
+  <div class="kp-t">🔹 分式与二次根式</div>
+  <div class="kp-d">
+    <b>分式</b>：分母含字母的式子。分母≠0 时有意义。分式值为0 ⇔ 分子=0 且分母≠0。<br>
+    <b>二次根式性质</b>：(√a)²=a（a≥0）；√a²=|a|；√(ab)=√a·√b（a,b≥0）；√(a/b)=√a/√b（a≥0,b>0）。<br>
+    <span class="tag red">最简二次根式</span>：被开方数不含分母、不含开得尽方的因数因式。<br>
+    <b>分母有理化</b>：1/√a=√a/a &nbsp; 1/(√a+√b)=(√a-√b)/(a-b)
+  </div>
 </div>
-<p>|k|的几何意义：过双曲线上任一点作 x、y 轴垂线，矩形面积为 |k|。<br>
-<span class="tag orange">易错：必须强调"在每个象限内"</span></p>
 
-<h3>4. 二次函数 y=ax²+bx+c（a≠0）</h3>
-<p><span class="highlight">三种形式</span>：一般式 y=ax²+bx+c；顶点式 y=a(x-h)²+k，顶点(h,k)；交点式 y=a(x-x₁)(x-x₂)。</p>
-<p><span class="highlight">对称轴</span>：x=-b/(2a)。顶点坐标 (-b/(2a), (4ac-b²)/(4a))。</p>
-<div class="grid2">
-  <div><span class="t">a>0</span><div class="d">开口向上，有最小值</div></div>
-  <div><span class="t">a<0</span><div class="d">开口向下，有最大值</div></div>
-  <div><span class="t">|a|越大</span><div class="d">开口越小</div></div>
+<div class="ex">
+  <div class="q"><b>例题 1</b>：计算 |√3-2| + (π-3.14)⁰ - √9 + (-½)⁻²<br>
+  <span class="hl">分析：</span>绝对值、零指数、算术平方根、负整数指数幂的综合运算。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">|√3-2| = 2-√3（因为√3≈1.732&lt;2）；(π-3.14)⁰=1；√9=3；(-½)⁻²=4。原式 = (2-√3)+1-3+4 = <b>4-√3</b></div>
 </div>
-<p>与 y 轴交点：(0,c)。与 x 轴交点：Δ>0 两个交点；Δ=0 一个交点；Δ<0 无交点。</p>
-<p><span class="highlight">平移</span>：y=ax² → 左加右减 → y=a(x-h)² → 上加下减 → y=a(x-h)²+k</p>
-<p><span class="highlight">应用</span>：面积最大、利润最大（求顶点得最值）。<br>
-系数符号判断：开口定a，对称轴与y轴相对位置定a、b同号/异号，与y轴交点定c。</p>
 
-<!-- ════════════════════════════════════════ -->
-<h2>四、几何</h2>
-
-<h3>1. 线与角</h3>
-<p><span class="highlight">平行线性质与判定</span>：同位角相等⇔两直线平行；内错角相等⇔两直线平行；同旁内角互补⇔两直线平行。</p>
-<p><span class="highlight">垂线</span>：过一点有且只有一条直线与已知直线垂直。垂线段最短。</p>
-<p><span class="highlight">角平分线</span>：角平分线上的点到角两边距离相等。到角两边距离相等的点在角平分线上。</p>
-
-<h3>2. 三角形</h3>
-<p><span class="highlight">内角和</span>：180°。外角等于不相邻两内角和。三边关系：任意两边之和>第三边，之差<第三边。</p>
-<p><span class="highlight">重要线段</span>：<span class="tag blue">中线</span>等分面积，重心(2:1) <span class="tag green">高线</span>垂心 <span class="tag orange">角平分线</span>内心 <span class="tag purple">中位线</span>平行且等于第三边一半</p>
-<p><span class="highlight">等腰三角形</span>：等边对等角、三线合一。<span class="highlight">等边三角形</span>：三边相等、三角60°。<span class="highlight">直角三角形</span>：勾股定理 a²+b²=c²；30°角对边=斜边一半；斜边中线=斜边一半。</p>
-<p><span class="highlight">全等判定</span>：SSS、SAS、ASA、AAS、HL（Rt△）。<span class="tag green">倍长中线、截长补短、旋转构造</span>是常用辅助线。</p>
-<p><span class="highlight">相似判定</span>：<span class="tag">两角对应相等AA</span> <span class="tag orange">两边成比例且夹角相等SAS</span> <span class="tag blue">三边成比例SSS</span></p>
-<p><span class="highlight">相似性质</span>：面积比=相似比的平方，周长比=相似比。<span class="tag red">A字型与8字型</span>是两大基本相似模型。<span class="tag purple">射影定理</span>：直角△斜边上的高→三个相似直角△。</p>
-
-<h3>3. 四边形</h3>
-<table>
-<tr><th>图形</th><th>边</th><th>角</th><th>对角线</th><th>对称性</th></tr>
-<tr><td>平行四边形</td><td>对边平行且相等</td><td>对角相等</td><td>互相平分</td><td>中心对称</td></tr>
-<tr><td>矩形</td><td>对边平行且相等</td><td>四个90°</td><td>相等且平分</td><td>轴+中心</td></tr>
-<tr><td>菱形</td><td>四边相等</td><td>对角相等</td><td>垂直平分</td><td>轴+中心</td></tr>
-<tr><td>正方形</td><td>四边相等</td><td>四个90°</td><td>相等垂直平分</td><td>轴+中心</td></tr>
-</table>
-<p><span class="highlight">判定脉络</span>：<span class="tag blue">平行四边形→矩形：对角线相等或一角90°</span> <span class="tag green">平行四边形→菱形：对角线垂直或邻边相等</span></p>
-<p>三角形中位线平行第三边且等于第三边一半。梯形中位线=(上底+下底)/2。<br>
-n 边形内角和=(n-2)×180°，外角和=360°。<span class="tag purple">中点四边形：任意四边形中点连成平行四边形</span></p>
-
-<h3>4. 圆</h3>
-<p><span class="highlight">垂径定理</span>：过圆心垂直弦的直径平分弦及所对弧。</p>
-<p><span class="highlight">圆周角</span>：同弧所对圆周角=圆心角一半，直径所对圆周角=90°。同弧所对圆周角相等。</p>
-<p><span class="highlight">位置关系</span>：点与圆（d&lt;r在内、d=r在上、d&gt;r在外）。直线与圆（d&lt;r相交、d=r相切、d&gt;r相离）。</p>
-<p><span class="highlight">切线的判定与性质</span>：过半径外端且垂直于半径的直线是切线。切线垂直于过切点的半径。切线长定理：圆外一点引两条切线长相等。</p>
-<p><span class="highlight">圆内接四边形</span>：对角互补 + 外角=内对角。</p>
-<p><span class="highlight">弧长与扇形</span>：弧长 l=nπr/180。扇形面积 S=nπr²/360=lr/2。圆锥侧面积 S=πrl（l 为母线）。</p>
-
-<h3>5. 解直角三角形</h3>
-<p><span class="highlight">锐角三角函数</span>：<span class="formula">sinA=对边/斜边 &nbsp; cosA=邻边/斜边 &nbsp; tanA=对边/邻边</span></p>
-<table>
-<tr><th>角度</th><th>30°</th><th>45°</th><th>60°</th></tr>
-<tr><td>sin</td><td>½</td><td>√2/2</td><td>√3/2</td></tr>
-<tr><td>cos</td><td>√3/2</td><td>√2/2</td><td>½</td></tr>
-<tr><td>tan</td><td>√3/3</td><td>1</td><td>√3</td></tr>
-</table>
-<p><span class="highlight">应用模型</span>：<span class="tag blue">仰角/俯角</span> <span class="tag orange">坡度 i=tanα</span> <span class="tag green">方位角</span> <span class="tag red">影子测高</span></p>
-
-<h3>6. 图形的变换</h3>
-<p><span class="highlight">平移</span>：形状大小不变，各点平移方向距离相同。轴对称（翻折）：对应点连线被对称轴垂直平分。旋转：对应点到旋转中心距离相等。中心对称：旋转180°，对应点连线过对称中心且被平分。</p>
-<p><span class="highlight">位似</span>：对应点连线交于一点，位似比=相似比。位似图形面积比=位似比的平方。</p>
-
-<!-- ════════════════════════════════════════ -->
-<h2>五、统计与概率</h2>
-
-<h3>1. 统计</h3>
-<p><span class="highlight">数据的收集</span>：普查（全面调查）与抽样调查（总体、个体、样本、样本容量）。</p>
-<p><span class="highlight">统计图</span>：<span class="tag">条形图→比较数量</span> <span class="tag orange">折线图→看变化趋势</span> <span class="tag blue">扇形图→看占比</span></p>
-<p><span class="highlight">集中趋势</span>：平均数（易受极端值影响）、中位数（不受极端值影响）、众数（可能多个）。</p>
-<p><span class="highlight">离散程度</span>：极差=最大值-最小值。方差 s²=[(x₁-x̄)²+…+(xₙ-x̄)²]/n <span class="tag red">方差越小→越稳定</span></p>
-
-<h3>2. 概率</h3>
-<p><span class="highlight">概率公式</span>：<span class="formula">P(A)=事件A发生的结果数/所有等可能结果总数</span></p>
-<p>取值范围 0≤P(A)≤1。P=0 为不可能事件，P=1 为必然事件。</p>
-<p>两步用列表法，三步及以上用树状图。<span class="tag blue">放回：每次情况相同</span> <span class="tag orange">不放回：总数递减</span></p>
-
-<!-- ════════════════════════════════════════ -->
-<h2>六、常用数学思想方法</h2>
-<p><span class="highlight">数形结合</span>：将代数问题转化为几何图形，或将几何问题用代数方法解决。</p>
-<p><span class="highlight">分类讨论</span>：当问题有多种可能时，分情况讨论，不重不漏。</p>
-<p><span class="highlight">整体代入</span>：将一个代数式视为整体代入求值，简化计算。</p>
-<p><span class="highlight">转化思想</span>：将未知转化为已知，将复杂转化为简单。</p>
-<p><span class="highlight">方程思想</span>：设未知数列方程，通过解方程解决问题。</p>
-<p><span class="highlight">函数思想</span>：建立函数关系，利用函数性质解决问题（最值、增减性等）。</p>
-<p><span class="highlight">建模思想</span>：将实际问题抽象为数学问题（方程模型、函数模型、几何模型等）。</p>
-
-<!-- ════════════════════════════════════════ -->
-<h2>七、应用题模型（中考重点）</h2>
-
-<h3>1. 行程问题</h3>
-<p><span class="highlight">基本公式</span>：路程=速度×时间（s=vt）</p>
-<div class="grid2">
-  <div><span class="t">相遇问题</span><div class="d">甲路程+乙路程=总路程，时间相等</div></div>
-  <div><span class="t">追及问题</span><div class="d">速度差×时间=初始距离差</div></div>
-  <div><span class="t">环形跑道</span><div class="d">同向：路程差=一圈；反向：路程和=一圈</div></div>
-  <div><span class="t">流水行船</span><div class="d">顺水=静水+水速；逆水=静水-水速</div></div>
-  <div><span class="t">火车过桥</span><div class="d">总路程=桥长+车长，时间=(桥长+车长)/速度</div></div>
+<div class="ex">
+  <div class="q"><b>例题 2</b>：分解因式：① x³-4x &nbsp; ② x²-2x-15 &nbsp; ③ a²-b²+2a+1<br>
+  <span class="hl">分析：</span>先提公因式，再用公式；十字相乘；分组分解。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">① x³-4x = x(x²-4) = <b>x(x+2)(x-2)</b><br>② x²-2x-15 = <b>(x-5)(x+3)</b><br>③ a²-b²+2a+1 = (a²+2a+1)-b² = (a+1)²-b² = <b>(a+1+b)(a+1-b)</b></div>
 </div>
-<p><span class="tag red">易错：火车过桥要算车长，人过桥不算车长</span></p>
 
-<h3>2. 工程与效率问题</h3>
-<p><span class="highlight">基本公式</span>：工作量=工作效率×工作时间。常设整个工程为单位"1"，效率=1/完成时间。</p>
-<p>合作时间 = 1 / (1/t₁ + 1/t₂ + …)。<span class="tag orange">注水放水：进水管效率为正，出水管效率为负</span></p>
+<div class="hw">
+  <div class="hw-q">练习 1：计算 √12 + |√3-2| + (½)⁻¹ - (π-2024)⁰</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">√12=2√3；|√3-2|=2-√3；(½)⁻¹=2；(π-2024)⁰=1。原式 = 2√3+(2-√3)+2-1 = <b>√3+3</b></div>
+</div>
 
-<h3>3. 利润与经济问题</h3>
-<p><span class="highlight">核心公式</span>：<span class="tag blue">利润=售价-进价</span> <span class="tag orange">利润率=利润/进价×100%</span> <span class="tag green">售价=进价×(1+利润率)</span></p>
-<p><span class="highlight">打折</span>：实际售价=标价×折扣/10（八折=标价×0.8）</p>
-<p><span class="highlight">增长率</span>：连续两次增长（降低）a(1±x)²=b</p>
-<p><span class="highlight">利润最值</span>：利润=单件利润×销量→二次函数求顶点→最大利润</p>
+<div class="hw">
+  <div class="hw-q">练习 2：当 x 为何值时，分式 (x²-4)/(x-2) 的值为 0？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">分子=0 ⇒ x²-4=0 ⇒ x=±2；分母≠0 ⇒ x≠2。所以 <b>x=-2</b> 时分式值为0。</div>
+</div>
 
-<h3>4. 方案设计与优化</h3>
-<p>常见类型：运输调配、购买选择、租车租房、生产安排。</p>
-<p><span class="highlight">建模步骤</span>：设未知数→列不等式组→确定取值范围→列函数关系式→求最值→验证方案</p>
-<p><span class="tag orange">结果要符合实际意义（人数为整数、车辆数为非负整数等）</span></p>
+<!-- ═══════════ 二、方程与不等式 ═══════════ -->
+<div class="sec-title">二、方程与不等式</div>
 
-<h3>5. 几何应用问题</h3>
-<p><span class="tag blue">相似三角形测高</span>：利用影子/标杆/镜子构造相似三角形</p>
-<p><span class="tag green">勾股定理应用</span>：最短路径（展开图）、梯子滑动、折竹问题</p>
-<p><span class="tag orange">动态几何</span>：点在线段上运动→分类讨论→列方程/函数</p>
-<p><span class="tag red">面积问题</span>：花坛设计、篱笆围栏→二次函数最值</p>
+<div class="kp">
+  <div class="kp-t">🔹 一元一次方程</div>
+  <div class="kp-d">
+    形式 ax+b=0（a≠0），解 x=-b/a。<br>
+    解法步骤：<span class="tag">去分母</span>→<span class="tag orange">去括号</span>→<span class="tag blue">移项</span>→<span class="tag green">合并同类项</span>→<span class="tag red">系数化为1</span><br>
+    <span class="tag red">去分母每一项都要乘最小公倍数；移项要变号</span><br>
+    应用题六步：审题→设未知数→列方程→解方程→检验→作答。
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 二元一次方程组</div>
+  <div class="kp-d">
+    <b>代入消元法</b>：将一式变形成 y=... 代入另一式。<br>
+    <b>加减消元法</b>：两式加减消去一个未知数。<br>
+    三元一次方程组：逐步消元，先化为二元一次方程组。
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 分式方程</div>
+  <div class="kp-d">
+    去分母（乘最简公分母）化为整式方程。<span class="tag red">必验根</span>：使最简公分母=0 的根为增根，舍去。
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 一元二次方程</div>
+  <div class="kp-d">
+    一般形式 ax²+bx+c=0（a≠0）。<br>
+    <b>解法</b>：<span class="tag blue">直接开平方</span> <span class="tag green">配方法</span> <span class="tag orange">公式法</span> <span class="tag">因式分解法</span>
+  </div>
+  <div class="formula">x = [-b ± √(b²-4ac)] / (2a) &nbsp;|&nbsp; Δ = b²-4ac</div>
+  <div class="kp-d">
+    <b>判别式</b>：<span class="tag green">Δ>0 两个不等实根</span> <span class="tag orange">Δ=0 两个相等实根</span> <span class="tag red">Δ&lt;0 无实根</span><br>
+    <b>韦达定理</b>：x₁+x₂=-b/a，x₁x₂=c/a（Δ≥0 时适用）。
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 不等式（组）</div>
+  <div class="kp-d">
+    <b>基本性质</b>：加减同一数不等号方向不变；乘除正数方向不变；乘除负数方向<span class="tag red">改变</span>。<br>
+    解集在数轴表示：≥或≤用实心点，>或&lt;用空心圈。<br>
+    <span class="tag blue">口诀：同大取大、同小取小、大小小大中间找、大大小小无解</span>
+  </div>
+</div>
+
+<div class="chart-wrap"><img src="charts/jun_func_quadratic.svg" alt="二次函数图像"></div>
+
+<div class="ex">
+  <div class="q"><b>例题 3</b>：解方程 x²-5x+6=0<br>
+  <span class="hl">分析：</span>可用十字相乘因式分解。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">x²-5x+6 = (x-2)(x-3)=0，所以 x₁=<b>2</b>，x₂=<b>3</b>。也可用公式法验证：Δ=25-24=1，x=(5±1)/2。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 4</b>：关于 x 的方程 x²-2x+m=0 有实数根，求 m 的取值范围。<br>
+  <span class="hl">分析：</span>判别式 Δ≥0 时有实数根。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">Δ = (-2)²-4×1×m = 4-4m ≥ 0 ⇒ m ≤ <b>1</b>。注意：一元二次方程有实数根时 Δ≥0，而非 Δ>0。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 3：解不等式组 { 2x-1>5, 3x+2≤8 }</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">2x-1>5 ⇒ x>3；3x+2≤8 ⇒ x≤2。无交集 ⇒ <b>无解</b>（大大小小无解）</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 4：已知 x₁、x₂ 是方程 x²-3x+1=0 的两根，求 x₁²+x₂² 的值。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">韦达定理：x₁+x₂=3，x₁x₂=1。x₁²+x₂² = (x₁+x₂)²-2x₁x₂ = 9-2 = <b>7</b></div>
+</div>
+
+<!-- ═══════════ 三、函数 ═══════════ -->
+<div class="sec-title">三、函数</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 平面直角坐标系</div>
+  <div class="kp-d">
+    象限符号：<span class="tag">一(+,+)</span> <span class="tag orange">二(-,+)</span> <span class="tag green">三(-,-)</span> <span class="tag blue">四(+,-)</span><br>
+    <b>对称规律</b>：<span class="tag">关于x轴(x,y)→(x,-y)</span> <span class="tag orange">关于y轴(x,y)→(-x,y)</span> <span class="tag purple">关于原点(x,y)→(-x,-y)</span><br>
+    两点间距离 d=√[(x₁-x₂)²+(y₁-y₂)²]，中点坐标((x₁+x₂)/2, (y₁+y₂)/2)。
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_func_coord.svg" alt="平面直角坐标系"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 一次函数 y=kx+b（k≠0）</div>
+  <div class="kp-d">
+    <div class="grid2">
+      <div><span class="t">k>0</span><div class="d">过一、三象限，y 随 x 增大而增大（↗）</div></div>
+      <div><span class="t">k&lt;0</span><div class="d">过二、四象限，y 随 x 增大而减小（↘）</div></div>
+      <div><span class="t">b>0</span><div class="d">与 y 轴正半轴相交</div></div>
+      <div><span class="t">b&lt;0</span><div class="d">与 y 轴负半轴相交</div></div>
+    </div>
+    |k|越大→直线越陡。正比例函数 y=kx（b=0），图象过原点。求解析式：待定系数法（两点）。平移：左加右减（x），上加下减（y）。
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_func_linear.svg" alt="一次函数图像"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 反比例函数 y=k/x（k≠0）</div>
+  <div class="kp-d">
+    图象是双曲线，与坐标轴无交点。|k|的几何意义：过双曲线上任一点作 x、y 轴垂线，矩形面积为 |k|。
+    <div class="grid2">
+      <div><span class="t">k>0</span><div class="d">一、三象限，每个象限内 y 随 x 增大而减小</div></div>
+      <div><span class="t">k&lt;0</span><div class="d">二、四象限，每个象限内 y 随 x 增大而增大</div></div>
+    </div>
+    <span class="tag orange">易错：必须强调"在每个象限内"</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_func_inverse.svg" alt="反比例函数图像"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 二次函数 y=ax²+bx+c（a≠0）</div>
+  <div class="kp-d">
+    <b>三种形式</b>：一般式 y=ax²+bx+c；顶点式 y=a(x-h)²+k；交点式 y=a(x-x₁)(x-x₂)。<br>
+    <b>对称轴</b>：x=-b/(2a)。顶点坐标 (-b/(2a), (4ac-b²)/(4a))。
+    <div class="grid2">
+      <div><span class="t">a>0</span><div class="d">开口向上，有最小值</div></div>
+      <div><span class="t">a&lt;0</span><div class="d">开口向下，有最大值</div></div>
+      <div><span class="t">|a|越大</span><div class="d">开口越小</div></div>
+    </div>
+    与 y 轴交点：(0,c)。与 x 轴交点：Δ>0 两个交点；Δ=0 一个交点；Δ&lt;0 无交点。<br>
+    <b>平移</b>：y=ax² → 左加右减 → y=a(x-h)² → 上加下减 → y=a(x-h)²+k
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_func_quadratic.svg" alt="二次函数图像"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 函数图像变换</div>
+  <div class="chart-wrap"><img src="charts/jun_func_shift.svg" alt="函数图像平移"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 锐角三角函数</div>
+  <div class="formula">sinA=对边/斜边 &nbsp; cosA=邻边/斜边 &nbsp; tanA=对边/邻边</div>
+  <table>
+    <tr><th>角度</th><th>30°</th><th>45°</th><th>60°</th></tr>
+    <tr><td>sin</td><td>½</td><td>√2/2</td><td>√3/2</td></tr>
+    <tr><td>cos</td><td>√3/2</td><td>√2/2</td><td>½</td></tr>
+    <tr><td>tan</td><td>√3/3</td><td>1</td><td>√3</td></tr>
+  </table>
+  <div class="chart-wrap"><img src="charts/math_trig.svg" alt="三角函数图像"></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 5</b>：一次函数 y=2x+b 过点 (1,3)，求 b 的值及与 x 轴的交点坐标。<br>
+  <span class="hl">分析：</span>代入点求 b，令 y=0 求与 x 轴交点。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">代入 (1,3)：3=2×1+b ⇒ b=<b>1</b>，解析式为 y=2x+1。令 y=0：0=2x+1 ⇒ x=-½，与 x 轴交点为 <b>(-½,0)</b>。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 6</b>：二次函数 y=-x²+2x+3 的顶点坐标和最值是什么？<br>
+  <span class="hl">分析：</span>配方或用顶点公式。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">y = -x²+2x+3 = -(x²-2x)+3 = -(x-1)²+4。顶点 (1,4)，a=-1&lt;0 开口向下，有最大值 <b>4</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 5：已知反比例函数 y=k/x 过点 (2,-3)，求 k 的值，并判断图象所在象限。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">代入 (2,-3)：-3=k/2 ⇒ k=<b>-6</b>。k&lt;0 ⇒ 图象在<b>二、四象限</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 6：计算 sin30° + cos60° - tan45° 的值。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">sin30°=½，cos60°=½，tan45°=1。原式=½+½-1=<b>0</b></div>
+</div>
+
+<!-- ═══════════ 四、几何 ═══════════ -->
+<div class="sec-title">四、几何</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 线与角</div>
+  <div class="kp-d">
+    <b>平行线性质与判定</b>：同位角相等⇔两直线平行；内错角相等⇔两直线平行；同旁内角互补⇔两直线平行。<br>
+    <b>垂线</b>：过一点有且只有一条直线与已知直线垂直。垂线段最短。<br>
+    <b>角平分线</b>：角平分线上的点到角两边距离相等。到角两边距离相等的点在角平分线上。
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 三角形</div>
+  <div class="kp-d">
+    <b>内角和</b>：180°。外角等于不相邻两内角和。三边关系：任意两边之和>第三边。<br>
+    <b>重要线段</b>：<span class="tag blue">中线</span>等分面积，重心(2:1) <span class="tag green">高线</span>垂心 <span class="tag orange">角平分线</span>内心 <span class="tag purple">中位线</span>平行等于第三边一半<br>
+    <b>等腰三角形</b>：等边对等角、三线合一。<br>
+    <b>等边三角形</b>：三边相等、三角60°。<br>
+    <b>直角三角形</b>：勾股定理 a²+b²=c²；30°角对边=斜边一半；斜边中线=斜边一半。
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_geo_triangle.svg" alt="三角形分类"></div>
+  <div class="kp-d">
+    <b>全等判定</b>：SSS、SAS、ASA、AAS、HL（Rt△）。<span class="tag green">倍长中线、截长补短、旋转</span>是常用辅助线。<br>
+    <b>相似判定</b>：<span class="tag">两角对应相等AA</span> <span class="tag orange">两边成比例且夹角相等SAS</span> <span class="tag blue">三边成比例SSS</span><br>
+    <b>相似性质</b>：面积比=相似比的平方。A字型与8字型是两大基本相似模型。<br>
+    <span class="tag purple">射影定理</span>：直角△斜边上的高→三个相似直角△。
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_geo_congruent.svg" alt="全等三角形"><img src="charts/jun_geo_similar.svg" alt="相似三角形" style="max-width:48%;border-radius:8px;border:1px solid #eee;background:#fff;margin:4px"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 四边形</div>
+  <table>
+    <tr><th>图形</th><th>边</th><th>角</th><th>对角线</th><th>对称性</th></tr>
+    <tr><td>平行四边形</td><td>对边平行且相等</td><td>对角相等</td><td>互相平分</td><td>中心对称</td></tr>
+    <tr><td>矩形</td><td>对边平行且相等</td><td>四个90°</td><td>相等且平分</td><td>轴+中心</td></tr>
+    <tr><td>菱形</td><td>四边相等</td><td>对角相等</td><td>垂直平分</td><td>轴+中心</td></tr>
+    <tr><td>正方形</td><td>四边相等</td><td>四个90°</td><td>相等垂直平分</td><td>轴+中心</td></tr>
+  </table>
+  <div class="kp-d">
+    <b>判定脉络</b>：<span class="tag blue">平行四边形→矩形：对角线相等或一角90°</span> <span class="tag green">平行四边形→菱形：对角线垂直或邻边相等</span><br>
+    三角形中位线平行第三边且等于第三边一半。梯形中位线=(上底+下底)/2。<br>
+    n 边形内角和=(n-2)×180°，外角和=360°。<span class="tag purple">中点四边形：任意四边形中点连成平行四边形</span>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 圆</div>
+  <div class="chart-wrap"><img src="charts/jun_geo_circle.svg" alt="圆的性质"></div>
+  <div class="kp-d">
+    <b>垂径定理</b>：过圆心垂直弦的直径平分弦及所对弧。<br>
+    <b>圆周角</b>：同弧所对圆周角=圆心角一半，直径所对圆周角=90°。<br>
+    <b>位置关系</b>：点与圆（d&lt;r在内、d=r在上、d>r在外）。直线与圆（d&lt;r相交、d=r相切、d>r相离）。<br>
+    <b>切线</b>：过半径外端且垂直于半径的直线是切线。切线长定理：圆外一点引两条切线长相等。<br>
+    <b>圆内接四边形</b>：对角互补 + 外角=内对角。<br>
+    <b>弧长与扇形</b>：l=nπr/180 &nbsp; S=nπr²/360=lr/2 &nbsp; 圆锥侧面积 S=πrl
+  </div>
+  <div class="chart-wrap"><img src="charts/topic_math_circle.svg" alt="圆综合"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 图形的变换</div>
+  <div class="kp-d">
+    <b>平移</b>：形状大小不变，各点平移方向距离相同。<br>
+    <b>轴对称（翻折）</b>：对应点连线被对称轴垂直平分。<br>
+    <b>旋转</b>：对应点到旋转中心距离相等。中心对称：旋转180°，对应点连线过对称中心且被平分。<br>
+    <b>位似</b>：对应点连线交于一点，位似比=相似比。
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_geo_path_fold.svg" alt="翻折路径问题"></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 7</b>：Rt△ABC 中，∠C=90°，AC=3，BC=4，求斜边 AB 上的高。<br>
+  <span class="hl">分析：</span>先用勾股定理求斜边，再用面积法求高。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">勾股定理：AB = √(3²+4²)=5。面积法：S=½×AC×BC=½×AB×h ⇒ h = AC×BC/AB = 12/5 = <b>2.4</b></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 8</b>：如图，⊙O 中弦 AB=8，圆心 O 到 AB 的距离为 3，求 ⊙O 的半径。<br>
+  <span class="hl">分析：</span>垂径定理构造直角三角形。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">过 O 作 OC⊥AB，则 AC=AB/2=4，OC=3。Rt△OAC 中，OA=√(AC²+OC²)=√(16+9)=<b>5</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 7：等腰三角形两边长分别为 3 和 7，求周长。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">若腰=3，则三边 3,3,7 不满足三角形三边关系（3+3&lt;7）。若腰=7，则三边 7,7,3 满足，周长=<b>17</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 8：已知 △ABC∽△DEF，相似比为 2:3，△ABC 面积为 12，求 △DEF 面积。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">面积比=相似比的平方=4:9。设 △DEF 面积为 S，则 12:S=4:9 ⇒ S=<b>27</b></div>
+</div>
+
+<!-- ═══════════ 五、统计与概率 ═══════════ -->
+<div class="sec-title">五、统计与概率</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 统计</div>
+  <div class="kp-d">
+    <b>数据的收集</b>：普查（全面调查）与抽样调查（总体、个体、样本、样本容量）。<br>
+    <b>统计图</b>：<span class="tag">条形图→比较数量</span> <span class="tag orange">折线图→看变化趋势</span> <span class="tag blue">扇形图→看占比</span><br>
+    <b>集中趋势</b>：平均数（易受极端值影响）、中位数（不受极端值影响）、众数（可能多个）。<br>
+    <b>离散程度</b>：极差=最大值-最小值。方差 s²=[(x₁-x̄)²+…+(xₙ-x̄)²]/n <span class="tag red">方差越小→越稳定</span>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 概率</div>
+  <div class="formula">P(A)=事件A发生的结果数/所有等可能结果总数 &nbsp;|&nbsp; 0≤P(A)≤1</div>
+  <div class="kp-d">
+    P=0 为不可能事件，P=1 为必然事件。<br>
+    两步用列表法，三步及以上用树状图。<span class="tag blue">放回：每次情况相同</span> <span class="tag orange">不放回：总数递减</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/topic_math_prob.svg" alt="概率分布图"></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 9</b>：一组数据 3,5,6,8,x 的平均数为 5，求 x 及中位数。<br>
+  <span class="hl">分析：</span>平均数公式求出 x，再排序找中位数。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">(3+5+6+8+x)/5=5 ⇒ 22+x=25 ⇒ x=<b>3</b>。排序：3,3,5,6,8 ⇒ 中位数 <b>5</b>。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 10</b>：盒中有 2 个红球和 1 个白球，摸出一球记下颜色放回，再摸一球，求两次都摸到红球的概率。<br>
+  <span class="hl">分析：</span>放回实验，用树状图或列表法。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">树状图：第一次可摸到红₁、红₂、白；第二次同样。总共 3×3=9 种等可能结果。两次都红有 2×2=4 种。P = <b>4/9</b></div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 9：数据 2,4,6,8,10 的方差是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">平均数 x̄=6。s²=[(2-6)²+(4-6)²+(6-6)²+(8-6)²+(10-6)²]/5 = (16+4+0+4+16)/5 = <b>8</b></div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 10：从 1、2、3 中不放回地取两个数组成两位数，求组成的数为偶数的概率。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">可能结果：12,13,21,23,31,32 共 6 种。偶数有 12,32 共 2 种。P = 2/6 = <b>1/3</b></div>
+</div>
+
+<!-- ═══════════ 六、常用数学思想方法 ═══════════ -->
+<div class="sec-title">六、常用数学思想方法</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 七大数学思想</div>
+  <div class="kp-d">
+    <b>数形结合</b>：将代数问题转化为几何图形，或将几何问题用代数方法解决。<br>
+    <b>分类讨论</b>：当问题有多种可能时，分情况讨论，不重不漏。<br>
+    <b>整体代入</b>：将一个代数式视为整体代入求值，简化计算。<br>
+    <b>转化思想</b>：将未知转化为已知，将复杂转化为简单。<br>
+    <b>方程思想</b>：设未知数列方程，通过解方程解决问题。<br>
+    <b>函数思想</b>：建立函数关系，利用函数性质解决问题（最值、增减性等）。<br>
+    <b>建模思想</b>：将实际问题抽象为数学问题（方程模型、函数模型、几何模型等）。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 11</b>（分类讨论）：已知 |x|=3，|y|=5，且 |x-y|=y-x，求 x+y 的值。<br>
+  <span class="hl">分析：</span>由 |x-y|=y-x 可知 y≥x，再分情况讨论。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">|x|=3 ⇒ x=±3；|y|=5 ⇒ y=±5。由 |x-y|=y-x 知 y≥x。<br>
+    ① y=5, x=3 ⇒ x+y=8；② y=5, x=-3 ⇒ x+y=2；③ y=-5 时不可能 y≥x。所以 x+y=<b>8 或 2</b></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 12</b>（整体代入）：已知 a+b=3，ab=1，求 a²+b² 的值。<br>
+  <span class="hl">分析：</span>利用完全平方公式整体代换。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">a²+b² = (a+b)²-2ab = 3²-2×1 = 9-2 = <b>7</b></div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 11：已知 x+1/x=3，求 x²+1/x² 的值。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">x²+1/x² = (x+1/x)²-2 = 3²-2 = <b>7</b></div>
+</div>
+
+<!-- ═══════════ 七、应用题模型 ═══════════ -->
+<div class="sec-title">七、应用题模型（中考重点）</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 行程问题</div>
+  <div class="formula">路程 = 速度 × 时间（s=vt）</div>
+  <div class="grid2">
+    <div><span class="t">相遇问题</span><div class="d">甲路程+乙路程=总路程，时间相等</div></div>
+    <div><span class="t">追及问题</span><div class="d">速度差×时间=初始距离差</div></div>
+    <div><span class="t">环形跑道</span><div class="d">同向：路程差=一圈；反向：路程和=一圈</div></div>
+    <div><span class="t">流水行船</span><div class="d">顺水=静水+水速；逆水=静水-水速</div></div>
+    <div><span class="t">火车过桥</span><div class="d">总路程=桥长+车长，时间=(桥长+车长)/速度</div></div>
+  </div>
+  <span class="tag red">易错：火车过桥要算车长，人过桥不算车长</span>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 工程与效率问题</div>
+  <div class="kp-d">
+    <b>基本公式</b>：工作量=工作效率×工作时间。常设整个工程为单位"1"，效率=1/完成时间。<br>
+    合作时间 = 1 / (1/t₁ + 1/t₂ + …)。<span class="tag orange">注水放水：进水管效率为正，出水管效率为负</span>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 利润与经济问题</div>
+  <div class="kp-d">
+    <b>核心公式</b>：<span class="tag blue">利润=售价-进价</span> <span class="tag orange">利润率=利润/进价×100%</span> <span class="tag green">售价=进价×(1+利润率)</span><br>
+    <b>打折</b>：实际售价=标价×折扣/10（八折=标价×0.8）<br>
+    <b>增长率</b>：连续两次增长（降低）a(1±x)²=b<br>
+    <b>利润最值</b>：利润=单件利润×销量→二次函数求顶点→最大利润
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 方案设计与优化</div>
+  <div class="kp-d">
+    常见类型：运输调配、购买选择、租车租房、生产安排。<br>
+    <b>建模步骤</b>：设未知数→列不等式组→确定取值范围→列函数关系式→求最值→验证方案<br>
+    <span class="tag orange">结果要符合实际意义（人数为整数、车辆数为非负整数等）</span>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 几何应用问题</div>
+  <div class="kp-d">
+    <span class="tag blue">相似三角形测高</span>：利用影子/标杆/镜子构造相似三角形<br>
+    <span class="tag green">勾股定理应用</span>：最短路径（展开图）、梯子滑动、折竹问题<br>
+    <span class="tag orange">动态几何</span>：点在线段上运动→分类讨论→列方程/函数<br>
+    <span class="tag red">面积问题</span>：花坛设计、篱笆围栏→二次函数最值
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 13</b>（行程问题）：甲、乙两地相距 240km，A 车从甲地出发，B 车从乙地出发，相向而行，2 小时后相遇。若 A 比 B 每小时快 20km，求两车速度。<br>
+  <span class="hl">分析：</span>设 B 车速度 x km/h，则 A 车速度 (x+20) km/h。相遇：路程和=总路程。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">2(x+20+x)=240 ⇒ 4x+40=240 ⇒ x=50 ⇒ B 车 <b>50 km/h</b>，A 车 <b>70 km/h</b></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 14</b>（利润问题）：某商品进价 40 元/件，售价 60 元/件时每月可卖 300 件。每涨价 1 元月销量减少 10 件。求最大月利润及此时售价。<br>
+  <span class="hl">分析：</span>设涨价 x 元，则售价 (60+x) 元，销量 (300-10x) 件。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">利润 y = (20+x)(300-10x) = -10x²+100x+6000。对称轴 x=5，y 最大值= -10×25+100×5+6000 = <b>6250 元</b>，此时售价 <b>65 元</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 12：一项工程，甲单独做 10 天完成，乙单独做 15 天完成，两人合作几天完成？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">甲效率=1/10，乙效率=1/15。合作时间 = 1/(1/10+1/15) = 1/(1/6) = <b>6 天</b></div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 13：一件商品标价 200 元，打八折后仍获利 20%，求进价。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">打八折售价=200×0.8=160 元。设进价 x 元，则 (160-x)/x=20% ⇒ 160-x=0.2x ⇒ 1.2x=160 ⇒ x≈<b>133.3 元</b></div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 中考数学知识点大全 · 陪你一起成长</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#c0392b;cursor:pointer">获取联系方式</span></p>
+</div>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——中考数学知识点大全，7大板块系统梳理，数与式+方程不等式+函数+几何+统计概率+数学思想+应用模型，含多道精选例题与练习。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  shareTextEl.textContent = shareTxt;
+  copyBtn.addEventListener('click', function() {
+    if (hasCopied) return;
+    navigator.clipboard.writeText(shareTxt).then(function() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      hasCopied = true;
+      var ct = localStorage.getItem('sx_copy_time');
+      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
+      function checkShare() {
+        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
+        var ok = Date.now() - t0 >= 10000;
+        sharedBtn.disabled = !ok;
+        if (!ok) setTimeout(checkShare, 500);
+        else sharedBtn.textContent = '我已分享，查看联系方式 →';
+      }
+      setTimeout(checkShare, 10000);
+    });
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (sharedBtn.disabled) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+  });
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) {
+      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+      return;
+    }
+    overlay.classList.add('active');
+  };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+})();
+</script>
 
 <script>
-function switchTab(name, btn){
-  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
-  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  btn.classList.add('active');
-  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
-}
-function copyTxt(){
-  var txt = document.querySelector('.pane.active .lb-txt').textContent;
-  var hint = document.querySelector('.pane.active .lk-hint');
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(txt).then(function(){hint.textContent = '✅ 已复制，分享给好友吧！';});
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = txt; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-    hint.textContent = '✅ 已复制，分享给好友吧！';
-  }
+function toggleSol(btn) {
+  var el = btn.nextElementSibling;
+  el.classList.toggle('show');
+  btn.textContent = el.classList.contains('show') ? '🙈 收起' : '👁️ 看解析';
 }
 </script>
 </body>

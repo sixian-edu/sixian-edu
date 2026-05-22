@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中几何公式大全 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+
+.f-section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b}
+.f-section h2{font-size:18px;font-weight:700;color:#c0392b;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #f0f0f0}
+.f-section h3{font-size:15px;font-weight:600;color:#444;margin:16px 0 10px}
+
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+@media(max-width:600px){.f-grid{grid-template-columns:1fr}}
+
+.f-card{background:#f8f9fc;border-radius:10px;padding:14px 16px;border:1px solid #f0f0f0}
+.f-card .f-name{font-size:14px;font-weight:600;color:#2d3436;margin-bottom:4px}
+.f-card .f-val{font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:6px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif;letter-spacing:0.5px}
+.f-card .f-desc{font-size:12px;color:#888;margin-top:3px}
+
+.f-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.f-table th{background:#c0392b;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:13px}
+.f-table td{padding:9px 14px;border-bottom:1px solid #f0f0f0}
+.f-table tr:nth-child(even){background:#f8f9fc}
+.f-table .fml{font-weight:700;color:#c0392b;font-family:"Times New Roman",serif;font-size:15px}
+
+.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#8d6e00;border-left:3px solid #fadb14}
+.note strong{color:#e74c3c}
+
+.footer{text-align:center;padding:20px;font-size:12px;color:#999}
+.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:4px;margin:1px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style>
+<script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中几何公式大全</h1><p class="sub">平面图形 · 立体图形 · 三角形 · 圆 · 三角函数</p></div>
+<div class="container">
+<div class="f-section"><h2>平面图形面积公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">三角形</div><div class="f-val">S = ½ ah</div><div class="f-desc">底 × 高 ÷ 2</div></div>
+<div class="f-card"><div class="f-name">三角形（海伦）</div><div class="f-val">S = √[p(p-a)(p-b)(p-c)]</div><div class="f-desc">p = (a+b+c)/2，已知三边求面积</div></div>
+<div class="f-card"><div class="f-name">矩形</div><div class="f-val">S = ab</div><div class="f-desc">长 × 宽</div></div>
+<div class="f-card"><div class="f-name">正方形</div><div class="f-val">S = a²</div><div class="f-desc">边长平方</div></div>
+<div class="f-card"><div class="f-name">平行四边形</div><div class="f-val">S = ah</div><div class="f-desc">底 × 高</div></div>
+<div class="f-card"><div class="f-name">梯形</div><div class="f-val">S = ½ (a+b)h</div><div class="f-desc">（上底+下底）× 高 ÷ 2</div></div>
+<div class="f-card"><div class="f-name">圆</div><div class="f-val">S = πr²</div><div class="f-desc">圆周率 × 半径平方</div></div>
+<div class="f-card"><div class="f-name">扇形</div><div class="f-val">S = ½ r²θ = nπr²/360</div><div class="f-desc">r²θ/2 或 nπr²/360</div></div>
+<div class="f-card"><div class="f-name">菱形</div><div class="f-val">S = ½ d₁d₂</div><div class="f-desc">对角线乘积的一半</div></div>
+</div></div>
+<div class="f-section"><h2>立体图形体积公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">长方体</div><div class="f-val">V = abc</div><div class="f-desc">长 × 宽 × 高</div></div>
+<div class="f-card"><div class="f-name">正方体</div><div class="f-val">V = a³</div><div class="f-desc">棱长立方</div></div>
+<div class="f-card"><div class="f-name">圆柱</div><div class="f-val">V = πr²h</div><div class="f-desc">底面积 × 高</div></div>
+<div class="f-card"><div class="f-name">圆锥</div><div class="f-val">V = ⅓ πr²h</div><div class="f-desc">底面积 × 高 ÷ 3</div></div>
+<div class="f-card"><div class="f-name">球</div><div class="f-val">V = ¾ πr³</div><div class="f-desc">4πr³/3</div></div>
+<div class="f-card"><div class="f-name">棱柱</div><div class="f-val">V = Sh</div><div class="f-desc">底面积 × 高</div></div>
+<div class="f-card"><div class="f-name">棱锥</div><div class="f-val">V = ⅓ Sh</div><div class="f-desc">底面积 × 高 ÷ 3</div></div>
+<div class="f-card"><div class="f-name">圆台</div><div class="f-val">V = ⅓πh(R²+Rr+r²)</div><div class="f-desc">hπ(R²+Rr+r²)/3</div></div>
+</div></div>
+<div class="f-section"><h2>三角形重要定理</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">勾股定理</div><div class="f-val">a² + b² = c²</div><div class="f-desc">直角三角形两直角边平方和=斜边平方</div></div>
+<div class="f-card"><div class="f-name">勾股数</div><div class="f-val">3-4-5, 5-12-13, 8-15-17</div><div class="f-desc">常见整数勾股组合</div></div>
+<div class="f-card"><div class="f-name">30°直角三角形</div><div class="f-val">30°对边 = ½ 斜边</div><div class="f-desc">30° 角所对直角边是斜边一半</div></div>
+<div class="f-card"><div class="f-name">内角和</div><div class="f-val">∠A + ∠B + ∠C = 180°</div><div class="f-desc">三角形三个内角之和为 180°</div></div>
+<div class="f-card"><div class="f-name">外角定理</div><div class="f-val">∠外 = ∠A + ∠B</div><div class="f-desc">外角等于不相邻两内角之和</div></div>
+<div class="f-card"><div class="f-name">中线定理</div><div class="f-val">mₐ = ½√(2b²+2c²-a²)</div><div class="f-desc">中线长度公式</div></div>
+<div class="f-card"><div class="f-name">角平分线定理</div><div class="f-val">BD/DC = AB/AC</div><div class="f-desc">角平分线分对边成比例</div></div>
+<div class="f-card"><div class="f-name">正弦定理</div><div class="f-val">a/sinA = b/sinB = c/sinC = 2R</div><div class="f-desc">边与对角正弦之比等于外接圆直径</div></div>
+<div class="f-card"><div class="f-name">余弦定理</div><div class="f-val">c² = a²+b²-2ab·cosC</div><div class="f-desc">任意三角形边角关系</div></div>
+</div></div>
+<div class="f-section"><h2>锐角三角函数值表</h2><table class="f-table"><tr><th>角度</th><th>sin</th><th>cos</th><th>tan</th></tr><tr><td class="fml">0°</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td class="fml">30°</td><td>½</td><td>√3/2</td><td>√3/3</td></tr>
+<tr><td class="fml">45°</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+<tr><td class="fml">60°</td><td>√3/2</td><td>½</td><td>√3</td></tr>
+<tr><td class="fml">90°</td><td>1</td><td>0</td><td>∞</td></tr>
+</table></div>
+<div class="f-section"><h2>圆的公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">周长</div><div class="f-val">C = 2πr = πd</div><div class="f-desc">2π × 半径 或 π × 直径</div></div>
+<div class="f-card"><div class="f-name">弧长</div><div class="f-val">l = nπr/180</div><div class="f-desc">n° 圆心角所对的弧长</div></div>
+<div class="f-card"><div class="f-name">扇形面积</div><div class="f-val">S = nπr²/360 = lr/2</div><div class="f-desc">弧长 × 半径 ÷ 2</div></div>
+<div class="f-card"><div class="f-name">圆锥侧面积</div><div class="f-val">S = πrl</div><div class="f-desc">l 为母线长</div></div>
+<div class="f-card"><div class="f-name">圆面积</div><div class="f-val">S = πr²</div><div class="f-desc">圆周率 × 半径平方</div></div>
+<div class="f-card"><div class="f-name">垂径定理</div><div class="f-val">AB⊥CD ⇒ AE=EB</div><div class="f-desc">垂直于弦的直径平分弦</div></div>
+</div></div>
+<div class="note"><strong>注意事项：</strong>π 常取 3.14，结果要带单位。遇到 √2 ≈ 1.414，√3 ≈ 1.732。勾股定理应用时注意分清直角边和斜边。</div><div class="f-section"><h2>四边形公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">平行四边形面积</div><div class="f-val">S = ah</div><div class="f-desc">底 × 高</div></div>
+<div class="f-card"><div class="f-name">平行四边形对角线</div><div class="f-val">d₁² + d₂² = 2(a² + b²)</div><div class="f-desc">对角线平方和等于四边平方和</div></div>
+<div class="f-card"><div class="f-name">梯形面积</div><div class="f-val">S = ½ (a+b)h</div><div class="f-desc">中位线 × 高</div></div>
+<div class="f-card"><div class="f-name">梯形中位线</div><div class="f-val">m = (a+b)/2</div><div class="f-desc">中位线平行于底边且等于上下底和的一半</div></div>
+<div class="f-card"><div class="f-name">正n边形内角和</div><div class="f-val">(n-2) × 180°</div><div class="f-desc">n 边形内角和公式</div></div>
+<div class="f-card"><div class="f-name">正n边形外角和</div><div class="f-val">360°</div><div class="f-desc">任意凸多边形外角和恒为 360°</div></div>
+</div></div>
+
+</div>
+<div class="footer">思贤学习站 · 济南市商河县</div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

@@ -10,109 +10,426 @@
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
 .wrap{max-width:880px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+h1{text-align:center;font-size:28px;color:#2980b9;margin-bottom:4px;letter-spacing:2px}
 .sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
-.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
-.card .d{font-size:13px;color:#555;line-height:1.8}
-.card .d b{color:#333}
-.tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
+.sec-title{font-size:19px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #2980b9}
+.kp{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid #2980b9}
+.kp .kp-t{font-weight:700;font-size:16px;color:#2980b9;margin-bottom:8px}
+.kp .kp-d{font-size:14px;color:#444;line-height:1.9}
+.kp .kp-d b{color:#2980b9}
+.tag{display:inline-block;font-size:12px;background:#eaf2f8;color:#2980b9;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
-.svg-wrap{text-align:center;margin:12px 0 6px}
-.svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto}
-.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
-.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#eaf2f8;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;text-align:center;color:#2980b9;font-weight:600;font-family:monospace}
+.formula.r{background:#fef0ef;color:#c0392b}
+.formula.g{background:#e6f7e6;color:#2d7d46}
+.formula.o{background:#fff3e0;color:#e65100}
+.ex{background:#eaf7ff;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #2980b9}
+.ex .q{font-size:14px;color:#444;line-height:1.8}
+.ex .q .hl{color:#c0392b;font-weight:700}
+.ex .q .hl2{color:#2980b9;font-weight:700}
+.ex .a{background:#e6f7e6;border-radius:8px;padding:10px 14px;margin:10px 0 0;font-size:14px;color:#2d7d46;line-height:1.8;display:none}
+.ex .a.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#fff;color:#2980b9;border:1px solid #2980b9;border-radius:6px;font-size:12px;cursor:pointer;margin-top:8px}
+.sol-btn:hover{background:#2980b9;color:#fff}
+.hw{background:#f8f9fc;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #7f8c8d}
+.hw .hw-q{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.hw .hw-a{font-size:14px;color:#27ae60;line-height:1.8;display:none}
+.hw .hw-a.show{display:block}
+.tip-box{background:#fff8e1;border-radius:10px;padding:10px 14px;margin:10px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
+.tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
+th{background:#2980b9;color:#fff;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#2980b9);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+@media(max-width:640px){h1{font-size:24px}.kp{padding:14px 16px}}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
 <a class="back" href="../学习专区.html">← 返回学习专区</a>
-<h1>🔦 初中物理 · 光学</h1>
-<p class="sub">反射 · 折射 · 透镜成像 · 色散 · 中考必备</p>
+<h1>🔦 初中物理 · 光学大全</h1>
+<p class="sub">光的传播 · 反射 · 折射 · 透镜成像 · 色散 · 应用 · 中考全覆盖</p>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 光的直线传播</div>
-  <div class="d">
-    光在<b>同种均匀介质</b>中沿直线传播。<br>
-    <span class="tag red">光速</span> 真空中 c ≈ 3×10⁸ m/s，水中约为真空中3/4，玻璃中约为2/3。<br>
-    <span class="tag green">现象</span> 影子、日食月食、小孔成像（成倒立实像）。
+<!-- ═══════════ 一、光的直线传播 ═══════════ -->
+<div class="sec-title">一、光的直线传播</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 光源与光线</div>
+  <div class="kp-d">
+    <b>光源</b>：自身能发光的物体（太阳、电灯、蜡烛）。月亮<b>不是</b>光源！<br>
+    <b>光线</b>：用一条带箭头的直线表示光的传播路径和方向（理想模型法）<br>
+    <span class="tag red">光在同种均匀介质中沿直线传播</span>
   </div>
-  <div class="formula">光速：c = 3×10⁸ m/s &nbsp;|&nbsp; 光年 = 光在一年中走的距离</div>
+  <div class="formula">光速 c = 3×10⁸ m/s（真空）&nbsp;|&nbsp; 水中 c/4 &nbsp;|&nbsp; 玻璃中 c/2/3</div>
 </div>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 光的反射定律</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_05_reflection.svg" width="420" height="263" alt="光的反射"></div>
-  <div class="d">
-    反射光线、入射光线和法线在同一平面内；<br>
-    反射光线和入射光线分居法线两侧；<b>反射角等于入射角</b>。<br>
-    <span class="tag red">镜面反射</span> 平行光入射，平行反射（表面光滑）<br>
-    <span class="tag green">漫反射</span> 平行光入射，向各方向反射（表面粗糙）<br>
-    <span class="tag orange">注意</span> 反射角等于入射角（因果顺序不能颠倒）。
+<div class="kp">
+  <div class="kp-t">🔹 光速与现象</div>
+  <div class="kp-d">
+    光在真空中速度最快：<b>c = 3×10⁸ m/s</b>（光年 = 光在一年中走的距离）<br>
+    <b>光沿直线传播的现象：</b><br>
+    <span class="tag red">影子</span><span class="tag green">日食月食</span><span class="tag orange">小孔成像</span><span class="tag blue">立竿见影</span><span class="tag purple">射击瞄准"三点一线"</span><br>
+    <b>小孔成像特点：</b>成<b>倒立</b>的实像，像的形状只与物体形状有关，与孔的形状无关！
   </div>
-  <div class="formula">反射定律：三线共面、两线分居、两角相等</div>
 </div>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 平面镜成像</div>
-  <div class="d">
-    平面镜成像特点：<b>等大、等距、正立、虚像</b>。<br>
-    <span class="tag red">像与物大小相等</span><span class="tag green">像距等于物距</span><span class="tag">像与物连线垂直镜面</span>
-    <br>成像原理：光的反射。用<b>玻璃板</b>代替平面镜（便于确定像的位置）。
-  </div>
-  <div class="formula">平面镜成像：等大、等距、正立、虚像</div>
+<div class="ex">
+  <div class="q"><b>例题 1</b>：关于小孔成像，下列说法正确的是（ ）<br>
+  A. 成的是正立的像 &nbsp; B. 像的大小与物体到孔的距离有关 &nbsp; C. 孔的形状影响像的形状 &nbsp; D. 小孔成像说明光沿直线传播</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a"><b>答案：BD</b>。小孔成倒立的实像（A错），像的形状与孔的形状无关（C错）。像的大小：物距越小、像距越大，像越大。</div>
 </div>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 光的折射</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_06_refraction.svg" width="420" height="263" alt="光的折射"></div>
-  <div class="d">
+<div class="hw">
+  <div class="hw-q">练习 1：月食是怎样形成的？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">地球运行到太阳和月亮之间，地球挡住了太阳射向月亮的光，月面变暗。原理：光的直线传播。</div>
+</div>
+
+<!-- ═══════════ 二、光的反射 ═══════════ -->
+<div class="sec-title">二、光的反射</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 光的反射定律</div>
+  <div class="kp-d">
+    反射光线、入射光线和法线在<b>同一平面内</b>；反射光线和入射光线分居法线<b>两侧</b>；<b>反射角等于入射角</b>。<br>
+    <span class="tag red">注意：</span>反射角等于入射角（不能说入射角等于反射角，因果顺序）<br>
+    <span class="tag green">光路可逆：</span>反射时光路是可逆的
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_reflection.svg" alt="光的反射定律"></div>
+  <div class="formula">三线共面、两线分居、两角相等 &nbsp;|&nbsp; 入射角增大，反射角也增大</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 镜面反射与漫反射</div>
+  <div class="kp-d">
+    <table>
+      <tr><th>类型</th><th>反射面</th><th>特点</th><th>实例</th></tr>
+      <tr><td><b>镜面反射</b></td><td>光滑平整</td><td>平行光入射→平行反射</td><td>镜子、平静水面、黑板反光</td></tr>
+      <tr><td><b>漫反射</b></td><td>凹凸不平</td><td>平行光入射→向各方向反射</td><td>白纸、墙壁、电影幕布</td></tr>
+    </table>
+    <span class="tag orange">两种反射都遵循反射定律！</span>
+    <span class="tag blue">我们能从不同方向看到不发光的物体，是因为光在物体表面发生了漫反射</span>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 2</b>：入射光线与镜面夹角为 30°，求反射角的大小。<br>
+  <span class="hl">解：</span>入射光线与镜面夹角30°→入射角=90°-30°=60°→反射角=入射角=<b>60°</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意区分"入射角"是入射光线与法线的夹角，不是与镜面的夹角！</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 2：入射角为 40°，入射光线不动，镜面旋转 10°，反射光线旋转多少度？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">反射角=入射角=40°。镜面旋转10°→法线也旋转10°→入射角变为50°或30°→反射角也变为50°或30°→反射光线旋转<b>20°</b></div>
+</div>
+
+<!-- ═══════════ 三、平面镜成像 ═══════════ -->
+<div class="sec-title">三、平面镜成像</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 成像特点</div>
+  <div class="kp-d">
+    平面镜成像特点：<b>等大、等距、正立、虚像</b><br>
+    <span class="tag red">像与物大小相等</span><span class="tag green">像距等于物距</span><span class="tag blue">像与物连线垂直镜面</span><br>
+    <span class="tag orange">成像原理：光的反射</span><span class="tag purple">虚像——不能呈现在光屏上</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_mirror.svg" alt="平面镜成像"></div>
+  <div class="formula">物像对称（关于镜面对称）&nbsp;|&nbsp; 像与物左右相反</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 球面镜</div>
+  <div class="kp-d">
+    <b>凹面镜：</b>会聚光线（太阳灶、手电筒反光碗、医生头戴式额镜）<br>
+    <b>凸面镜：</b>发散光线，扩大视野（汽车后视镜、道路拐弯镜）<br>
+    <span class="tag red">注意：</span>凹面镜和凸面镜都遵循光的反射定律
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 3</b>：身高 1.7m 的人站在平面镜前 2m 处，像高多少？像距多远？若人向镜前移动 1m，像距多少？<br>
+  <span class="hl">解：</span>像高=物高=<b>1.7m</b>（不变）；像距=物距=2m；移动后物距=1m→像距=<b>1m</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">平面镜成像大小与物距无关！不管人走到哪里，像的大小始终等于物的大小。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 3：人站在平面镜前，想看到自己的全身像，镜长至少应为多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">镜长至少为人身高的一半。因反射定律和物像对称，人眼看到全身像所需镜面最小高度=身高/2。</div>
+</div>
+
+<!-- ═══════════ 四、光的折射 ═══════════ -->
+<div class="sec-title">四、光的折射</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 折射规律</div>
+  <div class="kp-d">
     光从一种介质斜射入另一种介质时，传播方向发生偏折。<br>
-    <span class="tag red">空气→水/玻璃</span> 折射角 < 入射角（靠近法线）<br>
-    <span class="tag green">水/玻璃→空气</span> 折射角 > 入射角（远离法线）<br>
-    <span class="tag orange">生活现象</span> 筷子在水中"折断"、池水看起来变浅、海市蜃楼。
+    <span class="tag red">空气→水/玻璃：折射角 &lt; 入射角（靠近法线）</span><br>
+    <span class="tag green">水/玻璃→空气：折射角 > 入射角（远离法线）</span><br>
+    <span class="tag orange">垂直入射：方向不变</span><span class="tag blue">光路可逆</span>
   </div>
-  <div class="formula">光密介质中速度慢 → 光疏介质中速度快 &nbsp;|&nbsp; 垂直入射方向不变</div>
+  <div class="chart-wrap"><img src="charts/topic_phy_refract.svg" alt="光的折射"></div>
+  <div class="formula">光密介质→光疏介质：折射角大于入射角</div>
 </div>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 凸透镜成像规律</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_07_lens.svg" width="420" height="263" alt="凸透镜成像"></div>
-  <div class="d">
-    凸透镜成像规律（u = 物距，f = 焦距）：<br>
-    <span class="tag red">u > 2f</span> 倒立缩小实像（f < v < 2f）— 照相机<br>
-    <span class="tag">u = 2f</span> 倒立等大实像（v = 2f）<br>
-    <span class="tag orange">f < u < 2f</span> 倒立放大实像（v > 2f）— 投影仪<br>
-    <span class="tag green">u < f</span> 正立放大虚像 — 放大镜
+<div class="kp">
+  <div class="kp-t">🔹 折射现象</div>
+  <div class="kp-d">
+    <span class="tag red">筷子在水面"折断"</span> — 水下部分看上去向上偏折<br>
+    <span class="tag green">池水变浅</span> — 池底反射的光从水中射向空气，折射角大于入射角，眼睛逆着折射光线看到池底的虚像<br>
+    <span class="tag blue">海市蜃楼</span> — 空气密度不均匀导致光线折射<br>
+    <span class="tag purple">星星闪烁</span> — 大气折射导致星光不稳定
   </div>
-  <div class="formula">成像公式：1/u + 1/v = 1/f &nbsp;|&nbsp; 一倍焦距分虚实，二倍焦距分大小</div>
 </div>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 凸透镜应用与眼睛</div>
-  <div class="d">
-    <span class="tag red">照相机</span> u > 2f，成倒立缩小的实像<br>
-    <span class="tag green">投影仪</span> f < u < 2f，成倒立放大的实像<br>
-    <span class="tag orange">放大镜</span> u < f，成正立放大的虚像<br>
-    <span class="tag">眼睛</span> 晶状体 = 凸透镜，视网膜 = 光屏。<b>近视眼</b>用凹透镜矫正，<b>远视眼</b>用凸透镜矫正。
-  </div>
-  <div class="formula">近视眼：像在视网膜前 → 凹透镜 &nbsp;|&nbsp; 远视眼：像在视网膜后 → 凸透镜</div>
+<div class="ex">
+  <div class="q"><b>例题 4</b>：从岸上看水中的鱼，看到的鱼的位置比实际位置偏___（高/低），看到的鱼是___（实/虚）像。<br>
+  <span class="hl">解：</span>偏<b>高</b>，是<b>虚</b>像。鱼反射的光从水中射向空气，折射角大于入射角，人眼逆着折射光线看到鱼的虚像在真实鱼的上方。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">水中看岸上的景物也是变高了。所以：用鱼叉叉鱼要向看到的鱼的下方叉；用激光照射鱼要直接对准看到的鱼。</div>
 </div>
 
-<div class="card" style="border-top-color:#3498db">
-  <div class="t" style="color:#3498db">🔹 光的色散</div>
-  <div class="d">
-    白光通过三棱镜被分解成各种色光的现象叫光的色散。<br>
-    <span class="tag red">七色光</span> 红、橙、黄、绿、蓝、靛、紫<br>
-    <span class="tag green">光的三原色</span> 红、绿、蓝（等比例混合为白色）<br>
-    <span class="tag orange">物体的颜色</span> 透明物体由透过它的色光决定；不透明物体由反射的色光决定。
-  </div>
-  <div class="formula">光的三原色：红 + 绿 + 蓝 = 白 &nbsp;|&nbsp; 颜料三原色：红、黄、蓝</div>
+<div class="hw">
+  <div class="hw-q">练习 4：光从空气射入水中，入射角为 50°，折射角可能为（ ） A. 60° B. 50° C. 40° D. 90°</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a"><b>C. 40°</b>。空气→水，光密→光疏？不对，水比空气光密。空气→水是光疏→光密，折射角小于入射角。</div>
 </div>
 
+<!-- ═══════════ 五、凸透镜成像 ═══════════ -->
+<div class="sec-title">五、凸透镜成像规律</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 凸透镜基础知识</div>
+  <div class="kp-d">
+    凸透镜：中间厚、边缘薄，对光有<b>会聚</b>作用。<br>
+    凹透镜：中间薄、边缘厚，对光有<b>发散</b>作用。<br>
+    三条特殊光线：①平行于主光轴→过焦点②过光心→方向不变③过焦点→平行于主光轴
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_lens.svg" alt="透镜光路"></div>
 </div>
+
+<div class="kp">
+  <div class="kp-t">🔹 成像规律（u=物距，v=像距，f=焦距）</div>
+  <div class="kp-d">
+    <table>
+      <tr><th>物距 u</th><th>像的性质</th><th>像距 v</th><th>应用</th></tr>
+      <tr><td>u > 2f</td><td>倒立、缩小、实像</td><td>f &lt; v &lt; 2f</td><td>照相机</td></tr>
+      <tr><td>u = 2f</td><td>倒立、等大、实像</td><td>v = 2f</td><td>测焦距</td></tr>
+      <tr><td>f &lt; u &lt; 2f</td><td>倒立、放大、实像</td><td>v > 2f</td><td>投影仪</td></tr>
+      <tr><td>u = f</td><td>不成像（平行光）</td><td>—</td><td>—</td></tr>
+      <tr><td>u &lt; f</td><td>正立、放大、虚像</td><td>—</td><td>放大镜</td></tr>
+    </table>
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_lens_path.svg" alt="凸透镜成像光路"></div>
+  <div class="formula">1/u + 1/v = 1/f &nbsp;|&nbsp; 一倍焦距分虚实，二倍焦距分大小</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 5</b>：凸透镜焦距 10cm，物体放在 25cm 处，成像特点是什么？<br>
+  <span class="hl">解：</span>u=25cm > 2f=20cm，成倒立缩小的实像，像距 f&lt;v&lt;2f，即 10cm&lt;v&lt;20cm。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">照相机原理。若将物体移到 15cm 处，f&lt;u&lt;2f，成倒立放大的实像→投影仪原理。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 5：凸透镜焦距 8cm，物体放在 6cm 处，成什么像？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">u=6cm &lt; f=8cm，成<b>正立放大虚像</b>（放大镜原理），像与物在同侧。</div>
+</div>
+
+<!-- ═══════════ 六、透镜应用与眼睛 ═══════════ -->
+<div class="sec-title">六、透镜应用与眼睛</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 三种光学仪器</div>
+  <div class="kp-d">
+    <b>照相机：</b>u > 2f，成倒立缩小的实像。物近像远像变大，物远像近像变小<br>
+    <b>投影仪：</b>f &lt; u &lt; 2f，成倒立放大的实像。镜头向下移（减小物距），像变大<br>
+    <b>放大镜：</b>u &lt; f，成正立放大的虚像。物体离焦点越近，像越大（但不能到达焦点）
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 眼睛与视力矫正</div>
+  <div class="kp-d">
+    <b>眼睛：</b>晶状体=凸透镜，视网膜=光屏。通过调节晶状体的曲度（变焦）看清远近物体。<br>
+    <table>
+      <tr><th>缺陷</th><th>成因</th><th>成像位置</th><th>矫正</th></tr>
+      <tr><td><b>近视眼</b></td><td>晶状体曲度过大/眼球前后径过长</td><td>视网膜<b>前</b></td><td>配戴<b>凹透镜</b></td></tr>
+      <tr><td><b>远视眼</b></td><td>晶状体曲度过小/眼球前后径过短</td><td>视网膜<b>后</b></td><td>配戴<b>凸透镜</b></td></tr>
+    </table>
+    <span class="tag red">口诀：近视用凹、远视用凸；近视前、远视后</span>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 6</b>：近视眼的成因和矫正方法？<br>
+  <span class="hl">解：</span>成因：晶状体曲度太大或眼球前后径太长，平行光会聚在视网膜前方。矫正：配戴凹透镜（发散光线，使像后移到视网膜上）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">远视眼相反：晶状体曲度太小，像在视网膜后方，用凸透镜矫正（会聚光线）。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 6：用照相机拍照时，想使照片上的像变大，应该怎样调节？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a"><b">靠近物体</b>（减小物距）同时<b>增大镜头与底片的距离</b>（增大像距）。即"物近像远像变大"。</div>
+</div>
+
+<!-- ═══════════ 七、光的色散 ═══════════ -->
+<div class="sec-title">七、光的色散</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 色散与颜色</div>
+  <div class="kp-d">
+    白光通过三棱镜被分解为各种色光的现象叫<b>光的色散</b>。牛顿最早发现。<br>
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_dispersion.svg" alt="光的色散"></div>
+  <div class="formula">七色光：红、橙、黄、绿、蓝、靛、紫 &nbsp;|&nbsp; 光的三原色：红、绿、蓝</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 颜色之谜</div>
+  <div class="kp-d">
+    <b>透明物体：</b>由透过它的色光决定。红色玻璃只透过红光（其他色光被吸收）<br>
+    <b>不透明物体：</b>由反射的色光决定。绿叶反射绿光（其他色光被吸收）<br>
+    <span class="tag red">光的三原色：红、绿、蓝</span>（等比例混合为白）<br>
+    <span class="tag blue">颜料三原色：红、黄、蓝</span>（等比例混合为黑）<br>
+    <span class="tag orange">红外线：</span>热作用强，遥控、热像仪<br>
+    <span class="tag purple">紫外线：</span>杀菌、验钞、促进钙吸收
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 7</b>：在暗室中，用红光照射绿叶，叶是什么颜色？<br>
+  <span class="hl">解：</span>绿叶只能反射绿光，红光被吸收，没有光进入人眼，叶子看起来是<b>黑色</b>的。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">不透明物体的颜色由它反射的色光决定。什么色光也反射不出来→黑色。白纸能反射所有色光→红光照白纸看起来是红色。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 7：红外线和紫外线在生活中的应用各举一例。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">红外线：电视遥控器、红外热像仪、自动门。紫外线：紫外线消毒灯、验钞机、晒黑皮肤（促进维生素D合成）。</div>
+</div>
+
+<!-- ═══════════ 八、综合应用 ═══════════ -->
+<div class="sec-title">✍️ 综合应用</div>
+
+<div class="ex">
+  <div class="q"><b>综合题 1</b>：一个凸透镜的焦距为 10cm，物体从距透镜 30cm 处向透镜方向移动，请分析成像变化全过程。<br>
+  <span class="hl">解：</span>① u>20cm(2f)→倒立缩小实像，像距 f&lt;v&lt;2f<br>
+  ② u=20cm→倒立等大实像，v=20cm<br>
+  ③ 20cm>u>10cm→倒立放大实像，v>20cm<br>
+  ④ u=10cm→不成像（平行光出射）<br>
+  ⑤ u&lt;10cm→正立放大虚像</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">变化规律："物近像远像变大"（成实像时）。物距从大到小→像距从小到大→像从大到小。物距小于焦距后进入虚像区。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>综合题 2</b>：画出光路图：光纤从空气斜射入水中，在水面同时发生反射和折射，已知入射角为 45°，水的折射率 n=4/3。<br>
+  <span class="hl">提示：</span>反射角=45°；折射角由折射定律 n=sin i/sin r 计算，sin r=sin45°/(4/3)≈0.53→r≈32°</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意画图三要素：①法线（虚线）②反射光线与入射光线分居法线两侧，反射角=45°③折射光线靠近法线，折射角≈32°</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">综合练习：凸透镜焦距 15cm，物体放在 20cm 处，(1)成像性质？(2)若物体向透镜移近 8cm，成像性质如何变化？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">(1)f&lt;u=20cm&lt;2f=30cm→倒立放大实像（投影仪）。(2)移近8cm→u=12cm&lt;f=15cm→正立放大虚像（放大镜）。从实像变为虚像。</div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 初中物理光学专题 · 陪你一起成长</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#2980b9;cursor:pointer">获取联系方式</span></p>
+</div>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——初中物理光学专题，7大板块系统梳理，光的传播+反射+折射+透镜成像+色散+应用+综合，含多道精选例题。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  shareTextEl.textContent = shareTxt;
+  copyBtn.addEventListener('click', function() {
+    if (hasCopied) return;
+    navigator.clipboard.writeText(shareTxt).then(function() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      hasCopied = true;
+      var ct = localStorage.getItem('sx_copy_time');
+      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
+      function checkShare() {
+        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
+        var ok = Date.now() - t0 >= 10000;
+        sharedBtn.disabled = !ok;
+        if (!ok) setTimeout(checkShare, 500);
+        else sharedBtn.textContent = '我已分享，查看联系方式 →';
+      }
+      setTimeout(checkShare, 10000);
+    });
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (sharedBtn.disabled) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+  });
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) {
+      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+      return;
+    }
+    overlay.classList.add('active');
+  };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+})();
+</script>
+
+<script>
+function toggleSol(btn) {
+  var el = btn.nextElementSibling;
+  el.classList.toggle('show');
+  btn.textContent = el.classList.contains('show') ? '🙈 收起' : '👁️ 看解析';
+}
+</script>
 </body>
 </html>

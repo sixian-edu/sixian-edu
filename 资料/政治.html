@@ -3,150 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>道德与法治 · 思贤学习站</title>
+<title>初中政治专题 · 思贤学习站</title>
 <link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
-.head{max-width:1000px;margin:0 auto;padding:20px 20px 0}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
 .head a{color:#888;font-size:13px;text-decoration:none}
-.head h1{font-size:26px;color:#1a1a2e;margin:8px 0 16px}
-.tab-bar{display:flex;gap:0;max-width:1000px;margin:0 auto;border-bottom:2px solid #e67e22}
-.tab-btn{padding:10px 28px;font-size:15px;font-weight:600;cursor:pointer;border:none;background:#fff;color:#888;transition:all .2s;border-radius:8px 8px 0 0;margin-bottom:-2px}
-.tab-btn:hover{color:#e67e22}
-.tab-btn.active{background:#e67e22;color:#fff}
-.body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
-.pane{display:none;position:relative}
-.pane.active{display:block}
-.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
-.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
-.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
-.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
-.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
-.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
-.lock-screen .lk-box .lb-btn:hover{opacity:.85}
-.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
-.lock-screen .lk-contact{display:none;margin-top:14px;width:100%;max-width:360px;text-align:center}
-.lock-screen .lk-contact.show{display:block}
-.lock-screen .lc-dv{height:1px;background:#eee;margin-bottom:12px}
-.lock-screen .lc-t{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
-.lock-screen .lc-d{font-size:12px;color:#999;margin-bottom:10px}
-.lock-screen .lc-wx{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
-.lock-screen .lc-wx label{font-size:13px;color:#666}
-.lock-screen .lc-wx strong{font-size:15px;color:#e74c3c}
-.lock-screen .lc-wx-btn{padding:5px 14px;background:#fff;border:1px solid #e74c3c;color:#e74c3c;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600}
-.lock-screen .lc-wx-btn:hover{background:#e74c3c;color:#fff}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #B88848;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#B88848;margin-bottom:6px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(184,136,72,0.08);color:#B88848;margin-bottom:10px}
+.top p{font-size:14px;color:#555;margin-bottom:6px}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:12px 16px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#B88848;margin-bottom:3px}
+.top .ex .a{color:#666;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:4px}
+.top .ex .a strong{color:#B88848}
+.top .hw{background:#f0f7ff;border-radius:8px;padding:12px 16px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:10px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
 
-.cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #e67e22}
-.cd .t{font-weight:700;font-size:14px;color:#e67e22;margin-bottom:4px}
-.cd .d{font-size:13px;color:#555;line-height:1.7}
-.tg{display:inline-block;font-size:11px;background:#fdf0e7;color:#e67e22;padding:1px 8px;border-radius:4px;margin:2px}
-.kb{max-width:800px;margin:0 auto}
-.kb h2{font-size:20px;margin:28px 0 12px;padding-left:12px;border-left:4px solid #e74c3c;color:#2d3436}
-.kb h3{font-size:16px;margin:16px 0 8px;color:#444}
-.kb p{margin-bottom:8px;text-indent:2em;font-size:14px;line-height:1.9}
-.kb .hl{color:#e74c3c;font-weight:700}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
-<div class="head"><a href="../资料库.html">← 返回资料库</a><h1>道德与法治</h1></div>
-<div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)">📜 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
-</div>
-<div class="body">
-
-<div class="pane active" id="tabModel">
-<div class="lock-screen">
-  <div class="lk-icon">🔒</div>
-  <div class="lk-title">内容未解锁</div>
-  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
-  <div class="lk-box">
-    <div class="lb-t">📋 转发文案</div>
-    <div class="lb-txt">📢 商河家长注意！我发现一个宝藏家教资源站 👉 sixian-edu.github.io/sixian-edu 数学几何模型带图解🧊、物理公式速记📐、化学方程式汇总⚗️，各科知识点整理得太全了！孩子用了成绩明显进步👍 强烈推荐给各位家长，免费资料随便看，需要上门辅导的也可以加老师微信咨询～</div>
-    <button class="lb-btn" onclick="copyTxt(this)">复制文案 · 分享给好友</button>
-  </div>
-  <div class="lk-contact">
-    <div class="lc-dv"></div>
-    <div class="lc-t">📞 已分享？联系老师</div>
-    <div class="lc-d">将截图发给老师，验证后即可解锁</div>
-    <div class="lc-wx">
-      <label>微信号：</label><strong>155-6412-8008</strong>
-      <button class="lc-wx-btn" onclick="copyWx()">复制微信号</button>
-    </div>
-  </div>
-
-  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
-</div>
-
-
-<div class="pane" id="tabKnowledge">
-<div class="lock-screen">
-  <div class="lk-icon">🔒</div>
-  <div class="lk-title">内容未解锁</div>
-  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
-  <div class="lk-box">
-    <div class="lb-t">📋 转发文案</div>
-    <div class="lb-txt">📢 商河家长注意！我发现一个宝藏家教资源站 👉 sixian-edu.github.io/sixian-edu 数学几何模型带图解🧊、物理公式速记📐、化学方程式汇总⚗️，各科知识点整理得太全了！孩子用了成绩明显进步👍 强烈推荐给各位家长，免费资料随便看，需要上门辅导的也可以加老师微信咨询～</div>
-    <button class="lb-btn" onclick="copyTxt(this)">复制文案 · 分享给好友</button>
-  </div>
-  <div class="lk-contact">
-    <div class="lc-dv"></div>
-    <div class="lc-t">📞 已分享？联系老师</div>
-    <div class="lc-d">将截图发给老师，验证后即可解锁</div>
-    <div class="lc-wx">
-      <label>微信号：</label><strong>155-6412-8008</strong>
-      <button class="lc-wx-btn" onclick="copyWx()">复制微信号</button>
-    </div>
-  </div>
-
-  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
-</div>
-
-
-</div>
-<script>
-function switchTab(name, btn){
-  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
-  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  btn.classList.add('active');
-  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
-}
-function copyTxt(btn){
-  var txt = btn.closest('.lk-box').querySelector('.lb-txt').textContent;
-  var hint = document.querySelector('.pane.active .lk-hint');
-  var contact = document.querySelector('.pane.active .lk-contact');
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(txt).then(function(){
-      btn.textContent = '\u2705 \u5df2\u590d\u5236\uff0c\u5206\u4eab\u540e\u8054\u7cfb\u8001\u5e08\u89e3\u9501\u5168\u90e8\u5185\u5bb9';
-      hint.textContent = '\u2705 \u5df2\u590d\u5236\uff01\u5206\u4eab\u540e\u6dfb\u52a0\u8001\u5e08\u5fae\u4fe1\u89e3\u9501';
-      if(contact) contact.classList.add('show');
-    });
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = txt; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-    btn.textContent = '\u2705 \u5df2\u590d\u5236\u3000\u8054\u7cfb\u8001\u5e08\u89e3\u9501';
-    hint.textContent = '\u2705 \u5df2\u590d\u5236\uff01\u5206\u4eab\u540e\u6dfb\u52a0\u8001\u5e08\u5fae\u4fe1\u89e3\u9501';
-    if(contact) contact.classList.add('show');
-  }
-}
-function copyWx(){
-  var wx = document.querySelector('.pane.active .lc-wx strong').textContent;
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(wx);
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = wx; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-  }
-  alert('\u5fae\u4fe1\u53f7\u5df2\u590d\u5236\uff0c\u53bb\u5fae\u4fe1\u6dfb\u52a0\u8001\u5e08\u5427\uff01');
-}
-</script>
-</body>
-</html>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中政治专题</h1><p class="sub">心理品德 · 法律常识 · 国情国策 · 道德修养</p></div>
+<div class="container"><div class="top"><h2>专题一：心理与品德</h2><span class="tag">心理健康</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>青春期心理特点：独立意识增强、情绪波动、逆反心理。调节情绪的方法：合理宣泄（运动、倾诉）、转移注意力、自我暗示、理性调节。正确对待挫折：挫折是成长的一部分，积极面对可以磨炼意志。孝敬父母：尊重、理解、感恩，多沟通。友谊：真诚、平等、相互支持。</p><div class="ex"><div class="q">例：小明考试成绩不理想，心情很低落，请你给他几个调节情绪的建议</div><div class="a"><strong>解：</strong>①合理宣泄：去操场跑一圈或找朋友倾诉 ②转移注意力：听音乐、看电影 ③理性分析：分析错题原因，制定改进计划 ④自我激励：相信下次能进步</div></div><div class="ex"><div class="q">例：如何正确看待青春期与父母的"代沟"</div><div class="a"><strong>解：</strong>①理解父母的良苦用心 ②主动与父母沟通 ③学会换位思考 ④尊重父母的意见和建议 ⑤用合理的方式表达自己的想法</div></div><div class="hw"><div class="hw-q">• 调节情绪的方法有哪些（至少写出三种） <span class="hw-a">答案：合理宣泄、转移注意力、自我暗示</span></div><div class="hw-q">• 真正的友谊建立在什么基础上 <span class="hw-a">答案：真诚、平等、相互理解和支持</span></div></div></div><div class="top"><h2>专题二：法律与法治</h2><span class="tag">法律常识</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>法律的特征：由国家制定或认可、靠国家强制力保证实施、对全体社会成员具有普遍约束力。宪法是国家的根本法：规定国家根本制度和根本任务，具有最高法律效力。公民基本权利：平等权、政治权利（选举权和被选举权）、人身自由权、受教育权等。公民义务：遵守宪法法律、依法纳税、服兵役等。</p><div class="ex"><div class="q">例：为什么说宪法是国家的根本法</div><div class="a"><strong>解：</strong>①宪法规定国家生活中最根本的问题（国家性质、根本制度等）②宪法具有最高的法律效力（一切法律不得与宪法相抵触）③宪法的制定和修改程序比其他法律更加严格</div></div><div class="ex"><div class="q">例：公民如何正确行使权利</div><div class="a"><strong>解：</strong>①不得损害国家、社会、集体的利益 ②不得损害其他公民的合法权利 ③在法律允许的范围内行使 ④按照法定程序行使</div></div><div class="hw"><div class="hw-q">• 我国宪法规定，公民最基本的政治权利是____和____ <span class="hw-a">答案：选举权，被选举权</span></div><div class="hw-q">• 在我国，国家的一切权力属于____ <span class="hw-a">答案：人民</span></div></div></div><div class="top"><h2>专题三：国情与责任</h2><span class="tag">国情国策</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>我国的基本国情：处于并将长期处于社会主义初级阶段。主要矛盾：人民日益增长的美好生活需要与不平衡不充分的发展之间的矛盾。基本国策：对外开放、计划生育、保护环境、节约资源。发展战略：科教兴国战略、人才强国战略、可持续发展战略、乡村振兴战略。社会主义核心价值观：富强民主文明和谐（国家）、自由平等公正法治（社会）、爱国敬业诚信友善（个人）。</p><div class="ex"><div class="q">例：为什么要坚持对外开放的基本国策</div><div class="a"><strong>解：</strong>①经济全球化趋势下，各国相互依存加深 ②对外开放能引进资金、先进技术和管理经验 ③提高我国国际竞争力 ④促进国内改革和发展。但要坚持独立自主、自力更生的原则。</div></div><div class="ex"><div class="q">例：作为中学生，如何践行社会主义核心价值观</div><div class="a"><strong>解：</strong>爱国：升国旗时庄严肃穆；敬业：认真学习；诚信：考试不作弊、信守承诺；友善：帮助同学、尊老爱幼。从身边小事做起。</div></div><div class="hw"><div class="hw-q">• 我国社会的主要矛盾是什么 <span class="hw-a">答案：人民日益增长的美好生活需要与不平衡不充分的发展之间的矛盾</span></div><div class="hw-q">• 社会主义核心价值观公民个人层面的要求是____、____、____、____ <span class="hw-a">答案：爱国、敬业、诚信、友善</span></div></div></div><div class="top"><h2>专题四：道德与修养</h2><span class="tag">道德修养</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>社会公德：文明礼貌、助人为乐、爱护公物、保护环境、遵纪守法。职业道德：爱岗敬业、诚实守信、办事公道、服务群众、奉献社会。家庭美德：尊老爱幼、男女平等、夫妻和睦、勤俭持家、邻里团结。诚信是中华民族的传统美德，是做人做事的基本准则。</p><div class="ex"><div class="q">例：在公交车上看到老人没有座位，你会怎么做？这体现了什么品质</div><div class="a"><strong>解：</strong>主动让座。体现了尊老爱幼的传统美德、关爱他人的社会公德、个人修养和同理心。</div></div><div class="ex"><div class="q">例：考试时好朋友想让你给他传答案，你该怎么办</div><div class="a"><strong>解：</strong>拒绝传答案，考后帮他分析原因、一起复习。考试作弊是不诚信行为，违反考试纪律，对双方都没有好处。</div></div><div class="hw"><div class="hw-q">• "己所不欲，勿施于人"体现了什么道德原则 <span class="hw-a">答案：换位思考、尊重他人</span></div><div class="hw-q">• 诚实守信对个人成长有什么重要意义 <span class="hw-a">答案：赢得信任、建立良好人际关系、为未来发展奠定基础</span></div></div></div></div><div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县</div><button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+</body></html>

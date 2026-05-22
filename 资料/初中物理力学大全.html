@@ -10,187 +10,437 @@
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
 .wrap{max-width:880px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+h1{text-align:center;font-size:28px;color:#c0392b;margin-bottom:4px;letter-spacing:2px}
 .sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
-.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
-.card .d{font-size:13px;color:#555;line-height:1.8}
-.card .d b{color:#333}
-.tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
+.sec-title{font-size:19px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #c0392b}
+.kp{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid #c0392b}
+.kp .kp-t{font-weight:700;font-size:16px;color:#c0392b;margin-bottom:8px}
+.kp .kp-d{font-size:14px;color:#444;line-height:1.9}
+.kp .kp-d b{color:#c0392b}
+.tag{display:inline-block;font-size:12px;background:#fef0ef;color:#c0392b;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
-.svg-wrap{text-align:center;margin:12px 0 6px}
-.svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto}
-.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
-.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#fef0ef;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;text-align:center;color:#c0392b;font-weight:600;font-family:monospace}
+.formula.b{background:#e3f2fd;color:#1565c0}
+.formula.g{background:#e6f7e6;color:#2d7d46}
+.formula.o{background:#fff3e0;color:#e65100}
+.ex{background:#fff5f5;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #c0392b}
+.ex .q{font-size:14px;color:#444;line-height:1.8}
+.ex .q .hl{color:#c0392b;font-weight:700}
+.ex .q .hl2{color:#1565c0;font-weight:700}
+.ex .a{background:#e6f7e6;border-radius:8px;padding:10px 14px;margin:10px 0 0;font-size:14px;color:#2d7d46;line-height:1.8;display:none}
+.ex .a.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#fff;color:#c0392b;border:1px solid #c0392b;border-radius:6px;font-size:12px;cursor:pointer;margin-top:8px}
+.sol-btn:hover{background:#c0392b;color:#fff}
+.hw{background:#f8f9fc;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #7f8c8d}
+.hw .hw-q{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.hw .hw-a{font-size:14px;color:#27ae60;line-height:1.8;display:none}
+.hw .hw-a.show{display:block}
+.step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:8px 12px;background:#f9fbe7;border-radius:8px}
+.step-num{flex:0 0 26px;height:26px;border-radius:50%;background:#c0392b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.step-c{flex:1;font-size:13px;color:#555;line-height:1.7}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
+th{background:#c0392b;color:#fff;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.tip-box{background:#fff8e1;border-radius:10px;padding:10px 14px;margin:10px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
+.tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#c0392b);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+@media(max-width:640px){h1{font-size:24px}.kp{padding:14px 16px}}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
 <a class="back" href="../学习专区.html">← 返回学习专区</a>
-<h1>⚡ 初中物理 · 力学</h1>
-<p class="sub">受力分析 · 压强 · 浮力 · 简单机械 · 中考必备</p>
+<h1>⚡ 初中物理 · 力学大全</h1>
+<p class="sub">受力分析 · 压强 · 浮力 · 简单机械 · 功与功率 · 机械效率 · 运动与力 · 中考全覆盖</p>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 受力分析</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_01_free_body.svg" width="420" height="263" alt="受力分析"></div>
-  <div class="d">
-    对物体进行受力分析，按顺序：<span class="tag red">重力</span><span class="tag green">支持力</span><span class="tag">拉力</span><span class="tag orange">摩擦力</span><br>
-    重力方向<b>竖直向下</b>，支持力垂直于接触面，摩擦力与相对运动方向相反。
+<!-- ═══════════ 一、受力分析 ═══════════ -->
+<div class="sec-title">一、受力分析</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 力的概念与分类</div>
+  <div class="kp-d">
+    力是物体对物体的作用，单位：<b>牛顿（N）</b>。力的作用效果：①改变物体的<b>形状</b> ②改变物体的<b>运动状态</b>。<br>
+    力的三要素：<b>大小、方向、作用点</b>（力的示意图要标出三要素）。<br>
+    <span class="tag red">重力 G=mg</span><span class="tag green">弹力（支持力、拉力）</span><span class="tag orange">摩擦力 f</span>
   </div>
+  <div class="chart-wrap"><img src="charts/topic_phy_force.svg" alt="受力分析"></div>
   <div class="formula">G = mg &nbsp;|&nbsp; 二力平衡：F合 = 0</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 重力</div>
-  <div class="d">
-    由于地球吸引而使物体受到的力，方向<b>竖直向下</b>（不是垂直向下）。<br>
-    <span class="tag red">G = mg</span><span class="tag">g ≈ 9.8 N/kg</span><span class="tag">重心</span>
-    重心是重力的作用点，形状规则且质量分布均匀的物体的重心在几何中心。
+<div class="kp">
+  <div class="kp-t">🔹 受力分析顺序："一重二弹三摩擦"</div>
+  <div class="kp-d">
+    <b>第一步：重力</b> — 竖直向下，作用在重心<br>
+    <b>第二步：弹力</b> — 支持力（垂直于接触面）、拉力（沿绳方向）、压力<br>
+    <b>第三步：摩擦力</b> — 与相对运动方向相反（注意判断有无摩擦力）<br><br>
+    <span class="tag red">关键</span> 受力分析只分析"物体受到的力"，不分析"物体施加的力"！<br>
+    <span class="tag blue">技巧</span> 先找重力，再找接触面（弹力+摩擦力），最后检查其他力。
   </div>
-  <div class="formula">G = mg &nbsp;|&nbsp; 重力方向：竖直向下</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 弹力与弹簧测力计</div>
-  <div class="d">
-    物体发生<b>弹性形变</b>时产生的力。弹力大小与形变程度有关。<br>
-    <span class="tag red">弹簧测力计</span><span class="tag green">在弹性限度内，伸长量与拉力成正比</span>
-    <br>使用前要调零，观察量程和分度值，读数时视线与刻度盘垂直。
-  </div>
-  <div class="formula">F = k·Δx &nbsp;（在弹性限度内）</div>
+<div class="ex">
+  <div class="q"><b>例题 1</b>：静止在水平桌面上的书本，受到哪些力？画出受力示意图。<br>
+  <span class="hl">分析：</span>①重力G（竖直向下）②支持力N（竖直向上）— 二力平衡，G=N</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">重力 G = mg 竖直向下，支持力 N = G 竖直向上，二力平衡。注意：书本不受"压力"（压力是书本对桌面的力）。</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 摩擦力</div>
-  <div class="d">
-    两个相互接触的物体发生相对运动或具有相对运动趋势时产生的力。<br>
-    <span class="tag red">滑动摩擦力</span><span class="tag green">静摩擦力</span><span class="tag orange">滚动摩擦力</span>
-    <br>影响因素：<b>压力大小</b>和<b>接触面粗糙程度</b>。滚动摩擦远小于滑动摩擦。
-  </div>
-  <div class="formula">f = μN &nbsp;|&nbsp; 增大摩擦：增大压力 / 增大粗糙度</div>
+<div class="ex">
+  <div class="q"><b>例题 2</b>：在水平地面上匀速前进的小车，受到哪些力？<br>
+  <span class="hl">分析：</span>①重力G↓ ②支持力N↑ ③牵引力F→ ④摩擦力f←（匀速→合力为零）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">四个力：G=N（竖直方向平衡），F=f（水平方向平衡）。因为匀速运动，所以合力为零。</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 二力平衡与牛顿第一定律</div>
-  <div class="d">
-    二力平衡条件：<b>同体、等大、反向、共线</b>。<br>
-    <span class="tag red">牛顿第一定律</span> 一切物体在不受力时，总保持静止或匀速直线运动状态。<br>
-    <span class="tag green">惯性</span> 物体保持原来运动状态的性质，<b>只与质量有关</b>。
-  </div>
-  <div class="formula">F合 = 0 ⇔ 平衡状态 &nbsp;|&nbsp; 惯性只与质量有关</div>
+<div class="hw">
+  <div class="hw-q">练习 1：在斜面上静止的物体，画出它的受力示意图。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">受到三个力：①重力G（竖直向下）②支持力N（垂直于斜面向上）③静摩擦力f（沿斜面向上，防止下滑）</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 力的合成与平行四边形法则</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_12_force_decomp.svg" width="420" height="263" alt="力的合成"></div>
-  <div class="d">
-    两个力合成时，以表示这两个力的线段为邻边作平行四边形，<b>对角线</b>表示合力的大小和方向。<br>
-    <span class="tag">同向相加</span><span class="tag">反向相减</span><span class="tag orange">合力范围：|F₁−F₂| ≤ F ≤ F₁+F₂</span>
-  </div>
-  <div class="formula">F = √(F₁² + F₂² + 2F₁F₂·cosθ) &nbsp;|&nbsp; 平行四边形法则</div>
+<div class="hw">
+  <div class="hw-q">练习 2：悬挂在天花板下的吊灯，分析受力情况。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">受到两个力：①重力G（竖直向下）②绳的拉力F（竖直向上）— 二力平衡，G=F</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 压强</div>
-  <div class="d">
-    物体单位面积上所受的压力。增大压强的方法：<b>增大压力</b>或<b>减小受力面积</b>。<br>
-    <span class="tag red">p = F/S</span><span class="tag">单位：Pa（帕斯卡）</span><span class="tag">1 Pa = 1 N/m²</span>
-    <br>减小压强：增大受力面积（如书包带做宽、坦克履带）。
+<!-- ═══════════ 二、压强 ═══════════ -->
+<div class="sec-title">二、压强</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 压强基本概念</div>
+  <div class="kp-d">
+    物体单位面积上所受的压力叫压强。反映压力的<b>作用效果</b>。<br>
+    <span class="tag red">p = F/S</span><span class="tag green">单位：Pa（帕斯卡）</span><span class="tag">1 Pa = 1 N/m²</span>
   </div>
-  <div class="formula">p = F/S &nbsp;|&nbsp; 增大压强：增大F 或 减小S</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_pressure.svg" alt="固体与液体压强"></div>
+  <div class="formula">固体：p = F/S &nbsp;|&nbsp; 柱体对水平面：p = ρgh &nbsp;|&nbsp; 液体：p = ρgh</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 液体压强</div>
-  <div class="d">
-    液体内部向各个方向都有压强，同种液体同一深度压强相等。<br>
-    <span class="tag red">p = ρgh</span><span class="tag">液体压强与深度成正比</span><span class="tag">与液体密度成正比</span>
-    <br>连通器原理：同种液体静止时，各液面高度相同（茶壶、锅炉水位计、船闸）。
+<div class="kp">
+  <div class="kp-t">🔹 液体压强</div>
+  <div class="kp-d">
+    液体内部向<b>各个方向</b>都有压强，同种液体同一深度压强相等。<br>
+    <b>影响因素：</b>液体密度 ρ、深度 h（与液体体积、容器形状无关）<br>
+    <span class="tag red">p = ρgh</span><span class="tag orange">深度 h 从自由液面竖直向下计算</span><br>
+    <b>连通器原理：</b>同种液体静止时各液面高度相同（茶壶、锅炉水位计、船闸）
   </div>
-  <div class="formula">p = ρgh &nbsp;|&nbsp; 连通器：液面相平</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 大气压强</div>
-  <div class="d">
-    大气对浸在它里面的物体产生的压强。<b>马德堡半球实验</b>证明了大气压的存在。<br>
-    <span class="tag red">托里拆利实验</span> 测出大气压值：p₀ = 1.013×10⁵ Pa<br>
-    <span class="tag orange">海拔越高，气压越低</span><span class="tag">沸点随气压降低而降低</span>
-  </div>
-  <div class="formula">p₀ = 1.013×10⁵ Pa &nbsp;|&nbsp; 海拔↑ 气压↓ 沸点↓</div>
+<div class="ex">
+  <div class="q"><b>例题 3</b>：一个质量为 60kg 的人，每只脚与地面的接触面积为 200cm²。求他站立时对地面的压强。<br>
+  <span class="hl">解：</span>F=G=mg=60×10=600N，S=200×2=400cm²=0.04m²<br>
+  p=F/S=600/0.04=<b>15000Pa</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意：站立时两脚着地，受力面积是两只脚的总面积。行走时单脚着地，压强翻倍！</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 浮力 · 阿基米德原理</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_04_buoyancy.svg" width="420" height="263" alt="浮力"></div>
-  <div class="d">
+<div class="hw">
+  <div class="hw-q">练习 3：水坝深 20m 处，水对坝底的压强是多少？（ρ水=1.0×10³kg/m³，g=10N/kg）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">p=ρgh=1.0×10³×10×20=<b>2×10⁵Pa</b></div>
+</div>
+
+<!-- ═══════════ 三、浮力 ═══════════ -->
+<div class="sec-title">三、浮力</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 阿基米德原理</div>
+  <div class="kp-d">
     浸在液体中的物体受到向上的浮力，浮力大小等于物体<b>排开液体的重力</b>。<br>
-    <span class="tag red">F浮 = ρ液 g V排</span><span class="tag green">浮力与深度无关</span>
-    <br>沉浮条件：<span class="tag">F浮 > G 上浮</span><span class="tag">F浮 = G 悬浮</span><span class="tag">F浮 < G 下沉</span>
+    <span class="tag red">F浮 = ρ液 g V排</span>
+    <span class="tag green">浮力与物体密度、形状、深度无关</span>
+    <span class="tag orange">V排 = 物体浸入部分的体积</span>
   </div>
-  <div class="formula">F浮 = ρ液 g V排 &nbsp;|&nbsp; 轮船：空心法；潜水艇：改变自重</div>
+  <div class="chart-wrap"><img src="charts/topic_phy_float.svg" alt="浮力"></div>
+  <div class="formula">F浮 = G排 = ρ液 g V排</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 简单机械 · 杠杆</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_02_lever.svg" width="420" height="263" alt="杠杆"></div>
-  <div class="d">
-    在力的作用下绕固定点转动的硬棒叫杠杆。<br>
-    <span class="tag red">F₁L₁ = F₂L₂</span> 动力×动力臂 = 阻力×阻力臂<br>
-    <span class="tag">省力杠杆：L₁ > L₂（省力费距离）</span><span class="tag green">费力杠杆：L₁ < L₂（费力省距离）</span>
-    <br>生活中的杠杆：钳子（省力）、钓鱼竿（费力）、天平（等臂）。
+<div class="kp">
+  <div class="kp-t">🔹 浮沉条件</div>
+  <div class="kp-d">
+    <table>
+      <tr><th>状态</th><th>条件（浸没时）</th><th>ρ物 与 ρ液</th><th>应用</th></tr>
+      <tr><td>上浮→漂浮</td><td>F浮 > G</td><td>ρ物 &lt; ρ液</td><td>轮船（空心法）</td></tr>
+      <tr><td>悬浮</td><td>F浮 = G</td><td>ρ物 = ρ液</td><td>水中悬浮</td></tr>
+      <tr><td>下沉→沉底</td><td>F浮 &lt; G</td><td>ρ物 > ρ液</td><td>潜水艇（改变自重）</td></tr>
+    </table>
+    <span class="tag blue">漂浮时：F浮 = G（部分浸没）</span><span class="tag purple">悬浮时：F浮 = G（完全浸没）</span>
   </div>
-  <div class="formula">F₁L₁ = F₂L₂ &nbsp;|&nbsp; 省力杠杆：L₁ > L₂</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 简单机械 · 滑轮</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_03_pulley.svg" width="420" height="263" alt="滑轮"></div>
-  <div class="d">
-    <span class="tag red">定滑轮</span> 不省力，改变力的方向（实质为等臂杠杆）。<br>
-    <span class="tag green">动滑轮</span> 省一半力，不改变方向（实质为动力臂=2×阻力臂的杠杆）。<br>
-    <span class="tag orange">滑轮组</span> F = G/n，n为承担重物的绳子段数。
-  </div>
-  <div class="formula">定滑轮：F = G &nbsp;|&nbsp; 动滑轮：F = G/2 &nbsp;|&nbsp; 滑轮组：F = G/n</div>
+<div class="ex">
+  <div class="q"><b>例题 4</b>：一艘轮船从海里驶入河里，它受到的浮力____，船身____（上浮/下沉）一些？<br>
+  <span class="hl">解：</span>漂浮时 F浮=G，重力不变→浮力不变。ρ海水>ρ河水，由F浮=ρ液gV排，ρ液↓→V排↑，船身下沉一些。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">浮力不变（始终等于船重），但河水密度小于海水，排开水的体积增大，船身下沉。</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 功与功率</div>
-  <div class="d">
+<div class="hw">
+  <div class="hw-q">练习 4：一个质量为 0.6kg、体积为 1×10⁻³m³ 的木块，放入水中静止后的浮力是多少？（g=10N/kg）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">ρ木=0.6/10⁻³=0.6×10³kg/m³&lt;ρ水，所以漂浮。F浮=G=mg=0.6×10=<b>6N</b></div>
+</div>
+
+<!-- ═══════════ 四、简单机械 ═══════════ -->
+<div class="sec-title">四、简单机械</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 杠杆</div>
+  <div class="kp-d">
+    在力的作用下绕固定点转动的硬棒。五要素：<b>支点、动力、阻力、动力臂、阻力臂</b>。<br>
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_lever.svg" alt="杠杆"></div>
+  <div class="formula">F₁L₁ = F₂L₂ &nbsp;|&nbsp; 省力杠杆：L₁ > L₂ &nbsp;|&nbsp; 费力杠杆：L₁ &lt; L₂</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 滑轮</div>
+  <div class="kp-d">
+    <table>
+      <tr><th>类型</th><th>特点</th><th>实质</th><th>公式</th></tr>
+      <tr><td>定滑轮</td><td>不省力，改变方向</td><td>等臂杠杆</td><td>F=G</td></tr>
+      <tr><td>动滑轮</td><td>省一半力，不改变方向</td><td>动力臂=2×阻力臂</td><td>F=G/2</td></tr>
+      <tr><td>滑轮组</td><td>既省力又可以改变方向</td><td>—</td><td>F=G/n</td></tr>
+    </table>
+    <span class="tag red">n 为承担重物绳子的段数</span><span class="tag orange">绳端移动距离 s = nh</span>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 5</b>：用一个动滑轮将重 200N 的物体匀速提升 2m，不计摩擦和滑轮重，求：(1)拉力 F (2)绳端移动距离 s<br>
+  <span class="hl">解：</span>动滑轮 F=G/2=200/2=<b>100N</b>，s=2h=2×2=<b>4m</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">动滑轮省一半力但费一倍距离。若考虑滑轮重（G轮=20N），则 F=(G+G轮)/2=110N。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 5：用滑轮组提升重 300N 的物体，绳子段数 n=3，求拉力 F（不计摩擦和滑轮重）。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">F=G/n=300/3=<b>100N</b></div>
+</div>
+
+<!-- ═══════════ 五、功与功率 ═══════════ -->
+<div class="sec-title">五、功与功率</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 功</div>
+  <div class="kp-d">
     功等于力与在力的方向上移动距离的乘积。<br>
-    <span class="tag red">W = Fs</span><span class="tag green">单位：J（焦耳）</span>
-    <br>功率表示做功的快慢。<span class="tag red">P = W/t = Fv</span><span class="tag green">单位：W（瓦特）</span>
-    <br>不做功的三种情况：有力无距离、有距离无力、力与距离垂直。
+    <span class="tag red">W = Fs</span><span class="tag green">单位：J（焦耳）</span><span class="tag blue">1J = 1N·m</span><br>
+    <b>不做功的三种情况：</b>①有力无距离（推车未动）②有距离无力（惯性前进）③力与距离垂直（水平提水桶走路）
   </div>
+  <div class="chart-wrap"><img src="charts/topic_phy_work.svg" alt="功与功率"></div>
   <div class="formula">W = Fs &nbsp;|&nbsp; P = W/t &nbsp;|&nbsp; P = Fv（匀速运动）</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 机械效率</div>
-  <div class="d">
-    有用功与总功的比值。机械效率总<b>小于1</b>（因为额外功不可避免）。<br>
-    <span class="tag red">η = W有 / W总 × 100%</span>
-    <br>提高机械效率的方法：<span class="tag">减小摩擦</span><span class="tag">减轻机械自重</span>
-    <br>斜面：相同高度，斜面越长越省力，但机械效率越低。
+<div class="kp">
+  <div class="kp-t">🔹 功率</div>
+  <div class="kp-d">
+    功率表示做功的<b>快慢</b>，与做功多少和时间有关。<br>
+    <span class="tag red">P = W/t</span><span class="tag green">P = Fv</span><span class="tag orange">单位：W（瓦特）1kW=1000W</span><br>
+    <b>注意：</b>功率大不一定做功多（时间短），做功多不一定功率大（时间长）。
   </div>
-  <div class="formula">η = W有/W总 × 100% &nbsp;|&nbsp; η < 100%</div>
 </div>
 
-<div class="card" style="border-top-color:#e74c3c">
-  <div class="t" style="color:#e74c3c">🔹 速度与运动图像</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_08_motion_graph.svg" width="420" height="263" alt="运动图像"></div>
-  <div class="d">
-    v-t 图像分析物体运动状态：<br>
-    <span class="tag red">匀速直线</span> v恒定不变，F合=0<br>
-    <span class="tag green">加速运动</span> v逐渐增大，合力方向与运动方向相同<br>
-    <span class="tag orange">减速运动</span> v逐渐减小，合力方向与运动方向相反
-  </div>
-  <div class="formula">v = s/t &nbsp;|&nbsp; 匀速：s = vt &nbsp;|&nbsp; v-t图面积 = 位移</div>
+<div class="ex">
+  <div class="q"><b>例题 6</b>：一台机器功率为 2kW，工作 30 秒做功多少？<br>
+  <span class="hl">解：</span>P=2000W，t=30s，W=Pt=2000×30=<b>6×10⁴J</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意单位换算：2kW=2000W</div>
 </div>
 
+<div class="hw">
+  <div class="hw-q">练习 6：用 100N 的水平推力使物体前进 5m，做的功是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">W=Fs=100×5=<b>500J</b></div>
 </div>
+
+<!-- ═══════════ 六、机械效率 ═══════════ -->
+<div class="sec-title">六、机械效率</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 有用功、额外功、总功</div>
+  <div class="kp-d">
+    <b>有用功（W有）：</b>为达到目的必须做的功（提升物体时 W有=Gh）<br>
+    <b>额外功（W额）：</b>克服机械自重和摩擦做的功（不可避免）<br>
+    <b>总功（W总）：</b>动力做的功 W总=W有+W额<br>
+    <span class="tag red">η = W有/W总 × 100%</span><span class="tag orange">机械效率总小于 1</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_efficiency.svg" alt="机械效率对比"></div>
+  <div class="formula">η = W有/W总 × 100% &nbsp;|&nbsp; 提高效率：减轻自重、减小摩擦</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 7</b>：用滑轮组将重 400N 的物体提升 2m，拉力为 150N，绳端移动了 8m，求：(1)有用功 (2)总功 (3)机械效率<br>
+  <span class="hl">解：</span>W有=Gh=400×2=800J；W总=Fs=150×8=1200J；η=800/1200≈66.7%</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意：绳端移动距离 s=nh，n=s/h=8/2=4（4段绳子）。额外功 W额=W总-W有=400J。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 7：利用斜面将重物推上车，斜面长 3m、高 1m，推力 300N，物重 600N，求机械效率。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">W有=Gh=600×1=600J；W总=Fs=300×3=900J；η=600/900=<b>66.7%</b></div>
+</div>
+
+<!-- ═══════════ 七、运动与力 ═══════════ -->
+<div class="sec-title">七、运动与力</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 牛顿第一定律与惯性</div>
+  <div class="kp-d">
+    一切物体在不受力时，总保持<b>静止</b>或<b>匀速直线运动</b>状态（牛顿第一定律）。<br>
+    <span class="tag red">惯性：</span>物体保持原来运动状态的性质，<b>只与质量有关</b>（与速度无关！）<br>
+    <span class="tag orange">注意：</span>惯性是性质不是力，不能说"惯性力"或"受到惯性"<br>
+    <span class="tag green">惯性的利用：</span>跳远助跑、锤头松了锤柄撞地、撞击套紧
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 运动图像分析</div>
+  <div class="chart-wrap"><img src="charts/phy_motion_graphs.svg" alt="运动图像"></div>
+  <div class="kp-d">
+    <b>s-t 图像：</b>水平线→静止；斜线→匀速（斜率=速度）<br>
+    <b>v-t 图像：</b>水平线→匀速；斜向上→加速；斜向下→减速<br>
+    <span class="tag blue">v-t图像面积 = 路程</span>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 摩擦力</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_friction.svg" alt="摩擦力影响因素"></div>
+  <div class="kp-d">
+    摩擦力方向与<b>相对运动方向相反</b>（不是与运动方向相反！）<br>
+    影响因素：①<b>压力大小</b> ②<b>接触面粗糙程度</b><br>
+    <span class="tag red">f = μN</span><span class="tag green">增大摩擦：增大压力/增大粗糙度</span><br>
+    <span class="tag orange">减小摩擦：加润滑油/用滚动代替滑动</span>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 8</b>：一辆汽车在水平路面匀速行驶，牵引力为 2000N，受到的摩擦力是多少？若牵引力增大到 2500N，摩擦力变为多少？<br>
+  <span class="hl">解：</span>匀速→F=f=2000N；牵引力增大时，滑动摩擦力只与压力和粗糙程度有关，不变，仍为2000N，汽车加速运动。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">关键：滑动摩擦力与速度、牵引力无关。牵引力增大但摩擦力不变，合力不为零，汽车加速。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 8：质量 2000kg 的汽车在水平路面匀速行驶，摩擦系数 μ=0.3，求摩擦力大小（g=10N/kg）。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">压力 N=G=mg=2000×10=20000N；f=μN=0.3×20000=<b>6000N</b></div>
+</div>
+
+<!-- ═══════════ 八、综合应用 ═══════════ -->
+<div class="sec-title">✍️ 综合应用</div>
+
+<div class="ex">
+  <div class="q"><b>综合题 1</b>：一个边长为 0.1m、密度为 2×10³kg/m³ 的正方体金属块，求：<br>
+  (1) 质量为多少？(2) 重力为多少？(3) 放在水平面上对地面的压强？(4) 浸没水中时浮力？(5) 浸没时弹簧测力计示数？<br>
+  <span class="hl">解：</span>V=0.001m³；m=ρV=2kg；G=20N；p=F/S=20/0.01=2000Pa；F浮=ρ水gV排=10N；F示=G-F浮=10N</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">综合题串联了密度、重力、压强、浮力、弹簧测力计多个知识点。关键：ρ=m/V，F浮=ρ液gV排。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>综合题 2</b>：工人用滑轮组提升重 480N 的物体，拉力 200N，绳端移动 6m 物体上升 2m，求：(1)有用功 (2)总功 (3)机械效率 (4)额外功<br>
+  <span class="hl">解：</span>W有=Gh=480×2=960J；W总=Fs=200×6=1200J；η=960/1200=80%；W额=W总-W有=240J</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">n=s/h=6/2=3段绳子。额外功用于克服动滑轮重和摩擦。若动滑轮重 G轮=60N，则克服动滑轮做功 W轮=G轮h=120J。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">综合练习：质量为 1kg 的木块漂浮在水面上，求：(1)浮力 (2)排开水的体积 (3)浸入水中的深度（底面积 0.01m²）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">(1)F浮=G=mg=10N；(2)V排=F浮/(ρ水g)=10⁻³m³；(3)h=V排/S=0.1m</div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 初中物理力学专题 · 陪你一起成长</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#c0392b;cursor:pointer">获取联系方式</span></p>
+</div>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——初中物理力学专题，8大板块系统梳理，受力分析+压强+浮力+简单机械+功与功率+效率+运动与力+综合，含多道精选例题。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  shareTextEl.textContent = shareTxt;
+  copyBtn.addEventListener('click', function() {
+    if (hasCopied) return;
+    navigator.clipboard.writeText(shareTxt).then(function() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      hasCopied = true;
+      var ct = localStorage.getItem('sx_copy_time');
+      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
+      function checkShare() {
+        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
+        var ok = Date.now() - t0 >= 10000;
+        sharedBtn.disabled = !ok;
+        if (!ok) setTimeout(checkShare, 500);
+        else sharedBtn.textContent = '我已分享，查看联系方式 →';
+      }
+      setTimeout(checkShare, 10000);
+    });
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (sharedBtn.disabled) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+  });
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) {
+      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+      return;
+    }
+    overlay.classList.add('active');
+  };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+})();
+</script>
+
+<script>
+function toggleSol(btn) {
+  var el = btn.nextElementSibling;
+  el.classList.toggle('show');
+  btn.textContent = el.classList.contains('show') ? '🙈 收起' : '👁️ 看解析';
+}
+</script>
 </body>
 </html>

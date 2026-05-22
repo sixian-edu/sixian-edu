@@ -36,6 +36,10 @@ ul li{margin-bottom:3px}
   h2{page-break-after:avoid}
   h3{page-break-after:avoid}
 }
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../js/theme.js"></script>
 </head>
@@ -50,6 +54,8 @@ ul li{margin-bottom:3px}
 <p><span class="highlight">长度与时间测量</span>：长度的基本单位是米（m），常用单位有千米（km）、分米（dm）、厘米（cm）、毫米（mm）、微米（μm）、纳米（nm）。刻度尺读数时需估读到分度值的下一位。时间的国际单位是秒（s），常用单位有分钟（min）、小时（h）。</p>
 <p><span class="highlight">误差</span>：测量值与真实值之间的差异。误差不可消除，只能减小——多次测量取平均值、选用精密仪器、改进测量方法。</p>
 <p><span class="highlight">参照物与运动</span>：物体位置随时间的变化叫机械运动。判断运动需选参照物，参照物假定不动。运动和静止是相对的。速度是描述物体运动快慢的物理量，<span class="formula">v = s / t</span>基本单位 m/s，常用 km/h，1 m/s = 3.6 km/h。匀速直线运动：速度不变，路线为直线。</p>
+
+<img src="charts/phy_motion_graphs.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="运动图像">
 
 <!-- ════════════════════════════════════════ -->
 <h2>二、声现象</h2>
@@ -68,6 +74,8 @@ ul li{margin-bottom:3px}
 <h2>四、透镜及其应用</h2>
 <p><span class="highlight">凸透镜与凹透镜</span>：凸透镜对光有会聚作用，凹透镜对光有发散作用。主光轴、光心（O）、焦点（F）、焦距（f）。</p>
 <p><span class="highlight">凸透镜成像规律</span>（u = 物距，v = 像距）：</p>
+
+<img src="charts/phy_lens.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="透镜成像">
 <div class="grid2">
   <div><span class="t">u &gt; 2f</span><div class="d">f &lt; v &lt; 2f，倒立缩小的实像——照相机</div></div>
   <div><span class="t">u = 2f</span><div class="d">v = 2f，倒立等大的实像——测焦距</div></div>
@@ -125,6 +133,8 @@ ul li{margin-bottom:3px}
 <p><span class="highlight">分子热运动</span>：一切物质的分子都在永不停息地做无规则运动。扩散现象（分子运动的结果）。温度越高，分子热运动越剧烈。</p>
 <p><span class="highlight">内能</span>：物体内部所有分子热运动的动能和分子势能的总和。一切物体都有内能。改变内能的方式：做功（实质是能量的转化）和热传递（实质是能量的转移）。</p>
 <p><span class="highlight">比热容</span>：单位质量的某种物质温度升高（或降低）1℃所吸收（或放出）的热量。c = Q / (mΔt)，单位 J/(kg·℃)。水的比热容最大 4.2×10³ J/(kg·℃)。Q吸 = cm(t - t₀)，Q放 = cm(t₀ - t)。</p>
+
+<img src="charts/phy_melting.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="物态变化">
 <p><span class="highlight">热值</span>：燃料完全燃烧放出的热量与其质量之比。q = Q / m，单位 J/kg。Q放 = m q。热机四冲程：吸气、压缩、做功、排气，其中做功冲程将内能转化为机械能。</p>
 
 <!-- ════════════════════════════════════════ -->
@@ -190,5 +200,7 @@ function copyTxt(){
   }
 }
 </script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 </body>
 </html>

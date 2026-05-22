@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>高中数学 · 数列专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#5688CC}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#5688CC;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #5688CC;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#5688CC;margin-bottom:4px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(86,136,204,0.08);color:#5688CC;margin-bottom:10px}
+.top .tag2{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(231,76,60,0.08);color:#e74c3c;margin-bottom:10px;margin-left:4px}
+.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
+.top .kp strong{color:#5688CC}
+.top .kp .red{color:#e74c3c;font-weight:600}
+.top .kp .green{color:#27ae60;font-weight:600}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:11px 15px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#5688CC;margin-bottom:2px;font-size:14px}
+.top .ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:3px}
+.top .ex .a strong{color:#5688CC}
+.top .ex .a .step{color:#e67e22}
+.top .hw{background:#f0f7ff;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#f0f4ff;border-radius:8px;padding:10px 16px;margin:8px 0;border-left:3px solid #5688CC}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600;margin-bottom:2px}
+.formula-box .fd{font-size:12px;color:#888}
+@media(max-width:600px){.head h1{font-size:22px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>高中数学 · 数列专题</h1><p class="sub">数列概念 · 等差 · 等比 · 求和 · 递推 · 证明 · 综合 共 <span>7</span> 专题</p></div>
+<div class="container">
+
+<!-- ════════════ 专题一：数列的概念与通项公式 ════════════ -->
+<div class="top">
+<h2>专题一：数列的概念与通项公式</h2>
+<span class="tag">数列基础</span>
+
+<p class="kp"><strong>数列的定义</strong>：按一定次序排列的一列数叫做数列。数列中的每一个数叫做数列的<strong>项</strong>，第 n 项记作 aₙ。数列一般形式：a₁, a₂, a₃, …, aₙ, …，简记为 {aₙ}。</p>
+
+<p class="kp"><strong>数列的分类</strong>：按项数分为<strong>有穷数列</strong>（项数有限）和<strong>无穷数列</strong>（项数无限）。按变化趋势分为<strong>递增数列</strong>（aₙ₊₁ > aₙ）、<strong>递减数列</strong>（aₙ₊₁ < aₙ）、<strong>常数列</strong>（aₙ₊₁ = aₙ）和<strong>摆动数列</strong>（项的大小交替变化）。</p>
+
+<p class="kp"><strong>通项公式</strong>：如果数列 {aₙ} 的第 n 项 aₙ 与序号 n 之间的关系可以用一个式子表示，那么这个式子叫做数列的<strong>通项公式</strong>。求通项公式的常见方法：<span class="red">观察法</span>（观察项与序号的关系）、<span class="red">公式法</span>（已知等差/等比直接写）、<span class="red">由前n项和求</span>（aₙ = S₁ (n=1)；aₙ = Sₙ − Sₙ₋₁ (n≥2)）。</p>
+
+<p class="kp"><strong>递推公式</strong>：已知数列首项（或前几项），且数列的任一项 aₙ 与它的前一项 aₙ₋₁（或前几项）之间的关系可以用一个式子表示，这个式子叫做<strong>递推公式</strong>。递推公式+初始条件→数列被唯一确定。</p>
+
+<div class="formula-box">
+<div class="fm">aₙ 与 Sₙ 的关系</div>
+<div class="fd">aₙ = S₁ (n=1)；aₙ = Sₙ − Sₙ₋₁ (n ≥ 2)</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：数列 {aₙ} 的前 n 项和 Sₙ = n² + 2n，求通项公式 aₙ。</div>
+<div class="a"><strong>解：</strong>n=1 时，a₁ = S₁ = 1 + 2 = 3。<br>
+n≥2 时，aₙ = Sₙ − Sₙ₋₁ = (n²+2n) − [(n−1)²+2(n−1)]<br>
+= (n²+2n) − (n²−2n+1+2n−2) = (n²+2n) − (n²−1) = 2n + 1。<br>
+验证 n=1：2×1+1=3，与 a₁ 一致。<span class="green">∴ aₙ = 2n + 1（n∈N*）</span></div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：写出下列数列的一个通项公式：① 1, 3, 5, 7, …  ② 2, 5, 10, 17, …  ③ ½, ¼, ⅛, ¹⁄₁₆, …</div>
+<div class="a"><strong>解：</strong><br>
+① aₙ = 2n − 1（奇数列）<br>
+② 观察：2=1²+1, 5=2²+1, 10=3²+1, 17=4²+1 → aₙ = n² + 1<br>
+③ 观察：½=(½)¹, ¼=(½)², ⅛=(½)³ → aₙ = (½)ⁿ = 1/2ⁿ</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：已知 a₁ = 1, aₙ₊₁ = 2aₙ + 1（n∈N*），求 a₅。</div>
+<div class="a"><strong>解：</strong>a₂ = 2×1+1 = 3，a₃ = 2×3+1 = 7，a₄ = 2×7+1 = 15，a₅ = 2×15+1 = <strong>31</strong></div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 数列 {aₙ} 满足 a₁ = 2, aₙ₊₁ = aₙ + 2n，求 a₄ <span class="hw-a">答案：8</span></div>
+<div class="hw-q">• Sₙ = 3ⁿ − 1，求 aₙ <span class="hw-a">答案：aₙ = 2·3ⁿ⁻¹</span></div>
+<div class="hw-q">• 数列 1, 0, 1, 0, … 的一个通项公式 <span class="hw-a">答案：aₙ = ½[1+(−1)ⁿ⁻¹] 或 aₙ = sin(nπ/2)</span></div>
+</div>
+</div>
+
+<!-- ════════════ 专题二：等差数列 ════════════ -->
+<div class="top">
+<h2>专题二：等差数列</h2>
+<span class="tag">等差数列</span>
+
+<p class="kp"><strong>定义</strong>：从第二项起，每一项与它的前一项的差等于<strong>同一个常数</strong>，这个数列叫做等差数列，这个常数叫做公差 d。<br>
+即：aₙ₊₁ − aₙ = d（常数，n∈N*）。</p>
+
+<p class="kp"><strong>等差中项</strong>：若 a, A, b 成等差数列，则 A 叫做 a 与 b 的等差中项，且 <span class="red">2A = a + b</span>（即 A = (a+b)/2）。</p>
+
+<p class="kp"><strong>通项公式</strong>：aₙ = a₁ + (n−1)d。<br>
+<strong>重要变形</strong>：aₙ = aₘ + (n−m)d（从第 m 项开始推导第 n 项）。</p>
+
+<p class="kp"><strong>前 n 项和公式</strong>：<br>
+① Sₙ = n(a₁ + aₙ)/2（已知首项和末项，梯形面积形式）<br>
+② Sₙ = na₁ + n(n−1)d/2（已知首项和公差）</p>
+
+<p class="kp"><strong>常用性质</strong>：<br>
+① 若 m + n = p + q，则 aₘ + aₙ = aₚ + a_q（特别地，若 m + n = 2k，则 aₘ + aₙ = 2a_k）<br>
+② 数列 {aₙ} 是等差数列 ↔ aₙ = kn + b（即 aₙ 是 n 的一次函数）↔ Sₙ = An² + Bn（无常数项）<br>
+③ 等差数列的连续等长片段 S_k, S₂ₖ−S_k, S₃ₖ−S₂ₖ, … 仍成等差数列。<br>
+④ 若 {aₙ} 是等差数列，则 {paₙ + q} 也是等差数列。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/seq_ap.svg" alt="等差数列示意图"><div class="cp">等差数列 aₙ = 2 + (n−1)·3 的各点呈线性排列，公差 d=3</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：等差数列 {aₙ} 中，a₅ = 10，a₁₂ = 31，求 a₁ 和 d。</div>
+<div class="a"><strong>解：</strong>a₅ = a₁ + 4d = 10，a₁₂ = a₁ + 11d = 31。<br>
+两式相减：7d = 21 → <span class="step">d = 3</span>。代入第一式：a₁ + 12 = 10 → <span class="step">a₁ = −2</span>。<br>
+通项公式：aₙ = −2 + (n−1)·3 = 3n − 5。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：等差数列 {aₙ} 中，a₃ + a₇ + a₁₁ = 30，求 a₇ 和 S₁₃。</div>
+<div class="a"><strong>解：</strong>a₃ + a₁₁ = 2a₇（等差中项性质），所以 a₃ + a₇ + a₁₁ = 3a₇ = 30 → <span class="step">a₇ = 10</span>。<br>
+S₁₃ = 13(a₁ + a₁₃)/2 = 13 × 2a₇ / 2 = 13a₇ = <strong>130</strong>（利用 a₁ + a₁₃ = 2a₇）。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：已知等差数列 {aₙ} 的前 n 项和 Sₙ = 2n² − 3n，求 aₙ 和公差 d。</div>
+<div class="a"><strong>解：</strong>n=1，a₁ = S₁ = 2−3 = −1。<br>
+n≥2，aₙ = Sₙ − Sₙ₋₁ = (2n²−3n) − [2(n−1)²−3(n−1)]<br>
+= (2n²−3n) − (2n²−7n+5) = 4n − 5。<br>
+验证 n=1：4×1−5 = −1，一致。<span class="green">∴ aₙ = 4n − 5，d = 4</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：等差数列 {aₙ} 中，a₁ = 20，d = −3，求前 n 项和的最大值。</div>
+<div class="a"><strong>解：</strong>aₙ = 20 + (n−1)(−3) = 23 − 3n。<br>
+令 aₙ ≥ 0 → 23 − 3n ≥ 0 → n ≤ 7.67。<br>
+∴ 前 7 项均为正数，第 8 项为负。S₇ 最大。<br>
+S₇ = 7×20 + 7×6×(−3)/2 = 140 − 63 = <strong>77</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 等差数列 a₂=5, a₆=17，求 a₁₁ <span class="hw-a">答案：32（d=3，a₁=2，a₁₁=2+30=32）</span></div>
+<div class="hw-q">• 等差数列前 n 项和 Sₙ = n² − 4n，求 a₁₀ <span class="hw-a">答案：15</span></div>
+<div class="hw-q">• 在 −2 和 10 之间插入 3 个数使成等差数列，求这 3 个数 <span class="hw-a">答案：1, 4, 7（d=3）</span></div>
+<div class="hw-q">• 等差数列 {aₙ} 中 a₂+a₈=16，求 S₉ <span class="hw-a">答案：72（S₉=9(a₁+a₉)/2=9×16/2=72）</span></div>
+</div>
+</div>
+
+<!-- ════════════ 专题三：等比数列 ════════════ -->
+<div class="top">
+<h2>专题三：等比数列</h2>
+<span class="tag">等比数列</span>
+
+<p class="kp"><strong>定义</strong>：从第二项起，每一项与它的前一项的比等于<strong>同一个常数</strong>，这个数列叫做等比数列，这个常数叫做公比 q（<span class="red">q ≠ 0</span>）。<br>
+即：aₙ₊₁ / aₙ = q（常数，n∈N*，且 aₙ ≠ 0）。</p>
+
+<p class="kp"><strong>等比中项</strong>：若 a, G, b 成等比数列，则 G 叫做 a 与 b 的等比中项，且 <span class="red">G² = ab</span>（G = ±√ab，注意正负号）。</p>
+
+<p class="kp"><strong>通项公式</strong>：aₙ = a₁ · qⁿ⁻¹。<br>
+<strong>重要变形</strong>：aₙ = aₘ · qⁿ⁻ᵐ。</p>
+
+<p class="kp"><strong>前 n 项和公式</strong>（<span class="red">注意分类讨论</span>）：<br>
+① 当 q = 1 时，Sₙ = na₁（常数列求和）<br>
+② 当 q ≠ 1 时，Sₙ = a₁(1 − qⁿ)/(1 − q) = (a₁ − aₙq)/(1 − q)</p>
+
+<p class="kp"><strong>常用性质</strong>：<br>
+① 若 m + n = p + q，则 aₘ · aₙ = aₚ · a_q（特别地，若 m + n = 2k，则 aₘ · aₙ = a_k²）<br>
+② 数列 {aₙ} 是等比数列 ↔ aₙ = c·qⁿ（c ≠ 0）↔ Sₙ = A(qⁿ − 1)（A ≠ 0，q ≠ 1）<br>
+③ 等比数列的连续等长片段 S_k, S₂ₖ−S_k, S₃ₖ−S₂ₖ, … 仍成等比数列（前提 q ≠ −1）。<br>
+④ 若 {aₙ} 是等比数列，则 {|aₙ|}、{aₙ²}、{1/aₙ}、{c·aₙ} 也是等比数列。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/seq_gp.svg" alt="等比数列示意图"><div class="cp">左：q > 1 时指数增长；右：0 < q < 1 时指数衰减</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：等比数列 {aₙ} 中，a₂ = 6，a₅ = 162，求 a₁ 和 q。</div>
+<div class="a"><strong>解：</strong>a₂ = a₁q = 6，a₅ = a₁q⁴ = 162。<br>
+两式相除：q³ = 27 → <span class="step">q = 3</span>。代入 a₁×3 = 6 → <span class="step">a₁ = 2</span>。<br>
+通项公式：aₙ = 2 · 3ⁿ⁻¹。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：等比数列 {aₙ} 中，a₁ = 1，a₄ = 8，求 S₆。</div>
+<div class="a"><strong>解：</strong>a₄ = a₁q³ = 8 → q³ = 8 → q = 2。<br>
+S₆ = a₁(1−q⁶)/(1−q) = 1×(1−64)/(1−2) = (−63)/(−1) = <strong>63</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：在 2 和 54 之间插入两个正数使成等比数列，求插入的两数。</div>
+<div class="a"><strong>解：</strong>设四个数 2, x, y, 54 成等比数列，公比为 q。<br>
+则 54 = 2·q³ → q³ = 27 → q = 3。<br>
+x = 2·3 = 6，y = 2·3² = 18。<span class="green">∴ 插入 6 和 18</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：已知 Sₙ = 2ⁿ⁺¹ − 2，证明 {aₙ} 是等比数列。</div>
+<div class="a"><strong>解：</strong>n=1，a₁ = S₁ = 2² − 2 = 2。<br>
+n≥2，aₙ = Sₙ − Sₙ₋₁ = (2ⁿ⁺¹−2) − (2ⁿ−2) = 2ⁿ⁺¹ − 2ⁿ = 2ⁿ。<br>
+验证 n=1：2¹=2，一致。aₙ = 2ⁿ。<br>
+aₙ₊₁ / aₙ = 2ⁿ⁺¹/2ⁿ = 2（常数）。<span class="green">∴ {aₙ} 是等比数列，q = 2</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 等比数列 a₂=4, a₄=16，求 a₇ <span class="hw-a">答案：128（q²=4→q=±2，a₇=a₂q⁵=4×32=128）</span></div>
+<div class="hw-q">• 等比数列前三项为 1, x+1, 9，求 x <span class="hw-a">答案：x=2 或 x=−4</span></div>
+<div class="hw-q">• 等比数列 a₁=3, q=2, Sₙ=93，求 n <span class="hw-a">答案：n=5（3(2ⁿ−1)=93→2ⁿ=32→n=5）</span></div>
+<div class="hw-q">• 已知等比数列前 n 项和 Sₙ = 2ⁿ − k，求 k 的值 <span class="hw-a">答案：k=1（等比数列 Sₙ 不含常数项）</span></div>
+</div>
+</div>
+
+<!-- ════════════ 专题四：数列求和专题 ════════════ -->
+<div class="top">
+<h2>专题四：数列求和方法</h2>
+<span class="tag">数列求和</span><span class="tag2">重点</span>
+
+<p class="kp">数列求和是高考的<strong>高频考点</strong>。根据数列的类型和结构特征，选择适当的求和方法至关重要。以下五种方法是必须掌握的核心方法。</p>
+
+<p class="kp"><span class="red">方法一：公式法。</span>适用于等差、等比数列或可化为等差、等比形式的数列。直接套用前 n 项和公式。</p>
+
+<div class="formula-box">
+<div class="fm">常用求和公式</div>
+<div class="fd">等差 Sₙ = n(a₁+aₙ)/2 = na₁ + n(n−1)d/2</div>
+<div class="fd">等比 Sₙ = a₁(1−qⁿ)/(1−q) (q≠1) 或 Sₙ = na₁ (q=1)</div>
+<div class="fd">1²+2²+…+n² = n(n+1)(2n+1)/6</div>
+<div class="fd">1³+2³+…+n³ = [n(n+1)/2]²</div>
+</div>
+
+<p class="kp"><span class="red">方法二：裂项相消法。</span>将数列的每一项拆分成两项之差，使求和过程中<strong>中间项全部抵消</strong>，只剩下首尾有限的几项。</p>
+
+<div class="formula-box">
+<div class="fm">常见裂项公式</div>
+<div class="fd">1/[n(n+1)] = 1/n − 1/(n+1)</div>
+<div class="fd">1/[n(n+k)] = (1/k)·[1/n − 1/(n+k)]</div>
+<div class="fd">1/(√n+√(n+1)) = √(n+1) − √n</div>
+<div class="fd">1/[(2n−1)(2n+1)] = ½[1/(2n−1) − 1/(2n+1)]</div>
+</div>
+
+<p class="kp"><span class="red">方法三：错位相减法。</span>适用于<span class="red">等差×等比</span>型数列（形如 {n·qⁿ}、{(2n−1)·qⁿ} 等）的求和。方法：写出 Sₙ，两边乘以公比 q 得到 qSₙ，两式相减即可将原数列转化为等比数列求和。</p>
+
+<p class="kp"><span class="red">方法四：分组求和法。</span>适用于一个数列可以拆分成几个等差/等比数列的和。将原数列的每一项拆开，分别求和后再合并。</p>
+
+<p class="kp"><span class="red">方法五：倒序相加法。</span>适用于具有对称性的数列（如与首末两端等距的两项之和相等）。将 Sₙ 倒序写一遍，与原来的 Sₙ 对应项相加。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/seq_sum_ap.svg" alt="等差数列求和"><div class="cp">等差数列的和可以用梯形面积来理解：Sₙ = n(a₁+aₙ)/2</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1（裂项相消）：求 1/(1×2) + 1/(2×3) + 1/(3×4) + … + 1/[n(n+1)]。</div>
+<div class="a"><strong>解：</strong>因为 1/[n(n+1)] = 1/n − 1/(n+1)。<br>
+原式 = (1−½) + (½−⅓) + (⅓−¼) + … + (1/n − 1/(n+1)) <br>
+= 1 − 1/(n+1) = <span class="green">n/(n+1)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（裂项相消）：求 1/(1×3) + 1/(3×5) + 1/(5×7) + … + 1/[(2n−1)(2n+1)]。</div>
+<div class="a"><strong>解：</strong>因为 1/[(2k−1)(2k+1)] = ½[1/(2k−1) − 1/(2k+1)]。<br>
+原式 = ½[(1−⅓) + (⅓−⅕) + (⅕−⅐) + … + (1/(2n−1) − 1/(2n+1))]<br>
+= ½[1 − 1/(2n+1)] = <span class="green">n/(2n+1)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（错位相减）：求 Sₙ = 1×2 + 2×2² + 3×2³ + … + n·2ⁿ。</div>
+<div class="a"><strong>解：</strong>Sₙ = 1·2 + 2·2² + 3·2³ + … + n·2ⁿ … ①<br>
+①×2：2Sₙ = 1·2² + 2·2³ + … + (n−1)·2ⁿ + n·2ⁿ⁺¹ … ②<br>
+① − ②：−Sₙ = 2 + 2² + 2³ + … + 2ⁿ − n·2ⁿ⁺¹<br>
+= 2(2ⁿ−1)/(2−1) − n·2ⁿ⁺¹ = 2ⁿ⁺¹ − 2 − n·2ⁿ⁺¹<br>
+= (1−n)2ⁿ⁺¹ − 2<br>
+<span class="green">∴ Sₙ = (n−1)2ⁿ⁺¹ + 2</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（分组求和）：求 Sₙ = (2+1) + (4+½) + (8+¼) + … + (2ⁿ + 1/2ⁿ⁻¹)。</div>
+<div class="a"><strong>解：</strong>原式 = (2+4+8+…+2ⁿ) + (1+½+¼+…+1/2ⁿ⁻¹)<br>
+= 2(2ⁿ−1)/(2−1) + 1·(1−(½)ⁿ)/(1−½)<br>
+= (2ⁿ⁺¹ − 2) + 2(1−½ⁿ) = <span class="green">2ⁿ⁺¹ − 2 + 2 − 1/2ⁿ⁻¹ = 2ⁿ⁺¹ − 1/2ⁿ⁻¹</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 5（倒序相加）：已知 f(x) = 4ˣ/(4ˣ + 2)，求 f(¹⁄₁₁) + f(²⁄₁₁) + … + f(¹⁰⁄₁₁)。</div>
+<div class="a"><strong>解：</strong>先验证：f(x) + f(1−x) = 4ˣ/(4ˣ+2) + 4¹⁻ˣ/(4¹⁻ˣ+2)<br>
+= 4ˣ/(4ˣ+2) + 4/(4+2·4ˣ) = 4ˣ/(4ˣ+2) + 2/(2+4ˣ) = (4ˣ+2)/(4ˣ+2) = 1。<br>
+设 S = f(¹⁄₁₁) + f(²⁄₁₁) + … + f(¹⁰⁄₁₁)，倒序相加得：<br>
+2S = [f(¹⁄₁₁)+f(¹⁰⁄₁₁)] + [f(²⁄₁₁)+f(⁹⁄₁₁)] + … + [f(¹⁰⁄₁₁)+f(¹⁄₁₁)] = 10×1 = 10。<br>
+<span class="green">∴ S = 5</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 裂项：1/(1×4) + 1/(4×7) + … + 1/[(3n−2)(3n+1)] <span class="hw-a">答案：n/(3n+1)</span></div>
+<div class="hw-q">• 错位相减：Sₙ = ½ + 3/4 + 5/8 + … + (2n−1)/2ⁿ <span class="hw-a">答案：3 − (2n+3)/2ⁿ</span></div>
+<div class="hw-q">• 分组求和：Sₙ = (x + 1/x)² + (x² + 1/x²)² + … + (xⁿ + 1/xⁿ)² <span class="hw-a">提示：展开后分组，含 2 的常数项和为 2n</span></div>
+</div>
+</div>
+
+<!-- ════════════ 专题五：递推数列求通项 ════════════ -->
+<div class="top">
+<h2>专题五：递推数列求通项</h2>
+<span class="tag">递推数列</span><span class="tag2">难点</span>
+
+<p class="kp">由递推公式求通项公式是数列的核心能力。以下是六种常见类型及其标准解法。</p>
+
+<p class="kp"><span class="red">类型一：aₙ₊₁ = aₙ + f(n)（累加法）。</span><br>
+aₙ = a₁ + Σ_{k=1}^{n−1} f(k)，适用于 f(n) 可求和的情形（如 f(n) = 等差/等比/可裂项）。</p>
+
+<p class="kp"><span class="red">类型二：aₙ₊₁ = f(n)·aₙ（累乘法）。</span><br>
+aₙ = a₁ · Π_{k=1}^{n−1} f(k)，适用于 f(n) 可求积的情形。</p>
+
+<p class="kp"><span class="red">类型三：aₙ₊₁ = paₙ + q（p ≠ 1，构造等比法）。</span><br>
+设 aₙ₊₁ + λ = p(aₙ + λ)，展开得 aₙ₊₁ = paₙ + (p−1)λ。令 (p−1)λ = q，解得 λ = q/(p−1)。<br>
+则 {aₙ + λ} 是等比数列，公比为 p。</p>
+
+<p class="kp"><span class="red">类型四：aₙ₊₁ = paₙ + qⁿ（构造法/同除法）。</span><br>
+两边同除以 pⁿ⁺¹ 或 qⁿ⁺¹，转化为累加或构造。通常两边同除 pⁿ⁺¹ 得：aₙ₊₁/pⁿ⁺¹ = aₙ/pⁿ + (1/p)(q/p)ⁿ。</p>
+
+<p class="kp"><span class="red">类型五：aₙ₊₁ = (paₙ)/(raₙ + s)（取倒数法）。</span><br>
+两边取倒数得 1/aₙ₊₁ = (raₙ + s)/(paₙ) = r/p + s/(p·aₙ)。令 bₙ = 1/aₙ，则转化为类型三。</p>
+
+<p class="kp"><span class="red">类型六：aₙ₊₂ = paₙ₊₁ + qaₙ（二阶递推，特征根法）。</span><br>
+特征方程：x² = px + q，设两根为 α, β。<br>
+若 α ≠ β，则 aₙ = A·αⁿ⁻¹ + B·βⁿ⁻¹；若 α = β，则 aₙ = (A + B·n)·αⁿ⁻¹。<br>
+（A, B 由初始条件确定）</p>
+
+<div class="ex">
+<div class="q">例 1（累加）：a₁ = 1，aₙ₊₁ = aₙ + 2n + 1，求 aₙ。</div>
+<div class="a"><strong>解：</strong>a₂ − a₁ = 3，a₃ − a₂ = 5，a₄ − a₃ = 7，…，aₙ − aₙ₋₁ = 2n−1。<br>
+累加得：aₙ − a₁ = 3 + 5 + 7 + … + (2n−1) = (n−1)(3+2n−1)/2 = (n−1)(n+1) = n² − 1。<br>
+<span class="green">∴ aₙ = a₁ + n² − 1 = n²</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（累乘）：a₁ = 1，aₙ₊₁ = [n/(n+1)]·aₙ，求 aₙ。</div>
+<div class="a"><strong>解：</strong>a₂/a₁ = ½，a₃/a₂ = ⅔，a₄/a₃ = ¾，…，aₙ/aₙ₋₁ = (n−1)/n。<br>
+累乘得：aₙ/a₁ = ½ × ⅔ × ¾ × … × (n−1)/n = 1/n。<br>
+<span class="green">∴ aₙ = 1/n</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（构造等比）：a₁ = 1，aₙ₊₁ = 2aₙ + 1，求 aₙ。</div>
+<div class="a"><strong>解：</strong>设 aₙ₊₁ + λ = 2(aₙ + λ)，则 aₙ₊₁ = 2aₙ + λ，对照得 λ = 1。<br>
+∴ aₙ₊₁ + 1 = 2(aₙ + 1)，所以 {aₙ + 1} 是等比数列：aₙ + 1 = (a₁+1)·2ⁿ⁻¹ = 2ⁿ。<br>
+<span class="green">∴ aₙ = 2ⁿ − 1</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（取倒数）：a₁ = 1，aₙ₊₁ = aₙ/(2aₙ + 1)，求 aₙ。</div>
+<div class="a"><strong>解：</strong>两边取倒数：1/aₙ₊₁ = (2aₙ+1)/aₙ = 2 + 1/aₙ。<br>
+令 bₙ = 1/aₙ，则 bₙ₊₁ = bₙ + 2，{bₙ} 是等差数列，b₁ = 1，d = 2。<br>
+bₙ = 1 + (n−1)×2 = 2n − 1。<span class="green">∴ aₙ = 1/(2n − 1)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 5（特征根法）：a₁ = 1，a₂ = 2，aₙ₊₂ = 5aₙ₊₁ − 6aₙ，求 aₙ。</div>
+<div class="a"><strong>解：</strong>特征方程 x² = 5x − 6，即 x² − 5x + 6 = 0。<br>
+解得 α = 2，β = 3（不等实根）。<br>
+设 aₙ = A·2ⁿ⁻¹ + B·3ⁿ⁻¹。<br>
+代入：n=1 → A + B = 1；n=2 → 2A + 3B = 2。<br>
+解得 A = 1，B = 0。<span class="green">∴ aₙ = 2ⁿ⁻¹</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 累加：a₁=2, aₙ₊₁ = aₙ + 4n，求 aₙ <span class="hw-a">答案：aₙ=2n²−2n+2</span></div>
+<div class="hw-q">• 构造：a₁=2, aₙ₊₁ = 3aₙ + 2，求 aₙ <span class="hw-a">答案：aₙ=2·3ⁿ⁻¹−1</span></div>
+<div class="hw-q">• 取倒数：a₁=½, aₙ₊₁ = aₙ/(aₙ+2)，求 aₙ <span class="hw-a">答案：aₙ=1/(2ⁿ−1)</span></div>
+<div class="hw-q">• 特征根：a₁=1, a₂=3, aₙ₊₂=4aₙ₊₁−4aₙ，求 aₙ <span class="hw-a">答案：aₙ=(2n−1)·2ⁿ⁻²（重根情况）</span></div>
+</div>
+</div>
+
+<!-- ════════════ 专题六：数列不等式与证明 ════════════ -->
+<div class="top">
+<h2>专题六：数列不等式与证明</h2>
+<span class="tag">数列证明</span><span class="tag2">压轴</span>
+
+<p class="kp">数列与不等式的结合是高考压轴题的常见命题方向。主要方法如下：</p>
+
+<p class="kp"><span class="red">方法一：单调性法。</span>通过分析数列的单调性（aₙ₊₁ − aₙ 的正负或 aₙ₊₁/aₙ 与 1 的比较）来证明不等式。</p>
+
+<p class="kp"><span class="red">方法二：放缩法。</span>将数列的通项适当放大或缩小，转化为可求和的数列（等差、等比或可裂项数列）。<br>
+<strong>常见放缩技巧</strong>：<br>
+① 1/n² < 1/[n(n−1)] = 1/(n−1) − 1/n（n≥2）<br>
+② 1/n² > 1/[n(n+1)] = 1/n − 1/(n+1)<br>
+③ 1/√n > 2/(√n + √(n+1)) = 2(√(n+1) − √n)<br>
+④ 指数型：aⁿ − 1 ≥ aⁿ⁻¹(a−1)（伯努利不等式雏形）</p>
+
+<p class="kp"><span class="red">方法三：数学归纳法。</span>证明与正整数 n 有关的命题的经典方法。<br>
+<strong>步骤</strong>：<br>
+① 基础步骤：验证 n = 1（或 n = n₀）时命题成立。<br>
+② 归纳步骤：假设 n = k（k ≥ n₀）时命题成立，证明 n = k + 1 时命题也成立。<br>
+③ 结论：由①②得，命题对所有正整数 n ≥ n₀ 都成立。</p>
+
+<p class="kp"><span class="red">方法四：构造函数法。</span>将数列问题转化为函数问题，利用函数的单调性、最值等证明不等式。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/seq_induction.svg" alt="数学归纳法原理"><div class="cp">数学归纳法如同多米诺骨牌：推倒第1块（基础），每块倒下必推倒下一块（递推）→ 所有块都会倒下</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1（放缩法）：证明：1/1² + 1/2² + 1/3² + … + 1/n² < 2（n∈N*）。</div>
+<div class="a"><strong>证：</strong>当 n=1，左边=1<2 成立。<br>
+当 n≥2 时，1/k² < 1/[k(k−1)] = 1/(k−1) − 1/k。<br>
+∴ Σ_{k=1}^{n} 1/k² = 1 + Σ_{k=2}^{n} 1/k² < 1 + Σ_{k=2}^{n} [1/(k−1) − 1/k]<br>
+= 1 + (1 − 1/n) = 2 − 1/n < 2。<span class="green">∴ 原不等式成立</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（数学归纳法）：用数学归纳法证明：1 + 2 + 3 + … + n = n(n+1)/2。</div>
+<div class="a"><strong>证：</strong>① n=1 时，左边=1，右边=1×(1+1)/2=1，成立。<br>
+② 假设 n=k 时成立，即 1+2+…+k = k(k+1)/2。<br>
+则 n=k+1 时：1+2+…+k+(k+1) = k(k+1)/2 + (k+1)<br>
+= (k+1)(k/2 + 1) = (k+1)(k+2)/2，成立。<br>
+③ 由①②得，对所有 n∈N* 成立。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（放缩法）：证明：1 + 1/√2 + 1/√3 + … + 1/√n > 2(√(n+1) − 1)。</div>
+<div class="a"><strong>证：</strong>因为 1/√k = 2/(√k+√k) > 2/(√k+√(k+1)) = 2(√(k+1) − √k)。<br>
+所以 Σ_{k=1}^{n} 1/√k > 2[(√2−√1) + (√3−√2) + … + (√(n+1)−√n)]<br>
+= 2(√(n+1) − 1)。<span class="green">∴ 原不等式成立</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：已知 aₙ₊₁ = aₙ² − aₙ + 1，a₁ = 2，证明：1/a₁ + 1/a₂ + … + 1/aₙ < 1。</div>
+<div class="a"><strong>证：</strong>由 aₙ₊₁ = aₙ² − aₙ + 1 得：aₙ₊₁ − 1 = aₙ(aₙ − 1)<br>
+→ 1/(aₙ₊₁ − 1) = 1/[aₙ(aₙ − 1)] = 1/(aₙ − 1) − 1/aₙ<br>
+→ 1/aₙ = 1/(aₙ − 1) − 1/(aₙ₊₁ − 1)<br>
+累加得：Σ_{k=1}^{n} 1/a_k = 1/(a₁−1) − 1/(aₙ₊₁−1) = 1 − 1/(aₙ₊₁−1)。<br>
+显然 aₙ₊₁ − 1 > 0，故 1/(aₙ₊₁−1) > 0。<span class="green">∴ Σ 1/a_k < 1</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 用数学归纳法证明：1+3+5+…+(2n−1)=n² <span class="hw-a">略</span></div>
+<div class="hw-q">• 放缩证明：1/1³+1/2³+…+1/n³ < 5/4（提示：k≥2 时 1/k³ < 1/[k(k−1)(k+1)]）</div>
+<div class="hw-q">• 数列 aₙ=2ⁿ−1，证明：n/2 − ⅓ < a₁/a₂ + a₂/a₃ + … + aₙ/aₙ₊₁ < n/2</div>
+</div>
+</div>
+
+<!-- ════════════ 专题七：数列综合应用 ════════════ -->
+<div class="top">
+<h2>专题七：数列综合应用</h2>
+<span class="tag">综合应用</span>
+
+<p class="kp">数列综合题考查知识交汇能力，常见命题方向如下：</p>
+
+<p class="kp"><span class="red">数列与函数。</span>数列是定义在正整数集上的特殊函数，函数的性质（单调性、周期性、最值）在数列中都有体现。特别是：等差数列的通项是 n 的一次函数（aₙ = dn + (a₁−d)），前 n 项和是 n 的二次函数（Sₙ = (d/2)n² + (a₁−d/2)n，无常数项）。</p>
+
+<p class="kp"><span class="red">数列与不等式。</span>见专题六。高考中常在求通项后考查不等式的证明或参数范围问题。</p>
+
+<p class="kp"><span class="red">数列与解析几何。</span>如点在曲线上运动形成数列，或者数列与圆锥曲线的综合。</p>
+
+<p class="kp"><span class="red">数列的实际应用。</span>增长率问题（等比模型）、分期付款（等额本息/等额本金）、浓度问题等。<br>
+<strong>典型模型</strong>：某期初有资金 M，每期收益率为 r%，每期末取出固定金额 A，则 n 期后的剩余资金为：<br>
+M(1+r)ⁿ − A·[(1+r)ⁿ − 1]/r。</p>
+
+<div class="ex">
+<div class="q">例 1（数列与函数）：等差数列 {aₙ} 的前 n 项和为 Sₙ，且 Sₙ 的最大值为 S₇，S₃ = S₉，求 Sₙ 取最大值时 n 的值。</div>
+<div class="a"><strong>解：</strong>S₃ = S₉ 说明 S₉ − S₃ = a₄ + a₅ + a₆ + a₇ + a₈ + a₉ = 0。<br>
+由等差数列性质：a₄ + a₉ = a₅ + a₈ = a₆ + a₇。<br>
+所以 3(a₆ + a₇) = 0 → a₆ + a₇ = 0。<br>
+若 d > 0，各项递增不可能和为 0 后有最大值；故 d < 0。<br>
+则 a₆ > 0，a₇ < 0。<span class="green">∴ 前 6 项为正，S₆ 最大。</span></div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（增长模型）：某企业 2024 年产值 1 亿元，计划每年增长 20%，问第几年产值首次超过 5 亿元？</div>
+<div class="a"><strong>解：</strong>设第 n 年产值为 aₙ = 1×(1.2)ⁿ⁻¹。<br>
+令 aₙ > 5 即 1.2ⁿ⁻¹ > 5。<br>
+两边取对数：(n−1)ln1.2 > ln5。<br>
+ln1.2 ≈ 0.1823，ln5 ≈ 1.6094。<br>
+n−1 > 1.6094/0.1823 ≈ 8.83。<br>
+n > 9.83。<span class="green">∴ 第 10 年（2033 年）产值首次超过 5 亿元。</span></div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（分期付款模型）：贷款 20 万元，年利率 5%，分 10 年等额本息还款，每年末还款多少？</div>
+<div class="a"><strong>解：</strong>等额本息公式：每年还款 A = M·r(1+r)ⁿ/[(1+r)ⁿ − 1]。<br>
+M=20 万，r=5%=0.05，n=10。<br>
+A = 20×0.05×(1.05)¹⁰/[(1.05)¹⁰ − 1]<br>
+(1.05)¹⁰ ≈ 1.6289。<br>
+A = 20×0.05×1.6289/(1.6289−1) = 1.6289/0.6289 ≈ <strong>2.590 万元/年</strong>。<br>
+10 年共还款约 25.90 万元，其中利息约 5.90 万元。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（数列与不等式综合）：已知 aₙ = 2ⁿ − 1，bₙ = n，求最大的正整数 k 使得对任意 n∈N*，有 aₙ ≥ k·bₙ 恒成立。</div>
+<div class="a"><strong>解：</strong>即 2ⁿ − 1 ≥ kn 对任意 n 恒成立。<br>
+n=1：2−1 ≥ k → k ≤ 1。<br>
+n=2：4−1 ≥ 2k → k ≤ 1.5。<br>
+n=3：8−1 ≥ 3k → k ≤ 7/3 ≈ 2.33。<br>
+n=4：16−1 ≥ 4k → k ≤ 15/4 = 3.75。<br>
+从图像看，y = 2ˣ − 1 是指数增长，最终会远大于 y = kx。需要找最小的 aₙ/n。<br>
+验证 n=1：a₁/1 = 1；n=2：3/2 = 1.5；n=3：7/3 ≈ 2.33；n≥4 时比值越来越大。<br>
+<span class="green">∴ k ≤ 1，最大正整数 k = 1</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 某校招生人数第一年 500 人，每年增长 10%，第几年超过 1000 人？ <span class="hw-a">答案：第 9 年（ln2/ln1.1≈7.27→第8年）</span></div>
+<div class="hw-q">• 等差数列前 10 项和 100，前 20 项和 400，求前 30 项和 <span class="hw-a">答案：900（等片段等差：100,300,500）</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var btn=document.querySelector('.back-to-top');
+  if(btn)btn.classList.toggle('show',window.scrollY>300);
+});
+</script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){var btn=document.querySelector('.back-to-top');if(btn)btn.classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

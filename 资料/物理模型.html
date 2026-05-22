@@ -3,214 +3,797 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>初中物理模型 · 思贤学习站</title>
+<title>初中物理模型·思贤学习站</title>
 <link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
-.wrap{max-width:860px;margin:0 auto}
+.wrap{max-width:880px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:24px;color:#c0392b;margin-bottom:6px}
+h1{text-align:center;font-size:28px;color:#c0392b;margin-bottom:4px;letter-spacing:2px}
 .sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
-.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #c0392b}
-.card .t{font-weight:700;font-size:15px;color:#c0392b;margin-bottom:6px}
-.card .d{font-size:13px;color:#555;line-height:1.8}
-.card .d b{color:#333}
-.tag{display:inline-block;font-size:11px;background:#fef0ef;color:#c0392b;padding:2px 10px;border-radius:4px;margin:2px}
+.sec-title{font-size:19px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #c0392b}
+.kp{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid #c0392b}
+.kp .kp-t{font-weight:700;font-size:16px;color:#c0392b;margin-bottom:8px}
+.kp .kp-d{font-size:14px;color:#444;line-height:1.9}
+.kp .kp-d b{color:#c0392b}
+.tag{display:inline-block;font-size:12px;background:#fef0ef;color:#c0392b;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
 .tag.blue{background:#e3f2fd;color:#1565c0}
 .tag.purple{background:#f3e8ff;color:#7b1fa2}
-.svg-wrap{text-align:center;margin:10px 0}
-.svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
-.sec-title{font-size:17px;font-weight:700;color:#333;margin:22px 0 10px;padding-left:12px;border-left:4px solid #c0392b}
-.formula{background:#f8f9fc;border-radius:6px;padding:8px 12px;margin:6px 0;font-size:13px;text-align:center;color:#c0392b;font-weight:600;font-family:monospace}
-.formula.blue{background:#e3f2fd;color:#1565c0}
-.formula.green{background:#e6f7e6;color:#2d7d46}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
-td,th{border:1px solid #ddd;padding:6px 8px;text-align:center}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#fef0ef;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;text-align:center;color:#c0392b;font-weight:600;font-family:monospace}
+.formula.b{background:#e3f2fd;color:#1565c0}
+.formula.g{background:#e6f7e6;color:#2d7d46}
+.formula.o{background:#fff3e0;color:#e65100}
+.ex{background:#fff5f5;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #c0392b}
+.ex .q{font-size:14px;color:#444;line-height:1.8}
+.ex .q .hl{color:#c0392b;font-weight:700}
+.ex .q .hl2{color:#1565c0;font-weight:700}
+.ex .a{background:#e6f7e6;border-radius:8px;padding:10px 14px;margin:10px 0 0;font-size:14px;color:#2d7d46;line-height:1.8;display:none}
+.ex .a.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#fff;color:#c0392b;border:1px solid #c0392b;border-radius:6px;font-size:12px;cursor:pointer;margin-top:8px}
+.sol-btn:hover{background:#c0392b;color:#fff}
+.hw{background:#f8f9fc;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #7f8c8d}
+.hw .hw-q{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.hw .hw-a{font-size:14px;color:#27ae60;line-height:1.8;display:none}
+.hw .hw-a.show{display:block}
+.step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:8px 12px;background:#f9fbe7;border-radius:8px}
+.step-num{flex:0 0 26px;height:26px;border-radius:50%;background:#c0392b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.step-c{flex:1;font-size:13px;color:#555;line-height:1.7}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
 th{background:#c0392b;color:#fff;font-weight:600}
 tr:nth-child(even){background:#f9f9f9}
-.step{display:flex;align-items:flex-start;gap:8px;margin:6px 0;padding:6px 10px;background:#f9fbe7;border-radius:6px}
-.step-num{flex:0 0 22px;height:22px;border-radius:50%;background:#c0392b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
-.step-c{flex:1;font-size:12px;color:#555;line-height:1.6}
-@media(max-width:640px){h1{font-size:20px}}
+.tip-box{background:#fff8e1;border-radius:10px;padding:10px 14px;margin:10px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
+.tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#c0392b);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+.share-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:none;align-items:center;justify-content:center}
+.share-overlay.active{display:flex}
+.share-modal{background:#fff;border-radius:16px;padding:30px 28px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,0.2);animation:modalIn .3s ease}
+@keyframes modalIn{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
+.share-icon{font-size:48px;margin-bottom:8px}
+.share-modal h3{font-size:18px;color:#333;margin-bottom:6px;font-weight:700}
+.share-desc{font-size:13px;color:#888;margin-bottom:14px}
+.share-msg-box{background:#f5f7fa;border-radius:8px;padding:12px;margin-bottom:12px;text-align:left}
+.share-msg-box p{font-size:12px;color:#555;word-break:break-all;line-height:1.6}
+.copy-btn{display:block;width:100%;padding:10px 0;background:#c0392b;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;margin-bottom:4px}
+.copy-btn:hover{background:#e74c3c}
+.copy-btn.copied{background:#27ae60}
+.copy-hint{font-size:11px;color:#aaa;margin-bottom:10px}
+.shared-btn{display:block;width:100%;padding:10px 0;background:#f0f0f0;color:#aaa;border:none;border-radius:8px;font-size:14px;cursor:not-allowed;margin-top:4px}
+.shared-btn:not(:disabled){background:#2d7d46;color:#fff;cursor:pointer}
+.shared-btn:not(:disabled):hover{background:#27ae60}
+@media(max-width:640px){h1{font-size:24px}.kp{padding:14px 16px}}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../思贤学习站.html">← 返回首页</a>
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
 <h1>⚡ 初中物理常考模型</h1>
-<p class="sub">力学·电学·热学·光学·实验模型·中考全覆盖</p>
+<p class="sub">力学·电学·热学·光学·电磁·实验模型·中考全覆盖</p>
 
+<!-- ═══════════ 一、力学模型 ═══════════ -->
 <div class="sec-title">一、力学模型</div>
-<div class="card"><div class="t">🔹 受力分析模型</div>
-<div class="svg-wrap"><img src="../gen_svg_out/phy_01_free_body.svg" width="360" height="225" alt="受力分析"></div>
-<div class="d">
-<b>画力顺序："一重二弹三摩擦"</b><br>
-<span class="tag">1. 重力</span> 竖直向下，作用在重心（G=mg）
-<span class="tag">2. 弹力</span> 支持力（垂直于接触面）、拉力（沿绳方向）
-<span class="tag">3. 摩擦力</span> 与相对运动方向相反（注意有无摩擦力）
-<br><b>平衡状态：</b>静止或匀速直线运动 → F合 = 0<br>
-<b>常考场景：</b>
-<span class="tag blue">水平面</span> G向下、N向上、F向右、f向左
-<span class="tag orange">斜面</span> G向下、N垂直斜面、f沿斜面向上/下
-<span class="tag green">悬吊</span> G向下、绳拉力向上
-</div></div>
 
-<div class="card"><div class="t">🔹 运动模型</div>
-<div class="svg-wrap"><img src="../gen_svg_out/phy_08_motion_graph.svg" width="360" height="225" alt="运动图像"></div>
-<div class="d">
-<b>s-t图像：</b>水平线→静止；斜向上直线→匀速直线（斜率=速度）<br>
-<b>v-t图像：</b>水平线→匀速；斜向上→加速；斜向下→减速<br>
-<b>平均速度：</b>v = s总/t总（中途停止时间要算入总时间）<br>
-<b>惯性：</b>只与质量有关，与速度无关。<span class="tag red">质量越大惯性越大</span>
+<div class="kp">
+  <div class="kp-t">🔹 受力分析模型</div>
+  <div class="chart-wrap"><img src="charts/topic_phy_force.svg" alt="受力分析"></div>
+  <div class="kp-d">
+    <b>画力顺序："一重二弹三摩擦"</b><br>
+    <span class="tag">1. 重力</span> 竖直向下，作用在重心（G=mg）
+    <span class="tag">2. 弹力</span> 支持力（垂直于接触面）、拉力（沿绳方向）
+    <span class="tag">3. 摩擦力</span> 与相对运动方向相反（注意有无摩擦力）
+    <br><b>平衡状态：</b>静止或匀速直线运动 → F合 = 0<br>
+    <b>常考场景：</b>
+    <span class="tag blue">水平面</span> G向下、N向上、F向右、f向左
+    <span class="tag orange">斜面</span> G向下、N垂直斜面、f沿斜面向上/下
+    <span class="tag green">悬吊</span> G向下、绳拉力向上
+  </div>
+  <div class="formula">G = mg &nbsp;|&nbsp; 二力平衡：F合 = 0 &nbsp;|&nbsp; 相互作用力：F = -F'</div>
 </div>
-<div class="formula">v = s/t &nbsp;|&nbsp; 匀速：s = vt &nbsp;|&nbsp; v-t图像面积 = 路程</div></div>
 
-<div class="card"><div class="t">🔹 压强模型</div><div class="d">
-<b>固体压强：</b>p = F/S。F=G（水平面），S取接触面积。<br>
-<span class="tag purple">柱体对水平面：p = ρgh</span>（与底面积无关，只与密度和高度有关）<br>
-<b>液体压强：</b>p = ρgh。深度 h 从自由液面竖直向下算。<br>
-<span class="tag orange">特点：同一液体同一深度各处压强相等</span><br>
-<b>大气压强：</b>p₀ = 1.013×10⁵ Pa（托里拆利实验测出）<br>
-<span class="tag blue">海拔越高气压越低</span>
-<span class="tag green">沸点随气压降低而降低</span>
-<span class="tag red">高压锅原理：限压阀→提高锅内气压→提高沸点</span>
-</div></div>
-
-<div class="card"><div class="t">🔹 浮力模型</div>
-<div class="svg-wrap"><img src="../gen_svg_out/phy_04_buoyancy.svg" width="360" height="225" alt="浮力"></div>
-<div class="d">
-<b>阿基米德原理：</b>F浮 = G排 = ρ液gV排（与深度无关！）<br>
-<b>浮沉条件：</b>
-<table>
-<tr><th>状态</th><th>条件</th><th>特点</th></tr>
-<tr><td>上浮</td><td>F浮 > G</td><td>最终漂浮（F浮=G）</td></tr>
-<tr><td>悬浮</td><td>F浮 = G</td><td>可在液体中任意深度</td></tr>
-<tr><td>下沉</td><td>F浮 < G</td><td>沉底后F浮+N=G</td></tr>
-<tr><td>漂浮</td><td>F浮 = G</td><td>V排 < V物</td></tr>
-</table>
-<b>密度计：</b>漂浮→F浮=G→ρ液大V排小→刻度下大上小<br>
-<b>船与潜艇：</b>轮船漂浮→满载排水量m排=ρV排；潜艇改变自重实现浮沉<br>
-<b>浮力四法：</b>称重法F浮=G-F拉；阿基米德法F浮=ρ液gV排；平衡法F浮=G；压力差法F浮=F下-F上
+<div class="kp">
+  <div class="kp-t">🔹 牛顿第二定律（F=ma）</div>
+  <div class="chart-wrap"><img src="charts/phy_newton2.svg" alt="牛顿第二定律"></div>
+  <div class="kp-d">
+    <b>牛顿第二定律：</b>物体加速度的大小与所受合外力成正比，与质量成反比。<br>
+    <span class="tag red">F合 = ma</span>
+    <span class="tag blue">加速度方向与合外力方向相同</span><br>
+    <b>解题步骤：</b>①受力分析 ②求合力 ③由F=ma求加速度 ④由运动学公式求速度/位移<br>
+    <b>超重与失重：</b>
+    <span class="tag orange">超重</span> 加速度向上（加速上升/减速下降）→ N > G
+    <span class="tag green">失重</span> 加速度向下（减速上升/加速下降）→ N < G
+    <span class="tag red">完全失重</span> a=g → N=0
+  </div>
 </div>
-<div class="formula blue">F浮 = ρ液gV排 &nbsp;|&nbsp; 轮船：空心法 &nbsp;|&nbsp; 潜水艇：改变自重</div></div>
 
-<div class="card"><div class="t">🔹 简单机械模型</div>
-<div class="svg-wrap"><img src="../gen_svg_out/phy_02_lever.svg" width="360" height="225" alt="杠杆"><img src="../gen_svg_out/phy_03_pulley.svg" width="360" height="225" alt="滑轮组"></div>
-<div class="d">
-<b>杠杆平衡：</b>F₁L₁ = F₂L₂
-<span class="tag green">省力杠杆(L₁>L₂)</span> 撬棍、瓶起子、钳子
-<span class="tag red">费力杠杆(L₁<L₂)</span> 镊子、钓鱼竿、扫帚<br>
-<b>定滑轮：</b>F=G，不省力改变方向（等臂杠杆）<br>
-<b>动滑轮：</b>F=G/2，省一半力不改变方向<br>
-<b>滑轮组：</b>F = G总/n，s = nh（n为承担重物绳子段数）<br>
-<b>斜面：</b>FL = Gh（理想），相同高度斜面越长越省力
-</div></div>
-
-<div class="card"><div class="t">🔹 功和机械能模型</div><div class="d">
-<b>功：</b>W=Fs（力与距离同向）
-<span class="tag red">不做功三情况：</span>有力无距（搬石未动）、有距无力（惯性）、力距垂直（水平提桶）<br>
-<b>功率：</b>P=W/t=Fv（反映做功快慢）
-<b>机械效率：</b>η = W有/W总 × 100%
-<span class="tag orange">滑轮组：η=Gh/Fs</span>
-<span class="tag green">斜面：η=Gh/FL</span>
-<span class="tag red">η总小于1（额外功不可避免）</span>
-<br><b>机械能守恒：</b>动能+势能=常数（只有重力做功时）
-<span class="tag">滚摆：上升动能→重力势能，下降反之</span>
-<span class="tag">过山车：最高点势能最大动能最小，最低点反之</span>
+<div class="ex">
+  <div class="q"><b>例题 1</b>：静止在水平桌面上的书本，受到哪些力？画出受力示意图。<br>
+  <span class="hl">分析：</span>①重力G（竖直向下）②支持力N（竖直向上）— 二力平衡，G=N</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">重力 G = mg 竖直向下，支持力 N = G 竖直向上，二力平衡。注意：书本不受"压力"（压力是书本对桌面的力）。</div>
 </div>
-<div class="formula green">W = Fs &nbsp;|&nbsp; P = W/t = Fv &nbsp;|&nbsp; η = W有/W总 × 100%</div></div>
 
+<div class="hw">
+  <div class="hw-q">练习 1：在斜面上静止的物体，画出它的受力示意图。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">受到三个力：①重力G（竖直向下）②支持力N（垂直于斜面向上）③静摩擦力f（沿斜面向上，防止下滑）</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 运动学模型</div>
+  <div class="chart-wrap"><img src="charts/phy_motion_graphs.svg" alt="运动图像"></div>
+  <div class="kp-d">
+    <b>s-t图像：</b>水平线→静止；斜向上直线→匀速直线（斜率=速度）<br>
+    <b>v-t图像：</b>水平线→匀速；斜向上→加速；斜向下→减速<br>
+    <span class="tag blue">v-t图像面积 = 路程</span>
+    <span class="tag orange">斜率 = 加速度</span><br>
+    <b>匀变速直线运动公式：</b><br>
+    v = v₀ + at &nbsp;|&nbsp; s = v₀t + ½at² &nbsp;|&nbsp; v² − v₀² = 2as<br>
+    <b>平均速度：</b>v = s总/t总（中途停止时间要算入总时间）<br>
+    <b>惯性：</b>只与质量有关，与速度无关。<span class="tag red">质量越大惯性越大</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_vt_graph.svg" alt="v-t图像"></div>
+  <div class="formula">v = v₀ + at &nbsp;|&nbsp; s = v₀t + ½at² &nbsp;|&nbsp; v² − v₀² = 2as</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 2</b>：汽车以 10m/s 的速度行驶，刹车加速度大小为 2m/s²，求刹车后 3s 和 6s 的位移。<br>
+  <span class="hl">解：</span>停车时间 t=v₀/a=10/2=5s，故 6s 时已停车。<br>
+  t=3s: s=10×3−½×2×9=30−9=<b>21m</b><br>
+  t=6s: 即 t=5s 位移 s=10×5−½×2×25=50−25=<b>25m</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意判断实际停车时间！6s 时车已经停了，不能直接用 t=6s 代入公式计算。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 2：物体从静止开始以 3m/s² 加速 4s，求末速度和 4s 内位移。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">v=at=3×4=<b>12m/s</b>；s=½at²=½×3×16=<b>24m</b></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 压强模型</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_pressure.svg" alt="压强"></div>
+  <div class="kp-d">
+    <b>固体压强：</b>p = F/S。F=G（水平面），S取接触面积。<br>
+    <span class="tag purple">柱体对水平面：p = ρgh</span>（与底面积无关，只与密度和高度有关）<br>
+    <b>液体压强：</b>p = ρgh。深度 h 从自由液面竖直向下算。<br>
+    <span class="tag orange">特点：同一液体同一深度各处压强相等</span><br>
+    <b>大气压强：</b>p₀ = 1.013×10⁵ Pa（托里拆利实验测出）<br>
+    <span class="tag blue">海拔越高气压越低</span>
+    <span class="tag green">沸点随气压降低而降低</span>
+    <span class="tag red">高压锅原理：限压阀→提高锅内气压→提高沸点</span>
+  </div>
+  <div class="formula">固体 p = F/S &nbsp;|&nbsp; 柱体 p = ρgh &nbsp;|&nbsp; 液体 p = ρgh</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 3</b>：一个质量为 60kg 的人，每只脚与地面的接触面积为 200cm²。求他站立时对地面的压强。<br>
+  <span class="hl">解：</span>F=G=mg=60×10=600N，S=200×2=400cm²=0.04m²<br>
+  p=F/S=600/0.04=<b>15000Pa</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意：站立时两脚着地，受力面积是两只脚的总面积。行走时单脚着地，压强翻倍！</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 3：水坝深 20m 处，水对坝底的压强是多少？（ρ水=1.0×10³kg/m³，g=10N/kg）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">p=ρgh=1.0×10³×10×20=<b>2×10⁵Pa</b></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 浮力模型</div>
+  <div class="chart-wrap"><img src="charts/topic_phy_float.svg" alt="浮力"></div>
+  <div class="kp-d">
+    <b>阿基米德原理：</b>F浮 = G排 = ρ液gV排（与深度无关！）<br>
+    <b>浮沉条件：</b>
+    <table>
+    <tr><th>状态</th><th>条件</th><th>特点</th></tr>
+    <tr><td>上浮</td><td>F浮 > G</td><td>最终漂浮（F浮=G）</td></tr>
+    <tr><td>悬浮</td><td>F浮 = G</td><td>可在液体中任意深度</td></tr>
+    <tr><td>下沉</td><td>F浮 < G</td><td>沉底后F浮+N=G</td></tr>
+    <tr><td>漂浮</td><td>F浮 = G</td><td>V排 < V物</td></tr>
+    </table>
+    <b>密度计：</b>漂浮→F浮=G→ρ液大V排小→刻度下大上小<br>
+    <b>船与潜艇：</b>轮船漂浮→满载排水量m排=ρV排；潜艇改变自重实现浮沉<br>
+    <b>浮力四法：</b>称重法F浮=G-F拉；阿基米德法F浮=ρ液gV排；平衡法F浮=G；压力差法F浮=F下-F上
+  </div>
+  <div class="formula b">F浮 = ρ液gV排 &nbsp;|&nbsp; 轮船：空心法 &nbsp;|&nbsp; 潜水艇：改变自重</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 4</b>：一艘轮船从海里驶入河里，它受到的浮力____，船身____（上浮/下沉）一些？<br>
+  <span class="hl">解：</span>漂浮时 F浮=G，重力不变→浮力不变。ρ海水>ρ河水，由F浮=ρ液gV排，ρ液↓→V排↑，船身下沉一些。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">浮力不变（始终等于船重），但河水密度小于海水，排开水的体积增大，船身下沉。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 4：一个质量为 0.6kg、体积为 1×10⁻³m³ 的木块，放入水中静止后的浮力是多少？（g=10N/kg）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">ρ木=0.6/10⁻³=0.6×10³kg/m³&lt;ρ水，所以漂浮。F浮=G=mg=0.6×10=<b>6N</b></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 简单机械与能量模型</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_lever.svg" alt="杠杆"></div>
+  <div class="kp-d">
+    <b>杠杆平衡：</b>F₁L₁ = F₂L₂
+    <span class="tag green">省力杠杆(L₁>L₂)</span> 撬棍、瓶起子、钳子
+    <span class="tag red">费力杠杆(L₁&lt;L₂)</span> 镊子、钓鱼竿、扫帚<br>
+    <b>滑轮组：</b>F = G总/n，s = nh（n为承担重物绳子段数）<br>
+    <b>功：</b>W=Fs &nbsp;|&nbsp; <b>功率：</b>P=W/t=Fv<br>
+    <b>机械效率：</b>η = W有/W总 × 100%
+    <span class="tag orange">η总小于1（额外功不可避免）</span>
+    <br><b>机械能守恒：</b>动能+势能=常数（只有重力做功时）<br>
+    <span class="tag">滚摆：上升动能→重力势能，下降反之</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/topic_phy_work.svg" alt="功与功率"></div>
+  <div class="formula g">F₁L₁ = F₂L₂ &nbsp;|&nbsp; F = G总/n &nbsp;|&nbsp; η = W有/W总 × 100%</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 5</b>：用一个动滑轮将重 200N 的物体匀速提升 2m，不计摩擦和滑轮重，求：(1)拉力 F (2)绳端移动距离 s<br>
+  <span class="hl">解：</span>动滑轮 F=G/2=200/2=<b>100N</b>，s=2h=2×2=<b>4m</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">动滑轮省一半力但费一倍距离。若考虑滑轮重（G轮=20N），则 F=(G+G轮)/2=110N。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 5：用滑轮组提升重 300N 的物体，绳子段数 n=3，求拉力 F（不计摩擦和滑轮重）。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">F=G/n=300/3=<b>100N</b></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 曲线运动与天体模型</div>
+  <div class="chart-wrap"><img src="charts/phy_projectile.svg" alt="平抛运动"></div>
+  <div class="kp-d">
+    <b>平抛运动：</b>水平匀速 + 竖直自由落体<br>
+    <span class="tag red">水平：</span>x = v₀t，vₓ = v₀（匀速）
+    <span class="tag blue">竖直：</span>y = ½gt²，vᵧ = gt（自由落体）<br>
+    <span class="tag orange">合速度：</span>v = √(v₀² + (gt)²)，方向 tanθ = gt/v₀<br>
+    <b>圆周运动：</b>向心力 F = mv²/r = mω²r<br>
+    <span class="tag green">匀速圆周运动：</span>速度大小不变、方向时刻改变，合外力指向圆心<br>
+    <b>万有引力：</b>F = Gm₁m₂/r²
+    <span class="tag purple">卫星：</span>GMm/r² = mv²/r → v = √(GM/r)
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_circular.svg" alt="圆周运动"></div>
+  <div class="formula b">x = v₀t &nbsp;|&nbsp; y = ½gt² &nbsp;|&nbsp; F向 = mv²/r &nbsp;|&nbsp; GMm/r² = mv²/r</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 6</b>：以 20m/s 水平抛出一物体，求 3s 末的速度大小和方向（g=10m/s²）。<br>
+  <span class="hl">解：</span>vₓ=20m/s，vᵧ=gt=30m/s<br>
+  v=√(20²+30²)=√1300≈<b>36.1m/s</b>；tanθ=30/20=1.5 → θ≈56.3°</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">平抛运动是水平匀速与竖直自由落体的合运动。合速度用勾股定理求，方向用正切表示。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 6：物体以 10m/s 水平抛出，2s 后下落高度和水平位移各是多少？（g=10m/s²）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">y=½gt²=½×10×4=<b>20m</b>；x=v₀t=10×2=<b>20m</b></div>
+</div>
+
+<!-- ═══════════ 二、电学模型 ═══════════ -->
 <div class="sec-title">二、电学模型</div>
-<div class="card"><div class="t">🔹 电路识别模型</div><div class="d">
-<b>串并联识别法：</b>电流路径法（唯一路径→串联，分支→并联）；节点法（用电器两端直接接电源→并联）<br>
-<b>电流表：</b>串联接入，正进负出，<span class="tag red">不能直接接电源</span><br>
-<b>电压表：</b>并联接入，正进负出，<span class="tag green">可以直接测电源电压</span><br>
-<b>滑动变阻器：</b>"一上一下"接入，闭合开关前调到最大阻值
+
+<div class="kp">
+  <div class="kp-t">🔹 电路识别模型</div>
+  <div class="chart-wrap"><img src="charts/topic_phy_circuit.svg" alt="电路分析"></div>
+  <div class="kp-d">
+    <b>串并联识别法：</b>电流路径法（唯一路径→串联，分支→并联）；节点法（用电器两端直接接电源→并联）<br>
+    <b>电流表：</b>串联接入，正进负出，<span class="tag red">不能直接接电源</span><br>
+    <b>电压表：</b>并联接入，正进负出，<span class="tag green">可以直接测电源电压</span><br>
+    <b>滑动变阻器：</b>"一上一下"接入，闭合开关前调到最大阻值
+  </div>
+  <table>
+  <tr><th>规律</th><th>串联</th><th>并联</th></tr>
+  <tr><td>电流</td><td>I=I₁=I₂</td><td>I=I₁+I₂</td></tr>
+  <tr><td>电压</td><td>U=U₁+U₂</td><td>U=U₁=U₂</td></tr>
+  <tr><td>电阻</td><td>R=R₁+R₂</td><td>R=(R₁R₂)/(R₁+R₂)</td></tr>
+  <tr><td>分压分流</td><td>U₁/U₂=R₁/R₂</td><td>I₁/I₂=R₂/R₁</td></tr>
+  </table>
 </div>
-<table>
-<tr><th>规律</th><th>串联</th><th>并联</th></tr>
-<tr><td>电流</td><td>I=I₁=I₂</td><td>I=I₁+I₂</td></tr>
-<tr><td>电压</td><td>U=U₁+U₂</td><td>U=U₁=U₂</td></tr>
-<tr><td>电阻</td><td>R=R₁+R₂</td><td>R=(R₁R₂)/(R₁+R₂)</td></tr>
-<tr><td>分压分流</td><td>U₁/U₂=R₁/R₂</td><td>I₁/I₂=R₂/R₁</td></tr>
-</table></div>
 
-<div class="card"><div class="t">🔹 欧姆定律模型</div>
-<div class="svg-wrap"><img src="../gen_svg_out/phy_11_ohm_graph.svg" width="360" height="225" alt="欧姆定律图"></div>
-<div class="d">
-<b>I = U/R</b>（电流与电压成正比，与电阻成反比）<br>
-<b>I-U图像：</b>定值电阻→过原点直线；小灯泡→曲线（灯丝电阻随温度升高而增大）<br>
-<b>串联分压：</b>U₁/U₂ = R₁/R₂（电阻越大分压越多）<br>
-<b>并联分流：</b>I₁/I₂ = R₂/R₁（电阻越大分流越少）<br>
-<b>动态电路分析步骤：</b><br>
-滑变电阻变化 → 总电阻变化 → 总电流变化 → 各支路/各元件电流电压变化
+<div class="kp">
+  <div class="kp-t">🔹 欧姆定律模型</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_ohm.svg" alt="欧姆定律"></div>
+  <div class="kp-d">
+    <b>I = U/R</b>（电流与电压成正比，与电阻成反比）<br>
+    <b>I-U图像：</b>定值电阻→过原点直线；小灯泡→曲线（灯丝电阻随温度升高而增大）<br>
+    <b>串联分压：</b>U₁/U₂ = R₁/R₂（电阻越大分压越多）<br>
+    <b>并联分流：</b>I₁/I₂ = R₂/R₁（电阻越大分流越少）<br>
+    <span class="tag red">动态电路分析：</span>滑变电阻变化→总电阻变化→总电流变化→各元件电流电压变化
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_circuit_law.svg" alt="电路规律"></div>
+  <div class="formula">I = U/R &nbsp;|&nbsp; R = U/I（计算式，R与UI无关）</div>
 </div>
-<div class="formula">I = U/R &nbsp;|&nbsp; R = U/I（计算式，R与UI无关）</div></div>
 
-<div class="card"><div class="t">🔹 电功率模型</div><div class="d">
-<b>基本公式：</b>P=W/t=UI=I²R=U²/R<br>
-<b>电功：</b>W=UIt=Pt &nbsp;|&nbsp; 1度 = 1kW·h = 3.6×10⁶J<br>
-<b>额定vs实际：</b>灯泡亮度取决于<b>实际功率</b>
-<span class="tag">U实=U额 → P实=P额（正常发光）</span>
-<span class="tag orange">U实>U额 → 灯很亮（可能烧坏）</span>
-<span class="tag blue">U实<U额 → 灯较暗</span>
-<br><b>比例计算：</b>串联时P₁/P₂=R₁/R₂；并联时P₁/P₂=R₂/R₁<br>
-<b>动态电路极值问题：</b>滑变在最小阻值时电流最大、总功率最大；滑变在最大阻值时电流最小、总功率最小
+<div class="ex">
+  <div class="q"><b>例题 7</b>：R₁=10Ω、R₂=20Ω 串联在 6V 电源上，求：(1)总电阻 (2)电流 (3)R₁两端电压<br>
+  <span class="hl">解：</span>R=R₁+R₂=30Ω；I=U/R=6/30=<b>0.2A</b>；U₁=IR₁=0.2×10=<b>2V</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">串联分压：U₁/U₂=R₁/R₂=1/2，U₁=2V，U₂=4V。</div>
 </div>
-<div class="formula blue">P = UI = I²R = U²/R &nbsp;|&nbsp; 灯泡亮度看实际功率</div></div>
 
-<div class="card"><div class="t">🔹 电路故障分析模型</div><div class="d">
-<table>
-<tr><th>故障现象</th><th>故障原因</th><th>判断方法</th></tr>
-<tr><td>灯不亮，IA=0</td><td><b>断路</b></td><td>UV=电源电压→所测部分断路</td></tr>
-<tr><td>灯不亮，IA>0</td><td><b>短路</b></td><td>UV=0→所测部分短路</td></tr>
-<tr><td>串联一灯亮一灯不亮</td><td>不亮灯<b>短路</b></td><td>电流有通路</td></tr>
-<tr><td>IA过大，烧保险/跳闸</td><td><b>短路或超负荷</b></td><td>总电阻过小/总功率过大</td></tr>
-<tr><td>滑动变阻器调不动</td><td>接成两上/两下</td><td>两上=0，两下=最大不动</td></tr>
-</table>
-<div class="formula orange">断路：IA=0，UV≈电源电压 &nbsp;|&nbsp; 短路：IA>0，UV=0</div></div></div>
-
-<div class="sec-title">三、其他重点模型</div>
-<div class="card"><div class="t">🔹 光学模型</div>
-<div class="svg-wrap"><img src="../gen_svg_out/phy_05_reflection.svg" width="360" height="225" alt="反射"><img src="../gen_svg_out/phy_06_refraction.svg" width="360" height="225" alt="折射"><img src="../gen_svg_out/phy_07_lens.svg" width="360" height="225" alt="透镜"></div>
-<div class="d">
-<b>反射定律：</b>三线共面、两线分居、两角相等（入射角=反射角）<br>
-<b>平面镜成像：</b>等大等距正立虚像——对称作图<br>
-<b>折射规律：</b>空气→水/玻璃：折射角<入射角（光从空气进入透明介质折射角变小）<br>
-<b>凸透镜成像（重要！）：</b>
-<span class="tag blue">u>2f</span> 倒立缩小实像（照相机）f<v<2f
-<span class="tag orange">u=2f</span> 倒立等大实像（测焦距）
-<span class="tag green">f<u<2f</span> 倒立放大实像（投影仪）v>2f
-<span class="tag red">u<f</span> 正立放大虚像（放大镜）
-<br><b>口诀："物近像远像变大，一倍焦距分虚实，二倍焦距分大小"</b>
-</div></div>
-
-<div class="card"><div class="t">🔹 热学模型</div><div class="d">
-<b>六种物态变化：</b>熔化（固→液，吸热）、凝固（液→固，放热）、汽化（液→气，吸热）、液化（气→液，放热）、升华（固→气，吸热）、凝华（气→固，放热）<br>
-<b>晶体熔化：</b>有熔点（冰、金属、海波），熔化时吸热温度不变<br>
-<b>水沸腾：</b>吸热温度不变（保持沸点），气压越高沸点越高<br>
-<b>比热容：</b>Q = cmΔt；c水=4.2×10³J/(kg·℃)（最大→常用于冷却剂）<br>
-<b>热机四冲程：</b>吸气→压缩(机械→内)→做功(内→机械)→排气<br>
-<b>燃料热值：</b>Q=mq；热机效率η=W有/Q放
-</div></div>
-
-<div class="card"><div class="t">🔹 电与磁模型</div><div class="d">
-<b>奥斯特实验：</b>通电导体周围有磁场（电生磁）<br>
-<b>安培定则：</b>右手握螺线管，四指指电流方向，拇指指N极<br>
-<b>电磁铁：</b>磁性强弱与电流大小和线圈匝数有关<br>
-<b>电动机：</b>通电线圈在磁场中受力转动（电能→机械能），换向器改变电流方向<br>
-<b>发电机：</b>电磁感应（机械能→电能），交流电线圈转一圈电流方向改变两次<br>
-<b>对比：</b>
-<span class="tag blue">电生磁→奥斯特→电磁铁</span>
-<span class="tag green">电受力→电动机</span>
-<span class="tag orange">磁生电→法拉第→发电机</span>
-</div></div>
-
+<div class="hw">
+  <div class="hw-q">练习 7：R₁=6Ω、R₂=12Ω 并联在 12V 电源上，求干路电流。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">I₁=12/6=2A，I₂=12/12=1A，I=I₁+I₂=<b>3A</b>。或 R=6×12/(6+12)=4Ω，I=12/4=3A。</div>
 </div>
+
+<div class="kp">
+  <div class="kp-t">🔹 电功率模型</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_power.svg" alt="电功率"></div>
+  <div class="kp-d">
+    <b>基本公式：</b>P=W/t=UI=I²R=U²/R<br>
+    <b>电功：</b>W=UIt=Pt &nbsp;|&nbsp; 1度 = 1kW·h = 3.6×10⁶J<br>
+    <b>额定vs实际：</b>灯泡亮度取决于<b>实际功率</b>
+    <span class="tag">U实=U额 → P实=P额（正常发光）</span>
+    <span class="tag orange">U实>U额 → 灯很亮（可能烧坏）</span>
+    <span class="tag blue">U实&lt;U额 → 灯较暗</span>
+    <br><b>比例计算：</b>串联时P₁/P₂=R₁/R₂；并联时P₁/P₂=R₂/R₁<br>
+    <span class="tag red">动态电路极值：</span>滑变阻值最小时电流最大、总功率最大；最大时电流最小、总功率最小
+  </div>
+  <div class="formula b">P = UI = I²R = U²/R &nbsp;|&nbsp; 灯泡亮度看实际功率</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 8</b>：标有"6V 3W"的灯泡接在 3V 电源上，实际功率是多少？<br>
+  <span class="hl">解：</span>R=U额²/P额=36/3=12Ω；P实=U实²/R=9/12=<b>0.75W</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">灯丝电阻不变（忽略温度影响），用额定值算电阻，再用实际电压算实际功率。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 8："220V 100W"的灯泡正常工作时的电流和电阻各是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">I=P/U=100/220≈<b>0.455A</b>；R=U²/P=48400/100=<b>484Ω</b></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 电路故障分析模型</div>
+  <div class="kp-d">
+    <table>
+    <tr><th>故障现象</th><th>故障原因</th><th>判断方法</th></tr>
+    <tr><td>灯不亮，IA=0</td><td><b>断路</b></td><td>UV=电源电压→所测部分断路</td></tr>
+    <tr><td>灯不亮，IA>0</td><td><b>短路</b></td><td>UV=0→所测部分短路</td></tr>
+    <tr><td>串联一灯亮一灯不亮</td><td>不亮灯<b>短路</b></td><td>电流有通路</td></tr>
+    <tr><td>IA过大，烧保险</td><td><b>短路或超负荷</b></td><td>总电阻过小/总功率过大</td></tr>
+    <tr><td>滑变调不动</td><td>接成两上/两下</td><td>两上=0，两下=最大不动</td></tr>
+    </table>
+  </div>
+  <div class="formula o">断路：IA=0，UV≈电源电压 &nbsp;|&nbsp; 短路：IA>0，UV=0</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 9</b>：串联电路中，闭合开关后一盏灯亮一盏灯不亮，电流表有示数，不亮的灯可能发生了什么故障？<br>
+  <span class="hl">分析：</span>电流表有示数→电路不是断路。串联一灯亮一灯不亮→不亮的灯<b>被短路</b>。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">串联电路电流相同，有示数说明电路通路。不亮的灯两端被导线直接连接（短路），电流从导线绕过灯泡。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 9：闭合开关后灯泡都不亮，电流表无示数，电压表有示数且接近电源电压，故障是什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">电压表所测部分（可能是灯泡或某段电路）<b>断路</b>。电压表有示数说明电压表与电源构成通路，所测部分断开。</div>
+</div>
+
+<!-- ═══════════ 三、热学模型 ═══════════ -->
+<div class="sec-title">三、热学模型</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 分子动理论与物态变化</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_molecule.svg" alt="分子动理论"></div>
+  <div class="kp-d">
+    <b>分子动理论：</b>①物质由大量分子组成 ②分子永不停息做无规则运动 ③分子间存在引力和斥力<br>
+    <span class="tag orange">扩散现象：</span>不同物质相互接触时彼此进入对方（温度越高扩散越快）<br>
+    <b>六种物态变化：</b>
+    <span class="tag red">熔化</span> 固→液（吸热）
+    <span class="tag blue">凝固</span> 液→固（放热）
+    <span class="tag green">汽化</span> 液→气（吸热）
+    <span class="tag purple">液化</span> 气→液（放热）
+    <span class="tag orange">升华</span> 固→气（吸热）
+    <span class="tag">凝华</span> 气→固（放热）
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 比热容与热传递</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_specific_heat.svg" alt="比热容"></div>
+  <div class="kp-d">
+    <b>比热容：</b>单位质量的物质温度升高1℃所吸收的热量。<br>
+    <span class="tag red">Q = cmΔt</span>
+    <span class="tag green">c水 = 4.2×10³ J/(kg·℃)</span><br>
+    <span class="tag blue">水的比热容最大 → 常用作冷却剂、取暖介质</span><br>
+    <b>热传递条件：</b>存在温度差（高温→低温传递热量）<br>
+    <b>晶体熔化特点：</b>吸热温度不变（有固定熔点）<br>
+    <b>水沸腾特点：</b>吸热温度不变（保持沸点），气压越高沸点越高
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_melting.svg" alt="晶体熔化图像"></div>
+  <div class="formula b">Q = cmΔt &nbsp;|&nbsp; c水 = 4.2×10³ J/(kg·℃) &nbsp;|&nbsp; Q放 = Q吸（热平衡）</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 10</b>：将 2kg 水从 20℃加热到 100℃，需要吸收多少热量？（c水=4.2×10³J/(kg·℃)）<br>
+  <span class="hl">解：</span>Q=cmΔt=4.2×10³×2×(100−20)=4.2×10³×2×80=<b>6.72×10⁵J</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">注意Δt是温度变化量，用末温减初温。水的比热容很大，常见题型会结合电热器或燃料燃烧一起考。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 10：0.5kg 的铁块温度从 80℃降到 30℃放出了多少热量？（c铁=0.46×10³J/(kg·℃)）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">Q=cmΔt=0.46×10³×0.5×(80−30)=0.46×10³×0.5×50=<b>1.15×10⁴J</b></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 热机与效率</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_engine.svg" alt="热机四冲程"></div>
+  <div class="kp-d">
+    <b>热机四冲程：</b>吸气→压缩(机械能→内能)→做功(内能→机械能)→排气<br>
+    <span class="tag red">做功冲程：</span>内能→机械能（提供动力）<br>
+    <span class="tag blue">压缩冲程：</span>机械能→内能（温度升高）<br>
+    <b>燃料热值：</b>Q=mq（q为热值，单位J/kg）<br>
+    <b>热机效率：</b>η = W有/Q放 × 100%<br>
+    <span class="tag orange">提高效率途径：</span>使燃料充分燃烧、减小摩擦、利用废气余热
+  </div>
+  <div class="formula">Q = mq &nbsp;|&nbsp; η = W有/Q放 &nbsp;|&nbsp; 热机效率 &lt; 100%</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 11</b>：汽油机飞轮转速 3600r/min，求每秒做功次数。<br>
+  <span class="hl">解：</span>每秒飞轮转 3600/60=60 转；每 2 转做功 1 次 → 每秒做功 <b>30 次</b>。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">四冲程汽油机每 2 转完成 1 个工作循环、做功 1 次。飞轮转速与做功次数的关系是常考知识点。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 11：完全燃烧 2kg 无烟煤放出的热量是多少？（q煤=3.4×10⁷J/kg）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">Q=mq=2×3.4×10⁷=<b>6.8×10⁷J</b></div>
+</div>
+
+<!-- ═══════════ 四、光学模型 ═══════════ -->
+<div class="sec-title">四、光学模型</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 光的反射与平面镜成像</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_reflection.svg" alt="光的反射"></div>
+  <div class="kp-d">
+    <b>反射定律：</b>三线共面、两线分居、两角相等（入射角=反射角）<br>
+    <b>镜面反射：</b>平行光射到光滑表面→反射光平行（能看到清晰的像）<br>
+    <b>漫反射：</b>平行光射到粗糙表面→反射光射向各个方向（能看见不发光的物体）<br>
+    <b>平面镜成像：</b>
+    <span class="tag green">等大、等距、正立、虚像</span> — 对称作图<br>
+    <span class="tag orange">关键：</span>像与物关于镜面对称，像距=物距
+  </div>
+  <div class="chart-wrap"><img src="charts/jun_phy_mirror.svg" alt="平面镜成像"></div>
+  <div class="formula">入射角 = 反射角 &nbsp;|&nbsp; 像距 = 物距 &nbsp;|&nbsp; 像物等大</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 光的折射与透镜成像</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_lens_path.svg" alt="透镜光路"></div>
+  <div class="kp-d">
+    <b>折射规律：</b>空气→水/玻璃：折射角&lt;入射角<br>
+    <span class="tag red">光从空气进入透明介质折射角变小</span><br>
+    <b>凸透镜成像（重要！）：</b>
+    <span class="tag blue">u>2f</span> 倒立缩小实像（照相机）
+    <span class="tag orange">u=2f</span> 倒立等大实像（测焦距）
+    <span class="tag green">f&lt;u&lt;2f</span> 倒立放大实像（投影仪）
+    <span class="tag red">u&lt;f</span> 正立放大虚像（放大镜）
+    <br><b>口诀：</b>"物近像远像变大，一倍焦距分虚实，二倍焦距分大小"
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_lens.svg" alt="透镜成像规律"></div>
+  <div class="formula">1/u + 1/v = 1/f &nbsp;|&nbsp; 放大率 m = |v/u|</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 12</b>：凸透镜焦距 10cm，物体在 25cm 处，求像距和像的性质。<br>
+  <span class="hl">解：</span>u=25cm>2f=20cm，成倒立缩小实像。<br>
+  1/v = 1/f − 1/u = 1/10 − 1/25 = 0.1−0.04=0.06 → v≈<b>16.7cm</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">u>2f 成倒立缩小实像（照相机原理）。也可直接用成像公式计算像距。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 12：凸透镜焦距 10cm，物体放在 8cm 处，成什么像？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">u=8cm&lt;f=10cm，成<b>正立放大虚像</b>（放大镜原理）。像在物体同侧，不能用光屏承接。</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 光的色散与视觉</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_dispersion.svg" alt="光的色散"></div>
+  <div class="kp-d">
+    <b>光的色散：</b>白光通过三棱镜分解为红橙黄绿蓝靛紫七色光（牛顿发现）<br>
+    <span class="tag red">红光折射率最小，偏折最小</span>
+    <span class="tag purple">紫光折射率最大，偏折最大</span><br>
+    <b>物体的颜色：</b>
+    <span class="tag green">不透明物体：</span>反射什么颜色就显什么颜色
+    <span class="tag blue">透明物体：</span>透过什么颜色就显什么颜色<br>
+    <b>红外线：</b>热作用强（遥控器、热成像仪）<br>
+    <b>紫外线：</b>使荧光物质发光（验钞机、杀菌消毒）
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 13</b>：在"探究凸透镜成像规律"实验中，光屏上成清晰缩小的像，若将蜡烛和光屏位置互换，还能成清晰的像吗？<br>
+  <span class="hl">分析：</span>光屏上成清晰缩小的像 → u>2f，f&lt;v&lt;2f<br>
+  互换后新 u'=v（在f与2f之间），新 v'=u>2f → 成倒立放大的实像。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">光路可逆原理：互换后成倒立放大的实像。这是凸透镜实验常考题型。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 13：矫正近视眼应佩戴什么透镜？矫正远视眼呢？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">近视眼：晶状体太厚（或眼球前后径过长），像成在视网膜<b>前</b> → 佩戴<b>凹透镜</b>矫正。<br>远视眼（老花眼）：晶状体太薄，像成在视网膜<b>后</b> → 佩戴<b>凸透镜</b>矫正。</div>
+</div>
+
+<!-- ═══════════ 五、电磁模型 ═══════════ -->
+<div class="sec-title">五、电磁模型</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 磁场与电流磁效应</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_magnet.svg" alt="磁与电"></div>
+  <div class="kp-d">
+    <b>磁体：</b>有 N/S 两极，同名相斥异名相吸<br>
+    <b>奥斯特实验：</b>通电导体周围有磁场（<span class="tag red">电生磁</span>）→ 电流方向决定磁场方向<br>
+    <b>安培定则：</b>右手握螺线管，四指指电流方向，拇指指N极<br>
+    <b>电磁铁：</b>磁性强弱与<b>电流大小</b>和<b>线圈匝数</b>有关<br>
+    <span class="tag blue">应用：</span>电磁起重机、电磁继电器、电铃
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 电动机与发电机</div>
+  <div class="chart-wrap"><img src="charts/phy_connected.svg" alt="电磁综合"></div>
+  <div class="kp-d">
+    <b>电动机（通电受力）：</b>通电线圈在磁场中受力转动 → <span class="tag red">电能→机械能</span><br>
+    <span class="tag orange">换向器：</span>改变线圈中电流方向，使线圈持续转动<br>
+    <b>发电机（电磁感应）：</b>闭合线圈在磁场中切割磁感线产生感应电流 → <span class="tag green">机械能→电能</span><br>
+    <span class="tag purple">法拉第发现：</span>产生感应电流的条件：①闭合电路 ②导体做切割磁感线运动<br>
+    <b>交流电：</b>线圈转一圈电流方向改变两次（周期T、频率f=1/T）
+  </div>
+  <div class="chart-wrap"><img src="charts/phy_ac.svg" alt="交流电"></div>
+  <div class="formula">电动机：电能→机械能 &nbsp;|&nbsp; 发电机：机械能→电能 &nbsp;|&nbsp; 电磁感应：磁→电</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 14</b>：如图所示，闭合电路的一部分导体在磁场中向右运动时，电流计指针偏转。若导体向左运动，指针偏转方向如何？若将磁极对调，导体向右运动呢？<br>
+  <span class="hl">分析：</span>感应电流方向与<b>导体运动方向</b>和<b>磁场方向</b>有关。<br>
+  ①向左运动→偏转方向相反 ②磁极对调+向右→偏转方向与原来相同</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">产生感应电流的条件：闭合电路+切割磁感线。方向由右手定则判定：磁感线穿掌心、拇指指运动方向、四指指电流方向。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 14：发电机和电动机分别利用了什么物理原理？能量如何转化？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">发电机：<b>电磁感应</b>（法拉第发现），<b>机械能→电能</b>。<br>电动机：<b>通电导体在磁场中受力</b>，<b>电能→机械能</b>。</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 变压器与电能输送</div>
+  <div class="chart-wrap"><img src="charts/phy_transformer.svg" alt="变压器"></div>
+  <div class="kp-d">
+    <b>变压器原理：</b>电磁感应（互感现象）<br>
+    <b>电压关系：</b>U₁/U₂ = n₁/n₂（匝数比等于电压比）<br>
+    <b>电流关系：</b>I₁/I₂ = n₂/n₁（理想变压器，忽略损耗）<br>
+    <b>功率关系：</b>P₁ = P₂（理想变压器无能量损失）<br>
+    <span class="tag red">升压变压器：</span>n₁ &lt; n₂ → U₂ > U₁（用于远距离输电）<br>
+    <span class="tag blue">降压变压器：</span>n₁ > n₂ → U₂ &lt; U₁（用于用户端）<br>
+    <span class="tag green">远距离输电：</span>升压→减小电流→减小线路损耗（P损=I²R）
+  </div>
+  <div class="formula">U₁/U₂ = n₁/n₂ &nbsp;|&nbsp; P₁ = P₂ &nbsp;|&nbsp; P损 = I²R</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 15</b>：发电站输出电压 1000V，通过变压器升到 100kV 传输，输送功率 1000kW，求升压前后输电电流之比。<br>
+  <span class="hl">解：</span>P=UI，P不变<br>
+  升压前：I₁=P/U₁=1000kW/1000V=1000A<br>
+  升压后：I₂=P/U₂=1000kW/100kV=10A<br>
+  电流比 I₁:I₂=<b>100:1</b> → 线路损耗降为原来的 1/10000</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">升压到 100 倍，电流降为 1/100。P损=I²R，所以损耗降为原来的 1/10000！这就是为什么要高压输电。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 15：理想变压器原线圈 n₁=1000 匝，副线圈 n₂=100 匝，输入电压 U₁=220V，求输出电压 U₂。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">U₁/U₂=n₁/n₂ → 220/U₂=1000/100 → U₂=220×100/1000=<b>22V</b>（降压变压器）</div>
+</div>
+
+<!-- ═══════════ 六、实验模型 ═══════════ -->
+<div class="sec-title">六、实验模型</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 力学实验——探究杠杆平衡条件</div>
+  <div class="chart-wrap"><img src="charts/lab_lever.svg" alt="杠杆实验"></div>
+  <div class="kp-d">
+    <b>实验目的：</b>探究杠杆平衡时动力×动力臂 = 阻力×阻力臂<br>
+    <b>实验步骤：</b><br>
+    ①调节杠杆两端的平衡螺母，使杠杆在水平位置平衡（消除杠杆自重影响）<br>
+    ②在杠杆两侧挂不同数量的钩码，移动钩码位置使杠杆重新水平平衡<br>
+    ③记录动力F₁、动力臂L₁、阻力F₂、阻力臂L₂<br>
+    ④改变力和力臂，重复实验<br>
+    <b>注意事项：</b>
+    <span class="tag red">水平平衡目的：</span>方便直接读出力臂（从支点到钩码悬挂点的距离）
+    <span class="tag orange">每次实验前要调平</span>
+    <span class="tag green">多次实验避免偶然性</span>
+  </div>
+  <div class="formula">F₁L₁ = F₂L₂ &nbsp;|&nbsp; 杠杆平衡条件</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 16</b>：在杠杆两端各挂一个钩码（每个 0.5N），左端 3 个在 2 格处，右端 2 个在 3 格处，杠杆能平衡吗？<br>
+  <span class="hl">解：</span>F₁=1.5N、L₁=2 格 → F₁L₁=3<br>
+  F₂=1.0N、L₂=3 格 → F₂L₂=3<br>
+  F₁L₁=F₂L₂ → <b>平衡</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">杠杆平衡条件不关心力的单位、力臂的具体数值，只关心乘积相等。钩码数量×格数相等即可。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 16：某同学测出了一组数据 F₁L₁≠F₂L₂，可能的原因是什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">可能原因：①杠杆未在水平位置平衡就读数 ②力臂测量错误（不是从支点到力的作用线的距离）③杠杆自重未消除（未调平）</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 光学实验——凸透镜成像规律</div>
+  <div class="chart-wrap"><img src="charts/lab_lens.svg" alt="透镜实验"></div>
+  <div class="kp-d">
+    <b>实验器材：</b>光具座、凸透镜、蜡烛、光屏、刻度尺<br>
+    <b>实验步骤：</b><br>
+    ①将凸透镜放在光具座中间，在透镜左侧放蜡烛、右侧放光屏<br>
+    ②调整蜡烛、透镜、光屏三者中心在同一高度（使像成在光屏中央）<br>
+    ③移动蜡烛改变物距，移动光屏直到光屏上出现清晰的像<br>
+    ④记录物距u、像距v、像的性质（大小、正倒、虚实）<br>
+    <b>注意事项：</b>
+    <span class="tag red">三心等高：</span>烛焰中心、透镜中心、光屏中心在同一高度
+    <span class="tag orange">光屏上找不到像：</span>可能是物距小于或等于焦距（成虚像或不成像）
+    <span class="tag green">换用不同焦距的透镜：</span>观察成像规律的变化
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 17</b>：在凸透镜成像实验中，当蜡烛从远处向透镜靠近时，光屏上的像如何变化？<br>
+  <span class="hl">分析：</span>根据"物近像远像变大"的规律：<br>
+  ①u>2f：缩小→等大→放大（物距减小像距增大）<br>
+  ②u=f：不成像（平行光线）<br>
+  ③u&lt;f：成虚像（光屏上无法承接）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">口诀"物近像远像变大"全程适用。当物距等于焦距时不成像（射出平行光）。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 17：实验时烛焰的像成在光屏上方，应如何调节才能让像在光屏中央？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">像在光屏上方，说明烛焰中心低于透镜中心。应将<b>蜡烛向上调</b>（或将光屏向上调、或将透镜向下调），使三心等高。</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🔹 电学实验——伏安法测电阻</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_resistor.svg" alt="伏安法测电阻"></div>
+  <div class="kp-d">
+    <b>实验原理：</b>R = U/I（伏安法）<br>
+    <b>电路连接：</b>
+    <span class="tag red">电流表串联</span>
+    <span class="tag blue">电压表并联</span>
+    <span class="tag green">滑动变阻器"一上一下"</span><br>
+    <b>实验步骤：</b><br>
+    ①按电路图连接实物，开关断开，滑变调到最大阻值<br>
+    ②闭合开关，移动滑片，记录多组U、I值<br>
+    ③计算R=U/I，取平均值减小误差<br>
+    <b>小灯泡电阻：</b>灯丝电阻随温度升高而增大，不能取平均值<br>
+    <span class="tag orange">连接注意事项：</span>开关要断开、滑变调最大、电流表电压表量程要合适、正进负出
+  </div>
+  <div class="formula b">R = U/I &nbsp;|&nbsp; 定值电阻：多次测量取平均 &nbsp;|&nbsp; 小灯泡：R随温度升高增大</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 18</b>：伏安法测电阻时，若电压表有示数、电流表无示数，故障是什么？<br>
+  <span class="hl">分析：</span>电压表有示数→电压表与电源构成通路；电流表无示数→电路不通。<br>
+  结论：被测电阻<b>断路</b>（电压表测的是电源电压）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">这是伏安法测电阻的典型故障——待测电阻断路。此时电压表示数≈电源电压，电流表示数为0。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 18：某同学测小灯泡电阻时发现电流表有示数但灯泡不亮，可能的原因是什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">①滑动变阻器接入阻值太大→电流太小，灯泡实际功率太小不发光 ②灯泡短路（电流表有示数但灯不亮）</div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 初中物理模型大全 · 力学 / 电学 / 热学 / 光学 / 电磁 / 实验</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#c0392b;cursor:pointer">获取联系方式</span></p>
+</div>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——初中物理常考模型，力学+电学+热学+光学+电磁+实验六大板块，含知识点梳理+例题精讲+配套练习，中考物理全覆盖。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  shareTextEl.textContent = shareTxt;
+  copyBtn.addEventListener('click', function() {
+    if (hasCopied) return;
+    navigator.clipboard.writeText(shareTxt).then(function() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      hasCopied = true;
+      var ct = localStorage.getItem('sx_copy_time');
+      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
+      function checkShare() {
+        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
+        var ok = Date.now() - t0 >= 10000;
+        sharedBtn.disabled = !ok;
+        if (!ok) setTimeout(checkShare, 500);
+        else sharedBtn.textContent = '我已分享，查看联系方式 →';
+      }
+      setTimeout(checkShare, 10000);
+    });
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (sharedBtn.disabled) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+  });
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) {
+      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+      return;
+    }
+    overlay.classList.add('active');
+  };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+})();
+</script>
+
+<script>
+function toggleSol(btn) {
+  var el = btn.nextElementSibling;
+  el.classList.toggle('show');
+  btn.textContent = el.classList.contains('show') ? '🙈 收起' : '👁️ 看解析';
+}
+</script>
 </body>
 </html>

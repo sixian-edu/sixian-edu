@@ -106,7 +106,24 @@
             .method-nav { margin-left: 12px; margin-right: 12px; }
         }
     </style>
-<script src="js/theme.js"></script></head>
+<script src="js/theme.js"></script>
+<script>
+(function() {
+  var saved = sessionStorage.getItem('sx_method_scroll');
+  if (saved) {
+    sessionStorage.removeItem('sx_method_scroll');
+    requestAnimationFrame(function() {
+      window.scrollTo(0, parseInt(saved));
+    });
+  }
+  document.addEventListener('click', function(e) {
+    var card = e.target.closest('.m-card');
+    if (card) {
+      sessionStorage.setItem('sx_method_scroll', window.scrollY);
+    }
+  });
+})();
+</script></head>
 <body>
 
 <div class="nav">
@@ -152,33 +169,33 @@
                 <h2>时间管理</h2>
                 <p>把时间用在刀刃上 · 效率翻倍</p>
             </div>
-            <div class="mcount">整理中</div>
+            <div class="mcount">4篇</div>
         </div>
         <div class="m-grid">
-            <div class="m-card">
+            <a href="学习方法/番茄工作法.html" class="m-card">
                 <div class="mc-icon">🍅</div>
                 <div class="mc-title">番茄工作法</div>
                 <div class="mc-desc">25分钟专注 + 5分钟休息，简单有效的专注力训练法</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/四象限优先级.html" class="m-card">
                 <div class="mc-icon">📊</div>
                 <div class="mc-title">四象限优先级</div>
                 <div class="mc-desc">重要紧急 · 重要不紧急 · 紧急不重要 · 不紧急不重要</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/每日每周计划法.html" class="m-card">
                 <div class="mc-icon">📅</div>
                 <div class="mc-title">每日/每周计划法</div>
                 <div class="mc-desc">科学制定学习计划，告别盲目与拖延</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/碎片时间利用.html" class="m-card">
                 <div class="mc-icon">⏳</div>
                 <div class="mc-title">碎片时间利用</div>
                 <div class="mc-desc">通勤、排队、等人的时间，也能高效学习</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
         </div>
     </div>
 
@@ -190,33 +207,33 @@
                 <h2>如何提高效率</h2>
                 <p>不是学得久就学得好 · 方法对了才高效</p>
             </div>
-            <div class="mcount">整理中</div>
+            <div class="mcount">4篇</div>
         </div>
         <div class="m-grid">
-            <div class="m-card">
+            <a href="学习方法/专注力训练.html" class="m-card">
                 <div class="mc-icon">🎯</div>
                 <div class="mc-title">专注力训练</div>
                 <div class="mc-desc">如何进入心流状态，保持高度专注</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/主动学习法.html" class="m-card">
                 <div class="mc-icon">🔄</div>
                 <div class="mc-title">主动学习法</div>
                 <div class="mc-desc">从被动听课到主动输出，学习效果天差地别</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/费曼学习法.html" class="m-card">
                 <div class="mc-icon">🧑‍🏫</div>
                 <div class="mc-title">费曼学习法</div>
                 <div class="mc-desc">"教给别人"——检验是否真懂的黄金标准</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/刻意练习.html" class="m-card">
                 <div class="mc-icon">💪</div>
                 <div class="mc-title">刻意练习</div>
                 <div class="mc-desc">有目的的练习 + 即时反馈 + 不断挑战舒适区</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
         </div>
     </div>
 
@@ -228,33 +245,33 @@
                 <h2>记忆方法</h2>
                 <p>记得住 · 记得牢 · 考得好</p>
             </div>
-            <div class="mcount">整理中</div>
+            <div class="mcount">4篇</div>
         </div>
         <div class="m-grid">
-            <div class="m-card">
+            <a href="学习方法/艾宾浩斯遗忘曲线.html" class="m-card">
                 <div class="mc-icon">📈</div>
                 <div class="mc-title">艾宾浩斯遗忘曲线</div>
                 <div class="mc-desc">科学复习节奏——记亿规律与最佳复习间隔</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/记忆宫殿法.html" class="m-card">
                 <div class="mc-icon">🏛️</div>
                 <div class="mc-title">记忆宫殿法</div>
                 <div class="mc-desc">把抽象信息"放"在熟悉的空间里，过目不忘</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/联想记忆法.html" class="m-card">
                 <div class="mc-icon">🔗</div>
                 <div class="mc-title">联想记忆法</div>
                 <div class="mc-desc">用已有知识"钩住"新知识，形成知识网络</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/间隔重复.html" class="m-card">
                 <div class="mc-icon">🔄</div>
                 <div class="mc-title">间隔重复</div>
                 <div class="mc-desc">Anki、卡片记忆法——用最少的重复达到最长的记忆</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
         </div>
     </div>
 
@@ -266,33 +283,33 @@
                 <h2>如何做笔记</h2>
                 <p>好笔记 = 好复习 · 告别抄书式笔记</p>
             </div>
-            <div class="mcount">整理中</div>
+            <div class="mcount">4篇</div>
         </div>
         <div class="m-grid">
-            <div class="m-card">
+            <a href="学习方法/康奈尔笔记法.html" class="m-card">
                 <div class="mc-icon">📓</div>
                 <div class="mc-title">康奈尔笔记法</div>
                 <div class="mc-desc">笔记栏 + 线索栏 + 总结栏——经典中的经典</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/思维导图.html" class="m-card">
                 <div class="mc-icon">🌳</div>
                 <div class="mc-title">思维导图</div>
                 <div class="mc-desc">用可视化方式梳理知识结构，一目了然</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/卡片笔记法.html" class="m-card">
                 <div class="mc-icon">🗂️</div>
                 <div class="mc-title">卡片笔记法</div>
                 <div class="mc-desc">一张卡片一个知识点，灵活组合复用</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/电子笔记vs纸质笔记.html" class="m-card">
                 <div class="mc-icon">💻</div>
                 <div class="mc-title">电子笔记 vs 纸质笔记</div>
                 <div class="mc-desc">各自的优缺点与适用场景，找到最适合你的方式</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
         </div>
     </div>
 
@@ -304,33 +321,33 @@
                 <h2>熬夜学习问题</h2>
                 <p>熬夜不是努力 · 睡好才能学好</p>
             </div>
-            <div class="mcount">整理中</div>
+            <div class="mcount">4篇</div>
         </div>
         <div class="m-grid">
-            <div class="m-card">
+            <a href="学习方法/熬夜的真相.html" class="m-card">
                 <div class="mc-icon">⚠️</div>
                 <div class="mc-title">熬夜的真相</div>
                 <div class="mc-desc">熬夜学习的低效真相——你以为的"努力"正在拖垮你</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/科学作息指南.html" class="m-card">
                 <div class="mc-icon">🌙</div>
                 <div class="mc-title">科学作息指南</div>
                 <div class="mc-desc">找到你的最佳睡眠时长与作息节奏</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/如何养成早起习惯.html" class="m-card">
                 <div class="mc-icon">🌅</div>
                 <div class="mc-title">如何养成早起习惯</div>
                 <div class="mc-desc">无痛早起的实用方法，利用好清晨黄金时间</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/睡眠与学习效率.html" class="m-card">
                 <div class="mc-icon">🧠</div>
                 <div class="mc-title">睡眠与学习效率</div>
                 <div class="mc-desc">睡眠如何影响记忆巩固——睡够才能学好</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
         </div>
     </div>
 
@@ -342,33 +359,33 @@
                 <h2>如何戒手机</h2>
                 <p>手机是学习最大的敌人 · 科学戒断方法</p>
             </div>
-            <div class="mcount">整理中</div>
+            <div class="mcount">4篇</div>
         </div>
         <div class="m-grid">
-            <div class="m-card">
+            <a href="学习方法/手机依赖程度自测.html" class="m-card">
                 <div class="mc-icon">📊</div>
                 <div class="mc-title">你的手机依赖程度</div>
                 <div class="mc-desc">自测题——看看你离"手机成瘾"有多远</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span><span class="tag-hot">热门</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span><span class="tag-hot">热门</span></div>
+            </a>
+            <a href="学习方法/实用戒断方法.html" class="m-card">
                 <div class="mc-icon">🔒</div>
                 <div class="mc-title">实用戒断方法</div>
                 <div class="mc-desc">物理隔离 · 软件限制 · 习惯替换——三管齐下</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/替代活动清单.html" class="m-card">
                 <div class="mc-icon">🏃</div>
                 <div class="mc-title">替代活动清单</div>
                 <div class="mc-desc">放下手机能做什么？丰富有趣的替代方案</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
-            <div class="m-card">
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
+            <a href="学习方法/打造无干扰环境.html" class="m-card">
                 <div class="mc-icon">🏠</div>
                 <div class="mc-title">打造无干扰环境</div>
                 <div class="mc-desc">学习空间设计 · 家庭规则 · 同伴监督</div>
-                <div class="mc-tags"><span class="tag-wip">整理中</span></div>
-            </div>
+                <div class="mc-tags"><span class="tag-online">已上线</span></div>
+            </a>
         </div>
     </div>
 

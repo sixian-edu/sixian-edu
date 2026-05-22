@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>高中数学 · 函数深化专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#2c3e50}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#2c3e50;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #2c3e50;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#2c3e50;margin-bottom:4px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(44,62,80,0.08);color:#2c3e50;margin-bottom:10px}
+.top .tag2{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(231,76,60,0.08);color:#e74c3c;margin-bottom:10px;margin-left:4px}
+.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
+.top .kp strong{color:#2c3e50}
+.top .kp .red{color:#e74c3c;font-weight:600}
+.top .kp .green{color:#27ae60;font-weight:600}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:11px 15px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#2c3e50;margin-bottom:2px;font-size:14px}
+.top .ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:3px}
+.top .ex .a strong{color:#2c3e50}
+.top .ex .a .step{color:#2c3e50}
+.top .hw{background:#f0f2f5;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#f0f2f5;border-radius:8px;padding:10px 16px;margin:8px 0;border-left:3px solid #2c3e50}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600;margin-bottom:2px}
+.formula-box .fd{font-size:12px;color:#888}
+@media(max-width:600px){.head h1{font-size:22px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>高中数学 · 函数深化专题</h1><p class="sub">函数概念 · 性质 · 指对幂 · 图像变换 · 零点 · 综合 共 <span>7</span> 专题</p></div>
+<div class="container">
+
+<!-- ═══ 专题一：函数的概念与三要素 ═══ -->
+<div class="top">
+<h2>专题一：函数的概念与三要素</h2>
+<span class="tag">函数基础</span>
+
+<p class="kp"><strong>函数定义</strong>：设 A、B 是非空数集，如果按照某个确定的对应关系 f，使对于集合 A 中的<strong>任意</strong>一个数 x，在集合 B 中都有<strong>唯一确定</strong>的数 f(x) 和它对应，则称 f：A→B 是从 A 到 B 的一个<strong>函数</strong>。</p>
+
+<p class="kp"><strong>三要素</strong>：<span class="red">定义域</span>（x 的取值范围）、<span class="red">对应关系</span>（f）、<span class="red">值域</span>（f(x) 的取值范围）。<br>
+两个函数相同当且仅当定义域和对应关系完全一致（与表示变量的字母无关）。</p>
+
+<p class="kp"><strong>定义域的常见限制</strong>：<br>
+① 分式分母 ≠ 0；② 偶次根号下 ≥ 0；③ 对数真数 > 0；④ 正切 x ≠ π/2 + kπ；<br>
+⑤ 组合函数取各部分的交集；⑥ 实际应用题还需考虑实际意义。</p>
+
+<p class="kp"><strong>求函数解析式的方法</strong>：<br>
+① <span class="red">配凑法</span>：已知 f(g(x)) = h(x)，将 h(x) 用 g(x) 表示；<br>
+② <span class="red">换元法</span>：设 t = g(x)，反解 x，代入求解；<br>
+③ <span class="red">待定系数法</span>：已知函数类型（一次、二次等），设出通式，由条件求系数；<br>
+④ <span class="red">方程组法</span>：已知 f(x) 与 f(−x) 或 f(1/x) 的关系式，构造方程组求解。</p>
+
+<div class="ex">
+<div class="q">例 1：求 f(x)=√(x+3)/(x²−5x+6) 的定义域。</div>
+<div class="a"><strong>解：</strong>① x+3 ≥ 0 → x ≥ −3；② x²−5x+6≠0 → (x−2)(x−3)≠0 → x≠2 且 x≠3。<br>
+<span class="green">定义域：[−3,2) ∪ (2,3) ∪ (3,+∞)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：已知 f(x+1)=x²+3x+2，求 f(x)。</div>
+<div class="a"><strong>解：</strong><strong>法一（换元）</strong>：设 t=x+1 → x=t−1。<br>
+f(t)=(t−1)²+3(t−1)+2 = t²−2t+1+3t−3+2 = t²+t。<br>
+<span class="green">∴ f(x)=x²+x</span>。<br>
+<strong>法二（配凑）</strong>：x²+3x+2=(x+1)²+(x+1)，直接用 x+1 表示→f(x)=x²+x。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：已知 f(x) 是二次函数且 f(0)=2，f(1)=4，f(−1)=6，求 f(x)。</div>
+<div class="a"><strong>解：</strong>设 f(x)=ax²+bx+c。f(0)=c=2。<br>
+f(1)=a+b+2=4 → a+b=2。<br>
+f(−1)=a−b+2=6 → a−b=4。<br>
+解得 a=3，b=−1。<span class="green">∴ f(x)=3x²−x+2</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• f(x)=ln(x²−4)+1/√(x−1) 的定义域 <span class="hw-a">答案：(2,+∞)</span></div>
+<div class="hw-q">• 已知 f(x+1)=x²−1，求 f(x) <span class="hw-a">答案：f(x)=x²−2x</span></div>
+<div class="hw-q">• 已知 2f(x)+f(1/x)=x（x≠0），求 f(x) <span class="hw-a">答案：f(x)=(2x²−1)/(3x)</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题二：函数的性质 ═══ -->
+<div class="top">
+<h2>专题二：函数的性质</h2>
+<span class="tag">函数性质</span><span class="tag2">核心</span>
+
+<p class="kp"><strong>单调性</strong>：对于区间 I 内的任意 x₁<x₂，若 f(x₁)<f(x₂) 则 f(x) 在 I 上增；若 f(x₁)>f(x₂) 则减。<br>
+<strong>判断方法</strong>：① 定义法（作差/作商）；② 导数法；③ 复合函数（同增异减）。</p>
+
+<p class="kp"><strong>奇偶性</strong>：<br>
+① <span class="red">奇函数</span>：f(−x) = −f(x)，图像关于<strong>原点对称</strong>。<br>
+② <span class="red">偶函数</span>：f(−x) = f(x)，图像关于<strong>y 轴对称</strong>。<br>
+③ 前提：定义域关于原点对称。<br>
+④ 奇+奇=奇，偶+偶=偶，奇×奇=偶，偶×偶=偶，奇×偶=奇。</p>
+
+<p class="kp"><strong>周期性</strong>：若存在非零常数 T 使 f(x+T)=f(x) 对定义域内任意 x 恒成立，则 T 是 f(x) 的一个周期。<br>
+<strong>常见周期形式</strong>：f(x+a)=−f(x)→T=2|a|；f(x+a)=1/f(x)→T=2|a|；f(x+a)=f(x−a)→T=2|a|。</p>
+
+<p class="kp"><strong>对称性</strong>：<br>
+① f(a+x)=f(a−x) ↔ f(x) 关于 x=a 对称；<br>
+② f(a+x)+f(a−x)=2b ↔ f(x) 关于点 (a,b) 对称；<br>
+③ 若 f(x) 有两条对称轴 x=a 和 x=b，则 T=2|a−b|；<br>
+④ 若 f(x) 有两个对称中心 (a,c) 和 (b,c)，则 T=2|a−b|。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/func_parity_period.svg" alt="奇偶性与周期性"><div class="cp">左：奇函数关于原点对称；右：周期函数 f(x+π)=−f(x) 等多个周期</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：判断 f(x)=ln(x+√(1+x²)) 的奇偶性。</div>
+<div class="a"><strong>解：</strong>f(−x)=ln(−x+√(1+x²))。<br>
+f(x)+f(−x)=ln[x+√(1+x²)]+ln[−x+√(1+x²)]=ln[(1+x²)−x²]=ln1=0。<br>
+∴ f(−x)=−f(x)。<span class="green">f(x) 是奇函数</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：已知 f(x+2)=−f(x)，且 f(1)=3，求 f(2025)。</div>
+<div class="a"><strong>解：</strong>由 f(x+2)=−f(x) 得 f(x+4)=−f(x+2)=f(x)。<br>
+∴ T=4。f(2025)=f(2025−4×506)=f(2025−2024)=f(1)=<strong>3</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：函数 f(x)=ax³+bx−3，已知 f(−2)=5，求 f(2)。</div>
+<div class="a"><strong>解：</strong>设 g(x)=ax³+bx，则 g(x) 为奇函数，f(x)=g(x)−3。<br>
+f(−2)=g(−2)−3=5 → g(−2)=8。<br>
+∵ g(x) 是奇函数，g(2)=−g(−2)=−8。<br>
+f(2)=g(2)−3=−8−3=<strong>−11</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• f(x)=x³+2x 的单调性和奇偶性 <span class="hw-a">答案：奇函数，R上递增</span></div>
+<div class="hw-q">• f(x+3)=1/f(x)，f(1)=2，求 f(2026) <span class="hw-a">答案：T=6，2026≡4(mod6)，f(4)=1/f(1)=½</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题三：指数函数与对数函数 ═══ -->
+<div class="top">
+<h2>专题三：指数函数与对数函数</h2>
+<span class="tag">指对函数</span>
+
+<div class="formula-box">
+<div class="fm">指数与对数的运算性质</div>
+<div class="fd">a^m·a^n=a^(m+n)，a^m÷a^n=a^(m−n)，(a^m)^n=a^(mn)</div>
+<div class="fd">a^(log_a N)=N，log_a(MN)=log_a M+log_a N</div>
+<div class="fd">log_a(M/N)=log_a M−log_a N，log_a Mⁿ=n·log_a M</div>
+<div class="fd">换底公式：log_a b = log_c b / log_c a，特别地 log_a b = 1/log_b a</div>
+</div>
+
+<p class="kp"><strong>指数函数 y=aˣ</strong>（a>0, a≠1）：<br>
+① 定义域 R，值域 (0,+∞)，恒过 (0,1)；<br>
+② a>1 时单调递增，0<a<1 时单调递减；<br>
+③ 底数越大，x>0 时增长越快，x<0 时衰减越快。</p>
+
+<p class="kp"><strong>对数函数 y=log_a x</strong>（a>0, a≠1）：<br>
+① 定义域 (0,+∞)，值域 R，恒过 (1,0)；<br>
+② a>1 时单调递增，0<a<1 时单调递减；<br>
+③ 指数函数与对数函数互为<strong>反函数</strong>，图像关于 y=x 对称。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/func_exp_log.svg" alt="指数函数与对数函数"><div class="cp">y=eˣ 与 y=ln x 互为反函数，关于 y=x 对称</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：比较大小：2^{0.3}、3^{0.2}、log₂0.3。</div>
+<div class="a"><strong>解：</strong>log₂0.3 < 0（真数<1），所以最小。<br>
+2^{0.3} 和 3^{0.2}：两边取对数或都化成立方。<br>
+2^{0.3}=2^{3/10}=⁸√8，3^{0.2}=3^{1/5}=⁵√3。<br>
+比较 8^{1/8} 和 3^{1/5}：两边 40 次方得 8⁵=32768 和 3⁸=6561。<br>
+<span class="green">2^{0.3} > 3^{0.2} > log₂0.3</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：解方程 4ˣ−2ˣ⁺¹−8=0。</div>
+<div class="a"><strong>解：</strong>令 t=2ˣ（t>0），则 4ˣ=(2ˣ)²=t²。<br>
+方程化为 t²−2t−8=0 → (t−4)(t+2)=0。<br>
+t=4 或 t=−2（舍）。2ˣ=4 → <span class="step">x=2</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：求函数 f(x)=log₂(x²−4x+5) 的值域。</div>
+<div class="a"><strong>解：</strong>t=x²−4x+5=(x−2)²+1 ≥ 1。<br>
+因为 y=log₂t 在 t≥1 上递增，所以 log₂t ≥ log₂1 = 0。<br>
+<span class="green">值域：[0,+∞)</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 比较：log₂3 和 log₃4 <span class="hw-a">答案：log₂3>log₃4（换底后比较）</span></div>
+<div class="hw-q">• 解不等式：log₂(x−1) + log₂(x+1) < 3 <span class="hw-a">答案：(1,3)</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题四：幂函数 ═══ -->
+<div class="top">
+<h2>专题四：幂函数</h2>
+<span class="tag">幂函数</span>
+
+<p class="kp"><strong>定义</strong>：形如 y=x^α（α∈R）的函数叫做<strong>幂函数</strong>。注意与指数函数（y=aˣ）的区别：幂函数的<strong>自变量的底数</strong>，指数函数中自变量在<strong>指数</strong>上。</p>
+
+<p class="kp"><strong>五个常用幂函数</strong>：y=x、y=x²、y=x³、y=x^{½}=√x、y=x⁻¹=1/x。</p>
+
+<p class="kp"><strong>性质规律</strong>：<br>
+① 所有幂函数都过点 (1,1)；<br>
+② α>0 时在 (0,+∞) 上递增，α<0 时递减；<br>
+③ α 为奇数时是奇函数，α 为偶数时是偶函数；<br>
+④ 当 α>1 时图像上凸（如 y=x² 开口向上），0<α<1 时图像下凸（如 y=√x）。</p>
+
+<div class="ex">
+<div class="q">例 1：已知幂函数 f(x)=(m²−m−1)x^(m²−2m−1) 的图像不过原点，求 m。</div>
+<div class="a"><strong>解：</strong>由幂函数定义：m²−m−1=1 → m²−m−2=0 → m=−1 或 m=2。<br>
+图像不过原点 → 指数 m²−2m−1 ≤ 0。<br>
+m=−1：指数=1+2−1=2>0，过原点，舍。<br>
+m=2：指数=4−4−1=−1<0，不过原点。<span class="green">∴ m=2</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：比较大小：(2/3)^{0.8}、(3/5)^{0.8}、(2/3)^{0.9}。</div>
+<div class="a"><strong>解：</strong>y=x^{0.8} 是增函数（指数>0），2/3 > 3/5 → (2/3)^{0.8} > (3/5)^{0.8}。<br>
+y=(2/3)^x 是减函数（底数<1），0.8 < 0.9 → (2/3)^{0.8} > (2/3)^{0.9}。<br>
+<span class="green">(2/3)^{0.8} > (2/3)^{0.9} > (3/5)^{0.8}</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 函数 y=x^{-½} 的定义域和值域 <span class="hw-a">答案：(0,+∞)，(0,+∞)</span></div>
+<div class="hw-q">• 比较：1.5^{0.2}、0.5^{0.2}、1.5^{−0.2} <span class="hw-a">答案：1.5^{0.2}>0.5^{0.2}>1.5^{−0.2}</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题五：函数的图像变换 ═══ -->
+<div class="top">
+<h2>专题五：函数的图像变换</h2>
+<span class="tag">图像变换</span><span class="tag2">重点</span>
+
+<p class="kp">函数图像变换是高中数学的核心技能，包括<strong>平移、伸缩、对称、翻折</strong>四大类：</p>
+
+<p class="kp"><span class="red">平移变换</span><br>
+① y=f(x±a)：± 在 x 上，左加右减（a>0 向左，−a 向右）<br>
+② y=f(x)±b：± 在整体上，上加下减（+b 向上，−b 向下）</p>
+
+<p class="kp"><span class="red">伸缩变换</span><br>
+① y=f(ωx)：横坐标变为原来的 1/ω（ω>1 时压缩）<br>
+② y=A·f(x)：纵坐标变为原来的 A 倍（A>1 时拉伸）</p>
+
+<p class="kp"><span class="red">对称变换</span><br>
+① y=−f(x)：关于 x 轴对称（上下翻转）<br>
+② y=f(−x)：关于 y 轴对称（左右翻转）<br>
+③ y=−f(−x)：关于原点对称</p>
+
+<p class="kp"><span class="red">翻折变换</span><br>
+① y=|f(x)|：将 x 轴下方的部分翻折到 x 轴上方<br>
+② y=f(|x|)：保留 y 轴右侧，左侧与之对称（偶函数化）</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/func_shift.svg" alt="函数图像平移"><div class="cp">平移变换：左加右减（x上），上加下减（整体上）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：如何由 y=x² 得到 y=−(x+1)²+2？</div>
+<div class="a"><strong>解：</strong>y=x² → 向左平移 1 单位 → y=(x+1)² → 关于 x 轴对称 → y=−(x+1)² → 向上平移 2 单位 → <span class="green">y=−(x+1)²+2</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：函数 y=f(x) 的图像过 (1,2)，求 y=f(x+1)−3 所过的定点。</div>
+<div class="a"><strong>解：</strong>f(1)=2。令 x+1=1 → x=0。<br>
+y = f(0+1)−3 = f(1)−3 = 2−3 = −1。<br>
+<span class="green">过定点 (0,−1)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：画出 y=|log₂x| 和 y=log₂|x| 的草图并说明区别。</div>
+<div class="a"><strong>解：</strong>y=|log₂x|：将 y=log₂x 在 x∈(0,1) 的部分翻折到 x 轴上方。<br>
+y=log₂|x|：保留 y=log₂x 的 x>0 部分（偶函数），补充左侧对称部分。<br>
+前者在 (0,1) 递减、(1,+∞) 递增；后者在 (−∞,0) 递减、(0,+∞) 递增。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 由 y=√x 到 y=−√(x+3) 的变换步骤 <span class="hw-a">答案：左移3→关于x轴对称</span></div>
+<div class="hw-q">• y=f(2x) 与 y=f(x) 的周期关系 <span class="hw-a">答案：若 f(x)周期T，则f(2x)周期T/2</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题六：函数零点与方程 ═══ -->
+<div class="top">
+<h2>专题六：函数零点与方程</h2>
+<span class="tag">零点问题</span>
+
+<p class="kp"><strong>零点的定义</strong>：对于函数 y=f(x)，使 f(x)=0 的实数 x 叫做函数的<strong>零点</strong>。<br>
+注意：零点不是点，而是一个实数（方程 f(x)=0 的实数根）。</p>
+
+<p class="kp"><strong>零点存在定理</strong>：若 f(x) 在 [a,b] 上连续且 f(a)·f(b) < 0，则 f(x) 在 (a,b) 内<strong>至少</strong>有一个零点。<br>
+<strong>注</strong>：该定理只给出存在性，不能确定零点的个数。若 f(x) 在区间内单调，则可确定唯一性。</p>
+
+<p class="kp"><strong>二分法求零点</strong>：不断将有零点的区间一分为二，使区间的两个端点逐步逼近零点，进而得到零点的近似值。<br>
+步骤：确定初始区间 [a,b]（f(a)·f(b)<0）→ 取中点 c=(a+b)/2 → 判断 f(c) 符号 → 缩小范围 → 重复直到满足精度。</p>
+
+<p class="kp"><strong>复合函数零点问题</strong>：设 F(x)=f(g(x))，求 F(x) 的零点可先解 f(t)=0 得 t 的值（或范围），再解 g(x)=t。层层剥开，<span class="red">从外向内</span>逐层分析。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/func_zero.svg" alt="函数零点"><div class="cp">二分法求函数零点：逐步缩小零点所在区间</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：函数 f(x)=x³−x−1 在区间 [1,2] 上是否存在零点？</div>
+<div class="a"><strong>解：</strong>f(1)=−1<0，f(2)=5>0。f(x) 在 [1,2] 上连续且 f(1)·f(2)<0。<br>
+<span class="green">∴ 在 (1,2) 内至少有一个零点</span>。<br>
+又 f'(x)=3x²−1>0（x>1），所以 f(x) 在 [1,2] 上单调递增。<br>
+<span class="green">∴ 在 (1,2) 上有唯一零点</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：函数 f(x)=2ˣ+x−4 的零点所在区间为 (k,k+1)（k∈Z），求 k。</div>
+<div class="a"><strong>解：</strong>f(1)=2+1−4=−1<0，f(2)=4+2−4=2>0。<br>
+f(1)·f(2)<0，且 f(x) 在 R 上递增。<span class="green">∴ k=1</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：判断 f(x)=|2ˣ−1|−1 的零点个数。</div>
+<div class="a"><strong>解：</strong>令 f(x)=0 → |2ˣ−1|=1。<br>
+2ˣ−1=1 → 2ˣ=2 → x=1。<br>
+或 2ˣ−1=−1 → 2ˣ=0，无解。<br>
+<span class="green">∴ 只有一个零点 x=1</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（复合零点）：若 f(x)=x²−3x+2，g(x)=2ˣ−1，求方程 f(g(x))=0 的解。</div>
+<div class="a"><strong>解：</strong>f(t)=0 → t²−3t+2=0 → (t−1)(t−2)=0 → t=1 或 t=2。<br>
+即 g(x)=1 或 g(x)=2。<br>
+2ˣ−1=1 → 2ˣ=2 → x=1。<br>
+2ˣ−1=2 → 2ˣ=3 → x=log₂3。<br>
+<span class="green">解集：{1, log₂3}</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• f(x)=ln x+x−3 的零点所在整数区间 <span class="hw-a">答案：(2,3)</span></div>
+<div class="hw-q">• 用二分法求 f(x)=x³−2 在 (1,2) 内的零点（精确到 0.1）<span class="hw-a">答案：1.26</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题七：函数综合 ═══ -->
+<div class="top">
+<h2>专题七：函数综合</h2>
+<span class="tag">综合应用</span>
+
+<p class="kp">函数综合题考查多个知识点的交汇，常见类型如下：</p>
+
+<p class="kp"><span class="red">函数与方程思想的综合</span>：利用函数性质解决方程的解的个数问题，或将方程的根转化为函数图像的交点。</p>
+
+<p class="kp"><span class="red">分式函数（对勾函数）</span>：f(x)=x+1/x（双勾函数），在 (0,1] 递减、[1,+∞) 递增，在 x=1 处取最小值 2。f(x)=ax+b/x（a,b>0）有类似性质，在 x=√(b/a) 处取最值。</p>
+
+<p class="kp"><span class="red">抽象函数</span>：没有具体解析式的函数．常见的抽象函数模型：<br>
+① f(x+y)=f(x)+f(y) → 正比例函数模型 f(x)=kx<br>
+② f(xy)=f(x)+f(y) → 对数函数模型 f(x)=log_a x<br>
+③ f(x+y)=f(x)f(y) → 指数函数模型 f(x)=aˣ</p>
+
+<p class="kp"><span class="red">恒成立与存在性</span>：常见转化方法：<br>
+① a ≥ f(x) 恒成立 → a ≥ f_max(x)；② a ≤ f(x) 恒成立 → a ≤ f_min(x)<br>
+③ a ≥ f(x) 有解 → a ≥ f_min(x)；④ a ≤ f(x) 有解 → a ≤ f_max(x)</p>
+
+<div class="ex">
+<div class="q">例 1（对勾函数）：求 f(x)=x+4/x（x>0）的最小值。</div>
+<div class="a"><strong>解：</strong>（法一）由基本不等式：x+4/x ≥ 2√(x·4/x)=4，当 x=4/x 即 x=2 时取等。<br>
+（法二）f'(x)=1−4/x²，令 f'(x)=0 → x=2（x>0）。<br>
+0<x<2 时 f'(x)<0 ↘；x>2 时 f'(x)>0 ↗。f(2)=2+2=<strong>4</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（抽象函数）：f(x) 满足 f(x+y)=f(x)+f(y)+2xy 且 f(1)=1，求 f(n)（n∈N*）。</div>
+<div class="a"><strong>解：</strong>令 y=1：f(x+1)=f(x)+f(1)+2x = f(x)+1+2x。<br>
+∴ f(x+1)−f(x)=2x+1。<br>
+f(n) = f(1) + Σ_{k=1}^{n−1}[f(k+1)−f(k)] = 1 + Σ_{k=1}^{n−1}(2k+1)<br>
+= 1 + 2×½(n−1)n + (n−1) = 1 + n(n−1) + (n−1) = n²。<br>
+<span class="green">∴ f(n)=n²</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（恒成立）：对 ∀x∈R，x²+ax+1 ≥ 0 恒成立，求 a 的取值范围。</div>
+<div class="a"><strong>解：</strong>开口向上的二次函数恒非负 ↔ Δ ≤ 0。<br>
+Δ = a²−4 ≤ 0 → −2 ≤ a ≤ 2。<br>
+<span class="green">∴ a∈[−2,2]</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（函数与方程的交汇）：求方程 |x²−4x+3| = a 有三个不同的实数根时 a 的值。</div>
+<div class="a"><strong>解：</strong>画 y=|x²−4x+3| 的图像和 y=a 的水平线。<br>
+y=x²−4x+3=(x−1)(x−3)，顶点 (2,−1)。绝对值翻折后，在 x∈[1,3] 的部分翻到 x 轴上方。<br>
+翻折后的图像在 [1,3] 上的 "尖峰" 高度为 |f(2)|=1。<br>
+当 y=a 和 y=|x²−4x+3| 的图像恰好有 3 个交点时，a 应等于函数在顶点处的高度。<br>
+实际上当 a=1 时，水平线 y=1 与翻折后图像有 3 个交点。<br>
+<span class="green">∴ a=1</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• f(x)=x+9/x（x>0）的最小值 <span class="hw-a">答案：6（x=3 时）</span></div>
+<div class="hw-q">• 抽象函数 f(x+y)=f(x)f(y)，f(1)=2，求 f(n) <span class="hw-a">答案：f(n)=2ⁿ</span></div>
+<div class="hw-q">• 若 x²−ax+1 > 0 对 x∈(0,2) 恒成立，求 a 的范围 <span class="hw-a">答案：a<2（分离参数 a < x+1/x，右侧最小值2）</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
+<script>
+window.addEventListener('scroll',function(){
+  var btn=document.querySelector('.back-to-top');
+  if(btn)btn.classList.toggle('show',window.scrollY>300);
+});
+</script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){var btn=document.querySelector('.back-to-top');if(btn)btn.classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

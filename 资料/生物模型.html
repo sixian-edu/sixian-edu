@@ -8,182 +8,604 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
-.wrap{max-width:860px;margin:0 auto}
+.wrap{max-width:880px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:24px;color:#27ae60;margin-bottom:6px}
+h1{text-align:center;font-size:28px;color:#27ae60;margin-bottom:4px;letter-spacing:2px}
 .sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
-.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
-.card .t{font-weight:700;font-size:15px;color:#27ae60;margin-bottom:6px}
-.card .d{font-size:13px;color:#555;line-height:1.8}
-.card .d b{color:#333}
-.tag{display:inline-block;font-size:11px;background:#edf7f0;color:#27ae60;padding:2px 10px;border-radius:4px;margin:2px}
+.sec-title{font-size:19px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #27ae60}
+.kp{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid #27ae60}
+.kp .kp-t{font-weight:700;font-size:16px;color:#27ae60;margin-bottom:8px}
+.kp .kp-d{font-size:14px;color:#444;line-height:1.9}
+.kp .kp-d b{color:#27ae60}
+.tag{display:inline-block;font-size:12px;background:#edf7f0;color:#27ae60;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
 .tag.blue{background:#e3f2fd;color:#1565c0}
 .tag.purple{background:#f3e8ff;color:#7b1fa2}
-.sec-title{font-size:17px;font-weight:700;color:#333;margin:22px 0 10px;padding-left:12px;border-left:4px solid #27ae60}
-.formula{background:#f8f9fc;border-radius:6px;padding:8px 12px;margin:6px 0;font-size:13px;text-align:center;color:#27ae60;font-weight:600}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
-td,th{border:1px solid #ddd;padding:6px 8px;text-align:center}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#edf7f0;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;text-align:center;color:#27ae60;font-weight:600;font-family:monospace}
+.formula.b{background:#e3f2fd;color:#1565c0}
+.formula.g{background:#e6f7e6;color:#2d7d46}
+.formula.o{background:#fff3e0;color:#e65100}
+.ex{background:#f0fdf4;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #27ae60}
+.ex .q{font-size:14px;color:#444;line-height:1.8}
+.ex .q .hl{color:#c0392b;font-weight:700}
+.ex .q .hl2{color:#27ae60;font-weight:700}
+.ex .a{background:#e6f7e6;border-radius:8px;padding:10px 14px;margin:10px 0 0;font-size:14px;color:#2d7d46;line-height:1.8;display:none}
+.ex .a.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#fff;color:#27ae60;border:1px solid #27ae60;border-radius:6px;font-size:12px;cursor:pointer;margin-top:8px}
+.sol-btn:hover{background:#27ae60;color:#fff}
+.hw{background:#f8f9fc;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #7f8c8d}
+.hw .hw-q{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.hw .hw-a{font-size:14px;color:#27ae60;line-height:1.8;display:none}
+.hw .hw-a.show{display:block}
+.step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:8px 12px;background:#f9fbe7;border-radius:8px}
+.step-num{flex:0 0 26px;height:26px;border-radius:50%;background:#27ae60;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.step-c{flex:1;font-size:13px;color:#555;line-height:1.7}
+.step-c b{color:#27ae60}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
 th{background:#27ae60;color:#fff;font-weight:600}
 tr:nth-child(even){background:#f9f9f9}
-.step{display:flex;align-items:flex-start;gap:8px;margin:6px 0;padding:6px 10px;background:#f9fbe7;border-radius:6px}
-.step-num{flex:0 0 22px;height:22px;border-radius:50%;background:#27ae60;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
-.step-c{flex:1;font-size:12px;color:#555;line-height:1.6}
-@media(max-width:640px){h1{font-size:20px}}
+.tip-box{background:#fff8e1;border-radius:10px;padding:10px 14px;margin:10px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
+.tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#27ae60);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+.share-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.share-overlay.active{display:flex}
+.share-modal{background:#fff;border-radius:20px;padding:36px 32px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:shareIn .3s ease}
+.share-modal .share-icon{font-size:48px;margin-bottom:12px}
+.share-modal h3{font-size:20px;font-weight:700;color:#333;margin-bottom:8px}
+.share-modal .share-desc{font-size:14px;color:#666;margin-bottom:20px;line-height:1.7}
+.share-msg-box{background:#f5f7fa;border-radius:12px;padding:14px 16px;margin-bottom:16px;text-align:left;border:1px solid #eee}
+.share-msg-box p{font-size:13px;color:#555;line-height:1.8;margin:0}
+.copy-btn{width:100%;padding:12px;border:2px solid #27ae60;background:transparent;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:6px;color:#27ae60}
+.copy-btn:hover{background:#27ae60;color:#fff}
+.copy-btn.copied{background:#059669;border-color:#059669;color:#fff}
+.copy-hint{font-size:12px;color:#999;margin-bottom:20px}
+.shared-btn{width:100%;padding:14px;background:linear-gradient(135deg,#27ae60,#2d7d46);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}
+.shared-btn:hover{opacity:.9}
+.shared-btn:disabled{opacity:.35;cursor:not-allowed}
+@keyframes shareIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@media(max-width:640px){h1{font-size:24px}.kp{padding:14px 16px}.share-modal{padding:28px 20px}}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../思贤学习站.html">← 返回首页</a>
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
 <h1>🧬 初中生物常考模型</h1>
-<p class="sub">细胞·遗传·生态系统·人体生理·实验探究·中考全覆盖</p>
+<p class="sub">细胞·遗传·生态系统·人体生理·实验探究·健康免疫·中考全覆盖</p>
 
-<div class="sec-title">一、生物体结构模型</div>
-<div class="card"><div class="t">🔹 显微镜使用模型</div><div class="d">
-<b>操作步骤七步：</b>取镜安放→对光（低倍物镜+大光圈）→放置玻片→调粗准焦（下看）→看目镜调粗准焦→调细准焦→观察<br>
-<b>成像：</b>倒像（上下左右全部相反），玻片移动方向与物像移动方向相反<br>
-<b>放大倍数：</b>目镜×物镜。倍数越大→视野越暗、细胞越大、数量越少<br>
-<b>污点判断法：</b>移动玻片污点动→在玻片；转动目镜污点动→在目镜；都不动→在物镜<br>
-<b>物镜与玻片距离：</b>倍率越大，镜头离玻片越近
-</div></div>
+<!-- ═══════════ 一、显微镜与细胞 ═══════════ -->
+<div class="sec-title">一、显微镜与细胞</div>
 
-<div class="card"><div class="t">🔹 细胞结构模型</div><div class="d">
-<table>
-<tr><th>结构</th><th>植物细胞</th><th>动物细胞</th><th>功能</th></tr>
-<tr><td>细胞壁</td><td>✔</td><td>✘</td><td>支持和保护（全透性）</td></tr>
-<tr><td>细胞膜</td><td>✔</td><td>✔</td><td>控制物质进出（选择性）</td></tr>
-<tr><td>细胞质</td><td>✔</td><td>✔</td><td>进行生命活动的场所</td></tr>
-<tr><td>细胞核</td><td>✔</td><td>✔</td><td>遗传信息库，控制生命活动</td></tr>
-<tr><td>叶绿体</td><td>✔</td><td>✘</td><td>光合作用的场所</td></tr>
-<tr><td>线粒体</td><td>✔</td><td>✔</td><td>呼吸作用释放能量</td></tr>
-<tr><td>液泡</td><td>✔</td><td>✘</td><td>储存物质，维持渗透压</td></tr>
-</table>
-<b>细胞生活需要物质和能量：</b>
-<span class="tag blue">叶绿体</span> 光能→化学能（储存能量）
-<span class="tag orange">线粒体</span> 化学能→生命活动能量（释放能量）
-</div></div>
-
-<div class="card"><div class="t">🔹 细胞分裂与生长</div><div class="d">
-<b>细胞分裂过程：</b>核分裂→质分裂→形成新细胞壁（植物）<br>
-<b>染色体变化：</b>复制→均分→两个新细胞与原细胞染色体形态数目相同<br>
-<b>分裂意义：</b>使细胞数量增多（生长、修复、繁殖）<br>
-<b>细胞分化：</b>形成不同组织（形态结构功能发生差异性变化）<br>
-<b>组织类型：</b>植物（保护、营养、分生、输导、机械）；动物（上皮、肌肉、神经、结缔）
-</div></div>
-
-<div class="sec-title">二、生理与代谢模型</div>
-<div class="card"><div class="t">🔹 光合作用与呼吸作用模型</div><div class="d">
-<table>
-<tr><th></th><th>光合作用</th><th>呼吸作用</th></tr>
-<tr><td><b>场所</b></td><td>叶绿体</td><td>线粒体</td></tr>
-<tr><td><b>条件</b></td><td>光照下</td><td>时时刻刻</td></tr>
-<tr><td><b>原料</b></td><td>CO₂+H₂O</td><td>有机物+O₂</td></tr>
-<tr><td><b>产物</b></td><td>有机物+O₂</td><td>CO₂+H₂O+能量</td></tr>
-<tr><td><b>能量变化</b></td><td>光能→化学能（储存）</td><td>化学能→其他能（释放）</td></tr>
-</table>
-<b>关系：</b>光合作用制造有机物储存能量，呼吸作用分解有机物释放能量<br>
-<b>应用：</b>
-<span class="tag blue">增加光照/CO₂浓度→提高产量</span>
-<span class="tag orange">低温低氧储存果蔬→抑制呼吸</span>
-<span class="tag green">植物夜晚→只有呼吸（不能进行光合）</span>
+<div class="kp">
+  <div class="kp-t">🔬 显微镜使用模型</div>
+  <div class="kp-d">
+    <b>操作步骤七步：</b>取镜安放→对光（低倍物镜+大光圈）→放置玻片→调粗准焦（下看）→看目镜调粗准焦→调细准焦→观察<br><br>
+    <b>成像特点：</b>倒像（上下左右全部相反），玻片移动方向与物像移动方向相反<br>
+    <b>放大倍数：</b>目镜×物镜。倍数越大→视野越暗、细胞越大、数量越少<br>
+    <b>污点判断法：</b>移动玻片污点动→在玻片；转动目镜污点动→在目镜；都不动→在物镜<br>
+    <b>物镜与玻片距离：</b>倍率越大，镜头离玻片越近
+  </div>
+  <div class="chart-wrap"><img src="charts/lab_microscope.svg" alt="显微镜结构"></div>
+  <div class="formula">放大倍数 = 目镜倍数 × 物镜倍数 &nbsp;|&nbsp; 低倍→视野亮、细胞小、数量多</div>
 </div>
-<div class="formula">光合：CO₂+H₂O →(光/叶绿体) 有机物+O₂ &nbsp;|&nbsp; 呼吸：有机物+O₂ → CO₂+H₂O+能量</div></div>
 
-<div class="card"><div class="t">🔹 人体营养与消化</div><div class="d">
-<b>六大营养素：</b>糖类（主要供能）、蛋白质（修复细胞）、脂肪（备用能源）、维生素（调节）、水、无机盐<br>
-<b>消化系统：</b>口腔（淀粉初步消化）→咽→食道→胃（蛋白质初步消化）→小肠（主要吸收）→大肠→肛门<br>
-<b>消化腺：</b>唾液腺（唾液淀粉酶）、胃腺（胃蛋白酶）、肝脏（胆汁，乳化脂肪）、胰腺（多种酶）、肠腺<br>
-<b>小肠适于吸收的特点：</b>长（5-6米）、大（皱襞+绒毛增大面积）、薄（壁薄易透过）、多（含多种消化液）
-</div></div>
-
-<div class="card"><div class="t">🔹 血液循环模型</div><div class="d">
-<b>体循环：</b>左心室→主动脉→全身毛细血管→上下腔静脉→右心房（动脉血变静脉血）<br>
-<b>肺循环：</b>右心室→肺动脉→肺毛细血管→肺静脉→左心房（静脉血变动脉血）<br>
-<b>血液成分：</b>
-<span class="tag red">红细胞</span> 含血红蛋白，运输O₂（含铁，低铁贫血）
-<span class="tag blue">白细胞</span> 吞噬病菌，防御（含量多→炎症）
-<span class="tag orange">血小板</span> 止血凝血
-<span class="tag">血浆</span> 运输营养和废物
-<br><b>血管三种：</b>
-<span class="tag">动脉</span> 壁厚弹性大，离心血流快
-<span class="tag green">静脉</span> 壁薄弹性小，回流有静脉瓣
-<span class="tag">毛细血管</span> 单层细胞，连通最小动脉静脉
-</div></div>
-
-<div class="card"><div class="t">🔹 呼吸与泌尿模型</div><div class="d">
-<b>呼吸：</b>吸气→膈肌收缩、膈顶下降、胸腔扩大→肺内压降低→气体入肺<br>
-<b>气体交换：</b>肺泡壁薄（单层细胞）+ 毛细血管壁薄 = 气体易通过（扩散作用）<br>
-<b>尿液形成：</b>
-<span class="tag blue">肾小球滤过</span> 血细胞和大分子蛋白不能滤过→原尿
-<span class="tag orange">肾小管重吸收</span> 全部葡萄糖、大部分水、部分无机盐→尿液
-<br><b>排尿意义：</b>排出废物、调节水和无机盐平衡、维持组织细胞正常功能
-</div></div>
-
-<div class="card"><div class="t">🔹 神经调节模型</div><div class="d">
-<b>反射弧：</b>感受器→传入神经→神经中枢（脊髓/脑）→传出神经→效应器（肌肉/腺体）<br>
-<b>反射类型：</b>
-<span class="tag red">非条件反射</span> 生来就有（膝跳反射、缩手反射、眨眼）
-<span class="tag blue">条件反射</span> 后天形成（望梅止渴、谈虎色变）<br>
-<b>大脑皮层功能区：</b>运动中枢、感觉中枢、视觉中枢、听觉中枢、语言中枢<br>
-<b>感觉器官：</b>眼（晶状体+视网膜）、耳（鼓膜+耳蜗听小骨）
-</div></div>
-
-<div class="sec-title">三、遗传与进化模型</div>
-<div class="card"><div class="t">🔹 遗传模型</div><div class="d">
-<b>基因与性状：</b>基因控制生物性状。显性基因（A）控制显性性状，隐性基因（a）控制隐性性状<br>
-<b>遗传图解（豌豆高矮茎）：</b>
-亲本：AA×aa → 子一代：Aa（全高茎）
-Aa×Aa → 子二代：AA:Aa:aa=1:2:1，高:矮=3:1<br>
-<b>禁止近亲结婚原因：</b>近亲携带同种隐性致病基因概率大→纯合子概率大→患病率增加<br>
-<b>性别决定：</b>女性XX，男性XY。精子类型决定性别（X或Y），概率各50%<br>
-<b>基因与染色体：</b>基因在染色体上（DNA+蛋白质），体细胞中成对存在，生殖细胞中成单存在
+<div class="kp">
+  <div class="kp-t">🔬 细胞结构模型</div>
+  <div class="kp-d">
+    <table>
+    <tr><th>结构</th><th>植物细胞</th><th>动物细胞</th><th>功能</th></tr>
+    <tr><td>细胞壁</td><td>✔</td><td>✘</td><td>支持和保护（全透性）</td></tr>
+    <tr><td>细胞膜</td><td>✔</td><td>✔</td><td>控制物质进出（选择性）</td></tr>
+    <tr><td>细胞质</td><td>✔</td><td>✔</td><td>进行生命活动的场所</td></tr>
+    <tr><td>细胞核</td><td>✔</td><td>✔</td><td>遗传信息库，控制生命活动</td></tr>
+    <tr><td>叶绿体</td><td>✔</td><td>✘</td><td>光合作用的场所</td></tr>
+    <tr><td>线粒体</td><td>✔</td><td>✔</td><td>呼吸作用释放能量</td></tr>
+    <tr><td>液泡</td><td>✔</td><td>✘</td><td>储存物质，维持渗透压</td></tr>
+    </table>
+    <span class="tag blue">叶绿体</span> 光能→化学能（储存能量）
+    <span class="tag orange">线粒体</span> 化学能→生命活动能量（释放能量）
+  </div>
+  <div class="chart-wrap"><img src="charts/topic_bio_cell.svg" alt="细胞结构"></div>
 </div>
-<div class="formula">AA×aa→全Aa &nbsp;|&nbsp; Aa×Aa→3:1 &nbsp;|&nbsp; Aa×aa→1:1（测交）</div></div>
 
-<div class="card"><div class="t">🔹 生物进化模型</div><div class="d">
-<b>自然选择学说（达尔文）：</b>过度繁殖→生存斗争→遗传变异→适者生存<br>
-<b>进化证据：</b>化石（最直接）、比较解剖学（同源器官）、分子生物学（DNA相似度）<br>
-<b>进化趋势：</b>简单→复杂、低等→高等、水生→陆生<br>
-<b>人工选择：</b>根据人类需求选育（如高产奶牛、不同品种的狗）
-</div></div>
-
-<div class="sec-title">四、生态与环境模型</div>
-<div class="card"><div class="t">🔹 生态系统模型</div><div class="d">
-<b>组成：</b>
-<span class="tag green">生产者（植物）</span> 制造有机物
-<span class="tag orange">消费者（动物）</span> 直接/间接吃植物
-<span class="tag purple">分解者（细菌真菌）</span> 分解有机物为无机物
-+ 非生物部分（光、水、空气、温度等）
-<br><b>食物链：</b>草→虫→鸟→鹰（箭头指向捕食者，起点是生产者）<br>
-<b>能量流动特点：</b>单向流动、逐级递减（10%-20%传到下一级）<br>
-<b>物质循环：</b>CO₂→光合→有机物→呼吸/燃烧→CO₂（碳循环）<br>
-<b>生态平衡：</b>有一定自动调节能力，生物种类越多调节能力越强
-</div></div>
-
-<div class="card"><div class="t">🔹 生物圈中的绿色植物</div><div class="d">
-<b>种子萌发条件：</b>适宜温度、一定水分、充足空气（缺一不可）<br>
-<b>根尖结构：</b>根冠→分生区→伸长区→成熟区（根毛吸水）<br>
-<b>水分运输：</b>根毛→导管→茎→叶（蒸腾作用提供动力）<br>
-<b>蒸腾作用：</b>水分从叶片气孔散失——促进吸水、降低温度、促进运输<br>
-<b>三大作用对比：</b>
-<span class="tag green">光合→制造有机物，只在白天</span>
-<span class="tag orange">呼吸→分解有机物，时刻进行</span>
-<span class="tag blue">蒸腾→运输水分，白天为主</span>
-</div></div>
-
-<div class="card"><div class="t">🔹 健康生活模型</div><div class="d">
-<b>传染病三环节：</b>传染源（病原体携带者）→传播途径（空气/饮食/接触/血液）→易感人群<br>
-<b>预防三措施：</b>控制传染源（隔离病人）、切断传播途径（消毒戴口罩）、保护易感人群（疫苗）<br>
-<b>免疫类型：</b>
-<span class="tag blue">非特异性（天生）</span> 皮肤屏障、吞噬细胞、溶菌酶
-<span class="tag orange">特异性（后天）</span> 抗体+抗原，第三道防线<br>
-<b>疫苗原理：</b>灭活病原体→刺激产生抗体→记忆细胞长期保留<br>
-<b>健康三要素：</b>身体健康、心理健康、社会适应良好
-</div></div>
-
+<div class="kp">
+  <div class="kp-t">🔬 细胞分裂与分化</div>
+  <div class="kp-d">
+    <b>细胞分裂过程：</b>核分裂→质分裂→形成新细胞壁（植物）<br>
+    <b>染色体变化：</b>复制→均分→两个新细胞与原细胞染色体形态数目相同<br>
+    <b>分裂意义：</b>使细胞数量增多（生长、修复、繁殖）<br>
+    <b>细胞分化：</b>形成不同组织（形态结构功能发生差异性变化）<br>
+    <b>组织类型：</b>植物（保护、营养、分生、输导、机械）；动物（上皮、肌肉、神经、结缔）
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_cell_cycle.svg" alt="细胞周期"></div>
+  <div class="formula">分裂：1→2→4→8（指数增长）&nbsp;|&nbsp; 分化：同种细胞→不同组织</div>
 </div>
+
+<div class="ex">
+  <div class="q"><b>例题 1</b>：使用显微镜观察时，目镜为10×、物镜为40×，则物像被放大多少倍？若视野中细胞数量为4个，换用10×物镜后视野中约有多少个细胞？<br>
+  <span class="hl">解：</span>放大倍数=10×40=400倍。放大倍数与视野大小成反比，与细胞数量成反比。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">400倍。换用10×物镜后，放大倍数变为100倍（缩小到原来的1/4），视野面积变为原来的16倍，所以细胞数量约为4×16=<b>64个</b>。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 2</b>：制作洋葱表皮细胞临时装片时，滴加的液体是什么？染色用的是什么试剂？<br>
+  <span class="hl">分析：</span>制作植物细胞装片滴清水；制作动物细胞装片滴生理盐水。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">滴加清水（保持细胞正常形态）。染色用碘液（稀碘液），使细胞核着色便于观察。动物细胞装片滴生理盐水是为了维持渗透压。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 1：显微镜视野中出现了一个污点，移动玻片和转动目镜后污点均不动，污点最可能在哪个位置？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">污点在<b>物镜</b>上。判断方法：移动玻片污点动→在玻片；转动目镜污点动→在目镜；都不动→在物镜。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 2：人的体细胞中有46条染色体，经过一次分裂后，两个新细胞中染色体数目各是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">各为<b>46条</b>。细胞分裂过程中，染色体先复制再均分，使新细胞与原细胞染色体数目保持一致。</div>
+</div>
+
+<!-- ═══════════ 二、生理与代谢 ═══════════ -->
+<div class="sec-title">二、生理与代谢（光合+呼吸）</div>
+
+<div class="kp">
+  <div class="kp-t">🌿 光合作用与呼吸作用对比</div>
+  <div class="kp-d">
+    <table>
+    <tr><th></th><th>光合作用</th><th>呼吸作用</th></tr>
+    <tr><td><b>场所</b></td><td>叶绿体</td><td>线粒体</td></tr>
+    <tr><td><b>条件</b></td><td>光照下</td><td>时时刻刻</td></tr>
+    <tr><td><b>原料</b></td><td>CO₂+H₂O</td><td>有机物+O₂</td></tr>
+    <tr><td><b>产物</b></td><td>有机物+O₂</td><td>CO₂+H₂O+能量</td></tr>
+    <tr><td><b>能量变化</b></td><td>光能→化学能（储存）</td><td>化学能→其他能（释放）</td></tr>
+    </table>
+    <b>关系：</b>光合作用制造有机物储存能量，呼吸作用分解有机物释放能量，二者相互依存
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_photosynthesis.svg" alt="光合作用过程"></div>
+  <div class="formula">光合：CO₂+H₂O →<sup>光/叶绿体</sup> 有机物+O₂ &nbsp;|&nbsp; 呼吸：有机物+O₂ → CO₂+H₂O+能量</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🌿 影响光合效率的因素</div>
+  <div class="kp-d">
+    <b>光照强度：</b>在一定范围内，光照越强光合越强（但超过光饱和点不再增加）<br>
+    <b>CO₂浓度：</b>在一定范围内，CO₂越多光合越强<br>
+    <b>温度：</b>影响酶的活性，过高过低都会降低光合效率<br>
+    <span class="tag blue">增加光照/CO₂浓度→提高产量</span>
+    <span class="tag orange">低温低氧储存果蔬→抑制呼吸</span>
+    <span class="tag green">植物夜晚→只有呼吸（不能进行光合）</span>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 3</b>：将一棵植物放在密闭玻璃罩内，光照下测得罩内CO₂浓度持续下降，这说明了什么？移入暗室后CO₂浓度上升，又说明了什么？<br>
+  <span class="hl">分析：</span>CO₂浓度变化反映光合与呼吸的强弱对比。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">光照下CO₂浓度下降：说明<b>光合>呼吸</b>，植物从外界吸收CO₂。暗室中CO₂浓度上升：说明只有<b>呼吸作用</b>释放CO₂。光合速率=呼吸速率时的光照强度称为<b>光补偿点</b>。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 4</b>：新疆哈密瓜比内地甜的原因是什么？<br>
+  <span class="hl">分析：</span>从昼夜温差对光合和呼吸的影响角度回答。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">新疆地区<b>白天光照强、温度高</b>，光合作用强，制造有机物多；<b>夜晚温度低</b>，呼吸作用弱，有机物消耗少。因此有机物积累多，瓜果更甜。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 3：在密闭透明玻璃罩中放一盆植物和一只小白鼠，光照下小白鼠能正常存活吗？为什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">能存活。植物光合作用释放O₂供小白鼠呼吸，小白鼠呼吸释放CO₂供植物光合作用，二者形成<b>物质循环</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 4：为什么种子入库前要晒干？蔬菜低温冷藏的原理是什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">晒干种子：减少水分→抑制呼吸作用→减少有机物消耗。低温冷藏：低温抑制酶的活性→降低呼吸速率→延长保鲜期。</div>
+</div>
+
+<!-- ═══════════ 三、人体生理 ═══════════ -->
+<div class="sec-title">三、人体生理（消化·循环·呼吸·泌尿·神经）</div>
+
+<div class="kp">
+  <div class="kp-t">🍽️ 人体营养与消化</div>
+  <div class="kp-d">
+    <b>六大营养素：</b>糖类（主要供能）、蛋白质（修复细胞）、脂肪（备用能源）、维生素（调节）、水、无机盐<br>
+    <b>消化系统：</b>口腔（淀粉初步消化）→咽→食道→胃（蛋白质初步消化）→小肠（主要吸收）→大肠→肛门<br>
+    <b>消化腺：</b>唾液腺（唾液淀粉酶）、胃腺（胃蛋白酶）、肝脏（胆汁，乳化脂肪）、胰腺（多种酶）、肠腺<br>
+    <b>小肠适于吸收的特点：</b>长（5-6米）、大（皱襞+绒毛增大面积）、薄（壁薄易透过）、多（含多种消化液）
+  </div>
+  <div class="chart-wrap"><img src="charts/topic_bio_digest.svg" alt="消化系统"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🩸 血液循环模型</div>
+  <div class="kp-d">
+    <b>体循环：</b>左心室→主动脉→全身毛细血管→上下腔静脉→右心房（动脉血变静脉血）<br>
+    <b>肺循环：</b>右心室→肺动脉→肺毛细血管→肺静脉→左心房（静脉血变动脉血）<br><br>
+    <b>血液成分：</b>
+    <span class="tag red">红细胞</span> 含血红蛋白，运输O₂（含铁，缺铁贫血）
+    <span class="tag blue">白细胞</span> 吞噬病菌，防御（含量多→炎症）
+    <span class="tag orange">血小板</span> 止血凝血
+    <span class="tag">血浆</span> 运输营养和废物
+    <br><b>血管三种：</b>
+    <span class="tag">动脉</span> 壁厚弹性大，离心血流快
+    <span class="tag green">静脉</span> 壁薄弹性小，回流有静脉瓣
+    <span class="tag">毛细血管</span> 单层细胞，连通最小动脉静脉
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🌬️ 呼吸与泌尿</div>
+  <div class="kp-d">
+    <b>呼吸：</b>吸气→膈肌收缩、膈顶下降、胸腔扩大→肺内压降低→气体入肺<br>
+    <b>气体交换：</b>肺泡壁薄（单层细胞）+ 毛细血管壁薄 = 气体易通过（扩散作用）<br>
+    <b>尿液形成：</b>
+    <span class="tag blue">肾小球滤过</span> 血细胞和大分子蛋白不能滤过→原尿
+    <span class="tag orange">肾小管重吸收</span> 全部葡萄糖、大部分水、部分无机盐→尿液
+    <br><b>排尿意义：</b>排出废物、调节水和无机盐平衡、维持组织细胞正常功能
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🧠 神经调节模型</div>
+  <div class="kp-d">
+    <b>反射弧：</b>感受器→传入神经→神经中枢（脊髓/脑）→传出神经→效应器（肌肉/腺体）<br>
+    <b>反射类型：</b>
+    <span class="tag red">非条件反射</span> 生来就有（膝跳反射、缩手反射、眨眼）
+    <span class="tag blue">条件反射</span> 后天形成（望梅止渴、谈虎色变）<br>
+    <b>大脑皮层功能区：</b>运动中枢、感觉中枢、视觉中枢、听觉中枢、语言中枢<br>
+    <b>感觉器官：</b>眼（晶状体+视网膜）、耳（鼓膜+耳蜗听小骨）
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_nerve.svg" alt="神经调节"></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 5</b>：某人手指被针刺后迅速缩回，请写出该反射的反射弧途径。<br>
+  <span class="hl">解：</span>手指皮肤感受器→传入神经→脊髓（神经中枢）→传出神经→手臂肌肉（效应器）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">缩手反射是<b>非条件反射</b>，神经中枢在脊髓（不经过大脑），所以反应迅速。但人会同时感到疼痛，因为脊髓同时将信号上传至大脑皮层。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 6</b>：某人因意外事故导致肾脏受损，尿液中出现红细胞和蛋白质，推测受损的结构可能是什么？<br>
+  <span class="hl">分析：</span>正常尿液中不含血细胞和大分子蛋白质。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">肾小球的<b>滤过作用</b>出现异常。正常情况下肾小球滤过时，血细胞和大分子蛋白质不能通过滤过膜进入原尿。肾小球受损后滤过膜通透性增大，导致血细胞和蛋白质进入尿液。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 5：一个人每分钟呼吸约16次，每次吸入约500mL空气，他一小时吸入的空气总量是多少？其中氧气约占多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">每小时吸入空气体积=16×500×60=<b>480000mL=480L</b>。氧气约占空气体积的21%，即约<b>100.8L</b>。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 6：体循环和肺循环中，血液分别在哪个部位由动脉血变成静脉血、由静脉血变成动脉血？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">体循环：在<b>全身组织细胞处</b>的毛细血管，O₂进入组织细胞、CO₂进入血液→动脉血变静脉血。<br>
+  肺循环：在<b>肺泡处</b>的毛细血管，CO₂进入肺泡、O₂进入血液→静脉血变动脉血。</div>
+</div>
+
+<!-- ═══════════ 四、遗传与进化 ═══════════ -->
+<div class="sec-title">四、遗传与进化</div>
+
+<div class="kp">
+  <div class="kp-t">🧬 遗传基本规律</div>
+  <div class="kp-d">
+    <b>基因与性状：</b>基因控制生物性状。显性基因（A）控制显性性状，隐性基因（a）控制隐性性状<br><br>
+    <b>遗传图解（豌豆高矮茎）：</b><br>
+    亲本：AA×aa → 子一代：Aa（全高茎）<br>
+    Aa×Aa → 子二代：AA:Aa:aa=1:2:1，高:矮=3:1<br><br>
+    <b>禁止近亲结婚原因：</b>近亲携带同种隐性致病基因概率大→纯合子概率大→患病率增加<br>
+    <b>性别决定：</b>女性XX，男性XY。精子类型决定性别（X或Y），概率各50%<br>
+    <b>基因与染色体：</b>基因在染色体上（DNA+蛋白质），体细胞中成对存在，生殖细胞中成单存在
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_mendel.svg" alt="孟德尔遗传"></div>
+  <div class="formula">AA×aa→全Aa &nbsp;|&nbsp; Aa×Aa→3:1 &nbsp;|&nbsp; Aa×aa→1:1（测交）</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🧬 基因的显隐性判断</div>
+  <div class="kp-d">
+    <b>判断技巧：</b>
+    <span class="tag red">无中生有</span> 父母都正常，生出患病孩子→患病为隐性
+    <span class="tag blue">有中生无</span> 父母都患病，生出正常孩子→患病为显性
+    <br><br>
+    <b>基因组成推断：</b>
+    隐性性状→基因型必定为aa；显性性状→基因型可能为AA或Aa<br>
+    <span class="tag orange">口诀：</span>隐性纯合破题法——隐性个体一定是aa，其基因一个来自父方一个来自母方
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_pedigree.svg" alt="遗传系谱图"></div>
+  <div class="formula b">显性基因：A（大写）&nbsp;|&nbsp; 隐性基因：a（小写）&nbsp;|&nbsp; 基因型：AA、Aa、aa</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🧬 减数分裂与染色体</div>
+  <div class="kp-d">
+    <b>减数分裂过程：</b>染色体复制一次，细胞分裂两次→产生4个生殖细胞<br>
+    <b>染色体数目减半：</b>体细胞2n→生殖细胞n（如人体46→23条）<br>
+    <b>与有丝分裂区别：</b>有丝分裂产生体细胞（2n→2n），减数分裂产生生殖细胞（2n→n）<br>
+    <b>交叉互换：</b>减数第一次分裂时同源染色体交换片段→增加遗传多样性
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_meiosis_compare.svg" alt="有丝分裂与减数分裂比较"></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 7</b>：父亲能卷舌（基因型Rr），母亲能卷舌（基因型Rr），生一个不能卷舌孩子的概率是多少？<br>
+  <span class="hl">解：</span>Rr×Rr→RR:Rr:rr=1:2:1，不能卷舌=rr=1/4</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">概率为<b>25%（1/4）</b>。能卷舌（R）对不能卷舌（r）为显性。双亲都是杂合子Rr时，后代有1/4概率为rr表现为不能卷舌。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 8</b>：一对夫妇生了一个患白化病（aa）的孩子，则这对夫妇的基因型分别是什么？再生一个孩子患白化病的概率是多少？<br>
+  <span class="hl">分析：</span>孩子患病aa，两个a基因分别来自父亲和母亲。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">夫妇基因型均为<b>Aa</b>（正常但携带致病基因）。再生患病孩子概率为<b>1/4</b>。注意：已经生了一个aa孩子，不改变下次生育的概率，仍然是1/4。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 7：人的双眼皮（A）对单眼皮（a）为显性。一个双眼皮的男人和一个单眼皮的女人结婚，生了一个单眼皮的孩子，则该男人的基因型是什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">男人的基因型为<b>Aa</b>。单眼皮孩子基因型为aa，其中a来自母亲（单眼皮aa），另一个a必然来自父亲，而父亲是双眼皮（至少有一个A），故父亲的基因型为Aa。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 8：人类体细胞中有23对染色体，卵细胞中有多少条染色体？受精卵中有多少条？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">卵细胞中有<b>23条</b>（减半，22条常染色体+1条X）。受精卵中有<b>46条</b>（23对，一半来自父方一半来自母方）。</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🧬 生物进化</div>
+  <div class="kp-d">
+    <b>自然选择学说（达尔文）：</b>过度繁殖→生存斗争→遗传变异→适者生存<br>
+    <b>进化证据：</b>化石（最直接）、比较解剖学（同源器官）、分子生物学（DNA相似度）<br>
+    <b>进化趋势：</b>简单→复杂、低等→高等、水生→陆生<br>
+    <b>人工选择：</b>根据人类需求选育（如高产奶牛、不同品种的狗）
+  </div>
+</div>
+
+<div class="chart-wrap"><img src="charts/bio_genetic_flow.svg" alt="遗传信息流动"></div></div>
+
+<!-- ═══════════ 五、生态与环境 ═══════════ -->
+<div class="sec-title">五、生态与环境</div>
+
+<div class="kp">
+  <div class="kp-t">🌍 生态系统模型</div>
+  <div class="kp-d">
+    <b>组成：</b>
+    <span class="tag green">生产者（植物）</span> 制造有机物
+    <span class="tag orange">消费者（动物）</span> 直接/间接吃植物
+    <span class="tag purple">分解者（细菌真菌）</span> 分解有机物为无机物
+    + 非生物部分（光、水、空气、温度等）
+    <br><b>食物链：</b>草→虫→鸟→鹰（箭头指向捕食者，起点是生产者）<br>
+    <b>能量流动特点：</b>单向流动、逐级递减（10%-20%传到下一级）<br>
+    <b>物质循环：</b>CO₂→光合→有机物→呼吸/燃烧→CO₂（碳循环）<br>
+    <b>生态平衡：</b>有一定自动调节能力，生物种类越多调节能力越强
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_ecology.svg" alt="生态系统"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🌍 能量流动与物质循环</div>
+  <div class="kp-d">
+    <b>能量金字塔：</b>越往上一级，生物数量越少、能量越少<br>
+    <span class="tag red">能量流动特点：</span>单向、逐级递减（10%定律）<br>
+    <span class="tag blue">物质循环特点：</span>循环利用，全球性（碳、氮、水循环）<br>
+    <span class="tag orange">生物富集：</span>有害物质沿食物链不断积累→营养级越高含量越多
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_energy_pyramid.svg" alt="能量金字塔"></div>
+  <div class="formula">下一级能量 = 上一级能量 × 10%~20% &nbsp;|&nbsp; 生物量逐级递减</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🌍 生物圈中的绿色植物</div>
+  <div class="kp-d">
+    <b>种子萌发条件：</b>适宜温度、一定水分、充足空气（缺一不可）<br>
+    <b>根尖结构：</b>根冠→分生区→伸长区→成熟区（根毛吸水）<br>
+    <b>水分运输：</b>根毛→导管→茎→叶（蒸腾作用提供动力）<br>
+    <b>蒸腾作用：</b>水分从叶片气孔散失——促进吸水、降低温度、促进运输<br>
+    <b>三大作用对比：</b>
+    <span class="tag green">光合→制造有机物，只在白天</span>
+    <span class="tag orange">呼吸→分解有机物，时刻进行</span>
+    <span class="tag blue">蒸腾→运输水分，白天为主</span>
+  </div>
+  <div class="chart-wrap"><img src="charts/lab_leaf.svg" alt="叶片结构实验"></div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 9</b>：某食物链为"草→兔→狐"，若草固定的太阳能为10000kJ，则狐最多能获得的能量是多少？<br>
+  <span class="hl">解：</span>能量传递效率按最高20%计算。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">草→兔：10000×20%=2000kJ；兔→狐：2000×20%=<b>400kJ</b>。注意：求"最多"用20%，求"最少"用10%。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 10</b>：某湖泊中DDT含量检测结果：水0.02ppm，浮游植物0.5ppm，浮游动物2ppm，小鱼10ppm，大鱼50ppm，鸟类100ppm。这说明了什么生物学原理？<br>
+  <span class="hl">分析：</span>比较各营养级的DDT浓度变化规律。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">说明了<b>生物富集（生物放大）</b>作用。DDT等不易分解的有害物质会沿食物链传递并逐级积累，营养级越高的生物体内有害物质浓度越高。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 9：在一段食物链"草→蝗虫→青蛙→蛇→鹰"中，若蛇的数量大量减少，短期内蝗虫的数量会如何变化？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">蛇的数量减少→青蛙的天敌减少→青蛙数量增多→蝗虫数量<b>减少</b>。生态系统具有一定的自动调节能力，但有一定的限度。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 10：为什么热带雨林的自动调节能力比草原生态系统强？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">热带雨林<b>生物种类多、食物网复杂</b>，营养结构越复杂，生态系统的自动调节能力越强，抵抗外界干扰的能力也越强。</div>
+</div>
+
+<!-- ═══════════ 六、健康生活与免疫 ═══════════ -->
+<div class="sec-title">六、健康生活与免疫</div>
+
+<div class="kp">
+  <div class="kp-t">🛡️ 传染病与预防</div>
+  <div class="kp-d">
+    <b>传染病三环节：</b>传染源（病原体携带者）→传播途径（空气/饮食/接触/血液）→易感人群<br>
+    <b>预防三措施：</b>控制传染源（隔离病人）、切断传播途径（消毒戴口罩）、保护易感人群（疫苗）<br><br>
+    <b>常见传染病：</b>
+    <span class="tag red">呼吸道传染病</span> 流感、肺结核、新冠肺炎（飞沫传播）
+    <span class="tag blue">消化道传染病</span> 痢疾、甲肝（饮食传播）
+    <span class="tag orange">血液传染病</span> 乙肝、艾滋病（血液/体液传播）
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🛡️ 免疫系统模型</div>
+  <div class="kp-d">
+    <b>三道防线：</b>
+    <span class="tag green">第一道</span> 皮肤和黏膜（物理屏障）
+    <span class="tag orange">第二道</span> 体液中的杀菌物质和吞噬细胞
+    <span class="tag red">第三道</span> 免疫器官和免疫细胞（特异性免疫）
+    <br><br>
+    <b>免疫类型：</b>
+    <span class="tag blue">非特异性（天生）</span> 皮肤屏障、吞噬细胞、溶菌酶——生来就有，不针对特定病原体
+    <span class="tag purple">特异性（后天）</span> 抗体+抗原，第三道防线——针对特定病原体，有记忆性
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_immunity.svg" alt="免疫系统"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🛡️ 疫苗与计划免疫</div>
+  <div class="kp-d">
+    <b>疫苗原理：</b>灭活或减毒的病原体→刺激人体产生抗体+记忆细胞→长期保留免疫记忆<br>
+    <b>抗原与抗体：</b>
+    <span class="tag red">抗原</span> 引起人体产生抗体的物质（病原体、花粉、移植器官）
+    <span class="tag blue">抗体</span> 抗原刺激下产生的特殊蛋白质，与抗原特异性结合
+    <br><br>
+    <b>二次免疫反应：</b>再次接触相同抗原时，记忆细胞迅速增殖分化→产生大量抗体→反应更快更强
+  </div>
+  <div class="chart-wrap"><img src="charts/bio_immunity2.svg" alt="免疫反应过程"></div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🛡️ 健康生活</div>
+  <div class="kp-d">
+    <b>健康三要素：</b>身体健康、心理健康、社会适应良好<br>
+    <b>安全用药：</b>分清处方药（Rx）和非处方药（OTC），按时按量，注意不良反应<br>
+    <b>急救常识：</b>
+    <span class="tag red">心肺复苏</span> 胸外按压+人工呼吸（按压频率100-120次/分）
+    <span class="tag blue">止血包扎</span> 动脉出血→近心端止血；静脉出血→远心端止血
+    <br><b>青少年健康生活方式：</b>合理膳食、适量运动、规律作息、戒烟限酒、心理平衡
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 11</b>：注射乙肝疫苗后，为什么能预防乙肝病毒感染？这属于哪种免疫类型？<br>
+  <span class="hl">分析：</span>从抗原抗体反应和记忆细胞角度回答。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">疫苗是灭活或减毒的乙肝病毒（抗原），注射后刺激人体产生<b>抗体和记忆细胞</b>。当真正的乙肝病毒入侵时，记忆细胞快速增殖分化产生大量抗体，清除病毒。这属于<b>特异性免疫（人工主动免疫）</b>。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><b>例题 12</b>：艾滋病（AIDS）是由什么病原体引起的？主要传播途径有哪些？为什么艾滋病患者容易感染其他疾病？<br>
+  <span class="hl">分析：</span>从HIV攻击免疫细胞的角度回答。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">由<b>HIV（人类免疫缺陷病毒）</b>引起。传播途径：性接触、血液传播、母婴传播。HIV主要攻击<b>T淋巴细胞</b>，导致免疫系统受损甚至崩溃，使患者失去免疫力而容易感染各种疾病或发生肿瘤。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 11：皮肤划破后，伤口处会红肿、化脓，这主要是哪种免疫防线在起作用？脓液的主要成分是什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">属于<b>第二道防线</b>（非特异性免疫）。脓液的主要成分是<b>死亡的白细胞和病菌</b>，是吞噬细胞与病原体"战斗"后的产物。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 12：初次接种疫苗和再次接触相同抗原时，抗体产生的速度和数量有何不同？为什么？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">再次接触时抗体产生<b>更快、更多</b>。初次免疫→产生记忆细胞；再次免疫时，记忆细胞迅速增殖分化为浆细胞→大量产生抗体，称为<b>二次免疫反应</b>（更快更强）。</div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 初中生物常考模型 · 陪你一起成长</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#27ae60;cursor:pointer">获取联系方式</span></p>
+</div>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——初中生物常考模型，6大板块系统梳理，细胞+代谢+人体生理+遗传+生态+免疫，含精选例题与解析。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  shareTextEl.textContent = shareTxt;
+  copyBtn.addEventListener('click', function() {
+    if (hasCopied) return;
+    navigator.clipboard.writeText(shareTxt).then(function() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      hasCopied = true;
+      var ct = localStorage.getItem('sx_copy_time');
+      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
+      function checkShare() {
+        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
+        var ok = Date.now() - t0 >= 10000;
+        sharedBtn.disabled = !ok;
+        if (!ok) setTimeout(checkShare, 500);
+        else sharedBtn.textContent = '我已分享，查看联系方式 →';
+      }
+      setTimeout(checkShare, 10000);
+    });
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (sharedBtn.disabled) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+  });
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) {
+      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+      return;
+    }
+    overlay.classList.add('active');
+  };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+})();
+</script>
+
+<script>
+function toggleSol(btn) {
+  var el = btn.nextElementSibling;
+  el.classList.toggle('show');
+  btn.textContent = el.classList.contains('show') ? '🙈 收起' : '👁️ 看解析';
+}
+</script>
 </body>
 </html>

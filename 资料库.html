@@ -132,7 +132,24 @@
             .res-grid { grid-template-columns: 1fr; }
         }
     </style>
-<script src="js/theme.js"></script></head>
+<script src="js/theme.js"></script>
+<script>
+(function() {
+  var saved = sessionStorage.getItem('sx_res_scroll');
+  if (saved) {
+    sessionStorage.removeItem('sx_res_scroll');
+    requestAnimationFrame(function() {
+      window.scrollTo(0, parseInt(saved));
+    });
+  }
+  document.addEventListener('click', function(e) {
+    var card = e.target.closest('.res-card.clickable');
+    if (card) {
+      sessionStorage.setItem('sx_res_scroll', window.scrollY);
+    }
+  });
+})();
+</script></head>
 <body>
 
 <div class="nav">
@@ -150,7 +167,7 @@
     <h1>📚 资料库</h1>
     <p>海量学习资源 · 持续更新 · 全部免费</p>
     <div class="tags">
-        <span class="highlight">PDF资料</span>
+        <span class="highlight">专题精讲</span>
         <span>知识点</span>
         <span>公式整理</span>
         <span>实验模板</span>
@@ -170,13 +187,13 @@
 
 <div class="container">
 
-    <!-- ══════ PDF资料 ══════ -->
+    <!-- ══════ 专题精讲 ══════ -->
     <div class="branch branch-colors pdf" id="pdf">
         <div class="branch-header">
-            <div class="b-icon">📄</div>
+            <div class="b-icon">📖</div>
             <div class="b-info">
-                <h2>PDF资料</h2>
-                <p>各学科专题PDF · 可下载打印</p>
+                <h2>专题精讲</h2>
+                <p>各学科专题梳理 · 知识体系全覆盖</p>
             </div>
             <div class="b-count">6 份资源</div>
         </div>
@@ -296,33 +313,33 @@
                 <h2>公式整理</h2>
                 <p>数理化公式大全 · 一目了然</p>
             </div>
-            <div class="b-count">整理中</div>
+            <div class="b-count">4份资源</div>
         </div>
         <div class="res-grid">
-            <div class="res-card">
+            <a class="res-card clickable" href="资料/初中几何公式大全.html">
                 <div class="rc-icon">📐</div>
                 <div class="rc-name">初中几何公式大全</div>
                 <div class="rc-desc">面积·体积·勾股·三角函数·圆</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-math">数学</span></div>
-            </div>
-            <div class="res-card">
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-math">数学</span></div>
+            </a>
+            <a class="res-card clickable" href="资料/代数公式汇总.html">
                 <div class="rc-icon">📊</div>
                 <div class="rc-name">代数公式汇总</div>
                 <div class="rc-desc">整式·分式·方程·不等式·函数</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-math">数学</span></div>
-            </div>
-            <div class="res-card">
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-math">数学</span></div>
+            </a>
+            <a class="res-card clickable" href="资料/物理公式汇总.html">
                 <div class="rc-icon">⚡</div>
                 <div class="rc-name">物理公式汇总</div>
                 <div class="rc-desc">力学·电学·热学·光学公式全集</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-physics">物理</span></div>
-            </div>
-            <div class="res-card">
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-physics">物理</span></div>
+            </a>
+            <a class="res-card clickable" href="资料/化学方程式汇总.html">
                 <div class="rc-icon">🧪</div>
                 <div class="rc-name">化学方程式汇总</div>
                 <div class="rc-desc">化合·分解·置换·复分解·离子</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-chemistry">化学</span></div>
-            </div>
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-chemistry">化学</span></div>
+            </a>
         </div>
     </div>
 
@@ -334,27 +351,27 @@
                 <h2>实验模板</h2>
                 <p>物化生实验报告模板 · 实验步骤 · 考点分析</p>
             </div>
-            <div class="b-count">整理中</div>
+            <div class="b-count">3份资源</div>
         </div>
         <div class="res-grid">
-            <div class="res-card">
+            <a class="res-card clickable" href="资料/物理实验报告模板.html">
                 <div class="rc-icon">⚡</div>
                 <div class="rc-name">物理实验报告模板</div>
                 <div class="rc-desc">测密度·测电阻·凸透镜成像·杠杆平衡</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-physics">物理</span></div>
-            </div>
-            <div class="res-card">
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-physics">物理</span></div>
+            </a>
+            <a class="res-card clickable" href="资料/化学实验报告模板.html">
                 <div class="rc-icon">🧪</div>
                 <div class="rc-name">化学实验报告模板</div>
                 <div class="rc-desc">气体制取·酸碱中和·金属性质</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-chemistry">化学</span></div>
-            </div>
-            <div class="res-card">
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-chemistry">化学</span></div>
+            </a>
+            <a class="res-card clickable" href="资料/生物实验报告模板.html">
                 <div class="rc-icon">🧬</div>
                 <div class="rc-name">生物实验报告模板</div>
                 <div class="rc-desc">显微镜·叶片结构·唾液消化</div>
-                <div class="rc-meta"><span class="tag-draft">整理中</span><span class="tag-biology">生物</span></div>
-            </div>
+                <div class="rc-meta"><span class="tag-online">已上线</span><span class="tag-biology">生物</span></div>
+            </a>
         </div>
     </div>
 
@@ -424,7 +441,7 @@
 
     <div class="res-trust">
         <strong>📌 资料库持续更新中</strong><br>
-        目前已上线 <strong>6 科 PDF 专题资料</strong> + <strong>6 科知识点大全</strong> + <strong>中考真题库</strong>，更多公式、模板陆续整理<br>
+        目前已上线 <strong>6 科 PDF 专题资料</strong> + <strong>6 科知识点大全</strong> + <strong>4 份公式汇总</strong> + <strong>3 份实验模板</strong> + <strong>中考真题库</strong>，更多计划表陆续整理<br>
         全部资源免费提供，助力每一位学习者
     </div>
 

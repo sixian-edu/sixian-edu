@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>代数公式汇总 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+
+.f-section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #1a73e8}
+.f-section h2{font-size:18px;font-weight:700;color:#1a73e8;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #f0f0f0}
+.f-section h3{font-size:15px;font-weight:600;color:#444;margin:16px 0 10px}
+
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+@media(max-width:600px){.f-grid{grid-template-columns:1fr}}
+
+.f-card{background:#f8f9fc;border-radius:10px;padding:14px 16px;border:1px solid #f0f0f0}
+.f-card .f-name{font-size:14px;font-weight:600;color:#2d3436;margin-bottom:4px}
+.f-card .f-val{font-size:15px;font-weight:700;color:#1a73e8;text-align:center;padding:6px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif;letter-spacing:0.5px}
+.f-card .f-desc{font-size:12px;color:#888;margin-top:3px}
+
+.f-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.f-table th{background:#1a73e8;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:13px}
+.f-table td{padding:9px 14px;border-bottom:1px solid #f0f0f0}
+.f-table tr:nth-child(even){background:#f8f9fc}
+.f-table .fml{font-weight:700;color:#1a73e8;font-family:"Times New Roman",serif;font-size:15px}
+
+.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#8d6e00;border-left:3px solid #fadb14}
+.note strong{color:#e74c3c}
+
+.footer{text-align:center;padding:20px;font-size:12px;color:#999}
+.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:4px;margin:1px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style>
+<script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>代数公式汇总</h1><p class="sub">幂运算 · 乘法公式 · 因式分解 · 方程 · 函数 · 数列</p></div>
+<div class="container">
+<div class="f-section"><h2>幂的运算法则</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">同底数幂相乘</div><div class="f-val">aᵐ · aⁿ = aᵐ⁺ⁿ</div><div class="f-desc">底数不变，指数相加</div></div>
+<div class="f-card"><div class="f-name">同底数幂相除</div><div class="f-val">aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a≠0)</div><div class="f-desc">底数不变，指数相减</div></div>
+<div class="f-card"><div class="f-name">幂的乘方</div><div class="f-val">(aᵐ)ⁿ = aᵐⁿ</div><div class="f-desc">底数不变，指数相乘</div></div>
+<div class="f-card"><div class="f-name">积的乘方</div><div class="f-val">(ab)ⁿ = aⁿ bⁿ</div><div class="f-desc">分别乘方后再相乘</div></div>
+<div class="f-card"><div class="f-name">零指数</div><div class="f-val">a⁰ = 1 (a≠0)</div><div class="f-desc">任何非零数的零次幂都等于 1</div></div>
+<div class="f-card"><div class="f-name">负指数</div><div class="f-val">a⁻ⁿ = 1/aⁿ</div><div class="f-desc">负指数等于正指数的倒数</div></div>
+<div class="f-card"><div class="f-name">分数指数</div><div class="f-val">aᵐⁿ = ⁿ√aᵐ</div><div class="f-desc">分子为指数，分母为根指数</div></div>
+</div></div>
+<div class="f-section"><h2>乘法公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">平方差公式</div><div class="f-val">(a+b)(a-b) = a² - b²</div><div class="f-desc">两数和乘以两数差等于平方差</div></div>
+<div class="f-card"><div class="f-name">完全平方和</div><div class="f-val">(a+b)² = a² + 2ab + b²</div><div class="f-desc">首平方、尾平方、二倍乘积在中央</div></div>
+<div class="f-card"><div class="f-name">完全平方差</div><div class="f-val">(a-b)² = a² - 2ab + b²</div><div class="f-desc">首平方、尾平方、负二倍乘积在中央</div></div>
+<div class="f-card"><div class="f-name">立方和</div><div class="f-val">(a+b)(a²-ab+b²) = a³ + b³</div><div class="f-desc">注意中间项符号</div></div>
+<div class="f-card"><div class="f-name">立方差</div><div class="f-val">(a-b)(a²+ab+b²) = a³ - b³</div><div class="f-desc">注意中间项符号</div></div>
+<div class="f-card"><div class="f-name">完全立方和</div><div class="f-val">(a+b)³ = a³+3a²b+3ab²+b³</div><div class="f-desc">二项式展开</div></div>
+<div class="f-card"><div class="f-name">完全立方差</div><div class="f-val">(a-b)³ = a³-3a²b+3ab²-b³</div><div class="f-desc">二项式展开</div></div>
+</div></div>
+<div class="f-section"><h2>因式分解方法</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">提公因式法</div><div class="f-val">ma + mb + mc = m(a+b+c)</div><div class="f-desc">各项有公因式时优先提取</div></div>
+<div class="f-card"><div class="f-name">平方差公式</div><div class="f-val">a² - b² = (a+b)(a-b)</div><div class="f-desc">两项均为平方且符号相反</div></div>
+<div class="f-card"><div class="f-name">完全平方</div><div class="f-val">a²±2ab+b² = (a±b)²</div><div class="f-desc">三项，首尾平方中间二倍乘积</div></div>
+<div class="f-card"><div class="f-name">十字相乘法</div><div class="f-val">x²+(p+q)x+pq = (x+p)(x+q)</div><div class="f-desc">二次项系数为 1</div></div>
+<div class="f-card"><div class="f-name">十字相乘法（一般）</div><div class="f-val">ax²+bx+c = (px+q)(rx+s)</div><div class="f-desc">pr=a, qs=c, ps+qr=b</div></div>
+<div class="f-card"><div class="f-name">分组分解法</div><div class="f-val">分组后提公因式或套公式</div><div class="f-desc">四项以上分组处理</div></div>
+<div class="f-card"><div class="f-name">立方和/差</div><div class="f-val">a³±b³ = (a±b)(a²∓ab+b²)</div><div class="f-desc">按公式直接分解</div></div>
+</div></div>
+<div class="f-section"><h2>一元二次方程</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">一般形式</div><div class="f-val">ax² + bx + c = 0 (a≠0)</div><div class="f-desc">二次项系数不为零</div></div>
+<div class="f-card"><div class="f-name">求根公式</div><div class="f-val">x = [-b ± √(b²-4ac)] / (2a)</div><div class="f-desc">万能公式，适用于所有一元二次方程</div></div>
+<div class="f-card"><div class="f-name">判别式</div><div class="f-val">Δ = b² - 4ac</div><div class="f-desc">Δ>0 两不等实根；Δ=0 两等根；Δ<0 无实根</div></div>
+<div class="f-card"><div class="f-name">韦达定理</div><div class="f-val">x₁ + x₂ = -b/a,  x₁x₂ = c/a</div><div class="f-desc">根与系数的关系（Δ≥0 时适用）</div></div>
+<div class="f-card"><div class="f-name">配方法</div><div class="f-val">x² + px = (x+p/2)² - (p/2)²</div><div class="f-desc">构造完全平方</div></div>
+</div></div>
+<div class="f-section"><h2>不等式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">基本性质1</div><div class="f-val">a > b ⇒ a±c > b±c</div><div class="f-desc">两边加减同一数，不等号方向不变</div></div>
+<div class="f-card"><div class="f-name">基本性质2</div><div class="f-val">a > b, c>0 ⇒ ac > bc</div><div class="f-desc">两边乘同一正数，不等号方向不变</div></div>
+<div class="f-card"><div class="f-name">基本性质3</div><div class="f-val">a > b, c<0 ⇒ ac < bc</div><div class="f-desc">两边乘同一负数，不等号方向<span class="tag red">改变</span></div></div>
+<div class="f-card"><div class="f-name">一元一次不等式</div><div class="f-val">ax + b > 0</div><div class="f-desc">解法与方程类似，注意乘除负数变号</div></div>
+<div class="f-card"><div class="f-name">一元二次不等式</div><div class="f-val">ax² + bx + c > 0</div><div class="f-desc">利用二次函数图象求解（大于取两边，小于取中间）</div></div>
+</div></div>
+<div class="f-section"><h2>函数公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">一次函数</div><div class="f-val">y = kx + b (k≠0)</div><div class="f-desc">k>0 递增，k<0 递减，b 为 y 轴截距</div></div>
+<div class="f-card"><div class="f-name">正比例函数</div><div class="f-val">y = kx (k≠0)</div><div class="f-desc">过原点，b=0 的特殊一次函数</div></div>
+<div class="f-card"><div class="f-name">反比例函数</div><div class="f-val">y = k/x (k≠0)</div><div class="f-desc">k>0 在一三象限，k<0 在二四象限</div></div>
+<div class="f-card"><div class="f-name">二次函数一般式</div><div class="f-val">y = ax²+bx+c (a≠0)</div><div class="f-desc">a>0 开口向上，a<0 开口向下</div></div>
+<div class="f-card"><div class="f-name">二次函数顶点式</div><div class="f-val">y = a(x-h)² + k</div><div class="f-desc">顶点坐标为 (h, k)</div></div>
+<div class="f-card"><div class="f-name">二次函数交点式</div><div class="f-val">y = a(x-x₁)(x-x₂)</div><div class="f-desc">x₁, x₂ 为与 x 轴交点横坐标</div></div>
+<div class="f-card"><div class="f-name">对称轴</div><div class="f-val">x = -b/(2a)</div><div class="f-desc">二次函数对称轴方程</div></div>
+<div class="f-card"><div class="f-name">顶点坐标</div><div class="f-val">(-b/(2a), (4ac-b²)/(4a))</div><div class="f-desc">二次函数顶点坐标公式</div></div>
+</div></div>
+<div class="f-section"><h2>数列与统计</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">等差数列通项</div><div class="f-val">aₙ = a₁ + (n-1)d</div><div class="f-desc">d 为公差</div></div>
+<div class="f-card"><div class="f-name">等差数列求和</div><div class="f-val">Sₙ = n(a₁+aₙ)/2 = na₁ + n(n-1)d/2</div><div class="f-desc">首项加末项乘以项数除以 2</div></div>
+<div class="f-card"><div class="f-name">等比数列通项</div><div class="f-val">aₙ = a₁ · qⁿ⁻¹</div><div class="f-desc">q 为公比</div></div>
+<div class="f-card"><div class="f-name">等比数列求和</div><div class="f-val">Sₙ = a₁(1-qⁿ)/(1-q) (q≠1)</div><div class="f-desc">q=1 时 Sₙ = na₁</div></div>
+<div class="f-card"><div class="f-name">算术平均数</div><div class="f-val">x̄ = (x₁+x₂+...+xₙ)/n</div><div class="f-desc">所有数据之和除以个数</div></div>
+<div class="f-card"><div class="f-name">方差</div><div class="f-val">s² = Σ(xᵢ-x̄)²/n</div><div class="f-desc">反映数据波动大小，方差越小越稳定</div></div>
+<div class="f-card"><div class="f-name">标准差</div><div class="f-val">s = √[Σ(xᵢ-x̄)²/n]</div><div class="f-desc">方差的算术平方根</div></div>
+</div></div>
+
+</div>
+<div class="footer">思贤学习站 · 济南市商河县</div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

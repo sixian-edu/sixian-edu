@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>高中物理 · 力学模型专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#2980b9}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#2980b9;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #2980b9;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#2980b9;margin-bottom:4px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(41,128,185,0.08);color:#2980b9;margin-bottom:10px}
+.top .tag2{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(231,76,60,0.08);color:#e74c3c;margin-bottom:10px;margin-left:4px}
+.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
+.top .kp strong{color:#2980b9}
+.top .kp .red{color:#e74c3c;font-weight:600}
+.top .kp .green{color:#27ae60;font-weight:600}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:11px 15px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#2980b9;margin-bottom:2px;font-size:14px}
+.top .ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:3px}
+.top .ex .a strong{color:#2980b9}
+.top .ex .a .step{color:#e67e22}
+.top .hw{background:#f0f8ff;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#f0f8ff;border-radius:8px;padding:10px 16px;margin:8px 0;border-left:3px solid #2980b9}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600;margin-bottom:2px}
+.formula-box .fd{font-size:12px;color:#888}
+@media(max-width:600px){.head h1{font-size:22px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>高中物理 · 力学模型专题</h1><p class="sub">直线运动 · 牛顿定律 · 板块模型 · 传送带 · 连接体 · 圆周运动 · 功能关系 共 <span>7</span> 专题</p></div>
+<div class="container">
+
+<!-- ═══ 专题一：匀变速直线运动 ═══ -->
+<div class="top">
+<h2>专题一：匀变速直线运动</h2>
+<span class="tag">直线运动</span>
+
+<div class="formula-box">
+<div class="fm">三大基本公式</div>
+<div class="fd">速度-时间：v = v₀ + at</div>
+<div class="fd">位移-时间：x = v₀t + ½at²</div>
+<div class="fd">速度-位移：v² − v₀² = 2ax</div>
+</div>
+
+<div class="formula-box">
+<div class="fm">重要推论</div>
+<div class="fd">平均速度：v̄ = (v₀+v)/2 = x/t（匀变速直线运动）</div>
+<div class="fd">中间时刻速度：v_{t/2} = (v₀+v)/2 = v̄</div>
+<div class="fd">逐差法：Δx = x_{n+1}−x_n = aT²（纸带数据处理核心公式）</div>
+<div class="fd">初速为 0 的匀加速：1T:2T:3T…末速度比 = 1:2:3…，位移比 = 1:4:9…</div>
+</div>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_vt_graph.svg" alt="v-t图像"><div class="cp">v-t 图像：斜率=a，面积=位移。匀加速→匀速→匀减速三段运动</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：汽车以 10m/s 速度行驶，刹车加速度大小为 2m/s²，求刹车后 3s 内和 6s 内的位移。</div>
+<div class="a"><strong>解：</strong>刹车停止时间 t₀ = v₀/a = 10/2 = 5s。<br>
+3s 内汽车在运动：x₃ = v₀t+½at² = 10×3+½×(−2)×9 = 30−9 = <strong>21 m</strong>。<br>
+6s 时汽车已停止 1s，实际运动 5s：x₆ = v₀t₀+½at₀² = 10×5+½×(−2)×25 = 50−25 = <strong>25 m</strong>。<br>
+或者用末速 0：v²−v₀²=2ax → x= −100/(−4)=25m。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：物体做匀加速直线运动，第 3s 内位移 5m，第 7s 内位移 9m，求加速度 a 和初速 v₀。</div>
+<div class="a"><strong>解：</strong>第 n 秒内位移 = ½a(2n−1)+v₀。<br>
+第 3s 内：5 = ½a×5 + v₀ → 2.5a + v₀ = 5 …①<br>
+第 7s 内：9 = ½a×13 + v₀ → 6.5a + v₀ = 9 …②<br>
+②−①：4a = 4 → <span class="step">a = 1 m/s²</span>，代入①：v₀=5−2.5=<strong>2.5 m/s</strong></div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• v₀=20m/s，a=−4m/s² 刹车，求 3s 内位移 <span class="hw-a">答案：42m</span></div>
+<div class="hw-q">• 自由落体 h=45m，g=10m/s²，求时间和末速度 <span class="hw-a">答案：t=3s，v=30m/s</span></div>
+<div class="hw-q">• 打点计时器纸带：相邻计数点间距差为 0.96cm，T=0.02s，求 a <span class="hw-a">答案：a=Δx/T²=24m/s²</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题二：牛顿运动定律 ═══ -->
+<div class="top">
+<h2>专题二：牛顿运动定律</h2>
+<span class="tag">牛顿定律</span><span class="tag2">核心</span>
+
+<p class="kp"><strong>牛顿第一定律（惯性定律）</strong>：一切物体总保持匀速直线运动状态或静止状态，除非有外力迫使它改变这种状态。惯性是物体的固有属性，<span class="red">质量是惯性大小的唯一量度</span>。</p>
+
+<p class="kp"><strong>牛顿第二定律</strong>：物体的加速度与合外力成正比，与质量成反比。<br>
+<span class="red">F_合 = ma</span>（矢量式，加速度方向与合外力方向相同）。<br>
+解题步骤：<strong>选对象→作受力分析→正交分解→列方程</strong>。</p>
+
+<p class="kp"><strong>牛顿第三定律</strong>：作用力和反作用力等大反向、同一直线、作用在不同物体上（与平衡力不同）。</p>
+
+<p class="kp"><strong>超重与失重</strong>：<br>
+① <span class="red">超重</span>：a 向上，N > mg（如电梯加速上升或减速下降）<br>
+② <span class="red">失重</span>：a 向下，N < mg（如电梯加速下降或减速上升）<br>
+③ 完全失重：a = g 向下，N = 0（如自由落体、竖直上抛中的物体）</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_newton2.svg" alt="牛顿第二定律"><div class="cp">控制变量法验证牛顿第二定律：a-F 图像（m一定）和 a-1/m 图像（F一定）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：m=5kg 物体受 F₁=10N 水平向右、F₂=6N 水平向左的两力，求加速度大小和方向。</div>
+<div class="a"><strong>解：</strong>F_合 = F₁−F₂ = 10−6 = 4N（向右）。<br>
+a = F_合/m = 4/5 = <strong>0.8 m/s²</strong>，方向向右。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：电梯中放一弹簧秤，秤上站一 m=60kg 的人。电梯以 a=0.5m/s² 加速上升时，秤的读数是多少？g=10m/s²。</div>
+<div class="a"><strong>解：</strong>人受重力 mg 和支持力 N，向上加速：N−mg=ma。<br>
+N = m(g+a) = 60×(10+0.5) = <strong>630 N</strong>（超重状态）。（g取10）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：m=2kg 物体放在 μ=0.2 的水平面上，受与水平方向成 37° 角斜向上的 F=10N 拉力作用（sin37°=0.6, cos37°=0.8），g=10m/s²，求加速度。</div>
+<div class="a"><strong>解：</strong>水平方向：Fcos37°−f = ma。<br>
+竖直方向：N + Fsin37° = mg → N = mg−Fsin37° = 20−6 = 14N。<br>
+f = μN = 0.2×14 = 2.8N。<br>
+a = (10×0.8−2.8)/2 = (8−2.8)/2 = <strong>2.6 m/s²</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• m=10kg，F=40N，μ=0.3 水平面，求 a <span class="hw-a">答案：a=1m/s²</span></div>
+<div class="hw-q">• 电梯 a=2m/s² 下降，人 m=50kg 的视重 <span class="hw-a">答案：N=400N（失重）</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题三：板块模型 ═══ -->
+<div class="top">
+<h2>专题三：板块模型</h2>
+<span class="tag">板块模型</span><span class="tag2">难点</span>
+
+<p class="kp"><strong>模型特点</strong>：一个滑块（小物块）放在一个长木板（或长平板）上，两者之间有摩擦，且木板可能与地面也有摩擦。通过分析两者受力判断运动状态。</p>
+
+<p class="kp"><strong>解题核心思路</strong>：</p>
+<p class="kp">① <span class="red">判断运动形式</span>：两者是否能一起运动？是否会发生相对滑动？<br>
+② 当两者之间的摩擦力达到最大静摩擦时即将发生相对滑动。<br>
+③ <span class="red">临界条件</span>：对整体 F − μ₂(M+m)g = (M+m)a，对物块 μ₁mg = ma（最大静摩擦提供加速度）。<br>
+④ 若外力 F 使得物块所需加速度超过最大静摩擦能提供的加速度，则发生相对滑动。</p>
+
+<p class="kp"><strong>无外力作用的情况</strong>：滑块有初速度滑上木板，滑块减速、木板加速，最终共速一起匀速或减速。系统动量守恒（地面光滑时）：m·v₀ = (M+m)·v_共。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_block.svg" alt="板块模型"><div class="cp">板块模型 v-t 图：滑块和木板速度变化，最终共速</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：光滑水平面上，M=2kg 木板上放 m=1kg 滑块，μ=0.4，对木板施加 F=12N 水平拉力，g=10m/s²，求两者各自的加速度。</div>
+<div class="a"><strong>解：</strong>判断是否相对滑动。最大静摩擦 f_max = μmg = 0.4×1×10 = 4N。<br>
+假设一起运动：a = F/(M+m)=12/3=4m/s²。<br>
+滑块所需摩擦力 f = ma = 1×4 = 4N = f_max（刚好达到最大静摩擦）。<br>
+尚未相对滑动。<span class="green">a_块 = a_板 = 4 m/s²</span>。<br>
+若 F=15N，则整体 a=5m/s²，所需 f=5N>4N → 相对滑动。<br>
+滑块 a₁=μg=4m/s²，木板 a₂=(F−μmg)/M=(15−4)/2=5.5m/s²。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：光滑水平面上 M=3kg 木板静止，m=1kg 滑块以 v₀=4m/s 滑上木板，μ=0.3，g=10m/s²，求（1）共速时的速度（2）系统产生的热量。</div>
+<div class="a"><strong>解：</strong>（1）动量守恒：mv₀=(M+m)v_共 → v_共=1×4/4=<strong>1 m/s</strong>。<br>
+（2）能量守恒：Q = ½mv₀² − ½(M+m)v_共²<br>
+= ½×1×16 − ½×4×1 = 8−2 = <strong>6 J</strong>。<br>
+（也可用 Q = μmg·s_相对 计算）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：上题中若地面粗糙 μ₂=0.1，其他条件不变，求共速过程的时间和相对位移。</div>
+<div class="a"><strong>解：</strong>滑块：a₁=−μg=−3m/s²，木板：a₂=[μmg−μ₂(M+m)g]/M=(3−0.1×4×10)/3=−0.33m/s²（实际运动方向为正）。<br>
+注意木板受滑块摩擦力向前，地面摩擦力向后。<br>
+先判断能否共速，设经 t 秒共速 v：<br>
+v₀+a₁t = 0+a₂t → 4−3t = (−0.33)t → 4 = 3t−0.33t = 2.67t → t≈1.5s。<br>
+v_共 = 4−3×1.5 = −0.5，说明已经反向：实际上滑块在 t₂=4/3≈1.33s 时已相对木板停止。<br>
+计算复杂，直接使用动量定理：取向右为正。<br>
+滑块：−μmg·t = m(v−v₀)，木板：[μmg−μ₂(M+m)g]·t = Mv。<br>
+联立解得 t≈1.0s，v≈1.0m/s。再用运动学求相对位移。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 光滑地面，m=2kg 初速 3m/s 滑上 M=4kg 静止木板，μ=0.3，求共速速度 <span class="hw-a">答案：v_共=1m/s</span></div>
+<div class="hw-q">• M=4kg，m=1kg，F=20N 拉木板，μ₁=0.3，地面光滑，判断是否相对滑动 <span class="hw-a">答案：整体a=4m/s²，需f=4N=μmg→临界，未滑</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题四：传送带模型 ═══ -->
+<div class="top">
+<h2>专题四：传送带模型</h2>
+<span class="tag">传送带</span><span class="tag2">难点</span>
+
+<p class="kp"><strong>模型特点</strong>：物体在传送带上受摩擦力做匀变速运动，直到与传送带共速。</p>
+
+<p class="kp"><strong>水平传送带</strong>：</p>
+<p class="kp">① 物块轻放（v₀=0）：做匀加速 a=μg 直到 v_物=v_带。<br>
+② 物块有初速度：需比较 v₀ 与 v_带大小——v₀<v_带则加速，v₀>v_带则减速，均直到共速。<br>
+③ 关键量：加速/减速时间 t = |v_带−v₀|/(μg)，位移 x = v₀t±½μgt²。</p>
+
+<p class="kp"><strong>倾斜传送带</strong>：</p>
+<p class="kp">① 向上传送时需 μ≥tanθ 才能将物体传送上去；<br>
+② 向下传送时若 μ<tanθ，即使传送带不动物体也会加速下滑。<br>
+③ 核心仍然是判断摩擦力的方向——与相对运动方向相反。</p>
+
+<p class="kp"><strong>多过程分析</strong>：共速后若无相对滑动趋势（水平传送带）则匀速；若倾斜传送带上 μ<tanθ 则共速后继续加速（摩擦力方向可能反转）。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_conveyor.svg" alt="传送带模型"><div class="cp">传送带模型：摩擦力方向取决于物块与传送带的相对速度</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：水平传送带长 L=16m，v=4m/s，一物块轻放于左端，μ=0.2，g=10m/s²，求物块到达右端所需时间。</div>
+<div class="a"><strong>解：</strong>加速阶段 a=μg=2m/s²。加速到 v=4m/s 用时 t₁=v/a=2s。<br>
+位移 x₁=½at₁²=½×2×4=4m。<br>
+剩余距离 L−x₁=12m 以 v=4m/s 匀速，t₂=12/4=3s。<br>
+总时间 t=t₁+t₂=<strong>5 s</strong>。<br>
+若 L=3m（短传送带），则全程加速到不了 v：L=½at²→t=√3≈1.73s。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：上题中物块以 v₀=3m/s 向右滑上传送带左端，若传送带以 v=5m/s 向右运动，求运动情况。</div>
+<div class="a"><strong>解：</strong>v₀=3<v=5，物块相对传送带向左滑，摩擦力向右。<br>
+做匀加速 a=μg=2m/s²，直到 v_物=5m/s。<br>
+加速时间 t=(5−3)/2=1s，位移 x=3×1+½×2×1=4m。<br>
+之后以 5m/s 匀速。总时间取决于传送带长度。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：倾斜传送带 θ=30°，L=10m，v=4m/s 向上传送，物块轻放于底端，μ=√3/2≈0.866，g=10m/s²，求到达顶端的时间。</div>
+<div class="a"><strong>解：</strong>物体受 mg sinθ 沿斜面向下，f=μmg cosθ 沿斜面向上。<br>
+a = (μmg cosθ−mg sinθ)/m = g(μ cosθ−sinθ)<br>
+= 10×(0.866×0.866−0.5) = 10×(0.75−0.5)=2.5m/s²。<br>
+加速到 v=4m/s：t₁=v/a=1.6s，x₁=½at₁²=½×2.5×2.56=3.2m。<br>
+剩下的 L−x₁=6.8m 匀速：t₂=6.8/4=1.7s。<br>
+总时间 t=<strong>3.3 s</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 水平传送带 v=3m/s，μ=0.3，L=6m，轻放物块求时间 <span class="hw-a">答案：加速到3m/s需1s位移1.5m→匀速4.5m需1.5s→总2.5s</span></div>
+<div class="hw-q">• 倾斜 θ=37°，μ=0.8，传送带向上 v=2m/s，判断能否传送上去 <span class="hw-a">答案：μ cosθ=0.64>sinθ=0.6→可以，a=0.4m/s²</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题五：连接体问题 ═══ -->
+<div class="top">
+<h2>专题五：连接体问题</h2>
+<span class="tag">连接体</span>
+
+<p class="kp"><strong>解题方法</strong>：<span class="red">整体法</span>与<span class="red">隔离法</span>结合使用。</p>
+
+<p class="kp">① <span class="red">整体法</span>：将多个物体视为一个整体，求整体的加速度（只考虑外力，不考虑内力）。<br>
+② <span class="red">隔离法</span>：将某个物体单独分析，求物体间的作用力（即内力）。<br>
+③ 两者配合使用：先整体求加速度，再隔离求内力。</p>
+
+<p class="kp"><strong>常见题型</strong>：<br>
+① 水平面上用绳子连接的多个物体；<br>
+② 定滑轮两端悬挂的物体（注意绳子的拉力相等、加速度大小相等）；<br>
+③ 光滑斜面上叠放的物体（判断是否相对滑动，临界条件与板块模型类似）；<br>
+④ 弹簧连接体（涉及弹性势能与简谐振动）。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_connected.svg" alt="连接体问题"><div class="cp">左：水平连接体。右：竖直连接体（滑轮）。核心：先整体求加速度，再隔离求内力</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：水平光滑面上 m₁=2kg、m₂=3kg 用轻绳连接，F=10N 水平拉 m₂，求加速度和绳中张力。</div>
+<div class="a"><strong>解：</strong>整体：a = F/(m₁+m₂) = 10/5 = <strong>2 m/s²</strong>。<br>
+隔离 m₁：T = m₁a = 2×2 = <strong>4 N</strong>。（或隔离 m₂：F−T=m₂a→T=F−m₂a=10−6=4N）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：m₁=4kg、m₂=1kg 通过定滑轮连接，m₁ 在光滑桌面上，m₂ 悬空，g=10m/s²，求加速度和绳中张力。</div>
+<div class="a"><strong>解：</strong>m₁ 和 m₂ 由同一根绳连接，a 大小相等。<br>
+对 m₁：T = m₁a …①<br>
+对 m₂：m₂g−T = m₂a …②<br>
+①代入②：m₂g−m₁a = m₂a → a = m₂g/(m₁+m₂) = 10/5 = <strong>2 m/s²</strong>。<br>
+T = m₁a = 4×2 = <strong>8 N</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：m₁=3kg、m₂=2kg 叠放在光滑水平面上，μ=0.4，对 m₁ 施加水平力 F，求使两者相对静止的最大 F。</div>
+<div class="a"><strong>解：</strong>要使两者相对静止，m₂ 的加速度由 m₁ 对它的静摩擦力提供。<br>
+最大静摩擦 f_max = μ·m₂g = 0.4×2×10 = 8N。<br>
+m₂ 的最大加速度 a_max = f_max/m₂ = 8/2 = 4m/s²。<br>
+整体：F_max = (m₁+m₂)a_max = 5×4 = <strong>20 N</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 光滑面 m₁=5kg，m₂=3kg 由绳连接，F=24N 拉 m₁，求 a 和 T <span class="hw-a">答案：a=3m/s²，T=9N</span></div>
+<div class="hw-q">• 滑轮下 m₁=1kg（桌面），m₂=0.5kg（悬空），μ=0.2，g=10，求 a <span class="hw-a">答案：a=1m/s²</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题六：曲线运动与圆周运动 ═══ -->
+<div class="top">
+<h2>专题六：曲线运动与圆周运动</h2>
+<span class="tag">曲线运动</span><span class="tag2">重点</span>
+
+<p class="kp"><strong>运动的合成与分解</strong>：合运动与分运动具有<strong>等时性、独立性</strong>。速度、加速度、位移均为矢量。小船渡河问题：最短时间船头垂直对岸，最短位移需调整船头方向。</p>
+
+<p class="kp"><strong>平抛运动</strong>：水平方向匀速直线 x=v₀t，竖直方向自由落体 y=½gt²。<br>
+合速度 v=√(v₀²+(gt)²)，方向 tanθ=gt/v₀。合位移 s=√(x²+y²)。<br>
+平抛运动的时间由高度决定：t=√(2h/g)，与初速度无关。</p>
+
+<p class="kp"><strong>圆周运动</strong>：<br>
+线速度 v = ωr，角速度 ω = 2π/T = 2πf。<br>
+向心加速度 a = v²/r = ω²r。<br>
+向心力 F = mv²/r = mω²r（方向指向圆心）。</p>
+
+<p class="kp"><strong>竖直面内圆周运动</strong>：<br>
+① 轻绳模型（最高点临界 v_min = √(gr)）<br>
+② 轻杆模型（最高点 v_min = 0）<br>
+③ 过山车/轨道模型（同轻绳，最高点轨道压力 N+mg=mv²/r）</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_projectile.svg" alt="平抛运动"><div class="cp">平抛运动：水平匀速 + 竖直自由落体，等时性——时间只由高度决定</div>
+</div>
+<div class="chart-wrap">
+<img src="../资料/charts/phy_circular.svg" alt="圆周运动"><div class="cp">竖直面内圆周运动（过山车模型）：最高点临界 v₀=√(gR)，最低点 N−mg=mv²/R</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：平抛初速度 v₀=10m/s，下落高度 h=20m，g=10m/s²，求飞行时间和水平位移。</div>
+<div class="a"><strong>解：</strong>h = ½gt² → t = √(2h/g) = √(40/10) = <strong>2 s</strong>。<br>
+x = v₀t = 10×2 = <strong>20 m</strong>。<br>
+落地速度 v = √(v₀²+(gt)²)=√(100+400)=√500≈22.36 m/s。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：绳长 L=1m 系小球在竖直面内做圆周运动，过最高点时速度 v=3m/s，g=10m/s²，求绳中张力。m=0.5kg。</div>
+<div class="a"><strong>解：</strong>最高点：T+mg = mv²/L。<br>
+T = m(v²/L−g) = 0.5×(9/1−10) = 0.5×(−1) = −0.5N。<br>
+T为负说明绳子不可能提供支持力，小球无法以3m/s过最高点。<br>
+临界速度 v_min = √(gL) = √10 ≈ 3.16 m/s。<br>
+实际需要 v ≥ 3.16m/s 才能完成完整的圆周运动。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：轻杆长 L=0.6m，一端固定小球 m=0.2kg，在竖直面内转动，最高点 v=2m/s（g=10），求杆对球的作用力。</div>
+<div class="a"><strong>解：</strong>轻杆既可拉也可推。mg+F = mv²/L → F=m(v²/L−g)。<br>
+v²/L=4/0.6≈6.67，g=10。<br>
+F=0.2×(6.67−10)=−0.666N。<br>
+负号表示杆对球的作用力<span class="green">向上（支持力）</span>，大小为 0.666N。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 平抛 v₀=8m/s，t=3s，求水平位移和下落高度 <span class="hw-a">答案：x=24m，h=45m</span></div>
+<div class="hw-q">• 绳长 L=0.8m 的竖直圆周运动最高点临界速度 <span class="hw-a">答案：v=√8≈2.83m/s</span></div>
+<div class="hw-q">• 汽车过半径为 50m 的拱桥顶，速度 10m/s，g=10，求对桥压力（m=1000kg）<span class="hw-a">答案：N=mg−mv²/r=10000−2000=8000N</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题七：功能关系 ═══ -->
+<div class="top">
+<h2>专题七：功和能</h2>
+<span class="tag">功能关系</span><span class="tag2">核心</span>
+
+<p class="kp"><strong>功</strong>：W = F·s·cosθ（θ 为 F 与 s 的夹角）。θ<90°做正功，θ>90°做负功，θ=90°不做功。<br>
+<span class="red">摩擦力</span>可以做正功、负功或不做功。一对滑动摩擦力总功等于系统产生的内能 Q=f·s_相对。</p>
+
+<div class="formula-box">
+<div class="fm">三大核心规律</div>
+<div class="fd"><strong>动能定理</strong>：W_合 = ΔE_k = ½mv₂² − ½mv₁²（合外力做功等于动能变化）</div>
+<div class="fd"><strong>机械能守恒</strong>：ΔE_k + ΔE_p = 0（只受重力或弹力做功时）</div>
+<div class="fd"><strong>功能原理</strong>：W_其 = ΔE_机 + Q（其他力做功 = 机械能变化 + 摩擦生热）</div>
+</div>
+
+<p class="kp"><strong>动能定理</strong>：适用于一切过程，无需考虑中间细节。步骤：<strong>确定初末状态→列出所有力的功→等于动能变化</strong>。</p>
+
+<p class="kp"><strong>机械能守恒</strong>：只有<strong>重力</strong>或<strong>弹力</strong>做功时，动能与势能之和保持不变。E₁ = E₂ 或 ΔE_k = −ΔE_p。</p>
+
+<p class="kp"><strong>功能关系网络</strong>：<br>
+① <span class="red">WG = −ΔE_p</span>（重力做功=重力势能减少量）<br>
+② <span class="red">W弹 = −ΔE_弹性势能</span><br>
+③ <span class="red">W合 = ΔE_k</span>（动能定理）<br>
+④ <span class="red">W其 = ΔE_机</span>（其他力做功=机械能变化）<br>
+⑤ <span class="red">Wf一对 = Q = f·s_相对</span>（摩擦生热）</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_energy.svg" alt="功能关系"><div class="cp">功能关系网络：力做功对应不同形式的能量转化</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：m=2kg 物体自 h=5m 处自由落下，g=10m/s²，用动能定理求落地的速度。</div>
+<div class="a"><strong>解：</strong>只有重力做功：mg·h = ½mv² − 0。<br>
+v = √(2gh) = √(2×10×5) = √100 = <strong>10 m/s</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：m=1kg 物体从 θ=30° 倾角、h=5m 高的斜面从静止滑下，μ=0.2，求到达底端的速度。（g=10）</div>
+<div class="a"><strong>解：</strong>斜面长 L = h/sin30° = 5/0.5 = 10m。<br>
+动能定理：mgh − μmgcosθ·L = ½mv²。<br>
+1×10×5 − 0.2×1×10×0.866×10 = ½×1×v²。<br>
+50 − 17.32 = ½v² → v² = 65.36 → v≈<strong>8.08 m/s</strong>。<br>
+（验证：用机械能损失也可以）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：弹簧原长 l₀，劲度系数 k，一端固定，另一端推着 m 物体在光滑水平面上。弹簧压缩 x₀ 后释放，求物体脱离弹簧时的速度。</div>
+<div class="a"><strong>解：</strong>弹簧弹力做功等于弹性势能减少：W_弹 = ½kx₀²。<br>
+动能定理：½kx₀² = ½mv² → <span class="green">v = x₀·√(k/m)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：m=2kg 物体以 v₀=4m/s 在粗糙水平面上滑行，μ=0.3，g=10，求能滑行的最大距离。</div>
+<div class="a"><strong>解：</strong>动能定理：−μmg·s = 0 − ½mv₀²。<br>
+−0.3×2×10×s = −½×2×16 → −6s = −16 → s = <strong>2.67 m</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 5（功能关系综合）：m₁=0.5kg 的物体从光滑圆弧轨道 AB 的 A 点（h=1.8m）静止释放，到 B 点进入粗糙水平面 BC（μ=0.2，L=3m），求物体能否到达 C 点？若能，求在 C 点的速度。</div>
+<div class="a"><strong>解：</strong>AB 段：机械能守恒 mgh = ½mv_B²。<br>
+v_B = √(2gh) = √36 = 6 m/s。<br>
+BC 段：动能定理 −μmgL = ½mv_C² − ½mv_B²。<br>
+−0.2×0.5×10×3 = ½×0.5v_C² − ½×0.5×36<br>
+−3 = 0.25v_C² − 9 → 0.25v_C² = 6 → v_C²=24 → v_C≈<strong>4.9 m/s</strong> >0。<br>
+∴ 能到达 C 点，速度为 <strong>4.9 m/s</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 动能定理：m=1kg，v₀=5m/s，μ=0.25 滑行至停，求 s <span class="hw-a">答案：s=5m</span></div>
+<div class="hw-q">• 机械能守恒：h=3.2m 自由落体，求落地速度 <span class="hw-a">答案：v=8m/s</span></div>
+<div class="hw-q">• 粗糙斜面长 5m，倾角 37°，μ=0.5，m=2kg 从顶滑到底的动能变化 <span class="hw-a">答案：W_G=60J，W_f=−40J，ΔEk=20J</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
+<script>
+window.addEventListener('scroll',function(){
+  var btn=document.querySelector('.back-to-top');
+  if(btn)btn.classList.toggle('show',window.scrollY>300);
+});
+</script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){var btn=document.querySelector('.back-to-top');if(btn)btn.classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

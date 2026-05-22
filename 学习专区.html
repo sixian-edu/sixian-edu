@@ -72,7 +72,24 @@
             .topic-grid { grid-template-columns: 1fr; }
         }
     </style>
-<script src="js/theme.js"></script></head>
+<script src="js/theme.js"></script>
+<script>
+(function() {
+  var saved = sessionStorage.getItem('sx_zone_scroll');
+  if (saved) {
+    sessionStorage.removeItem('sx_zone_scroll');
+    requestAnimationFrame(function() {
+      window.scrollTo(0, parseInt(saved));
+    });
+  }
+  document.addEventListener('click', function(e) {
+    var card = e.target.closest('.topic-card.link');
+    if (card) {
+      sessionStorage.setItem('sx_zone_scroll', window.scrollY);
+    }
+  });
+})();
+</script></head>
 <body>
 
 <div class="nav">
@@ -208,29 +225,29 @@
 
             <div class="topic-section-title">📌 数学</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">📊</div><div class="tc-body"><h4>数列<span class="status-tag soon">整理中</span></h4><p>等差 · 等比 · 数列求和与证明</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📈</div><div class="tc-body"><h4>导数<span class="status-tag soon">整理中</span></h4><p>导数计算 · 单调性 · 极值与最值</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#6E9ED4">🔄</div><div class="tc-body"><h4>圆锥曲线<span class="status-tag soon">整理中</span></h4><p>椭圆 · 双曲线 · 抛物线 · 综合题</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#7AA8DC">📐</div><div class="tc-body"><h4>函数深化<span class="status-tag soon">整理中</span></h4><p>函数性质 · 图像变换 · 零点问题</p></div></div>
+                <a class="topic-card link" href="资料/高中数学数列.html"><div class="tc-icon" style="background:#5688CC">📊</div><div class="tc-body"><h4>数列<span class="status-tag ready">已上线</span></h4><p>等差 · 等比 · 数列求和与证明</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中数学导数.html"><div class="tc-icon" style="background:#4A7AB8">📈</div><div class="tc-body"><h4>导数<span class="status-tag ready">已上线</span></h4><p>导数计算 · 单调性 · 极值与最值</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中数学圆锥曲线.html"><div class="tc-icon" style="background:#6E9ED4">🔄</div><div class="tc-body"><h4>圆锥曲线<span class="status-tag ready">已上线</span></h4><p>椭圆 · 双曲线 · 抛物线 · 综合题</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中数学函数深化.html"><div class="tc-icon" style="background:#7AA8DC">📐</div><div class="tc-body"><h4>函数深化<span class="status-tag ready">已上线</span></h4><p>函数性质 · 图像变换 · 零点问题</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 物理</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">⚡</div><div class="tc-body"><h4>电磁学<span class="status-tag soon">整理中</span></h4><p>电场 · 磁场 · 电磁感应 · 综合</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">⚖️</div><div class="tc-body"><h4>力学模型<span class="status-tag soon">整理中</span></h4><p>牛顿定律 · 板块模型 · 传送带</p></div></div>
+                <a class="topic-card link" href="资料/高中物理电磁学.html"><div class="tc-icon" style="background:#5688CC">⚡</div><div class="tc-body"><h4>电磁学<span class="status-tag ready">已上线</span></h4><p>电场 · 磁场 · 电磁感应 · 综合</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中物理力学模型.html"><div class="tc-icon" style="background:#4A7AB8">⚖️</div><div class="tc-body"><h4>力学模型<span class="status-tag ready">已上线</span></h4><p>牛顿定律 · 板块模型 · 传送带</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 生物</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">🧬</div><div class="tc-body"><h4>遗传专题<span class="status-tag soon">整理中</span></h4><p>遗传定律 · 系谱图 · 基因工程</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">📊</div><div class="tc-body"><h4>图像题专项<span class="status-tag soon">整理中</span></h4><p>细胞分裂图 · 代谢图 · 生态图</p></div></div>
+                <a class="topic-card link" href="资料/高中生物遗传专题.html"><div class="tc-icon" style="background:#5688CC">🧬</div><div class="tc-body"><h4>遗传专题<span class="status-tag ready">已上线</span></h4><p>遗传定律 · 系谱图 · 基因工程</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中生物图像题专项.html"><div class="tc-icon" style="background:#4A7AB8">📊</div><div class="tc-body"><h4>图像题专项<span class="status-tag ready">已上线</span></h4><p>细胞分裂图 · 代谢图 · 生态图</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 化学</div>
             <div class="topic-grid">
-                <div class="topic-card"><div class="tc-icon" style="background:#5688CC">🏭</div><div class="tc-body"><h4>工艺流程<span class="status-tag soon">整理中</span></h4><p>工业流程题解题思路与模板</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#4A7AB8">🔬</div><div class="tc-body"><h4>实验题精讲<span class="status-tag soon">整理中</span></h4><p>化学实验设计与探究题突破</p></div></div>
-                <div class="topic-card"><div class="tc-icon" style="background:#6E9ED4">⚗️</div><div class="tc-body"><h4>化学方程式<span class="status-tag soon">整理中</span></h4><p>高中方程式分类与记忆方法</p></div></div>
+                <a class="topic-card link" href="资料/高中化学工艺流程.html"><div class="tc-icon" style="background:#5688CC">🏭</div><div class="tc-body"><h4>工艺流程<span class="status-tag ready">已上线</span></h4><p>工业流程题解题思路与模板</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中化学实验题精讲.html"><div class="tc-icon" style="background:#4A7AB8">🔬</div><div class="tc-body"><h4>实验题精讲<span class="status-tag ready">已上线</span></h4><p>化学实验设计与探究题突破</p></div><div class="tc-arrow">→</div></a>
+                <a class="topic-card link" href="资料/高中化学方程式.html"><div class="tc-icon" style="background:#6E9ED4">⚗️</div><div class="tc-body"><h4>化学方程式<span class="status-tag ready">已上线</span></h4><p>高中方程式分类与记忆方法</p></div><div class="tc-arrow">→</div></a>
             </div>
 
             <div class="topic-section-title">📌 英语</div>

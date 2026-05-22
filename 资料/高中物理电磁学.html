@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>高中物理 · 电磁学专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#e74c3c}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#e74c3c;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #e74c3c;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#e74c3c;margin-bottom:4px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(231,76,60,0.08);color:#e74c3c;margin-bottom:10px}
+.top .tag2{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(142,68,173,0.08);color:#8e44ad;margin-bottom:10px;margin-left:4px}
+.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
+.top .kp strong{color:#e74c3c}
+.top .kp .red{color:#e74c3c;font-weight:600}
+.top .kp .blue{color:#3498db;font-weight:600}
+.top .kp .green{color:#27ae60;font-weight:600}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:11px 15px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#e74c3c;margin-bottom:2px;font-size:14px}
+.top .ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:3px}
+.top .ex .a strong{color:#e74c3c}
+.top .ex .a .step{color:#e67e22}
+.top .hw{background:#fef5f5;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#fef5f5;border-radius:8px;padding:10px 16px;margin:8px 0;border-left:3px solid #e74c3c}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600;margin-bottom:2px}
+.formula-box .fd{font-size:12px;color:#888}
+@media(max-width:600px){.head h1{font-size:22px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>高中物理 · 电磁学专题</h1><p class="sub">静电场 · 恒定电流 · 磁场 · 电磁感应 · 交变电流 · 电磁综合 共 <span>6</span> 专题</p></div>
+<div class="container">
+
+<!-- ═══ 专题一：静电场 ═══ -->
+<div class="top">
+<h2>专题一：静电场</h2>
+<span class="tag">静电场</span>
+
+<p class="kp"><strong>电荷与库仑定律</strong>：点电荷间的作用力满足 <span class="red">F = k|q₁q₂|/r²</span>（k=9×10⁹ N·m²/C²）。同种电荷相互排斥，异种电荷相互吸引。电荷守恒定律：电荷既不能创造也不能消灭，只能从一个物体转移到另一个物体。</p>
+
+<p class="kp"><strong>电场强度</strong>：E = F/q（定义式），单位 N/C 或 V/m。点电荷的电场 E = kQ/r²。电场强度是矢量，方向与正电荷在该点所受电场力方向相同。</p>
+
+<p class="kp"><strong>电场线</strong>：从正电荷出发终止于负电荷（或无穷远），疏密表示场强大小。电场线不相交，不闭合。匀强电场的电场线是平行等距的直线。</p>
+
+<p class="kp"><strong>电势与电势差</strong>：U_AB = φ_A − φ_B = W_AB/q。电场力做功与路径无关：W_AB = qU_AB。沿着电场线方向电势逐渐降低。<strong>等势面</strong>：在同一等势面上移动电荷电场力不做功，等势面⊥电场线。</p>
+
+<p class="kp"><strong>电容器与电容</strong>：C = Q/U = εS/(4πkd)（平行板电容器）。电容表征电容器容纳电荷的本领，与 Q、U 无关。平行板电容器充电后保持与电源相连则 U 不变，断开电源则 Q 不变。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_efield.svg" alt="电场线"><div class="cp">点电荷的电场线：正电荷向外发散，负电荷向内汇聚</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：两个点电荷 q₁=2×10⁻⁸C 和 q₂=−4×10⁻⁸C 相距 0.1m，求它们之间的库仑力大小和方向。</div>
+<div class="a"><strong>解：</strong>F = k|q₁q₂|/r² = 9×10⁹ × (2×10⁻⁸×4×10⁻⁸)/(0.1)²<br>
+= 9×10⁹ × 8×10⁻¹⁶/0.01 = 7.2×10⁻⁴ N。<br>
+异种电荷相互<span class="green">吸引</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：在电场中某点放入 q=4×10⁻⁹C 的试探电荷，受到 2×10⁻⁵N 的电场力，求该点场强。若换为 q=−2×10⁻⁹C，场强和电场力如何？</div>
+<div class="a"><strong>解：</strong>E = F/q = 2×10⁻⁵/(4×10⁻⁹) = <strong>5000 N/C</strong>，方向与 F 相同。<br>
+场强与试探电荷<span class="red">无关</span>，E 不变仍为 5000 N/C。<br>
+F' = q'E = (−2×10⁻⁹)×5000 = <strong>−1×10⁻⁵ N</strong>（负号表示方向与 E 相反）。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：一带电粒子从电场中 A 点移到 B 点电场力做功 4×10⁻⁶J，粒子带正电 q=2×10⁻⁹C，求 U_AB。</div>
+<div class="a"><strong>解：</strong>U_AB = W_AB/q = 4×10⁻⁶/(2×10⁻⁹) = <strong>2000 V</strong>。<br>
+U_AB > 0 → φ_A > φ_B，电势从 A 到 B 降低了 2000V。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：平行板电容器 S=0.01m²，d=2mm，ε_r=1，充电到 U=100V 后断开电源，求电容 C、带电量 Q。若将板间距增大到 4mm，C 和 Q 如何变化？</div>
+<div class="a"><strong>解：</strong>C₀ = εS/(4πkd) = 8.85×10⁻¹²×0.01/(2×10⁻³)=<strong>4.43×10⁻¹¹F</strong>。<br>
+Q = CU = 4.43×10⁻¹¹×100 = <strong>4.43×10⁻⁹C</strong>。<br>
+断开电源后 Q 不变。d 增大到 2 倍 → C 减半 → U=Q/C 增大到 2 倍。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• k=9×10⁹，q₁=2×10⁻⁷C，q₂=5×10⁻⁷C，r=0.05m，求库仑力 <span class="hw-a">答案：0.36N</span></div>
+<div class="hw-q">• 点电荷 Q 在 r=0.3m 处产生 E=200N/C，求 Q <span class="hw-a">答案：2×10⁻⁹C</span></div>
+<div class="hw-q">• 电场中 A→B 电场力做功 −6×10⁻⁶J，q=−3×10⁻⁹C，求 U_AB <span class="hw-a">答案：2000V</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题二：恒定电流 ═══ -->
+<div class="top">
+<h2>专题二：恒定电流</h2>
+<span class="tag">恒定电流</span>
+
+<p class="kp"><strong>电流</strong>：I = q/t。规定正电荷定向移动的方向为电流方向。金属导体中为自由电子的定向移动形成电流，但电流方向与电子移动方向相反。</p>
+
+<p class="kp"><strong>欧姆定律</strong>：I = U/R（适用于金属导体和电解液，不适用于气体导电和半导体）。<strong>电阻定律</strong>：R = ρL/S，ρ 为电阻率，随温度升高而增大（金属）。</p>
+
+<p class="kp"><strong>串并联电路</strong>：<br>
+串联：I 相等，U 分压，R = R₁+R₂+…，U₁/U₂ = R₁/R₂<br>
+并联：U 相等，I 分流，1/R = 1/R₁+1/R₂+…，I₁/I₂ = R₂/R₁</p>
+
+<p class="kp"><strong>电功与电功率</strong>：W = UIt（焦耳定律：Q = I²Rt，纯电阻电路中 Q = W）。P = UI（纯电阻 P=I²R=U²/R）。<strong>电源功率</strong>：P总=EI，P出=UI，P内=I²r。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_circuit_law.svg" alt="闭合电路欧姆定律"><div class="cp">闭合电路欧姆定律：I = E/(R+r)，路端电压 U = E − Ir</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：电阻 R₁=6Ω，R₂=12Ω 并联后接入 12V 电路，求总电流和每个电阻的电流。</div>
+<div class="a"><strong>解：</strong>并联 R = (6×12)/(6+12)=72/18=<strong>4Ω</strong>。<br>
+I_total = U/R = 12/4 = <strong>3A</strong>。<br>
+I₁ = U/R₁ = 12/6 = <strong>2A</strong>，I₂ = U/R₂ = 12/12 = <strong>1A</strong>。<br>
+I₁+I₂=3A 等于总电流。✓</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：电源 E=12V，r=1Ω，外电路 R=5Ω，求路端电压 U 和内电压 U'。</div>
+<div class="a"><strong>解：</strong>I = E/(R+r) = 12/(5+1) = <strong>2A</strong>。<br>
+路端电压 U = IR = 2×5 = <strong>10V</strong>。<br>
+内电压 U' = Ir = 2×1 = <strong>2V</strong>。<br>
+验证：U + U' = 10+2 = 12V = E。✓</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：一根铜导线长 100m，横截面积 2mm²，ρ=1.7×10⁻⁸Ω·m，求电阻。</div>
+<div class="a"><strong>解：</strong>R = ρL/S = 1.7×10⁻⁸×100/(2×10⁻⁶) = 1.7×10⁻⁶/(2×10⁻⁶) = <strong>0.85Ω</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：额定电压 220V、功率 100W 的白炽灯正常发光时的电流和电阻。</div>
+<div class="a"><strong>解：</strong>I = P/U = 100/220 ≈ <strong>0.455A</strong>。<br>
+R = U²/P = 220²/100 = 48400/100 = <strong>484Ω</strong>（热态电阻，冷态更小）。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• R₁=4Ω，R₂=6Ω 串联，总电压 20V，求 U₁ 和 U₂ <span class="hw-a">答案：U₁=8V，U₂=12V</span></div>
+<div class="hw-q">• E=9V，r=0.5Ω，外电路 R=4Ω，求 I 和路端电压 <span class="hw-a">答案：I=2A，U=8V</span></div>
+<div class="hw-q">• 220V·800W 电炉的电阻和电流 <span class="hw-a">答案：R=60.5Ω，I≈3.64A</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题三：磁场 ═══ -->
+<div class="top">
+<h2>专题三：磁场</h2>
+<span class="tag">磁场</span><span class="tag2">重点</span>
+
+<p class="kp"><strong>磁感应强度</strong>：B = F/(IL)（定义式），单位特斯拉（T）。方向为小磁针 N 极受力方向。<strong>磁感线</strong>：闭合曲线，外部从 N→S，内部从 S→N。</p>
+
+<p class="kp"><strong>安培力</strong>：F = BIL sinθ（θ 为 B 与 I 的夹角）。方向用<span class="red">左手定则</span>判断：伸开左手，使拇指与其余四指垂直，让磁感线垂直穿入手心，四指指向电流方向，拇指所指方向即为安培力方向。</p>
+
+<p class="kp"><strong>洛伦兹力</strong>：F = qvB sinθ（θ 为 v 与 B 的夹角）。方向同样用<span class="red">左手定则</span>判断（注意负电荷的等效电流方向与运动方向相反）。洛伦兹力<span class="blue">永远不做功</span>，只改变速度方向不改变速度大小。</p>
+
+<p class="kp"><strong>带电粒子在匀强磁场中的运动</strong>：当 v⊥B 时，做<strong>匀速圆周运动</strong>。<br>
+<span class="red">轨道半径</span>：r = mv/(qB)；<span class="red">周期</span>：T = 2πm/(qB)（与速度、半径无关！）。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_cyclotron.svg" alt="带电粒子在磁场中的运动"><div class="cp">洛伦兹力提供向心力，粒子做匀速圆周运动。周期 T=2πm/(qB) 与速度无关</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：长 L=0.2m 的直导线，通有 I=3A 的电流，放在 B=0.5T 的匀强磁场中，导线与磁场方向垂直，求安培力。</div>
+<div class="a"><strong>解：</strong>F = BIL = 0.5×3×0.2 = <strong>0.3 N</strong>。方向由左手定则判断。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：α粒子（q=2e=3.2×10⁻¹⁹C，m=6.64×10⁻²⁷kg）以 v=2×10⁶m/s 垂直进入 B=0.5T 的匀强磁场，求轨道半径 r 和周期 T。</div>
+<div class="a"><strong>解：</strong>r = mv/(qB) = 6.64×10⁻²⁷×2×10⁶/(3.2×10⁻¹⁹×0.5)<br>
+= 1.328×10⁻²⁰/(1.6×10⁻¹⁹) = <strong>0.083 m = 8.3 cm</strong>。<br>
+T = 2πm/(qB) = 2×3.14×6.64×10⁻²⁷/(3.2×10⁻¹⁹×0.5)<br>
+= 4.17×10⁻²⁶/(1.6×10⁻¹⁹) = <strong>2.6×10⁻⁷ s</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：电子以 v=4×10⁶m/s 水平射入 B=0.2T 的竖直向下的匀强磁场，求电子的轨道半径。（m_e=9.1×10⁻³¹kg，e=1.6×10⁻¹⁹C）</div>
+<div class="a"><strong>解：</strong>r = mv/(eB) = 9.1×10⁻³¹×4×10⁶/(1.6×10⁻¹⁹×0.2)<br>
+= 3.64×10⁻²⁴/(3.2×10⁻²⁰) = <strong>1.14×10⁻⁴ m = 0.114 mm</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• I=2A，L=0.3m，B=0.4T，θ=30°，求安培力 <span class="hw-a">答案：0.12N</span></div>
+<div class="hw-q">• 质子 q=1.6×10⁻¹⁹C，v=3×10⁶m/s，B=0.1T，求 r <span class="hw-a">答案：0.188m</span></div>
+<div class="hw-q">• 带电粒子在匀强磁场中做圆周运动的周期与什么有关？<span class="hw-a">答案：只与 m、q、B 有关，与 v、r 无关</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题四：电磁感应 ═══ -->
+<div class="top">
+<h2>专题四：电磁感应</h2>
+<span class="tag">电磁感应</span><span class="tag2">核心</span>
+
+<p class="kp"><strong>法拉第电磁感应定律</strong>：感应电动势的大小与穿过回路的<strong>磁通量的变化率</strong>成正比。<br>
+<span class="red">E = n·ΔΦ/Δt</span>（n 为线圈匝数，Φ=BScosθ）。</p>
+
+<p class="kp"><strong>导体切割磁感线</strong>：当导体在磁场中做切割磁感线运动时产生感应电动势。<br>
+<span class="red">E = BLv sinθ</span>（θ 为 v 与 B 的夹角）。平动切割时 E=BLv（B⊥L⊥v）。</p>
+
+<p class="kp"><strong>楞次定律</strong>：感应电流的磁场总要<strong>阻碍</strong>引起感应电流的磁通量的变化。口决：<span class="red">增反减同，来拒去留</span>。<br>
+右手定则：伸开右手，让磁感线穿入手心，拇指指向导体运动方向，四指指向感应电流方向。</p>
+
+<p class="kp"><strong>感生电动势与动生电动势</strong>：<br>
+① <strong>感生电动势</strong>：磁场变化产生涡旋电场，E = n·S·ΔB/Δt（S 为面积）。<br>
+② <strong>动生电动势</strong>：导体切割磁感线，E = BLv。在匀强磁场中转动时 E = ½BωL²。</p>
+
+<p class="kp"><strong>自感现象</strong>：由于导体自身电流变化而产生的电磁感应现象。自感系数 L 与线圈的形状、大小、匝数以及有无铁芯有关。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_emf.svg" alt="动生电动势"><div class="cp">导体棒切割磁感线：ε = BLv，感应电流方向由右手定则判断</div>
+</div>
+<div class="chart-wrap">
+<img src="../资料/charts/phy_lens.svg" alt="楞次定律"><div class="cp">楞次定律：增反减同——磁铁 N 极插入时线圈感应电流产生向上的磁场阻碍磁通量增加</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：线圈 n=100 匝，ΔΦ=0.02Wb 在 Δt=0.1s 内均匀变化，求感应电动势。</div>
+<div class="a"><strong>解：</strong>E = n·|ΔΦ/Δt| = 100×0.02/0.1 = <strong>20 V</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：导体棒 L=0.5m，以 v=4m/s 匀速切割 B=0.6T 的匀强磁场，B⊥L⊥v，求 E 和回路 R=2Ω 时的 I。</div>
+<div class="a"><strong>解：</strong>E = BLv = 0.6×0.5×4 = <strong>1.2 V</strong>。<br>
+I = E/R = 1.2/2 = <strong>0.6 A</strong>。由右手定则判断电流方向。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：线圈面积 S=0.04m²，n=50 匝，磁场 B 以 0.2T/s 的变化率均匀增大，求感应电动势。</div>
+<div class="a"><strong>解：</strong>E = n·S·ΔB/Δt = 50×0.04×0.2 = <strong>0.4 V</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：光滑平行导轨间距 L=0.4m，电阻 R=0.5Ω，导体棒质量 m=0.1kg，B=0.5T，给棒一个水平向右的初速度 v₀=6m/s，求棒的最大感应电流和最终运动状态。</div>
+<div class="a"><strong>解：</strong>v₀ 时 E₀=BLv₀=0.5×0.4×6=1.2V。<br>
+I₀=E₀/R=1.2/0.5=<strong>2.4A</strong>。<br>
+安培力 F₀=BIL=0.5×2.4×0.4=0.48N，阻碍运动。<br>
+棒做减速运动，v↓→E↓→I↓→F↓，最终 <strong>趋于静止</strong>。<br>
+（若有外力维持则最终可能匀速，平衡时 F_ext = F_安 = B²L²v/R）</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• n=200 匝，0.1s 内磁通量从 0.01Wb 变为 0.05Wb，求 E <span class="hw-a">答案：80V</span></div>
+<div class="hw-q">• 导体棒 L=0.3m，v=5m/s，B=0.8T，求 E <span class="hw-a">答案：1.2V</span></div>
+<div class="hw-q">• 矩形线圈在匀强磁场中匀速转动，产生的感应电动势按什么规律变化？<span class="hw-a">答案：正弦规律 e=Eₘsinωt</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题五：交变电流 ═══ -->
+<div class="top">
+<h2>专题五：交变电流</h2>
+<span class="tag">交变电流</span>
+
+<p class="kp"><strong>正弦式交流电</strong>：线圈在匀强磁场中绕垂直于磁场的轴匀速转动产生。<br>
+e = Eₘ sin ωt，其中 Eₘ = nBSω（电动势峰值）。<br>
+i = Iₘ sin(ωt − φ)，u = Uₘ sin(ωt − φ′)。</p>
+
+<p class="kp"><strong>有效值</strong>：交流电与直流电在相同时间内通过同一电阻产生相同热量的等效值。<br>
+<span class="red">E = Eₘ/√2</span>，U = Uₘ/√2，I = Iₘ/√2（仅适用于正弦式交流电）。</p>
+
+<p class="kp"><strong>变压器</strong>：<span class="red">U₁/U₂ = n₁/n₂</span>。理想变压器：P₁ = P₂ → U₁I₁ = U₂I₂ → I₁/I₂ = n₂/n₁。</p>
+
+<p class="kp"><strong>远距离输电</strong>：P_损 = I²R_线。提高输电电压可减小电流，从而减小线路损耗。高压输电：升压→传输→降压。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/phy_ac.svg" alt="正弦交流电"><div class="cp">正弦式交流电：e = Eₘsinωt（电动势），i = Iₘsin(ωt−φ)（电流落后相位φ）</div>
+</div>
+<div class="chart-wrap">
+<img src="../资料/charts/phy_transformer.svg" alt="变压器"><div class="cp">变压器原理：U₁/U₂ = n₁/n₂，I₁/I₂ = n₂/n₁（理想变压器无能量损耗）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：正弦交流电 e=310sin(314t)V，求峰值 Eₘ、有效值 E、频率 f 和周期 T。</div>
+<div class="a"><strong>解：</strong>Eₘ = <strong>310 V</strong>。E = 310/√2 ≈ <strong>219 V</strong>。<br>
+ω=314 rad/s，f=ω/(2π)=314/6.28=<strong>50 Hz</strong>。T=1/f=<strong>0.02 s</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：变压器原线圈 n₁=1100 匝，输入 U₁=220V，副线圈 n₂=50 匝，求输出 U₂。若副线圈接 R=10Ω，求 I₂ 和输入功率。</div>
+<div class="a"><strong>解：</strong>U₂ = U₁·n₂/n₁ = 220×50/1100 = <strong>10 V</strong>。<br>
+I₂ = U₂/R = 10/10 = <strong>1 A</strong>。<br>
+P₂ = U₂I₂ = 10×1 = 10W。理想变压器 P₁ = P₂ = <strong>10 W</strong>。<br>
+I₁ = P₁/U₁ = 10/220 ≈ <strong>0.045 A</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：某交流电通过 R=5Ω 的电阻，一个周期内放热 40J，求该交流电的有效值。</div>
+<div class="a"><strong>解：</strong>由 Q = I²RT，得 I² = Q/(RT)。<br>
+一个周期 T=0.02s，Q=40J。<br>
+I² = 40/(5×0.02) = 400 → I = <strong>20 A</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：发电厂输出功率 P=100kW，输出电压 U₁=400V，输电线总电阻 R=10Ω，若采用 1:25 升压后输电，求线损和用户得到的电压。</div>
+<div class="a"><strong>解：</strong>不升压时：I=P/U₁=100000/400=250A，P_损=I²R=250²×10=625kW > 100kW（不可行！）。<br>
+升压后 U₂=400×25=10000V，I₂=P/U₂=100000/10000=10A。<br>
+P_损=I₂²R=10²×10=<strong>1 kW</strong>（占 1%）。<br>
+线路压降 ΔU=I₂R=10×10=100V，末端电压 U=10000−100=<strong>9900 V</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 交流电 u=220√2·sin100πt(V) 的有效值和频率 <span class="hw-a">答案：220V，50Hz</span></div>
+<div class="hw-q">• 变压器 n₁:n₂=10:1，U₁=220V，R₂=5Ω，求 I₂ 和 P₁ <span class="hw-a">答案：U₂=22V，I₂=4.4A，P₁≈96.8W</span></div>
+<div class="hw-q">• 远距离输电提高电压的好处？<span class="hw-a">答案：减小电流→减小线损（P_损=I²R）</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题六：电磁综合 ═══ -->
+<div class="top">
+<h2>专题六：电磁综合</h2>
+<span class="tag">电磁综合</span><span class="tag2">压轴</span>
+
+<p class="kp"><strong>带电粒子在复合场中的运动</strong>："复合场"指电场、磁场、重力场的组合。常见模型：</p>
+
+<p class="kp"><span class="red">速度选择器</span>：E 和 B 正交，qE = qvB → v = E/B 的粒子沿直线通过，与电荷正负和质量无关。</p>
+
+<p class="kp"><span class="red">质谱仪</span>：粒子在电场中加速 qU = ½mv²，进入磁场偏转 r = mv/(qB)。由 r 测量质量或比荷。<br>
+比荷 q/m = 2U/(B²r²)。</p>
+
+<p class="kp"><span class="red">回旋加速器</span>：D 形盒在磁场中回旋，缝隙间电场加速。粒子最终速度 v_max = qBR/m，最大动能 E_k = q²B²R²/(2m)，与加速电压无关。</p>
+
+<p class="kp"><span class="red">电磁感应综合</span>：导体棒在磁场中运动，涉及牛顿定律、动量定理、能量守恒。常见问题包括含容电路、含电源电路、双棒模型等。</p>
+
+<div class="ex">
+<div class="q">例 1（速度选择器）：一束带电粒子（含正负电荷）以速度 v 进入正交的 E=2000V/m 和 B=0.5T 的区域，求能沿直线穿过的粒子速度。若 v 偏大粒子向哪侧偏转？</div>
+<div class="a"><strong>解：</strong>qE = qvB → v = E/B = 2000/0.5 = <strong>4000 m/s</strong>。<br>
+与电荷正负、质量、电量均无关。<br>
+若 v 偏大，qvB > qE，正电荷向上偏（B 方向），负电荷向下偏。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（质谱仪）：加速电压 U=1000V，磁场 B=0.2T，测得某种离子的圆周轨道半径 r=0.125m，求该离子的比荷 q/m。</div>
+<div class="a"><strong>解：</strong>加速过程：qU = ½mv² → v = √(2qU/m)。<br>
+偏转过程：qvB = mv²/r → v = qBr/m。<br>
+联立：√(2qU/m) = qBr/m → 2qU/m = q²B²r²/m²<br>
+q/m = 2U/(B²r²) = 2×1000/(0.2²×0.125²) = 2000/(0.04×0.015625)<br>
+= 2000/0.000625 = <strong>3.2×10⁶ C/kg</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（回旋加速器）：D 形盒半径 R=0.5m，磁场 B=1.5T，加速质子的最大动能 E_k。如果加速电压为 50kV，需要加速多少圈？（m_p=1.67×10⁻²⁷kg）</div>
+<div class="a"><strong>解：</strong>v_max = qBR/m = 1.6×10⁻¹⁹×1.5×0.5/(1.67×10⁻²⁷) = 1.2×10⁻¹⁹/(1.67×10⁻²⁷)<br>
+≈ 7.19×10⁷ m/s。<br>
+E_k = ½mv_max² = ½×1.67×10⁻²⁷×(7.19×10⁷)² = <strong>4.32×10⁻¹² J</strong>。<br>
+换算为 eV：E_k = 4.32×10⁻¹²/(1.6×10⁻¹⁹) ≈ 27 MeV。<br>
+每圈加速 2 次，每次增加 2qU=2×50=100keV。<br>
+圈数 n = 27×10³/100 ≈ <strong>270 圈</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（电磁感应综合）：光滑平行导轨间距 L=0.5m，B=0.8T，电阻 R=4Ω，质量 m=0.2kg 的导体棒从静止开始水平向右在 F=1N 恒力作用下运动，求（1）最大速度；（2）最大速度时的功率。</div>
+<div class="a"><strong>解：</strong>（1）当安培力等于外力时速度最大。<br>
+F_安 = BIL = B·(BLv/R)·L = B²L²v/R。<br>
+F = B²L²v_m/R → v_m = FR/(B²L²) = 1×4/(0.8²×0.5²) = 4/(0.64×0.25) = <strong>25 m/s</strong>。<br>
+（2）最大功率 P = F·v_m = 1×25 = <strong>25 W</strong>。<br>
+此时 P 全部转化为电阻上的热功率：P = I²R = (BLv_m/R)²R = B²L²v_m²/R = (0.4)²×625/4 = 25W ✓</div>
+</div>
+
+<div class="ex">
+<div class="q">例 5（含容电路）：光滑导轨间距 L=0.4m，B=0.5T，电容 C=10μF，导体棒以 v=2m/s 匀速向右切割磁感线，求电容器上的电荷量。</div>
+<div class="a"><strong>解：</strong>E = BLv = 0.5×0.4×2 = 0.4 V。<br>
+电容器两端电压 U = E = 0.4V。<br>
+Q = CU = 10×10⁻⁶×0.4 = <strong>4×10⁻⁶ C = 4 μC</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 速度选择器 E=3000V/m，B=0.3T，求通过的粒子速度 <span class="hw-a">答案：10⁴ m/s</span></div>
+<div class="hw-q">• 质谱仪 U=500V，B=0.1T，r=0.2m，求 q/m <span class="hw-a">答案：2.5×10⁵ C/kg</span></div>
+<div class="hw-q">• 导体棒在磁场中达到最大速度时的能量关系 <span class="hw-a">答案：F·v = I²R（外力功率=热功率）</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
+<script>
+window.addEventListener('scroll',function(){
+  var btn=document.querySelector('.back-to-top');
+  if(btn)btn.classList.toggle('show',window.scrollY>300);
+});
+</script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){var btn=document.querySelector('.back-to-top');if(btn)btn.classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

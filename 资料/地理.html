@@ -3,150 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>初中地理 · 思贤学习站</title>
+<title>初中地理专题 · 思贤学习站</title>
 <link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
-.head{max-width:1000px;margin:0 auto;padding:20px 20px 0}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
 .head a{color:#888;font-size:13px;text-decoration:none}
-.head h1{font-size:26px;color:#1a1a2e;margin:8px 0 16px}
-.tab-bar{display:flex;gap:0;max-width:1000px;margin:0 auto;border-bottom:2px solid #3498db}
-.tab-btn{padding:10px 28px;font-size:15px;font-weight:600;cursor:pointer;border:none;background:#fff;color:#888;transition:all .2s;border-radius:8px 8px 0 0;margin-bottom:-2px}
-.tab-btn:hover{color:#3498db}
-.tab-btn.active{background:#3498db;color:#fff}
-.body{max-width:1000px;margin:0 auto;background:#fff;min-height:300px;padding:24px}
-.pane{display:none;position:relative}
-.pane.active{display:block}
-.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;padding:30px 20px}
-.lock-screen .lk-icon{font-size:46px;margin-bottom:10px}
-.lock-screen .lk-title{font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-screen .lk-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:18px;max-width:340px}
-.lock-screen .lk-box{background:#f5f7fa;border-radius:10px;padding:14px 18px;max-width:360px;width:100%;text-align:left}
-.lock-screen .lk-box .lb-t{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.lock-screen .lk-box .lb-txt{font-size:13px;color:#555;line-height:1.8;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #eee;margin-bottom:8px;text-align:left;text-indent:0}
-.lock-screen .lk-box .lb-btn{display:block;width:100%;padding:9px;background:#1a73e8;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
-.lock-screen .lk-box .lb-btn:hover{opacity:.85}
-.lock-screen .lk-hint{font-size:11px;color:#bbb;margin-top:6px}
-.lock-screen .lk-contact{display:none;margin-top:14px;width:100%;max-width:360px;text-align:center}
-.lock-screen .lk-contact.show{display:block}
-.lock-screen .lc-dv{height:1px;background:#eee;margin-bottom:12px}
-.lock-screen .lc-t{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
-.lock-screen .lc-d{font-size:12px;color:#999;margin-bottom:10px}
-.lock-screen .lc-wx{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
-.lock-screen .lc-wx label{font-size:13px;color:#666}
-.lock-screen .lc-wx strong{font-size:15px;color:#e74c3c}
-.lock-screen .lc-wx-btn{padding:5px 14px;background:#fff;border:1px solid #e74c3c;color:#e74c3c;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600}
-.lock-screen .lc-wx-btn:hover{background:#e74c3c;color:#fff}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #6E8FC4;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#6E8FC4;margin-bottom:6px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(110,143,196,0.08);color:#6E8FC4;margin-bottom:10px}
+.top p{font-size:14px;color:#555;margin-bottom:6px}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:12px 16px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#6E8FC4;margin-bottom:3px}
+.top .ex .a{color:#666;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:4px}
+.top .ex .a strong{color:#6E8FC4}
+.top .hw{background:#f0f7ff;border-radius:8px;padding:12px 16px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:10px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
 
-.cd{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:3px solid #3498db}
-.cd .t{font-weight:700;font-size:14px;color:#3498db;margin-bottom:4px}
-.cd .d{font-size:13px;color:#555;line-height:1.7}
-.tg{display:inline-block;font-size:11px;background:#eaf4fb;color:#3498db;padding:1px 8px;border-radius:4px;margin:2px}
-.kb{max-width:800px;margin:0 auto}
-.kb h2{font-size:20px;margin:28px 0 12px;padding-left:12px;border-left:4px solid #e74c3c;color:#2d3436}
-.kb h3{font-size:16px;margin:16px 0 8px;color:#444}
-.kb p{margin-bottom:8px;text-indent:2em;font-size:14px;line-height:1.9}
-.kb .hl{color:#e74c3c;font-weight:700}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../js/theme.js"></script>
 </head>
 <body>
-<div class="head"><a href="../资料库.html">← 返回资料库</a><h1>初中地理</h1></div>
-<div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('model',this)">🌍 模型</button>
-  <button class="tab-btn" onclick="switchTab('knowledge',this)">📖 知识点大全</button>
-</div>
-<div class="body">
-
-<div class="pane active" id="tabModel">
-<div class="lock-screen">
-  <div class="lk-icon">🔒</div>
-  <div class="lk-title">内容未解锁</div>
-  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
-  <div class="lk-box">
-    <div class="lb-t">📋 转发文案</div>
-    <div class="lb-txt">📢 商河家长注意！我发现一个宝藏家教资源站 👉 sixian-edu.github.io/sixian-edu 数学几何模型带图解🧊、物理公式速记📐、化学方程式汇总⚗️，各科知识点整理得太全了！孩子用了成绩明显进步👍 强烈推荐给各位家长，免费资料随便看，需要上门辅导的也可以加老师微信咨询～</div>
-    <button class="lb-btn" onclick="copyTxt(this)">复制文案 · 分享给好友</button>
-  </div>
-  <div class="lk-contact">
-    <div class="lc-dv"></div>
-    <div class="lc-t">📞 已分享？联系老师</div>
-    <div class="lc-d">将截图发给老师，验证后即可解锁</div>
-    <div class="lc-wx">
-      <label>微信号：</label><strong>155-6412-8008</strong>
-      <button class="lc-wx-btn" onclick="copyWx()">复制微信号</button>
-    </div>
-  </div>
-
-  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
-</div>
-
-
-<div class="pane" id="tabKnowledge">
-<div class="lock-screen">
-  <div class="lk-icon">🔒</div>
-  <div class="lk-title">内容未解锁</div>
-  <div class="lk-desc">转发推荐给好友，即可解锁完整学习内容</div>
-  <div class="lk-box">
-    <div class="lb-t">📋 转发文案</div>
-    <div class="lb-txt">📢 商河家长注意！我发现一个宝藏家教资源站 👉 sixian-edu.github.io/sixian-edu 数学几何模型带图解🧊、物理公式速记📐、化学方程式汇总⚗️，各科知识点整理得太全了！孩子用了成绩明显进步👍 强烈推荐给各位家长，免费资料随便看，需要上门辅导的也可以加老师微信咨询～</div>
-    <button class="lb-btn" onclick="copyTxt(this)">复制文案 · 分享给好友</button>
-  </div>
-  <div class="lk-contact">
-    <div class="lc-dv"></div>
-    <div class="lc-t">📞 已分享？联系老师</div>
-    <div class="lc-d">将截图发给老师，验证后即可解锁</div>
-    <div class="lc-wx">
-      <label>微信号：</label><strong>155-6412-8008</strong>
-      <button class="lc-wx-btn" onclick="copyWx()">复制微信号</button>
-    </div>
-  </div>
-
-  <div class="lk-hint">复制后分享到微信好友或朋友圈</div>
-</div>
-
-
-</div>
-<script>
-function switchTab(name, btn){
-  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
-  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
-  btn.classList.add('active');
-  document.getElementById('tab'+name.charAt(0).toUpperCase()+name.slice(1)).classList.add('active');
-}
-function copyTxt(btn){
-  var txt = btn.closest('.lk-box').querySelector('.lb-txt').textContent;
-  var hint = document.querySelector('.pane.active .lk-hint');
-  var contact = document.querySelector('.pane.active .lk-contact');
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(txt).then(function(){
-      btn.textContent = '\u2705 \u5df2\u590d\u5236\uff0c\u5206\u4eab\u540e\u8054\u7cfb\u8001\u5e08\u89e3\u9501\u5168\u90e8\u5185\u5bb9';
-      hint.textContent = '\u2705 \u5df2\u590d\u5236\uff01\u5206\u4eab\u540e\u6dfb\u52a0\u8001\u5e08\u5fae\u4fe1\u89e3\u9501';
-      if(contact) contact.classList.add('show');
-    });
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = txt; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-    btn.textContent = '\u2705 \u5df2\u590d\u5236\u3000\u8054\u7cfb\u8001\u5e08\u89e3\u9501';
-    hint.textContent = '\u2705 \u5df2\u590d\u5236\uff01\u5206\u4eab\u540e\u6dfb\u52a0\u8001\u5e08\u5fae\u4fe1\u89e3\u9501';
-    if(contact) contact.classList.add('show');
-  }
-}
-function copyWx(){
-  var wx = document.querySelector('.pane.active .lc-wx strong').textContent;
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(wx);
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = wx; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-  }
-  alert('\u5fae\u4fe1\u53f7\u5df2\u590d\u5236\uff0c\u53bb\u5fae\u4fe1\u6dfb\u52a0\u8001\u5e08\u5427\uff01');
-}
-</script>
-</body>
-</html>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中地理专题</h1><p class="sub">地球地图 · 世界地理 · 中国地理 · 气候</p></div>
+<div class="container"><div class="top"><h2>专题一：地球与地图</h2><span class="tag">自然地理</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>经线和纬线：纬线平行于赤道，指示东西方向；经线连接南北两极，指示南北方向。东西半球分界线：20°W和160°E。地图三要素：比例尺、方向、图例。等高线：密集→坡度陡，稀疏→坡度缓。</p><div class="ex"><div class="q">例：甲地(40°N, 116°E)属于哪个半球</div><div class="a"><strong>解：</strong>北半球（北纬）、东半球（116°E在20°W向东到160°E范围内）</div></div><div class="ex"><div class="q">例：比例尺1:500000，地图上两点距离4cm，实际距离多少</div><div class="a"><strong>解：</strong>实际距离=4×500000=2000000cm=20km</div></div><div class="hw"><div class="hw-q">• 赤道周长约____km，纬度每差1°距离约____km <span class="hw-a">答案：4万，111</span></div><div class="hw-q">• 等高线向海拔高处凸出为____（山谷/山脊） <span class="hw-a">答案：山谷</span></div></div></div><div class="top"><h2>专题二：世界地理</h2><span class="tag">世界地理</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>七大洲：亚洲、非洲、北美洲、南美洲、南极洲、欧洲、大洋洲。四大洋：太平洋（最大）、大西洋、印度洋、北冰洋（最小）。世界主要气候类型分布：热带雨林气候（赤道附近）、地中海气候（30°-40°大陆西岸）、温带海洋性气候（40°-60°大陆西岸）。</p><div class="ex"><div class="q">例：亚洲的地势特征及对河流分布的影响</div><div class="a"><strong>解：</strong>地势中部高四周低，河流呈放射状向四周分流。长江向东南流入太平洋，黄河向东流入太平洋，恒河向南流入印度洋，鄂毕河向北流入北冰洋。</div></div><div class="ex"><div class="q">例：南极洲为什么被称为"冰雪高原"</div><div class="a"><strong>解：</strong>南极洲平均海拔2350m，居七大洲之首。覆盖约2000万km³的冰盖，是地球上最大的淡水资源库。由于气温极低，冰雪终年不化，形成巨大冰盖。</div></div><div class="hw"><div class="hw-q">• 世界上最大的热带雨林分布在____ <span class="hw-a">答案：南美洲亚马孙平原</span></div><div class="hw-q">• 苏伊士运河沟通了____海和____海 <span class="hw-a">答案：地中，红</span></div></div></div><div class="top"><h2>专题三：中国地理</h2><span class="tag">中国地理</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>中国位置：东半球、北半球，亚洲东部、太平洋西岸。领土面积约960万km²（世界第三）。地形特征：西高东低，呈三级阶梯。季风区与非季风区分界线：大兴安岭—阴山—贺兰山—巴颜喀拉山—冈底斯山。南水北调：东线、中线、西线工程。</p><div class="ex"><div class="q">例：我国降水的空间分布规律及影响因素</div><div class="a"><strong>解：</strong>由东南沿海向西北内陆递减。影响因素：海陆位置（距海远近）、夏季风（来自太平洋和印度洋）、地形阻挡。</div></div><div class="ex"><div class="q">例：秦岭-淮河一线的地理意义</div><div class="a"><strong>解：</strong>①一月0℃等温线 ②800mm年等降水量线 ③亚热带与暖温带分界 ④湿润区与半湿润区分界 ⑤南方与北方分界 ⑥水田与旱地分界</div></div><div class="hw"><div class="hw-q">• 黄河发源于____山脉，注入____海 <span class="hw-a">答案：巴颜喀拉，渤</span></div><div class="hw-q">• 我国最大的综合性工业基地是____ <span class="hw-a">答案：沪宁杭（长江三角洲）</span></div></div></div><div class="top"><h2>专题四：气候与自然环境</h2><span class="tag">气候</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>气温：纬度越高气温越低，海拔越高气温越低（每升高100m下降0.6℃）。降水：赤道多雨，两极少雨；中纬度沿海多雨、内陆少雨。我国气候特征：气候复杂多样，季风气候显著。灾害性天气：台风、洪涝、干旱、寒潮、沙尘暴。全球变暖：CO₂等温室气体增加导致。</p><div class="ex"><div class="q">例：山地A山脚（海拔200m）气温20℃，山顶（海拔2200m）气温约多少</div><div class="a"><strong>解：</strong>温差=(2200-200)/100×0.6=12℃，山顶≈8℃</div></div><div class="ex"><div class="q">例：全球变暖的主要原因和危害</div><div class="a"><strong>解：</strong>原因：化石燃料燃烧释放大量CO₂、森林砍伐减少CO₂吸收。危害：海平面上升（淹没沿海低地）、极端天气增多、物种灭绝加快。</div></div><div class="hw"><div class="hw-q">• 我国冬季南北温差大的主要原因 <span class="hw-a">答案：纬度差异大、冬季风影响</span></div><div class="hw-q">• 台风在____季登陆我国东南沿海，带来的好处是____ <span class="hw-a">答案：夏秋，缓解旱情</span></div></div></div></div><div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县</div><button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+</body></html>

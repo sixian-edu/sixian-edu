@@ -25,6 +25,10 @@ h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spaci
 .svg-wrap img{max-width:100%;border-radius:6px;border:1px solid #eee;display:block;margin:0 auto}
 .formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
 .sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../js/theme.js"></script>
 </head>
@@ -517,5 +521,7 @@ h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spaci
 </div>
 
 </div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 </body>
 </html>

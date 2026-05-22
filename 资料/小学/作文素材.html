@@ -68,6 +68,10 @@ h1{text-align:center;font-size:30px;color:#2e7d32;margin-bottom:4px}
 @media(max-width:600px){
   h1{font-size:24px}
 }
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../../js/theme.js"></script>
 </head>
@@ -387,5 +391,7 @@ document.getElementById('pExample').innerHTML = '📖 参考例句：' + words[0
 </div>
 
 </div><!-- /wrap -->
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 </body>
 </html>

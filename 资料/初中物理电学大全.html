@@ -10,24 +10,36 @@
 body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
 .wrap{max-width:880px;margin:0 auto}
 .back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
-h1{text-align:center;font-size:26px;color:#9b59b6;margin-bottom:6px}
+h1{text-align:center;font-size:28px;color:#9b59b6;margin-bottom:4px;letter-spacing:2px}
 .sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #9b59b6}
-.card .t{font-weight:700;font-size:16px;color:#9b59b6;margin-bottom:8px}
-.card .d{font-size:13px;color:#555;line-height:1.8}
-.card .d b{color:#333}
-.tag{display:inline-block;font-size:11px;background:#f3e8ff;color:#7b1fa2;padding:2px 10px;border-radius:4px;margin:2px}
+.sec-title{font-size:19px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #9b59b6}
+.kp{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:3px solid #9b59b6}
+.kp .kp-t{font-weight:700;font-size:16px;color:#9b59b6;margin-bottom:8px}
+.kp .kp-d{font-size:14px;color:#444;line-height:1.9}
+.kp .kp-d b{color:#9b59b6}
+.tag{display:inline-block;font-size:12px;background:#f3e8ff;color:#9b59b6;padding:2px 10px;border-radius:4px;margin:2px}
 .tag.red{background:#fde8e8;color:#c0392b}
 .tag.green{background:#e6f7e6;color:#2d7d46}
 .tag.orange{background:#fff3e0;color:#e65100}
 .tag.blue{background:#e3f2fd;color:#1565c0}
-.svg-wrap{text-align:center;margin:12px 0}
-.svg-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
-.formula{background:#f3e8ff;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#7b1fa2;font-weight:600;font-family:monospace}
-.formula.blue{background:#e3f2fd;color:#1565c0}
-.formula.orange{background:#fff3e0;color:#e65100}
-.formula.green{background:#e6f7e6;color:#2d7d46}
-.sec-title{font-size:18px;font-weight:700;color:#333;margin:24px 0 12px;padding-left:12px;border-left:4px solid #9b59b6}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;border:1px solid #eee;display:block;margin:0 auto;background:#fff}
+.formula{background:#f3e8ff;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;text-align:center;color:#9b59b6;font-weight:600;font-family:monospace}
+.formula.b{background:#e3f2fd;color:#1565c0}
+.formula.g{background:#e6f7e6;color:#2d7d46}
+.formula.o{background:#fff3e0;color:#e65100}
+.ex{background:#f8f0ff;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #9b59b6}
+.ex .q{font-size:14px;color:#444;line-height:1.8}
+.ex .q .hl{color:#c0392b;font-weight:700}
+.ex .q .hl2{color:#9b59b6;font-weight:700}
+.ex .a{background:#e6f7e6;border-radius:8px;padding:10px 14px;margin:10px 0 0;font-size:14px;color:#2d7d46;line-height:1.8;display:none}
+.ex .a.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#fff;color:#9b59b6;border:1px solid #9b59b6;border-radius:6px;font-size:12px;cursor:pointer;margin-top:8px}
+.sol-btn:hover{background:#9b59b6;color:#fff}
+.hw{background:#f8f9fc;border-radius:12px;padding:14px 18px;margin:12px 0;border-left:4px solid #7f8c8d}
+.hw .hw-q{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.hw .hw-a{font-size:14px;color:#27ae60;line-height:1.8;display:none}
+.hw .hw-a.show{display:block}
 .step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:8px 12px;background:#f9fbe7;border-radius:8px}
 .step-num{flex:0 0 26px;height:26px;border-radius:50%;background:#9b59b6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
 .step-c{flex:1;font-size:13px;color:#555;line-height:1.7}
@@ -36,21 +48,13 @@ table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
 td,th{border:1px solid #ddd;padding:8px 10px;text-align:center}
 th{background:#9b59b6;color:#fff;font-weight:600}
 tr:nth-child(even){background:#f9f9f9}
-.example-q{background:#f8f9fc;border-radius:8px;padding:14px;margin:10px 0;border-left:3px solid #e74c3c}
-.example-q .eq-t{font-weight:700;font-size:14px;color:#c0392b;margin-bottom:4px}
-.example-q .eq-d{font-size:13px;color:#555;line-height:1.8}
-.solution{background:#e6f7e6;border-radius:8px;padding:12px 14px;margin:10px 0;border-left:3px solid #2d7d46;display:none}
-.solution .sol-t{font-weight:700;font-size:13px;color:#2d7d46;margin-bottom:4px}
-.solution .sol-d{font-size:13px;color:#444;line-height:1.8}
-.sol-btn{display:inline-block;padding:4px 16px;background:#f3e8ff;color:#7b1fa2;border:1px solid #7b1fa2;border-radius:6px;font-size:12px;cursor:pointer;margin-top:6px}
-.sol-btn:hover{background:#7b1fa2;color:#fff}
 .tip-box{background:#fff8e1;border-radius:10px;padding:10px 14px;margin:10px 0;border-left:4px solid #ffa000}
 .tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
 .tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
-@media(max-width:640px){
-  h1{font-size:22px}
-  td,th{padding:5px;font-size:12px}
-}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#9b59b6);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+@media(max-width:640px){h1{font-size:24px}.kp{padding:14px 16px}}
 </style>
 <script src="../js/theme.js"></script>
 </head>
@@ -58,13 +62,14 @@ tr:nth-child(even){background:#f9f9f9}
 <div class="wrap">
 <a class="back" href="../学习专区.html">← 返回学习专区</a>
 <h1>💡 初中物理 · 电学大全</h1>
-<p class="sub">电路·欧姆定律·电功率·电磁·实验·中考全覆盖</p>
+<p class="sub">电路·欧姆定律·电功率·焦耳定律·家庭电路·电磁·中考全覆盖</p>
 
-<!-- ═══════════ 电荷与电流 ═══════════ -->
+<!-- ═══════════ 一、电荷与电流 ═══════════ -->
 <div class="sec-title">一、电荷与电流</div>
-<div class="card">
-  <div class="t">⚡ 电荷</div>
-  <div class="d">
+
+<div class="kp">
+  <div class="kp-t">⚡ 电荷</div>
+  <div class="kp-d">
     自然界只有 <b>正电荷</b> 和 <b>负电荷</b> 两种。<br>
     <span class="tag red">同种电荷相互排斥，异种电荷相互吸引</span>
     <span class="tag green">用验电器检验物体是否带电</span>
@@ -76,9 +81,9 @@ tr:nth-child(even){background:#f9f9f9}
   <div class="formula">摩擦起电：电子得失 &nbsp;|&nbsp; 带电体能吸引轻小物体</div>
 </div>
 
-<div class="card">
-  <div class="t">⚡ 电流</div>
-  <div class="d">
+<div class="kp">
+  <div class="kp-t">⚡ 电流</div>
+  <div class="kp-d">
     电荷的 <b>定向移动</b> 形成电流。<br>
     <span class="tag red">电流方向：正电荷定向移动的方向</span>
     <span class="tag green">外部电路：从正极 → 用电器 → 负极</span>
@@ -89,64 +94,22 @@ tr:nth-child(even){background:#f9f9f9}
   <div class="formula">电流方向：正极 → 负极（外部）&nbsp;|&nbsp; 电子方向：负极 → 正极</div>
 </div>
 
-<!-- ═══════════ 电路 ═══════════ -->
+<!-- ═══════════ 二、电路 ═══════════ -->
 <div class="sec-title">二、电路与电路图</div>
-<div class="card">
-  <div class="t">🔌 电路组成</div>
-  <div class="d">
-    电路由 <b>电源、用电器、开关、导线</b> 四部分组成。<br><br>
-    <span class="tag red">电源：提供电能</span>（干电池、蓄电池、发电机）<br>
-    <span class="tag green">用电器：消耗电能</span>（灯泡、电动机、电炉）<br>
-    <span class="tag blue">开关：控制电路通断</span><br>
-    <span class="tag orange">导线：连接电路</span><br><br>
-    <b>三种电路状态：</b><br>
-    <span class="tag">通路（闭合电路）</span> — 处处连通，电器工作<br>
-    <span class="tag red">断路（开路）</span> — 某处断开，无电流<br>
-    <span class="tag orange">短路</span> — 电流不经过用电器直接回负极<br>
-    <span style="color:#c0392b;font-weight:600">⚠️ 电源短路会烧坏电源，绝对要避免！</span>
-  </div>
-  <!-- 电路图SVG -->
-  <div class="svg-wrap">
-    <svg width="560" height="120" viewBox="0 0 560 120">
-      <text x="15" y="30" font-size="13" fill="#333" font-weight="700">串联电路：</text>
-      <!-- 电池 -->
-      <line x1="130" y1="50" x2="130" y2="30" stroke="#333" stroke-width="2"/>
-      <line x1="115" y1="30" x2="145" y2="30" stroke="#333" stroke-width="3"/>
-      <line x1="120" y1="24" x2="140" y2="24" stroke="#333" stroke-width="2"/>
-      <text x="130" y="68" font-size="10" fill="#888" text-anchor="middle">电源</text>
-      <!-- 导线 -->
-      <line x1="145" y1="30" x2="250" y2="30" stroke="#333" stroke-width="2"/>
-      <!-- 灯泡1 -->
-      <circle cx="270" cy="30" r="14" fill="none" stroke="#e67e22" stroke-width="2"/>
-      <line x1="260" y1="30" x2="280" y2="30" stroke="#e67e22" stroke-width="2"/>
-      <text x="270" y="55" font-size="10" fill="#888" text-anchor="middle">L₁</text>
-      <!-- 导线 -->
-      <line x1="284" y1="30" x2="370" y2="30" stroke="#333" stroke-width="2"/>
-      <!-- 灯泡2 -->
-      <circle cx="390" cy="30" r="14" fill="none" stroke="#e67e22" stroke-width="2"/>
-      <line x1="380" y1="30" x2="400" y2="30" stroke="#e67e22" stroke-width="2"/>
-      <text x="390" y="55" font-size="10" fill="#888" text-anchor="middle">L₂</text>
-      <line x1="404" y1="30" x2="470" y2="30" stroke="#333" stroke-width="2"/>
-      <!-- 开关 -->
-      <line x1="470" y1="30" x2="500" y2="30" stroke="#333" stroke-width="2"/>
-      <line x1="500" y1="30" x2="520" y2="18" stroke="#c0392b" stroke-width="2"/>
-      <circle cx="520" cy="18" r="3" fill="#c0392b"/>
-      <text x="510" y="55" font-size="10" fill="#888" text-anchor="middle">S</text>
-      <!-- 回路 -->
-      <line x1="130" y1="50" x2="130" y2="90" stroke="#333" stroke-width="2"/>
-      <line x1="130" y1="90" x2="520" y2="90" stroke="#333" stroke-width="2"/>
-      <line x1="520" y1="90" x2="520" y2="18" stroke="#333" stroke-width="2"/>
 
-      <text x="15" y="100" font-size="13" fill="#333" font-weight="700">并联电路：</text>
-      <text x="15" y="115" font-size="11" fill="#888">(下方为并联示意)</text>
-    </svg>
+<div class="kp">
+  <div class="kp-t">🔌 电路组成与状态</div>
+  <div class="kp-d">
+    电路由 <b>电源、用电器、开关、导线</b> 四部分组成。<br>
+    <span class="tag red">电源：提供电能</span><span class="tag green">用电器：消耗电能</span><span class="tag blue">开关：控制电路</span><br>
+    <b>三种状态：</b>通路（电器工作）→断路（无电流）→短路（危险！）
   </div>
+  <div class="chart-wrap"><img src="charts/topic_phy_circuit.svg" alt="电路图"></div>
 </div>
 
-<!-- ═══════════ 串并联 ═══════════ -->
-<div class="card">
-  <div class="t">🔄 串联与并联对比</div>
-  <div class="d">
+<div class="kp">
+  <div class="kp-t">🔄 串联与并联对比</div>
+  <div class="kp-d">
     <table>
       <tr><th>比较项</th><th>串联</th><th>并联</th></tr>
       <tr><td><b>电流路径</b></td><td>只有一条</td><td>多条（有分支）</td></tr>
@@ -157,420 +120,335 @@ tr:nth-child(even){background:#f9f9f9}
       <tr><td><b>实例</b></td><td>节日小彩灯、开关与灯</td><td>家庭用电器、路灯</td></tr>
     </table>
   </div>
-  <div class="formula blue">串联：I₁=I₂，U=U₁+U₂，R=R₁+R₂ &nbsp;|&nbsp; 并联：I=I₁+I₂，U₁=U₂，R=(R₁R₂)/(R₁+R₂)</div>
+  <div class="formula b">串联：I₁=I₂，U=U₁+U₂，R=R₁+R₂ &nbsp;|&nbsp; 并联：I=I₁+I₂，U₁=U₂，R=(R₁R₂)/(R₁+R₂)</div>
 </div>
 
-<!-- ═══════════ 电表使用 ═══════════ -->
+<div class="ex">
+  <div class="q"><b>例题 1</b>：由同种材料制成的两段导体，长度相同但横截面积不同，串联在同一电路中，通过谁的电流大？<br>
+  <span class="hl">解：</span>串联电路电流处处相等，所以通过两段导体的电流 <b>一样大</b>。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">易错点：很多人会认为粗的电阻小电流大，但那是针对"两端电压相同时"说的。串联时电流相等。</div>
+</div>
+
+<!-- ═══════════ 三、电表与滑动变阻器 ═══════════ -->
 <div class="sec-title">三、电流表·电压表·滑动变阻器</div>
-<div class="card">
-  <div class="t">📊 电流表使用规则</div>
-  <div class="d">
+
+<div class="kp">
+  <div class="kp-t">📊 电流表使用规则</div>
+  <div class="kp-d">
     <div class="step"><div class="step-num">1</div><div class="step-c"><b>串联</b> — 电流表必须 <b>串联</b> 在被测电路中</div></div>
     <div class="step"><div class="step-num">2</div><div class="step-c"><b>正进负出</b> — 电流从 <b>正接线柱</b> 流入，从 <b>负接线柱</b> 流出</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-c"><b>不超量程</b> — 被测电流不能超过电流表量程（0~0.6A 或 0~3A）</div></div>
     <div class="step"><div class="step-num">4</div><div class="step-c"><b>不允许直接接电源</b> — 电流表不能直接接在电源两极</div></div>
-    <br>
-    <span class="tag orange">试触法：</span> 先大量程"试触"，偏转太小换小量程，偏转太大换更大量程
+    <span class="tag orange">试触法：先大量程试触，偏转太小换小量程</span>
   </div>
 </div>
 
-<div class="card">
-  <div class="t">📊 电压表使用规则</div>
-  <div class="d">
+<div class="kp">
+  <div class="kp-t">📊 电压表使用规则</div>
+  <div class="kp-d">
     <div class="step"><div class="step-num">1</div><div class="step-c"><b>并联</b> — 电压表必须 <b>并联</b> 在被测电路两端</div></div>
     <div class="step"><div class="step-num">2</div><div class="step-c"><b>正进负出</b> — 电流从正接线柱流入，负接线柱流出</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-c"><b>不超量程</b> — 被测电压不能超过电压表量程（0~3V 或 0~15V）</div></div>
     <div class="step"><div class="step-num">4</div><div class="step-c"><b>可以直接接电源</b> — 电压表可以直接接在电源两极（测电源电压）</div></div>
-    <br>
-    <span class="tag red">⚠️ 电压表相当于"断路"</span> — 如果电压表串联在电路中，相当于断路，用电器不工作
+    <span class="tag red">⚠️ 电压表相当于"断路"</span>
   </div>
 </div>
 
-<div class="card">
-  <div class="t">🔧 滑动变阻器</div>
-  <div class="d">
-    <b>原理：</b>通过改变接入电路中电阻丝的 <b>长度</b> 来改变电阻。<br>
-    <b>符号：</b>用 <span style="font-family:monospace;font-weight:700">——┃——</span> 表示。<br><br>
-    <b>使用规则：</b><br>
-    <span class="tag red">一上一下</span> — 必须各接一个上接线柱和一个下接线柱<br>
-    <span class="tag green">串联接入</span> — 滑动变阻器要串联在电路中<br>
-    <span class="tag orange">闭合前调最大</span> — 闭合开关前，应将滑片调到阻值最大端<br>
-    <span class="tag blue">看下不看上</span> — 接入电路的有效电阻取决于下接线柱的位置<br><br>
-    <b>作用：</b>保护电路 + 改变电路中的电流和电压
-  </div>
-  <div class="example-q">
-    <div class="eq-t">📌 滑动变阻器接法判断</div>
-    <div class="eq-d">
-      下接线柱接 A（左端），滑片 P 向右移 → 接入电阻变 <b>大</b> → 电流变 <b>小</b><br>
-      下接线柱接 B（右端），滑片 P 向右移 → 接入电阻变 <b>小</b> → 电流变 <b>大</b><br>
-      <span style="color:#c0392b">口诀："一上一下连入串，下柱在哪看哪端，远离哪端电阻大"</span>
-    </div>
+<div class="kp">
+  <div class="kp-t">🔧 滑动变阻器</div>
+  <div class="kp-d">
+    <b>原理：</b>改变接入电路中电阻丝的 <b>长度</b> 来改变电阻。<br>
+    <b>使用：</b><span class="tag red">一上一下</span><span class="tag green">串联接入</span><span class="tag orange">闭合前调最大</span><br>
+    <b>口诀：</b>"下柱在哪看哪端，远离哪端电阻大"
   </div>
 </div>
 
-<!-- ═══════════ 欧姆定律 ═══════════ -->
+<!-- ═══════════ 四、欧姆定律 ═══════════ -->
 <div class="sec-title">四、欧姆定律</div>
-<div class="card">
-  <div class="t">📐 I = U / R</div>
-  <div class="svg-wrap"><img src="../gen_svg_out/phy_11_ohm_graph.svg" width="420" height="263" alt="欧姆定律 I-U 曲线"></div>
-  <div class="d">
-    导体中的电流与导体两端的电压成正比，与导体的电阻成反比。<br><br>
-    <span class="tag red">I = U/R</span>
-    <span class="tag green">U = IR</span>
-    <span class="tag blue">R = U/I</span>
+
+<div class="kp">
+  <div class="kp-t">📐 I = U / R</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_ohm.svg" alt="欧姆定律 I-U 曲线"></div>
+  <div class="kp-d">
+    导体中的电流与导体两端的电压成正比，与导体的电阻成反比。<br>
+    <span class="tag red">I = U/R</span><span class="tag green">U = IR</span><span class="tag blue">R = U/I</span>
     <br><br>
-    <b>I-U 图像分析：</b><br>
-    <span class="tag">定值电阻：I-U图像为<b>过原点直线</b>（斜率=1/R）</span>
-    <span class="tag orange">小灯泡：I-U图像为<b>曲线</b>（灯丝电阻随温度升高而增大）</span>
-    <br><br>
-    <b>重要结论：</b>导体的电阻是导体本身的性质，<b>不随U、I变化</b>（定值电阻）<br>
-    R = U/I 是 <b>计算式</b>，不是决定式（不能说R与U成正比，与I成反比）
+    <b>重要：</b>导体的电阻是导体本身的性质，<b>不随U、I变化</b>（定值电阻）<br>
+    R = U/I 是 <b>计算式</b>，不是决定式！
   </div>
-  <div class="formula blue">I = U/R &nbsp;|&nbsp; 串联分压：U₁/U₂ = R₁/R₂ &nbsp;|&nbsp; 并联分流：I₁/I₂ = R₂/R₁</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_resistor.svg" alt="串并联电阻"></div>
+  <div class="formula b">I = U/R &nbsp;|&nbsp; 串联分压：U₁/U₂ = R₁/R₂ &nbsp;|&nbsp; 并联分流：I₁/I₂ = R₂/R₁</div>
 </div>
 
-<!-- ═══════════ 动态电路 ═══════════ -->
-<div class="card">
-  <div class="t">🔄 动态电路分析（中考重难点）</div>
-  <div class="d">
-    <b>类型一：开关通断引起的动态变化</b><br>
-    <span class="tag red">解题思路</span> 开关闭合/断开 → 电路结构改变 → 总电阻变化 → 总电流变化 → 各支路变化<br><br>
-    <b>类型二：滑动变阻器引起的动态变化</b><br>
-    <span class="tag green">解题思路："串反并同"口诀</span><br>
-    <span class="tag">滑片移动 → 接入电阻变化 → 总电阻变化 → 总电流变化</span><br>
-    <span class="tag blue">与滑变串联的部分：电流电压变化与滑变变化相反</span><br>
-    <span class="tag orange">与滑变并联的部分：电流电压变化与滑变变化相同</span>
-  </div>
-  <button class="sol-btn" onclick="toggleSol(this)">👁️ 动态电路例题</button>
-  <div class="solution">
-    <div class="sol-t">✅ 例题解析</div>
-    <div class="sol-d">
-      <b>例：</b>R₁与滑动变阻器R₂串联，电压表测R₁两端电压。当滑片向右移动（R₂↑），电流表和电压表示数如何变化？<br><br>
-      <b>分析：</b><br>
-      ① R₂↑ → R<sub>总</sub> = R₁+R₂↑ → 增大<br>
-      ② I = U/R<sub>总</sub> → U不变，R总↑ → I↓（电流表示数<b>变小</b>）<br>
-      ③ U₁ = IR₁ → I↓，R₁不变 → U₁↓（电压表示数<b>变小</b>）<br><br>
-      <b>结论：</b>电流表↓，电压表↓
-    </div>
+<div class="kp">
+  <div class="kp-t">🔄 动态电路分析（中考重难点）</div>
+  <div class="kp-d">
+    <b>解题思路：</b>滑片移动 → 接入电阻变化 → 总电阻变化 → 总电流变化 → 各支路变化<br>
+    <span class="tag red">口诀：串反并同</span>
+    <span class="tag orange">与滑变串联的部分：变化相反</span>
+    <span class="tag blue">与滑变并联的部分：变化相同</span>
   </div>
 </div>
 
-<div class="card">
-  <div class="t">🔍 电路故障分析</div>
-  <div class="d">
-    <b>常见故障原因：</b><br><br>
+<div class="kp">
+  <div class="kp-t">🔍 电路故障分析</div>
+  <div class="kp-d">
     <table>
-      <tr><th>故障现象</th><th>可能原因</th><th>判断方法</th></tr>
-      <tr><td>灯泡不亮，电流表无示数</td><td><b>断路</b></td><td>电压表有示数→电压表所测部分断路</td></tr>
-      <tr><td>灯泡不亮，电流表有示数</td><td><b>短路</b></td><td>电压表无示数→电压表所测部分短路</td></tr>
-      <tr><td>一灯亮一灯不亮（串联）</td><td>不亮的灯<b>短路</b></td><td>电流表仍有示数</td></tr>
-      <tr><td>电流表示数过大</td><td>电路<b>短路</b>或总电阻过小</td><td>检查是否有短路</td></tr>
+      <tr><th>现象</th><th>原因</th><th>判断</th></tr>
+      <tr><td>灯不亮，A无示数</td><td><b>断路</b></td><td>V有示数→所测部分断路</td></tr>
+      <tr><td>灯不亮，A有示数</td><td><b>短路</b></td><td>V无示数→所测部分短路</td></tr>
+      <tr><td>A示数过大</td><td>短路或总电阻小</td><td>检查短路</td></tr>
     </table>
-    <div class="tip-box">
-      <div class="tip-t">💡 故障判断口诀</div>
-      <div class="tip-d">"电流表有示数→无断路；电压表有示数→所测部分无短路；电压无示数→所测部分短路或所测部分以外断路"</div>
-    </div>
+    <div class="tip-box"><div class="tip-t">💡口诀</div><div class="tip-d">"电流表有示数→无断路；电压表有示数→所测部分无短路"</div></div>
   </div>
 </div>
 
-<!-- ═══════════ 伏安法测电阻 ═══════════ -->
-<div class="card">
-  <div class="t">🧪 伏安法测电阻（实验）</div>
-  <div class="d">
+<div class="ex">
+  <div class="q"><b>例题 2</b>：R₁=10Ω与R₂=20Ω串联在6V电源上，求：(1)电流I (2)R₁两端电压<br>
+  <span class="hl">解：</span>R总=10+20=30Ω，I=U/R总=6/30=0.2A，U₁=IR₁=0.2×10=<b>2V</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">串联分压：U₁:U₂=R₁:R₂=1:2，6V分成2V和4V。并联分流相反：I₁:I₂=R₂:R₁。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 1：R₁=5Ω与R₂=10Ω并联在6V电源上，求：(1)总电阻 (2)干路电流</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">(1)R总=R₁R₂/(R₁+R₂)=50/15≈<b>3.33Ω</b> (2)I=U/R=6/3.33≈<b>1.8A</b></div>
+</div>
+
+<!-- ═══════════ 五、伏安法测电阻 ═══════════ -->
+<div class="sec-title">五、伏安法测电阻</div>
+
+<div class="kp">
+  <div class="kp-t">🧪 实验原理与步骤</div>
+  <div class="kp-d">
     <b>原理：</b>R = U/I（用电压表测U，电流表测I，计算R）<br>
-    <b>电路连接：</b>电流表串联，电压表并联在待测电阻两端<br>
-    <b>滑动变阻器作用：</b>① 保护电路 ② 改变电压多次测量<br><br>
-    <b>步骤：</b><br>
-    ① 按电路图连接实物（断开开关，滑变调最大）<br>
-    ② 闭合开关，调节滑变，记录 3 组U、I值<br>
-    ③ 分别计算 R = U/I，求平均值<br>
-    ④ 整理器材<br><br>
-    <span class="tag red">多次测量取平均值的目的是：减小误差</span><br>
-    <span class="tag orange">注意：连接时开关要断开，滑变调到最大阻值处</span>
+    <b>步骤：</b>①按电路图连接（断开开关，滑变调最大）②测3组U、I值③求R平均值<br>
+    <span class="tag red">多次测量取平均：减小误差</span>
+    <span class="tag orange">连接时开关断开，滑变调到最大</span>
   </div>
 </div>
 
-<!-- ═══════════ 电功率 ═══════════ -->
-<div class="sec-title">五、电功率</div>
-<div class="card">
-  <div class="t">💡 P = UI</div>
-  <div class="d">
-    <b>电功：</b>电流做的功。单位：J（焦耳）<br>
-    <b>电功率：</b>电流在单位时间内做的功。表示电流做功的快慢。<br><br>
-    <span class="tag red">P = W/t</span>
-    <span class="tag green">P = UI</span>
-    <span class="tag blue">P = I²R = U²/R</span>
+<!-- ═══════════ 六、电功率 ═══════════ -->
+<div class="sec-title">六、电功率</div>
+
+<div class="kp">
+  <div class="kp-t">💡 P = UI</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_power.svg" alt="电功率"></div>
+  <div class="kp-d">
+    <b>电功率：</b>电流在单位时间内做的功，表示电流做功的快慢。<br>
+    <span class="tag red">P = UI</span><span class="tag blue">P = I²R</span><span class="tag green">P = U²/R</span>
     <span class="tag orange">W = UIt</span>
     <br><br>
-    <b>额定功率 vs 实际功率：</b><br>
     <table>
       <tr><th></th><th>额定</th><th>实际</th></tr>
-      <tr><td><b>电压</b></td><td>额定电压（正常工作的电压）</td><td>实际电压（可能不同）</td></tr>
-      <tr><td><b>功率</b></td><td>额定功率（P<sub>额</sub>=U<sub>额</sub>I<sub>额</sub>）</td><td>实际功率（P<sub>实</sub>=U<sub>实</sub>I<sub>实</sub>）</td></tr>
-      <tr><td><b>灯泡亮度</b></td><td>—</td><td>取决于 <b>实际功率</b></td></tr>
+      <tr><td><b>电压</b></td><td>额定电压（正常工作电压）</td><td>实际电压（可能不同）</td></tr>
+      <tr><td><b>功率</b></td><td>额定功率</td><td>实际功率（决定亮度）</td></tr>
     </table>
   </div>
-  <div class="formula blue">P = UI = I²R = U²/R &nbsp;|&nbsp; 1度 = 1kW·h = 3.6×10⁶ J</div>
-  <div class="example-q">
-    <div class="eq-t">📌 典型计算</div>
-    <div class="eq-d">
-      <b>例：</b>标有"220V 100W"的灯泡，正常工作时电流多大？灯丝电阻多大？<br>
-      I = P/U = 100/220 ≈ <b>0.455A</b><br>
-      R = U²/P = 220²/100 = <b>484Ω</b><br><br>
-      <b>若实际电压为110V：</b>（灯丝电阻不变）<br>
-      P<sub>实</sub> = U<sub>实</sub>²/R = 110²/484 = <b>25W</b>（实际功率变小，灯泡变暗）
-    </div>
+  <div class="formula b">P = UI = I²R = U²/R &nbsp;|&nbsp; 1度 = 1kW·h = 3.6×10⁶ J</div>
+</div>
+
+<div class="kp">
+  <div class="kp-t">🧪 测小灯泡电功率</div>
+  <div class="kp-d">
+    <b>与测电阻的区别：</b>测电阻取平均为减小误差；测小灯泡功率不取平均（不同电压下P不同）<br>
+    <span class="tag blue">调节滑变使电压分别为 U额、1.2U额、0.8U额</span><br>
+    <span class="tag red">U实=U额 → 正常发光</span>
   </div>
 </div>
 
-<div class="card">
-  <div class="t">🧪 测小灯泡电功率（实验）</div>
-  <div class="d">
-    <b>原理：</b>P = UI（用电压表测U，电流表测I，计算P）<br><br>
-    <span class="tag red">与测电阻实验的区别：</span>
-    <span class="tag">测电阻取平均值为减小误差</span>
-    <span class="tag orange">测小灯泡功率不取平均值（不同电压下P不同）</span>
-    <br><br>
-    <b>实验要点：</b><br>
-    <span class="tag blue">调节滑变使电压分别为 U<sub>额</sub>、1.2U<sub>额</sub>、0.8U<sub>额</sub></span><br>
-    <span class="tag green">分别测量对应的电流，计算三种情况下的实际功率</span><br>
-    <span class="tag red">U<sub>实</sub> = U<sub>额</sub> 时 → P<sub>实</sub> = P<sub>额</sub>（正常发光）</span>
-  </div>
-  <button class="sol-btn" onclick="toggleSol(this)">👁️ 常见设问</button>
-  <div class="solution">
-    <div class="sol-t">✅ 实验常见设问</div>
-    <div class="sol-d">
-      <b>Q1：</b>小灯泡不亮、电流表有示数、电压表无示数 → <b>小灯泡短路</b><br>
-      <b>Q2：</b>小灯泡不亮、电流表无示数、电压表有示数（接近电源电压）→ <b>小灯泡断路</b><br>
-      <b>Q3：</b>移动滑片，发现小灯泡忽亮忽灭 → <b>接触不良</b><br>
-      <b>Q4：</b>小灯泡亮度变化但不明显 → <b>滑动变阻器规格不合适</b>（阻值过小或过大）<br>
-      <b>Q5：</b>小灯泡的U-I图像为什么是曲线？→ <b>灯丝电阻随温度升高而增大</b>
-    </div>
-  </div>
+<div class="ex">
+  <div class="q"><b>例题 3</b>：标有"220V 100W"的灯泡，(1)正常工作时电流多大？(2)灯丝电阻多大？(3)接110V时实际功率多大？<br>
+  <span class="hl">解：</span>(1)I=P/U=100/220≈0.455A；(2)R=U²/P=48400/100=484Ω；(3)P实=U实²/R=12100/484=<b>25W</b></div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">灯泡的亮暗由实际功率决定。电压减半→电流减半→功率变为原来的1/4！</div>
 </div>
 
-<!-- ═══════════ 焦耳定律 ═══════════ -->
-<div class="sec-title">六、焦耳定律</div>
-<div class="card">
-  <div class="t">🔥 Q = I²Rt</div>
-  <div class="d">
-    电流通过导体产生的热量，与电流的平方成正比，与导体的电阻成正比，与通电时间成正比。<br><br>
-    <span class="tag red">Q = I²Rt</span>（普遍适用）<br><br>
-    <b>纯电阻电路：</b>电能全部转化为内能<br>
-    <span class="tag green">Q = W = UIt = U²t/R = I²Rt</span><br><br>
-    <b>非纯电阻电路（如电动机）：</b>电能大部分转化为机械能，少部分转化为内能<br>
-    <span class="tag orange">Q = I²Rt &lt; W = UIt</span>
-  </div>
-  <div class="formula orange">焦耳定律：Q = I²Rt &nbsp;|&nbsp; 电热器：电能→内能</div>
-  <div class="example-q">
-    <div class="eq-t">📌 电热应用</div>
-    <div class="eq-d">
-      <b>电热器：</b>电炉、电饭锅、电热毯、电熨斗（利用电流热效应）<br>
-      <b>防止电热危害：</b>散热风扇、散热窗、电脑CPU散热片<br>
-      <b>电炉丝与连接导线：</b>电炉丝热得发红而导线几乎不热，因为电炉丝电阻远大于导线<br>
-      根据 Q = I²Rt，串联时I相同，R越大Q越大
-    </div>
-  </div>
+<div class="hw">
+  <div class="hw-q">练习 2：标有"6V 3W"的灯泡接在3V电源上，实际功率多少？（灯丝电阻不变）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">R=U²/P=36/3=12Ω；P实=U实²/R=9/12=<b>0.75W</b></div>
 </div>
 
-<!-- ═══════════ 家庭电路 ═══════════ -->
-<div class="sec-title">七、家庭电路与安全用电</div>
-<div class="card">
-  <div class="t">🏠 家庭电路</div>
-  <div class="d">
-    进户线：<b>火线（L）</b> 和 <b>零线（N）</b>，电压 220V。<br>
-    还有 <b>地线（PE）</b>，防止漏电伤人。<br><br>
-    <b>家庭电路结构（从外到内）：</b><br>
-    进户线 → 电能表（计量用电量）→ 总开关 → 保险装置 → 各用电器<br><br>
-    <table>
-      <tr><th>元件</th><th>作用</th><th>连接方式</th></tr>
-      <tr><td>电能表</td><td>测量消耗的电能</td><td>串联在干路上</td></tr>
-      <tr><td>保险丝</td><td>电流过大时熔断，切断电路</td><td>串联在火线上</td></tr>
-      <tr><td>空气开关</td><td>电流过大或漏电时跳闸</td><td>串联在火线上</td></tr>
-      <tr><td>用电器</td><td>消耗电能</td><td><b>并联</b></td></tr>
-      <tr><td>开关</td><td>控制用电器</td><td>与用电器<b>串联</b>，接在<b>火线</b>上</td></tr>
-    </table>
+<!-- ═══════════ 七、焦耳定律与家庭电路 ═══════════ -->
+<div class="sec-title">七、焦耳定律与家庭电路</div>
+
+<div class="kp">
+  <div class="kp-t">🔥 Q = I²Rt</div>
+  <div class="kp-d">
+    电流通过导体产生的热量：与电流平方成正比、与电阻成正比、与通电时间成正比。<br>
+    <span class="tag red">Q = I²Rt</span>（普遍适用）<br>
+    <b>纯电阻电路：</b>Q=W=UIt=U²t/R=I²Rt<br>
+    <b>非纯电阻（电动机）：</b>Q=I²Rt &lt; W=UIt（大部分电能→机械能）
   </div>
-  <div class="formula green">左零右火上接地 &nbsp;|&nbsp; 开关接火线 &nbsp;|&nbsp; 插座要接地</div>
+  <div class="formula o">焦耳定律：Q=I²Rt &nbsp;|&nbsp; 电热器：电能→内能</div>
 </div>
 
-<div class="card">
-  <div class="t">⚠️ 安全用电</div>
-  <div class="d">
-    <span class="tag red">人体安全电压：不高于 36V</span><br>
-    <span class="tag green">测电笔：氖管发光的为火线</span><br>
-    <span class="tag orange">三孔插座：左零(N)右火(L)上接地(PE)</span>
-    <br><br>
-    <b>安全用电原则：</b><br>
-    <span class="tag blue">不接触低压带电体</span>
-    <span class="tag red">不靠近高压带电体</span>
-    <span class="tag">不用湿手触摸电器</span>
-    <span class="tag">不超负荷用电</span>
-    <br><br>
-    <b>保险丝选择：</b>电阻率 <b>大</b>、熔点 <b>低</b> 的铅锑合金<br>
-    <span class="tag">不能用铜丝或铁丝代替保险丝！</span>
+<div class="kp">
+  <div class="kp-t">🏠 家庭电路与安全用电</div>
+  <div class="kp-d">
+    进户线：<b>火线L、零线N</b>，电压220V。<b>地线PE</b>防漏电。<br>
+    进户线→电能表→总开关→保险装置→各用电器（<b>并联</b>）<br>
+    <span class="tag red">开关接火线，左零右火上接地</span><br>
+    <span class="tag green">保险丝：电阻率大、熔点低的铅锑合金</span><span class="tag orange">不可用铜丝铁丝代替！</span>
   </div>
+  <div class="formula g">人体安全电压 ≤ 36V &nbsp;|&nbsp; 不接触低压、不靠近高压</div>
 </div>
 
-<!-- ═══════════ 电磁 ═══════════ -->
+<div class="ex">
+  <div class="q"><b>例题 4</b>：电炉丝热得发红，导线却不怎么热，为什么？<br>
+  <span class="hl">解：</span>电炉丝与导线串联，I相同。根据Q=I²Rt，电炉丝电阻远大于导线，相同时间内发热更多。</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">串联电路中，电热与电阻成正比（Q₁:Q₂=R₁:R₂）。电炉丝电阻大→发热多。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 3：一个电炉电阻50Ω，通过电流4A，通电10分钟产生多少热量？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">Q=I²Rt=4²×50×(10×60)=16×50×600=<b>4.8×10⁵J</b></div>
+</div>
+
+<!-- ═══════════ 八、电与磁 ═══════════ -->
 <div class="sec-title">八、电与磁</div>
-<div class="card">
-  <div class="t">🧲 磁现象</div>
-  <div class="d">
-    <span class="tag red">磁极：</span>同名磁极相斥，异名磁极相吸<br>
-    <span class="tag green">磁感线：</span>从N极出发到S极（闭合曲线），不交叉，疏密表示强弱<br>
-    <span class="tag blue">地磁场：</span>地磁N极在地理南极附近，指南针N极指北<br><br>
-    <b>奥斯特实验（1820年）：</b><br>
-    通电导体周围存在磁场 → <b>电流的磁效应</b><br>
-    <span class="tag orange">导线平行于小磁针放置</span>
-    <span class="tag red">电流方向改变，磁场方向也改变</span>
+
+<div class="kp">
+  <div class="kp-t">🧲 磁现象与电流磁效应</div>
+  <div class="chart-wrap"><img src="charts/jun_phy_magnet.svg" alt="磁与安培定则"></div>
+  <div class="kp-d">
+    <span class="tag red">磁极：同名相斥、异名相吸</span><span class="tag green">磁感线从N→S（外部）</span><br>
+    <b>奥斯特实验：</b>通电导体周围存在磁场——<b>电流的磁效应</b>（第一个连接电与磁）<br>
+    <b>安培定则：</b>右手握螺线管，四指指电流方向，拇指指N极
   </div>
-  <div class="formula">奥斯特实验：通电导体周围存在磁场 &nbsp;|&nbsp; 第一个连接电与磁</div>
+  <div class="formula b">奥斯特：通电导体周围有磁场 &nbsp;|&nbsp; 电磁铁：电流越大磁越强、匝数越多磁越强</div>
 </div>
 
-<div class="card">
-  <div class="t">🧲 电磁铁与电磁继电器</div>
-  <div class="d">
-    <b>电磁铁：</b>插入铁芯的通电螺线管。<br>
-    <span class="tag red">磁性强弱与电流大小</span>
-    <span class="tag green">磁性强弱与线圈匝数</span>
-    <span class="tag orange">有无铁芯</span>
-    <span class="tag blue">电流方向改变极性也改变</span>
-    <br><br>
-    <b>安培定则（右手螺旋定则）：</b>右手握住螺线管，四指指向电流方向，大拇指指向N极<br><br>
-    <b>电磁铁应用：</b>电磁起重机、电铃、电磁继电器<br>
-    <b>电磁继电器：</b>利用电磁铁控制工作电路通断的开关。<b>低电压控制高电压，弱电流控制强电流</b>
-  </div>
-</div>
-
-<div class="card">
-  <div class="t">⚡ 电动机与发电机对比</div>
-  <div class="d">
+<div class="kp">
+  <div class="kp-t">⚡ 电动机与发电机对比</div>
+  <div class="kp-d">
     <table>
-      <tr><th>比较项</th><th>电动机（马达）</th><th>发电机</th></tr>
-      <tr><td><b>原理</b></td><td>通电线圈在磁场中受力转动</td><td><b>电磁感应</b>（法拉第，1831年）</td></tr>
-      <tr><td><b>能量转化</b></td><td>电能 → 机械能</td><td>机械能 → 电能</td></tr>
-      <tr><td><b>主要构造</b></td><td>磁体 + 线圈 + 换向器</td><td>磁体 + 线圈 + 滑环/换向器</td></tr>
-      <tr><td><b>产生条件</b></td><td>通电（有电流）</td><td>闭合电路 + 部分导体切割磁感线</td></tr>
-      <tr><td><b>生活中</b></td><td>风扇、电动车、洗衣机</td><td>水力发电、风力发电</td></tr>
+      <tr><th>比较项</th><th>电动机</th><th>发电机</th></tr>
+      <tr><td><b>原理</b></td><td>通电线圈在磁场中受力转动</td><td><b>电磁感应</b>（法拉第）</td></tr>
+      <tr><td><b>能量转化</b></td><td>电能→机械能</td><td>机械能→电能</td></tr>
+      <tr><td><b>关键部件</b></td><td>换向器</td><td>滑环/换向器</td></tr>
+      <tr><td><b>生活应用</b></td><td>风扇、电动车</td><td>水力/风力发电</td></tr>
     </table>
-    <br>
-    <b>交流发电机的特点：</b>线圈转动一周，电流方向改变两次。<br>
-    <b>感应电流方向的影响因素：</b>磁场方向、导体切割磁感线的方向
+    <span class="tag red">"电生磁"→奥斯特、电磁铁</span>
+    <span class="tag green">"磁生电"→电磁感应、发电机</span>
+    <span class="tag blue">"电受力"→电动机</span>
   </div>
-  <div class="formula green">电动机：通电导体在磁场中受力（电→磁→力）&nbsp;|&nbsp; 发电机：电磁感应（磁→电）</div>
 </div>
 
-<div class="card">
-  <div class="t">📣 电磁现象综合</div>
-  <div class="d">
-    <table>
-      <tr><th>实验/现象</th><th>发现者</th><th>原理</th><th>应用</th></tr>
-      <tr><td>奥斯特实验</td><td>奥斯特</td><td>电流的磁效应</td><td>电磁铁</td></tr>
-      <tr><td>通电线圈受力</td><td>—</td><td>磁场对电流的作用</td><td>电动机</td></tr>
-      <tr><td>电磁感应</td><td>法拉第</td><td>磁生电</td><td>发电机</td></tr>
-    </table>
-    <div class="example-q">
-      <div class="eq-t">📌 易混淆概念区分</div>
-      <div class="eq-d">
-        <b>"电生磁"</b> → 奥斯特实验、电磁铁（有电才磁）<br>
-        <b>"磁生电"</b> → 电磁感应、发电机（有磁有动才生电）<br>
-        <b>"电受力"</b> → 通电导体在磁场中受力、电动机（有电有力）
-      </div>
-    </div>
-  </div>
+<div class="ex">
+  <div class="q"><b>例题 5</b>：发电机和电动机分别根据什么原理制成？能量如何转化？<br>
+  <span class="hl">解：</span>发电机：<b>电磁感应</b>（机械能→电能）；电动机：<b>通电线圈在磁场中受力</b>（电能→机械能）</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看解析</button>
+  <div class="a">易混点：发电机"先动后电"（需要外力转动才能发电）；电动机"先电后动"（通电才能转动）。</div>
+</div>
+
+<div class="hw">
+  <div class="hw-q">练习 4：感应电流方向与哪些因素有关？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+  <div class="hw-a">与<b>磁场方向</b>和<b>导体切割磁感线的方向</b>有关（其中一个反向则电流反向，两者都反向则电流不变）。</div>
 </div>
 
 <!-- ═══════════ 综合练习 ═══════════ -->
 <div class="sec-title">✍️ 综合练习</div>
 
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 1</div>
-  <div class="d">
-    两盏灯串联在电路中，其中一盏灯灭了，另一盏灯（ ）<br>
-    A. 也灭 &nbsp; B. 更亮 &nbsp; C. 不变 &nbsp; D. 可能灭可能不灭
-  </div>
+<div class="hw">
+  <div class="hw-q">练习 5：R₁:R₂=1:2串联在电路中，电压比和功率比分别是多少？</div>
   <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d"><b>A</b>。串联电路电流只有一条路径，一处断开整个电路断开。</div></div>
+  <div class="hw-a">串联I相同，U₁:U₂=R₁:R₂=1:2；P₁:P₂=I²R₁:I²R₂=1:2</div>
 </div>
 
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 2</div>
-  <div class="d">
-    两个电阻 R₁:R₂ = 1:2，串联在电路中，它们的电压比和功率比是（ ）<br>
-    A. 1:2，1:2 &nbsp; B. 2:1，2:1 &nbsp; C. 1:2，2:1 &nbsp; D. 1:1，1:1
-  </div>
+<div class="hw">
+  <div class="hw-q">练习 6：两灯泡L₁"220V 40W"和L₂"220V 100W"，串联在220V电路中谁更亮？</div>
   <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d"><b>A</b>。串联时 I 相同，U₁:U₂ = R₁:R₂ = 1:2，P₁:P₂ = I²R₁:I²R₂ = R₁:R₂ = 1:2</div></div>
+  <div class="hw-a">R=U²/P→R₁=1210Ω>R₂=484Ω。串联I相同，P=I²R→P₁>P₂，<b>L₁更亮</b>。额定功率大的反而不亮！</div>
 </div>
 
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 3</div>
-  <div class="d">
-    一个标有"6V 3W"的小灯泡，正常发光时的电阻是多少？电流是多少？
-  </div>
+<div class="hw">
+  <div class="hw-q">练习 7：家庭电路中保险丝熔断可能的原因是什么？（写两个）</div>
   <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
-    I = P/U = 3/6 = <b>0.5A</b><br>
-    R = U/I = 6/0.5 = <b>12Ω</b>（或 R = U²/P = 36/3 = 12Ω）
-  </div></div>
+  <div class="hw-a">①<b>短路</b>（火线零线直接连通）②<b>超负荷用电</b>（总功率过大）③用电器漏电（空气开关跳闸）</div>
 </div>
 
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 4</div>
-  <div class="d">
-    将"6V 3W"的灯泡接在 3V 的电源上，实际功率是多少？（灯丝电阻不变）
-  </div>
-  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
-    R = U额²/P额 = 36/3 = 12Ω<br>
-    P实 = U实²/R = 9/12 = <b>0.75W</b>
-  </div></div>
+</div><!-- /wrap -->
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 初中物理电学专题 · 陪你一起成长</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#9b59b6;cursor:pointer">获取联系方式</span></p>
+</div>
 </div>
 
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 5</div>
-  <div class="d">
-    一个电炉的电阻为 50Ω，通过电流为 4A，通电 10 分钟产生多少热量？
-  </div>
-  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
-    Q = I²Rt = 4² × 50 × (10×60) = 16 × 50 × 600 = <b>4.8×10⁵ J</b>
-  </div></div>
-</div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 6</div>
-  <div class="d">
-    家庭电路中，保险丝熔断的原因可能是什么？（至少写出两个）
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
   </div>
-  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
-    <b>① 短路</b> — 火线和零线直接连通<br>
-    <b>② 超负荷用电</b> — 总功率过大（I = P/U 过大）<br>
-    <b>③ 用电器漏电</b>（空气开关带漏电保护功能时会跳闸）
-  </div></div>
 </div>
-
-<div class="card" style="border-top-color:#444">
-  <div class="t" style="color:#444">练习 7</div>
-  <div class="d">
-    发电机是根据什么原理制成的？电动机是根据什么原理制成的？
-  </div>
-  <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
-  <div class="solution"><div class="sol-t">✅ 答案</div><div class="sol-d">
-    发电机：<b>电磁感应（法拉第）</b> — 机械能→电能<br>
-    电动机：<b>通电线圈在磁场中受力转动</b> — 电能→机械能
-  </div></div>
-</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——初中物理电学专题，8大板块系统梳理，电荷+电路+欧姆定律+电功率+焦耳定律+家庭电路+电磁+综合，含多道精选例题。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  shareTextEl.textContent = shareTxt;
+  copyBtn.addEventListener('click', function() {
+    if (hasCopied) return;
+    navigator.clipboard.writeText(shareTxt).then(function() {
+      copyBtn.textContent = '✅ 已复制';
+      copyBtn.classList.add('copied');
+      hasCopied = true;
+      var ct = localStorage.getItem('sx_copy_time');
+      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
+      function checkShare() {
+        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
+        var ok = Date.now() - t0 >= 10000;
+        sharedBtn.disabled = !ok;
+        if (!ok) setTimeout(checkShare, 500);
+        else sharedBtn.textContent = '我已分享，查看联系方式 →';
+      }
+      setTimeout(checkShare, 10000);
+    });
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (sharedBtn.disabled) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+  });
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) {
+      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
+      return;
+    }
+    overlay.classList.add('active');
+  };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+})();
+</script>
 
 <script>
 function toggleSol(btn) {
-  const sol = btn.nextElementSibling;
-  sol.classList.toggle('show');
-  btn.textContent = sol.classList.contains('show') ? '🙈 收起答案' : '👁️ 看答案';
+  var el = btn.nextElementSibling;
+  el.classList.toggle('show');
+  btn.textContent = el.classList.contains('show') ? '🙈 收起' : '👁️ 看解析';
 }
 </script>
-</div>
 </body>
 </html>

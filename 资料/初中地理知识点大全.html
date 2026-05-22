@@ -28,6 +28,10 @@ table tr:nth-child(even){background:#f4f8fc}
 .footer{text-align:center;padding:24px 0 0;font-size:12px;color:#ccc;border-top:1px solid #eee;margin-top:30px}
 @media print{body{background:#fff;padding:0}.container{box-shadow:none;padding:20px}}
 @media (max-width:600px){.container{padding:20px 16px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../js/theme.js"></script>
 </head>
@@ -130,6 +134,8 @@ table tr:nth-child(even){background:#f4f8fc}
 </ul>
 
 <h4>世界主要气候类型</h4>
+
+<img src="charts/geo_climate.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="气候类型图">
 <table>
   <tr><th>气候带</th><th>气候类型</th><th>特征</th><th>分布</th></tr>
   <tr><td rowspan="4">热带</td><td>热带雨林气候</td><td>全年高温多雨</td><td>赤道附近（亚马孙、刚果盆地、东南亚）</td></tr>
@@ -462,5 +468,7 @@ function copyTxt(){
   }
 }
 </script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 </body>
 </html>

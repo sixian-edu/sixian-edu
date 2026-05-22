@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>高中数学 · 导数专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#5688CC}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#5688CC;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #e67e22;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#e67e22;margin-bottom:4px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(230,126,34,0.08);color:#e67e22;margin-bottom:10px}
+.top .tag2{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(231,76,60,0.08);color:#e74c3c;margin-bottom:10px;margin-left:4px}
+.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
+.top .kp strong{color:#e67e22}
+.top .kp .red{color:#e74c3c;font-weight:600}
+.top .kp .green{color:#27ae60;font-weight:600}
+.top .ex{background:#f8f9fc;border-radius:8px;padding:11px 15px;margin:8px 0}
+.top .ex .q{font-weight:600;color:#e67e22;margin-bottom:2px;font-size:14px}
+.top .ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:3px}
+.top .ex .a strong{color:#e67e22}
+.top .ex .a .step{color:#e67e22}
+.top .hw{background:#fef9f0;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#fff8f0;border-radius:8px;padding:10px 16px;margin:8px 0;border-left:3px solid #e67e22}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600;margin-bottom:2px}
+.formula-box .fd{font-size:12px;color:#888}
+@media(max-width:600px){.head h1{font-size:22px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>高中数学 · 导数专题</h1><p class="sub">导数概念 · 几何意义 · 单调性 · 极值与最值 · 零点 · 不等式 · 综合 共 <span>7</span> 专题</p></div>
+<div class="container">
+
+<!-- ═══ 专题一：导数的概念与运算 ═══ -->
+<div class="top">
+<h2>专题一：导数的概念与运算</h2>
+<span class="tag">导数基础</span>
+
+<p class="kp"><strong>平均变化率与瞬时变化率</strong>：函数 f(x) 在 [x₁, x₂] 上的平均变化率为 Δy/Δx = [f(x₂)−f(x₁)]/(x₂−x₁)。当 Δx → 0 时，平均变化率的极限称为函数在 x₀ 处的<strong>导数</strong>。</p>
+
+<p class="kp"><strong>导数的定义</strong>：f'(x₀) = lim_{Δx→0} [f(x₀+Δx)−f(x₀)]/Δx。<br>
+等价形式：f'(x₀) = lim_{x→x₀} [f(x)−f(x₀)]/(x−x₀)。</p>
+
+<div class="formula-box">
+<div class="fm">基本初等函数导数公式</div>
+<div class="fd">C' = 0（C 为常数）</div>
+<div class="fd">(xⁿ)' = nxⁿ⁻¹（n∈R，特别地 (√x)' = 1/(2√x)，(1/x)' = −1/x²）</div>
+<div class="fd">(sin x)' = cos x， (cos x)' = −sin x</div>
+<div class="fd">(eˣ)' = eˣ， (aˣ)' = aˣ·ln a（a>0, a≠1）</div>
+<div class="fd">(ln x)' = 1/x， (log_a x)' = 1/(x·ln a)</div>
+</div>
+
+<div class="formula-box">
+<div class="fm">导数的四则运算法则</div>
+<div class="fd">[f(x) ± g(x)]' = f'(x) ± g'(x)</div>
+<div class="fd">[f(x)·g(x)]' = f'(x)g(x) + f(x)g'(x)（乘法法则）</div>
+<div class="fd">[f(x)/g(x)]' = [f'(x)g(x)−f(x)g'(x)]/[g(x)]²（除法法则，g(x)≠0）</div>
+</div>
+
+<p class="kp"><strong>复合函数求导（链式法则）</strong>：对于 y = f(g(x))，令 u = g(x)，则 dy/dx = dy/du · du/dx = f'(u)·g'(x)。<br>
+口决：<span class="red">由外到内，逐层求导，相乘即可</span>。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/deriv_chain.svg" alt="链式法则"><div class="cp">复合函数求导——链式法则：由外到内逐层求导相乘</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：求下列函数的导数：① f(x)=x³+2x²−5 ② f(x)=x·sin x ③ f(x)=e²ˣ⁺¹</div>
+<div class="a"><strong>解：</strong><br>
+① f'(x)=3x²+4x<br>
+② f'(x)=1·sin x + x·cos x = sin x + x cos x（乘法法则）<br>
+③ 令 u=2x+1，y=e^u，则 y'=e^u·u' = e²ˣ⁺¹·2 = <strong>2e²ˣ⁺¹</strong></div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：f(x)=ln(x²+1)，求 f'(x)。</div>
+<div class="a"><strong>解：</strong>令 u=x²+1，y=ln u。dy/du=1/u，du/dx=2x。<br>
+f'(x) = 1/(x²+1)·2x = <strong>2x/(x²+1)</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：f(x)=x/(x²+1)，求 f'(x)。</div>
+<div class="a"><strong>解：</strong>由除法法则：f'(x) = [(1)(x²+1) − x·(2x)]/(x²+1)² = (x²+1−2x²)/(x²+1)² = <strong>(1−x²)/(x²+1)²</strong>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 求导：f(x)=3x⁵−2x³+7x−4 <span class="hw-a">答案：15x⁴−6x²+7</span></div>
+<div class="hw-q">• 求导：f(x)=x·ln x <span class="hw-a">答案：ln x + 1</span></div>
+<div class="hw-q">• 求导：f(x)=sin(2x+π/3) <span class="hw-a">答案：2cos(2x+π/3)</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题二：导数的几何意义 ═══ -->
+<div class="top">
+<h2>专题二：导数的几何意义</h2>
+<span class="tag">切线问题</span>
+
+<p class="kp"><strong>导数的几何意义</strong>：函数 y=f(x) 在 x=x₀ 处的导数 f'(x₀) 就是曲线 y=f(x) 在点 (x₀, f(x₀)) 处的<strong>切线斜率</strong>。</p>
+
+<p class="kp"><strong>切线方程</strong>：曲线在点 (x₀, y₀) 处的切线方程为 <span class="red">y − y₀ = f'(x₀)(x − x₀)</span>。</p>
+
+<p class="kp"><strong>两种类型的切线问题</strong>：<br>
+① <span class="red">在某点处的切线</span>：该点就是切点，直接求导得斜率。<br>
+② <span class="red">过某点（不在曲线上）的切线</span>：设切点 (x₀, f(x₀))，写出切线方程，代入已知点求出 x₀。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/deriv_tangent.svg" alt="导数的几何意义"><div class="cp">f'(x₀) 即为曲线在 x=x₀ 处的切线斜率</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：求曲线 f(x)=x²−3x+2 在点 (1,0) 处的切线方程。</div>
+<div class="a"><strong>解：</strong>f'(x)=2x−3，f'(1)=2−3=−1。<br>
+切线方程：y−0 = −1(x−1)，即 <span class="green">y = −x+1</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：求过原点且与曲线 y=ln x 相切的切线方程。</div>
+<div class="a"><strong>解：</strong>设切点为 (x₀, ln x₀)，y'=1/x，切线斜率 k=1/x₀。<br>
+切线方程：y−ln x₀ = (1/x₀)(x−x₀)。<br>
+代入 (0,0)：−ln x₀ = −1 → ln x₀ = 1 → x₀ = e，k = 1/e。<br>
+<span class="green">切线方程：y = x/e</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：若曲线 y=x³+ax 在 x=1 处的切线与直线 y=2x−1 平行，求 a。</div>
+<div class="a"><strong>解：</strong>y'=3x²+a，x=1 时切线斜率为 3+a。<br>
+与 y=2x−1 平行 → 斜率相等：3+a=2 → <span class="step">a=−1</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 求曲线 y=x³−x 在 (1,0) 处的切线方程 <span class="hw-a">答案：y=2x−2</span></div>
+<div class="hw-q">• 求与直线 y=4x−3 平行且与 y=x² 相切的直线方程 <span class="hw-a">答案：y=4x−4（切点(2,4)）</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题三：函数的单调性 ═══ -->
+<div class="top">
+<h2>专题三：函数的单调性与导数</h2>
+<span class="tag">单调性</span>
+
+<p class="kp"><strong>用导数判断单调性</strong>：在区间 (a,b) 内，若 f'(x) > 0，则 f(x) 在该区间内<strong>单调递增</strong>；若 f'(x) < 0，则<strong>单调递减</strong>；若 f'(x) = 0 恒成立，则 f(x) 是<strong>常数函数</strong>。</p>
+
+<p class="kp"><strong>单调区间的求解步骤</strong>：<br>
+① 确定函数定义域；<br>
+② 求导数 f'(x)；<br>
+③ 解 f'(x) = 0（驻点），划分区间；<br>
+④ 在各区间内判断 f'(x) 的符号 → 确定单调性。</p>
+
+<p class="kp"><strong>含参数讨论单调性</strong>：当导函数中含有参数时，需要对参数进行分类讨论。常见的分类依据包括：<span class="red">二次项系数是否为零、判别式的正负、根的大小比较</span>。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/deriv_monotone.svg" alt="单调性与导数"><div class="cp">f'(x)>0 → 增函数（红色区域），f'(x)<0 → 减函数（绿色区域）</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：求函数 f(x)=x³−3x²+1 的单调区间。</div>
+<div class="a"><strong>解：</strong>定义域：R。f'(x)=3x²−6x=3x(x−2)。<br>
+令 f'(x)=0 → x=0 或 x=2。<br>
+当 x<0 时，f'(x)>0；0<x<2 时，f'(x)<0；x>2 时，f'(x)>0。<br>
+<span class="green">增区间：(−∞,0) 和 (2,+∞)；减区间：(0,2)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：讨论 f(x)=ax−ln x（a∈R）的单调性。</div>
+<div class="a"><strong>解：</strong>定义域：(0,+∞)。f'(x)=a−1/x = (ax−1)/x。<br>
+① 当 a≤0 时，ax−1<0，f'(x)<0，f(x) 在 (0,+∞) 上单调递减。<br>
+② 当 a>0 时，令 f'(x)=0 → x=1/a。<br>
+x∈(0,1/a) 时 f'(x)<0 递减；x∈(1/a,+∞) 时 f'(x)>0 递增。<br>
+<span class="green">a≤0 时递减；a>0 时在 (0,1/a) 递减、在 (1/a,+∞) 递增</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：函数 f(x)=x³−3ax+1 在 R 上单调递增，求 a 的取值范围。</div>
+<div class="a"><strong>解：</strong>f'(x)=3x²−3a。f(x) 在 R 上递增 ↔ f'(x)≥0 恒成立。<br>
+即 3x²−3a≥0 → x²≥a 对 ∀x∈R 恒成立。<br>
+x² 的最小值为 0，所以 a≤0。<span class="green">∴ a∈(−∞,0]</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 求 f(x)=ln x − x 的单调区间 <span class="hw-a">答案：增区间(0,1)，减区间(1,+∞)</span></div>
+<div class="hw-q">• 讨论 f(x)=x³−3ax+2 的单调性 <span class="hw-a">答案：a≤0 时整体增；a>0 时有−√a< x <√a减，其余增</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题四：极值与最值 ═══ -->
+<div class="top">
+<h2>专题四：函数的极值与最值</h2>
+<span class="tag">极值最值</span><span class="tag2">重点</span>
+
+<p class="kp"><strong>极值的定义</strong>：设 f(x) 在 x₀ 附近有定义，若存在 δ>0，使得对 ∀x∈(x₀−δ, x₀+δ) 有 f(x) ≤ f(x₀)（或 ≥），则称 f(x₀) 为<strong>极大值</strong>（或<strong>极小值</strong>），x₀ 为<strong>极值点</strong>。</p>
+
+<p class="kp"><strong>极值的判定</strong>：<br>
+① <span class="red">必要条件</span>：若 x₀ 是 f(x) 的极值点且 f'(x₀) 存在，则 f'(x₀)=0。（注：f'(x₀)=0 的点称为<strong>驻点</strong>，驻点不一定是极值点）<br>
+② <span class="red">第一充分条件</span>：f'(x₀)=0 且在 x₀ 附近 f'(x) 左正右负 → 极大值；左负右正 → 极小值；符号不变 → 不是极值。<br>
+③ <span class="red">第二充分条件</span>：f'(x₀)=0 且 f''(x₀)≠0，f''(x₀)<0 → 极大值；f''(x₀)>0 → 极小值。</p>
+
+<p class="kp"><strong>闭区间上的最值</strong>：连续函数在 [a,b] 上的最值只能出现在<strong>极值点</strong>或<strong>端点</strong>处。步骤：求 f'(x)=0 的解 → 计算所有极值和端点函数值 → 比较大小。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/deriv_extreme.svg" alt="极值与最值"><div class="cp">极大值点两侧导数值由正变负，极小值点两侧导数值由负变正</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：求 f(x)=x³−3x²−9x+5 的极值。</div>
+<div class="a"><strong>解：</strong>f'(x)=3x²−6x−9=3(x²−2x−3)=3(x+1)(x−3)。<br>
+令 f'(x)=0 → x=−1 或 x=3。<br>
+x<−1 时 f'(x)>0，−1<x<3 时 f'(x)<0，x>3 时 f'(x)>0。<br>
+∴ x=−1 处取极大值 f(−1)=−1−3+9+5=<strong>10</strong>；<br>
+x=3 处取极小值 f(3)=27−27−27+5=<strong>−22</strong>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：求 f(x)=x³−3x 在 [−2,2] 上的最大值和最小值。</div>
+<div class="a"><strong>解：</strong>f'(x)=3x²−3=3(x+1)(x−1)。<br>
+令 f'(x)=0 → x=−1 或 x=1（均在 [−2,2] 内）。<br>
+计算：f(−2)=−2，f(−1)=2，f(1)=−2，f(2)=2。<br>
+<span class="green">最大值 2（在 x=−1 和 x=2 处取得），最小值 −2（在 x=−2 和 x=1 处取得）</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：函数 f(x)=x²+ax+ln x 在 x=½ 处取极值，求 a 并判断是极大还是极小。</div>
+<div class="a"><strong>解：</strong>f'(x)=2x+a+1/x（定义域 x>0）。<br>
+f'(½)=1+a+2=0 → a=−3。<br>
+f''(x)=2−1/x²，f''(½)=2−4=−2<0。<br>
+<span class="green">∴ a=−3，x=½ 处取极大值</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 求 f(x)=x⁴−4x+1 的极值 <span class="hw-a">答案：x=1 取极小值 −2</span></div>
+<div class="hw-q">• f(x)=x³−3x²+2 在 [−1,3] 上的最值 <span class="hw-a">答案：max=2（x=0），min=−2（x=2）</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题五：导数与函数零点 ═══ -->
+<div class="top">
+<h2>专题五：导数与函数零点</h2>
+<span class="tag">零点问题</span><span class="tag2">压轴</span>
+
+<p class="kp"><strong>零点存在性</strong>：若 f(x) 在 [a,b] 上连续且 f(a)·f(b) < 0，则 ∃c∈(a,b) 使 f(c)=0。<br>
+结合单调性可以确定零点的<strong>唯一性</strong>和<strong>个数</strong>。</p>
+
+<p class="kp"><strong>用导数研究零点个数的步骤</strong>：<br>
+① 求定义域，分析单调区间（极值点）；<br>
+② 计算各单调区间端点的函数值（或极限值）的符号；<br>
+③ 结合零点存在定理判断每个单调区间内零点的个数。</p>
+
+<p class="kp"><strong>含参零点问题</strong>：通常转化为方程 f(x)=g(a) 在给定区间内有解的问题，利用函数的<strong>值域</strong>确定参数的取值范围。或直接求极值的符号，讨论极值与 0 的大小关系。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/deriv_zero.svg" alt="导数与零点"><div class="cp">三次函数零点个数随参数变化：上下平移改变零点个数</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：证明方程 x³−3x²+1=0 有三个不同的实根。</div>
+<div class="a"><strong>证：</strong>设 f(x)=x³−3x²+1，f'(x)=3x²−6x=3x(x−2)。<br>
+令 f'(x)=0 → x=0 或 x=2。<br>
+x<0 时 f'(x)>0 ↗，0<x<2 时 f'(x)<0 ↘，x>2 时 f'(x)>0 ↗。<br>
+f(−∞)→−∞，f(0)=1>0 → (−∞,0)上有1个零点。<br>
+f(0)=1>0，f(2)=−3<0 → (0,2)上有1个零点。<br>
+f(2)=−3<0，f(+∞)→+∞ → (2,+∞)上有1个零点。<br>
+<span class="green">∴ f(x)=0 有三个实根</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：函数 f(x)=x³−3x+a 有三个不同零点，求 a 的取值范围。</div>
+<div class="a"><strong>解：</strong>f(x) 的极值点：f'(x)=3x²−3=0 → x=±1。<br>
+极大值 f(−1)=2+a，极小值 f(1)=−2+a。<br>
+三个零点 ↔ 极大值>0且极小值<0。<br>
+即 2+a>0 且 −2+a<0 → −2<a<2。<br>
+<span class="green">∴ a∈(−2,2)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：讨论 f(x)=x−asin x 在 R 上的零点个数。</div>
+<div class="a"><strong>解：</strong>f'(x)=1−a cos x。<br>
+当 |a|<1 时，f'(x)>0 恒成立，f(x) 单调递增，1个零点。<br>
+当 |a|=1 时，f'(x)≥0，个别点取零，仍单调增，1个零点。<br>
+当 |a|>1 时，f'(x) 有正有负，f(x) 有多个零点（震荡）。<br>
+<span class="green">|a|≤1 时 1 个零点，|a|>1 时无穷多个零点</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 证明 x³−3x+1=0 恰有一个负根 <span class="hw-a">提示：f(−2)=−1<0，f(0)=1>0，(−∞,0)单调增</span></div>
+<div class="hw-q">• 若 f(x)=x³−6x²+9x+a 恰有两个零点，求 a <span class="hw-a">答案：a=0 或 a=−4</span></div>
+</div>
+</div>
+
+<!-- ═══ 专题六：导数与不等式证明 ═══ -->
+<div class="top">
+<h2>专题六：导数与不等式证明</h2>
+<span class="tag">不等式</span><span class="tag2">压轴</span>
+
+<p class="kp">导数证明不等式是高考压轴题的经典题型，核心思路是<strong>构造函数</strong>，将不等式问题转化为函数最值问题。</p>
+
+<p class="kp"><span class="red">方法一：直接构造函数</span>。将待证不等式转化为 F(x)=f(x)−g(x)≥0 的形式，证明 F(x) 的最小值 ≥ 0。</p>
+
+<p class="kp"><span class="red">方法二：放缩法</span>。利用以下常用放缩不等式进行放缩：</p>
+
+<div class="formula-box">
+<div class="fm">常用放缩不等式</div>
+<div class="fd">eˣ ≥ x+1（x∈R，当且仅当 x=0 取等）</div>
+<div class="fd">ln x ≤ x−1（x>0，当且仅当 x=1 取等）</div>
+<div class="fd">eˣ ≥ ex（x∈R）</div>
+<div class="fd">sin x ≤ x ≤ tan x（x∈[0,π/2)）</div>
+<div class="fd">x/(x+1) ≤ ln(1+x) ≤ x（x>−1）</div>
+</div>
+
+<p class="kp"><span class="red">方法三：分离函数法</span>。对形如 f(x) ≥ g(x) 的不等式，若 f 和 g 的最值容易求得，可分别求 f_min 和 g_max，验证 f_min ≥ g_max。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/deriv_ineq.svg" alt="常用放缩"><div class="cp">eˣ ≥ x+1 和 ln(x+1) ≤ x 的几何意义：切线放缩</div>
+</div>
+
+<div class="ex">
+<div class="q">例 1：证明：eˣ ≥ x+1（x∈R）。</div>
+<div class="a"><strong>证：</strong>设 f(x)=eˣ−x−1，f'(x)=eˣ−1。<br>
+令 f'(x)=0 → x=0。<br>
+x<0 时 f'(x)<0 ↘；x>0 时 f'(x)>0 ↗。<br>
+f(0)=0 为极小值也是最小值。<br>
+∴ f(x) ≥ f(0)=0，即 eˣ ≥ x+1。<span class="green">得证</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2：证明：x > ln(1+x)（x>0）。</div>
+<div class="a"><strong>证：</strong>设 f(x)=x−ln(1+x)（x>0）。<br>
+f'(x)=1−1/(1+x)=x/(1+x)>0（x>0）。<br>
+∴ f(x) 在 (0,+∞) 上单调递增，f(x) > f(0)=0。<br>
+<span class="green">∴ x > ln(1+x)（x>0）</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3：证明：当 x>0 时，ln x ≤ x−1。</div>
+<div class="a"><strong>证：</strong>设 g(x)=ln x − (x−1)=ln x − x + 1（x>0）。<br>
+g'(x)=1/x − 1 = (1−x)/x。<br>
+0<x<1 时 g'(x)>0 ↗；x>1 时 g'(x)<0 ↘。<br>
+g(1)=0 为最大值。∴ g(x) ≤ 0，即 ln x ≤ x−1。<span class="green">得证</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4：已知 f(x)=x ln x，证明：f(x) ≥ −1/e。</div>
+<div class="a"><strong>证：</strong>f'(x)=ln x + 1（x>0）。令 f'(x)=0 → x=1/e。<br>
+0<x<1/e 时 f'(x)<0 ↘；x>1/e 时 f'(x)>0 ↗。<br>
+f(1/e)=−1/e 为最小值。<br>
+<span class="green">∴ x ln x ≥ −1/e</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 5：对 ∀x>0，证明 eˣ > x²。</div>
+<div class="a"><strong>证：</strong>设 h(x)=eˣ−x²，h'(x)=eˣ−2x。<br>
+由 eˣ ≥ x+1 得 h'(x) ≥ x+1−2x=1−x。<br>
+当 x<1 时 h'(x)≥1−x>0，但不够严格。利用二阶导：h''(x)=eˣ−2。<br>
+x<ln2 时 h''(x)<0，h'递减；x>ln2 时 h''(x)>0，h'递增。<br>
+h'(ln2)=2−2ln2>0，h'(0)=1>0，h'(x)无零点→h'(x)>0恒成立。<br>
+∴ h(x)在(0,+∞)递增，h(0)=1>0。<span class="green">∴ eˣ > x²</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 证明：x−sin x ≥ 0（x≥0）<span class="hw-a">提示：设 f(x)=x−sin x，f'(x)=1−cos x≥0</span></div>
+<div class="hw-q">• 证明：eˣ ≥ ex <span class="hw-a">提示：f(x)=eˣ−ex，f'(x)=eˣ−e，f(1)=0</span></div>
+<div class="hw-q">• 证明：当 0<x<1 时，x−x² < ln(1+x) < x</div>
+</div>
+</div>
+
+<!-- ═══ 专题七：导数综合应用 ═══ -->
+<div class="top">
+<h2>专题七：导数综合应用</h2>
+<span class="tag">综合应用</span>
+
+<p class="kp">导数综合题考查知识的综合运用，常见问题类型包括：</p>
+
+<p class="kp"><span class="red">恒成立问题</span>：对 ∀x∈D，f(x) ≥ 0 恒成立 ↔ f_min(x) ≥ 0。<br>
+常用方法：① 直接求最值；② 分离参数（参数与变量分离到两边）；③ 必要性探路（先找必要条件再证明充分性）。</p>
+
+<p class="kp"><span class="red">存在性问题</span>：∃x∈D 使 f(x) ≥ 0 ↔ f_max(x) ≥ 0。<br>
+与恒成立问题的区别：恒成立取<strong>最小值</strong>，存在性取<strong>最大值</strong>。</p>
+
+<p class="kp"><span class="red">参数范围问题</span>：通常转化为恒成立或存在性问题的逆问题，先找临界条件，再结合单调性讨论。</p>
+
+<p class="kp"><span class="red">导数与数列综合</span>：利用导数构造数列不等式，如结合第 6 专题的放缩不等式进行数列求和放缩。</p>
+
+<div class="ex">
+<div class="q">例 1（恒成立）：对 ∀x>0，x ln x ≥ a(x−1) 恒成立，求 a 的取值范围。</div>
+<div class="a"><strong>解：</strong>转化为 F(x)=x ln x − a(x−1) ≥ 0 恒成立。<br>
+F'(x)=ln x + 1 − a。<br>
+令 F'(x)=0 → x=e^(a−1)。<br>
+0<x<e^(a−1) 时递减，x>e^(a−1) 时递增。<br>
+F_min = F(e^(a−1)) = e^(a−1)(a−1) − a[e^(a−1)−1]<br>
+= e^(a−1)(a−1−a) + a = −e^(a−1) + a。<br>
+令 F_min ≥ 0 → a ≥ e^(a−1)。由常用放缩 e^x ≥ x+1 知：<br>
+e^(a−1) ≥ a（当且仅当 a=1 取等）。所以 a ≥ e^(a−1) 的解为 a=1。<br>
+<span class="green">∴ 仅当 a=1 时成立</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 2（存在性）：若存在 x>0 使 x²−ax+ln x<0，求 a 的取值范围。</div>
+<div class="a"><strong>解：</strong>存在 x>0 使 x²+ln x < ax，即 a > (x²+ln x)/x 有解。<br>
+设 g(x)=(x²+ln x)/x = x + (ln x)/x（x>0）。<br>
+g'(x)=1 + (1−ln x)/x² = (x²+1−ln x)/x²。<br>
+令 h(x)=x²+1−ln x，h'(x)=2x−1/x=0→x=1/√2。<br>
+h_min = h(1/√2)=½+1+½ln2 >0 → g'(x)>0恒成立。<br>
+g(x)单调递增，g(0⁺)→−∞，g(+∞)→+∞。<br>
+∴ a 取任意实数都存在 x 使 a > g(x)。<span class="green">a∈R</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 3（参数范围+零点）：f(x)=x³−3x²+ax−a 在 R 上单调递增，求 a 的取值范围。</div>
+<div class="a"><strong>解：</strong>f'(x)=3x²−6x+a。f(x) 在 R 上递增 ↔ f'(x) ≥ 0 恒成立。<br>
+这是开口向上的二次函数，只需 Δ ≤ 0。<br>
+Δ = 36 − 12a ≤ 0 → a ≥ 3。<br>
+<span class="green">∴ a∈[3,+∞)</span>。</div>
+</div>
+
+<div class="ex">
+<div class="q">例 4（综合）：证明：当 x≥0 时，eˣ ≥ ½x² + x + 1。</div>
+<div class="a"><strong>证：</strong>设 f(x)=eˣ−½x²−x−1，f'(x)=eˣ−x−1。<br>
+由专题六例 1 知 eˣ ≥ x+1，所以 f'(x) ≥ 0。<br>
+∴ f(x) 在 [0,+∞) 上单调递增，f(x) ≥ f(0)=1−0−0−1=0。<br>
+<span class="green">∴ eˣ ≥ ½x²+x+1（x≥0）</span>。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">• 若 x²−ax+ln x ≥ 0 对 x>0 恒成立，求 a <span class="hw-a">答案：令 g(x)=x+ln x/x，求最小值... a≤某值</span></div>
+<div class="hw-q">• 证明：eˣ ≥ ¹⁄₆x³ + ½x² + x + 1（x≥0）<span class="hw-a">提示：逐次求导发现规律</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
+<script>
+window.addEventListener('scroll',function(){
+  var btn=document.querySelector('.back-to-top');
+  if(btn)btn.classList.toggle('show',window.scrollY>300);
+});
+</script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){var btn=document.querySelector('.back-to-top');if(btn)btn.classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

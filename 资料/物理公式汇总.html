@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理公式汇总 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+
+.f-section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b}
+.f-section h2{font-size:18px;font-weight:700;color:#c0392b;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #f0f0f0}
+.f-section h3{font-size:15px;font-weight:600;color:#444;margin:16px 0 10px}
+
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+@media(max-width:600px){.f-grid{grid-template-columns:1fr}}
+
+.f-card{background:#f8f9fc;border-radius:10px;padding:14px 16px;border:1px solid #f0f0f0}
+.f-card .f-name{font-size:14px;font-weight:600;color:#2d3436;margin-bottom:4px}
+.f-card .f-val{font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:6px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif;letter-spacing:0.5px}
+.f-card .f-desc{font-size:12px;color:#888;margin-top:3px}
+
+.f-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.f-table th{background:#c0392b;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:13px}
+.f-table td{padding:9px 14px;border-bottom:1px solid #f0f0f0}
+.f-table tr:nth-child(even){background:#f8f9fc}
+.f-table .fml{font-weight:700;color:#c0392b;font-family:"Times New Roman",serif;font-size:15px}
+
+.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#8d6e00;border-left:3px solid #fadb14}
+.note strong{color:#e74c3c}
+
+.footer{text-align:center;padding:20px;font-size:12px;color:#999}
+.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:4px;margin:1px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style>
+<script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>物理公式汇总</h1><p class="sub">力学 · 热学 · 光学 · 电学 · 公式大全</p></div>
+<div class="container">
+<div class="note"><strong>使用说明：</strong>公式中所有物理量均使用国际单位制（SI），注意单位换算。计算时先统一单位再代入。</div><div class="f-section"><h2>力学基础公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">速度</div><div class="f-val">v = s/t</div><div class="f-desc">s 路程(m)，t 时间(s)，v 速度(m/s)</div></div>
+<div class="f-card"><div class="f-name">速度换算</div><div class="f-val">1 m/s = 3.6 km/h</div><div class="f-desc">米每秒与千米每小时换算</div></div>
+<div class="f-card"><div class="f-name">密度</div><div class="f-val">ρ = m/V</div><div class="f-desc">m 质量(kg)，V 体积(m³)，ρ 密度(kg/m³)</div></div>
+<div class="f-card"><div class="f-name">重力</div><div class="f-val">G = mg (g=9.8N/kg)</div><div class="f-desc">质量 × 重力加速度，粗略计算 g 取 10</div></div>
+<div class="f-card"><div class="f-name">压强</div><div class="f-val">p = F/S</div><div class="f-desc">F 压力(N)，S 受力面积(m²)</div></div>
+<div class="f-card"><div class="f-name">液体压强</div><div class="f-val">p = ρgh</div><div class="f-desc">ρ 密度(kg/m³)，h 深度(m)</div></div>
+<div class="f-card"><div class="f-name">大气压</div><div class="f-val">p₀ = 1.013×10⁵ Pa</div><div class="f-desc">标准大气压值，76cmHg</div></div>
+</div></div>
+<div class="f-section"><h2>浮力公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">阿基米德原理</div><div class="f-val">F浮 = ρ液gV排</div><div class="f-desc">浮力等于排开液体所受重力</div></div>
+<div class="f-card"><div class="f-name">称重法</div><div class="f-val">F浮 = G - F示</div><div class="f-desc">空气中重力减去弹簧测力计示数</div></div>
+<div class="f-card"><div class="f-name">漂浮/悬浮</div><div class="f-val">F浮 = G (物体漂浮或悬浮时)</div><div class="f-desc">二力平衡，浮力等于重力</div></div>
+<div class="f-card"><div class="f-name">浮沉条件</div><div class="f-val">ρ物 < ρ液 上浮</div><div class="f-desc">密度关系决定物体浮沉</div></div>
+</div></div>
+<div class="f-section"><h2>简单机械</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">杠杆平衡条件</div><div class="f-val">F₁L₁ = F₂L₂</div><div class="f-desc">动力 × 动力臂 = 阻力 × 阻力臂</div></div>
+<div class="f-card"><div class="f-name">滑轮组拉力</div><div class="f-val">F = G总/n</div><div class="f-desc">n 为承担重物的绳子段数</div></div>
+<div class="f-card"><div class="f-name">滑轮组距离</div><div class="f-val">s = nh</div><div class="f-desc">绳子自由端移动距离 = n × 物体升高高度</div></div>
+<div class="f-card"><div class="f-name">斜面公式</div><div class="f-val">FL = Gh</div><div class="f-desc">理想斜面，不计摩擦</div></div>
+<div class="f-card"><div class="f-name">机械效率</div><div class="f-val">η = W有/W总 × 100%</div><div class="f-desc">有用功与总功的百分比</div></div>
+</div></div>
+<div class="f-section"><h2>功与能公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">功</div><div class="f-val">W = Fs (F 与 s 同向)</div><div class="f-desc">力 × 沿力方向移动的距离</div></div>
+<div class="f-card"><div class="f-name">功率</div><div class="f-val">P = W/t = Fv</div><div class="f-desc">功与做功时间之比</div></div>
+<div class="f-card"><div class="f-name">动能</div><div class="f-val">Eₖ = ½ mv²</div><div class="f-desc">质量越大、速度越大，动能越大</div></div>
+<div class="f-card"><div class="f-name">重力势能</div><div class="f-val">Eₚ = mgh</div><div class="f-desc">质量越大、高度越高，势能越大</div></div>
+<div class="f-card"><div class="f-name">弹性势能</div><div class="f-val">Eₘ = ½ kx²</div><div class="f-desc">k 劲度系数，x 形变量</div></div>
+<div class="f-card"><div class="f-name">机械能守恒</div><div class="f-val">Eₖ₁ + Eₚ₁ = Eₖ₂ + Eₚ₂</div><div class="f-desc">只有重力/弹力做功时守恒</div></div>
+</div></div>
+<div class="f-section"><h2>热学公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">比热容</div><div class="f-val">Q = cmΔt</div><div class="f-desc">c 比热容(J/(kg·℃))，Δt 温度变化量</div></div>
+<div class="f-card"><div class="f-name">热值</div><div class="f-val">Q = mq (固体/液体)</div><div class="f-desc">q 热值(J/kg)</div></div>
+<div class="f-card"><div class="f-name">热值（气体）</div><div class="f-val">Q = Vq</div><div class="f-desc">V 体积(m³)</div></div>
+<div class="f-card"><div class="f-name">热机效率</div><div class="f-val">η = W/Q放 × 100%</div><div class="f-desc">有用功与燃料释放热量之比</div></div>
+</div></div>
+<div class="f-section"><h2>电学公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">欧姆定律</div><div class="f-val">I = U/R</div><div class="f-desc">电流与电压成正比，与电阻成反比</div></div>
+<div class="f-card"><div class="f-name">串联总电阻</div><div class="f-val">R总 = R₁ + R₂ + ...</div><div class="f-desc">串联电阻越串越大</div></div>
+<div class="f-card"><div class="f-name">并联总电阻</div><div class="f-val">1/R总 = 1/R₁ + 1/R₂ + ...</div><div class="f-desc">并联电阻越并越小</div></div>
+<div class="f-card"><div class="f-name">电功</div><div class="f-val">W = UIt = I²Rt = U²t/R</div><div class="f-desc">电流做功的多少</div></div>
+<div class="f-card"><div class="f-name">电功率</div><div class="f-val">P = UI = I²R = U²/R</div><div class="f-desc">电流做功快慢</div></div>
+<div class="f-card"><div class="f-name">焦耳定律</div><div class="f-val">Q = I²Rt</div><div class="f-desc">电流通过导体产生的热量</div></div>
+<div class="f-card"><div class="f-name">串联分压</div><div class="f-val">U₁/U₂ = R₁/R₂</div><div class="f-desc">串联电路电压与电阻成正比</div></div>
+<div class="f-card"><div class="f-name">并联分流</div><div class="f-val">I₁/I₂ = R₂/R₁</div><div class="f-desc">并联电路电流与电阻成反比</div></div>
+</div></div>
+<div class="note"><strong>电学注意事项：</strong>（1）电流表要串联在电路中，电压表要并联；（2）家庭电路电压 220V，安全电压不高于 36V；（3）电能表读数最后一位为小数。</div><div class="f-section"><h2>光学公式</h2><div class="f-grid">
+<div class="f-card"><div class="f-name">反射定律</div><div class="f-val">∠入 = ∠反</div><div class="f-desc">三线共面、两线分居、两角相等</div></div>
+<div class="f-card"><div class="f-name">平面镜成像</div><div class="f-val">物距 = 像距</div><div class="f-desc">等大、等距、正立、虚像，对称</div></div>
+<div class="f-card"><div class="f-name">折射定律</div><div class="f-val">n = sini/sinr</div><div class="f-desc">折射率 = 入射角正弦 / 折射角正弦</div></div>
+<div class="f-card"><div class="f-name">凸透镜成像规律</div><div class="f-val">1/f = 1/u + 1/v</div><div class="f-desc">f 焦距，u 物距，v 像距</div></div>
+<div class="f-card"><div class="f-name">放大率</div><div class="f-val">m = |v/u| = 像高/物高</div><div class="f-desc">像与物的大小之比</div></div>
+</div></div>
+
+</div>
+<div class="footer">思贤学习站 · 济南市商河县</div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+</body>
+</html>

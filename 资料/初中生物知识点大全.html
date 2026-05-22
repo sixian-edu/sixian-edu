@@ -28,6 +28,10 @@ table tr:nth-child(even){background:#f8fbf6}
 .footer{text-align:center;padding:24px 0 0;font-size:12px;color:#ccc;border-top:1px solid #eee;margin-top:30px}
 @media print{body{background:#fff;padding:0}.container{box-shadow:none;padding:20px}}
 @media (max-width:600px){.container{padding:20px 16px}}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style>
 <script src="../js/theme.js"></script>
 </head>
@@ -52,6 +56,8 @@ table tr:nth-child(even){background:#f8fbf6}
 <h4>二、生物圈</h4>
 <ul>
   <li><span class="keyword">生物圈</span>：地球上所有生物与其环境的总和，是最大的生态系统</li>
+
+<img src="charts/bio_energy_pyramid.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="能量金字塔">
   <li><span class="keyword">生态因素</span>：<span class="point">非生物因素</span>（光、温度、水、空气等）+ <span class="point">生物因素</span>（捕食、竞争、合作、寄生等）</li>
   <li><span class="keyword">生态系统</span>：生物部分（生产者、消费者、分解者）+ 非生物部分</li>
   <li><span class="keyword">食物链</span>：生产者和消费者之间吃与被吃的关系，<span class="point">起点是生产者</span>，箭头指向捕食者</li>
@@ -73,6 +79,8 @@ table tr:nth-child(even){background:#f8fbf6}
 <h4>二、细胞的结构</h4>
 <div class="box">
 <div class="label">动植物细胞共有的结构：</div>
+
+<img src="charts/bio_cell.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="细胞结构对比">
 <p><span class="keyword">细胞膜</span>—控制物质进出；<span class="keyword">细胞质</span>—生命活动的重要场所；<span class="keyword">细胞核</span>—含遗传信息，生命活动的控制中心；<span class="keyword">线粒体</span>—呼吸作用，释放能量</p>
 </div>
 
@@ -392,5 +400,7 @@ function copyTxt(){
   }
 }
 </script>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 </body>
 </html>
