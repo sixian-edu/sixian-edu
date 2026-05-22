@@ -105,6 +105,14 @@
   color: #666666;
 }
 
+/* ── 老师页 CTA 覆写 ── */
+.cta-banner p {
+  color: #666666;
+}
+.cta-banner .btn {
+  color: #FF9EBB;
+}
+
 /* ── CTA 覆写（brand-gradient 为浅粉色，白色文字不可见） ── */
 .cta-section h2 {
   color: #333333;
