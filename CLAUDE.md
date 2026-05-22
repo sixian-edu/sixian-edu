@@ -6,7 +6,7 @@
 
 ## 一、部署
 
-- **静态站**: GitHub Pages（master 分支根目录自动部署）— 所有 `.html` 文件直接可访问
+- **静态站**: 腾讯云 CloudBase（`sixian-edu-d1gjo0dk5e241a957-1434180722.tcloudbaseapp.com`）— Python 脚本通过 `qcloud_cos` SDK 上传到 COS 后部署
 - **后端**: Flask 应用（`server/`），本地或 Docker 运行。**注意：后端模板未同步更新**，仅保留作为旧版参考
 
 ---
