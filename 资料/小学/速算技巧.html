@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>速算技巧 · 思贤学习站</title>
+<link rel="icon" href="../../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f0faf0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:820px;margin:0 auto}
+.back{color:#666;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+.back:hover{color:#43a047}
+h1{text-align:center;font-size:30px;color:#2e7d32;margin-bottom:4px}
+.sub{text-align:center;font-size:14px;color:#888;margin-bottom:20px}
+.sec-title{font-size:20px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #43a047}
+.card{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.card .t{font-weight:700;font-size:18px;color:#2e7d32;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .d{font-size:15px;color:#444;line-height:1.9}
+.card .d b{color:#2e7d32}
+.tag{display:inline-block;font-size:12px;padding:3px 12px;border-radius:20px;margin:3px;background:#e8f5e9;color:#2e7d32}
+.tag.red{background:#ffebee;color:#c62828}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e5f5;color:#7b1fa2}
+.tip-box{background:#fff8e1;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:14px;color:#e65100}
+.tip-box .tip-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.formula{background:#f0faf0;border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:18px;color:#2e7d32;font-weight:700;letter-spacing:1px}
+.ex-card{background:#e8f5e9;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #43a047}
+.ex-card .ex-t{font-weight:700;font-size:14px;color:#2e7d32}
+.ex-card .ex-d{font-size:15px;color:#444;line-height:1.8;margin-top:6px}
+.ex-card .ex-d .hl{color:#e65100;font-weight:700}
+.ex-card .ex-d .hl2{color:#1565c0;font-weight:700}
+/* 交互练习 */
+.quiz-area{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08);text-align:center}
+.quiz-area .q-title{font-size:18px;font-weight:700;color:#2e7d32;margin-bottom:4px}
+.quiz-area .q-sub{font-size:13px;color:#999;margin-bottom:16px}
+.quiz-area .q-num{font-size:24px;font-weight:700;color:#333;margin-bottom:12px}
+.quiz-area .q-text{font-size:20px;color:#333;margin-bottom:16px;letter-spacing:1px}
+.quiz-area .q-input{width:120px;padding:10px;font-size:20px;text-align:center;border:3px solid #ddd;border-radius:12px;outline:none;margin-bottom:12px;transition:border-color .3s}
+.quiz-area .q-input:focus{border-color:#43a047}
+.quiz-area .q-btn{display:inline-block;padding:10px 32px;font-size:16px;font-weight:600;background:linear-gradient(135deg,#43a047,#2e7d32);color:#fff;border:none;border-radius:10px;cursor:pointer;margin:4px;transition:opacity .2s}
+.quiz-area .q-btn:hover{opacity:.85}
+.quiz-area .q-btn:disabled{opacity:.4;cursor:not-allowed}
+.quiz-area .q-btn.sec{background:linear-gradient(135deg,#ff8f00,#e65100)}
+.quiz-fb{font-size:16px;margin:10px 0;min-height:28px;font-weight:600}
+.quiz-fb.correct{color:#2e7d32}
+.quiz-fb.wrong{color:#c62828}
+.quiz-score{font-size:14px;color:#888;margin-top:8px}
+.star{color:#ffa000;font-size:20px}
+.step{display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:10px 14px;background:#f9fbe7;border-radius:10px}
+.step-num{flex:0 0 32px;height:32px;border-radius:50%;background:#43a047;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-c{flex:1}
+.step-c b{color:#43a047}
+/* 星星动画 */
+@keyframes pop{0%{transform:scale(0);opacity:0}50%{transform:scale(1.3)}100%{transform:scale(1);opacity:1}}
+.star-anim{display:inline-block;animation:pop .5s ease}
+.game-box{background:#e3f2fd;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #1565c0}
+.game-box .game-t{font-weight:700;font-size:14px;color:#1565c0}
+.game-box .game-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+/* 技巧卡片导航 */
+.tech-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.tech-nav a{display:inline-block;padding:6px 14px;background:#e8f5e9;color:#2e7d32;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.tech-nav a:hover{background:#43a047;color:#fff}
+@media(max-width:600px){
+  h1{font-size:24px}
+  .quiz-area .q-text{font-size:17px}
+  .quiz-area .q-input{width:90px;font-size:17px}
+}
+</style>
+<script src="../../js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../学习专区.html">← 返回学习专区</a>
+<h1>🧮 速算技巧</h1>
+<p class="sub">掌握这些技巧，你的计算速度会比同学快一倍！🚀</p>
+
+<div class="tech-nav">
+  <a href="#koujue">速算口诀</a>
+  <a href="#couzheng">凑整法</a>
+  <a href="#coushi">凑十破十</a>
+  <a href="#banjia">带符号搬家</a>
+  <a href="#chengfa">乘法巧算</a>
+  <a href="#touwei">头同尾合十</a>
+  <a href="#practice">练习闯关</a>
+</div>
+
+<!-- ═══════════ 引言 ═══════════ -->
+<div class="card">
+  <div class="t">🤔 什么是速算？</div>
+  <div class="d">
+    速算就是 <b>用巧妙的方法快速计算</b>，而不是老老实实地列竖式！<br><br>
+    比如 25 + 36 + 75，如果从左到右算：25+36=61, 61+75=136，需要两步。但如果你发现 <b>25+75=100</b>，那 100+36=136，一步就出来！<br><br>
+    <span class="tag">算得快</span>
+    <span class="tag">正确率高</span>
+    <span class="tag">考试时间多</span>
+    <span class="tag blue">练脑力</span>
+    <span class="tag orange">超自信</span>
+    <br><br>
+    今天我们来学习 <b>6大速算技巧</b>，每个技巧都配有练习题。准备好了吗？出发！🎯
+  </div>
+</div>
+
+<!-- ═══════════ 一、速算口诀 ═══════════ -->
+<div class="sec-title" id="koujue">📝 速算口诀</div>
+<div class="card">
+  <div class="t">🎵 记住这些口诀，计算快一倍</div>
+  <div class="d">
+    下面是几个最常用的速算口诀，先读一读，记一记：
+    <br><br>
+    <div class="formula">🔢 凑整法：看末尾，找朋友，整十整百一起走</div>
+    <div class="formula">🔢 凑十法：看大数，拆小数，凑成十，算得易</div>
+    <div class="formula">🔢 带着符号搬个家，计算起来不抓瞎</div>
+    <div class="formula">🔢 一个数×9：添个0，减本身</div>
+    <div class="tip-box">
+      <div class="tip-t">💡 小窍门</div>
+      <div class="tip-d">把这些口诀抄在便利贴上，贴在书桌前，每天看一遍，慢慢就记住了！</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 二、凑整法 ═══════════ -->
+<div class="sec-title" id="couzheng">🎯 技巧一：凑整法</div>
+<div class="card">
+  <div class="t">🤝 找到好朋友，凑成整十整百</div>
+  <div class="d">
+    凑整法的核心就是 <b>找"好朋友数"</b> —— 两个数相加正好是 10、100、1000：<br><br>
+    <span class="tag">1 + 9 = 10</span>
+    <span class="tag">2 + 8 = 10</span>
+    <span class="tag">3 + 7 = 10</span>
+    <span class="tag">4 + 6 = 10</span>
+    <span class="tag">5 + 5 = 10</span>
+    <span class="tag blue">25 + 75 = 100</span>
+    <span class="tag blue">37 + 63 = 100</span>
+    <span class="tag blue">48 + 52 = 100</span>
+    <span class="tag orange">125 + 875 = 1000</span>
+    <br><br>
+    <b>关键：</b>加法算式中，把能凑成整十整百的数先加起来！
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 1</div>
+    <div class="ex-d">
+      29 + 35 + 11 = ？<br>
+      👉 发现 <span class="hl">29 + 11 = 40</span>，然后 <span class="hl">40 + 35 = 75</span><br>
+      ✅ <b>答案：75</b>
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 2</div>
+    <div class="ex-d">
+      127 + 68 + 73 = ？<br>
+      👉 发现 <span class="hl2">127 + 73 = 200</span>，然后 <span class="hl2">200 + 68 = 268</span><br>
+      ✅ <b>答案：268</b>
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 3（减法也能凑！）</div>
+    <div class="ex-d">
+      276 − 89 − 76 = ？<br>
+      👉 发现 <span class="hl">276 − 76 = 200</span>，然后 <span class="hl">200 − 89 = 111</span><br>
+      ✅ <b>答案：111</b>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 三、凑十破十 ═══════════ -->
+<div class="sec-title" id="coushi">🎯 技巧二：凑十法与破十法</div>
+<div class="card">
+  <div class="t">🔟 低年级必会！20以内的加减法</div>
+  <div class="d">
+    <b>凑十法</b>（加法用）：看大数，拆小数，凑成十，再加剩数<br><br>
+    <span class="tag">8 + 5 = ？</span> 8缺2凑成10，把5拆成2和3，8+2=10，10+3=<b>13</b><br>
+    <span class="tag">9 + 6 = ？</span> 9缺1凑成10，把6拆成1和5，9+1=10，10+5=<b>15</b><br><br>
+    <b>破十法</b>（减法用）：十几减几，把十几拆成10和几，10减完再加<br><br>
+    <span class="tag">13 − 8 = ？</span> 13拆成10和3，10−8=2，2+3=<b>5</b><br>
+    <span class="tag">16 − 9 = ？</span> 16拆成10和6，10−9=1，1+6=<b>7</b><br>
+  </div>
+</div>
+
+<!-- ═══════════ 四、带符号搬家 ═══════════ -->
+<div class="sec-title" id="banjia">🎯 技巧三：带着符号搬家</div>
+<div class="card">
+  <div class="t">🏠 加减混合，带着符号换位置</div>
+  <div class="d">
+    <b>规则：</b>在加减混合运算中，每个数前面的 <b>"+" 或 "−"</b> 是它的"小帽子"，搬家时必须带上帽子！<br><br>
+    <span class="tag orange">56 + 27 − 36 = ？</span><br><br>
+    先找"好朋友"：+56 和 −36 有共同部分，把它们靠在一起<br>
+    👉 = <span class="hl">56 − 36</span> + 27 = 20 + 27 = <b>47</b><br><br>
+    <div class="tip-box">
+      <div class="tip-t">⚠️ 重要提醒</div>
+      <div class="tip-d">搬家时，数字前面的符号 <b>必须跟着数字一起走</b>！+号可以省略不写，但−号绝对不能丢！</div>
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题</div>
+    <div class="ex-d">
+      85 − 37 + 15 = ？<br>
+      👉 把 +15 搬到前面来：<span class="hl">85 + 15 − 37</span> = 100 − 37 = <b>63</b> ✅
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 五、乘法巧算 ═══════════ -->
+<div class="sec-title" id="chengfa">🎯 技巧四：乘法巧算</div>
+<div class="card">
+  <div class="t">✖️ 乘法的速算套路</div>
+  <div class="d">
+    <b>技巧 ①：一个数 × 9</b><br>
+    口诀：<b>"添个0，减本身"</b><br>
+    <span class="tag">42 × 9 = 420 − 42 = 378</span>
+    <span class="tag">78 × 9 = 780 − 78 = 702</span>
+    <br><br>
+    <b>技巧 ②：一个数 × 11</b><br>
+    口诀：<b>"两头一拉，中间相加"</b>（两位数）<br>
+    <span class="tag">23 × 11 = 2_(2+3)_3 = 253</span>
+    <span class="tag">45 × 11 = 4_(4+5)_5 = 495</span>
+    <br><br>
+    <b>技巧 ③：乘法分配律</b><br>
+    遇到 99 × 7，别硬算！把它看作 <b>(100 − 1) × 7 = 700 − 7 = 693</b>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 1</div>
+    <div class="ex-d">
+      56 × 9 = ?<br>
+      👉 添个0：560，减本身：560 − 56 = <b>504</b> ✅
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 2</div>
+    <div class="ex-d">
+      99 × 15 = ?<br>
+      👉 看成 (100 − 1) × 15 = 1500 − 15 = <b>1485</b> ✅
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 六、头同尾合十 ═══════════ -->
+<div class="sec-title" id="touwei">🎯 技巧五：头同尾合十</div>
+<div class="card">
+  <div class="t">🔥 两位数乘两位数的"秒算"秘诀</div>
+  <div class="d">
+    <b>条件：</b>两个两位数，十位相同（头同），个位相加等于10（尾合十）<br><br>
+    <span class="tag">比如：23 × 27</span> — 十位都是2，个位3+7=10<br><br>
+    <b>口诀：头×(头+1) 尾×尾</b><br>
+    👉 23 × 27 = <span class="hl">2×(2+1)</span> 连接 <span class="hl2">3×7</span> = <span class="hl">6</span><span class="hl2">21</span> = <b>621</b>
+    <br><br>
+    <span class="tag purple">42 × 48 = 4×5 | 2×8 = 2016</span>
+    <span class="tag purple">31 × 39 = 3×4 | 1×9 = 1209</span>
+    <span class="tag purple">56 × 54 = 5×6 | 6×4 = 3024</span>
+    <br><br>
+    <div class="game-box">
+      <div class="game-t">🏆 挑战</div>
+      <div class="game-d">如果你能在3秒内算出 67 × 63，那你就已经是速算小达人了！<br>（答案：67×63 = 6×7 | 7×3 = 4221）</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 练习闯关 ═══════════ -->
+<div class="sec-title" id="practice">🎮 练习闯关</div>
+<div class="quiz-area" id="quiz">
+  <div class="q-title">⭐ 速算大闯关</div>
+  <div class="q-sub">一共 8 道题，看看你能拿多少分！</div>
+  <div class="q-num" id="qNum">第 1 / 8 题</div>
+  <div class="q-text" id="qText">25 + 37 + 75 = ?</div>
+  <input class="q-input" id="qInput" type="number" placeholder="?" onkeydown="if(event.key==='Enter')checkAnswer()">
+  <div>
+    <button class="q-btn" id="qSubmit" onclick="checkAnswer()">提交答案</button>
+    <button class="q-btn sec" id="qNext" onclick="nextQuestion()" disabled>下一题 →</button>
+  </div>
+  <div class="quiz-fb" id="qFb"></div>
+  <div class="quiz-score">得分：<span id="qScore">0</span> 分 &nbsp;|&nbsp; <span id="qStars"></span></div>
+</div>
+
+<script>
+const questions = [
+  { q: "25 + 37 + 75 = ?", a: 137, tip: "凑整法：25+75=100，100+37=137" },
+  { q: "56 + 27 − 36 = ?", a: 47, tip: "带符号搬家：56−36+27=20+27=47" },
+  { q: "85 − 37 + 15 = ?", a: 63, tip: "带符号搬家：85+15−37=100−37=63" },
+  { q: "127 + 68 + 73 = ?", a: 268, tip: "凑整法：127+73=200，200+68=268" },
+  { q: "63 × 9 = ?", a: 567, tip: "添0减本身：630−63=567" },
+  { q: "46 × 11 = ?", a: 506, tip: "两头一拉中间相加：4_(4+6)_6=4_10_6=506（记得进位！）" },
+  { q: "99 × 12 = ?", a: 1188, tip: "分配律：(100−1)×12=1200−12=1188" },
+  { q: "34 × 36 = ?", a: 1224, tip: "头同尾合十：3×4=12，4×6=24 → 1224" }
+];
+let idx = 0, score = 0;
+
+function renderStars(s) {
+  const full = Math.floor(s / 20), half = s % 20 >= 10 ? 1 : 0;
+  return '★'.repeat(full) + (half ? '☆' : '') + '☆'.repeat(5 - full - half);
+}
+
+function checkAnswer() {
+  const inp = document.getElementById('qInput');
+  const fb = document.getElementById('qFb');
+  const btn = document.getElementById('qSubmit');
+  const next = document.getElementById('qNext');
+  const v = parseInt(inp.value);
+  if (isNaN(v)) { fb.className='quiz-fb wrong'; fb.textContent='请输入一个数字！'; return; }
+  btn.disabled = true; inp.disabled = true;
+  if (v === questions[idx].a) {
+    score += (idx < 4 ? 10 : 15);
+    fb.className = 'quiz-fb correct';
+    fb.innerHTML = '✅ 完全正确！' + questions[idx].tip;
+  } else {
+    fb.className = 'quiz-fb wrong';
+    fb.innerHTML = '❌ 再想想哦。正确答案是 <b>' + questions[idx].a + '</b><br>' + questions[idx].tip;
+  }
+  document.getElementById('qScore').textContent = score;
+  document.getElementById('qStars').textContent = renderStars(score);
+  next.disabled = false;
+}
+
+function nextQuestion() {
+  idx++;
+  if (idx >= questions.length) {
+    const p = document.getElementById('qNum');
+    const t = document.getElementById('qText');
+    const fb = document.getElementById('qFb');
+    let msg = '';
+    if (score >= 100) msg = '🏆 太厉害了！你是速算大师！满分通关！🎉';
+    else if (score >= 70) msg = '👏 很棒！你已经掌握了大部分速算技巧！继续加油！';
+    else msg = '💪 不错哦！多练几次你也能成为速算高手！';
+    fb.className = 'quiz-fb correct';
+    fb.innerHTML = msg + '<br>得分：' + score + ' 分 ' + renderStars(score);
+    document.querySelector('.quiz-area .q-sub').textContent = '已完成全部题目！';
+    p.textContent = '🎉 闯关结束';
+    t.textContent = '';
+    document.getElementById('qInput').style.display = 'none';
+    document.getElementById('qSubmit').style.display = 'none';
+    document.getElementById('qNext').textContent = '再玩一次';
+    document.getElementById('qNext').onclick = () => location.reload();
+    return;
+  }
+  document.getElementById('qNum').textContent = '第 ' + (idx+1) + ' / ' + questions.length + ' 题';
+  document.getElementById('qText').textContent = questions[idx].q;
+  document.getElementById('qFb').textContent = '';
+  const inp = document.getElementById('qInput');
+  inp.value = ''; inp.disabled = false; inp.focus();
+  document.getElementById('qSubmit').disabled = false;
+  document.getElementById('qNext').disabled = true;
+}
+</script>
+
+<div class="card" style="text-align:center;padding:16px">
+  <div class="d" style="color:#888;font-size:14px">
+    💡 速算需要多练习！每天花 5 分钟练一练，一个月后你就是班级计算最快的那个人！
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>

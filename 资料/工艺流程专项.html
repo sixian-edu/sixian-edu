@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工业流程题 · 思贤学习站</title>
+<link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f7fa;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:880px;margin:0 auto}
+.back{color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+.back:hover{color:#1a6fc4}
+h1{text-align:center;font-size:26px;color:#1a6fc4;margin-bottom:6px;letter-spacing:2px}
+.sub{text-align:center;font-size:13px;color:#999;margin-bottom:20px}
+.sec-title{font-size:18px;font-weight:700;color:#333;margin:28px 0 12px;padding-left:12px;border-left:4px solid #1a6fc4}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border-top:4px solid #1a6fc4}
+.card .t{font-weight:700;font-size:16px;color:#1a6fc4;margin-bottom:8px}
+.card .d{font-size:14px;color:#555;line-height:1.8}
+.card .d b{color:#333}
+.tag{display:inline-block;font-size:11px;background:#e8f0fe;color:#1a6fc4;padding:2px 10px;border-radius:4px;margin:2px}
+.tag.red{background:#fde8e8;color:#c0392b}
+.tag.green{background:#e6f7e6;color:#2d7d46}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e8ff;color:#7b1fa2}
+.tag.yellow{background:#fff8e1;color:#f57f17}
+.formula{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:14px;text-align:center;color:#1a6fc4;font-weight:600;font-family:monospace}
+.formula.green{color:#2d7d46}
+.formula.orange{color:#e65100}
+.tip-box{background:#fff8e1;border-radius:10px;padding:12px 14px;margin:10px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:13px;color:#e65100}
+.tip-box .tip-d{font-size:13px;color:#555;line-height:1.7;margin-top:4px}
+/* 流程图样式 */
+.flow{background:#f8f9fc;border-radius:10px;padding:18px 14px;margin:12px 0;overflow-x:auto}
+.flow-row{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:0;min-width:fit-content;padding:6px 0}
+.flow-box{flex-shrink:0;background:#fff;border:2px solid #1a6fc4;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#1a6fc4;text-align:center;min-width:70px;max-width:120px}
+.flow-box.green{border-color:#2d7d46;color:#2d7d46}
+.flow-box.orange{border-color:#e65100;color:#e65100}
+.flow-box.purple{border-color:#7b1fa2;color:#7b1fa2}
+.flow-box.red{border-color:#c0392b;color:#c0392b}
+.flow-box.sm{padding:5px 10px;font-size:12px;min-width:55px}
+.flow-arrow{flex-shrink:0;font-size:20px;color:#999;padding:0 6px;font-weight:300}
+.flow-arrow.dn{display:block;text-align:center;padding:2px 0;font-size:16px}
+.flow-label{flex-shrink:0;font-size:11px;color:#888;text-align:center;padding:0 4px;max-width:60px}
+.flow-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
+/* 例题&练习 */
+.example-q{background:#f8f9fc;border-radius:8px;padding:14px;margin:10px 0;border-left:3px solid #e74c3c}
+.example-q .eq-t{font-weight:700;font-size:14px;color:#c0392b;margin-bottom:6px}
+.example-q .eq-d{font-size:13px;color:#555;line-height:1.8}
+.example-q .eq-d .blank{border-bottom:2px solid #333;display:inline-block;min-width:50px;text-align:center}
+.solution{background:#e6f7e6;border-radius:8px;padding:12px 14px;margin:10px 0;border-left:3px solid #2d7d46;display:none}
+.solution .sol-t{font-weight:700;font-size:13px;color:#2d7d46;margin-bottom:4px}
+.solution .sol-d{font-size:13px;color:#444;line-height:1.8}
+.solution.show{display:block}
+.sol-btn{display:inline-block;padding:4px 16px;background:#e8f0fe;color:#1a6fc4;border:1px solid #1a6fc4;border-radius:6px;font-size:12px;cursor:pointer;transition:all .2s;margin-top:6px}
+.sol-btn:hover{background:#1a6fc4;color:#fff}
+.practice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){
+  h1{font-size:22px}
+  .practice-grid{grid-template-columns:1fr}
+  .flow-row{flex-wrap:wrap;gap:4px}
+}
+</style>
+<script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../学习专区.html">← 返回学习专区</a>
+<h1>🏭 初中化学 · 工业流程题</h1>
+<p class="sub">常见工业流程模型 · 解题方法 · 例题精讲 · 专项练习</p>
+
+<!-- ═══════════ 引言 ═══════════ -->
+<div class="sec-title">🤔 什么是流程题？</div>
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🧪 箭头 + 方框 = 化学工艺流程</div>
+  <div class="d">
+    工业流程题是中考化学的 <b>必考拉分题型</b>，它用 <b>方框表示物质或操作</b>、<b>箭头表示反应方向</b>，展示了一个完整的化工生产过程。<br><br>
+    <span class="tag red">分值高</span> 通常 6-10 分，一道题能决定能否上优秀线
+    <span class="tag orange">难度大</span> 综合性强，考查方程式、操作、原理分析
+    <span class="tag green">有套路</span> 掌握了常见模型，拿全分并不难！
+  </div>
+</div>
+
+<!-- ═══════════ 解题方法 ═══════════ -->
+<div class="sec-title">📝 解题方法总纲</div>
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">🎯 四步解题法</div>
+  <div class="d">
+    <b>第一步 审头看尾</b> — 看原料是什么、最终产物是什么<br>
+    <b>第二步 理清路线</b> — 箭头的方向就是物质流动方向，弄清每一步发生了什么<br>
+    <b>第三步 定位核心反应</b> — 找到关键的化学反应方程式<br>
+    <b>第四步 分析操作</b> — 过滤、蒸发、蒸馏……常见操作的判断依据<br><br>
+    <span class="tag red">⚠️ 常见陷阱</span>
+    <span class="tag">循环利用的物质</span>
+    <span class="tag">可回收的物质</span>
+    <span class="tag orange">副产物处理</span>
+    <span class="tag green">反应条件（高温/催化剂）</span>
+  </div>
+</div>
+
+<div class="card" style="border-top-color:#2d7d46">
+  <div class="t" style="color:#2d7d46">🔑 核心技巧</div>
+  <div class="d">
+    <b>技巧1：关注"箭头方向"</b> — 箭头指向方框表示生成该物质，箭头从方框出去表示消耗该物质<br>
+    <b>技巧2：关注"循环线"</b> — 如果某物质从后面又回到了前面，说明它是 <b>可循环利用</b> 的<br>
+    <b>技巧3：关注"操作名称"</b> — 过滤（固液分离）、蒸发（得固体）、蒸馏（分离沸点不同的液体）<br>
+    <b>技巧4：关注"反应条件"</b> — 高温、点燃、催化剂、通电等都是关键提示<br>
+    <b>技巧5：方程式书写</b> — 流程题必考1-2个方程式书写，注意配平和条件！
+  </div>
+  <div class="tip-box">
+    <div class="tip-t">💡 记住一句话</div>
+    <div class="tip-d"><b>"顺着箭头看变化，逆着箭头找来源，环回来的可循环，框里的物质要看清。"</b></div>
+  </div>
+</div>
+
+<!-- ═══════════ 常见工业流程 ═══════════ -->
+<div class="sec-title">🏗️ 常考工业流程模型</div>
+
+<!-- 模型1：空气分离 -->
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">模型一：分离液态空气制氧气</div>
+  <div class="d">
+    <span class="tag red">原理</span> 利用液态氮和液态氧的 <b>沸点不同</b>（N₂沸点 -196℃，O₂沸点 -183℃）<br>
+    <span class="tag green">变化类型</span> <b>物理变化</b>（没有新物质生成）<br>
+    <span class="tag orange">记忆</span> 氮气沸点低，先出来
+  </div>
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-box red">空气</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">除尘净化</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">压缩</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">降温<br>(-196℃以下)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box orange">液态空气</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box green">升温</div>
+    </div>
+    <div class="flow-row" style="margin-top:6px">
+      <div class="flow-col">
+        <div class="flow-arrow dn">↓</div>
+        <div class="flow-box green sm">N₂先汽化（-196℃）</div>
+        <div class="flow-arrow dn">↓</div>
+        <div class="flow-box sm">氮气（工业原料）</div>
+      </div>
+      <div style="flex:0 0 20px"></div>
+      <div class="flow-col">
+        <div class="flow-arrow dn">↓</div>
+        <div class="flow-box red sm">继续升温</div>
+        <div class="flow-arrow dn">↓</div>
+        <div class="flow-box red sm">液态氧（-183℃）</div>
+      </div>
+    </div>
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 典型设问</div>
+    <div class="eq-d">
+      (1) 分离液态空气的原理是什么？答：<b>利用氮气和氧气的沸点不同</b><br>
+      (2) 该过程属于什么变化？答：<b>物理变化</b>（因为没新物质生成）<br>
+      (3) 哪种气体先出来？答：<b>氮气</b>（沸点更低）
+    </div>
+  </div>
+</div>
+
+<!-- 模型2：工业炼铁 -->
+<div class="card" style="border-top-color:#2d7d46">
+  <div class="t" style="color:#2d7d46">模型二：工业炼铁（高炉炼铁）</div>
+  <div class="d">
+    <span class="tag red">原理</span> 在高温下用CO还原铁矿石（主要是Fe₂O₃）<br>
+    <span class="tag green">核心方程式</span><br>
+    <div class="formula green">Fe₂O₃ + 3CO →<span style="font-weight:400">(高温)</span> 2Fe + 3CO₂</div>
+    <span class="tag orange">注意</span> CO有毒，需要尾气处理（点燃或收集）
+  </div>
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-box red">铁矿石<br>(Fe₂O₃)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">粉碎</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box purple">高炉<br>(高温)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box orange">生铁</div>
+      <div style="margin:0 4px"></div>
+    </div>
+    <div class="flow-row" style="font-size:12px;color:#888;gap:8px">
+      <span>↑ 焦炭 → CO（还原剂）</span>
+      <span>↑ 石灰石（除去杂质）</span>
+    </div>
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 典型设问</div>
+    <div class="eq-d">
+      (1) 写出高炉中炼铁的核心反应方程式：<b>Fe₂O₃ + 3CO →<span style="font-weight:400">(高温)</span> 2Fe + 3CO₂</b><br>
+      (2) CO的作用是什么？答：<b>还原剂（还原Fe₂O₃）</b><br>
+      (3) 为什么需要尾气处理？答：<b>CO有毒，会污染空气</b><br>
+      (4) 炼出的产品是纯铁吗？答：<b>不是，是生铁（含碳的合金）</b>
+    </div>
+  </div>
+</div>
+
+<!-- 模型3：粗盐提纯 -->
+<div class="card" style="border-top-color:#7b1fa2">
+  <div class="t" style="color:#7b1fa2">模型三：粗盐提纯</div>
+  <div class="d">
+    <span class="tag red">目的</span> 除去粗盐中的泥沙等不溶性杂质<br>
+    <span class="tag green">三步操作</span> 溶解 → 过滤 → 蒸发<br>
+    <span class="tag purple">拓展（可溶性杂质）</span> 加BaCl₂除SO₄²⁻→加NaOH除Mg²⁺→加Na₂CO₃除Ca²⁺+Ba²⁺→加HCl除OH⁻+CO₃²⁻
+  </div>
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-box red">粗盐</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">溶解</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box green">过滤</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">滤液</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box orange">蒸发</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box purple">精盐</div>
+    </div>
+    <div class="flow-row" style="font-size:12px;color:#888;">
+      <span>（加水溶解）</span>
+      <span style="margin-left:30px">（滤渣：泥沙）</span>
+      <span style="margin-left:60px">（用玻璃棒搅拌）</span>
+    </div>
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 典型设问</div>
+    <div class="eq-d">
+      (1) 过滤操作中"一贴二低三靠"指的是什么？<br>
+      <b>答：一贴（滤纸紧贴漏斗壁）二低（滤纸边缘低于漏斗口、液面低于滤纸边缘）三靠（烧杯嘴靠玻璃棒、玻璃棒靠三层滤纸、漏斗管靠烧杯壁）</b><br>
+      (2) 蒸发时用玻璃棒不断搅拌的目的是？答：<b>防止局部温度过高造成液滴飞溅</b><br>
+      (3) 粗盐提纯属于物理变化还是化学变化？答：<b>物理变化</b>（没有生成新物质）
+    </div>
+  </div>
+</div>
+
+<!-- 模型4：水的净化 -->
+<div class="card" style="border-top-color:#1a6fc4">
+  <div class="t" style="color:#1a6fc4">模型四：水的净化</div>
+  <div class="d">
+    <span class="tag red">流程</span> 河水 → 沉降 → 过滤 → 吸附 → 消毒 → 自来水<br>
+    <span class="tag green">明矾</span> 絮凝剂，吸附水中悬浮杂质使之沉降<br>
+    <span class="tag orange">活性炭</span> 吸附色素和异味（物理变化）<br>
+    <span class="tag red">消毒</span> 用氯气（Cl₂）、臭氧（O₃）等，<b>化学变化</b>
+  </div>
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-box red">河水</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">沉降<br>(加明矾)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box green">过滤</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box orange">吸附<br>(活性炭)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box red">消毒<br>(加Cl₂)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box purple">自来水</div>
+    </div>
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 典型设问</div>
+    <div class="eq-d">
+      (1) 明矾的作用是什么？答：<b>吸附悬浮杂质，加速沉降</b><br>
+      (2) 活性炭的吸附属于什么变化？答：<b>物理变化</b><br>
+      (3) 净化程度最高的是哪种操作？答：<b>蒸馏</b>（得到蒸馏水）<br>
+      (4) 生活中常用什么方法降低水的硬度？答：<b>煮沸</b>
+    </div>
+  </div>
+</div>
+
+<!-- 模型5：海水晒盐 -->
+<div class="card" style="border-top-color:#f57c00">
+  <div class="t" style="color:#f57c00">模型五：海水晒盐（盐田法）</div>
+  <div class="d">
+    <span class="tag red">原理</span> 利用日晒蒸发水分使NaCl结晶析出<br>
+    <span class="tag green">过程</span> 海水 → 引入蒸发池 → 引入结晶池 → 粗盐 → 母液（苦卤，含MgCl₂等）<br>
+    <span class="tag orange">注意</span> 海水晒盐是 <b>物理变化</b>，不是化学变化
+  </div>
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-box red">海水</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">蒸发池<br>（日晒）</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box orange">结晶池</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box green">粗盐</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box purple sm">母液<br>（苦卤）</div>
+    </div>
+  </div>
+  <div class="tip-box">
+    <div class="tip-t">💡 中考常问</div>
+    <div class="tip-d">母液（苦卤）是 <b>氯化镁、氯化钾等</b> 的混合物，可以用来提取其他化工产品。</div>
+  </div>
+</div>
+
+<!-- 模型6：海水提镁 -->
+<div class="card" style="border-top-color:#c0392b">
+  <div class="t" style="color:#c0392b">模型六：海水提镁</div>
+  <div class="d">
+    <span class="tag red">流程</span> 海水/苦卤 → 加石灰乳 → Mg(OH)₂沉淀 → 加盐酸 → MgCl₂溶液 → 蒸发 → MgCl₂固体 → 通电 → Mg<br>
+  </div>
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-box red sm">苦卤</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box sm">加Ca(OH)₂</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box green sm">Mg(OH)₂</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box sm">加盐酸</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box orange sm">MgCl₂</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box purple sm">通电</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box red sm">镁</div>
+    </div>
+  </div>
+  <div class="example-q">
+    <div class="eq-t">📌 核心方程式</div>
+    <div class="eq-d">
+      (1) MgCl₂ + Ca(OH)₂ → <b>Mg(OH)₂↓ + CaCl₂</b><br>
+      (2) Mg(OH)₂ + 2HCl → <b>MgCl₂ + 2H₂O</b><br>
+      (3) MgCl₂ →<span style="font-weight:400">(通电)</span> <b>Mg + Cl₂↑</b>（分解反应）
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 例题精讲 ═══════════ -->
+<div class="sec-title">📖 例题精讲（带解析）</div>
+
+<div class="card" style="border-top-color:#e74c3c">
+  <div class="t" style="color:#e74c3c">例题 1</div>
+  <div class="example-q">
+    <div class="eq-t">题目</div>
+    <div class="eq-d">
+      某工厂利用石灰石（主要成分CaCO₃）生产生石灰（CaO），流程如下：<br><br>
+      <div class="flow" style="margin:6px 0">
+        <div class="flow-row">
+          <div class="flow-box red">石灰石</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">粉碎</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box purple">高温<br>煅烧</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box green">生石灰<br>(CaO)</div>
+        </div>
+      </div>
+      (1) 石灰石粉碎的目的是什么？<br>
+      (2) 写出高温煅烧的化学方程式。<br>
+      (3) 该反应属于哪种基本反应类型？<br>
+      (4) 生石灰在空气中长期放置会变成什么？写出相关方程式。
+    </div>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 查看答案与解析</button>
+  <div class="solution">
+    <div class="sol-t">✅ 答案与解析</div>
+    <div class="sol-d">
+      <b>(1) 增大反应物接触面积，使反应更充分、速率更快。</b><br><br>
+      <b>(2) CaCO₃ →<span style="font-weight:400">(高温)</span> CaO + CO₂↑</b><br>
+      <span style="color:#888">注意：写方程式要标"△"或"高温"，CO₂要标↑</span><br><br>
+      <b>(3) 分解反应</b>（一种物质分解成两种物质）<br><br>
+      <b>(4) 会变成Ca(OH)₂，再变成CaCO₃。</b><br>
+      CaO + H₂O → Ca(OH)₂（生石灰与水反应放热）<br>
+      Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O（氢氧化钙与CO₂反应）<br>
+      <span style="color:#888">★ 这就是为什么生石灰要密封保存！</span>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="border-top-color:#2d7d46">
+  <div class="t" style="color:#2d7d46">例题 2</div>
+  <div class="example-q">
+    <div class="eq-t">题目</div>
+    <div class="eq-d">
+      某工厂从含有FeSO₄和CuSO₄的废液中回收金属铜，流程如下：<br><br>
+      <div class="flow" style="margin:6px 0">
+        <div class="flow-row">
+          <div class="flow-box red sm">废液<br>(FeSO₄+CuSO₄)</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box sm">加过量<br>铁粉</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box green sm">操作a</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box orange sm">固体</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box sm">加适量<br>稀硫酸</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box purple sm">操作b</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box red sm">铜</div>
+        </div>
+      </div>
+      (1) 写出加过量铁粉时发生反应的化学方程式。<br>
+      (2) 操作a和操作b的名称是什么？<br>
+      (3) 加入适量稀硫酸的目的是什么？<br>
+      (4) 整个过程中可以循环利用的物质是什么？
+    </div>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 查看答案与解析</button>
+  <div class="solution">
+    <div class="sol-t">✅ 答案与解析</div>
+    <div class="sol-d">
+      <b>(1) Fe + CuSO₄ → FeSO₄ + Cu</b>（铁置换出铜，溶液从蓝色变为浅绿色）<br><br>
+      <b>(2) 操作a是过滤，操作b也是过滤。</b><br>
+      <span style="color:#888">★ 过滤用于分离固体和液体。操作a分离出固体（铜和过量铁粉的混合物），操作b分离出纯铜。</span><br><br>
+      <b>(3) 除去固体中的过量铁粉。</b><br>
+      Fe + H₂SO₄ → FeSO₄ + H₂↑（铁与稀硫酸反应生成氢气，而铜不与稀硫酸反应）<br><br>
+      <b>(4) 可循环利用的是铁粉（或FeSO₄溶液）。</b><br>
+      <span style="color:#888">★ 注意看箭头："绿色化学"思想，节约原料！</span>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="border-top-color:#7b1fa2">
+  <div class="t" style="color:#7b1fa2">例题 3（含杂质计算）</div>
+  <div class="example-q">
+    <div class="eq-t">题目</div>
+    <div class="eq-d">
+      某工厂用含Fe₂O₃ 80%的赤铁矿石1000吨炼铁。<br><br>
+      (1) 理论上可以炼出含铁96%的生铁多少吨？<br>
+      (2) 若实际产率为90%，实际炼出生铁多少吨？
+    </div>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁️ 查看答案与解析</button>
+  <div class="solution">
+    <div class="sol-t">✅ 答案与解析</div>
+    <div class="sol-d">
+      <b>(1) 设炼出纯铁的质量为 x</b><br><br>
+      Fe₂O₃ 的质量 = 1000t × 80% = <b>800 t</b><br><br>
+      Fe₂O₃ + 3CO →<span style="font-weight:400">(高温)</span> 2Fe + 3CO₂<br>
+      160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2×56=112<br>
+      800t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<br><br>
+      160/800 = 112/x &nbsp;⇒&nbsp; x = 800×112÷160 = <b>560 t</b>（纯铁质量）<br><br>
+      <b>含铁96%的生铁质量</b> = 560 ÷ 96% = 560 ÷ 0.96 ≈ <b>583.3 t</b><br><br>
+      <b>(2) 实际产量</b> = 583.3 × 90% ≈ <b>525 t</b><br><br>
+      <span style="color:#c0392b;font-weight:600">★ 中考计算步骤：<br>
+      ① 先算纯物质质量（×纯度）<br>
+      ② 根据方程式计算理论纯产物质量<br>
+      ③ 再折算回不纯产物（÷纯度）<br>
+      ④ 实际产量再×产率</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 专项练习 ═══════════ -->
+<div class="sec-title">✍️ 专项练习（点击题目查看答案）</div>
+
+<div class="practice-grid">
+  <div class="card" style="border-top-color:#1a6fc4">
+    <div class="t" style="color:#1a6fc4;font-size:14px">练习 1</div>
+    <div class="d" style="font-size:13px">
+      空气分离制氧气的流程中，利用了氮气和氧气的什么性质不同？该过程属于物理变化还是化学变化？
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d"><b>沸点不同</b>（N₂ -196℃，O₂ -183℃）。属于 <b>物理变化</b>，因为没有新物质生成。</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#2d7d46">
+    <div class="t" style="color:#2d7d46;font-size:14px">练习 2</div>
+    <div class="d" style="font-size:13px">
+      写出工业炼铁核心反应方程式，并指出哪种物质做还原剂。尾气如何处理？
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        Fe₂O₃ + 3CO →<span style="font-weight:400">(高温)</span> 2Fe + 3CO₂<br>
+        <b>CO做还原剂</b>。尾气中含剧毒CO，需 <b>点燃处理</b> 或 <b>收集回收</b>。
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#e74c3c">
+    <div class="t" style="color:#e74c3c;font-size:14px">练习 3</div>
+    <div class="d" style="font-size:13px">
+      粗盐提纯的三步操作是什么？过滤中"一贴二低三靠"的"二低"指什么？
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        三步：<b>溶解 → 过滤 → 蒸发</b><br>
+        "二低"：<b>滤纸边缘低于漏斗口</b>、<b>液面低于滤纸边缘</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#f57c00">
+    <div class="t" style="color:#f57c00;font-size:14px">练习 4</div>
+    <div class="d" style="font-size:13px">
+      水的净化流程中，活性炭的作用是什么？该过程是什么变化？消毒是物理变化还是化学变化？
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        活性炭 <b>吸附色素和异味</b>，属于 <b>物理变化</b>。<br>
+        消毒（加氯气）是 <b>化学变化</b>，因为氯与水反应生成次氯酸，杀死细菌。
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#7b1fa2">
+    <div class="t" style="color:#7b1fa2;font-size:14px">练习 5</div>
+    <div class="d" style="font-size:13px">
+      某工厂用含Fe₂O₃ 80%的赤铁矿500吨炼铁，理论上可炼出含铁96%的生铁多少吨？（Fe₂O₃分子量160，Fe原子量56）
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        Fe₂O₃质量 = 500×80% = 400 t<br>
+        设纯铁质量为 x：<br>
+        Fe₂O₃ ～ 2Fe<br>
+        160 : 112 = 400 : x → x = 400×112÷160 = 280 t<br>
+        生铁质量 = 280÷96% ≈ <b>291.7 t</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#c0392b">
+    <div class="t" style="color:#c0392b;font-size:14px">练习 6</div>
+    <div class="d" style="font-size:13px">
+      海水提镁流程中"加石灰乳"的目的是什么？写出相关方程式。电解MgCl₂得什么产物？
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        加石灰乳（Ca(OH)₂）使Mg²⁺沉淀为Mg(OH)₂：<br>
+        MgCl₂ + Ca(OH)₂ → <b>Mg(OH)₂↓ + CaCl₂</b><br>
+        电解熔融MgCl₂：<b>MgCl₂ →<span style="font-weight:400">(通电)</span> Mg + Cl₂↑</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#1a6fc4">
+    <div class="t" style="color:#1a6fc4;font-size:14px">练习 7</div>
+    <div class="d" style="font-size:13px">
+      高炉炼铁中焦炭的作用有哪些？（提示：至少写出两个作用）
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        两个作用：<br>
+        <b>① 提供热量</b>（C + O₂ →<span style="font-weight:400">(点燃)</span> CO₂，放热）<br>
+        <b>② 产生还原剂CO</b>（CO₂ + C →<span style="font-weight:400">(高温)</span> 2CO）
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top-color:#e65100">
+    <div class="t" style="color:#e65100;font-size:14px">练习 8（综合）</div>
+    <div class="d" style="font-size:13px">
+      要实现"Fe₂O₃ → Fe → Cu"的转化，需要依次加入什么试剂？写出每一步的化学方程式。
+    </div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁️ 看答案</button>
+    <div class="solution">
+      <div class="sol-t">✅ 答案</div>
+      <div class="sol-d">
+        第一步（还原Fe₂O₃→Fe）：加 <b>CO（高温）</b><br>
+        Fe₂O₃ + 3CO →<span style="font-weight:400">(高温)</span> 2Fe + 3CO₂<br><br>
+        第二步（Fe→Cu）：加 <b>CuSO₄溶液</b><br>
+        Fe + CuSO₄ → FeSO₄ + Cu<br><br>
+        <span style="color:#888">★ 用铁置换铜——铁比铜活泼！</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 总结 ═══════════ -->
+<div class="card" style="border-top-color:#333;margin-top:20px">
+  <div class="t" style="color:#333">📌 流程题避坑指南</div>
+  <div class="d">
+    <span class="tag red">❌ 方程式忘配平</span> 写了反应物和生成物但不配平，扣一半分！<br>
+    <span class="tag red">❌ 漏标条件或符号</span> 高温/催化剂/MnO₂/↑/↓ 一个都不能少<br>
+    <span class="tag red">❌ 物理变化写方程式</span> 分离液态空气、粗盐提纯等没有化学反应，不用写方程式<br>
+    <span class="tag red">❌ 忽略循环利用</span> 看到箭头绕回来的物质，一定是可循环利用的<br>
+    <span class="tag red">❌ 计算忘记纯度</span> 用不纯物的质量×纯度 = 纯物质质量，这是第一步<br>
+    <span class="tag green">✅ 多练多总结</span> 每做完一道流程题，就归纳出它的"模型"是什么
+  </div>
+</div>
+
+<script>
+function toggleSol(btn) {
+  const sol = btn.nextElementSibling;
+  sol.classList.toggle('show');
+  btn.textContent = sol.classList.contains('show') ? '🙈 收起答案' : '👁️ 查看答案与解析';
+}
+</script>
+
+</div><!-- /wrap -->
+</body>
+</html>

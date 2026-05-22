@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作文素材 · 思贤学习站</title>
+<link rel="icon" href="../../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f0faf0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:820px;margin:0 auto}
+.back{color:#666;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+.back:hover{color:#43a047}
+h1{text-align:center;font-size:30px;color:#2e7d32;margin-bottom:4px}
+.sub{text-align:center;font-size:14px;color:#888;margin-bottom:20px}
+.sec-title{font-size:20px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #43a047}
+.card{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.card .t{font-weight:700;font-size:18px;color:#2e7d32;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .d{font-size:15px;color:#444;line-height:1.9}
+.card .d b{color:#2e7d32}
+.tag{display:inline-block;font-size:12px;padding:3px 12px;border-radius:20px;margin:3px;background:#e8f5e9;color:#2e7d32}
+.tag.red{background:#ffebee;color:#c62828}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e5f5;color:#7b1fa2}
+.tag.pink{background:#fce4ec;color:#c2185b}
+.tip-box{background:#fff8e1;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:14px;color:#e65100}
+.tip-box .tip-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.tip-box.green{background:#e8f5e9;border-left-color:#43a047}
+.tip-box.green .tip-t{color:#2e7d32}
+.game-box{background:#e3f2fd;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #1565c0}
+.game-box .game-t{font-weight:700;font-size:14px;color:#1565c0}
+.game-box .game-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.step{display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:10px 14px;background:#f9fbe7;border-radius:10px}
+.step-num{flex:0 0 32px;height:32px;border-radius:50%;background:#43a047;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-c{flex:1}
+.step-c b{color:#43a047}
+.tech-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.tech-nav a{display:inline-block;padding:6px 14px;background:#e8f5e9;color:#2e7d32;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.tech-nav a:hover{background:#43a047;color:#fff}
+/* 素材卡片 */
+.mat-section{display:none}
+.mat-section.show{display:block}
+.mat-tab{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.mat-tab button{padding:8px 16px;border:2px solid #43a047;border-radius:20px;background:#fff;color:#43a047;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.mat-tab button:hover{background:#e8f5e9}
+.mat-tab button.active{background:#43a047;color:#fff}
+.mat-box{background:#f9fbe7;border-radius:12px;padding:14px 16px;margin:12px 0}
+.mat-box .mat-t{font-weight:700;font-size:14px;color:#2e7d32;margin-bottom:6px}
+.mat-box .mat-d{font-size:14px;color:#555;line-height:1.9}
+.mat-box .mat-d .w{display:inline-block;background:#e3f2fd;color:#1565c0;padding:1px 8px;border-radius:6px;margin:2px}
+.mat-box .mat-d .s{display:block;background:#fff;border-radius:8px;padding:6px 10px;margin:4px 0;border-left:3px solid #43a047;font-size:14px;color:#555}
+.cy-box{display:inline-block;background:#fff3e0;color:#e65100;padding:6px 12px;border-radius:8px;margin:4px;font-size:14px}
+.cy-box .cy-m{font-size:11px;color:#888;display:block}
+/* 造句练习 */
+.practice-area{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08);text-align:center}
+.practice-area .p-title{font-size:18px;font-weight:700;color:#2e7d32;margin-bottom:12px}
+.practice-area .p-word{font-size:22px;font-weight:700;color:#e65100;margin-bottom:8px}
+.practice-area .p-hint{font-size:14px;color:#888;margin-bottom:12px}
+.practice-area .p-input{width:96%;max-width:500px;padding:10px;font-size:15px;border:2px solid #ddd;border-radius:10px;outline:none;margin-bottom:10px;resize:none;height:60px}
+.practice-area .p-input:focus{border-color:#43a047}
+.practice-area .p-btn{display:inline-block;padding:8px 24px;font-size:15px;font-weight:600;background:linear-gradient(135deg,#43a047,#2e7d32);color:#fff;border:none;border-radius:10px;cursor:pointer;margin:4px;transition:opacity .2s}
+.practice-area .p-btn:hover{opacity:.85}
+.practice-area .p-btn.sec{background:linear-gradient(135deg,#ff8f00,#e65100)}
+.practice-area .p-example{background:#f9fbe7;border-radius:10px;padding:10px;margin-top:10px;font-size:14px;color:#555;text-align:left}
+.practice-area .p-example b{color:#e65100}
+@media(max-width:600px){
+  h1{font-size:24px}
+}
+</style>
+<script src="../../js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../学习专区.html">← 返回学习专区</a>
+<h1>✏️ 作文素材</h1>
+<p class="sub">好词好句每日积累，写作文不再发愁！🌈</p>
+
+<div class="tech-nav">
+  <a href="#why">积累的意义</a>
+  <a href="#material">素材分类</a>
+  <a href="#idioms">常用成语</a>
+  <a href="#practice">造句练习</a>
+</div>
+
+<!-- ═══════════ 引言 ═══════════ -->
+<div class="sec-title" id="why">🤔 为什么要积累素材？</div>
+<div class="card">
+  <div class="t">🏗️ 好作文 = 好素材 + 好结构</div>
+  <div class="d">
+    写作文就像盖房子——<br><br>
+    <span class="tag">🧱 好词 = 砖块</span>
+    <span class="tag">🔩 好句 = 钢筋</span>
+    <span class="tag">📐 结构 = 设计图</span>
+    <br><br>
+    没有素材，再好的结构也写不出好作文。<br>
+    <b>每天积累一点点，一个月后你的作文水平就会让同学惊讶！</b><br><br>
+    下面是按主题分类的好词好句，点开就能看 👇
+  </div>
+</div>
+
+<!-- ═══════════ 素材分类 ═══════════ -->
+<div class="sec-title" id="material">📂 按主题分类</div>
+<div class="card">
+  <div class="t">📌 点击切换不同主题</div>
+  <div class="mat-tab" id="matTab">
+    <button class="active" data-mat="person">👤 写人篇</button>
+    <button data-mat="scene">🌅 写景篇</button>
+    <button data-mat="event">📝 写事篇</button>
+    <button data-mat="object">🌸 状物篇</button>
+  </div>
+
+  <!-- 写人篇 -->
+  <div class="mat-section show" id="matPerson">
+    <div class="tip-box green">
+      <div class="tip-t">🎯 写人要点</div>
+      <div class="tip-d">写人要抓住特点：<b>外貌特征 + 性格特点 + 具体事例</b>。不要什么都写，选最特别的2-3个点写深写透。</div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">👀 描写外貌</div>
+      <div class="mat-d">
+        <span class="w">弯弯的眉毛</span><span class="w">水汪汪的大眼睛</span><span class="w">圆圆的脸蛋</span><span class="w">高高的鼻梁</span><span class="w">樱桃小嘴</span><span class="w">乌黑的头发</span><span class="w">白白净净</span><span class="w">浓眉大眼</span><span class="w">慈眉善目</span><span class="w">满头白发</span><span class="w">满面红光</span><span class="w">虎头虎脑</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">爷爷 <b>满头白发</b>，但眼神炯炯有神，走起路来 <b>腰板挺得直直的</b>。</span>
+        <span class="s">她有一双 <b>水汪汪的大眼睛</b>，笑起来像两个弯弯的月牙。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">💖 描写性格</div>
+      <div class="mat-d">
+        <span class="w">活泼开朗</span><span class="w">温柔体贴</span><span class="w">乐于助人</span><span class="w">坚强勇敢</span><span class="w">幽默风趣</span><span class="w">认真负责</span><span class="w">勤劳朴实</span><span class="w">善解人意</span><span class="w">急性子</span><span class="w">慢性子</span><span class="w">暴脾气</span><span class="w">热心肠</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">班长是个 <b>热心肠</b>，谁有困难她总是第一个伸出援手。</span>
+        <span class="s">爸爸是个 <b>慢性子</b>，天塌下来他都不着急，可妈妈却是个 <b>急性子</b>。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">✍️ 描写动作</div>
+      <div class="mat-d">
+        <span class="w">大步流星</span><span class="w">蹑手蹑脚</span><span class="w">手舞足蹈</span><span class="w">东张西望</span><span class="w">目不转睛</span><span class="w">狼吞虎咽</span><span class="w">慢条斯理</span><span class="w">迫不及待</span><span class="w">奋笔疾书</span><span class="w">左顾右盼</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">放学铃声一响，小明就 <b>迫不及待</b> 地冲出教室，像一只快乐的小鸟。</span>
+        <span class="s">妈妈 <b>蹑手蹑脚</b> 地走进房间，轻轻给我盖好被子。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 写景篇 -->
+  <div class="mat-section" id="matScene">
+    <div class="tip-box green">
+      <div class="tip-t">🎯 写景要点</div>
+      <div class="tip-d">写景要有顺序（远→近、上→下、整体→局部），调动 <b>视觉、听觉、嗅觉、触觉</b> 多种感官，让读者"身临其境"。</div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">🌸 描写春天</div>
+      <div class="mat-d">
+        <span class="w">春暖花开</span><span class="w">万物复苏</span><span class="w">鸟语花香</span><span class="w">莺歌燕舞</span><span class="w">百花争艳</span><span class="w">草长莺飞</span><span class="w">春意盎然</span><span class="w">春风拂面</span><span class="w">生机勃勃</span><span class="w">细雨绵绵</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">春天来了，大地 <b>万物复苏</b>，小草从土里探出了嫩绿的脑袋。</span>
+        <span class="s">公园里 <b>百花争艳</b>，红的像火，粉的像霞，白的像雪，美不胜收。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">☀️ 描写夏天</div>
+      <div class="mat-d">
+        <span class="w">烈日炎炎</span><span class="w">挥汗如雨</span><span class="w">绿树成荫</span><span class="w">蝉声阵阵</span><span class="w">电闪雷鸣</span><span class="w">倾盆大雨</span><span class="w">骄阳似火</span><span class="w">荷花满塘</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">夏天的午后，<b>蝉声阵阵</b>，太阳像一个巨大的火球炙烤着大地。</span>
+        <span class="s">池塘里的荷花开了，<b>粉嘟嘟的花瓣</b>在碧绿的荷叶衬托下格外美丽。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">🍂 描写秋天</div>
+      <div class="mat-d">
+        <span class="w">秋高气爽</span><span class="w">金风送爽</span><span class="w">层林尽染</span><span class="w">硕果累累</span><span class="w">五谷丰登</span><span class="w">落叶纷飞</span><span class="w">大雁南飞</span><span class="w">丹桂飘香</span><span class="w">天高云淡</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">秋天是一个 <b>硕果累累</b> 的季节，红彤彤的苹果挂满了枝头。</span>
+        <span class="s">一阵秋风吹过，金黄的落叶像 <b>一只只蝴蝶在空中飞舞</b>。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">❄️ 描写冬天</div>
+      <div class="mat-d">
+        <span class="w">大雪纷飞</span><span class="w">冰天雪地</span><span class="w">寒风刺骨</span><span class="w">银装素裹</span><span class="w">白雪皑皑</span><span class="w">滴水成冰</span><span class="w">天寒地冻</span><span class="w">鹅毛大雪</span><span class="w">冬日暖阳</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">下雪了，整个世界 <b>银装素裹</b>，像披上了一层洁白的毯子。</span>
+        <span class="s">虽然外面 <b>寒风刺骨</b>，但屋子里暖气片散发着温暖，窗玻璃上结满了美丽的冰花。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 写事篇 -->
+  <div class="mat-section" id="matEvent">
+    <div class="tip-box green">
+      <div class="tip-t">🎯 写事要点</div>
+      <div class="tip-d">记事要有 <b>六要素</b>（时间、地点、人物、起因、经过、结果）。"经过"要写详细，特别是人物的动作、语言和心理活动。</div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">😊 描写开心的事</div>
+      <div class="mat-d">
+        <span class="w">欢呼雀跃</span><span class="w">喜笑颜开</span><span class="w">眉开眼笑</span><span class="w">手舞足蹈</span><span class="w">乐不可支</span><span class="w">心花怒放</span><span class="w">欣喜若狂</span><span class="w">兴高采烈</span><span class="w">开怀大笑</span><span class="w">笑逐颜开</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">听到这个好消息，我 <b>一蹦三尺高</b>，心里像吃了蜜一样甜。</span>
+        <span class="s">看到她 <b>眉开眼笑</b> 的样子，我也忍不住跟着笑了起来。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">😢 描写难过/感动</div>
+      <div class="mat-d">
+        <span class="w">热泪盈眶</span><span class="w">泪流满面</span><span class="w">泣不成声</span><span class="w">伤心欲绝</span><span class="w">百感交集</span><span class="w">感动不已</span><span class="w">心如刀割</span><span class="w">黯然神伤</span><span class="w">鼻子一酸</span><span class="w">眼眶湿润</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">望着妈妈远去的背影，我 <b>鼻子一酸</b>，眼泪在眼眶里直打转。</span>
+        <span class="s">听完这个感人的故事，大家都 <b>热泪盈眶</b>，教室里安静极了。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">🔥 描写难忘的事</div>
+      <div class="mat-d">
+        <span class="w">刻骨铭心</span><span class="w">记忆犹新</span><span class="w">历历在目</span><span class="w">难以忘怀</span><span class="w">终身难忘</span><span class="w">回味无穷</span>
+        <br><br>
+        <b>过渡句（超实用！）：</b>
+        <span class="s">虽然这件事已经过去很久了，但至今回想起来，仍然 <b>历历在目</b>……</span>
+        <span class="s">这件事让我明白了一个道理：<b>坚持就是胜利</b>。</span>
+        <span class="s">这就是我 <b>最难忘</b> 的一件事，它教会了我什么是真正的勇敢。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 状物篇 -->
+  <div class="mat-section" id="matObject">
+    <div class="tip-box green">
+      <div class="tip-t">🎯 状物要点</div>
+      <div class="tip-d">描写物品/动物/植物要抓住 <b>外形特征 + 生活习性/用途 + 与自己的感情</b>。让物品"活"起来！</div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">🐕 描写动物</div>
+      <div class="mat-d">
+        <span class="w">毛茸茸</span><span class="w">胖乎乎</span><span class="w">圆滚滚</span><span class="w">摇头摆尾</span><span class="w">活蹦乱跳</span><span class="w">乖巧可爱</span><span class="w">威风凛凛</span><span class="w">色彩斑斓</span><span class="w">展翅高飞</span><span class="w">慢吞吞</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">我家的小猫浑身 <b>毛茸茸</b> 的，像一个白色的小绒球。</span>
+        <span class="s">小狗一看到我回来，就 <b>摇头摆尾</b> 地跑过来，在我脚边蹭来蹭去。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">🌻 描写植物</div>
+      <div class="mat-d">
+        <span class="w">郁郁葱葱</span><span class="w">枝繁叶茂</span><span class="w">含苞欲放</span><span class="w">亭亭玉立</span><span class="w">婀娜多姿</span><span class="w">根深叶茂</span><span class="w">竞相开放</span><span class="w">清香扑鼻</span><span class="w">绿油油</span><span class="w">红艳艳</span><span class="w">金灿灿</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">向日葵 <b>金灿灿</b> 的花盘像一张笑脸，始终追随着太阳的方向。</span>
+        <span class="s">这棵老槐树 <b>枝繁叶茂</b>，像一把巨大的绿伞，为我们遮挡烈日。</span>
+      </div>
+    </div>
+
+    <div class="mat-box">
+      <div class="mat-t">🎒 描写物品</div>
+      <div class="mat-d">
+        <span class="w">精致小巧</span><span class="w">造型独特</span><span class="w">小巧玲珑</span><span class="w">实用美观</span><span class="w">爱不释手</span><span class="w">倍加珍惜</span><span class="w">崭新锃亮</span><span class="w">陈旧褪色</span>
+        <br><br>
+        <b>例句：</b>
+        <span class="s">这个铅笔盒虽然已经 <b>陈旧褪色</b> 了，但它是好朋友送我的，我一直 <b>倍加珍惜</b>。</span>
+        <span class="s">我有一个 <b>精致小巧</b> 的音乐盒，打开盖子，优美的音乐就流淌出来。</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 常用成语 ═══════════ -->
+<div class="sec-title" id="idioms">📜 常用成语分类</div>
+<div class="card">
+  <div class="t">🧩 成语用对地方，作文立刻"高级"起来</div>
+  <div class="d">
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+      <span class="cy-box"><b>描写学习</b>专心致志 · 废寝忘食 · 孜孜不倦 · 持之以恒 · 笨鸟先飞<span class="cy-m">用在学习类作文里超加分</span></span>
+      <span class="cy-box"><b>描写时间</b>光阴似箭 · 日月如梭 · 白驹过隙 · 转瞬即逝 · 度日如年<span class="cy-m">开头结尾用，瞬间有文采</span></span>
+      <span class="cy-box"><b>描写努力</b>坚持不懈 · 锲而不舍 · 迎难而上 · 勇往直前 · 百折不挠<span class="cy-m">写"克服困难"主题必备</span></span>
+      <span class="cy-box"><b>描写心情</b>心花怒放 · 忐忑不安 · 心急如焚 · 喜出望外 · 恍然大悟<span class="cy-m">写心理活动时用</span></span>
+      <span class="cy-box"><b>描写美景</b>美不胜收 · 流连忘返 · 心旷神怡 · 如诗如画 · 绚丽多彩<span class="cy-m">写游记/风景时用</span></span>
+      <span class="cy-box"><b>描写友情</b>情同手足 · 形影不离 · 志同道合 · 亲密无间 · 朝夕相处<span class="cy-m">写朋友/同学时用</span></span>
+    </div>
+    <div class="tip-box">
+      <div class="tip-t">💡 使用建议</div>
+      <div class="tip-d">一篇文章用 <b>2-3个成语</b> 就够了，不要堆砌。用得恰到好处才显水平，用得太多反而显得不自然。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 造句练习 ═══════════ -->
+<div class="sec-title" id="practice">✍️ 造句小练习</div>
+<div class="practice-area" id="pBox">
+  <div class="p-title">🎯 用下面的词语造个句子吧！</div>
+  <div class="p-word" id="pWord">迫不及待</div>
+  <div class="p-hint" id="pHint">💡 提示：形容心情非常着急，等不及了</div>
+  <textarea class="p-input" id="pInput" placeholder="在这里写你的句子..." maxlength="100"></textarea>
+  <div>
+    <button class="p-btn" onclick="checkSentence()">✅ 检查句子</button>
+    <button class="p-btn sec" onclick="nextWord()">下一个词 →</button>
+  </div>
+  <div class="quiz-fb" id="pFb"></div>
+  <div class="p-example" id="pExample"></div>
+</div>
+
+<script>
+// ── 素材分类切换 ──
+document.querySelectorAll('#matTab button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('#matTab button').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.mat-section').forEach(s => s.classList.remove('show'));
+    document.getElementById('mat' + this.dataset.mat.charAt(0).toUpperCase() + this.dataset.mat.slice(1)).classList.add('show');
+  });
+});
+
+const words = [
+  { word: '迫不及待', hint: '形容心情急切，等不及了', example: '放学铃一响，我<b>迫不及待</b>地冲出教室，因为今天是妈妈的生日！' },
+  { word: '目不转睛', hint: '形容注意力很集中，眼睛一眨不眨地盯着看', example: '全班同学都<b>目不转睛</b>地看着老师做实验，生怕错过任何一个细节。' },
+  { word: '兴高采烈', hint: '形容非常高兴的样子', example: '听到明天去春游的消息，大家都<b>兴高采烈</b>地欢呼起来。' },
+  { word: '依依不舍', hint: '形容很舍不得离开', example: '夏令营结束了，我和新朋友们<b>依依不舍</b>地道别。' },
+  { word: '五颜六色', hint: '形容颜色非常多', example: '花园里开满了<b>五颜六色</b>的鲜花，漂亮极了。' },
+  { word: '自言自语', hint: '自己跟自己说话', example: '爷爷一边下棋一边<b>自言自语</b>："这一步走哪里好呢？"' },
+  { word: '鸦雀无声', hint: '形容非常安静，一点声音都没有', example: '老师一进教室，全班立刻变得<b>鸦雀无声</b>。' },
+  { word: '眉开眼笑', hint: '形容非常高兴、笑容满面的样子', example: '奶奶看到我考了满分，<b>眉开眼笑</b>地给了我一个大拥抱。' }
+];
+let wIdx = 0;
+
+function checkSentence() {
+  const inp = document.getElementById('pInput');
+  const fb = document.getElementById('pFb');
+  const ex = document.getElementById('pExample');
+  const txt = inp.value.trim();
+  if (txt.length < 4) {
+    fb.className = 'quiz-fb wrong';
+    fb.textContent = '句子有点短哦，再写长一点试试！';
+    return;
+  }
+  const w = words[wIdx].word;
+  if (txt.includes(w)) {
+    fb.className = 'quiz-fb correct';
+    fb.textContent = '✅ 太棒了！你把"' + w + '"用在了句子中！继续加油！';
+  } else {
+    fb.className = 'quiz-fb wrong';
+    fb.textContent = '❌ 句子中没有出现"' + w + '"哦，试试重新写一句？';
+  }
+}
+
+function nextWord() {
+  wIdx = (wIdx + 1) % words.length;
+  const w = words[wIdx];
+  document.getElementById('pWord').textContent = w.word;
+  document.getElementById('pHint').textContent = '💡 ' + w.hint;
+  document.getElementById('pInput').value = '';
+  document.getElementById('pFb').textContent = '';
+  document.getElementById('pExample').innerHTML = '📖 参考例句：' + w.example;
+}
+
+// Show first example
+document.getElementById('pExample').innerHTML = '📖 参考例句：' + words[0].example;
+</script>
+
+<div class="card" style="text-align:center;padding:16px">
+  <div class="d" style="color:#888;font-size:14px">
+    💡 积累最好的方法是 <b>多读多写</b>！准备一个小本子，看到好词好句就记下来，考试前翻一翻，作文分数蹭蹭涨！📈
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>

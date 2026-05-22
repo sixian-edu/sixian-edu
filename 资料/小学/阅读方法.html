@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阅读方法 · 思贤学习站</title>
+<link rel="icon" href="../../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f0faf0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:820px;margin:0 auto}
+.back{color:#666;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+.back:hover{color:#43a047}
+h1{text-align:center;font-size:30px;color:#2e7d32;margin-bottom:4px}
+.sub{text-align:center;font-size:14px;color:#888;margin-bottom:20px}
+.sec-title{font-size:20px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #43a047}
+.card{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.card .t{font-weight:700;font-size:18px;color:#2e7d32;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .d{font-size:15px;color:#444;line-height:1.9}
+.card .d b{color:#2e7d32}
+.tag{display:inline-block;font-size:12px;padding:3px 12px;border-radius:20px;margin:3px;background:#e8f5e9;color:#2e7d32}
+.tag.red{background:#ffebee;color:#c62828}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e5f5;color:#7b1fa2}
+.tag.pink{background:#fce4ec;color:#c2185b}
+.tip-box{background:#fff8e1;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:14px;color:#e65100}
+.tip-box .tip-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.game-box{background:#e3f2fd;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #1565c0}
+.game-box .game-t{font-weight:700;font-size:14px;color:#1565c0}
+.game-box .game-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.step{display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:10px 14px;background:#f9fbe7;border-radius:10px}
+.step-num{flex:0 0 32px;height:32px;border-radius:50%;background:#43a047;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-c{flex:1}
+.step-c b{color:#43a047}
+.tech-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.tech-nav a{display:inline-block;padding:6px 14px;background:#e8f5e9;color:#2e7d32;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.tech-nav a:hover{background:#43a047;color:#fff}
+/* 对比卡片 */
+.compare{display:flex;gap:16px;margin:14px 0}
+.compare > div{flex:1;border-radius:12px;padding:16px}
+.compare .jing{background:#e8f5e9;border:2px solid #43a047}
+.compare .fan{background:#fff3e0;border:2px solid #ffa000}
+.compare h5{font-size:15px;margin-bottom:6px}
+.compare ul{font-size:14px;color:#555;line-height:1.8;padding-left:16px}
+.compare .jing h5{color:#2e7d32}
+.compare .fan h5{color:#e65100}
+/* 方法卡片 */
+.method{background:#f9fbe7;border-radius:14px;padding:16px 18px;margin:14px 0}
+.method .m-title{font-size:16px;font-weight:700;color:#2e7d32;margin-bottom:6px}
+.method .m-body{font-size:14px;color:#555;line-height:1.8}
+.method .m-body b{color:#e65100}
+/* 标注示例 */
+.annot-demo{background:#f9fbe7;border-radius:12px;padding:14px 16px;margin:12px 0;border:2px dashed #43a047;font-size:14px;color:#555;line-height:2.2}
+.annot-demo .hl-y{background:#fff3cd;padding:1px 4px;border-radius:3px}
+.annot-demo .hl-g{background:#c8e6c9;padding:1px 4px;border-radius:3px}
+.annot-demo .hl-p{background:#e1bee7;padding:1px 4px;border-radius:3px}
+.annot-demo .note{font-size:12px;color:#888;margin-left:4px}
+/* 阅读计划卡片 */
+.log-card{background:#f9fbe7;border-radius:12px;padding:16px;margin:12px 0;text-align:center}
+.log-card .log-item{display:flex;align-items:center;gap:10px;padding:8px 10px;background:#fff;border-radius:8px;margin-bottom:6px;text-align:left;cursor:pointer;transition:background .2s}
+.log-card .log-item:hover{background:#f0faf0}
+.log-item .cb{width:20px;height:20px;border:2px solid #43a047;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;transition:all .2s}
+.log-item .cb.done{background:#43a047;border-color:#43a047}
+.log-item .log-t{flex:1;font-size:14px;color:#333}
+.log-item .log-t small{color:#999;font-size:12px}
+/* 阅读阶段交互 */
+.stage-area{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.stage-area .st-title{font-size:18px;font-weight:700;color:#2e7d32;margin-bottom:14px;text-align:center}
+.stage-tabs{display:flex;gap:6px;margin-bottom:16px}
+.stage-tabs button{flex:1;padding:10px;border:2px solid #ddd;border-radius:10px;background:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center}
+.stage-tabs button:hover{border-color:#43a047;background:#f0faf0}
+.stage-tabs button.active{border-color:#43a047;background:#e8f5e9;color:#2e7d32}
+.stage-content{font-size:14px;color:#555;line-height:1.9}
+.stage-content .sc-title{font-weight:700;color:#2e7d32;font-size:16px;margin-bottom:6px}
+.stage-content .sc-list{padding-left:18px}
+.stage-content .sc-list li{margin-bottom:6px}
+@media(max-width:640px){
+  h1{font-size:24px}
+  .compare{flex-direction:column}
+  .stage-tabs{flex-wrap:wrap}
+}
+</style>
+<script src="../../js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../学习专区.html">← 返回学习专区</a>
+<h1>📖 阅读方法</h1>
+<p class="sub">会读书比多读书更重要，掌握方法事半功倍！🚀</p>
+
+<div class="tech-nav">
+  <a href="#why">为什么要学方法</a>
+  <a href="#jingdu">精读法</a>
+  <a href="#fandu">泛读法</a>
+  <a href="#pizhu">批注法</a>
+  <a href="#sq3r">SQ3R阅读法</a>
+  <a href="#plan">阅读计划</a>
+</div>
+
+<!-- ═══════════ 引言 ═══════════ -->
+<div class="sec-title" id="why">🤔 为什么要学阅读方法？</div>
+<div class="card">
+  <div class="t">🎯 读得多 ≠ 读得好</div>
+  <div class="d">
+    有的小朋友一年读100本书，但问他书里讲了什么，却说不出来……这是因为 <b>缺少正确的阅读方法</b>！<br><br>
+    阅读就像吃饭：<br>
+    <span class="tag">🍔 随便读一读 = 快餐，吃完了就忘</span>
+    <span class="tag">🍳 精读 = 细嚼慢咽，营养全吸收</span>
+    <span class="tag pink">📝 带着方法读 = 既好吃又好吸收！</span>
+    <br><br>
+    下面介绍 <b>4种超实用阅读方法</b>，学会混着用，你也会变成阅读高手！
+  </div>
+</div>
+
+<!-- ═══════════ 精读 vs 泛读 ═══════════ -->
+<div class="sec-title" id="jingdu">🔍 精读法</div>
+<div class="card">
+  <div class="t">🐌 慢下来，把书"吃透"</div>
+  <div class="d">
+    精读就是 <b>慢慢地、仔细地读</b>，不放过每个细节。适合：课本、经典文学作品、重要的文章。<br><br>
+    精读的 <b>4个步骤</b>：
+  </div>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-c"><b>通读一遍</b> — 先读一遍，了解大意，圈出不认识的字词</div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-c"><b>逐段分析</b> — 分段读，每段讲了什么？用一句话概括</div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-c"><b>品味语言</b> — 划出好词好句，想想作者为什么这么写</div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-c"><b>总结思考</b> — 整篇文章想表达什么？我学到了什么？</div>
+  </div>
+  <div class="tip-box" style="margin-top:14px">
+    <div class="tip-t">💡 精读频率</div>
+    <div class="tip-d">不需要每本书都精读！<b>一个月精读1-2篇</b>好文章或1本好书就足够了。精读贵在质量，不在数量。</div>
+  </div>
+</div>
+
+<div class="sec-title" id="fandu">📚 泛读法</div>
+<div class="card">
+  <div class="t">🚀 快起来，拓宽知识面</div>
+  <div class="d">
+    泛读就是 <b>快速地、大量地读</b>，目的是拓宽眼界、增加阅读量。适合：课外书、报纸杂志、消遣类读物。<br><br>
+    泛读的 <b>3个技巧</b>：
+  </div>
+
+  <div class="method">
+    <div class="m-title">👀 技巧一：跳读</div>
+    <div class="m-body">不需要逐字逐句读！<b>看标题、看首尾句、看重点段落</b>，就能抓住文章大意。</div>
+  </div>
+  <div class="method">
+    <div class="m-title">🔑 技巧二：关键词阅读</div>
+    <div class="m-body">眼睛像扫描仪一样，快速扫过文字，只捕捉<b>关键词</b>（时间、人名、数字、核心概念）。</div>
+  </div>
+  <div class="method">
+    <div class="m-title">⏱️ 技巧三：限时阅读</div>
+    <div class="m-body">给自己设定时间限制，比如"10分钟读完这一章"。用计时器倒计时，<b>有压力才有动力</b>！</div>
+  </div>
+
+  <div class="compare">
+    <div class="jing">
+      <h5>🔍 精读</h5>
+      <ul>
+        <li>速度慢，读得深</li>
+        <li>追求理解和吸收</li>
+        <li>适合经典/课本</li>
+        <li>每月1-2篇</li>
+      </ul>
+    </div>
+    <div class="fan">
+      <h5>📚 泛读</h5>
+      <ul>
+        <li>速度快，读得多</li>
+        <li>追求广度和信息量</li>
+        <li>适合课外/消遣</li>
+        <li>每周好几本</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-t">⚖️ 平衡建议</div>
+    <div class="tip-d"><b>70% 泛读 + 30% 精读</b> 是黄金比例。泛读拓宽视野，精读培养深度，两者缺一不可！</div>
+  </div>
+</div>
+
+<!-- ═══════════ 批注法 ═══════════ -->
+<div class="sec-title" id="pizhu">✏️ 批注法</div>
+<div class="card">
+  <div class="t">📝 不动笔墨不读书</div>
+  <div class="d">
+    批注就是在读书时，<b>边读边写写画画</b>。这是最有效的阅读方法之一！<br><br>
+    <b>批注符号（推荐！）：</b>
+  </div>
+
+  <div class="annot-demo">
+    <span class="hl-y">📌 波浪线～～～</span> 划好词好句 <span class="note">（精彩的地方）</span><br>
+    <span class="hl-g">➡️ 直线</span> 划关键信息 <span class="note">（重要内容）</span><br>
+    <span class="hl-p">⭐ 五角星</span> 划核心观点 <span class="note">（最重要！）</span><br>
+    ❓ 问号 — 表示有疑问 <span class="note">（没看懂的地方）</span><br>
+    💡 灯泡 — 表示有感悟 <span class="note">（想到了什么）</span><br>
+    ! 感叹号 — 表示有共鸣 <span class="note">（说得太对了！）</span>
+  </div>
+
+  <div class="step">
+    <div class="step-num">📌</div>
+    <div class="step-c"><b>批注什么？</b> — 好词好句、不懂的地方、自己的感悟、联想到的事情</div>
+  </div>
+  <div class="step">
+    <div class="step-num">✍️</div>
+    <div class="step-c"><b>怎么写？</b> — 简短为主，可以是点评、提问、联想、总结，写几个字就行</div>
+  </div>
+  <div class="step">
+    <div class="step-num">📖</div>
+    <div class="step-c"><b>在哪写？</b> — 自己的书可以写在书页空白处；图书馆的书用便利贴</div>
+  </div>
+
+  <div class="game-box">
+    <div class="game-t">🏆 小挑战</div>
+    <div class="game-d">下次读书时，试试用至少3种不同的批注符号！读完后看看自己的批注，会很有成就感哦！</div>
+  </div>
+</div>
+
+<!-- ═══════════ SQ3R ═══════════ -->
+<div class="sec-title" id="sq3r">📋 SQ3R 阅读法</div>
+<div class="card">
+  <div class="t">🧠 学霸都在用的"五步读书法"</div>
+  <div class="d">
+    SQ3R 是全球公认最有效的阅读方法，特别适合读课本、知识类书籍。<br><br>
+    名字是5个步骤的英文首字母：
+  </div>
+
+  <div class="stage-area">
+    <div class="st-title">👆 点击每一步查看详情</div>
+    <div class="stage-tabs" id="sqTabs">
+      <button class="active" data-stage="0">S 浏览</button>
+      <button data-stage="1">Q 提问</button>
+      <button data-stage="2">R1 阅读</button>
+      <button data-stage="3">R2 复述</button>
+      <button data-stage="4">R3 复习</button>
+    </div>
+    <div class="stage-content" id="sqContent">
+      <div class="sc-title">📖 S — Survey（浏览）</div>
+      <p>不要马上开始读！先快速浏览一遍：</p>
+      <ul class="sc-list">
+        <li>看标题和副标题，知道大概在讲什么</li>
+        <li>看目录，了解整章结构</li>
+        <li>看图表、插图、粗体字</li>
+        <li>看开头和结尾的总结段落</li>
+      </ul>
+      <p style="margin-top:8px"><b>⏱ 用时：</b>3-5分钟，对全书有个整体印象就够！</p>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-t">💡 SQ3R 最适合什么时候用？</div>
+    <div class="tip-d">预习课本、读科普书、备考复习时用SQ3R效果最好。读小说故事不需要用这个方法哦！</div>
+  </div>
+</div>
+
+<script>
+// SQ3R 交互
+const sqData = [
+  {
+    title: '📖 S — Survey（浏览）',
+    desc: '不要马上开始读！先快速浏览一遍：',
+    items: ['看标题和副标题，知道大概在讲什么', '看目录，了解整章结构', '看图表、插图、粗体字', '看开头和结尾的总结段落'],
+    note: '⏱ 用时：3-5分钟，对全书有个整体印象就够！'
+  },
+  {
+    title: '❓ Q — Question（提问）',
+    desc: '把标题变成问题，带着问题去读书：',
+    items: ['把"分数的意义"变成"分数到底是什么？"', '把"光合作用"变成"植物怎么靠阳光制造养分？"', '把"唐朝的繁荣"变成"唐朝为什么这么强大？"', '在每节标题旁边写下你的问题'],
+    note: '💡 带着问题读，就像玩"寻宝游戏"，阅读效率翻倍！'
+  },
+  {
+    title: '📖 R₁ — Read（阅读）',
+    desc: '现在开始认真读！但要这样做：',
+    items: ['试着回答你之前提出的问题', '遇到不懂的地方标记出来，先跳过', '划出关键词和核心句子', '读一段停下来想一想，理解了再继续'],
+    note: '⚠️ 不要"假读"——眼睛在看但脑子不在！遇到走神，退回去重新看。'
+  },
+  {
+    title: '🗣️ R₂ — Recite（复述）',
+    desc: '读完一部分后，用自己的话讲出来：',
+    items: ['合上书，回忆刚才读了什么', '用自己的话回答之前提出的问题', '如果能讲给别人听，说明你真的懂了', '讲不出来的地方，回去重新读'],
+    note: '🎯 "能讲出来"才是真正学会！可以对着镜子讲，也可以讲给家人听。'
+  },
+  {
+    title: '🔄 R₃ — Review（复习）',
+    desc: '定期回顾，防止遗忘：',
+    items: ['读完当天：快速浏览一遍笔记和批注', '一周后：再翻一遍，看还记得多少', '一个月后：只看标题，回忆主要内容', '考试前：重点看之前标记的问号和星号'],
+    note: '📌 艾宾浩斯遗忘曲线告诉我们：不复习，一天后就忘掉70%！'
+  }
+];
+
+let sqIdx = 0;
+
+function setSQStage(idx) {
+  sqIdx = idx;
+  const d = sqData[idx];
+  document.querySelectorAll('#sqTabs button').forEach((b, i) => b.classList.toggle('active', i === idx));
+  document.getElementById('sqContent').innerHTML =
+    '<div class="sc-title">' + d.title + '</div>' +
+    '<p>' + d.desc + '</p>' +
+    '<ul class="sc-list">' + d.items.map(i => '<li>' + i + '</li>').join('') + '</ul>' +
+    '<p style="margin-top:8px"><b>' + d.note + '</b></p>';
+}
+
+document.querySelectorAll('#sqTabs button').forEach(btn => {
+  btn.addEventListener('click', () => setSQStage(parseInt(btn.dataset.stage)));
+});
+</script>
+
+<!-- ═══════════ 阅读计划 ═══════════ -->
+<div class="sec-title" id="plan">🎯 21天阅读计划</div>
+<div class="card">
+  <div class="t">📅 养成习惯，从今天开始</div>
+  <div class="d">
+    21天可以养成一个新习惯。下面是一个 <b>阅读打卡清单</b>，每天完成阅读任务就点一下 ✅<br><br>
+  </div>
+
+  <div class="log-card" id="logCard">
+    <div style="margin-bottom:10px;font-weight:700;color:#2e7d32">📋 我的21天阅读打卡</div>
+    <div style="font-size:13px;color:#888;margin-bottom:12px">点击每一项标记完成 &nbsp;|&nbsp; 已坚持 <span id="logDays">0</span> 天 🔥</div>
+    <div id="logList"></div>
+    <button class="p-btn sec" style="margin-top:12px;font-size:13px;padding:6px 20px" onclick="resetLog()">🔄 重置</button>
+  </div>
+
+  <div class="tip-box" style="margin-top:14px">
+    <div class="tip-t">💡 给爸爸妈妈的建议</div>
+    <div class="tip-d">
+      <b>亲子共读效果翻倍！</b>低年级孩子可以家长读一段、孩子读一段；中高年级可以各自读自己的书，读完交流心得。每天15-20分钟就够了，关键是坚持！
+    </div>
+  </div>
+</div>
+
+<script>
+// 21天阅读打卡
+const logItems = [
+  '📖 读15分钟书', '📝 划出3个好词', '💬 和家人聊书的内容',
+  '⭐ 用批注符号读书', '📖 读15分钟书', '✍️ 抄一句好句',
+  '📖 泛读20分钟', '❓ 提出2个问题', '📖 精读10分钟',
+  '📝 写2句读后感', '📖 读15分钟书', '🗣️ 复述给家人听',
+  '📖 读20分钟书', '🔍 查2个生字词', '💡 写下1个感悟',
+  '📖 读15分钟书', '🎨 画一幅读书小报', '📖 读20分钟书',
+  '⭐ 用批注法读书', '📝 积累3个好词', '🎉 回顾21天收获！'
+];
+
+function renderLog() {
+  const saved = localStorage.getItem('sx_read_log_21');
+  const done = saved ? JSON.parse(saved) : new Array(21).fill(false);
+  const list = document.getElementById('logList');
+  list.innerHTML = '';
+  let days = 0;
+  logItems.forEach((item, i) => {
+    days += done[i] ? 1 : 0;
+    const div = document.createElement('div');
+    div.className = 'log-item';
+    div.innerHTML =
+      '<div class="cb' + (done[i] ? ' done' : '') + '" data-idx="' + i + '">' + (done[i] ? '✓' : '') + '</div>' +
+      '<div class="log-t">' + item + (done[i] ? ' <small>已完成</small>' : '') + '</div>';
+    div.querySelector('.cb').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const idx = parseInt(this.dataset.idx);
+      done[idx] = !done[idx];
+      localStorage.setItem('sx_read_log_21', JSON.stringify(done));
+      renderLog();
+    });
+    list.appendChild(div);
+  });
+  document.getElementById('logDays').textContent = days;
+}
+
+function resetLog() {
+  if (confirm('确定要重置所有打卡记录吗？')) {
+    localStorage.removeItem('sx_read_log_21');
+    renderLog();
+  }
+}
+renderLog();
+</script>
+
+<div class="card" style="text-align:center;padding:16px">
+  <div class="d" style="color:#888;font-size:14px">
+    💡 阅读方法没有"最好"，只有"最适合"。多试试不同的方法，找到属于自己的阅读节奏！🎯
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>应用题专项 · 思贤学习站</title>
+<link rel="icon" href="../../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f0faf0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:820px;margin:0 auto}
+.back{color:#666;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+.back:hover{color:#43a047}
+h1{text-align:center;font-size:30px;color:#2e7d32;margin-bottom:4px}
+.sub{text-align:center;font-size:14px;color:#888;margin-bottom:20px}
+.sec-title{font-size:20px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #43a047}
+.card{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.card .t{font-weight:700;font-size:18px;color:#2e7d32;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .d{font-size:15px;color:#444;line-height:1.9}
+.card .d b{color:#2e7d32}
+.tag{display:inline-block;font-size:12px;padding:3px 12px;border-radius:20px;margin:3px;background:#e8f5e9;color:#2e7d32}
+.tag.red{background:#ffebee;color:#c62828}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e5f5;color:#7b1fa2}
+.tag.pink{background:#fce4ec;color:#c2185b}
+.tip-box{background:#fff8e1;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:14px;color:#e65100}
+.tip-box .tip-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.ex-card{background:#e8f5e9;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #43a047}
+.ex-card .ex-t{font-weight:700;font-size:14px;color:#2e7d32}
+.ex-card .ex-d{font-size:15px;color:#444;line-height:1.8;margin-top:6px}
+.ex-card .ex-d .hl{color:#e65100;font-weight:700}
+.ex-card .ex-d .hl2{color:#1565c0;font-weight:700}
+.game-box{background:#e3f2fd;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #1565c0}
+.game-box .game-t{font-weight:700;font-size:14px;color:#1565c0}
+.game-box .game-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.formula{background:#f0faf0;border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:18px;color:#2e7d32;font-weight:700;letter-spacing:1px}
+.formula.blue{background:#e3f2fd;color:#1565c0}
+.formula.orange{background:#fff3e0;color:#e65100}
+/* 交互练习 */
+.quiz-area{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08);text-align:center}
+.quiz-area .q-title{font-size:18px;font-weight:700;color:#2e7d32;margin-bottom:4px}
+.quiz-area .q-sub{font-size:13px;color:#999;margin-bottom:16px}
+.quiz-area .q-num{font-size:24px;font-weight:700;color:#333;margin-bottom:12px}
+.quiz-step{background:#f9fbe7;border-radius:10px;padding:14px 18px;margin-bottom:14px;text-align:left;font-size:14px;color:#555;line-height:1.8}
+.quiz-step b{color:#2e7d32}
+.quiz-area .q-text{font-size:18px;color:#333;margin-bottom:12px;text-align:left;line-height:1.8;padding:0 10px}
+.quiz-area .q-text b{color:#2e7d32}
+.quiz-area .q-input{width:120px;padding:10px;font-size:20px;text-align:center;border:3px solid #ddd;border-radius:12px;outline:none;margin-bottom:12px;transition:border-color .3s}
+.quiz-area .q-input:focus{border-color:#66bb6a}
+.quiz-area .q-btn{display:inline-block;padding:10px 32px;font-size:16px;font-weight:600;background:linear-gradient(135deg,#43a047,#2e7d32);color:#fff;border:none;border-radius:10px;cursor:pointer;margin:4px;transition:opacity .2s}
+.quiz-area .q-btn:hover{opacity:.85}
+.quiz-area .q-btn:disabled{opacity:.4;cursor:not-allowed}
+.quiz-area .q-btn.sec{background:linear-gradient(135deg,#ff8f00,#e65100)}
+.quiz-fb{font-size:16px;margin:10px 0;min-height:28px;font-weight:600}
+.quiz-fb.correct{color:#2e7d32}
+.quiz-fb.wrong{color:#c62828}
+.quiz-score{font-size:14px;color:#888;margin-top:8px}
+.star{color:#ffa000;font-size:20px}
+.step{display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:10px 14px;background:#f9fbe7;border-radius:10px}
+.step-num{flex:0 0 32px;height:32px;border-radius:50%;background:#43a047;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-c{flex:1}
+.step-c b{color:#43a047}
+/* 线段图 */
+.diagram{background:#f9fbe7;border-radius:12px;padding:16px;margin:12px 0;text-align:center}
+.diagram svg{max-width:100%;height:auto}
+/* 导航 */
+.tech-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.tech-nav a{display:inline-block;padding:6px 14px;background:#e8f5e9;color:#2e7d32;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.tech-nav a:hover{background:#43a047;color:#fff}
+@media(max-width:600px){
+  h1{font-size:24px}
+  .quiz-area .q-text{font-size:15px}
+}
+</style>
+<script src="../../js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../学习专区.html">← 返回学习专区</a>
+<h1>📊 应用题专项</h1>
+<p class="sub">三步走战略，再也不怕应用题！🐯</p>
+
+<div class="tech-nav">
+  <a href="#intro">什么是应用题</a>
+  <a href="#shenti">审题三步法</a>
+  <a href="#huatu">画图法</a>
+  <a href="#hecha">和差问题</a>
+  <a href="#beishu">倍数问题</a>
+  <a href="#xingcheng">行程问题</a>
+  <a href="#practice">闯关练习</a>
+</div>
+
+<!-- ═══════════ 引言 ═══════════ -->
+<div class="sec-title" id="intro">🤔 什么是应用题？</div>
+<div class="card">
+  <div class="t">📖 不是"算数"，是"讲故事"</div>
+  <div class="d">
+    应用题其实就是 <b>用数学来解决生活中的问题</b>！每个应用题都是一个"小故事"，我们需要从故事中找到数学信息，然后算出来。<br><br>
+    很多小朋友怕应用题，其实是因为——<br>
+    <span class="tag red">没看清题目</span>
+    <span class="tag red">找不到重点</span>
+    <span class="tag red">不知道怎么下手</span>
+    <br><br>
+    <b>别怕！有了下面的"三步法"，应用题就会变得很简单！</b>
+  </div>
+</div>
+
+<!-- ═══════════ 审题三步法 ═══════════ -->
+<div class="sec-title" id="shenti">📝 核心技能：审题三步法</div>
+<div class="card">
+  <div class="t">👀 读一遍，圈一圈，想一想</div>
+  <div class="d">
+    做应用题，<b>审题比计算更重要</b>！用这三步，保证不丢分：
+  </div>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-c"><b>读一遍</b> — 把题目完整读一遍，弄清楚讲的是什么事</div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-c"><b>圈一圈</b> — 圈出 <b>数字</b> 和 <b>关键词语</b>（一共、比...多、比...少、平均、每人...）</div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-c"><b>想一想</b> — 想清楚"要求什么"和"已知什么"，再决定用加法还是减法</div>
+  </div>
+  <div class="tip-box">
+    <div class="tip-t">💡 小口诀</div>
+    <div class="tip-d">"应用题，不用慌，三遍读题再动笔；圈数字，划关键词，想清道理再计算！"</div>
+  </div>
+</div>
+
+<!-- ═══════════ 画图法 ═══════════ -->
+<div class="sec-title" id="huatu">✏️ 画图法：把题目"画"出来</div>
+<div class="card">
+  <div class="t">🎨 一图胜千言</div>
+  <div class="d">
+    复杂应用题不会做？<b>画个图就明白了！</b>最常用的是 <b>线段图</b>：
+  </div>
+
+  <div class="diagram">
+    <svg width="600" height="120" viewBox="0 0 600 120">
+      <!-- 线段图示例 -->
+      <text x="10" y="25" font-size="14" fill="#333" font-weight="700">小明：</text>
+      <line x1="70" y1="20" x2="370" y2="20" stroke="#e65100" stroke-width="6" stroke-linecap="round"/>
+      <text x="200" y="16" font-size="13" fill="#e65100" text-anchor="middle">15 本</text>
+      <text x="10" y="70" font-size="14" fill="#333" font-weight="700">小红：</text>
+      <line x1="70" y1="65" x2="270" y2="65" stroke="#1565c0" stroke-width="6" stroke-linecap="round"/>
+      <text x="160" y="61" font-size="13" fill="#1565c0" text-anchor="middle">？本</text>
+      <!-- 大括号 -->
+      <path d="M 70 80 Q 75 100 80 80" fill="none" stroke="#999" stroke-width="2"/>
+      <path d="M 80 80 Q 85 100 90 80" fill="none" stroke="#999" stroke-width="2"/>
+      <text x="220" y="105" font-size="13" fill="#666" text-anchor="middle">两人一共 25 本</text>
+    </svg>
+    <div style="font-size:13px;color:#888;margin-top:6px">线段图让数量关系一目了然</div>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-t">📌 画图法举例</div>
+    <div class="ex-d">
+      <b>题目：</b>小明有 15 本书，小红比小明少 5 本，两人一共有多少本？<br><br>
+      👉 先画小明的线段（15本），再画小红的（比小明短一截），一看就知道：<br>
+      小红 = 15 − 5 = 10 本<br>
+      一共 = 15 + 10 = <b>25 本</b> ✅
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 和差问题 ═══════════ -->
+<div class="sec-title" id="hecha">📐 常见题型一：和差问题</div>
+<div class="card">
+  <div class="t">➕➖ 已知和与差，求两数</div>
+  <div class="d">
+    <b>特征：</b>题目告诉你"两个数的和"以及"两个数的差"，让你求这两个数分别是多少<br><br>
+    <div class="formula blue">📌 公式：大数 = (和 + 差) ÷ 2&nbsp;&nbsp;&nbsp;小数 = (和 − 差) ÷ 2</div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题</div>
+    <div class="ex-d">
+      <b>题目：</b>哥哥和弟弟一共有 24 颗糖，哥哥比弟弟多 4 颗，两人各有多少颗？<br><br>
+      👉 大数（哥哥）= (24 + 4) ÷ 2 = 28 ÷ 2 = <b>14 颗</b><br>
+      👉 小数（弟弟）= (24 − 4) ÷ 2 = 20 ÷ 2 = <b>10 颗</b><br>
+      ✅ 验算：14 + 10 = 24 ✓&nbsp;&nbsp;14 − 10 = 4 ✓
+    </div>
+  </div>
+  <div class="tip-box">
+    <div class="tip-t">💡 记忆口诀</div>
+    <div class="tip-d">"和差问题不用愁，画个线段看清楚；和加差除以2是大数，和减差除以2是小数。"</div>
+  </div>
+</div>
+
+<!-- ═══════════ 倍数问题 ═══════════ -->
+<div class="sec-title" id="beishu">📐 常见题型二：倍数问题</div>
+<div class="card">
+  <div class="t">🔢 几倍多几、几倍少几</div>
+  <div class="d">
+    <b>特征：</b>题目中出现了"是...的几倍"、"比...多几倍"这样的关键词<br><br>
+    <div class="formula orange">📌 公式：一倍量 = 几倍量 ÷ 倍数</div>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 1（求倍数）</div>
+    <div class="ex-d">
+      <b>题目：</b>果园有苹果树 45 棵，梨树 9 棵，苹果树是梨树的几倍？<br><br>
+      👉 45 ÷ 9 = <b>5 倍</b> ✅
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 2（求一倍量）</div>
+    <div class="ex-d">
+      <b>题目：</b>小明的零花钱是小红的 3 倍，小明有 36 元，小红有多少元？<br><br>
+      👉 36 ÷ 3 = <b>12 元</b> ✅
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 3（和倍问题）</div>
+    <div class="ex-d">
+      <b>题目：</b>学校买来篮球和足球共 48 个，篮球的个数是足球的 3 倍，篮球和足球各多少个？<br><br>
+      👉 把足球看作"1份"，篮球就是"3份"，一共 4 份 = 48 个<br>
+      👉 1份（足球）= 48 ÷ 4 = <b>12 个</b><br>
+      👉 篮球 = 12 × 3 = <b>36 个</b> ✅
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 行程问题 ═══════════ -->
+<div class="sec-title" id="xingcheng">📐 常见题型三：行程问题</div>
+<div class="card">
+  <div class="t">🚗 速度×时间=路程</div>
+  <div class="d">
+    <b>特征：</b>题目中出现了"速度"、"时间"、"路程"三要素<br><br>
+    <div class="formula">🔑 核心公式：路程 = 速度 × 时间</div>
+    <span class="tag">速度 = 路程 ÷ 时间</span>
+    <span class="tag">时间 = 路程 ÷ 速度</span>
+    <br><br>
+    记住这个"小三角"关系，行程问题就搞定啦！
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 1（求路程）</div>
+    <div class="ex-d">
+      <b>题目：</b>小明每分钟走 65 米，从家到学校要走 12 分钟，小明家离学校多远？<br><br>
+      👉 路程 = 65 × 12 = <b>780 米</b> ✅
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 2（求时间）</div>
+    <div class="ex-d">
+      <b>题目：</b>两地相距 240 千米，一辆汽车每小时行 80 千米，从甲地到乙地需要几小时？<br><br>
+      👉 时间 = 240 ÷ 80 = <b>3 小时</b> ✅
+    </div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-t">📌 例题 3（相遇问题）</div>
+    <div class="ex-d">
+      <b>题目：</b>甲乙两人从相距 600 米的两地同时出发相向而行，甲每分钟走 70 米，乙每分钟走 50 米，几分钟后相遇？<br><br>
+      👉 两人每分钟一共走 70 + 50 = 120 米<br>
+      👉 时间 = 600 ÷ 120 = <b>5 分钟</b> ✅
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 练习闯关 ═══════════ -->
+<div class="sec-title" id="practice">🎮 闯关练习</div>
+<div class="quiz-area" id="quiz">
+  <div class="q-title">⭐ 应用题大闯关</div>
+  <div class="q-sub">4 道应用题，每道 25 分，看看能不能拿满分！</div>
+  <div class="q-num" id="qNum">第 1 / 4 题</div>
+  <div class="q-text" id="qText"><b>题目：</b>小明和小红一共有 30 颗糖，小明比小红多 6 颗，两人各有多少颗糖？</div>
+  <div class="quiz-step" id="qStep">💡 提示：这是和差问题，先算大数（和+差）÷2</div>
+  <div>
+    <span style="font-size:15px;color:#555">小红有：</span>
+    <input class="q-input" id="qInput1" type="number" placeholder="?" style="width:80px" onkeydown="if(event.key==='Enter')checkAnswer()">
+    <span style="font-size:15px;color:#555;margin-left:8px">颗 &nbsp; 小明有：</span>
+    <input class="q-input" id="qInput2" type="number" placeholder="?" style="width:80px" onkeydown="if(event.key==='Enter')checkAnswer()">
+    <span style="font-size:15px;color:#555;margin-left:8px">颗</span>
+  </div>
+  <div>
+    <button class="q-btn" id="qSubmit" onclick="checkAnswer()">提交答案</button>
+    <button class="q-btn sec" id="qNext" onclick="nextQuestion()" disabled>下一题 →</button>
+  </div>
+  <div class="quiz-fb" id="qFb"></div>
+  <div class="quiz-score">得分：<span id="qScore">0</span> 分 &nbsp;|&nbsp; <span id="qStars">☆☆☆☆☆</span></div>
+</div>
+
+<script>
+const questions = [
+  {
+    q: '<b>题目：</b>小明和小红一共有 30 颗糖，小明比小红多 6 颗，两人各有多少颗糖？',
+    step: '💡 提示：这是 <b>和差问题</b>，大数=(和+差)÷2，小数=(和−差)÷2',
+    a1: 12, a2: 18,
+    tip: '小红（小数）=(30−6)÷2=12，小明（大数）=(30+6)÷2=18'
+  },
+  {
+    q: '<b>题目：</b>果园有苹果树和梨树共 56 棵，苹果树是梨树的 3 倍，两种树各有多少棵？',
+    step: '💡 提示：这是 <b>和倍问题</b>，把梨树看作1份，一共4份=56',
+    a1: 14, a2: 42,
+    tip: '梨树（1份）=56÷4=14，苹果树（3份）=14×3=42'
+  },
+  {
+    q: '<b>题目：</b>小华从家到学校，每分钟走 60 米，走了 15 分钟到学校。小华家离学校多少米？',
+    step: '💡 提示：这是 <b>行程问题</b>，路程=速度×时间',
+    a1: 900, a2: 0,
+    needOne: true,
+    tip: '路程 = 60 × 15 = 900 米。只填第一个空即可！'
+  },
+  {
+    q: '<b>题目：</b>甲乙两人从相距 840 米的两地相向而行，甲每分走 80 米，乙每分走 60 米，几分钟后相遇？',
+    step: '💡 提示：<b>相遇问题</b>，时间=路程÷(速度和)',
+    a1: 6, a2: 0,
+    needOne: true,
+    tip: '速度和=80+60=140，时间=840÷140=6分钟'
+  }
+];
+let idx = 0, score = 0;
+
+function renderStars(s) {
+  const full = Math.floor(s / 25);
+  return '★'.repeat(full) + '☆'.repeat(4 - full);
+}
+
+function checkAnswer() {
+  const fb = document.getElementById('qFb');
+  const btn = document.getElementById('qSubmit');
+  const next = document.getElementById('qNext');
+  const i1 = parseInt(document.getElementById('qInput1').value);
+  const i2 = parseInt(document.getElementById('qInput2').value);
+  const q = questions[idx];
+  if (isNaN(i1) || (isNaN(i2) && !q.needOne)) {
+    fb.className = 'quiz-fb wrong'; fb.textContent = '请在两个框里都填入数字！'; return;
+  }
+  btn.disabled = true; next.disabled = false;
+  const inputs = document.querySelectorAll('.q-input');
+  inputs.forEach(inp => inp.disabled = true);
+  let correct = false;
+  if (q.needOne) {
+    correct = (i1 === q.a1);
+  } else {
+    correct = (i1 === q.a1 && i2 === q.a2) || (i1 === q.a2 && i2 === q.a1);
+  }
+  if (correct) {
+    score += 25;
+    fb.className = 'quiz-fb correct';
+    fb.innerHTML = '✅ 完全正确！' + q.tip;
+  } else {
+    fb.className = 'quiz-fb wrong';
+    const ans = q.needOne ? q.a1 : ('小红/梨树='+ q.a1 + '，小明/苹果树=' + q.a2);
+    fb.innerHTML = '❌ 再想想哦。正确答案是 <b>' + ans + '</b><br>' + q.tip;
+  }
+  document.getElementById('qScore').textContent = score;
+  document.getElementById('qStars').textContent = renderStars(score);
+}
+
+function nextQuestion() {
+  idx++;
+  if (idx >= questions.length) {
+    const fb = document.getElementById('qFb');
+    let msg = '';
+    if (score >= 100) msg = '🏆 满分通关！你已经是应用题小达人了！🎉🎉🎉';
+    else if (score >= 50) msg = '👏 不错哦！再看看错题，下次一定能拿满分！';
+    else msg = '💪 加油！多做练习，你的应用题会越来越棒！';
+    fb.className = 'quiz-fb correct';
+    fb.innerHTML = msg + '<br>得分：' + score + ' 分 ' + renderStars(score);
+    document.querySelector('.quiz-area .q-sub').textContent = '已完成全部题目！';
+    document.getElementById('qNum').textContent = '🎉 闯关结束';
+    document.getElementById('qText').innerHTML = '';
+    document.getElementById('qStep').innerHTML = '';
+    document.querySelectorAll('.q-input').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.q-input + span').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.q-input').forEach(el => el.style.display = 'none');
+    document.getElementById('qSubmit').style.display = 'none';
+    document.getElementById('qNext').textContent = '再玩一次';
+    document.getElementById('qNext').onclick = () => location.reload();
+    return;
+  }
+  const q = questions[idx];
+  document.getElementById('qNum').textContent = '第 ' + (idx+1) + ' / ' + questions.length + ' 题';
+  document.getElementById('qText').innerHTML = q.q;
+  document.getElementById('qStep').innerHTML = q.step;
+  document.getElementById('qFb').textContent = '';
+  const inputs = document.querySelectorAll('.q-input');
+  inputs.forEach(inp => { inp.value = ''; inp.disabled = false; });
+  inputs[0].focus();
+  document.getElementById('qSubmit').disabled = false;
+  document.getElementById('qNext').disabled = true;
+}
+</script>
+
+<div class="card" style="text-align:center;padding:16px">
+  <div class="d" style="color:#888;font-size:14px">
+    💡 做应用题最重要的是 <b>多读题、多画图</b>！把这三步法和常见题型掌握好，考试稳了！
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>

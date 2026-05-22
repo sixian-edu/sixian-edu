@@ -1,0 +1,117 @@
+/* ── 思贤学习站 · 棉花糖粉色主题 ── */
+:root {
+  --primary: #FF9EBB;
+  --primary-dark: #F08AA8;
+  --primary-light: #FFB8D0;
+  --primary-deeper: #E87DA0;
+
+  --nav-bg: #FF9EBB;
+  --nav-text: #FFFFFF;
+  --nav-text-hover: #FFF0F5;
+  --nav-tag-bg: rgba(255,255,255,0.3);
+  --nav-tag-text: #FFFFFF;
+
+  --hero-gradient: linear-gradient(135deg, #FFD4E0 0%, #FFE0EA 30%, #FFF5F8 100%);
+  --hero-text: #333333;
+  --hero-subtext: #666666;
+
+  --tag-text: #FF9EBB;
+  --tag-border: rgba(255,158,187,0.3);
+  --tag-bg: rgba(255,158,187,0.1);
+  --tag-highlight-bg: rgba(255,158,187,0.18);
+  --tag-highlight-border: rgba(255,158,187,0.35);
+
+  --btn-light-text: #FF9EBB;
+  --btn-light-border: rgba(255,158,187,0.4);
+  --btn-outline-border: #FF9EBB;
+  --btn-outline-hover: #FFB8D0;
+
+  --card-bg: #FFFFFF;
+  --body-bg: #FFF5F8;
+  --body-text: #333333;
+
+  --section-underline: #FF9EBB;
+  --back-to-top-bg: #FF9EBB;
+  --copy-btn-border: #FF9EBB;
+  --contact-trigger: #FF9EBB;
+  --shared-btn-gradient: linear-gradient(135deg, #FF9EBB, #FFB8D0);
+  --brand-gradient: linear-gradient(135deg, #FF9EBB 0%, #FFB8D0 50%, #FFD4E0 100%);
+
+  /* 板块专用色（保持原值） */
+  --elementary: #73BFAA;
+  --elementary-dark: #5EA890;
+  --middle: #D18080;
+  --middle-dark: #BD6E6E;
+  --high: #5688CC;
+  --high-dark: #4A7AB8;
+  --college: #8899CC;
+  --college-dark: #7A88C0;
+  --gold: #D0A060;
+  --gold-dark: #B88848;
+  --slate: #5A6A80;
+  --slate-dark: #4A5E70;
+}
+
+/* ── 卡片柔化 ── */
+.card, .card-grid > *, [class*="card"] {
+  box-shadow: 0 4px 20px rgba(255,158,187,0.12), 0 1px 4px rgba(255,158,187,0.06);
+  border-radius: 16px;
+}
+
+/* ── 所有 hero glow 覆盖 ── */
+.hero::before,
+.a-hero::before,
+.m-hero::before,
+.page-hero::before,
+.c-hero::before,
+.res-hero::before {
+  background:
+    radial-gradient(ellipse at 20% 40%, rgba(255,158,187,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 60%, rgba(255,249,230,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(224,247,255,0.08) 0%, transparent 50%) !important;
+}
+
+/* ── 浅色 Hero：文字／按钮覆写（页面内联样式硬编码了白色） ── */
+.hero,
+.a-hero,
+.m-hero,
+.page-hero,
+.c-hero,
+.res-hero {
+  color: #333333;
+}
+.hero p,
+.a-hero p,
+.m-hero p,
+.page-hero p,
+.c-hero p,
+.res-hero p {
+  color: #666666;
+}
+.hero .btn-outline,
+.a-hero .btn-outline,
+.m-hero .btn-outline,
+.page-hero .btn-outline,
+.c-hero .btn-outline,
+.res-hero .btn-outline {
+  color: #FF9EBB;
+}
+
+/* ── AI Banner 覆写（brand-gradient 浅粉色） ── */
+.ai-banner-content h2 {
+  color: #333333;
+}
+.ai-banner-content p {
+  color: #666666;
+}
+
+/* ── CTA 覆写（brand-gradient 为浅粉色，白色文字不可见） ── */
+.cta-section h2 {
+  color: #333333;
+}
+.cta-section p {
+  color: #666666;
+}
+.cta-section .btn-outline {
+  color: #FF9EBB;
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>好书推荐 · 思贤学习站</title>
+<link rel="icon" href="../../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f0faf0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;padding:20px}
+.wrap{max-width:820px;margin:0 auto}
+.back{color:#666;font-size:13px;text-decoration:none;display:block;margin-bottom:12px}
+.back:hover{color:#43a047}
+h1{text-align:center;font-size:30px;color:#2e7d32;margin-bottom:4px}
+.sub{text-align:center;font-size:14px;color:#888;margin-bottom:20px}
+.sec-title{font-size:20px;font-weight:700;color:#333;margin:28px 0 14px;padding-left:14px;border-left:4px solid #43a047}
+.card{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.card .t{font-weight:700;font-size:18px;color:#2e7d32;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .d{font-size:15px;color:#444;line-height:1.9}
+.card .d b{color:#2e7d32}
+.tag{display:inline-block;font-size:12px;padding:3px 12px;border-radius:20px;margin:3px;background:#e8f5e9;color:#2e7d32}
+.tag.red{background:#ffebee;color:#c62828}
+.tag.blue{background:#e3f2fd;color:#1565c0}
+.tag.orange{background:#fff3e0;color:#e65100}
+.tag.purple{background:#f3e5f5;color:#7b1fa2}
+.tag.pink{background:#fce4ec;color:#c2185b}
+.tip-box{background:#fff8e1;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #ffa000}
+.tip-box .tip-t{font-weight:700;font-size:14px;color:#e65100}
+.tip-box .tip-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.game-box{background:#e3f2fd;border-radius:12px;padding:14px 16px;margin:12px 0;border-left:4px solid #1565c0}
+.game-box .game-t{font-weight:700;font-size:14px;color:#1565c0}
+.game-box .game-d{font-size:14px;color:#555;line-height:1.7;margin-top:4px}
+.step{display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:10px 14px;background:#f9fbe7;border-radius:10px}
+.step-num{flex:0 0 32px;height:32px;border-radius:50%;background:#43a047;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-c{flex:1}
+.step-c b{color:#43a047}
+/* 书单卡片 */
+.book-card{background:#f9fbe7;border-radius:14px;padding:16px 18px;margin:14px 0;display:flex;gap:16px;align-items:flex-start}
+.book-card .bc-emoji{flex:0 0 56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:30px}
+.book-card .bc-body{flex:1;min-width:0}
+.book-card .bc-body h5{font-size:16px;font-weight:700;color:#333;margin-bottom:4px}
+.book-card .bc-body .bc-meta{font-size:12px;color:#888;margin-bottom:4px}
+.book-card .bc-body .bc-desc{font-size:14px;color:#555;line-height:1.7}
+.book-card .bc-body .bc-tags{margin-top:6px}
+/* 年级标签 */
+.grade-tab{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.grade-tab button{padding:8px 18px;border:2px solid #43a047;border-radius:20px;background:#fff;color:#43a047;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.grade-tab button:hover{background:#e8f5e9}
+.grade-tab button.active{background:#43a047;color:#fff}
+.grade-section{display:none}
+.grade-section.show{display:block}
+/* 推荐测验 */
+.quiz-area{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,0.08)}
+.quiz-area .q-title{font-size:18px;font-weight:700;color:#2e7d32;margin-bottom:12px;text-align:center}
+.quiz-area .q-btn{display:block;width:100%;padding:12px;font-size:15px;font-weight:600;background:#fff;border:2px solid #ddd;border-radius:12px;cursor:pointer;margin-bottom:8px;transition:all .2s;text-align:left}
+.quiz-area .q-btn:hover{border-color:#43a047;background:#f0faf0}
+.quiz-area .q-btn.selected{border-color:#43a047;background:#e8f5e9;color:#2e7d32}
+.quiz-area .q-next{display:inline-block;padding:10px 32px;font-size:16px;font-weight:600;background:linear-gradient(135deg,#43a047,#2e7d32);color:#fff;border:none;border-radius:10px;cursor:pointer;margin-top:12px;transition:opacity .2s}
+.quiz-area .q-next:hover{opacity:.85}
+.quiz-area .q-next:disabled{opacity:.4;cursor:not-allowed}
+.quiz-result{background:#e8f5e9;border-radius:14px;padding:18px;text-align:center;margin-top:12px}
+.quiz-result .r-title{font-size:18px;font-weight:700;color:#2e7d32;margin-bottom:6px}
+.quiz-result .r-desc{font-size:14px;color:#555;line-height:1.7}
+.tech-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.tech-nav a{display:inline-block;padding:6px 14px;background:#e8f5e9;color:#2e7d32;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.tech-nav a:hover{background:#43a047;color:#fff}
+.reading-tip{background:#f3e5f5;border-radius:12px;padding:12px 16px;margin:10px 0;text-align:center;font-size:14px;color:#7b1fa2}
+@media(max-width:600px){
+  h1{font-size:24px}
+  .book-card{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+<script src="../../js/theme.js"></script>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../学习专区.html">← 返回学习专区</a>
+<h1>📚 好书推荐</h1>
+<p class="sub">分龄书单，让每个孩子都能找到爱读的那本书 📖</p>
+
+<div class="tech-nav">
+  <a href="#why">为什么要读书</a>
+  <a href="#booklist">分龄书单</a>
+  <a href="#quiz">选书小测验</a>
+  <a href="#tips">阅读小贴士</a>
+</div>
+
+<!-- ═══════════ 引言 ═══════════ -->
+<div class="sec-title" id="why">🤔 为什么要读书？</div>
+<div class="card">
+  <div class="t">🌍 书是通往世界的窗户</div>
+  <div class="d">
+    每一本书都是一扇任意门——<br><br>
+    <span class="tag">📖 读历史 → 穿越到古代</span>
+    <span class="tag">🚀 读科幻 → 飞向太空</span>
+    <span class="tag">🔬 读科普 → 探索大自然</span>
+    <span class="tag">💭 读故事 → 体验不同人生</span>
+    <br><br>
+    <b>爱读书的小朋友，</b>词汇量更大、写作更好、想象力更丰富、上课理解力也更强！<br><br>
+    关键是：<b>找到自己喜欢的书</b>，阅读就会变成一种享受，而不是任务 😊
+  </div>
+</div>
+
+<!-- ═══════════ 分龄书单 ═══════════ -->
+<div class="sec-title" id="booklist">📖 分龄书单</div>
+<div class="card">
+  <div class="t">📌 按年级选择，点击切换</div>
+  <div class="d">点击下面的按钮，切换到对应的年级段：</div>
+
+  <div class="grade-tab" id="gradeTab">
+    <button class="active" data-grade="g1">🏃 1-2年级</button>
+    <button data-grade="g3">📚 3-4年级</button>
+    <button data-grade="g5">🎯 5-6年级</button>
+  </div>
+
+  <!-- 1-2年级 -->
+  <div class="grade-section show" id="g1">
+    <div class="reading-tip">🎯 1-2年级：以绘本、拼音读物为主，重点是培养阅读兴趣和习惯</div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#fff3e0">🐥</div>
+      <div class="bc-body">
+        <h5>《不一样的卡梅拉》系列</h5>
+        <div class="bc-meta">克利斯提昂·约里波瓦 | 绘本故事</div>
+        <div class="bc-desc">讲述一只叫卡梅拉的小鸡和她的伙伴们的冒险故事。故事有趣幽默，画风温馨。能让孩子在欢笑中学会 <b>勇敢、好奇、坚持</b>。</div>
+        <div class="bc-tags"><span class="tag">培养勇气</span><span class="tag blue">想象力</span><span class="tag orange">拼音版可选</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#e3f2fd">🐷</div>
+      <div class="bc-body">
+        <h5>《小猪唏哩呼噜》</h5>
+        <div class="bc-meta">孙幼军 | 童话</div>
+        <div class="bc-desc">一只叫"唏哩呼噜"的小猪，单纯善良又有点冒失。故事充满童趣和温暖，语言生动幽默。孙幼军是中国儿童文学大师，文字特别适合低年级孩子。</div>
+        <div class="bc-tags"><span class="tag">经典童话</span><span class="tag purple">国际大奖</span><span class="tag">注音版</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#fce4ec">🐰</div>
+      <div class="bc-body">
+        <h5>《猜猜我有多爱你》</h5>
+        <div class="bc-meta">山姆·麦克布雷尼 | 绘本</div>
+        <div class="bc-desc">小兔子和大兔子比谁的爱更多，温馨感人。教会孩子 <b>表达爱</b> 和 <b>感受爱</b>。亲子共读的首选，很多孩子读了一遍又一遍。</div>
+        <div class="bc-tags"><span class="tag pink">温馨感人</span><span class="tag">亲子共读</span><span class="tag blue">情感教育</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#e8f5e9">🐛</div>
+      <div class="bc-body">
+        <h5>《好饿的毛毛虫》</h5>
+        <div class="bc-meta">艾瑞·卡尔 | 绘本</div>
+        <div class="bc-desc">一只小毛毛虫吃啊吃，最后变成了美丽的蝴蝶。画面色彩鲜艳，还能学到 <b>星期几、数字、水果、昆虫生命周期</b>，一举多得！</div>
+        <div class="bc-tags"><span class="tag">认知启蒙</span><span class="tag orange">趣味性强</span><span class="tag">色彩丰富</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#f3e5f5">👦</div>
+      <div class="bc-body">
+        <h5>《米小圈上学记》系列</h5>
+        <div class="bc-meta">北猫 | 校园故事</div>
+        <div class="bc-desc">米小圈的校园生活日记，搞笑又真实。很多孩子因为这套书爱上了阅读！贴近孩子的生活，语言幽默，还能学到日记怎么写。</div>
+        <div class="bc-tags"><span class="tag">校园生活</span><span class="tag red">超有趣</span><span class="tag">日记体</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-4年级 -->
+  <div class="grade-section" id="g3">
+    <div class="reading-tip">🎯 3-4年级：从绘本逐渐过渡到文字书，开始接触长篇和科普读物</div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#e8f5e9">🕸️</div>
+      <div class="bc-body">
+        <h5>《夏洛的网》</h5>
+        <div class="bc-meta">E·B·怀特 | 童话小说</div>
+        <div class="bc-desc">小猪威尔伯和蜘蛛夏洛之间真挚的友谊故事。夏洛在蛛网上织出文字来救威尔伯，<b>关于友情、生命和承诺</b>。无数孩子读到泪目的一本书。</div>
+        <div class="bc-tags"><span class="tag">友谊</span><span class="tag purple">经典必读</span><span class="tag blue">生命教育</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#fff3e0">🔍</div>
+      <div class="bc-body">
+        <h5>《十万个为什么》系列</h5>
+        <div class="bc-meta">少年儿童出版社 | 科普</div>
+        <div class="bc-desc">中国最经典的少儿科普书！"为什么天空是蓝色的？""鱼会睡觉吗？"满足孩子所有的好奇心。建议买最新版，内容与时俱进。</div>
+        <div class="bc-tags"><span class="tag orange">科普</span><span class="tag">好奇心</span><span class="tag">知识面</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#e3f2fd">👑</div>
+      <div class="bc-body">
+        <h5>《伊索寓言》</h5>
+        <div class="bc-meta">伊索 | 寓言集</div>
+        <div class="bc-desc">每个故事都短小精悍，结尾有一句"寓意"点明道理。<b>《龟兔赛跑》《狐狸和葡萄》《北风和太阳》</b>……读寓言的孩子，会更懂人情世故。</div>
+        <div class="bc-tags"><span class="tag">寓言</span><span class="tag">人生道理</span><span class="tag blue">短篇易读</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#fce4ec">🗺️</div>
+      <div class="bc-body">
+        <h5>《皮皮鲁和鲁西西》系列</h5>
+        <div class="bc-meta">郑渊洁 | 童话</div>
+        <div class="bc-desc">郑渊洁的童话想象力天马行空，皮皮鲁和鲁西西是中国孩子最熟悉的童话人物。故事 <b>幽默、大胆、有想象力</b>，让孩子爱上文字阅读。</div>
+        <div class="bc-tags"><span class="tag pink">想象力爆棚</span><span class="tag">中国童话</span><span class="tag">幽默</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#f3e5f5">🌲</div>
+      <div class="bc-body">
+        <h5>《大森林里的小木屋》</h5>
+        <div class="bc-meta">罗兰·英格斯·怀德 | 成长小说</div>
+        <div class="bc-desc">作者回忆自己童年在大森林里的生活：和爸爸打猎、挤牛奶、过圣诞节……<b>文字优美朴实</b>，让孩子感受另一种生活方式，学会感恩和独立。</div>
+        <div class="bc-tags"><span class="tag purple">成长</span><span class="tag">经典文学</span><span class="tag">自然</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5-6年级 -->
+  <div class="grade-section" id="g5">
+    <div class="reading-tip">🎯 5-6年级：具备较强阅读能力，可以挑战长篇经典和中外名著</div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#fce4ec">⚡</div>
+      <div class="bc-body">
+        <h5>《哈利·波特》系列</h5>
+        <div class="bc-meta">J·K·罗琳 | 奇幻小说</div>
+        <div class="bc-desc">一个男孩发现自己是个巫师，进入魔法学校的成长故事。全球销量超5亿册！<b>想象力宏大、情节引人入胜</b>，是让孩子爱上长篇阅读的"神器"。</div>
+        <div class="bc-tags"><span class="tag pink">奇幻经典</span><span class="tag red">全球畅销</span><span class="tag">勇气友情</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#fff3e0">🏔️</div>
+      <div class="bc-body">
+        <h5>《城南旧事》</h5>
+        <div class="bc-meta">林海音 | 成长小说</div>
+        <div class="bc-desc">小女孩英子在老北京城南的童年故事。<b>语言优美、情感真挚</b>，是中国儿童文学的巅峰之作。入选小学语文教材推荐书目，对写作帮助极大。</div>
+        <div class="bc-tags"><span class="tag orange">语文必读</span><span class="tag">写作范本</span><span class="tag purple">经典</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#e3f2fd">🌊</div>
+      <div class="bc-body">
+        <h5>《海底两万里》</h5>
+        <div class="bc-meta">儒勒·凡尔纳 | 科幻</div>
+        <div class="bc-desc">"科幻小说之父"凡尔纳的代表作。跟着尼摩船长乘"鹦鹉螺号"潜艇探索海底世界。<b>科幻+探险+科学知识</b>，既刺激又有收获。</div>
+        <div class="bc-tags"><span class="tag blue">科幻经典</span><span class="tag">冒险</span><span class="tag">科学启蒙</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#e8f5e9">📜</div>
+      <div class="bc-body">
+        <h5>《上下五千年》</h5>
+        <div class="bc-meta">林汉达 | 历史</div>
+        <div class="bc-desc">用讲故事的方式讲述中国五千年历史。从大禹治水到辛亥革命，<b>故事生动、脉络清晰</b>。读历史的孩子格局更大，对语文学习也大有帮助。</div>
+        <div class="bc-tags"><span class="tag">历史</span><span class="tag">知识面</span><span class="tag orange">大语文</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="bc-emoji" style="background:#f3e5f5">🌟</div>
+      <div class="bc-body">
+        <h5>《小王子》</h5>
+        <div class="bc-meta">安托万·德·圣-埃克苏佩里 | 哲理童话</div>
+        <div class="bc-desc">一个来自B-612星球的小王子的故事。看似是童话，其实蕴含深刻的人生哲理。"<b>重要的东西用眼睛是看不见的，要用心去感受。</b>"值得一读再读。</div>
+        <div class="bc-tags"><span class="tag purple">哲理</span><span class="tag">经典</span><span class="tag pink">治愈</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 选书小测验 ═══════════ -->
+<div class="sec-title" id="quiz">🎮 选书小测验</div>
+<div class="quiz-area" id="quizBox">
+  <div class="q-title">📌 回答几个问题，帮你找到最适合的书！</div>
+  <div id="quizContent">
+    <p style="font-size:16px;color:#333;margin-bottom:14px" id="quizQuestion">你最喜欢什么类型的书？</p>
+    <div id="quizOptions"></div>
+    <button class="q-next" id="quizNext" onclick="nextQuizStep()" disabled>下一步 →</button>
+    <div id="quizResult"></div>
+  </div>
+</div>
+
+<script>
+const quizSteps = [
+  {
+    q: '你最喜欢什么类型的书？',
+    opts: ['🦸 故事/小说类', '🔬 科普/百科类', '😂 搞笑/幽默类', '🏰 奇幻/冒险类'],
+    key: 'genre'
+  },
+  {
+    q: '你更喜欢哪种阅读体验？',
+    opts: ['📖 短小精悍，很快读完', '📚 慢慢读一本厚书', '🎨 图画多的书', '💭 什么类型都行'],
+    key: 'style'
+  },
+  {
+    q: '你读书主要是为了——',
+    opts: ['😊 开心/放松', '📝 学知识/提成绩', '🌍 开阔眼界', '💤 打发时间'],
+    key: 'purpose'
+  }
+];
+
+const bookRecs = {
+  '故事g1': { title: '《小猪唏哩呼噜》', desc: '故事温馨有趣，语言生动，最适合喜欢听故事的一二年级小朋友！', emoji: '🐷' },
+  '故事g2': { title: '《夏洛的网》', desc: '关于友谊和生命的经典故事，3-4年级读正好能理解其中的感动。', emoji: '🕸️' },
+  '故事g3': { title: '《城南旧事》', desc: '文字优美，情感真挚，5-6年级读能学到很多写作技巧。', emoji: '🏔️' },
+  '科普g1': { title: '《好饿的毛毛虫》', desc: '图画漂亮，还能学到昆虫知识，最适合小小科普迷！', emoji: '🐛' },
+  '科普g2': { title: '《十万个为什么》', desc: '满足你所有的好奇心，3-4年级是问"为什么"最多的年纪！', emoji: '🔍' },
+  '科普g3': { title: '《海底两万里》', desc: '科幻+科学，读完之后你会爱上科学探索！', emoji: '🌊' },
+  '搞笑g1': { title: '《米小圈上学记》', desc: '超级搞笑的一年级故事，保证让你笑出声！', emoji: '👦' },
+  '搞笑g2': { title: '《皮皮鲁和鲁西西》', desc: '郑渊洁的童话又搞笑又有想象力，3-4年级读刚刚好！', emoji: '🗺️' },
+  '搞笑g3': { title: '《哈利·波特》', desc: '又搞笑又刺激，5-6年级读大部头奇幻就从这套开始！', emoji: '⚡' },
+  '奇幻g1': { title: '《不一样的卡梅拉》', desc: '小鸡卡梅拉的冒险故事，又奇幻又有趣！', emoji: '🐥' },
+  '奇幻g2': { title: '《大森林里的小木屋》', desc: '虽然不是魔法奇幻，但森林里的生活本身就是一场大冒险！', emoji: '🌲' },
+  '奇幻g3': { title: '《哈利·波特》', desc: '最经典的魔法世界！5-6年级是读哈利·波特的最佳年龄！', emoji: '⚡' },
+};
+
+// ── 年级切换 ──
+document.querySelectorAll('#gradeTab button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('#gradeTab button').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.grade-section').forEach(s => s.classList.remove('show'));
+    document.getElementById(this.dataset.grade).classList.add('show');
+  });
+});
+
+let stepIdx = 0;
+const answers = {};
+
+function initQuiz() {
+  renderStep();
+}
+
+function renderStep() {
+  const step = quizSteps[stepIdx];
+  document.getElementById('quizQuestion').textContent = step.q;
+  const optsDiv = document.getElementById('quizOptions');
+  optsDiv.innerHTML = '';
+  step.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'q-btn';
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(i);
+    optsDiv.appendChild(btn);
+  });
+  document.getElementById('quizNext').disabled = true;
+  document.getElementById('quizResult').innerHTML = '';
+}
+
+function selectOption(idx) {
+  document.querySelectorAll('#quizOptions .q-btn').forEach((b, i) => {
+    b.classList.toggle('selected', i === idx);
+  });
+  answers[quizSteps[stepIdx].key] = idx;
+  document.getElementById('quizNext').disabled = false;
+}
+
+function getGradeLevel() {
+  // 粗略估计年级：从style和purpose推断
+  const style = answers.style || 0;
+  const purpose = answers.purpose || 0;
+  if (style === 0 || purpose === 3) return 'g1'; // 短篇/打发时间 → 低年级
+  if (style === 1) return 'g3'; // 厚书 → 中高年级
+  return 'g2'; // 默认中年级
+}
+
+function getRecommendation() {
+  const genre = answers.genre !== undefined ? ['故事','科普','搞笑','奇幻'][answers.genre] : '故事';
+  const grade = getGradeLevel();
+  const levelMap = { 'g1': 'g1', 'g2': 'g2', 'g3': 'g3' };
+  const key = genre + levelMap[grade];
+  return bookRecs[key] || bookRecs['故事g2'];
+}
+
+function nextQuizStep() {
+  stepIdx++;
+  if (stepIdx >= quizSteps.length) {
+    // Show result
+    const rec = getRecommendation();
+    document.getElementById('quizQuestion').style.display = 'none';
+    document.getElementById('quizOptions').style.display = 'none';
+    document.getElementById('quizNext').style.display = 'none';
+    document.getElementById('quizResult').innerHTML =
+      '<div class="quiz-result">' +
+      '<div class="r-title">' + rec.emoji + ' 推荐你读：' + rec.title + '</div>' +
+      '<div class="r-desc">' + rec.desc + '</div>' +
+      '<button class="q-next" onclick="location.reload()" style="margin-top:12px">🔄 重新测试</button>' +
+      '</div>';
+  } else {
+    renderStep();
+  }
+}
+
+initQuiz();
+</script>
+
+<!-- ═══════════ 阅读小贴士 ═══════════ -->
+<div class="sec-title" id="tips">💡 阅读小贴士</div>
+<div class="card">
+  <div class="t">🌟 让阅读变得更好玩的 5 个方法</div>
+  <div class="d">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-c"><b>每天固定时间</b> — 睡前15分钟，坚持就是胜利</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-c"><b>读完聊一聊</b> — 和爸爸妈妈或同学分享书里有趣的内容</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-c"><b>不喜欢的书可以放下</b> — 不是每本"必读"都适合你，找到喜欢的才重要</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-c"><b>做一个阅读记录本</b> — 记录书名、日期和你的感想，超有成就感</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-c"><b>去图书馆或书店</b> — 在书海里自己挑书，本身就是一件快乐的事</div>
+    </div>
+  </div>
+  <div class="tip-box" style="margin-top:14px">
+    <div class="tip-t">📊 目标参考</div>
+    <div class="tip-d">1-2年级：每年 30-50 本（绘本为主）<br>3-4年级：每年 20-30 本（文字书）<br>5-6年级：每年 15-25 本（长篇为主）</div>
+  </div>
+</div>
+
+<div class="card" style="text-align:center;padding:16px">
+  <div class="d" style="color:#888;font-size:14px">
+    📚 最贵的不一定是最好的，最适合的才是！带孩子去书店自己挑书吧 🎉
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>
