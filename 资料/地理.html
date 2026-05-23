@@ -16,18 +16,25 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;c
 .top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #6E8FC4;padding:20px 24px}
 .top h2{font-size:18px;font-weight:700;color:#6E8FC4;margin-bottom:6px}
 .top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(110,143,196,0.08);color:#6E8FC4;margin-bottom:10px}
-.top p{font-size:14px;color:#555;margin-bottom:6px}
+.top h3{font-size:15px;font-weight:600;color:#444;margin:12px 0 4px}
+.top h4{font-size:14px;font-weight:600;color:#6E8FC4;margin:8px 0 3px}
+.top p{font-size:14px;color:#555;margin-bottom:6px;text-indent:2em}
 .top .ex{background:#f8f9fc;border-radius:8px;padding:12px 16px;margin:8px 0}
 .top .ex .q{font-weight:600;color:#6E8FC4;margin-bottom:3px}
 .top .ex .a{color:#666;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:4px}
 .top .ex .a strong{color:#6E8FC4}
 .top .hw{background:#f0f7ff;border-radius:8px;padding:12px 16px;margin:8px 0;font-size:13px}
-.top .hw .hw-q{margin-bottom:2px}
-.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:10px}
+.top .hw .hw-q{margin-bottom:2px;cursor:pointer;user-select:none}
+.top .hw .hw-q:hover{color:#6E8FC4}
+.top .hw .hw-a{display:none;color:#2d7d46;font-size:12px;margin-left:8px}
+.top .hw .hw-a.show{display:inline}
+.top .tip{background:#fffbe6;border-radius:6px;padding:8px 12px;margin:6px 0;font-size:13px;color:#8d6e00;border-left:3px solid #fadb14}
+.top .tip strong{color:#e74c3c}
 .chart-wrap{text-align:center;margin:10px 0}
 .chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
-
+.top ul{padding-left:24px;font-size:14px;color:#555;margin-bottom:6px}
+.top ul li{margin-bottom:3px}
 .back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
 .back-to-top.show{opacity:1;visibility:visible}
 .back-to-top:hover{opacity:.85;transform:translateY(-2px)}
@@ -35,7 +42,372 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;c
 <script src="../js/theme.js"></script>
 </head>
 <body>
-<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中地理专题</h1><p class="sub">地球地图 · 世界地理 · 中国地理 · 气候</p></div>
-<div class="container"><div class="top"><h2>专题一：地球与地图</h2><span class="tag">自然地理</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>经线和纬线：纬线平行于赤道，指示东西方向；经线连接南北两极，指示南北方向。东西半球分界线：20°W和160°E。地图三要素：比例尺、方向、图例。等高线：密集→坡度陡，稀疏→坡度缓。</p><div class="ex"><div class="q">例：甲地(40°N, 116°E)属于哪个半球</div><div class="a"><strong>解：</strong>北半球（北纬）、东半球（116°E在20°W向东到160°E范围内）</div></div><div class="ex"><div class="q">例：比例尺1:500000，地图上两点距离4cm，实际距离多少</div><div class="a"><strong>解：</strong>实际距离=4×500000=2000000cm=20km</div></div><div class="hw"><div class="hw-q">• 赤道周长约____km，纬度每差1°距离约____km <span class="hw-a">答案：4万，111</span></div><div class="hw-q">• 等高线向海拔高处凸出为____（山谷/山脊） <span class="hw-a">答案：山谷</span></div></div></div><div class="top"><h2>专题二：世界地理</h2><span class="tag">世界地理</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>七大洲：亚洲、非洲、北美洲、南美洲、南极洲、欧洲、大洋洲。四大洋：太平洋（最大）、大西洋、印度洋、北冰洋（最小）。世界主要气候类型分布：热带雨林气候（赤道附近）、地中海气候（30°-40°大陆西岸）、温带海洋性气候（40°-60°大陆西岸）。</p><div class="ex"><div class="q">例：亚洲的地势特征及对河流分布的影响</div><div class="a"><strong>解：</strong>地势中部高四周低，河流呈放射状向四周分流。长江向东南流入太平洋，黄河向东流入太平洋，恒河向南流入印度洋，鄂毕河向北流入北冰洋。</div></div><div class="ex"><div class="q">例：南极洲为什么被称为"冰雪高原"</div><div class="a"><strong>解：</strong>南极洲平均海拔2350m，居七大洲之首。覆盖约2000万km³的冰盖，是地球上最大的淡水资源库。由于气温极低，冰雪终年不化，形成巨大冰盖。</div></div><div class="hw"><div class="hw-q">• 世界上最大的热带雨林分布在____ <span class="hw-a">答案：南美洲亚马孙平原</span></div><div class="hw-q">• 苏伊士运河沟通了____海和____海 <span class="hw-a">答案：地中，红</span></div></div></div><div class="top"><h2>专题三：中国地理</h2><span class="tag">中国地理</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>中国位置：东半球、北半球，亚洲东部、太平洋西岸。领土面积约960万km²（世界第三）。地形特征：西高东低，呈三级阶梯。季风区与非季风区分界线：大兴安岭—阴山—贺兰山—巴颜喀拉山—冈底斯山。南水北调：东线、中线、西线工程。</p><div class="ex"><div class="q">例：我国降水的空间分布规律及影响因素</div><div class="a"><strong>解：</strong>由东南沿海向西北内陆递减。影响因素：海陆位置（距海远近）、夏季风（来自太平洋和印度洋）、地形阻挡。</div></div><div class="ex"><div class="q">例：秦岭-淮河一线的地理意义</div><div class="a"><strong>解：</strong>①一月0℃等温线 ②800mm年等降水量线 ③亚热带与暖温带分界 ④湿润区与半湿润区分界 ⑤南方与北方分界 ⑥水田与旱地分界</div></div><div class="hw"><div class="hw-q">• 黄河发源于____山脉，注入____海 <span class="hw-a">答案：巴颜喀拉，渤</span></div><div class="hw-q">• 我国最大的综合性工业基地是____ <span class="hw-a">答案：沪宁杭（长江三角洲）</span></div></div></div><div class="top"><h2>专题四：气候与自然环境</h2><span class="tag">气候</span><h3 style="font-size:15px;font-weight:600;color:#444;margin:10px 0 4px">知识要点</h3><p>气温：纬度越高气温越低，海拔越高气温越低（每升高100m下降0.6℃）。降水：赤道多雨，两极少雨；中纬度沿海多雨、内陆少雨。我国气候特征：气候复杂多样，季风气候显著。灾害性天气：台风、洪涝、干旱、寒潮、沙尘暴。全球变暖：CO₂等温室气体增加导致。</p><div class="ex"><div class="q">例：山地A山脚（海拔200m）气温20℃，山顶（海拔2200m）气温约多少</div><div class="a"><strong>解：</strong>温差=(2200-200)/100×0.6=12℃，山顶≈8℃</div></div><div class="ex"><div class="q">例：全球变暖的主要原因和危害</div><div class="a"><strong>解：</strong>原因：化石燃料燃烧释放大量CO₂、森林砍伐减少CO₂吸收。危害：海平面上升（淹没沿海低地）、极端天气增多、物种灭绝加快。</div></div><div class="hw"><div class="hw-q">• 我国冬季南北温差大的主要原因 <span class="hw-a">答案：纬度差异大、冬季风影响</span></div><div class="hw-q">• 台风在____季登陆我国东南沿海，带来的好处是____ <span class="hw-a">答案：夏秋，缓解旱情</span></div></div></div></div><div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县</div><button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中地理专题</h1><p class="sub">地球与地图 · 世界地理 · 中国地理 · 区域地理 · 环境与发展</p></div>
+<div class="container">
+
+<script>
+function ta(el){
+  var a=el.querySelector('.hw-a');
+  if(a)a.classList.toggle('show');
+}
+</script>
+
+<!-- ════ 专题一 ════ -->
+<div class="top">
+<h2>专题一：地球的形状与大小</h2><span class="tag">自然地理</span>
+<h3>知识要点</h3>
+<p>地球是一个两极稍扁、赤道略鼓的不规则椭球体。地球并非标准正球体——北极半径比南极半径略长。</p>
+<p>地球的基本数据：赤道半径 6378km，极半径 6357km，平均半径 6371km。赤道周长约 40000km（4万千米），表面积约 5.1亿km²。</p>
+<p>证明地球是球体的证据：①海边远去的帆船船身先消失、桅杆后消失；②月食时地球的影子为弧形；③登高望远；④人造卫星拍摄的地球照片。</p>
+<p>赤道是最长的纬线，周长约4万km。纬度每差1°，经线弧长约111km。</p>
+<div class="tip"><strong>易错提醒：</strong>地球的平均半径是6371km，不是6357或6378，这三个数字常混淆，记住"平均6371"即可。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：能证明地球是球体的是（  ）<br>A. 太阳东升西落  B. 月食现象  C. 四季变化  D. 昼夜交替</div><div class="a"><strong>解：</strong>B。月食时地球的影子呈弧形，证明地球是球体。A和D是地球自转的结果，C是公转的结果。</div></div>
+<div class="ex"><div class="q">例2：赤道周长约4万km，一架飞机以800km/h的速度沿赤道飞行一周，大约需要多长时间？</div><div class="a"><strong>解：</strong>t = 40000÷800 = 50小时，约2天多一点。</div></div>
+<div class="ex"><div class="q">例3：地球的极半径比赤道半径约短多少千米？</div><div class="a"><strong>解：</strong>6378 - 6357 = 21km。说明地球是一个两极稍扁的椭球体。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 地球的平均半径是____km <span class="hw-a">答案：6371</span></div>
+<div class="hw-q" onclick="ta(this)">• 最能证明地球是球体的航海事件是____ <span class="hw-a">答案：麦哲伦船队环球航行</span></div>
+<div class="hw-q" onclick="ta(this)">• 地球表面积约____亿平方千米 <span class="hw-a">答案：5.1</span></div>
+<div class="hw-q" onclick="ta(this)">• 纬度相差1°，实地距离约____km <span class="hw-a">答案：111</span></div>
+</div></div>
+
+<!-- ════ 专题二 ════ -->
+<div class="top">
+<h2>专题二：经纬线与经纬度</h2><span class="tag">自然地理</span>
+<h3>知识要点</h3>
+<p><strong>纬线：</strong>与赤道平行、环绕地球一周的圆圈。纬线指示东西方向，长度从赤道向两极递减（赤道最长，两极缩为点）。纬度从赤道（0°）向南北两极递增到90°。北纬用N，南纬用S。重要纬线：赤道（0°）、北回归线（23.5°N）、南回归线（23.5°S）、北极圈（66.5°N）、南极圈（66.5°S）。</p>
+<p><strong>经线：</strong>连接南北两极的半圆弧线。经线指示南北方向，所有经线等长。经度从本初子午线（0°）向东（E）向西（W）各递增到180°。东西半球分界线：20°W和160°E组成的经线圈——20°W以东至160°E为东半球，反之西半球。</p>
+<p><strong>低中高纬度划分：</strong>低纬度0°-30°，中纬度30°-60°，高纬度60°-90°。注意：30°和60°既是低中、中高分界，属于哪个范围视具体情况。</p>
+<div class="tip"><strong>易错提醒：</strong>东西半球分界线不是0°和180°！0°经线穿过欧洲和非洲，若以此为界会把许多国家分在两半球。记住"20°W和160°E"这个组合。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：某点经纬度为（40°N, 116°E），判断其所在半球和纬度范围。</div><div class="a"><strong>解：</strong>北半球（北纬40°），东半球（116°E在20°W→160°E范围内），中纬度（30°-60°）。</div></div>
+<div class="ex"><div class="q">例2：A点（30°N, 120°E），B点（30°S, 120°W），比较两点的位置关系。</div><div class="a"><strong>解：</strong>A在北半球、东半球；B在南半球、西半球。A在B的西北方向（纬度看A在北，经度看A在东）。</div></div>
+<div class="ex"><div class="q">例3：小明站在（23.5°N, 0°），他属于哪个半球？有无太阳直射？</div><div class="a"><strong>解：</strong>北半球、东半球（0°经线以东）。23.5°N是北回归线，有太阳直射（每年夏至日直射）。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 赤道以北用字母____表示，以南用____表示 <span class="hw-a">答案：N，S</span></div>
+<div class="hw-q" onclick="ta(this)">• 东西半球的分界线是____和____组成的经线圈 <span class="hw-a">答案：20°W，160°E</span></div>
+<div class="hw-q" onclick="ta(this)">• 纬度0°-30°属于____纬度，60°-90°属于____纬度 <span class="hw-a">答案：低，高</span></div>
+<div class="hw-q" onclick="ta(this)">• 北极圈的度数是____，北回归线的度数是____ <span class="hw-a">答案：66.5°N，23.5°N</span></div>
+<div class="hw-q" onclick="ta(this)">• 某点（10°S, 170°E）位于____半球（东/西） <span class="hw-a">答案：西半球（注意160°E以东为西半球）</span></div>
+</div></div>
+
+<!-- ════ 专题三 ════ -->
+<div class="top">
+<h2>专题三：地球的运动</h2><span class="tag">自然地理</span>
+<h3>知识要点</h3>
+<p><strong>自转：</strong>地球绕地轴旋转，方向自西向东，周期约24小时（一天）。产生的地理现象：昼夜交替、时间的差异（东早西晚）、日月星辰的东升西落。注意：地球本身不发光不透明，太阳只能照亮一半，所以有了昼夜；自转使昼夜不断交替。</p>
+<p><strong>公转：</strong>地球绕太阳旋转，方向自西向东，周期365.25天（一年），轨道为近似圆形的椭圆。公转特点：地轴与公转轨道面呈66.5°夹角，北极始终指向北极星附近。产生的地理现象：四季变化、昼夜长短变化、五带的划分。</p>
+<p><strong>节气与太阳直射点：</strong>春分（3月21日）直射赤道，全球昼夜等长；夏至（6月22日）直射北回归线，北半球昼最长夜最短；秋分（9月23日）直射赤道；冬至（12月22日）直射南回归线，北半球昼最短夜最长。</p>
+<p><strong>五带划分：</strong>热带（南北回归线之间，有太阳直射）、温带（回归线-极圈间，四季分明）、寒带（极圈以内，有极昼极夜）。</p>
+<div class="tip"><strong>记忆口诀：</strong>"春分秋分昼夜平，夏至昼长冬至短"——北半球夏至昼最长，冬至昼最短。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：当北京是白天时，纽约是黑夜，这是由于什么原因造成的？</div><div class="a"><strong>解：</strong>地球自转。北京（东八区）和纽约（西五区）相差13个时区，自转使不同经度的地方看到太阳的时间不同，东边先看到日出。</div></div>
+<div class="ex"><div class="q">例2：6月22日，下列城市中白昼最长的是（  ）<br>A. 哈尔滨（45°N） B. 北京（40°N） C. 上海（31°N） D. 广州（23°N）</div><div class="a"><strong>解：</strong>A。夏至日北半球纬度越高白昼越长，哈尔滨纬度最高。</div></div>
+<div class="ex"><div class="q">例3：我国某地有一口井，每年只有一天有阳光直射井底，该地可能位于哪个纬度？</div><div class="a"><strong>解：</strong>北回归线（23.5°N）或南回归线（23.5°S）。我国位于北半球，所以是23.5°N，这一天是夏至日（6月22日）。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 地球自转的方向是____，周期____ <span class="hw-a">答案：自西向东，24小时（一天）</span></div>
+<div class="hw-q" onclick="ta(this)">• 地球公转的周期约____，地轴与轨道面夹角____ <span class="hw-a">答案：一年（365天），66.5°</span></div>
+<div class="hw-q" onclick="ta(this)">• 12月22日前后，太阳直射____，北半球为____季 <span class="hw-a">答案：南回归线（23.5°S），冬季</span></div>
+<div class="hw-q" onclick="ta(this)">• 有极昼极夜现象的范围是____ <span class="hw-a">答案：南北极圈以内（66.5°-90°）</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国大部分地区位于____带 <span class="hw-a">答案：北温带</span></div>
+</div></div>
+
+<!-- ════ 专题四 ════ -->
+<div class="top">
+<h2>专题四：地图三要素与等高线</h2><span class="tag">地图技能</span>
+<h3>知识要点</h3>
+<p><strong>比例尺：</strong>表示图上距离比实地距离缩小的程度。比例尺=图上距离÷实地距离。三种表达方式：线段式、数字式、文字式。比例尺是个比值，分子为1时，分母越大比例尺越小，表示范围越大、内容越简略。</p>
+<p><strong>方向：</strong>一般地图用"上北下南左西右东"；有指向标的地图用指向标定向；有经纬网的地图用经纬线定向（经线指示南北、纬线指示东西）。</p>
+<p><strong>图例和注记：</strong>图例是地图上表示地理事物的符号，注记是地图上的文字说明。</p>
+<p><strong>等高线地形图：</strong>等高线闭合且数值中间高四周低为山顶；等高线向海拔低处凸出为山脊（凸低为脊）；向海拔高处凸出为山谷（凸高为谷），山谷易发育河流；两个山顶之间的低地为鞍部；等高线重叠处为陡崖。等高线密集表示坡度陡，稀疏表示坡度缓。</p>
+<p><strong>海拔与相对高度：</strong>海拔是某地高出海平面的垂直距离；相对高度是某地高出另一地点的垂直距离。</p>
+<div class="tip"><strong>易错提醒：</strong>"凸高为谷、凸低为脊"是等高线判读的核心口诀，记住等高线凸向高值→山谷（有河流），凸向低值→山脊（分水岭）。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：比例尺1:200000，图上距离5cm，实际距离多少？</div><div class="a"><strong>解：</strong>实际距离=5×200000=1000000cm=10km。</div></div>
+<div class="ex"><div class="q">例2：甲乙两地实际距离60km，在1:3000000的地图上距离是多少？</div><div class="a"><strong>解：</strong>图上距离=6000000cm÷3000000=2cm。</div></div>
+<div class="ex"><div class="q">例3：等高线地形图中，等高线向海拔高处凸出的部位是（  ），该部位容易形成（  ）。</div><div class="a"><strong>解：</strong>山谷（凸高为谷），河流。山谷是集水线，降水易汇集形成河流。</div></div>
+<div class="ex"><div class="q">例4：在等高线地形图上，甲海拔800m，乙海拔300m，两地相对高度是多少？</div><div class="a"><strong>解：</strong>相对高度=800-300=500m。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 比例尺越大，表示的范围越____，内容越____ <span class="hw-a">答案：小，详细</span></div>
+<div class="hw-q" onclick="ta(this)">• 等高线向海拔低处凸出为____ <span class="hw-a">答案：山脊（凸低为脊）</span></div>
+<div class="hw-q" onclick="ta(this)">• 两个山顶之间的低洼部位是____ <span class="hw-a">答案：鞍部</span></div>
+<div class="hw-q" onclick="ta(this)">• 甲乙两地图上距离3cm，比例尺1:500000，实际距离____km <span class="hw-a">答案：15</span></div>
+<div class="hw-q" onclick="ta(this)">• 某点海拔高于周边且等高线闭合，该地形是____ <span class="hw-a">答案：山顶（山峰）</span></div>
+</div></div>
+
+<!-- ════ 专题五 ════ -->
+<div class="top">
+<h2>专题五：世界的陆地和海洋</h2><span class="tag">世界地理</span>
+<h3>知识要点</h3>
+<p><strong>七大洲（面积从大到小）：</strong>亚洲（4400万km²）、非洲（3000万）、北美洲（2400万）、南美洲（1800万）、南极洲（1400万）、欧洲（1000万）、大洋洲（900万）。口诀："亚非北南美，南极欧大洋"。</p>
+<p><strong>四大洋（面积从大到小）：</strong>太平洋（最大，约18000万km²）、大西洋、印度洋、北冰洋（最小）。</p>
+<p><strong>重要分界线：</strong>亚欧分界——乌拉尔山、乌拉尔河、大高加索山、土耳其海峡；亚非分界——苏伊士运河；南北美洲分界——巴拿马运河；亚洲与北美洲分界——白令海峡；南美洲与南极洲分界——德雷克海峡。</p>
+<p><strong>板块构造学说：</strong>全球分为六大板块（亚欧、非洲、美洲、太平洋、印度洋、南极洲），板块在不断地运动中。板块内部地壳较稳定，板块交界处地壳活跃、多火山地震。世界两大地震带：环太平洋地震带、地中海-喜马拉雅地震带。</p>
+<p><strong>海陆变迁：</strong>地壳的变动和海平面的升降是主要原因，人类活动（如填海造陆）也能引起海陆变化。大陆漂移学说的证据：大西洋两岸大陆轮廓吻合、古老地层相连、古生物化石相似。</p>
+<div class="tip"><strong>易错提醒：</strong>太平洋板块不是完全由海洋组成，它包括部分陆地（如日本群岛）。印度洋板块包括印度半岛、澳大利亚大陆和部分印度洋。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：苏伊士运河和巴拿马运河分别沟通了哪些海域？</div><div class="a"><strong>解：</strong>苏伊士运河沟通地中海和红海（印度洋→大西洋捷径）；巴拿马运河沟通太平洋和大西洋。</div></div>
+<div class="ex"><div class="q">例2：喜马拉雅山脉的形成原因是什么？</div><div class="a"><strong>解：</strong>亚欧板块与印度洋板块碰撞挤压，印度洋板块俯冲到亚欧板块之下，使地壳抬升隆起形成山脉。这种碰撞至今仍在进行，因此珠穆朗玛峰还在缓慢升高。</div></div>
+<div class="ex"><div class="q">例3：下列地区中，火山地震最频繁的是（  ）<br>A. 太平洋中部  B. 亚马孙平原  C. 日本群岛  D. 澳大利亚大陆</div><div class="a"><strong>解：</strong>C。日本位于环太平洋火山地震带上，亚欧板块与太平洋板块交界处，地壳活跃。A太平洋中部在板块内部，较稳定。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 面积最大的大洲是____，最小的大洲是____ <span class="hw-a">答案：亚洲，大洋洲</span></div>
+<div class="hw-q" onclick="ta(this)">• 面积最大的大洋是____，最小的是____ <span class="hw-a">答案：太平洋，北冰洋</span></div>
+<div class="hw-q" onclick="ta(this)">• 亚非分界线是____，南北美洲分界线是____ <span class="hw-a">答案：苏伊士运河，巴拿马运河</span></div>
+<div class="hw-q" onclick="ta(this)">• 亚欧板块与印度洋板块碰撞形成____山脉 <span class="hw-a">答案：喜马拉雅</span></div>
+<div class="hw-q" onclick="ta(this)">• 世界两大地震带是____和____ <span class="hw-a">答案：环太平洋地震带，地中海-喜马拉雅地震带</span></div>
+</div></div>
+
+<!-- ════ 专题六 ════ -->
+<div class="top">
+<h2>专题六：世界气候与自然带</h2><span class="tag">世界地理</span>
+<h3>知识要点</h3>
+<p><strong>气温：</strong>纬度越高，气温越低（太阳辐射随纬度增大而减少）。海拔越高气温越低——海拔每升高100m，气温约下降0.6℃。同纬度地区，夏季陆地气温高于海洋，冬季相反。</p>
+<p><strong>降水：</strong>赤道附近降水多，两极地区降水少。中纬度沿海降水多、内陆降水少。迎风坡降水多、背风坡降水少。世界"雨极"：乞拉朋齐（印度）,"干极"：阿塔卡马沙漠（智利）。</p>
+<p><strong>世界主要气候类型：</strong></p>
+<ul>
+<li><strong>热带雨林气候：</strong>赤道附近，全年高温多雨。代表：亚马孙平原、刚果盆地、马来群岛。</li>
+<li><strong>热带草原气候：</strong>热带雨林南北两侧，全年高温、干湿季分明。代表：非洲大草原。</li>
+<li><strong>热带沙漠气候：</strong>南北回归线附近大陆中部和西岸，全年炎热干燥。代表：撒哈拉沙漠、阿拉伯半岛。</li>
+<li><strong>地中海气候：</strong>南北纬30°-40°大陆西岸，夏季炎热干燥、冬季温和多雨。代表：地中海沿岸、加利福尼亚。</li>
+<li><strong>温带海洋性气候：</strong>南北纬40°-60°大陆西岸，全年温和湿润。代表：西欧、新西兰。</li>
+<li><strong>温带季风气候：</strong>亚洲东部，夏季高温多雨、冬季寒冷干燥。代表：中国东部、日本、韩国。</li>
+<li><strong>亚寒带针叶林气候：</strong>北纬50°-70°，冬季漫长严寒。代表：西伯利亚、加拿大北部。</li>
+<li><strong>寒带气候：</strong>极圈以内，全年严寒。代表：南极洲、格陵兰岛。</li>
+</ul>
+<div class="tip"><strong>记忆方法：</strong>以"温"定带（根据气温判断温度带），以"水"定型（根据降水判断具体气候类型）。热带看降水季节分配，温带看降水季节分配和降水总量。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：山地A山脚（海拔200m）气温25℃，山顶（海拔2200m）气温约多少？</div><div class="a"><strong>解：</strong>温差=(2200-200)÷100×0.6=12℃，山顶=25-12=13℃。</div></div>
+<div class="ex"><div class="q">例2：地中海气候的特征是夏季____、冬季____，主要分布在____。</div><div class="a"><strong>解：</strong>夏季炎热干燥，冬季温和多雨；南北纬30°-40°大陆西岸。这种气候与季风气候的区别在于：季风气候雨热同期（夏季多雨），而地中海气候雨热不同期。</div></div>
+<div class="ex"><div class="q">例3：世界降水最多的地区是哪里？为什么降水多？</div><div class="a"><strong>解：</strong>印度东北部的乞拉朋齐，年降水量超过10000mm。原因：位于印度洋暖湿气流的迎风坡（喜马拉雅山南麓），地形抬升形成大量降水。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 海拔每升高100m，气温下降____℃ <span class="hw-a">答案：0.6</span></div>
+<div class="hw-q" onclick="ta(this)">• 热带雨林气候主要分布在____附近 <span class="hw-a">答案：赤道</span></div>
+<div class="hw-q" onclick="ta(this)">• 温带海洋性气候主要分布在大陆____岸（东/西） <span class="hw-a">答案：西岸</span></div>
+<div class="hw-q" onclick="ta(this)">• 世界"雨极"是印度的____ <span class="hw-a">答案：乞拉朋齐</span></div>
+<div class="hw-q" onclick="ta(this)">• 地中海气候夏季受____（气压带/风带）控制 <span class="hw-a">答案：副热带高气压带</span></div>
+</div></div>
+
+<!-- ════ 专题七 ════ -->
+<div class="top">
+<h2>专题七：世界居民与国家</h2><span class="tag">世界地理</span>
+<h3>知识要点</h3>
+<p><strong>世界人口：</strong>2022年全球人口突破80亿。世界人口分布极不均匀——亚洲东部和南部、欧洲西部、北美洲东部人口稠密。热带雨林、沙漠、高山高原、极地地区人口稀少。</p>
+<p><strong>人种：</strong>白种人（欧洲、北美洲、大洋洲、西亚、北非）、黄种人（亚洲东部和东南部、美洲原住民）、黑种人（非洲中部和南部、美洲部分地区）。</p>
+<p><strong>语言：</strong>使用人数最多——汉语；使用范围最广——英语。联合国六大工作语言：汉语、英语、法语、俄语、阿拉伯语、西班牙语。</p>
+<p><strong>宗教：</strong>三大宗教——基督教（信徒最多，分布最广）、伊斯兰教（西亚北非）、佛教（东亚东南亚）。</p>
+<p><strong>国家和地区：</strong>全球共有200多个国家和地区。根据发展水平分为发达国家（欧美日等）和发展中国家（亚非拉大多数国家）。"南北对话"指发展中国家与发达国家的对话；"南南合作"指发展中国家之间的合作。</p>
+<div class="tip"><strong>易错提醒：</strong>区分"使用人数最多的语言"（汉语）和"使用范围最广的语言"（英语），这两个概念常考易混。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：世界上使用人数最多的语言是（  ），世界上使用范围最广的语言是（  ）。</div><div class="a"><strong>解：</strong>使用人数最多——汉语（14亿+），使用范围最广——英语（100多个国家和地区使用）。</div></div>
+<div class="ex"><div class="q">例2：非洲北部和亚洲西部主要分布着什么人种？信仰什么宗教？</div><div class="a"><strong>解：</strong>白种人（阿拉伯人属于白种人），信仰伊斯兰教。注意：非洲北部虽然是非洲，但主要是白种人而不是黑种人。</div></div>
+<div class="ex"><div class="q">例3：下列属于"南南合作"的是（  ）<br>A. 中国与日本合作  B. 中国与美国合作  C. 中国与印度合作  D. 美国与英国合作</div><div class="a"><strong>解：</strong>C。中国和印度都是发展中国家（位于"南方"），属于"南南合作"。A、B、D涉及发达国家（位于"北方"），属于"南北对话"或"北北合作"。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 联合国六种工作语言包括：汉、英、法、俄、____、____ <span class="hw-a">答案：阿拉伯语，西班牙语</span></div>
+<div class="hw-q" onclick="ta(this)">• 世界人口最多的国家是____，第二是____ <span class="hw-a">答案：中国，印度</span></div>
+<div class="hw-q" onclick="ta(this)">• 基督教主要分布在____洲、____洲和大洋洲 <span class="hw-a">答案：欧，北美</span></div>
+<div class="hw-q" onclick="ta(this)">• 发展中国家之间的合作称为____ <span class="hw-a">答案：南南合作</span></div>
+</div></div>
+
+<!-- ════ 专题八 ════ -->
+<div class="top">
+<h2>专题八：中国的位置与疆域</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>位置：</strong>位于东半球、北半球，亚洲东部、太平洋西岸。纬度位置：约4°N-53°N，大部分位于北温带，南部部分地区在热带，没有寒带。海陆位置：亚欧大陆东部、太平洋西岸，海陆兼备。</p>
+<p><strong>疆域与面积：</strong>领土面积约960万km²，居世界第三位（次于俄罗斯、加拿大）。陆地国界线长约22000km，大陆海岸线长约18000km。东西跨经度约62°（约5200km），南北跨纬度约50°（约5500km）。</p>
+<p><strong>邻国：</strong>陆上邻国14个——朝鲜、俄罗斯、蒙古、哈萨克斯坦、吉尔吉斯斯坦、塔吉克斯坦、阿富汗、巴基斯坦、印度、尼泊尔、不丹、缅甸、老挝、越南。隔海相望6个——韩国、日本、菲律宾、马来西亚、文莱、印度尼西亚。</p>
+<p><strong>行政区划：</strong>23个省、5个自治区、4个直辖市、2个特别行政区。记住简称和行政中心是常考内容。四个直辖市：北京（京）、上海（沪）、天津（津）、重庆（渝）。五个自治区：内蒙古（内蒙古）、新疆（新）、西藏（藏）、广西（桂）、宁夏（宁）。两个特别行政区：香港（港）、澳门（澳）。</p>
+<div class="tip"><strong>记忆口诀：</strong>14个陆上邻国——"朝俄蒙哈吉塔阿，巴印尼不缅老越"；海上邻国——"韩日菲马文印尼"。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：我国领土最南端在____，最北端在____。</div><div class="a"><strong>解：</strong>最南端——南沙群岛的曾母暗沙（约4°N）；最北端——黑龙江省漠河以北的黑龙江主航道中心线（约53°N）。</div></div>
+<div class="ex"><div class="q">例2：我国的地理位置优势有哪些？</div><div class="a"><strong>解：</strong>①纬度适中，气候多样，利于多种农业经营；②海陆兼备，东部沿海利于发展海洋事业和对外贸易，西部深入亚欧大陆利于与中亚各国交往；③国土辽阔，自然资源丰富。</div></div>
+<div class="ex"><div class="q">例3：与我国既陆上相邻又隔海相望的国家是____和____。</div><div class="a"><strong>解：</strong>越南和朝鲜。这两个国家既有陆上国界线，又与我国隔海相望。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 中国陆地面积约____万km²，居世界第____位 <span class="hw-a">答案：960，三</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国陆上邻国____个，隔海相望____个 <span class="hw-a">答案：14，6</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国最大的省级行政区是____ <span class="hw-a">答案：新疆维吾尔自治区</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国纬度最高的省级行政区是____ <span class="hw-a">答案：黑龙江省</span></div>
+<div class="hw-q" onclick="ta(this)">• 北回归线穿过我国哪些省份？（自西向东） <span class="hw-a">答案：云南、广西、广东、台湾（云桂粤台）</span></div>
+</div></div>
+
+<!-- ════ 专题九 ════ -->
+<div class="top">
+<h2>专题九：中国的地形地势</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>地势特征：</strong>西高东低，呈三级阶梯状分布。第一级阶梯（平均海拔4000m+）——青藏高原；第二级阶梯（1000-2000m）——三大高原（内蒙古、黄土、云贵）+三大盆地（塔里木、准噶尔、四川）；第三级阶梯（500m以下）——三大平原（东北、华北、长江中下游）+三大丘陵（辽东、山东、东南）。</p>
+<p><strong>阶梯分界线：</strong>一二阶梯——昆仑山-祁连山-横断山脉；二三阶梯——大兴安岭-太行山-巫山-雪峰山。</p>
+<p><strong>主要山脉：</strong>东西走向——天山-阴山、昆仑山-秦岭、南岭；东北-西南走向——大兴安岭-太行山-巫山-雪峰山、长白山-武夷山、台湾山脉；西北-东南走向——阿尔泰山、祁连山；南北走向——横断山脉、贺兰山；弧形山脉——喜马拉雅山脉。</p>
+<p><strong>地形特点：</strong>地形类型多样（五种地形齐全），山区面积广大（约占全国面积2/3）。山地33%、高原26%、盆地19%、平原12%、丘陵10%。山区面积广大的优势和劣势：利于发展林业、牧业、旅游业，但交通不便、耕地不足。</p>
+<div class="tip"><strong>记忆口诀：</strong>三级阶梯分界线——"昆祁横"（一二阶梯），"大太巫雪"（二三阶梯：大兴安岭、太行山、巫山、雪峰山）。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：我国地势特征对自然环境和经济活动有哪些影响？</div><div class="a"><strong>解：</strong>①利于海洋暖湿气流深入内陆，形成降水；②使许多大河自西向东流（如长江、黄河），沟通东西交通；③阶梯交界处落差大，水能资源丰富（如三峡水电站）；④西高东低的地势有利于东部海上暖湿气流的深入。</div></div>
+<div class="ex"><div class="q">例2：下列山脉中，属于地势第二、三级阶梯分界线的是（  ）<br>A. 天山  B. 太行山  C. 昆仑山  D. 秦岭</div><div class="a"><strong>解：</strong>B。太行山是第二、三级阶梯分界线的一部分。"大太巫雪"——大兴安岭、太行山、巫山、雪峰山。</div></div>
+<div class="ex"><div class="q">例3：我国面积最大的盆地和最平坦的高原分别是什么？</div><div class="a"><strong>解：</strong>最大盆地——塔里木盆地（53万km²，新疆南部）；最平坦高原——内蒙古高原（地势平坦开阔，草原广布）。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 我国地势特点是____，呈____分布 <span class="hw-a">答案：西高东低，三级阶梯状</span></div>
+<div class="hw-q" onclick="ta(this)">• 第一、二级阶梯的分界线是____、____、____ <span class="hw-a">答案：昆仑山，祁连山，横断山脉</span></div>
+<div class="hw-q" onclick="ta(this)">• 秦岭的走向是____ <span class="hw-a">答案：东西走向</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国面积最大的平原____，最高的高原____ <span class="hw-a">答案：东北平原，青藏高原</span></div>
+<div class="hw-q" onclick="ta(this)">• 山区面积约占全国总面积的____ <span class="hw-a">答案：2/3（约66%）</span></div>
+</div></div>
+
+<!-- ════ 专题十 ════ -->
+<div class="top">
+<h2>专题十：中国的气候</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>气温分布特点：</strong>冬季南北温差大（1月0℃等温线大致通过秦岭-淮河一线），夏季南北普遍高温（青藏高原除外）。影响气温的主要因素：纬度位置、海陆位置、地形。</p>
+<p><strong>温度带：</strong>根据≥10℃积温，自南向北分为热带、亚热带、暖温带、中温带、寒温带，以及青藏高原高寒区。秦岭-淮河是亚热带与暖温带的分界线。</p>
+<p><strong>降水分布特点：</strong>由东南沿海向西北内陆递减。800mm年等降水量线大致通过秦岭-淮河一线；400mm年等降水量线大致通过大兴安岭-张家口-兰州-拉萨一线，也是半湿润与半干旱区分界线。</p>
+<p><strong>季风气候显著：</strong>冬季吹偏北风（来自西伯利亚和蒙古），寒冷干燥；夏季吹偏南风（来自太平洋和印度洋），温暖湿润。季风区与非季风区以大兴安岭-阴山-贺兰山-巴颜喀拉山-冈底斯山为界。季风区受夏季风影响明显，降水丰沛。</p>
+<p><strong>气候类型：</strong>东部自北向南——温带季风气候、亚热带季风气候、热带季风气候；西北——温带大陆性气候（冬冷夏热，降水少）；青藏高原——高原山地气候（高寒）。</p>
+<p><strong>旱涝灾害：</strong>夏季风不稳定（来得早、去得晚→南涝北旱；来得晚、去得早→南旱北涝）。</p>
+<div class="tip"><strong>易错提醒：</strong>我国季风区降水主要来自太平洋（东南季风），西南地区也受印度洋（西南季风）影响。夏季风强的年份易北涝南旱，夏季风弱的年份易南涝北旱。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：秦岭-淮河一线的地理意义有哪些？</div><div class="a"><strong>解：</strong>①一月0℃等温线；②800mm年等降水量线；③亚热带与暖温带分界；④湿润区与半湿润区分界；⑤南方与北方分界；⑥水田与旱地分界；⑦亚热带季风气候与温带季风气候分界。</div></div>
+<div class="ex"><div class="q">例2：我国降水空间分布规律是____，原因是____。</div><div class="a"><strong>解：</strong>由东南沿海向西北内陆递减。原因：东南沿海距海近，受夏季风影响大，降水多；西北内陆距海远，受夏季风影响小，降水少。</div></div>
+<div class="ex"><div class="q">例3：我国季风区与非季风区的分界线是什么？季风区降水多的原因是什么？</div><div class="a"><strong>解：</strong>分界线：大兴安岭-阴山-贺兰山-巴颜喀拉山-冈底斯山。季风区降水多的原因：夏季风来自海洋，携带大量水汽，遇到山地抬升形成降水。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 一月0℃等温线通过____一线 <span class="hw-a">答案：秦岭-淮河</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国年降水量分布总趋势是____ <span class="hw-a">答案：由东南沿海向西北内陆递减</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国最大的气候特征是____ <span class="hw-a">答案：季风气候显著</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国夏季气温最低的地方是____，原因是____ <span class="hw-a">答案：青藏高原，海拔高</span></div>
+<div class="hw-q" onclick="ta(this)">• 梅雨发生在____地区的____季节 <span class="hw-a">答案：江淮（长江中下游），夏初（6月）</span></div>
+</div></div>
+
+<!-- ════ 专题十一 ════ -->
+<div class="top">
+<h2>专题十一：中国的河流与湖泊</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>内流区和外流区：</strong>外流河——最终注入海洋的河流（如长江→太平洋），外流区约占全国2/3。内流河——最终未注入海洋的河流（如塔里木河），内流区约占全国1/3。分界线：大致与400mm年等降水量线一致（大兴安岭-阴山-贺兰山-巴颜喀拉山-冈底斯山）。</p>
+<p><strong>长江：</strong>中国第一大河（长度6300km），发源于唐古拉山脉各拉丹冬峰，注入东海。流经11个省市区。上中下游分界：宜昌（湖北）、湖口（江西）。水能资源丰富（"水能宝库"），主要集中在上游（三峡、葛洲坝）。航运价值高（"黄金水道"）。</p>
+<p><strong>黄河：</strong>中国第二长河（5464km），发源于巴颜喀拉山脉，注入渤海。上中下游分界：河口（内蒙古）、桃花峪（河南）。主要问题：上游荒漠化，中游水土流失（流经黄土高原），下游"地上河"（泥沙淤积，河床高于地面）。治理措施：植树造林、水土保持、修建水库（小浪底）、加固堤防。</p>
+<p><strong>其他河流：</strong>珠江（华南第一大河，水量丰富），黑龙江（中俄界河），雅鲁藏布江（世界海拔最高的大河之一）。</p>
+<p><strong>湖泊：</strong>最大咸水湖——青海湖；最大淡水湖——鄱阳湖（江西）。</p>
+<div class="tip"><strong>易错提醒：</strong>黄河"地上河"形成在中下游河段（特别是下游），成因是泥沙淤积。长江"黄金水道"指其航运价值，"水能宝库"指水能资源，两个别称不要混淆。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：长江被誉为"黄金水道"的原因是什么？</div><div class="a"><strong>解：</strong>①通航里程长（干流3600km+，占全国内河通航里程的2/3）；②无结冰期，全年可通航；③水运运量大、成本低；④流域经济发达，货运需求大；⑤沟通东西交通，连接沿海与内陆。</div></div>
+<div class="ex"><div class="q">例2：黄河中游水土流失严重的原因及治理措施？</div><div class="a"><strong>解：</strong>原因——自然：黄土土质疏松、降水集中多暴雨、植被覆盖率低；人为：过度开垦、过度放牧、破坏植被。治理：①生物措施（植树种草、退耕还林还草）；②工程措施（修建梯田、打坝淤地、修建水库）；③农业措施（合理安排农事、改善耕作方式）。</div></div>
+<div class="ex"><div class="q">例3：我国外流河的水文特征受什么影响最大？南方和北方河流水文特征有何差异？</div><div class="a"><strong>解：</strong>受季风气候影响最大。南方河流（如长江）——水量大、汛期长、含沙量小、无结冰期；北方河流（如黄河）——水量较小、汛期短、含沙量大、有结冰期（秦岭-淮河以北）。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 长江发源于____山脉，注入____海 <span class="hw-a">答案：唐古拉，东</span></div>
+<div class="hw-q" onclick="ta(this)">• 黄河发源于____山脉，注入____海 <span class="hw-a">答案：巴颜喀拉，渤</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国最大的咸水湖是____，最大的淡水湖是____ <span class="hw-a">答案：青海湖，鄱阳湖</span></div>
+<div class="hw-q" onclick="ta(this)">• 黄河下游的"地上河"形成于____游河段 <span class="hw-a">答案：下</span></div>
+<div class="hw-q" onclick="ta(this)">• 长江上中游的分界点是____，中下游分界点是____ <span class="hw-a">答案：宜昌，湖口</span></div>
+</div></div>
+
+<!-- ════ 专题十二 ════ -->
+<div class="top">
+<h2>专题十二：中国的自然资源</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>土地资源：</strong>类型多样（耕地、林地、草地、荒漠等），耕地少（仅占10%左右）、草地面积大（占33%以上）。分布不均——耕地主要分布在东部季风区的平原和盆地，草地主要分布在西部非季风区的高原和山地。基本国策："十分珍惜、合理利用土地和切实保护耕地"。</p>
+<p><strong>水资源：</strong>总量丰富（居世界第六），但人均不足（仅为世界平均的1/4）。时空分布不均：时间上夏秋多、冬春少；空间上南多北少、东多西少。解决措施：①修建水库（调节时间不均，如三峡）；②跨流域调水（调节空间不均，如南水北调）；③节约用水、保护水源。</p>
+<p><strong>矿产资源：</strong>种类齐全、总量丰富。煤炭主要分布在华北（山西、陕西、内蒙古），石油主要分布在东北、华北、西北，铁矿主要分布在辽宁、河北、四川。有色金属：江西钨矿、湖南锑矿、云南锡矿等。</p>
+<p><strong>海洋资源：</strong>我国管辖海域面积约300万km²。四大海产（大黄鱼、小黄鱼、带鱼、墨鱼），海盐产量世界第一（长芦盐场最大）。</p>
+<p><strong>森林资源：</strong>主要分布在东北（最大天然林区）、西南（横断山区）和东南（人工林区）。</p>
+<div class="tip"><strong>易错提醒：</strong>我国水资源总量世界第六，但人均不足（世界平均的1/4）。"南水北调"是跨流域调水工程（调节空间分布），而"修建水库"是调节时间分布（丰水期蓄水、枯水期放水）。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：我国水资源时空分布的特点及解决措施分别是什么？</div><div class="a"><strong>解：</strong>时间——夏秋多、冬春少，年际变化大 → 修建水库调节。空间——南多北少、东多西少 → 跨流域调水（如南水北调）。同时需节约用水、防治水污染。</div></div>
+<div class="ex"><div class="q">例2：我国的耕地主要分布在什么地区？面临的问题有哪些？</div><div class="a"><strong>解：</strong>主要分布在东部季风区的平原和盆地（东北平原、华北平原、长江中下游平原、四川盆地等）。问题：人均耕地少、耕地质量下降、建设用地占用耕地、水土流失和荒漠化。对策：坚守18亿亩耕地红线、节约集约用地。</div></div>
+<div class="ex"><div class="q">例3：南水北调工程的三条线路分别有什么特点？</div><div class="a"><strong>解：</strong>东线——从江苏扬州引水，利用京杭大运河输水到华北，工程量小但水质较差；中线——从丹江口水库引水，自流到北京、天津，水质好但工程量大；西线——从长江上游引水到黄河上游，方案尚未实施。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 我国人均水资源量约为世界平均的____ <span class="hw-a">答案：1/4</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国最大的盐场是____盐场 <span class="hw-a">答案：长芦</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国最大的天然林区是____ <span class="hw-a">答案：东北林区（大兴安岭、小兴安岭、长白山）</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国煤炭资源最丰富的省份是____ <span class="hw-a">答案：山西</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国土地利用的基本国策是____ <span class="hw-a">答案：十分珍惜、合理利用土地和切实保护耕地</span></div>
+</div></div>
+
+<!-- ════ 专题十三 ════ -->
+<div class="top">
+<h2>专题十三：中国的农业、工业与交通</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>农业分布：</strong>东部季风区以种植业为主，西部非季风区以畜牧业为主。秦岭-淮河一线为界：南方水田（水稻），北方旱地（小麦、玉米）。三大棉区：黄河流域、长江流域、新疆。九大商品粮基地：东北平原、长江中下游平原、四川盆地等。</p>
+<p><strong>工业分布：</strong>东部沿海工业发达，中西部工业基础较弱。四大工业基地：辽中南（重工业）、京津唐（北方最大综合性）、长江三角洲（最大综合性）、珠江三角洲（轻工业/外向型）。</p>
+<p><strong>高新技术产业：</strong>以电子、信息、生物工程、新材料等为代表，主要分布在东部沿海地区（北京中关村、上海张江、深圳高新区等）。布局条件：科技力量强、交通便利、环境优美。</p>
+<p><strong>交通运输：</strong>铁路是最重要的陆上运输方式。"五纵三横"铁路干线骨架。五纵：京沪线、京九线、京广线、焦柳线、宝成-成昆线。三横：京包-包兰线、陇海-兰新线、沪昆线。青藏铁路（世界海拔最高的铁路）已建成通车。水运以上海、大连、天津、广州为主要港口。</p>
+<div class="tip"><strong>记忆口诀：</strong>"五纵三横"铁路网——五纵：京沪京九和京广，焦柳宝成连成昆；三横：京包包兰陇海新，沪昆一线贯东西。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：我国东部农业南北差异的分界线是什么？南方和北方的主要农作物分别是什么？</div><div class="a"><strong>解：</strong>分界线：秦岭-淮河一线。南方——水稻、油菜、甘蔗（水田农业），一年两熟到三熟；北方——小麦、玉米、花生（旱地农业），一年一熟或两年三熟。</div></div>
+<div class="ex"><div class="q">例2：我国最大的综合性工业基地是____，其发展工业的有利条件是什么？</div><div class="a"><strong>解：</strong>长江三角洲（沪宁杭）工业基地。有利条件：①水陆交通便利（长江黄金水道+京沪/沪昆铁路+沿海港口）；②科技力量雄厚（高校和科研机构集中）；③市场广阔（人口稠密、经济发达）；④工业基础好。</div></div>
+<div class="ex"><div class="q">例3：从北京乘火车到拉萨，应选哪条铁路线？沿途经过哪些主要地形区？</div><div class="a"><strong>解：</strong>京广线（北京→郑州）→陇海线（郑州→西安）→兰青线（西安→西宁）→青藏铁路（西宁→拉萨）。沿途经过：华北平原→黄土高原→青藏高原，海拔逐渐升高。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 我国四大工业基地中，最大综合性的是____ <span class="hw-a">答案：长江三角洲（沪宁杭）</span></div>
+<div class="hw-q" onclick="ta(this)">• 南方传统耕作制度为一年____熟到____熟 <span class="hw-a">答案：两，三</span></div>
+<div class="hw-q" onclick="ta(this)">• 京广线和陇海线交汇的城市是____ <span class="hw-a">答案：郑州</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国高新技术产业的核心地区是____和____ <span class="hw-a">答案：北京中关村，上海张江</span></div>
+<div class="hw-q" onclick="ta(this)">• "第二亚欧大陆桥"在中国的铁路干线是____线 <span class="hw-a">答案：陇海-兰新</span></div>
+</div></div>
+
+<!-- ════ 专题十四 ════ -->
+<div class="top">
+<h2>专题十四：中国四大地理区域</h2><span class="tag">中国地理</span>
+<h3>知识要点</h3>
+<p><strong>划分依据：</strong>综合地理位置、自然地理和人文地理特点，将中国分为北方地区、南方地区、西北地区和青藏地区。</p>
+<p><strong>北方地区：</strong>秦岭-淮河以北，以温带季风气候为主，冬季寒冷干燥、夏季高温多雨。地形以平原和高原为主（东北平原、华北平原、黄土高原）。耕地以旱地为主，主要农作物有小麦、玉米、大豆。重要工业区：辽中南、京津唐。有"黑土地"（东北）和"黄土地"（黄土高原、华北平原）。</p>
+<p><strong>南方地区：</strong>秦岭-淮河以南，以亚热带和热带季风气候为主，气候湿热。地形复杂多样（平原、丘陵、盆地、高原交错分布），有"紫色盆地"（四川盆地）、"红土地"（东南丘陵）。耕地以水田为主，主要农作物有水稻、油菜、甘蔗。有色金属矿产资源丰富。</p>
+<p><strong>西北地区：</strong>大兴安岭以西、长城和昆仑山以北，以温带大陆性气候为主，干旱少雨（年降水量<400mm）。地形以高原和盆地为主（内蒙古高原、塔里木盆地、准噶尔盆地）。农业以畜牧业为主，灌溉农业分布在天山山麓、河西走廊、宁夏平原（"塞上江南"）。自然景观自东向西为草原→荒漠草原→荒漠。</p>
+<p><strong>青藏地区：</strong>青藏高原及其周围，以高原山地气候为主，高寒。海拔高（平均4000m以上），日照充足，气温低。农业以畜牧业为主（牦牛、藏绵羊），种植业主要分布在河谷地区（雅鲁藏布江谷地、湟水谷地）——"河谷农业"。太阳能和地热能资源丰富。</p>
+<div class="tip"><strong>易错提醒：</strong>西北地区自东向西的景观变化（草原→荒漠草原→荒漠）是降水量递减的结果，不是纬度变化。青藏地区"高"和"寒"的核心特征导致了其他地理特征的独特性。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：西北地区的自然景观自东向西是如何变化的？为什么？</div><div class="a"><strong>解：</strong>自东向西为草原→荒漠草原→荒漠。原因：自东向西距海越来越远，降水量逐渐减少（400mm→200mm→<50mm），植被受水分条件限制发生变化。</div></div>
+<div class="ex"><div class="q">例2：青藏地区为什么地热能丰富？太阳能丰富的原因是什么？</div><div class="a"><strong>解：</strong>地热能丰富：亚欧板块与印度洋板块交界处（喜马拉雅地震带），地壳活动强烈。太阳能丰富：海拔高、空气稀薄、大气对太阳辐射削弱少（如拉萨被称为"日光城"）。</div></div>
+<div class="ex"><div class="q">例3：秦岭-淮河一线作为南北分界线，从哪些方面体现了南北差异？</div><div class="a"><strong>解：</strong>①气候（温带季风/亚热带季风）；②温度带（暖温带/亚热带）；③干湿区（半湿润/湿润）；④植被（落叶阔叶林/常绿阔叶林）；⑤河流水文（有冰期/无冰期）；⑥农业（旱地/水田，小麦/水稻）；⑦主食（面食/米饭）；⑧交通（公路铁路/水运发达）。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 北方地区与南方地区的分界线是____ <span class="hw-a">答案：秦岭-淮河一线</span></div>
+<div class="hw-q" onclick="ta(this)">• 青藏地区最显著的自然特征是____和____ <span class="hw-a">答案：高，寒</span></div>
+<div class="hw-q" onclick="ta(this)">• 西北地区最突出的自然特征是____ <span class="hw-a">答案：干旱</span></div>
+<div class="hw-q" onclick="ta(this)">• "黑土地"分布在____平原，"红土地"分布在____丘陵 <span class="hw-a">答案：东北，东南</span></div>
+<div class="hw-q" onclick="ta(this)">• 青藏地区的农业类型被称为____农业 <span class="hw-a">答案：河谷</span></div>
+</div></div>
+
+<!-- ════ 专题十五 ════ -->
+<div class="top">
+<h2>专题十五：环境与可持续发展</h2><span class="tag">综合</span>
+<h3>知识要点</h3>
+<p><strong>主要自然灾害：</strong>（1）气象灾害——台风（东南沿海夏秋季，带来风雨也缓解旱情）、洪涝（东部季风区，夏季降水集中）、干旱（华北春旱、西北全年干旱）、寒潮（冬季，来自西伯利亚的强冷空气）；（2）地质灾害——地震（板块交界处、环太平洋带）、泥石流/滑坡（山地丘陵区、暴雨后）。
+
+<p><strong>环境问题与保护：</strong></p>
+<ul>
+<li><strong>水土流失：</strong>主要分布在黄土高原和南方丘陵。原因：植被破坏、陡坡开垦、降水集中。治理：植树造林、退耕还林、修建梯田。</li>
+<li><strong>荒漠化：</strong>主要分布在西北地区。原因：过度放牧、过度开垦、水资源不合理利用。治理：退耕还草、合理放牧、建设防护林（三北防护林）。</li>
+<li><strong>水污染：</strong>工业废水、农业化肥、生活污水排放。治理：污水达标排放、发展循环经济、减少化肥使用。</li>
+<li><strong>大气污染：</strong>化石燃料燃烧、工业排放、汽车尾气。治理：使用清洁能源、推广新能源汽车、植树造林。</li>
+<li><strong>全球变暖：</strong>CO₂等温室气体增加，导致冰川融化、海平面上升、极端天气增多。措施：节能减排、开发新能源、提高能源利用效率。</li>
+</ul>
+<p><strong>可持续发展：</strong>既满足当代人的需求，又不损害后代人满足其需求的能力。基本原则：公平性、持续性、共同性。具体要求：①控制人口数量、提高人口素质；②节约资源、保护环境；③发展循环经济、绿色产业。</p>
+<p><strong>三北防护林：</strong>世界最大的生态工程，覆盖西北、华北、东北地区，目的为防风固沙、保持水土。</p>
+<div class="tip"><strong>易错提醒：</strong>水土流失≠荒漠化。水土流失主要在东部季风区的山区（雨多、坡陡），荒漠化主要在西北干旱半干旱区（风大、干旱）。治理措施也不同。</div>
+<h3>典型例题</h3>
+<div class="ex"><div class="q">例1：我国华北地区春旱严重的原因及应对措施是什么？</div><div class="a"><strong>解：</strong>原因：①春季气温回升快，蒸发旺盛；②降水少（雨季未到）；③正值农作物生长需水期（冬小麦返青需水量大）。措施：①修建水库蓄水；②跨流域调水（南水北调）；③推广节水灌溉（滴灌、喷灌）；④培育耐旱品种。</div></div>
+<div class="ex"><div class="q">例2：全球变暖可能对我国产生哪些影响？</div><div class="a"><strong>解：</strong>①海平面上升，淹没沿海低地（如上海、天津等沿海城市）；②极端天气增多（高温、暴雨、干旱频率增加）；③农业格局变化（种植北界北移）；④冰川融化，西北干旱区水资源短缺加剧；⑤生物多样性减少。</div></div>
+<div class="ex"><div class="q">例3：三北防护林主要作用是什么？主要分布在哪些地区？</div><div class="a"><strong>解：</strong>作用：防风固沙、保持水土、改善生态环境。分布：西北（新疆、甘肃、青海等）、华北（河北、内蒙古等）、东北（辽宁、吉林、黑龙江等）——三北地区。被称为"绿色长城"。</div></div>
+<h3>巩固练习</h3>
+<div class="hw">
+<div class="hw-q" onclick="ta(this)">• 台风登陆我国东南沿海主要在____季 <span class="hw-a">答案：夏秋</span></div>
+<div class="hw-q" onclick="ta(this)">• 华北地区最常见的自然灾害是____ <span class="hw-a">答案：春旱</span></div>
+<div class="hw-q" onclick="ta(this)">• 我国最大的生态工程是____ <span class="hw-a">答案：三北防护林</span></div>
+<div class="hw-q" onclick="ta(this)">• 可持续发展的三个基本原则：____、____、____ <span class="hw-a">答案：公平性，持续性，共同性</span></div>
+<div class="hw-q" onclick="ta(this)">• 黄土高原主要的环境问题是____ <span class="hw-a">答案：水土流失</span></div>
+<div class="hw-q" onclick="ta(this)">• 全球变暖的主要原因是____气体的增加 <span class="hw-a">答案：温室（CO₂、CH₄等）</span></div>
+</div></div>
+
+</div>
+<div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县</div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 </body></html>
