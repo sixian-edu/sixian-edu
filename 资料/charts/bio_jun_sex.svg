@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".1"/></filter>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#999"/></marker>
+  </defs>
+  <rect width="700" height="460" fill="#FAFBFC" rx="8"/>
+
+  <text x="350" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a2e">人的性别遗传</text>
+
+  <!-- ═══ 第1行：亲代 ═══ -->
+  <!-- 男性 -->
+  <rect x="60" y="60" width="200" height="60" rx="8" fill="#EBF5FB" stroke="#2980B9" stroke-width="2" filter="url(#s)"/>
+  <text x="100" y="96" text-anchor="middle" font-size="22">♂</text>
+  <text x="170" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#2980B9">男性（XY）</text>
+  <text x="170" y="106" text-anchor="middle" font-size="10" fill="#555">体细胞：44+XY</text>
+  <text x="170" y="118" text-anchor="middle" font-size="9" fill="#888">产生 X 和 Y 两种精子</text>
+
+  <text x="285" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#999">×</text>
+
+  <!-- 女性 -->
+  <rect x="315" y="60" width="200" height="60" rx="8" fill="#FDEDEC" stroke="#E74C3C" stroke-width="2" filter="url(#s)"/>
+  <text x="355" y="96" text-anchor="middle" font-size="22">♀</text>
+  <text x="425" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#E74C3C">女性（XX）</text>
+  <text x="425" y="106" text-anchor="middle" font-size="10" fill="#555">体细胞：44+XX</text>
+  <text x="425" y="118" text-anchor="middle" font-size="9" fill="#888">只产生 X 一种卵细胞</text>
+
+  <!-- ↓ 箭头 -->
+  <line x1="160" y1="120" x2="160" y2="155" stroke="#2980B9" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="415" y1="120" x2="415" y2="155" stroke="#E74C3C" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- ═══ 第2行：配子 ═══ -->
+  <text x="30" y="175" font-size="12" font-weight="700" fill="#555">配子</text>
+
+  <circle cx="120" cy="170" r="18" fill="#fff" stroke="#2980B9" stroke-width="2"/>
+  <text x="120" y="175" text-anchor="middle" font-size="14" font-weight="700" fill="#2980B9">X</text>
+
+  <circle cx="200" cy="170" r="18" fill="#fff" stroke="#2980B9" stroke-width="2"/>
+  <text x="200" y="175" text-anchor="middle" font-size="14" font-weight="700" fill="#2980B9">Y</text>
+
+  <text x="260" y="178" text-anchor="middle" font-size="14" fill="#999">+</text>
+
+  <circle cx="340" cy="170" r="18" fill="#fff" stroke="#E74C3C" stroke-width="2"/>
+  <text x="340" y="175" text-anchor="middle" font-size="14" font-weight="700" fill="#E74C3C">X</text>
+
+  <circle cx="400" cy="170" r="18" fill="#fff" stroke="#E74C3C" stroke-width="2"/>
+  <text x="400" y="175" text-anchor="middle" font-size="14" font-weight="700" fill="#E74C3C">X</text>
+
+  <text x="30" y="197" font-size="10" fill="#888">精子（两种）</text>
+  <text x="350" y="197" text-anchor="middle" font-size="10" fill="#888">卵细胞（一种）</text>
+
+  <!-- ═══ 连线：配子 → 子代 ═══ -->
+  <g stroke="#999" stroke-width="1.2">
+    <line x1="120" y1="188" x2="120" y2="210"/>
+    <line x1="200" y1="188" x2="200" y2="210"/>
+    <line x1="340" y1="188" x2="340" y2="210"/>
+    <line x1="400" y1="188" x2="400" y2="210"/>
+    <!-- 水平汇聚线 -->
+    <line x1="120" y1="210" x2="400" y2="210"/>
+    <!-- 向下分支到子代 -->
+    <line x1="150" y1="210" x2="150" y2="225"/>
+    <line x1="250" y1="210" x2="250" y2="225"/>
+    <line x1="320" y1="210" x2="320" y2="225"/>
+    <line x1="400" y1="210" x2="400" y2="225"/>
+  </g>
+
+  <!-- ═══ 第3行：子代 ═══ -->
+  <text x="30" y="268" font-size="13" font-weight="700" fill="#555">子代</text>
+
+  <!-- Punnett 表 -->
+  <g transform="translate(120,230)">
+    <!-- 列头 -->
+    <rect x="35" y="0" width="60" height="26" rx="0" fill="#EBF5FB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="65" y="18" text-anchor="middle" font-size="10" font-weight="600" fill="#2980B9">卵细胞</text>
+    <rect x="35" y="26" width="30" height="40" rx="0" fill="#EBF5FB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="50" y="50" text-anchor="middle" font-size="12" font-weight="700" fill="#E74C3C">X</text>
+    <rect x="65" y="26" width="30" height="40" rx="0" fill="#EBF5FB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="80" y="50" text-anchor="middle" font-size="12" font-weight="700" fill="#E74C3C">X</text>
+
+    <!-- 行头 -->
+    <rect x="0" y="26" width="35" height="40" rx="0" fill="#EBF5FB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="17" y="50" text-anchor="middle" font-size="10" font-weight="600" fill="#2980B9">精子</text>
+    <rect x="0" y="66" width="35" height="40" rx="0" fill="#EBF5FB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="17" y="87" text-anchor="middle" font-size="12" font-weight="700" fill="#2980B9">X</text>
+    <rect x="0" y="106" width="35" height="40" rx="0" fill="#EBF5FB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="17" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#2980B9">Y</text>
+
+    <!-- 内容 -->
+    <rect x="35" y="66" width="30" height="40" rx="0" fill="#fff" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="50" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#E74C3C">XX</text>
+    <text x="50" y="102" text-anchor="middle" font-size="8" fill="#888">女孩</text>
+    <rect x="65" y="66" width="30" height="40" rx="0" fill="#fff" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="80" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#E74C3C">XX</text>
+    <text x="80" y="102" text-anchor="middle" font-size="8" fill="#888">女孩</text>
+    <rect x="35" y="106" width="30" height="40" rx="0" fill="#fff" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="50" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#2980B9">XY</text>
+    <text x="50" y="142" text-anchor="middle" font-size="8" fill="#888">男孩</text>
+    <rect x="65" y="106" width="30" height="40" rx="0" fill="#fff" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="80" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#2980B9">XY</text>
+    <text x="80" y="142" text-anchor="middle" font-size="8" fill="#888">男孩</text>
+  </g>
+
+  <!-- 结果 -->
+  <rect x="400" y="255" width="230" height="110" rx="8" fill="#fff" stroke="#2980B9" stroke-width="1.5" filter="url(#s)"/>
+  <text x="515" y="280" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">性别决定结果</text>
+  <text x="515" y="305" text-anchor="middle" font-size="12" fill="#333">XX（女孩）: XY（男孩）</text>
+  <text x="515" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#E74C3C">= 1 : 1</text>
+  <text x="515" y="352" text-anchor="middle" font-size="10" fill="#888">由父亲的精子类型决定</text>
+
+  <!-- 底部 -->
+  <rect x="60" y="400" width="580" height="42" rx="6" fill="#F8F9FC" stroke="#ddd" stroke-width="1"/>
+  <text x="350" y="420" text-anchor="middle" font-size="11" fill="#555">关键规律：生男生女概率相等（1:1），每次生育独立，取决于父亲提供的精子类型</text>
+</svg>

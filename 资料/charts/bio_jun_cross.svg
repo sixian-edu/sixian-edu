@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".1"/></filter>
+  </defs>
+  <rect width="700" height="460" fill="#FAFBFC" rx="8"/>
+
+  <text x="350" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a2e">遗传图解规范写法（Dd × dd）</text>
+
+  <!-- ═══ 第1行：P 亲代 ═══ -->
+  <text x="30" y="80" font-size="13" font-weight="700" fill="#555">P</text>
+  <rect x="60" y="62" width="130" height="34" rx="6" fill="#E8F8F0" stroke="#27AE60" stroke-width="2"/>
+  <text x="125" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#27AE60">高茎 Dd</text>
+
+  <text x="210" y="83" text-anchor="middle" font-size="20" font-weight="700" fill="#999">×</text>
+
+  <rect x="240" y="62" width="130" height="34" rx="6" fill="#FEF9F0" stroke="#E67E22" stroke-width="2"/>
+  <text x="305" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#E67E22">矮茎 dd</text>
+
+  <!-- ═══ 连线：P → 配子 ═══ -->
+  <!-- 从 Dd 到 D 和 d -->
+  <line x1="95" y1="96" x2="75" y2="130" stroke="#27AE60" stroke-width="1.8"/>
+  <line x1="155" y1="96" x2="145" y2="130" stroke="#27AE60" stroke-width="1.8"/>
+  <!-- 从 dd 到 d 和 d -->
+  <line x1="270" y1="96" x2="260" y2="130" stroke="#E67E22" stroke-width="1.8"/>
+  <line x1="330" y1="96" x2="330" y2="130" stroke="#E67E22" stroke-width="1.8"/>
+
+  <!-- ═══ 第2行：配子 ═══ -->
+  <text x="30" y="148" font-size="13" font-weight="700" fill="#555">配子</text>
+
+  <circle cx="75" cy="145" r="16" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+  <text x="75" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#27AE60">D</text>
+
+  <circle cx="145" cy="145" r="16" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+  <text x="145" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#27AE60">d</text>
+
+  <circle cx="260" cy="145" r="16" fill="#fff" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="260" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#E67E22">d</text>
+
+  <circle cx="330" cy="145" r="16" fill="#fff" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="330" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#E67E22">d</text>
+
+  <!-- ═══ 连线：配子 → 子代 ═══ -->
+  <!-- 汇聚线 -->
+  <line x1="75" y1="161" x2="75" y2="175" stroke="#999" stroke-width="1.2"/>
+  <line x1="145" y1="161" x2="145" y2="175" stroke="#999" stroke-width="1.2"/>
+  <line x1="260" y1="161" x2="260" y2="175" stroke="#999" stroke-width="1.2"/>
+  <line x1="330" y1="161" x2="330" y2="175" stroke="#999" stroke-width="1.2"/>
+
+  <!-- 水平连接线 -->
+  <line x1="75" y1="175" x2="330" y2="175" stroke="#999" stroke-width="1.2"/>
+
+  <!-- 向下到 Punnett 表 -->
+  <line x1="140" y1="175" x2="140" y2="190" stroke="#999" stroke-width="1.2"/>
+  <line x1="200" y1="175" x2="200" y2="190" stroke="#999" stroke-width="1.2"/>
+  <line x1="260" y1="175" x2="260" y2="190" stroke="#999" stroke-width="1.2"/>
+
+  <!-- ═══ 第3行：Punnett方格 + 子代 ═══ -->
+  <text x="30" y="218" font-size="13" font-weight="700" fill="#555">子代</text>
+
+  <!-- Punnett 表 -->
+  <g transform="translate(115,195)">
+    <!-- 列头 -->
+    <rect x="35" y="0" width="60" height="28" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="65" y="19" text-anchor="middle" font-size="10" fill="#27AE60" font-weight="600">父配子</text>
+    <rect x="35" y="28" width="30" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="50" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#333">d</text>
+    <rect x="65" y="28" width="30" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="80" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#333">d</text>
+
+    <!-- 行头 -->
+    <rect x="0" y="28" width="35" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="17" y="50" text-anchor="middle" font-size="10" fill="#27AE60" font-weight="600">母之</text>
+    <rect x="0" y="64" width="35" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="12" y="80" text-anchor="middle" font-size="9" fill="#27AE60">个</text>
+    <text x="25" y="80" text-anchor="middle" font-size="9" fill="#27AE60">▽</text>
+
+    <rect x="0" y="100" width="35" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="12" y="123" text-anchor="middle" font-size="9" fill="#27AE60">配</text>
+    <text x="25" y="123" text-anchor="middle" font-size="9" fill="#27AE60">子</text>
+
+    <!-- 行标签 -->
+    <rect x="0" y="64" width="35" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="17" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#333">D</text>
+    <rect x="0" y="100" width="35" height="36" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="17" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#333">d</text>
+
+    <!-- 内容 -->
+    <rect x="35" y="64" width="30" height="36" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="50" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#27AE60">Dd</text>
+    <rect x="65" y="64" width="30" height="36" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="80" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#27AE60">Dd</text>
+    <rect x="35" y="100" width="30" height="36" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="50" y="121" text-anchor="middle" font-size="13" font-weight="700" fill="#E67E22">dd</text>
+    <rect x="65" y="100" width="30" height="36" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="80" y="121" text-anchor="middle" font-size="13" font-weight="700" fill="#E67E22">dd</text>
+  </g>
+
+  <!-- ═══ 右侧：结果说明 ═══ -->
+  <rect x="400" y="210" width="250" height="100" rx="8" fill="#fff" stroke="#27AE60" stroke-width="1.5" filter="url(#s)"/>
+  <text x="525" y="238" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">杂交结果</text>
+  <text x="525" y="262" text-anchor="middle" font-size="11" fill="#333">基因型：</text>
+  <text x="525" y="280" text-anchor="middle" font-size="13" font-weight="700" fill="#27AE60">Dd : dd = 1 : 1</text>
+  <text x="525" y="302" text-anchor="middle" font-size="11" fill="#333">表型：</text>
+  <text x="525" y="318" text-anchor="middle" font-size="14" font-weight="700" fill="#E74C3C">高茎 : 矮茎 = 1 : 1</text>
+
+  <!-- ═══ 底部书写规范 ═══ -->
+  <rect x="40" y="370" width="620" height="72" rx="8" fill="#F8F9FC" stroke="#ddd" stroke-width="1"/>
+  <text x="60" y="392" font-size="11" font-weight="700" fill="#555">书写规范：</text>
+  <text x="60" y="410" font-size="10" fill="#666">① 每代符号（P、配子、子代）不能省略　　　② 配子基因成单（体细胞 Dd → 配子 D 或 d）</text>
+  <text x="60" y="428" font-size="10" fill="#666">③ 雌雄配子随机结合　　　④ 写明比例关系（基因型比 + 表型比）</text>
+</svg>

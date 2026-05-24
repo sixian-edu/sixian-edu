@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".1"/></filter>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#999"/></marker>
+  </defs>
+  <rect width="700" height="380" fill="#FAFBFC" rx="8"/>
+
+  <text x="350" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a2e">生物的变异类型</text>
+
+  <!-- ═══ 总源 ═══ -->
+  <rect x="260" y="60" width="180" height="40" rx="20" fill="#1a1a2e" filter="url(#s)"/>
+  <text x="350" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">生物的变异</text>
+
+  <!-- 分支线 -->
+  <line x1="300" y1="100" x2="300" y2="120" stroke="#999" stroke-width="1.8"/>
+  <line x1="400" y1="100" x2="400" y2="120" stroke="#999" stroke-width="1.8"/>
+  <line x1="300" y1="120" x2="400" y2="120" stroke="#999" stroke-width="1.8"/>
+
+  <line x1="180" y1="120" x2="180" y2="135" stroke="#27AE60" stroke-width="1.8" marker-end="url(#a)"/>
+  <line x1="520" y1="120" x2="520" y2="135" stroke="#E67E22" stroke-width="1.8" marker-end="url(#a)"/>
+
+  <!-- ═══ 左侧：可遗传 ═══ -->
+  <rect x="50" y="140" width="260" height="46" rx="8" fill="#E8F8F0" stroke="#27AE60" stroke-width="2" filter="url(#s)"/>
+  <text x="180" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#27AE60">可遗传的变异</text>
+  <text x="180" y="180" text-anchor="middle" font-size="10" fill="#555">遗传物质改变，可传给后代</text>
+
+  <!-- 子分支线 -->
+  <line x1="120" y1="186" x2="120" y2="205" stroke="#27AE60" stroke-width="1.5"/>
+  <line x1="180" y1="186" x2="180" y2="205" stroke="#27AE60" stroke-width="1.5"/>
+  <line x1="240" y1="186" x2="240" y2="205" stroke="#27AE60" stroke-width="1.5"/>
+
+  <!-- 子项：基因突变 -->
+  <rect x="65" y="210" width="110" height="36" rx="6" fill="#fff" stroke="#E74C3C" stroke-width="1.5" filter="url(#s)"/>
+  <text x="120" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#E74C3C">基因突变</text>
+
+  <!-- 子项：基因重组 -->
+  <rect x="185" y="210" width="110" height="36" rx="6" fill="#fff" stroke="#2980B9" stroke-width="1.5" filter="url(#s)"/>
+  <text x="240" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#2980B9">基因重组</text>
+
+  <!-- 子项：染色体变异 -->
+  <rect x="185" y="256" width="110" height="36" rx="6" fill="#fff" stroke="#8E44AD" stroke-width="1.5" filter="url(#s)"/>
+  <text x="240" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#8E44AD">染色体变异</text>
+
+  <!-- 虚线连接 -->
+  <path d="M240,246 L240,256" stroke="#8E44AD" stroke-width="1" stroke-dasharray="3,2" fill="none"/>
+
+  <!-- ═══ 右侧：不可遗传 ═══ -->
+  <rect x="390" y="140" width="260" height="46" rx="8" fill="#FEF9F0" stroke="#E67E22" stroke-width="2" filter="url(#s)"/>
+  <text x="520" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#E67E22">不可遗传的变异</text>
+  <text x="520" y="180" text-anchor="middle" font-size="10" fill="#555">仅环境引起，遗传物质不变</text>
+
+  <line x1="520" y1="186" x2="520" y2="210" stroke="#E67E22" stroke-width="1.5"/>
+
+  <rect x="465" y="215" width="110" height="36" rx="6" fill="#fff" stroke="#E67E22" stroke-width="1.5" filter="url(#s)"/>
+  <text x="520" y="237" text-anchor="middle" font-size="11" font-weight="600" fill="#E67E22">环境影响</text>
+
+  <!-- ═══ 底部：应用 ═══ -->
+  <rect x="80" y="310" width="540" height="50" rx="8" fill="#F5EEF8" stroke="#D2B4DE" stroke-width="1.5" filter="url(#s)"/>
+  <text x="350" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#6C3483">育种应用：杂交育种 · 诱变育种 · 转基因技术</text>
+  <text x="350" y="352" text-anchor="middle" font-size="10" fill="#666">利用可遗传变异改良生物性状，为人类生产生活服务</text>
+</svg>

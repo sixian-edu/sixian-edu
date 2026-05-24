@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".1"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#999"/></marker>
+  </defs>
+  <rect width="700" height="480" fill="#FAFBFC" rx="8"/>
+
+  <text x="350" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a2e">孟德尔豌豆高茎/矮茎杂交实验</text>
+
+  <!-- ═══ P 亲代 ═══ -->
+  <text x="50" y="80" font-size="13" font-weight="700" fill="#555">P（亲代）</text>
+
+  <!-- 高茎（左） -->
+  <rect x="100" y="60" width="160" height="60" rx="8" fill="#E8F8F0" stroke="#27AE60" stroke-width="2" filter="url(#s)"/>
+  <text x="135" y="88" text-anchor="middle" font-size="20">🌱</text>
+  <text x="195" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#27AE60">高茎（DD）</text>
+  <text x="195" y="100" text-anchor="middle" font-size="10" fill="#666">纯种高茎</text>
+
+  <!-- × -->
+  <text x="285" y="96" text-anchor="middle" font-size="24" font-weight="700" fill="#888">×</text>
+
+  <!-- 矮茎（右） -->
+  <rect x="315" y="60" width="160" height="60" rx="8" fill="#FEF9F0" stroke="#E67E22" stroke-width="2" filter="url(#s)"/>
+  <text x="350" y="88" text-anchor="middle" font-size="20">🌱</text>
+  <text x="410" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#E67E22">矮茎（dd）</text>
+  <text x="410" y="100" text-anchor="middle" font-size="10" fill="#666">纯种矮茎</text>
+
+  <!-- ↓ -->
+  <line x1="180" y1="120" x2="180" y2="155" stroke="#999" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="395" y1="120" x2="395" y2="155" stroke="#999" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══ F1 子一代 ═══ -->
+  <text x="50" y="175" font-size="13" font-weight="700" fill="#555">F1（子一代）</text>
+
+  <rect x="100" y="160" width="380" height="55" rx="8" fill="#E8F8F0" stroke="#27AE60" stroke-width="2" filter="url(#s)"/>
+  <text x="135" y="192" text-anchor="middle" font-size="18">🌱</text>
+  <text x="290" y="190" text-anchor="middle" font-size="14" font-weight="700" fill="#27AE60">全部高茎（Dd）</text>
+  <text x="290" y="206" text-anchor="middle" font-size="10" fill="#555">全部为显性性状（高茎）</text>
+
+  <!-- ↓ 自交 -->
+  <line x1="290" y1="215" x2="290" y2="260" stroke="#999" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="340" y="230" width="70" height="22" rx="4" fill="#fff" stroke="#999" stroke-width="1"/>
+  <text x="375" y="244" text-anchor="middle" font-size="10" fill="#666">自交</text>
+
+  <!-- ═══ F2 子二代 ═══ -->
+  <text x="50" y="288" font-size="13" font-weight="700" fill="#555">F2（子二代）</text>
+
+  <!-- Punnett 方格 -->
+  <g transform="translate(100,275)">
+    <!-- 表头 -->
+    <rect x="50" y="0" width="130" height="30" rx="0" fill="#E8F8F0" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="115" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#27AE60">配子 （♂）</text>
+    <rect x="50" y="30" width="65" height="40" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="82" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#333">D</text>
+    <rect x="115" y="30" width="65" height="40" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="147" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#333">d</text>
+
+    <!-- 行头 -->
+    <rect x="0" y="30" width="50" height="40" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="25" y="43" text-anchor="middle" font-size="9" fill="#27AE60" font-weight="600">配子</text>
+    <text x="25" y="57" text-anchor="middle" font-size="9" fill="#27AE60" font-weight="600">（♀）</text>
+
+    <rect x="0" y="70" width="50" height="40" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="25" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#333">D</text>
+    <rect x="0" y="110" width="50" height="40" rx="0" fill="#F0FAF4" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="25" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#333">d</text>
+
+    <!-- 内容 -->
+    <rect x="50" y="70" width="65" height="40" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="82" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#5EA890">DD</text>
+    <text x="82" y="103" text-anchor="middle" font-size="9" fill="#888">高茎</text>
+    <rect x="115" y="70" width="65" height="40" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="147" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#5EA890">Dd</text>
+    <text x="147" y="103" text-anchor="middle" font-size="9" fill="#888">高茎</text>
+    <rect x="50" y="110" width="65" height="40" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="82" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#5EA890">Dd</text>
+    <text x="82" y="143" text-anchor="middle" font-size="9" fill="#888">高茎</text>
+    <rect x="115" y="110" width="65" height="40" rx="0" fill="#fff" stroke="#27AE60" stroke-width="1.5"/>
+    <text x="147" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#E67E22">dd</text>
+    <text x="147" y="143" text-anchor="middle" font-size="9" fill="#888">矮茎</text>
+  </g>
+
+  <!-- 右侧：结果 -->
+  <rect x="410" y="290" width="220" height="100" rx="8" fill="#fff" stroke="#27AE60" stroke-width="1.5" filter="url(#s)"/>
+  <text x="520" y="316" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a2e">F2 结果</text>
+  <text x="520" y="340" text-anchor="middle" font-size="12" fill="#333">基因型比：</text>
+  <text x="520" y="358" text-anchor="middle" font-size="13" font-weight="700" fill="#5EA890">DD : Dd : dd = 1 : 2 : 1</text>
+  <text x="520" y="380" text-anchor="middle" font-size="12" fill="#333">表型比：</text>
+  <text x="520" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#E74C3C">高茎 : 矮茎 = 3 : 1</text>
+
+  <!-- 底部说明 -->
+  <rect x="60" y="430" width="580" height="36" rx="6" fill="#F5EEF8" stroke="#D2B4DE" stroke-width="1"/>
+  <text x="350" y="452" text-anchor="middle" font-size="11" fill="#6C3483">结论：F1 杂合子（Dd）自交，F2 出现性状分离，分离比为 3:1</text>
+</svg>

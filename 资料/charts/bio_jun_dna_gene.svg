@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".1"/></filter>
+    <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E44AD"/><stop offset="1" stop-color="#6C3483"/></linearGradient>
+    <linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2980B9"/><stop offset="1" stop-color="#1A5276"/></linearGradient>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E74C3C"/><stop offset="1" stop-color="#C0392B"/></linearGradient>
+  </defs>
+  <rect width="700" height="400" fill="#FAFBFC" rx="8"/>
+
+  <text x="350" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a2e">染色体 · DNA · 基因的关系</text>
+
+  <!-- ═══ 左侧：染色体 ═══ -->
+  <g transform="translate(50,20)">
+    <text x="75" y="55" text-anchor="middle" font-size="12" font-weight="600" fill="#6C3483">染色体</text>
+    <!-- X形 -->
+    <path d="M75,70 Q55,85 42,120 Q32,150 38,175 L48,168 Q40,145 48,120 Q58,88 75,85 Z" fill="url(#cg)" opacity=".9"/>
+    <path d="M75,70 Q95,85 108,120 Q118,150 112,175 L102,168 Q110,145 102,120 Q92,88 75,85 Z" fill="url(#cg)" opacity=".9"/>
+    <circle cx="75" cy="178" r="10" fill="#5B2C6F" stroke="#fff" stroke-width="2"/>
+    <text x="75" y="182" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">着</text>
+    <!-- 标注 -->
+    <path d="M90,130 L130,105" stroke="#6C3483" stroke-width=".8" stroke-dasharray="3,2" fill="none"/>
+    <rect x="130" y="90" width="130" height="28" rx="6" fill="#F5EEF8" stroke="#D2B4DE" stroke-width="1" filter="url(#s)"/>
+    <text x="195" y="108" text-anchor="middle" font-size="10" fill="#6C3483" font-weight="500">染色体 = DNA + 蛋白质</text>
+  </g>
+
+  <!-- 箭头 → -->
+  <g transform="translate(300,115)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#999" stroke-width="2" marker-end="url(#a)"/>
+    <polygon points="48,-5 58,0 48,5" fill="#999"/>
+  </g>
+
+  <!-- ═══ 中间：DNA ═══ -->
+  <g transform="translate(300,20)">
+    <text x="75" y="55" text-anchor="middle" font-size="12" font-weight="600" fill="#1A5276">DNA（双螺旋结构）</text>
+    <!-- 双螺旋 -->
+    <path d="M25,75 Q40,60 55,75 Q70,90 85,75 Q100,60 115,75 Q130,90 145,75" fill="none" stroke="#2980B9" stroke-width="2.5"/>
+    <path d="M25,75 Q40,90 55,75 Q70,60 85,75 Q100,90 115,75 Q130,60 145,75" fill="none" stroke="#2980B9" stroke-width="2.5"/>
+    <line x1="40" y1="68" x2="40" y2="82" stroke="#AED6F1" stroke-width="1.2"/>
+    <line x1="70" y1="82" x2="70" y2="68" stroke="#AED6F1" stroke-width="1.2"/>
+    <line x1="100" y1="68" x2="100" y2="82" stroke="#AED6F1" stroke-width="1.2"/>
+    <line x1="130" y1="82" x2="130" y2="68" stroke="#AED6F1" stroke-width="1.2"/>
+  </g>
+
+  <g transform="translate(300,140)">
+    <line x1="75" y1="0" x2="75" y2="20" stroke="#2980B9" stroke-width=".8" stroke-dasharray="3,2"/>
+    <rect x="15" y="20" width="120" height="40" rx="6" fill="#EBF5FB" stroke="#2980B9" stroke-width="1" filter="url(#s)"/>
+    <text x="75" y="43" text-anchor="middle" font-size="10" fill="#1A5276" font-weight="500">双螺旋结构 · 遗传信息载体</text>
+  </g>
+
+  <!-- 箭头 → -->
+  <g transform="translate(500,145)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#999" stroke-width="2"/>
+    <polygon points="48,-5 58,0 48,5" fill="#999"/>
+  </g>
+
+  <!-- ═══ 右侧：基因 ═══ -->
+  <g transform="translate(530,20)">
+    <text x="75" y="55" text-anchor="middle" font-size="12" font-weight="600" fill="#C0392B">基因</text>
+    <rect x="10" y="80" width="130" height="40" rx="6" fill="#FDEDEC" stroke="#E74C3C" stroke-width="1" filter="url(#s)"/>
+    <text x="75" y="103" text-anchor="middle" font-size="10" fill="#C0392B" font-weight="500">DNA上有遗传效应的片段</text>
+  </g>
+
+  <!-- ═══ 底部总结 ═══ -->
+  <rect x="60" y="300" width="580" height="70" rx="10" fill="#fff" stroke="#D2B4DE" stroke-width="1.5" filter="url(#s)"/>
+  <text x="350" y="326" text-anchor="middle" font-size="14" font-weight="700" fill="#6C3483">染色体 → DNA → 基因 → 性状</text>
+  <text x="350" y="350" text-anchor="middle" font-size="10" fill="#666">染色体是DNA的载体，基因是DNA上有遗传效应的片段，基因通过控制蛋白质合成来控制生物性状</text>
+</svg>

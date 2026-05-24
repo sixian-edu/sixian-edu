@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".08"/></filter>
+  </defs>
+  <rect width="700" height="400" fill="#FAFBFC" rx="8"/>
+
+  <text x="350" y="33" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a2e">家族遗传系谱图（常染色体隐性遗传）</text>
+
+  <!-- ═══ 图例 ═══ -->
+  <g transform="translate(475,48)">
+    <rect x="0" y="0" width="26" height="26" rx="2" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="13" y="17" text-anchor="middle" font-size="7">□</text>
+    <text x="32" y="17" font-size="10" fill="#555">正常男性</text>
+    <rect x="0" y="32" width="26" height="26" rx="2" fill="#F5B7B1" stroke="#C0392B" stroke-width="1.5"/>
+    <text x="13" y="49" text-anchor="middle" font-size="7" fill="#C0392B">■</text>
+    <text x="32" y="49" font-size="10" fill="#555">患病男性</text>
+    <circle cx="13" cy="74" r="13" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="32" y="79" font-size="10" fill="#555">正常女性</text>
+    <circle cx="13" cy="102" r="13" fill="#F5B7B1" stroke="#C0392B" stroke-width="1.5"/>
+    <text x="32" y="107" font-size="10" fill="#555">患病女性</text>
+  </g>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- ═══ 第 I 代 ═══ -->
+  <!-- ════════════════════════════════════════ -->
+  <text x="50" y="116" font-size="13" font-weight="700" fill="#555">I</text>
+
+  <!-- I-1 正常女性 ○  cx=140,cy=110 -->
+  <circle cx="140" cy="110" r="16" fill="#fff" stroke="#333" stroke-width="2" filter="url(#s)"/>
+  <text x="140" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="#333">1</text>
+
+  <!-- I-2 正常男性 □  cx=250,cy=110  (x=234,y=94,w=32,h=32) -->
+  <rect x="234" y="94" width="32" height="32" rx="3" fill="#fff" stroke="#333" stroke-width="2" filter="url(#s)"/>
+  <text x="250" y="114" text-anchor="middle" font-size="10" font-weight="700" fill="#333">2</text>
+
+  <!-- 婚配线 (140+16=156,110) to (250-16=234,110) -->
+  <line x1="156" y1="110" x2="234" y2="110" stroke="#333" stroke-width="1.5"/>
+
+  <!-- 向下到 II 代 (195, 110+16=126) to (195, 155) -->
+  <line x1="195" y1="126" x2="195" y2="155" stroke="#333" stroke-width="1.8"/>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- ═══ 第 II 代 ═══ -->
+  <!-- ════════════════════════════════════════ -->
+
+  <!-- II 代儿童线 y=155, 从 II-1 左(84) 到 II-3 右(336) -->
+  <line x1="84" y1="155" x2="336" y2="155" stroke="#333" stroke-width="1.8"/>
+
+  <!-- II-1 正常女性 ○  cx=100,cy=200 -->
+  <circle cx="100" cy="200" r="16" fill="#fff" stroke="#333" stroke-width="2" filter="url(#s)"/>
+  <text x="100" y="204" text-anchor="middle" font-size="9" font-weight="700" fill="#333">1</text>
+
+  <!-- II-2 正常男性 □  cx=210,cy=200 -->
+  <rect x="194" y="184" width="32" height="32" rx="3" fill="#fff" stroke="#333" stroke-width="2" filter="url(#s)"/>
+  <text x="210" y="204" text-anchor="middle" font-size="9" font-weight="700" fill="#333">2</text>
+
+  <!-- II-3 患病男性 ■  cx=320,cy=200 -->
+  <rect x="304" y="184" width="32" height="32" rx="3" fill="#F5B7B1" stroke="#C0392B" stroke-width="2" filter="url(#s)"/>
+  <text x="320" y="204" text-anchor="middle" font-size="9" font-weight="700" fill="#C0392B">3</text>
+
+  <!-- 从上到 II 代各人 -->
+  <line x1="100" y1="155" x2="100" y2="184" stroke="#333" stroke-width="1.2"/>
+  <line x1="210" y1="155" x2="210" y2="184" stroke="#333" stroke-width="1.2"/>
+  <line x1="320" y1="155" x2="320" y2="184" stroke="#333" stroke-width="1.2"/>
+
+  <!-- II-3 与 P 的婚配线 (320+16=336,200) to (426-16=410,200) -->
+  <line x1="336" y1="200" x2="410" y2="200" stroke="#333" stroke-width="1.5"/>
+
+  <!-- P (配偶) 正常女性 ○, cx=426, cy=200 -->
+  <circle cx="426" cy="200" r="16" fill="#fff" stroke="#333" stroke-width="2" filter="url(#s)"/>
+  <text x="426" y="204" text-anchor="middle" font-size="8" fill="#888">P</text>
+
+  <!-- 婚配中点向下到 III 代 (336+410)/2=373, (373,216) to (373,250) -->
+  <line x1="373" y1="216" x2="373" y2="250" stroke="#333" stroke-width="1.8"/>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- ═══ 第 III 代 ═══ -->
+  <!-- ════════════════════════════════════════ -->
+
+  <!-- III 儿童线 y=250, 从 III-1 左(326) 到 III-2 右(444) -->
+  <line x1="326" y1="250" x2="444" y2="250" stroke="#333" stroke-width="1.8"/>
+
+  <!-- III-1 患病男性 ■  cx=340,cy=300 -->
+  <rect x="326" y="286" width="28" height="28" rx="3" fill="#F5B7B1" stroke="#C0392B" stroke-width="2" filter="url(#s)"/>
+  <text x="340" y="304" text-anchor="middle" font-size="8" font-weight="700" fill="#C0392B">1</text>
+
+  <!-- III-2 正常女性 ○  cx=430,cy=300 -->
+  <circle cx="430" cy="300" r="14" fill="#fff" stroke="#333" stroke-width="2" filter="url(#s)"/>
+  <text x="430" y="304" text-anchor="middle" font-size="8" font-weight="700" fill="#333">2</text>
+
+  <!-- 从上到 III 代各人 -->
+  <line x1="340" y1="250" x2="340" y2="286" stroke="#333" stroke-width="1.2"/>
+  <line x1="430" y1="250" x2="430" y2="286" stroke="#333" stroke-width="1.2"/>
+
+  <!-- ═══ 无中生有标注 ═══ -->
+  <path d="M 445,160 Q 480,160 490,180" stroke="#E74C3C" stroke-width="1.2" fill="none" stroke-dasharray="4,3"/>
+  <text x="498" y="168" font-size="12" font-weight="700" fill="#E74C3C">无中生有</text>
+  <text x="498" y="185" font-size="9" fill="#888">（隐性遗传）</text>
+
+  <!-- ═══ 代标注 ═══ -->
+  <g font-size="11" font-weight="700" fill="#999">
+    <text x="50" y="114">Ⅰ</text>
+    <text x="50" y="204">Ⅱ</text>
+    <text x="50" y="304">Ⅲ</text>
+  </g>
+
+  <!-- ═══ 底部说明 ═══ -->
+  <rect x="60" y="350" width="580" height="36" rx="6" fill="#F8F9FC" stroke="#ddd" stroke-width="1"/>
+  <text x="350" y="372" text-anchor="middle" font-size="11" fill="#555">规律：双亲正常 → 子代患病，为隐性遗传（无中生有）</text>
+</svg>

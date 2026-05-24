@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>初中生物 · 遗传专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.8}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#5EA890}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#5EA890;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.sec{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #5EA890;padding:20px 24px}
+.sec h2{font-size:18px;font-weight:700;color:#5EA890;margin-bottom:4px}
+.sec .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(94,168,144,0.08);color:#5EA890;margin-bottom:10px}
+.sec .tag2{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(142,68,173,0.08);color:#8e44ad;margin-bottom:10px;margin-left:4px}
+.kp{font-size:13.5px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.9}
+.kp strong{color:#5EA890}
+.kp .red{color:#e74c3c;font-weight:600}
+.kp .blue{color:#2980b9;font-weight:600}
+.kp .green{color:#5EA890;font-weight:600}
+.kp .orange{color:#e67e22;font-weight:600}
+.ex{background:#f8f9fc;border-radius:8px;padding:12px 16px;margin:10px 0}
+.ex .q{font-weight:600;color:#5EA890;margin-bottom:3px;font-size:14px}
+.ex .q .num{color:#888;font-weight:400;font-size:12px}
+.ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:4px;display:none}
+.ex .a.show{display:block}
+.ex .a strong{color:#5EA890}
+.ex .a .step{color:#e67e22;font-weight:600}
+.sol-btn{display:inline-block;font-size:12px;color:#5EA890;cursor:pointer;padding:2px 10px;border:1px solid #5EA890;border-radius:4px;margin-top:4px;background:transparent;transition:all .2s}
+.sol-btn:hover{background:#5EA890;color:#fff}
+.hw{background:#f0faf4;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13px}
+.hw .hw-q{margin-bottom:3px;font-weight:500}
+.hw .hw-a{color:#5EA890;font-size:12.5px;margin-left:8px;display:none;margin-top:3px}
+.hw .hw-a.show{display:block}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#f0faf4;border-radius:8px;padding:12px 16px;margin:10px 0;border-left:3px solid #5EA890}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600}
+.formula-box .fd{font-size:12.5px;color:#666;margin-top:2px}
+
+/* ═══ 遗传图解 ═══ */
+.gen-chart{display:flex;flex-direction:column;align-items:center;margin:14px 0;font-size:13px}
+.gen-row{display:flex;align-items:center;justify-content:center;gap:20px;margin:2px 0;position:relative}
+.gen-row .label{color:#888;font-size:12px;min-width:40px;text-align:right}
+.gen-box{padding:5px 15px;border-radius:6px;border:1.5px solid;font-weight:600;font-size:13px}
+.gen-box.p1{border-color:#5EA890;color:#5EA890;background:#f0faf4}
+.gen-box.p2{border-color:#E67E22;color:#E67E22;background:#fef9f0}
+.gen-box.off{background:#fff}
+.gen-gamete{display:flex;gap:30px}
+.gen-gamete .g{width:30px;height:30px;border-radius:50%;border:1.5px solid #888;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;background:#fff;color:#333}
+.gen-cross{position:relative;width:100%;height:40px}
+.gen-cross svg{position:absolute;top:0;left:0;width:100%;height:100%}
+
+/* Punnett table */
+.p-table{border-collapse:collapse;margin:8px auto;font-size:13px;text-align:center}
+.p-table td,.p-table th{border:1.5px solid #999;padding:6px 16px;min-width:50px}
+.p-table th{background:#f0faf4;color:#5EA890;font-weight:600;font-size:12px}
+.p-table .rh{background:#f0faf4;color:#5EA890;font-weight:600;font-size:12px}
+.p-table .pheno{font-size:11px;color:#888;margin-top:1px}
+.p-table .geno{font-weight:600;color:#333}
+
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+
+@media(max-width:600px){
+  .head h1{font-size:22px}
+  .sec{padding:16px}
+  .gen-row{gap:10px;flex-wrap:wrap}
+  .gen-gamete{gap:15px}
+  .p-table td,.p-table th{padding:4px 10px;min-width:35px}
+}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>初中生物 · 遗传专题</h1><p class="sub">遗传定律 · 显隐性判断 · 遗传图解 · 概率计算 · 性别遗传 · 系谱图 · 变异 共 <span>8</span> 专题</p></div>
+<div class="container">
+
+<!-- ═══ 专题一：基因控制生物的性状 ═══ -->
+<div class="sec">
+<h2>专题一：基因控制生物的性状</h2>
+<span class="tag">性状与相对性状</span>
+
+<p class="kp"><strong>性状</strong>：生物体所有特征的总和，如人的单眼皮/双眼皮、豌豆的高茎/矮茎。<strong>相对性状</strong>：同种生物同一性状的不同表现形式，如人的直发和卷发、番茄的红果和黄果。</p>
+
+<p class="kp"><strong>基因控制性状</strong>：基因是 DNA 上有遗传效应的片段，通过控制蛋白质的合成来控制生物的性状。转基因技术——将外源基因导入生物体内，使其产生新的性状，证明了基因控制性状。</p>
+
+<p class="kp"><strong>重要实验</strong>：转基因超级鼠——将大鼠生长激素基因导入小鼠受精卵，生出的小鼠比正常小鼠大 2 倍，证明<strong class="red">基因控制生物的性状</strong>。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/bio_jun_dna_gene.svg" alt="染色体DNA基因关系"><div class="cp">染色体、DNA、基因的关系</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题1</span> 下列各组中，属于相对性状的是（  ）<br>A. 猫的白毛和狗的黑毛　　B. 人的单眼皮和双眼皮<br>C. 豌豆的高茎和圆粒　　D. 兔的白毛和长毛</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+相对性状必须是<strong class="red">同种生物</strong>、<strong class="red">同一性状</strong>的<strong class="red">不同表现形式</strong>。<br>
+A✗：猫和狗不是同种生物　　B✓：人是同种生物，眼皮是同一性状<br>
+C✗：高茎和圆粒不是同一性状（茎高 vs 种子形状）　　D✗：白毛和长毛不是同一性状（毛色 vs 毛长）<br>
+<span class="step">答案</span>：B</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题2</span> 将大鼠的生长激素基因转入小鼠的受精卵中，生下的小鼠比正常小鼠大 2 倍。该实验说明（  ）<br>A. 基因控制生物的性状　　B. 性状控制基因的表达<br>C. 基因与性状无关　　D. 生物性状不受环境影响</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+该实验是经典的转基因实验：转入<strong class="blue">生长激素基因</strong>→小鼠<strong class="red">长得更大</strong>。证明了基因与性状的关系——<strong class="green">基因控制生物的性状</strong>。<br>
+注意：性状由基因控制，但也受环境的影响（如光照影响植物叶色）。<br>
+<span class="step">答案</span>：A</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习1：判断下列哪些属于相对性状（填序号）：①狗的卷毛和直毛　②人的身高和体重　③豌豆的紫花和白花　④兔子的长毛和黑毛</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：①和③属于相对性状（同种生物、同一性状）。②不是同一性状，④不是同一性状。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习2：生物的性状由什么控制？转基因技术证明了什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：基因控制生物的性状。转基因技术证明了基因可以控制生物的性状。</div>
+</div>
+</div>
+
+<!-- ═══ 专题二：基因的显性和隐性 ═══ -->
+<div class="sec">
+<h2>专题二：基因的显性和隐性</h2>
+<span class="tag">孟德尔定律基础</span>
+
+<p class="kp"><strong>显性基因与隐性基因</strong>：<br>
+- <strong class="red">显性基因</strong>：控制显性性状的基因，用大写字母表示（如 D、A、B）<br>
+- <strong class="red">隐性基因</strong>：控制隐性性状的基因，用小写字母表示（如 d、a、b）<br>
+- 当显性基因和隐性基因同时存在时，<strong class="blue">只表现显性基因控制的性状</strong></p>
+
+<p class="kp"><strong>纯合子与杂合子</strong>：<br>
+- <strong class="blue">纯合子</strong>：两个基因相同（如 DD、dd）→ <strong class="green">稳定遗传</strong>（自交后代不出现性状分离）<br>
+- <strong class="blue">杂合子</strong>：两个基因不同（如 Dd）→ <strong class="orange">不稳定遗传</strong>（自交后代会出现性状分离）</p>
+
+<div class="formula-box">
+<div class="fm">表型与基因型的关系</div>
+<div class="fd">DD → 显性性状（如高茎）<br>Dd → 显性性状（如高茎，因为 D 对 d 为显性）<br>dd → 隐性性状（如矮茎）</div>
+</div>
+
+<div class="chart-wrap">
+<img src="../资料/charts/bio_jun_mendel.svg" alt="孟德尔杂交实验"><div class="cp">孟德尔豌豆高茎/矮茎杂交实验：F1全部高茎，F2出现3:1分离</div>
+</div>
+
+<p class="kp"><strong>孟德尔实验的关键结论</strong>：<br>
+① 纯种高茎（DD）× 纯种矮茎（dd）→ F1 全部为高茎（Dd）→ 高茎为<strong class="red">显性性状</strong><br>
+② F1（Dd）自交 → F2 中 DD:Dd:dd = 1:2:1（基因型比），高茎:矮茎 = 3:1（表型比）<br>
+③ 隐性基因（d）在 F1 中没有消失，只是被显性基因（D）<strong class="blue">掩盖</strong>了</p>
+
+<div class="ex">
+<div class="q"><span class="num">例题3</span> 纯种高茎豌豆（DD）与纯种矮茎豌豆（dd）杂交，子一代的基因型和表现型分别是什么？子一代自交，子二代中高茎和矮茎的比例是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+(1) P：DD × dd → 配子：D 和 d → F1：Dd（全部高茎）<br>
+(2) F1 自交：Dd × Dd → 配子：D、d 和 D、d → F2：DD、Dd、Dd、dd<br>
+(3) 基因型比 DD:Dd:dd = 1:2:1，表型比 高茎:矮茎 = 3:1<br>
+<span class="step">答案</span>：F1 全部为 Dd（高茎），F2 中高茎:矮茎 = 3:1</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题4</span> 人类有耳垂（E）对无耳垂（e）为显性。一对有耳垂的夫妇生了一个无耳垂的孩子，该夫妇的基因型分别是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+孩子无耳垂 → 基因型一定是 ee → 两个 e 分别来自父母双方<br>
+夫妇都有耳垂 → 各含一个 E → 所以夫妇基因型均为 Ee<br>
+P：Ee × Ee → 子代：EE:Ee:ee = 1:2:1，无耳垂(ee)概率 = 1/4<br>
+<span class="step">关键技巧</span>：<strong class="red">无中生有</strong>——亲代表现显性性状，子代出现隐性性状→亲本均为杂合子。<br>
+<span class="step">答案</span>：夫妇均为 Ee</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习3：一株基因型为 Dd 的豌豆自交，子代中基因型 DD、Dd、dd 的比例是多少？表现型的比例是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：DD:Dd:dd = 1:2:1；显性:隐性 = 3:1。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习4：已知卷舌（A）对不卷舌（a）为显性。父亲能卷舌（Aa），母亲不能卷舌（aa），他们生一个能卷舌的孩子的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：Aa × aa → Aa:aa = 1:1，能卷舌(Aa)的概率 = 1/2 或 50%。</div>
+</div>
+</div>
+
+<!-- ═══ 专题三：遗传图解写法（重点） ═══ -->
+<div class="sec">
+<h2>专题三：遗传图解规范写法</h2>
+<span class="tag">遗传图解核心步骤</span>
+
+<p class="kp">遗传图解是中考必考题型，必须规范书写。标准的遗传图解包含以下四个部分：</p>
+
+<div class="formula-box">
+<div class="fm">遗传图解书写步骤</div>
+<div class="fd"><strong class="red">第一步</strong>：写出亲代表型及基因型，中间用"×"连接<br>
+<strong class="blue">第二步</strong>：写出亲本产生的配子（配子中染色体数减半，基因成单存在）<br>
+<strong class="green">第三步</strong>：写出子代的基因型（雌雄配子随机结合）<br>
+<strong class="orange">第四步</strong>：写出子代的表现型及比例</div>
+</div>
+
+<p class="kp"><strong>示例</strong>：写出高茎豌豆（Dd）与矮茎豌豆（dd）杂交的遗传图解：</p>
+
+<div style="background:#f8f9fc;border-radius:10px;padding:16px;margin:12px 0;text-align:center;font-family:'Courier New',monospace;font-size:14px;line-height:1.8">
+  <div style="color:#888;font-family:'Microsoft YaHei'">正确遗传图解格式：</div>
+  <div style="margin-top:6px">
+    <span style="color:#555">P：</span>高茎(Dd) <span style="color:#888">×</span> 矮茎(dd)<br>
+    <span style="color:#888">│</span><span style="color:#555">　　　</span><span style="color:#888">│</span><br>
+    <span style="color:#555">配子：</span><span style="color:#5EA890;font-weight:700">D</span>　　<span style="color:#E67E22;font-weight:700">d</span>　　<span style="color:#E67E22;font-weight:700">d</span><br>
+    <span style="color:#888">└──────┼──────┘</span><br>
+    <span style="color:#888">　　　　　│</span><br>
+    <span style="color:#555">子代：</span>Dd(高茎)　　　dd(矮茎)<br>
+    <span style="color:#888">　　　　1　　:　　1</span>
+  </div>
+</div>
+
+<p class="kp"><strong>遗传图解的注意事项</strong>：<br>
+① <strong class="red">每一代的符号不能省略</strong>：P（亲代）、F1（子一代）、F2（子二代）<br>
+② <strong class="red">配子中的基因必须成单</strong>：体细胞 Dd → 配子 D 或 d<br>
+③ <strong class="red">子代基因型的来源要明确</strong>：雌雄配子随机结合<br>
+④ <strong class="red">比例关系要写清楚</strong>：基因型比和表现型比</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/bio_jun_cross.svg" alt="遗传图解示例"><div class="cp">Dd × dd 杂交的遗传图解（Punnett 方格法）</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题5</span> 请写出纯种高茎豌豆（DD）与纯种矮茎豌豆（dd）杂交，F1 自交的完整遗传图解。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+<div style="font-family:'Courier New',monospace;font-size:13px;line-height:1.8;margin:6px 0;padding:10px;background:#fff;border-radius:6px">
+P：高茎(DD) <span style="color:#888">×</span> 矮茎(dd)<br>
+<span style="color:#888">│</span>　　　　　　<span style="color:#888">│</span><br>
+配子：<span style="color:#5EA890;font-weight:700">D</span>　　　　　<span style="color:#E67E22;font-weight:700">d</span><br>
+<span style="color:#888">└──────────┘</span><br>
+　　　<span style="color:#888">│</span><br>
+F1：　　<span style="color:#5EA890;font-weight:700">Dd</span>（全部高茎）<br>
+　　　<span style="color:#888">↓ 自交</span><br>
+F1：高茎(Dd) <span style="color:#888">×</span> 高茎(Dd)<br>
+<span style="color:#888">│</span>　　　　　　<span style="color:#888">│</span><br>
+配子：<span style="color:#5EA890;font-weight:700">D</span>　　<span style="color:#E67E22;font-weight:700">d</span>　　<span style="color:#5EA890;font-weight:700">D</span>　　<span style="color:#E67E22;font-weight:700">d</span><br>
+<span style="color:#888">└────┼────┘</span><br>
+　　　<span style="color:#888">│</span><br>
+F2：<span style="color:#5EA890;font-weight:700">DD</span>　　<span style="color:#5EA890;font-weight:700">Dd</span>　　<span style="color:#E67E22;font-weight:700">dd</span><br>
+高茎　　高茎　　矮茎<br>
+<span style="color:#888">　3　:　1</span>
+</div>
+<span class="step">注意</span>：F1 的基因型为 Dd（杂合子），虽然表现高茎，但自交后会产生性状分离。</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题6</span> 人类白化病由隐性致病基因 a 控制（正常为 A）。一对表型正常的夫妇生了一个白化病的孩子。请写出该遗传图解。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+孩子白化病 → aa → a 分别来自父母<br>
+父母正常 → 各有一个 A → 双方均为 Aa<br>
+<div style="font-family:'Courier New',monospace;font-size:13px;line-height:1.8;margin:6px 0;padding:10px;background:#fff;border-radius:6px">
+P：正常(Aa) <span style="color:#888">×</span> 正常(Aa)<br>
+<span style="color:#888">│</span>　　　　　　<span style="color:#888">│</span><br>
+配子：<span style="color:#5EA890;font-weight:700">A</span>　　<span style="color:#E67E22;font-weight:700">a</span>　　<span style="color:#5EA890;font-weight:700">A</span>　　<span style="color:#E67E22;font-weight:700">a</span><br>
+<span style="color:#888">└────┼────┘</span><br>
+　　　<span style="color:#888">│</span><br>
+子代：<span style="color:#5EA890;font-weight:700">AA</span>　　<span style="color:#5EA890;font-weight:700">Aa</span>　　<span style="color:#E67E22;font-weight:700">aa</span><br>
+正常　　正常　　白化病<br>
+<span style="color:#888">　3　　:　　1</span>
+</div>
+<span class="step">答案</span>：再生一个孩子患白化病的概率为 1/4，正常的概率为 3/4。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习5：豚鼠的黑毛（B）对白毛（b）为显性。纯种黑毛豚鼠与白毛豚鼠杂交，F1 的基因型和表现型是什么？F1 自交，F2 的基因型比和表现型比各是多少？（要求写出遗传图解）</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：P：BB × bb → F1：Bb（全部黑毛）。F1 自交 Bb × Bb → F2：BB:Bb:bb = 1:2:1，黑毛:白毛 = 3:1。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习6：番茄的红果（R）对黄果（r）为显性。红果番茄与黄果番茄杂交，子代中红果:黄果 = 1:1，请写出亲本的基因型并画出遗传图解。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：红果为 Rr，黄果为 rr。遗传图解：P：红果(Rr) × 黄果(rr) → 配子 R、r → r → 子代 Rr(红果):rr(黄果)=1:1。这是测交实验的典型结果。</div>
+</div>
+</div>
+
+<!-- ═══ 专题四：一对基因的遗传 ═══ -->
+<div class="sec">
+<h2>专题四：一对基因的遗传分析与计算</h2>
+<span class="tag">杂交 · 测交 · 自交</span>
+
+<p class="kp"><strong>三种交配方式及其结果</strong>（一对等位基因 Aa）：</p>
+
+<table class="p-table">
+<tr><th>交配类型</th><th>亲本组合</th><th>子代基因型</th><th>子代表型比</th></tr>
+<tr><td class="rh">杂交</td><td>AA × aa</td><td>全部 Aa</td><td>全部显性</td></tr>
+<tr><td class="rh">自交</td><td>Aa × Aa</td><td>AA:Aa:aa = 1:2:1</td><td>显性:隐性 = 3:1</td></tr>
+<tr><td class="rh">测交</td><td>Aa × aa</td><td>Aa:aa = 1:1</td><td>显性:隐性 = 1:1</td></tr>
+<tr><td class="rh">纯合自交</td><td>AA × AA</td><td>全部 AA</td><td>全部显性</td></tr>
+<tr><td class="rh">纯隐自交</td><td>aa × aa</td><td>全部 aa</td><td>全部隐性</td></tr>
+</table>
+
+<div class="formula-box">
+<div class="fm">判断显隐性的方法</div>
+<div class="fd"><strong class="red">方法一（无中生有）</strong>：双亲表现相同，子代出现新性状 → 新性状为隐性<br>
+例：双眼皮父母生出单眼皮孩子 → 单眼皮为隐性<br><br>
+<strong class="red">方法二（有中生无）</strong>：双亲表现不同或一方患病，子代全部表现某性状 → 子代表现的为显性<br>
+例：高茎豌豆与矮茎豌豆杂交，子代全部高茎 → 高茎为显性</div>
+</div>
+
+<p class="kp"><strong>概率计算核心公式</strong>：<br>
+- 子代患隐性病概率：Aa × Aa → 1/4 aa（患病），3/4 A_（正常）<br>
+- 子代患显性病概率：Aa × aa → 1/2 Aa（患病），1/2 aa（正常）<br>
+- 生男生女不影响遗传病概率（除非伴性遗传）</p>
+
+<div class="ex">
+<div class="q"><span class="num">例题7</span> 一对表型正常的夫妇，生了一个白化病（aa）的孩子。他们再生一个孩子：<br>① 患白化病的概率是多少？② 是正常孩子的概率是多少？③ 是正常纯合子的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+夫妇正常生患病孩子 → 双方均为 Aa。<br>
+Aa × Aa → AA:Aa:aa = 1:2:1<br>
+① 患病(aa) = 1/4　　② 正常(AA+Aa) = 3/4　　③ 正常纯合子(AA) = 1/3（在正常孩子中）<br>
+<span class="step">关键区别</span>：②是所有孩子中正常的概率，③是正常孩子中是纯合子的概率。<br>
+<span class="step">答案</span>：① 1/4　② 3/4　③ 1/3</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题8</span> 已知多指症是常染色体显性遗传病（T 为致病基因）。一对夫妇，丈夫多指（Tt），妻子正常（tt）。<br>① 他们生一个多指孩子的概率？② 他们生一个正常孩子的概率？③ 他们生两个都是多指孩子的概率？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+Tt × tt → Tt（多指）: tt（正常）= 1:1<br>
+① 一个孩子多指概率 = 1/2　　② 一个孩子正常概率 = 1/2<br>
+③ 两个都多指 = 1/2 × 1/2 = 1/4（<strong class="blue">乘法原理</strong>：每次生育是独立事件）<br>
+<span class="step">注意</span>：每次生育互不影响，之前生什么孩子不影响下一次。<br>
+<span class="step">答案</span>：① 1/2　② 1/2　③ 1/4</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题9</span> 某农场养了一群牛，黑毛（B）对棕毛（b）为显性。现有一头黑毛公牛与多头棕毛母牛交配，共产下 12 头小牛，其中 6 头黑毛、6 头棕毛。这头黑毛公牛的基因型是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+(1) 棕毛母牛 → 基因型一定是 bb<br>
+(2) 后代黑毛:棕毛 = 1:1 → 这是<strong class="red">测交</strong>结果<br>
+(3) 测交 Bb × bb → Bb:bb = 1:1<br>
+<span class="step">结论</span>：黑毛公牛一定是 <strong class="green">Bb</strong>（杂合子）<br>
+如果公牛是 BB × bb → 后代全部为 Bb（全黑毛），与事实不符。<br>
+<span class="step">答案</span>：黑毛公牛为 Bb</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习7：人类苯丙酮尿症是常染色体隐性遗传病（致病基因为 p）。一对表型正常的夫妇生了一个苯丙酮尿症患儿，他们再生一个孩子正常的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：夫妇均为 Pp，Pp × Pp → PP:Pp:pp = 1:2:1，正常概率 = 3/4。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习8：豌豆的高茎（D）对矮茎（d）为显性。一株高茎豌豆与矮茎豌豆杂交，子代中高茎和矮茎各占一半，则该高茎豌豆的基因型是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：该高茎豌豆为 Dd。测交结果 Dd × dd → 高茎:矮茎 = 1:1。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习9：人的能卷舌（R）对不能卷舌（r）为显性。一对能卷舌的夫妇生了一个不能卷舌的孩子，该夫妇的基因型分别是什么？他们再生一个能卷舌的孩子的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：夫妇均为 Rr。Rr × Rr → RR:Rr:rr = 1:2:1，能卷舌(RR+Rr)概率 = 3/4。</div>
+</div>
+</div>
+
+<!-- ═══ 专题五：遗传概率计算综合 ═══ -->
+<div class="sec">
+<h2>专题五：遗传概率计算提高</h2>
+<span class="tag">经典题型归纳</span>
+
+<p class="kp"><strong>常见题型归类</strong>：</p>
+
+<div class="formula-box">
+<div class="fm">类型一：正推型——由亲代推断子代</div>
+<div class="fd">已知亲本基因型 → 求子代基因型/表型概率。<br>
+解题关键：写出遗传图解，按分离定律逐个分析。</div>
+</div>
+
+<div class="formula-box">
+<div class="fm">类型二：逆推型——由子代推断亲代</div>
+<div class="fd">已知子代表型及比例 → 求亲本基因型。<br>
+解题关键：<br>
+- 子代 3:1 → 亲本 Aa × Aa（自交）<br>
+- 子代 1:1 → 亲本 Aa × aa（测交）<br>
+- 子代全部显性 → 亲本 AA × _ _<br>
+- 子代全部隐性 → 亲本 aa × aa</div>
+</div>
+
+<div class="formula-box">
+<div class="fm">类型三：特殊情况——显性纯合致死</div>
+<div class="fd">若 AA 致死，则 Aa × Aa → Aa:aa = 2:1（表型比 显性:隐性 = 2:1）<br>
+若 A 基因使花粉不育，则 Aa 自交 → 只有 a 花粉能受精 → 子代 Aa:aa = 1:1</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题10</span> 已知果蝇的长翅（V）对残翅（v）为显性。一只长翅果蝇与一只残翅果蝇杂交，F1 中长翅:残翅 = 1:1。让 F1 中的长翅果蝇自由交配，F2 中残翅果蝇的比例是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+(1) 长翅 × 残翅 → 1:1 → 亲本：Vv × vv<br>
+(2) F1 长翅果蝇基因型为 Vv<br>
+(3) F1 长翅自由交配：Vv × Vv → VV:Vv:vv = 1:2:1<br>
+(4) 残翅(vv)比例 = 1/4<br>
+<span class="step">注意</span>："自由交配"与"自交"在此题中结果相同（因为只有 Vv 一种基因型）。<br>
+<span class="step">答案</span>：1/4</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题11</span> 金鱼草的花色由一对等位基因控制（R 红色，r 白色），RR 为红色，Rr 为粉色，rr 为白色。粉色金鱼草自交，F1 中红色:粉色:白色的比例是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+这是<strong class="orange">不完全显性</strong>的特殊情况——杂合子（Rr）表现为中间性状（粉色）。<br>
+Rr × Rr → RR:Rr:rr = 1:2:1<br>
+表现型：红色:粉色:白色 = 1:2:1<br>
+<span class="step">与完全显性的区别</span>：完全显性时 Rr 表现为红色（与 RR 相同），这里 Rr 表现为不同的粉色。<br>
+<span class="step">答案</span>：红色:粉色:白色 = 1:2:1</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题12</span> 某种野生植物，紫花（A）对白花（a）为显性。一株紫花植株自交，子代中紫花:白花 = 2:1（不是 3:1），最可能的原因是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+正常情况下 Aa × Aa → AA:Aa:aa = 1:2:1 → 紫花:白花 = 3:1<br>
+实际为 2:1 → 说明 <strong class="red">AA 纯合致死</strong>（AA 个体不能存活）<br>
+存活的个体只有 Aa 和 aa，比例为 2:1<br>
+<span class="step">验证</span>：如果 AA 致死，则 Aa × aa → Aa:aa = 1:1（测交全部存活）<br>
+<span class="step">答案</span>：AA 纯合致死，导致子代中紫花只有 Aa（无 AA），紫花:白花 = 2:1</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习10：豌豆的高茎（D）对矮茎（d）为显性。一株高茎豌豆与矮茎豌豆杂交，子代高茎:矮茎 = 1:1，子代中的高茎豌豆自交，后代中高茎:矮茎 = ?</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：子代高茎为 Dd。Dd × Dd → DD:Dd:dd = 1:2:1 → 高茎:矮茎 = 3:1。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习11：人类先天性聋哑是常染色体隐性遗传病。一对表型正常的夫妇，已生了一个先天性聋哑的孩子。他们想再生一个，但不希望再患病，概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：夫妇均为杂合子，Aa × Aa → 正常概率 = 3/4，即 75%。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习12：老鼠的黄色（Y）对灰色（y）为显性，但 YY 纯合致死。两只黄色老鼠交配，子代中黄色:灰色 = ?</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：两只黄色老鼠均为 Yy。Yy × Yy → YY（致死）: Yy : yy = 1:2:1 → 存活个体中黄:灰 = 2:1。</div>
+</div>
+</div>
+
+<!-- ═══ 专题六：人的性别遗传 ═══ -->
+<div class="sec">
+<h2>专题六：人的性别遗传</h2>
+<span class="tag">性染色体·生男生女</span>
+
+<p class="kp"><strong>男女染色体的区别</strong>：<br>
+- 男性体细胞染色体：44 + XY = 46 条（22 对常染色体 + XY 性染色体）<br>
+- 女性体细胞染色体：44 + XX = 46 条（22 对常染色体 + XX 性染色体）<br>
+- 男性产生<strong class="blue">两种精子</strong>：含 X 染色体和含 Y 染色体的精子（比例 1:1）<br>
+- 女性只产生<strong class="red">一种卵细胞</strong>：含 X 染色体的卵细胞</p>
+
+<p class="kp"><strong>生男生女的机理</strong>：<br>
+- 若 X 精子与卵细胞结合 → XX → <strong class="blue">女性</strong><br>
+- 若 Y 精子与卵细胞结合 → XY → <strong class="red">男性</strong><br>
+- 生男生女的概率 = <strong class="green">1:1</strong>，<strong class="red">取决于父亲的哪种精子与卵细胞结合</strong></p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/bio_jun_sex.svg" alt="性别遗传"><div class="cp">人的性别遗传：男女性别由性染色体决定，比例为 1:1</div>
+</div>
+
+<p class="kp"><strong>性别决定的关键点</strong>：<br>
+① 生男生女的机会<strong class="red">均等</strong>，每次怀孕都是独立事件（不因已生男孩而影响下一胎性别）<br>
+② 男性可以产生两种精子（X 和 Y），女性只产生一种（X）<br>
+③ 性染色体在配子中<strong class="red">成单存在</strong>：精子含 X 或 Y，卵细胞含 X</p>
+
+<div class="ex">
+<div class="q"><span class="num">例题13</span> 一对夫妇已生了一个女孩，他们想再生一个孩子，这个孩子是男孩的概率是多少？如果他们已经生了三个女孩，第四个孩子是男孩的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+每次生育，生男生女的概率都是 1/2（50%），因为父亲产生 X 和 Y 精子的比例始终为 1:1。<br>
+已经生的孩子性别不影响下一次的性别——每次都是<strong class="blue">独立事件</strong>。<br>
+所以无论已生几个女孩，下一个孩子是男孩的概率始终是 <strong class="red">1/2</strong>。<br>
+<span class="step">答案</span>：都是 1/2（50%）。</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题14</span> 人类红绿色盲是伴 X 隐性遗传病（X^b 表示色盲基因）。一对表型正常的夫妇，丈夫正常（X^B Y），妻子是红绿色盲基因携带者（X^B X^b）。他们生一个色盲儿子的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+P：X^B Y × X^B X^b<br>
+配子：X^B、Y　和　X^B、X^b<br>
+子代：X^B X^B（正常女）: X^B X^b（携带者女）: X^B Y（正常男）: X^b Y（色盲男）= 1:1:1:1<br>
+色盲儿子（X^b Y）概率 = 1/4<br>
+<span class="step">注意</span>：儿子中患色盲的概率 = 1/2，所有后代中色盲儿子的概率 = 1/4。<br>
+<span class="step">答案</span>：1/4</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题15</span> 一对夫妇，妻子是红绿色盲（X^b X^b），丈夫正常（X^B Y）。他们的儿子和女儿患色盲的概率各是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+P：X^B Y × X^b X^b<br>
+配子：X^B、Y　和　全部 X^b<br>
+子代：<br>
+女儿：X^B X^b（全部是携带者，表型正常）—— 患病概率 <strong class="red">0</strong><br>
+儿子：X^b Y（全部是色盲）—— 患病概率 <strong class="red">100%</strong><br>
+<span class="step">规律</span>：女性色盲 × 正常男性 → 儿子全部色盲，女儿全部正常但为携带者（<strong class="blue">交叉遗传</strong>）。<br>
+<span class="step">答案</span>：女儿患病概率 0，儿子患病概率 100%。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习13：一对夫妇，生了一个色盲儿子（X^b Y），已知母亲是色盲基因携带者（X^B X^b），父亲正常（X^B Y），他们再生一个色盲女儿的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：P：X^B Y × X^B X^b → 女儿：X^B X^B(正常) 或 X^B X^b(携带者)，全部不患病，色盲女儿概率 = 0。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习14：人的性别是在什么时候决定的？决定因素是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：性别在受精时决定。决定因素是父亲的精子类型（含 X 或含 Y 的精子与卵细胞结合）。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习15：一对夫妇连续生了 5 个女孩，第 6 个是男孩的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：仍然是 1/2（50%）。每次生育是独立事件，不受之前结果影响。</div>
+</div>
+</div>
+
+<!-- ═══ 专题七：遗传图解综合训练 ═══ -->
+<div class="sec">
+<h2>专题七：遗传图解综合训练</h2>
+<span class="tag">中考真题演练</span>
+
+<p class="kp">本专题集中练习遗传图解的书写和概率计算，涵盖中考常见题型。</p>
+
+<div class="ex">
+<div class="q"><span class="num">例题16</span> （中考改编）豌豆种子的圆粒（R）对皱粒（r）为显性。现将圆粒豌豆与皱粒豌豆杂交，F1 全部为圆粒，F1 自交得到 F2。<br>
+① 亲本圆粒和皱粒的基因型分别是什么？<br>
+② 写出 F1 自交的遗传图解，并计算 F2 中皱粒的比例。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+① F1 全部为圆粒 → 亲本圆粒为 RR，皱粒为 rr<br>
+P：RR × rr → 配子 R 和 r → F1 全部 Rr（圆粒）<br><br>
+② F1 自交遗传图解：<br>
+<div style="font-family:'Courier New',monospace;font-size:13px;line-height:1.8;margin:4px 0;padding:10px;background:#fff;border-radius:6px">
+F1：圆粒(Rr) <span style="color:#888">×</span> 圆粒(Rr)<br>
+配子：<span style="color:#5EA890">R</span>　　<span style="color:#E67E22">r</span>　　<span style="color:#5EA890">R</span>　　<span style="color:#E67E22">r</span><br>
+<span style="color:#888">└────┼────┘</span><br>
+　F2：<span style="color:#5EA890">RR</span>　　<span style="color:#5EA890">Rr</span>　　<span style="color:#E67E22">rr</span><br>
+圆粒　　圆粒　　皱粒<br>
+<span style="color:#888">　3　:　1</span>
+</div>
+F2 中皱粒（rr）比例 = 1/4<br>
+<span class="step">答案</span>：① 圆粒 RR，皱粒 rr　② 皱粒比例 = 1/4</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题17</span> （中考改编）已知人类双眼皮（A）对单眼皮（a）为显性。请分析以下问题：<br>
+① 一对双眼皮的夫妇生了一个单眼皮的孩子，该夫妇的基因型分别是什么？<br>
+② 他们再生一个双眼皮孩子的概率是多少？<br>
+③ 如果他们生的第一个孩子是双眼皮，这个双眼皮孩子是纯合子的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+① 单眼皮孩子 = aa → a 来自父母双方 → 夫妇均为 Aa<br><br>
+② Aa × Aa → AA:Aa:aa = 1:2:1<br>
+双眼皮(AA+Aa)概率 = 3/4<br><br>
+③ 该双眼皮孩子已知表型为双眼皮 → 基因型只可能是 AA 或 Aa<br>
+在双眼皮孩子中：AA:Aa = 1:2 → 纯合子(AA)概率 = 1/3<br>
+<span class="step">易错提醒</span>：第一问中"孩子"是未知性别的，第二问和第三问中已知是双眼皮 → 条件概率不同。<br>
+<span class="step">答案</span>：① 均为 Aa　② 3/4　③ 1/3</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题18</span> （中考真题）某家族中，白化病的遗传系谱图如下（正常用 A 表示，患病用 a 表示）。请分析：<br>
+① 白化病是显性遗传还是隐性遗传？<br>
+② Ⅰ-1 和 Ⅰ-2 的基因型分别是什么？<br>
+③ Ⅱ-2（正常）是纯合子的概率是多少？<br>
+④ Ⅱ-1（正常）与一正常男性（携带者）结婚，生患病孩子的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+① <strong class="red">无中生有</strong>：Ⅰ-1 和 Ⅰ-2 正常，生出了Ⅱ-3患病 → 白化病为隐性遗传<br>
+② Ⅱ-3患病(aa) → a 来自Ⅰ-1和Ⅰ-2 → 均为 Aa<br>
+③ Ⅱ-2正常(A_)，其父母均为 Aa → 正常孩子中 AA:Aa = 1:2 → 纯合子概率 = 1/3<br>
+④ Ⅱ-1正常(A_)，与携带者(Aa)结婚 → Ⅱ-1有 1/3 概率是 AA，2/3 概率是 Aa<br>
+　 - 若 AA × Aa → 全部正常（患病概率 0）<br>
+　 - 若 Aa × Aa → 患病概率 1/4<br>
+　 - 综合：患病概率 = 2/3 × 1/4 = 1/6<br>
+<span class="step">答案</span>：① 隐性　② 均为 Aa　③ 1/3　④ 1/6</div>
+</div>
+
+<div class="chart-wrap">
+<img src="../资料/charts/bio_jun_pedigree.svg" alt="系谱图分析"><div class="cp">家族遗传系谱图（□正常男性、■患病男性、○正常女性、●患病女性）</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题19</span> （中考真题）人类血友病是伴 X 隐性遗传病（X^h 表示血友病基因）。一对表型正常的夫妇（妻子是携带者）生了一男一女双胞胎，求：<br>
+① 儿子患血友病的概率？② 女儿患血友病的概率？③ 两个孩子都正常的概率？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+P：X^B Y（夫正常）× X^B X^h（妻携带者）<br>
+子代：X^B X^B : X^B X^h : X^B Y : X^h Y = 1:1:1:1<br>
+① 儿子中 X^B Y: X^h Y = 1:1 → 儿子患病 = 1/2<br>
+② 女儿中 X^B X^B: X^B X^h = 1:1 → 全部正常（携带者不患病）→ 女儿患病概率 = 0<br>
+③ 两个孩子都正常：儿子正常概率 1/2，女儿正常概率 1 → 1/2 × 1 = 1/2<br>
+<span class="step">答案</span>：① 1/2　② 0　③ 1/2</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习16：人的有酒窝（B）对无酒窝（b）为显性。一对有酒窝的夫妇生了一个无酒窝的孩子，该夫妇的基因型是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：均为 Bb（无中生有→隐性→孩子为bb→夫妇各提供一个b→又都有B→均为Bb）。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习17：高茎豌豆（Dd）与矮茎豌豆（dd）杂交，子代中高茎和矮茎的比例是多少？写出完整遗传图解。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：高茎:矮茎 = 1:1。P：Dd × dd → 配子 D、d 和 d → 子代 Dd:dd = 1:1。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习18：人类抗维生素 D 佝偻病是伴 X 显性遗传病（X^D）。妻子患病（X^D X^d），丈夫正常（X^d Y），他们的孩子中女儿患病的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：P：X^D X^d × X^d Y → 女儿：X^D X^d(患病)或X^d X^d(正常) = 1:1 → 女儿患病概率 = 1/2。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习19：豌豆的紫花（C）对白花（c）为显性。一株紫花豌豆与白花豌豆杂交，子代中紫花:白花 = 1:1。该紫花豌豆的基因型是什么？如果子代中的紫花豌豆自交，后代中白花比例是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：紫花豌豆为 Cc（测交）。紫花自交 Cc × Cc → cc(白花) = 1/4。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习20：一对夫妇均为双眼皮（Aa），他们生一个单眼皮女孩的概率是多少？（先算单眼皮概率，再乘以性别概率）</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：Aa × Aa → 单眼皮(aa) = 1/4，生女孩 = 1/2，单眼皮女孩 = 1/4 × 1/2 = 1/8。</div>
+</div>
+</div>
+
+<!-- ═══ 专题八：生物的变异 ═══ -->
+<div class="sec">
+<h2>专题八：生物的变异</h2>
+<span class="tag">可遗传与不可遗传变异</span>
+
+<p class="kp"><strong>变异的概念</strong>：生物亲代与子代之间、子代与子代个体之间存在的差异。变异是<strong class="red">普遍存在</strong>的。</p>
+
+<p class="kp"><strong>变异的分类</strong>：<br>
+① <strong class="blue">可遗传的变异</strong>：由<strong class="red">遗传物质改变</strong>引起，可以传给后代<br>
+&emsp;来源：基因突变、基因重组、染色体变异<br>
+② <strong class="orange">不可遗传的变异</strong>：由<strong class="red">环境因素</strong>引起，遗传物质没有改变，不能传给后代<br>
+&emsp;例：同种小麦在不同土壤中长势不同、晒黑后皮肤变黑</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/bio_jun_variation.svg" alt="变异类型"><div class="cp">生物的变异类型：可遗传变异与不可遗传变异的区别</div>
+</div>
+
+<p class="kp"><strong>变异在育种中的应用</strong>：<br>
+① <strong class="blue">杂交育种</strong>：将不同品种的优良性状组合在一起（如杂交水稻）<br>
+② <strong class="blue">诱变育种</strong>：用物理/化学方法诱导基因突变（如太空育种）<br>
+③ <strong class="blue">转基因技术</strong>：将外源基因转入生物体内（如抗虫棉）</p>
+
+<p class="kp"><strong>区分可遗传与不可遗传变异的关键</strong>：<strong class="red">看遗传物质是否改变</strong>。遗传物质改变→可遗传；仅环境引起→不可遗传。</p>
+
+<div class="ex">
+<div class="q"><span class="num">例题20</span> 下列变异中，属于可遗传变异的是（  ）<br>A. 人在阳光下晒黑　　B. 玉米粒颜色的差异<br>C. 手术割的双眼皮　　D. 因水肥充足而粒大饱满的小麦</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+A✗：晒黑是紫外线引起皮肤黑色素增加，遗传物质未变<br>
+B✓：玉米粒颜色的差异由基因控制，可遗传<br>
+C✗：手术改变的只是外形，遗传物质未变<br>
+D✗：水肥充足是环境因素，遗传物质未变<br>
+<span class="step">答案</span>：B</div>
+</div>
+
+<div class="ex">
+<div class="q"><span class="num">例题21</span> 通过卫星搭载的种子回到地面后，可能会产生新的性状，这种育种方法叫太空育种。它利用了什么原理？</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a"><strong>解析</strong>：<br>
+太空育种利用了<strong class="blue">诱变育种</strong>的原理——太空中的微重力、高辐射环境提高了<strong class="red">基因突变</strong>的频率，使种子产生更多的变异，再通过人工选择获得优良品种。<br>
+这种变异是<strong class="green">可遗传的</strong>（遗传物质发生改变）。<br>
+<span class="step">答案</span>：诱变育种——利用太空环境诱导基因突变，产生可遗传的变异。</div>
+</div>
+
+<div class="hw">
+<div class="hw-q">练习21：判断下列变异是否可遗传（填"可"或"不可"）：① 普通甜椒经太空搭载后变为太空椒　② 同卵双胞胎因后天环境不同性格有差异　③ 小麦的抗倒伏和抗条锈病品种培育</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：① 可（基因突变）　② 不可（环境引起）　③ 可（杂交育种，基因重组）。</div>
+</div>
+<div class="hw">
+<div class="hw-q">练习22：杂交育种依据的原理是什么？请举例说明。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看答案</button>
+<div class="hw-a">答案：原理是基因重组。例：袁隆平院士利用野生稻和栽培稻杂交，培育出高产杂交水稻。</div>
+</div>
+</div>
+
+</div><!-- /container -->
+
+<!-- ═══ Share Wall ═══ -->
+<div id="shareOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center" onclick="if(event.target===this)closeShareWall()">
+<div style="background:#fff;border-radius:16px;padding:30px 28px;max-width:380px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.2)">
+<div style="font-size:28px;margin-bottom:8px">🎯</div>
+<h3 style="margin-bottom:6px">获取联系方式</h3>
+<p style="font-size:13px;color:#888;margin-bottom:14px">分享本页到学习群/朋友圈，截图后可解锁</p>
+<textarea id="shareText" readonly rows="3" style="width:100%;padding:8px;font-size:12px;border:1px solid #ddd;border-radius:8px;background:#f8f9fc;resize:none;text-align:center;color:#555;margin-bottom:10px">我正在思贤学习站学习初中生物遗传专题，内容超全面！推荐给大家一起学习～</textarea>
+<button onclick="copyShare()" style="width:100%;padding:10px;border-radius:8px;background:#5EA890;color:#fff;border:none;font-size:14px;cursor:pointer;margin-bottom:6px">📋 复制分享文案</button>
+<button id="sharedBtn" disabled onclick="confirmShared()" style="width:100%;padding:10px;border-radius:8px;background:#ddd;color:#999;border:none;font-size:14px;cursor:not-allowed;margin-bottom:8px">⏳ 我已分享（10秒）</button>
+<div id="contactShow" style="display:none;padding:12px;background:#f0faf4;border-radius:8px;color:#5EA890;font-weight:600;font-size:15px">📞 155-6412-8008（微信同号）</div>
+<button onclick="closeShareWall()" style="background:none;border:none;color:#999;font-size:13px;cursor:pointer;margin-top:4px">关闭</button>
+</div></div>
+
+<script>
+function toggleSol(btn) {
+  var a = btn.nextElementSibling;
+  if (a && (a.classList.contains('a') || a.classList.contains('hw-a'))) {
+    a.classList.toggle('show');
+    btn.textContent = a.classList.contains('show') ? '收起' : (a.classList.contains('a') ? '看解析' : '看答案');
+  }
+}
+
+var backBtn = document.createElement('button');
+backBtn.className = 'back-to-top'; backBtn.innerHTML = '&#8593;';
+backBtn.setAttribute('aria-label','回顶部');
+document.body.appendChild(backBtn);
+window.addEventListener('scroll',function(){
+  backBtn.classList.toggle('show',window.scrollY>300);
+});
+backBtn.addEventListener('click',function(){
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+var _shareTime;
+function openShareWall(){
+  var o=document.getElementById('shareOverlay'),b=document.getElementById('sharedBtn');
+  o.style.display='flex';
+  if(localStorage.getItem('sx_shared')){document.getElementById('contactShow').style.display='block';b.style.display='none'}
+}
+function closeShareWall(){document.getElementById('shareOverlay').style.display='none'}
+function copyShare(){
+  var t=document.getElementById('shareText');t.select();navigator.clipboard.writeText(t.value);
+  var d=document.getElementById('sharedBtn');
+  var n=10;d.textContent='✅ 我已分享（'+n+'秒）';d.style.background='#f0faf4';d.style.color='#5EA890';d.style.cursor='not-allowed';
+  localStorage.setItem('sx_copy_time',Date.now());
+  if(_shareTime)clearInterval(_shareTime);
+  _shareTime=setInterval(function(){
+    n--;if(n<=0){clearInterval(_shareTime);d.disabled=false;d.textContent='✅ 我已分享！';d.style.background='#5EA890';d.style.color='#fff';d.style.cursor='pointer'}
+    else d.textContent='✅ 我已分享（'+n+'秒）';
+  },1000);
+}
+function confirmShared(){
+  localStorage.setItem('sx_shared','1');
+  document.getElementById('contactShow').style.display='block';
+  document.getElementById('sharedBtn').style.display='none';
+}
+
+// Init share wall trigger — 页脚 .contact-trigger 由各页面自行实现
+document.querySelectorAll('.contact-trigger').forEach(function(el){
+  el.addEventListener('click',function(e){e.preventDefault();openShareWall()});
+});
+</script>
+
+<!-- ═══ Footer ═══ -->
+<div style="max-width:880px;margin:0 auto;padding:20px;text-align:center;font-size:13px;color:#888;border-top:1px solid #eee">
+  思贤学习站 · 济南市商河县 · <span class="contact-trigger" style="cursor:pointer;color:#5EA890;text-decoration:underline">155-6412-8008</span>
+</div>
+
+</body>
+</html>
