@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>初中数学 · 圆专题 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:880px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#e67e22}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#e67e22;font-weight:600}
+.container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
+.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #e67e22;padding:20px 24px}
+.top h2{font-size:18px;font-weight:700;color:#e67e22;margin-bottom:4px}
+.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(230,126,34,0.08);color:#e67e22;margin-bottom:10px}
+.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
+.top .kp strong{color:#e67e22}
+.top .kp .red{color:#e74c3c;font-weight:600}
+.top .kp .blue{color:#2980b9;font-weight:600}
+.top .kp .green{color:#27ae60;font-weight:600}
+.top .ex{background:#fff8f0;border-radius:8px;padding:11px 15px;margin:8px 0;position:relative}
+.top .ex .q{font-weight:600;color:#e67e22;margin-bottom:4px;font-size:14px;cursor:pointer;user-select:none}
+.top .ex .q:hover{color:#d35400}
+.top .ex .q .sol-toggle{font-size:11px;color:#999;font-weight:400;margin-left:8px}
+.top .ex .a{color:#555;font-size:13px;padding:8px 14px;border-left:3px solid #f0c27a;margin-top:4px;display:none;background:#fefaf5;border-radius:0 6px 6px 0}
+.top .ex .a.show{display:block}
+.top .ex .a strong{color:#e67e22}
+.top .ex .a .step{color:#d35400}
+.top .ex .show-sol{display:inline-block;font-size:11px;padding:2px 12px;border-radius:4px;background:#e67e22;color:#fff;cursor:pointer;border:none;margin-top:4px}
+.top .ex .show-sol:hover{background:#d35400}
+.top .hw{background:#fef6ee;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px;position:relative}
+.top .hw .hw-q{margin-bottom:2px}
+.top .hw .hw-a{color:#bf6f00;font-size:12px;margin-left:8px;display:none}
+.top .hw .hw-a.show{display:inline}
+.top .hw .show-hw{display:inline-block;font-size:11px;padding:1px 10px;border-radius:3px;background:#f0c27a;color:#fff;cursor:pointer;border:none;margin-left:6px}
+.top .hw .show-hw:hover{background:#e67e22}
+.chart-wrap{text-align:center;margin:12px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.formula-box{background:#fef6ee;border-radius:8px;padding:10px 16px;margin:8px 0;border-left:3px solid #e67e22}
+.formula-box .fm{font-size:14px;color:#1a1a2e;font-weight:600}
+.formula-box .fd{font-size:12px;color:#888}
+.table-wrap{overflow-x:auto;margin:8px 0}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:13px}
+.table-wrap td,.table-wrap th{border:1px solid #ddd;padding:6px 10px;text-align:center}
+.table-wrap th{background:rgba(230,126,34,0.08);color:#e67e22;font-weight:600}
+@media(max-width:600px){.head h1{font-size:22px}}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#e67e22);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../学习专区.html">&larr; 返回学习专区</a><h1>初中数学 · 圆专题</h1><p class="sub">圆的基本性质 · 垂径定理 · 圆周角与圆心角 · 切线 · 位置关系 · 弧长与扇形 · 圆内接四边形 · 综合 共 <span>8</span> 专题</p></div>
+<div class="container">
+
+<!-- ═══ 专题一：圆的基本概念与性质 ═══ -->
+<div class="top">
+<h2>专题一：圆的基本概念与性质</h2>
+<span class="tag">圆心 · 半径 · 直径 · 弦 · 弧</span>
+
+<p class="kp"><strong>圆的定义</strong>：在平面内，到<strong>定点（圆心 O）</strong>的距离等于<strong>定长（半径 r）</strong>的点的集合叫做圆。以O为圆心的圆记作⊙O，读作"圆O"。</p>
+
+<p class="kp"><strong>与圆有关的概念</strong>：
+<br>• <span class="blue">弦</span>：连接圆上任意两点的线段叫做弦。经过圆心的弦叫做<strong>直径</strong>，直径是圆中最长的弦，d = 2r。
+<br>• <span class="blue">弧</span>：圆上任意两点间的部分叫做圆弧，简称弧。大于半圆的弧叫<strong>优弧</strong>，小于半圆的弧叫<strong>劣弧</strong>。
+<br>• <span class="blue">圆心角</span>：顶点在圆心的角叫做圆心角，∠AOB 是弧AB所对的圆心角。
+<br>• <span class="blue">同心圆</span>：圆心相同、半径不同的圆。等圆：半径相等的圆（圆心可以不同）。</p>
+
+<p class="kp"><strong>圆的性质</strong>：
+<br>• 圆是轴对称图形，任意一条直径所在的直线都是它的对称轴（有无数条对称轴）。
+<br>• 圆是中心对称图形，圆心是它的对称中心。
+<br>• 同圆或等圆的半径相等。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_basics.svg" alt="圆的基本元素"><div class="cp">圆的基本元素：圆心 O、半径 r、直径 AB、弦 CD、弧</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题1：已知⊙O的半径为5cm，求：(1) 直径的长度。(2) 圆中最长的弦的长度。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+(1) 直径 d = 2r = 2 × 5 = <span class="red">10cm</span>。<br>
+(2) 圆中最长的弦就是直径，所以最长弦的长度为 <span class="red">10cm</span>。<br>
+<span class="step">注意</span>：在圆中，直径是特殊的弦，也是圆中最长的弦。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题2：判断下列说法是否正确：<br>
+(1) 直径是弦，弦是直径。<br>
+(2) 半圆是弧，弧是半圆。<br>
+(3) 等弧的长度一定相等。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+(1) <span class="red">错误</span>。直径是弦（过圆心的弦），但弦不一定是直径（不一定过圆心）。<br>
+(2) <span class="red">错误</span>。半圆是弧，但弧不一定是半圆（还有优弧和劣弧）。<br>
+(3) <span class="green">正确</span>。等弧是指能够完全重合的弧，长度一定相等。<br>
+<span class="step">概念辨析</span>：注意弦与直径、弧与半圆之间的包含关系，前者范围更广。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习1：⊙O 的直径为 12cm，则它的半径为 ______ cm。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：6cm（半径 = 直径/2 = 12/2 = 6cm）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习2：圆中最长的弦长为 10cm，则该圆的半径为 ______ cm。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：5cm（最长弦即直径，半径 = 10/2 = 5cm）</span>
+</div>
+</div>
+
+<!-- ═══ 专题二：垂径定理 ═══ -->
+<div class="top">
+<h2>专题二：垂径定理</h2>
+<span class="tag">平分弦 · 垂直弦 · 弧相等</span>
+
+<p class="kp"><strong>垂径定理</strong>：<span class="red">垂直于弦的直径平分这条弦，并且平分弦所对的两条弧。</span></p>
+
+<p class="kp"><strong>符号语言</strong>：在⊙O中，CD是直径，CD⊥AB于点M → AM = BM，弧AC = 弧BC，弧AD = 弧BD。</p>
+
+<p class="kp"><strong>推论</strong>：平分弦（不是直径）的直径垂直于弦，并且平分弦所对的两条弧。<br>
+<span class="step">注意</span>"不是直径"——如果弦是直径，那么任意一条直径都平分另一条直径（都经过圆心），这不一定是垂直的。</p>
+
+<p class="kp"><strong>垂径定理的应用</strong>：<br>
+• 已知半径和弦心距（圆心到弦的距离），求弦长。<br>
+• 已知半径和弦长，求弦心距。<br>
+• 已知弦长和弦心距，求半径。<br>
+构造<span class="blue">直角三角形</span>（半径、半弦、弦心距）是解决圆中计算问题的核心技巧。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_perp.svg" alt="垂径定理"><div class="cp">垂径定理：直径 CD⊥弦 AB → AM=BM，弧 AC=弧 BC</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题3：在⊙O中，弦AB的长为8cm，圆心O到AB的距离（弦心距）为3cm，求⊙O的半径。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+如图，过O作OM⊥AB于M（垂径定理），则M是弦AB的中点。<br>
+∴ AM = AB/2 = 8/2 = 4cm。<br>
+在Rt△OAM中，OM = 3cm（弦心距），AM = 4cm。<br>
+由勾股定理：OA² = OM² + AM² = 3² + 4² = 9 + 16 = 25。<br>
+∴ OA = √25 = <span class="red">5cm</span>。<br>
+<span class="step">思路</span>：垂径定理将圆中问题转化为直角三角形问题，利用勾股定理求解。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题4：在⊙O中，直径CD⊥弦AB于点M，若CD=26cm，AB=24cm，求OM的长。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+CD是直径且CD⊥AB → M是AB的中点（垂径定理）。<br>
+∴ AM = AB/2 = 24/2 = 12cm。<br>
+CD = 26cm → 半径 OA = 13cm。<br>
+在Rt△OAM中：OA² = OM² + AM²<br>
+13² = OM² + 12² → 169 = OM² + 144 → OM² = 25<br>
+∴ OM = <span class="red">5cm</span>。<br>
+<span class="step">检查</span>：弦心距5cm &lt; 半径13cm，说明弦在圆内，合理。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习3：在⊙O中，半径为5cm，弦AB=6cm，求圆心O到弦AB的距离。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：4cm（构造Rt△，半弦=3cm，斜边=5cm，由勾股定理得弦心距=4cm）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习4：在⊙O中，半径OC⊥弦AB于D，AB=8cm，CD=2cm，求半径的长。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：5cm（设半径R，则AD=4cm，OD=R-2，由R²=4²+(R-2)²得R=5cm）</span>
+</div>
+</div>
+
+<!-- ═══ 专题三：圆周角与圆心角 ═══ -->
+<div class="top">
+<h2>专题三：圆周角与圆心角</h2>
+<span class="tag">圆周角定理 · 直径对直角 · 等弧对等角</span>
+
+<p class="kp"><strong>圆心角</strong>：顶点在圆心的角叫圆心角。<strong>圆周角</strong>：顶点在圆上，两边都与圆相交的角叫圆周角。</p>
+
+<p class="kp"><strong>圆周角定理</strong>：<span class="red">一条弧所对的圆周角等于它所对的圆心角的一半。</span><br>
+即 ∠ACB = ½∠AOB（同弧AB所对的圆周角与圆心角）。</p>
+
+<p class="kp"><strong>重要推论</strong>：
+<br>• <span class="blue">推论1</span>：<span class="red">直径所对的圆周角是直角（90°）</span>——这是中考极高频考点！
+<br>• 推论2：同弧或等弧所对的圆周角相等。
+<br>• 推论3：相等的圆周角所对的弧相等。</p>
+
+<p class="kp"><span class="step">记忆技巧</span>："圆心角在中心，圆周角在边上；圆周角是圆心角的一半。" 看到直径想直角，看到弧相等想圆周角相等。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_angles.svg" alt="圆周角与圆心角"><div class="cp">圆周角定理：∠ACB = ½∠AOB（同弧AB所对）</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题5：如图，AB是⊙O的直径，C是圆上一点（不与A、B重合），已知∠CAB = 35°，求∠CBA的度数。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+AB是直径（已知），C在圆上 → ∠ACB = 90°（直径所对的圆周角是直角）。<br>
+在Rt△ACB中，∠CAB + ∠CBA = 90°<br>
+35° + ∠CBA = 90° → ∠CBA = <span class="red">55°</span>。<br>
+<span class="step">关键点</span>：看到"直径"就想到它所对的圆周角是90°，这是圆中最常考的技巧。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题6：在⊙O中，弧AB = 弧CD，∠AOB = 50°，求∠COD的度数。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+弧AB = 弧CD（已知）→ 等弧所对的圆心角相等。<br>
+∴ ∠COD = ∠AOB = <span class="red">50°</span>。<br>
+<span class="step">拓展</span>：若∠AOB = 50°，则弧AB所对的圆周角 = 50°/2 = 25°。像这类"弧等→角等"的转换是圆中推理的核心。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题7：在⊙O中，A、B、C三点在圆上，∠AOB = 80°，AB弧所对的圆周角∠ACB的度数是多少？<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+∠AOB = 80° 是弧AB所对的圆心角。<br>
+∠ACB 是弧AB所对的圆周角（顶点C在优弧AB上）。<br>
+由圆周角定理：∠ACB = ½∠AOB = ½ × 80° = <span class="red">40°</span>。<br>
+<span class="step">注意</span>：若C在劣弧AB上，则∠ACB = 180° - 40° = 140°（此时∠ACB是优弧所对的圆周角），因为优弧和劣弧所对的圆周角互补。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习5：在⊙O中，弦AB所对的圆心角∠AOB = 100°，则所对的圆周角∠ACB = ______。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：50°（圆周角 = 圆心角的一半 = 100°/2 = 50°）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习6：AB是⊙O的直径，C是圆上一点，∠ABC = 40°，则∠BAC = ______。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：50°（直径对直角→∠ACB=90°，∠BAC=90°-40°=50°）</span>
+</div>
+</div>
+
+<!-- ═══ 专题四：切线的判定与性质 ═══ -->
+<div class="top">
+<h2>专题四：切线的判定与性质</h2>
+<span class="tag">切线 · 切点 · 切线长定理</span>
+
+<p class="kp"><strong>切线的定义</strong>：与圆<strong>只有一个公共点</strong>（切点）的直线叫做圆的切线。</p>
+
+<p class="kp"><strong>切线的判定</strong>：经过<strong>半径的外端</strong>且<strong>垂直于这条半径</strong>的直线是圆的切线。<br>
+用符号表示：OA是半径，l过点A且OA⊥l → l是⊙O的切线。</p>
+
+<p class="kp"><strong>切线的性质</strong>：<span class="red">圆的切线垂直于经过切点的半径。</span><br>
+若l是⊙O的切线，A为切点 → OA⊥l。<br>
+<span class="step">应用</span>：切线问题中，连接圆心与切点是构造直角三角形的基本辅助线。</p>
+
+<p class="kp"><strong>切线长定理</strong>：<span class="blue">从圆外一点引圆的两条切线，它们的切线长相等。</span><br>
+即 PA = PB（P是圆外一点，PA、PB分别切⊙O于A、B）。<br>
+同时，PO平分∠APB且平分∠AOB。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_tangent.svg" alt="圆的切线"><div class="cp">切线的性质（左）：切线⊥半径于切点 &nbsp;|&nbsp; 切线长定理（右）：PA = PB</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题8：在Rt△ABC中，∠C = 90°，AC = 3cm，BC = 4cm，以C为圆心的圆与AB相切，求这个圆的半径。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+设⊙C与AB相切于点D，则CD⊥AB（切线的性质），CD即为半径r。<br>
+在Rt△ABC中，AB = √(AC²+BC²) = √(3²+4²) = 5cm。<br>
+利用面积法：S△ABC = ½·AC·BC = ½·AB·CD<br>
+⇒ ½ × 3 × 4 = ½ × 5 × r<br>
+⇒ 6 = 2.5r ⇒ r = <span class="red">2.4cm</span>。<br>
+<span class="step">技巧</span>：当圆与直角三角形斜边相切时，用"面积法"求半径非常方便。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题9：从圆外一点P引⊙O的两条切线PA、PB，A、B为切点，∠APB = 60°，PO = 6cm，求PA的长。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+PA、PB均切⊙O于A、B → PA = PB（切线长定理）。<br>
+连接OA，则OA⊥PA（切线的性质），∠APO = ∠APB/2 = 30°（切线长定理：PO平分∠APB）。<br>
+在Rt△PAO中：cos∠APO = PA/PO<br>
+cos30° = PA/6 → PA = 6·cos30° = 6 × √3/2 = <span class="red">3√3 cm</span>。<br>
+<span class="step">辅助线</span>：切线问题常连"圆心←→切点"（得垂直）和"圆心←→圆外点"（得角平分线）。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习7：⊙O的半径为4cm，圆心O到直线l的距离为3cm，则直线l与⊙O的位置关系是______。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：相交（d=3 &lt; r=4，直线与圆相交，有两个公共点）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习8：从⊙O外一点P引⊙O的切线，切点为A，PO=5cm，PA=4cm，求⊙O的半径。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：3cm（由OA⊥PA，OA=√(PO²-PA²)=√(25-16)=3cm）</span>
+</div>
+</div>
+
+<!-- ═══ 专题五：圆与圆的位置关系 ═══ -->
+<div class="top">
+<h2>专题五：圆与圆的位置关系</h2>
+<span class="tag">外离 · 外切 · 相交 · 内切 · 内含</span>
+
+<p class="kp">两圆的位置关系由<strong>圆心距 d</strong> 与两圆半径 R、r（R > r）的数量关系决定：</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>位置关系</th><th>图形</th><th>数量关系</th><th>公共点个数</th></tr>
+<tr><td>外离</td><td>两圆分离，不相交</td><td>d > R + r</td><td>0</td></tr>
+<tr><td>外切</td><td>两圆外切于一点</td><td>d = R + r</td><td>1</td></tr>
+<tr><td>相交</td><td>两圆相交</td><td>|R - r| < d < R + r</td><td>2</td></tr>
+<tr><td>内切</td><td>两圆内切于一点</td><td>d = |R - r|</td><td>1</td></tr>
+<tr><td>内含</td><td>一圆在另一圆内部</td><td>d < |R - r|</td><td>0</td></tr>
+</table>
+</div>
+
+<p class="kp"><span class="step">记忆方法</span>：从"外离→外切→相交→内切→内含"，d 从大到小递减。临界情况看"切"（d = R+r 或 d = |R-r|）。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_positions.svg" alt="圆与圆的五种位置关系"><div class="cp">两圆五种位置关系：外离 · 外切 · 相交 · 内切 · 内含（从大到小）</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题10：已知两圆半径分别为3cm和5cm，圆心距为2cm，求两圆的位置关系。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+R = 5cm，r = 3cm，d = 2cm。<br>
+R - r = 5 - 3 = 2cm。<br>
+∵ d = R - r → 两圆<span class="red">内切</span>。<br>
+<span class="step">判断步骤</span>：① 确定R>r；② 计算R+r和R-r；③ 比较d与这两个值。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题11：当圆心距d = 6时两圆外切，那么当d = 2时两圆内切，求这两个圆的半径。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+设两圆半径为R、r（R > r）。<br>
+外切时：d = R + r = 6 ……①<br>
+内切时：d = R - r = 2 ……②<br>
+① + ②：2R = 8 → R = <span class="red">4</span><br>
+代入①：4 + r = 6 → r = <span class="red">2</span><br>
+∴ 两圆半径分别为 <span class="red">4cm 和 2cm</span>。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习9：两圆半径分别为2cm和7cm，圆心距d=6cm，两圆的位置关系是______。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：相交（R+r=9，R-r=5，5&lt;6&lt;9 → 相交）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习10：两圆半径分别为4cm和6cm，圆心距d=10cm，两圆的位置关系是______。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：外切（R+r=10=d → 外切）</span>
+</div>
+</div>
+
+<!-- ═══ 专题六：弧长与扇形面积 ═══ -->
+<div class="top">
+<h2>专题六：弧长与扇形面积</h2>
+<span class="tag">弧长公式 · 扇形面积公式 · 圆锥侧面积</span>
+
+<p class="kp"><strong>弧长公式</strong>：在半径为 r 的圆中，n° 的圆心角所对的弧长 l 为：<br>
+<span class="red">l = nπr / 180</span></p>
+
+<p class="kp"><strong>扇形面积公式</strong>：由组成圆心角的两条半径和圆心角所对的弧围成的图形叫扇形。<br>
+<span class="red">S = nπr² / 360</span> &nbsp;&nbsp;（n 为扇形圆心角度数）<br>
+<span class="blue">S = ½lr</span> &nbsp;&nbsp;（类比三角形面积公式，用弧长 l 替代底）</p>
+
+<p class="kp"><strong>圆锥的侧面积</strong>：<br>
+圆锥的侧面展开图是一个<span class="blue">扇形</span>。设圆锥底面半径为 r，母线长为 l：<br>
+• 侧面展开图扇形的弧长 = 底面周长 = 2πr<br>
+• 侧面积：<span class="red">S侧 = πrl</span><br>
+• 全面积：S全 = S侧 + S底 = πrl + πr²</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_sector.svg" alt="弧长与扇形面积"><div class="cp">弧长 l = nπr/180 &nbsp;|&nbsp; 扇形面积 S = nπr²/360 = ½lr</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题12：在半径为6cm的圆中，求60°圆心角所对的弧长和扇形面积。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+n = 60°，r = 6cm。<br>
+弧长 l = nπr/180 = 60 × π × 6 / 180 = <span class="red">2π cm</span><br>
+扇形面积 S = nπr²/360 = 60 × π × 36 / 360 = <span class="red">6π cm²</span><br>
+（或用 S = ½lr = ½ × 2π × 6 = 6π cm² 验证）<br>
+<span class="step">计算技巧</span>：先约分再计算，60/180=1/3，60/360=1/6，减少计算量。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题13：一圆锥的底面半径为3cm，母线长为5cm，求它的侧面积和全面积。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+底面半径 r = 3cm，母线 l = 5cm。<br>
+侧面积 S侧 = πrl = π × 3 × 5 = <span class="red">15π cm²</span><br>
+底面积 S底 = πr² = π × 9 = 9π cm²<br>
+全面积 S全 = S侧 + S底 = 15π + 9π = <span class="red">24π cm²</span><br>
+<span class="step">注意</span>：圆锥的"母线"不是"高"——母线是侧面展开图扇形的半径，不是圆锥的高。高 h、母线 l、底面半径 r 满足 h² + r² = l²。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题14：扇形的圆心角为120°，弧长为4πcm，求扇形的半径和面积。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+由 l = nπr/180 得：4π = 120 × π × r / 180<br>
+4 = 120r/180 = 2r/3 → r = 4 × 3/2 = <span class="red">6cm</span>。<br>
+扇形面积 S = ½lr = ½ × 4π × 6 = <span class="red">12π cm²</span>。<br>
+（验证：S = nπr²/360 = 120 × π × 36/360 = 12π cm² ✓）<br>
+<span class="step">选择公式</span>：已知弧长求面积时用 S=½lr 更快捷；已知角度用 S=nπr²/360 更直接。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习11：半径为4cm，圆心角为90°的扇形弧长为 ______ cm。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：2π cm（l = 90×π×4/180 = 2π cm）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习12：圆锥的底面半径为2cm，母线长为4cm，侧面积为 ______ cm²。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：8π cm²（S侧 = πrl = π×2×4 = 8π cm²）</span>
+</div>
+</div>
+
+<!-- ═══ 专题七：圆内接四边形 ═══ -->
+<div class="top">
+<h2>专题七：圆内接四边形</h2>
+<span class="tag">对角互补 · 外角等于内对角</span>
+
+<p class="kp"><strong>圆内接四边形</strong>：四个顶点都在同一个圆上的四边形叫做圆内接四边形，这个圆叫做四边形的外接圆。</p>
+
+<p class="kp"><strong>圆内接四边形的性质</strong>：
+<br>• <span class="red">性质1（对角互补）</span>：圆内接四边形的对角互补，即 ∠A + ∠C = 180°，∠B + ∠D = 180°。
+<br>• <span class="red">性质2（外角定理）</span>：圆内接四边形的外角等于它的内对角。<br>
+即延长四边形的一边，外角等于不相邻的内角。</p>
+
+<p class="kp"><span class="step">应用场景</span>：当题目中出现"四点共圆"的条件，或"圆内接四边形"时，立即想到对角互补。这是中考几何证明和计算的常见突破口。</p>
+
+<div class="chart-wrap">
+<img src="../资料/charts/jun_circle_cyclic_quad.svg" alt="圆内接四边形"><div class="cp">圆内接四边形对角互补：∠A+∠C=180°，∠B+∠D=180°</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题15：四边形ABCD内接于⊙O，∠A = 80°，∠B = 110°，求∠C和∠D的度数。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+四边形ABCD内接于⊙O → 对角互补。<br>
+∠A + ∠C = 180° → 80° + ∠C = 180° → ∠C = <span class="red">100°</span><br>
+∠B + ∠D = 180° → 110° + ∠D = 180° → ∠D = <span class="red">70°</span><br>
+<span class="step">验证</span>：四边形内角和 = 80°+110°+100°+70° = 360° ✓</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题16：四边形ABCD内接于⊙O，AB是⊙O的直径，∠C = 120°，求∠D的度数。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+AB是直径 → ∠ACB = 90°（直径所对圆周角为直角）—— 不对，仔细理解题意：A、B、C、D 四点共圆，AB是直径，∠C=120° 是指 ∠BCD=120°。<br>
+四边形ABCD内接于⊙O → 对角互补。<br>
+∠A + ∠C = 180° → ∠A + 120° = 180° → ∠A = 60°<br>
+又AB是直径 → ∠ADB = 90°（直径所对圆周角为直角）。<br>
+<span class="step">注意区分</span>：本题有两个关键点：①圆内接四边形对角互补；②直径所对圆周角=90°。要灵活运用多条圆的性质。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习13：四边形ABCD内接于⊙O，∠A:∠B:∠C = 2:3:4，求∠D的度数。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：90°（设∠A=2x,∠B=3x,∠C=4x，由∠A+∠C=180°得6x=180°,x=30°，∠B=90°，∠D=180°-90°=90°）</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习14：四边形ABCD内接于⊙O，∠A=75°，则∠C=______。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：105°（对角互补，∠C=180°-75°=105°）</span>
+</div>
+</div>
+
+<!-- ═══ 专题八：综合应用 ═══ -->
+<div class="top">
+<h2>专题八：综合应用</h2>
+<span class="tag">中考题型 · 辅助线技巧 · 综合</span>
+
+<p class="kp"><strong>圆的中考常见题型</strong>：
+<br>• 与三角形结合：圆与直角三角形、等腰三角形的综合（垂径定理+勾股定理、直径对直角、切线+直角）。
+<br>• 与四边形结合：圆内接四边形的角度计算。
+<br>• 与函数结合：坐标系中的圆，圆心坐标与距离公式。
+<br>• 与弧长扇形结合：弧长、扇形面积、圆锥侧面积计算。</p>
+
+<p class="kp"><strong>圆中辅助线技巧</strong>：
+<br>• <span class="blue">见弦作垂径</span>：弦的问题，作圆心到弦的垂线（垂径定理+勾股定理）。
+<br>• <span class="blue">见直径想直角</span>：直径所对的圆周角是90°，构造直角三角形。
+<br>• <span class="blue">见切线连半径</span>：切线垂直于经过切点的半径，得到直角。
+<br>• <span class="blue">见共圆找对角</span>：四点共圆→对角互补。
+<br>• <span class="blue">见弧等找角等</span>：等弧所对的圆心角、圆周角分别相等。</p>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题17（中考）：如图，△ABC内接于⊙O，AB=AC，∠BAC=36°，过点B作⊙O的切线BD，交AC的延长线于点D。<br>
+(1) 求证：BD = BC。<br>
+(2) 求∠DBC的度数。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+(1) 证明 BD = BC：<br>
+连接OB、OC。<br>
+AB = AC → ∠ABC = ∠ACB = (180°-36°)/2 = 72°。<br>
+∠A = 36° → ∠BOC = 2∠A = 72°（圆心角=2倍圆周角）。<br>
+BD是切线，OB是半径 → OB⊥BD，∠OBD = 90°。<br>
+在△BOC中，OB=OC，设∠OBC = ∠OCB = (180°-72°)/2 = 54°。<br>
+∠DBC = 90° - ∠OBC = 90° - 54° = 36°。<br>
+在△BCD中，∠BCD = 180° - ∠ACB = 180° - 72° = 108°（邻补角）。<br>
+∠BDC = 180° - 108° - 36° = 36°。<br>
+∴ ∠DBC = ∠BDC = 36° → BD = BC（等角对等边）。<br>
+(2) 由(1)知 ∠DBC = <span class="red">36°</span>。<br>
+<span class="step">小结</span>：这道题综合应用了：①圆周角定理（圆心角=2倍圆周角）；②切线性质（切线⊥半径）；③等腰三角形性质（等边对等角、等角对等边）。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题18（综合）：⊙O的半径为5，弦AB∥CD，AB=6，CD=8，求AB与CD之间的距离。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+AB∥CD，两弦可能在圆心同侧或异侧，需分类讨论。<br>
+过O作OE⊥AB于E，OF⊥CD于F。<br>
+由垂径定理：AE = AB/2 = 3，CF = CD/2 = 4。<br>
+在Rt△OAE中：OE = √(OA² - AE²) = √(25 - 9) = 4。<br>
+在Rt△OCF中：OF = √(OC² - CF²) = √(25 - 16) = 3。<br>
+<b>情况1</b>：AB、CD在圆心同侧，距离 = |OE - OF| = |4 - 3| = <span class="red">1</span>。<br>
+<b>情况2</b>：AB、CD在圆心异侧，距离 = OE + OF = 4 + 3 = <span class="red">7</span>。<br>
+<span class="step">注意</span>：<span class="red">分类讨论</span>是中考数学的重要思想！题目没有明确两弦的位置关系时，要考虑两种可能。</div>
+</div>
+
+<div class="ex">
+<div class="q" onclick="toggleSol(this)">例题19（中考压轴）：已知⊙O是△ABC的外接圆，AB是直径，D是弧AC的中点，连接AD、BD、CD，BD交AC于E。<br>
+(1) 求证：∠DAC = ∠DBA。<br>
+(2) 若AB=10，BC=6，求DE的长。<span class="sol-toggle">点击显示解析</span></div>
+<div class="a"><strong>解析</strong>：<br>
+(1) 证明 ∠DAC = ∠DBA：<br>
+D是弧AC的中点 → 弧AD = 弧CD → ∠DBA = ∠DAC（等弧所对的圆周角相等）。<br>
+(2) 由AB是直径 → ∠ACB = 90°。<br>
+在Rt△ACB中：AC = √(AB² - BC²) = √(100 - 36) = 8。<br>
+D是弧AC中点 → AD = CD，且∠DBA = ∠DAC。<br>
+由∠DBA = ∠DAC，∠ADB = ∠ADE（公共角）→ △ADE ∽ △BDA。<br>
+在Rt△ADB中，AD² = AB² - BD²？<br>
+更直接的方法：利用弧中点性质，连接OD交AC于F，则OD⊥AC（垂径定理推论）。<br>
+在Rt△ABC中，OF是△ABC的中位线？<br>
+<span class="step">本题辅助线较多</span>，核心思路是利用"弧中点+直径"构造垂直关系和角相等关系，结合相似三角形求解。</div>
+</div>
+
+<div class="hw">
+<span class="hw-q">练习15：⊙O的直径AB=10，弦AC=6，∠ACB的平分线交⊙O于D，求BC和AD的长。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：由AB是直径得∠ACB=90°，BC=√(10²-6²)=8。CD平分∠ACB→弧AD=弧BD→AD=BD=√(10²/2)=5√2。</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习16：在⊙O中，弦AB=8，弦CD=6，且AB∥CD，⊙O的半径为5，求AB与CD之间的距离。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：同侧时距离=|√(25-16)-√(25-9)|=|3-4|=1；异侧时距离=3+4=7。</span>
+</div>
+<div class="hw">
+<span class="hw-q">练习17（思考）：两个等圆⊙O1和⊙O2相交于A、B两点，O1O2=6cm，两圆半径均为5cm，求公共弦AB的长。</span><button class="show-hw" onclick="toggleHw(this)">查看答案</button>
+<span class="hw-a">答案：O1O2垂直平分AB于M。Rt△O1MA中，O1M=3，O1A=5→AM=4，AB=8cm。</span>
+</div>
+</div>
+
+</div>
+
+<div class="head" style="padding:0 20px 20px">
+<div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
+<p>思贤学习站 · 初中数学圆专题 · 陪你一起成长</p>
+<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#e67e22;cursor:pointer">获取联系方式</span></p>
+</div>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>
+window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});
+function toggleSol(el){var a=el.parentNode.querySelector('.a');if(a){a.classList.toggle('show');el.querySelector('.sol-toggle').textContent=a.classList.contains('show')?'点击收起解析':'点击显示解析'}}
+function toggleHw(el){var a=el.parentNode.querySelector('.hw-a');if(a){a.classList.toggle('show');el.textContent=a.classList.contains('show')?'收起':'查看答案'}}
+</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '思贤学习站——初中数学圆专题，8大板块系统梳理，圆的基本性质+垂径定理+圆周角+切线+位置关系+弧长扇形+圆内接四边形+综合应用，含19道精选例题。 ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  }
+
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('active');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '复制分享文案';
+    copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) {
+      hasCopied = true;
+      sharedBtn.disabled = false;
+      copyBtn.textContent = '已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '点击下方按钮查看联系方式';
+    }
+  };
+
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '已复制';
+      copyBtn.classList.add('copied');
+      copyHint.textContent = '检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() {
+        hasCopied = true;
+        sharedBtn.disabled = false;
+        copyHint.textContent = '点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b>155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+      overlay.classList.remove('active');
+      if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    }
+  });
+})();
+</script>
+</body>
+</html>
