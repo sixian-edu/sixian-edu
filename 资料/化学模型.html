@@ -467,17 +467,14 @@ tr:nth-child(even){background:#f9f9f9}
 <div style="padding:0 20px 20px">
 <div class="footer" style="text-align:center;padding:18px 0;font-size:12px;color:#999;border-top:1px solid #eee">
 <p>思贤学习站 · 初中化学常考模型 · 陪你一起成长</p>
-<p style="margin-top:4px"><span class="contact-trigger" onclick="openShareWall()" style="color:#8e44ad;cursor:pointer">获取联系方式</span></p>
+<p style="margin-top:4px"><b>155-6412-8008</b></p>
 </div>
 </div>
 
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 
-<div class="share-overlay" id="shareOverlay">
-  <div class="share-modal">
-    <div class="share-icon">🔗</div>
-    <h3>分享即可获取联系方式</h3>
+<h3>分享即可获取联系方式</h3>
     <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
     <div class="share-msg-box"><p id="shareText"></p></div>
     <button class="copy-btn" id="copyBtn">复制分享文案</button>
@@ -485,52 +482,6 @@ tr:nth-child(even){background:#f9f9f9}
     <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
   </div>
 </div>
-<script>
-(function() {
-  var url = window.location.origin + window.location.pathname;
-  var shareTxt = '思贤学习站——初中化学常考模型，6大板块系统梳理：物质分类+化学用语+金属与溶液+推断题+实验操作+计算题模型，含精选例题与练习。 ' + url;
-  var hasCopied = false;
-  var overlay = document.getElementById('shareOverlay');
-  var shareTextEl = document.getElementById('shareText');
-  var copyBtn = document.getElementById('copyBtn');
-  var copyHint = document.getElementById('copyHint');
-  var sharedBtn = document.getElementById('sharedBtn');
-  shareTextEl.textContent = shareTxt;
-  copyBtn.addEventListener('click', function() {
-    if (hasCopied) return;
-    navigator.clipboard.writeText(shareTxt).then(function() {
-      copyBtn.textContent = '✅ 已复制';
-      copyBtn.classList.add('copied');
-      hasCopied = true;
-      var ct = localStorage.getItem('sx_copy_time');
-      if (!ct) { localStorage.setItem('sx_copy_time', Date.now()); }
-      function checkShare() {
-        var t0 = parseInt(localStorage.getItem('sx_copy_time') || '0');
-        var ok = Date.now() - t0 >= 10000;
-        sharedBtn.disabled = !ok;
-        if (!ok) setTimeout(checkShare, 500);
-        else sharedBtn.textContent = '我已分享，查看联系方式 →';
-      }
-      setTimeout(checkShare, 10000);
-    });
-  });
-  sharedBtn.addEventListener('click', function() {
-    if (sharedBtn.disabled) return;
-    localStorage.setItem('sx_shared', '1');
-    overlay.classList.remove('active');
-    document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
-  });
-  window.openShareWall = function() {
-    if (localStorage.getItem('sx_shared')) {
-      document.querySelectorAll('.contact-trigger').forEach(function(el) { el.textContent = '155-6412-8008'; });
-      return;
-    }
-    overlay.classList.add('active');
-  };
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
-})();
-</script>
-
 <script>
 function toggleSol(btn) {
   var el = btn.nextElementSibling;

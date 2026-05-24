@@ -485,14 +485,11 @@ D点：光饱和点，光合速率最大。<br>
 
 </div>
 
-<div class="footer"><p>思贤学习站 · 陪你一起成长 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p></div>
+<div class="footer"><p>思贤学习站 · 陪你一起成长 · <b>155-6412-8008</b></p></div>
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 <script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
 <script src="../js/share.js"></script>
-<div class="share-overlay" id="shareOverlay">
-  <div class="share-modal">
-    <div class="share-icon">🔗</div>
-    <h3>分享即可获取联系方式</h3>
+<h3>分享即可获取联系方式</h3>
     <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
     <div class="share-msg-box"><p id="shareText"></p></div>
     <button class="copy-btn" id="copyBtn">复制分享文案</button>
@@ -500,45 +497,5 @@ D点：光饱和点，光合速率最大。<br>
     <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
   </div>
 </div>
-<script>
-(function() {
-  var url = window.location.origin + window.location.pathname;
-  var shareTxt = '思贤学习站——高中生物·图像题专项，细胞分裂·代谢·遗传·调节·生态·实验图像。 ' + url;
-  var hasCopied = false;
-  var overlay = document.getElementById('shareOverlay');
-  var shareTextEl = document.getElementById('shareText');
-  var copyBtn = document.getElementById('copyBtn');
-  var copyHint = document.getElementById('copyHint');
-  var sharedBtn = document.getElementById('sharedBtn');
-  if (localStorage.getItem('sx_shared')) {
-    var ts = document.querySelectorAll('.contact-trigger');
-    for (var i = 0; i < ts.length; i++) { ts[i].outerHTML = '<b>155-6412-8008</b>'; }
-  }
-  window.openShareWall = function() {
-    if (localStorage.getItem('sx_shared')) return;
-    if (window._shareTimeout) clearTimeout(window._shareTimeout);
-    shareTextEl.textContent = shareTxt; overlay.classList.add('active'); hasCopied = false;
-    sharedBtn.disabled = true; copyBtn.textContent = '复制分享文案'; copyBtn.classList.remove('copied');
-    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
-    var t = localStorage.getItem('sx_copy_time');
-    if (t && Date.now() - Number(t) >= 10000) { hasCopied = true; sharedBtn.disabled = false; copyBtn.textContent = '已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '点击下方按钮查看联系方式'; }
-  };
-  copyBtn.addEventListener('click', function() {
-    if (window._shareTimeout) clearTimeout(window._shareTimeout);
-    var text = shareTextEl.textContent;
-    function done() { localStorage.setItem('sx_copy_time', Date.now()); copyBtn.textContent = '已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '检测到转发朋友圈，自动获取联系方式...'; window._shareTimeout = setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '点击下方按钮查看联系方式'; }, 10000); }
-    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
-    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
-  });
-  sharedBtn.addEventListener('click', function() {
-    if (!hasCopied) return;
-    localStorage.setItem('sx_shared', '1'); overlay.classList.remove('active');
-    if (window._shareTimeout) clearTimeout(window._shareTimeout);
-    var triggers = document.querySelectorAll('.contact-trigger');
-    for (var i = 0; i < triggers.length; i++) { triggers[i].outerHTML = '<b>155-6412-8008</b>'; }
-  });
-  overlay.addEventListener('click', function(e) { if (e.target === this) { overlay.classList.remove('active'); if (window._shareTimeout) clearTimeout(window._shareTimeout); } });
-})();
-</script>
 </body>
 </html>
