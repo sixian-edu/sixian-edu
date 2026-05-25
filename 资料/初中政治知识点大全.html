@@ -19,8 +19,14 @@ p{font-size:14px;color:#444;margin-bottom:6px;text-indent:2em}
 .point{display:inline-block;background:#fff3e0;color:#e67e22;padding:0 8px;border-radius:4px;font-weight:600;font-size:12px}
 ul{padding-left:28px;margin-bottom:8px}
 ul li{font-size:14px;color:#444;margin-bottom:4px;list-style:disc}
+ol{padding-left:28px;margin-bottom:8px}
+ol li{font-size:14px;color:#444;margin-bottom:4px}
 .box{background:#f8f0fc;border-radius:12px;padding:16px 20px;margin:10px 0;border:1px solid #e8d0f0}
 .box .label{font-size:12px;font-weight:700;color:#8e44ad;margin-bottom:4px}
+.sol-toggle{background:none;border:1px dashed #c49cde;color:#8e44ad;padding:4px 14px;border-radius:6px;cursor:pointer;font-size:13px;margin:6px 0;transition:background .2s}
+.sol-toggle:hover{background:#f0e4f8}
+.sol-content{display:none;margin-top:6px;padding-top:8px;border-top:1px dashed #e8d0f0}
+.sol-content.open{display:block}
 table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
 table th,table td{padding:8px 12px;border:1px solid #d8d0e0;text-align:left}
 table th{background:#e8daf0;font-weight:600;color:#8e44ad}
@@ -49,113 +55,217 @@ table tr:nth-child(even){background:#f6f0fa}
 
 <h4>一、中学时代</h4>
 <ul>
-  <li>中学生活新起点：新的角色和身份，新的机会和可能</li>
-  <li><span class="keyword">梦想</span>：对未来美好生活的愿望，<span class="point">有梦想就有希望</span></li>
-  <li><span class="point">中国梦</span>：实现中华民族伟大复兴，是全体中国人民的共同梦想</li>
-  <li>努力是梦想与现实之间的桥梁</li>
+  <li>中学生活新起点：新的角色和身份，新的机会和可能，新的目标和挑战</li>
+  <li><span class="keyword">梦想</span>：对未来美好生活的愿望，<span class="point">有梦想就有希望</span>；梦想能不断激发我们生命的热情和勇气</li>
+  <li><span class="point">中国梦</span>：实现中华民族伟大复兴，是全体中国人民的共同梦想；个人梦想与中国梦紧密相连</li>
+  <li><span class="keyword">努力</span>：珍惜青春时光，脚踏实地，努力是梦想与现实之间的桥梁；努力需要立志、坚持、方法</li>
+  <li>中学生活意味着新的机会和可能，也意味着新的目标和挑战，要珍惜当下把握机遇</li>
 </ul>
 
 <h4>二、学习新天地</h4>
 <ul>
-  <li><span class="keyword">学习</span>：不限于学校，终生都需要学习（终生学习观）</li>
-  <li>学习方式：自主、合作、探究</li>
-  <li>学会学习：<span class="point">发现并保持兴趣、掌握科学方法、善于运用不同方式</span></li>
+  <li><span class="keyword">学习</span>：不限于学校，终生都需要学习（终生学习观）；学习不仅包括知识的获取，还包括能力的培养和品格的塑造</li>
+  <li>学习方式：自主、合作、探究；初中学习更加注重理解而非死记硬背</li>
+  <li>学会学习：<span class="point">发现并保持兴趣、掌握科学方法、善于运用不同方式</span>；合理安排时间，提高学习效率</li>
+  <li>学习需要自觉主动的态度，生活中的点点滴滴都是学习</li>
 </ul>
 
 <h4>三、认识自己</h4>
 <ul>
-  <li><span class="keyword">认识自己的途径</span>：<span class="point">自我评价</span>（自我观察、反思）+ <span class="point">他人评价</span>（更客观全面）</li>
-  <li>认识自己有助于：增强自信、发展能力、更好地与他人交往</li>
-  <li><span class="keyword">做更好的自己</span>：接纳自己的不完美，发挥优势，改正缺点，激发潜能</li>
+  <li><span class="keyword">认识自己的途径</span>：<span class="point">自我评价</span>（自我观察、自我反思）+ <span class="point">他人评价</span>（更客观全面，理性对待他人评价）</li>
+  <li>认识自己有助于：增强自信、发展能力、更好地与他人交往，促进自我发展</li>
+  <li><span class="keyword">做更好的自己</span>：接纳自己的不完美，发挥优势，改正缺点，激发潜能；在为他人和社会服务中实现价值</li>
+  <li>接纳自己需要乐观的心态和勇气，扬长避短是完善自我的重要方法</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：如何适应中学生活？</div>
+<p>【材料】小华进入初中后感觉学习科目增多、难度加大，和小学同学分开后感到孤独，不知道如何交新朋友。请结合所学知识，为小华提几条建议。</p>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 调整心态：中学生活是新的起点，要以积极心态面对变化，主动适应新环境。</p>
+<p>② 学会学习：掌握科学学习方法，合理安排时间，主动与老师同学交流学习心得。</p>
+<p>③ 主动交往：敞开心扉，真诚待人，积极参加集体活动，在新集体中建立友谊。</p>
+<p>④ 认识自我：正确认识自己的优点和不足，树立自信，做更好的自己。</p>
+<p>⑤ 制定目标：树立新目标，制订合理的学习和生活计划，充实地度过中学生活。</p>
+</div>
+</div>
 
 <h3>第二单元 友谊的天空</h3>
 <ul>
-  <li><span class="keyword">友谊的特质</span>：<span class="point">平等、双向、心灵的相遇</span></li>
-  <li>友谊不是一成不变的，竞争不必然伤害友谊</li>
-  <li>交友原则：<span class="point">真诚、理解、信任、尊重</span>；友谊不能没有原则</li>
-  <li><span class="keyword">网上交友</span>：虚拟性、平等性、自主性；<span class="point">增强自我保护意识</span>，不轻易透露个人信息</li>
+  <li><span class="keyword">友谊的特质</span>：<span class="point">平等、双向、心灵的相遇</span>；友谊是一种亲密的关系，是理解、信任和支持的结合</li>
+  <li>友谊不是一成不变的，竞争不必然伤害友谊（关键看态度）；友谊需要呵护，需要用心关怀和尊重</li>
+  <li>交友原则：<span class="point">真诚、理解、信任、尊重</span>；友谊不能没有原则——不能以牺牲原则为代价维持所谓的友谊</li>
+  <li><span class="keyword">网上交友</span>：虚拟性、平等性、自主性；<span class="point">增强自我保护意识</span>，不轻易透露个人信息，不轻易与网友见面</li>
+  <li>虚拟交往不能替代现实中的朋友，要学会在现实中与同伴交往</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：如何看待网络交友？</div>
+<p>【材料】小华在社交软件上认识了一个网友，两人聊得很投机。网友约小华见面，小华很犹豫。请运用所学知识为小华提出建议并说明理由。</p>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 小华应当慎重对待，不建议轻易与网友见面。网络交友具有虚拟性，对方的真实身份难以确认。</p>
+<p>② 如果一定要见面，应选择公共场所，由家长或信任的朋友陪同，确保自身安全。</p>
+<p>③ 要增强自我保护意识，不轻易透露个人隐私信息（家庭住址、学校、联系方式等）。</p>
+<p>④ 虚拟世界的交往不能替代现实中的朋友，应将更多精力投入到现实的交往中。</p>
+<p>⑤ 要学会理性辨别网络信息，不轻信网友的邀请和承诺。</p>
+</div>
+</div>
 
 <h3>第三单元 师长情谊</h3>
 <ul>
-  <li><span class="keyword">师生关系</span>：<span class="point">教学相长、亦师亦友</span>，正确对待老师的批评和表扬</li>
-  <li><span class="keyword">孝亲敬长</span>：<span class="point">中华民族的传统美德</span>（也是法律义务）</li>
-  <li>化解亲子冲突：沟通、理解、接纳</li>
-  <li>孝亲敬长不仅是物质上赡养，更重要的是精神上的慰藉</li>
+  <li><span class="keyword">师生关系</span>：<span class="point">教学相长、亦师亦友</span>，正确对待老师的批评和表扬——批评是关爱和提醒，表扬是肯定和鼓励</li>
+  <li><span class="keyword">孝亲敬长</span>：<span class="point">中华民族的传统美德</span>（也是法律义务，<span class="point">宪法和民法典</span>都有规定）</li>
+  <li>化解亲子冲突：沟通、理解、接纳、换位思考；亲子冲突需要通过良好的互动沟通来解决</li>
+  <li>孝亲敬长不仅是物质上赡养，更重要的是精神上的慰藉（常回家看看、关心父母健康）</li>
+  <li>每位老师都有不同的风格，尊重老师的差异，主动与老师沟通</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：如何化解亲子冲突？</div>
+<p>【材料】小明因为玩手机被父母批评，和父母大吵一架后把自己关在房间里。如果你是小明的好朋友，你会怎么劝说他？</p>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 理解父母的良苦用心：父母的批评是出于对我们的关心和爱护，是为了我们的健康成长。</p>
+<p>② 主动沟通：冷静下来后主动与父母交流，说明自己的真实想法，同时认真听取父母的意见。</p>
+<p>③ 换位思考：站在父母的角度理解他们的担忧，调控好自己的情绪，避免冲动言行。</p>
+<p>④ 达成共识：与父母共同制定合理的手机使用规则，用行动证明自己能合理使用电子产品。</p>
+<p>⑤ 孝亲敬长是传统美德也是法律义务，我们要用恰当的方式表达对父母的感恩和尊重。</p>
+</div>
+</div>
 
 <h3>第四单元 生命的思考</h3>
 <ul>
-  <li><span class="keyword">生命的特点</span>：来之不易、不可逆、短暂的、独特的</li>
-  <li><span class="point">敬畏生命</span>：生命至上，不漠视自己和他人的生命</li>
-  <li><span class="point">守护生命</span>：爱护身体（健康、安全）和养护精神（精神文化需求）</li>
-  <li>挫折是人生的一部分，<span class="point">增强生命韧性</span>（ resilience）</li>
-  <li>伟大在于创造和贡献，平凡中也能闪耀伟大</li>
+  <li><span class="keyword">生命的特点</span>：来之不易、不可逆、短暂的、独特的；每个人的生命都不可替代</li>
+  <li><span class="point">敬畏生命</span>：生命至上，不漠视自己和他人的生命；生命休戚与共，珍爱他人生命如同珍爱自己</li>
+  <li><span class="point">守护生命</span>：爱护身体（关注生理健康、注意安全防范）和养护精神（满足精神文化需求、弘扬优秀传统文化）</li>
+  <li>挫折是人生的一部分，<span class="point">增强生命韧性</span>（resilience）：培养乐观心态、寻求帮助、发掘自身力量</li>
+  <li>伟大在于创造和贡献，平凡中也能闪耀伟大——在平凡岗位上做好本职工作就是对社会做贡献</li>
+  <li>生命的意义在于奉献，不在于长短。每个人都可以通过努力让自己的生命更有价值</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：如何面对生活中的挫折？</div>
+<p>【材料】小李期中考试成绩不理想，受到老师批评后情绪低落，觉得自己不是学习的料。请运用"生命的思考"相关知识开导小李。</p>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 认识到挫折是人生的一部分，学习中的挫折也是成长的机会，不必过度消极。</p>
+<p>② 发掘自身力量：培养面对困难的勇气和坚强意志，分析考试失利的原因，找到改进方法。</p>
+<p>③ 寻求外部帮助：主动向老师、同学和家长求助，借助他人的经验和支持战胜困难。</p>
+<p>④ 增强生命韧性：培养乐观积极的心态，从失败中汲取教训，提升自己的抗挫折能力。</p>
+<p>⑤ 生命价值由自己创造：一次考试不代表全部，只要不懈努力，每个人都能实现自己的价值。</p>
+</div>
+</div>
 
 <!-- ============================================================ -->
 <h2>七年级下册 · 青春与法治</h2>
 
 <h3>第一单元 青春时光</h3>
 <ul>
-  <li><span class="keyword">青春期变化</span>：身体变化（外形、机能、性发育）+ 心理变化（独立意识、矛盾心理）</li>
-  <li><span class="point">独立思考</span>：不人云亦云，有自己见解，同时接纳合理意见</li>
-  <li><span class="keyword">批判性思维</span>：对事情有自己的看法，敢于表达不同观点</li>
-  <li><span class="keyword">创造潜力</span>：打破常规、注重实践、关注社会</li>
-  <li>男女生交往：<span class="point">内心坦荡、言谈得当、举止得体</span></li>
-  <li><span class="keyword">自强</span>：不断克服弱点、战胜自己、超越自己（靠坚强意志+进取精神）</li>
+  <li><span class="keyword">青春期变化</span>：身体变化（外形、机能、性发育）+ 心理变化（独立意识增强、出现矛盾心理）</li>
+  <li><span class="point">独立思考</span>：不人云亦云，有自己见解，同时接纳合理意见；独立思考并不等同于一味追求独特</li>
+  <li><span class="keyword">批判性思维</span>：对事情有自己的看法，敢于表达不同观点，敢于质疑但不攻击他人</li>
+  <li><span class="keyword">创造潜力</span>：打破常规、注重实践、关注社会；青春的创造多姿多彩，要勇于尝试和探索</li>
+  <li>男女生交往：<span class="point">内心坦荡、言谈得当、举止得体</span>；男女生正常交往有助于相互取长补短</li>
+  <li><span class="keyword">自强</span>：不断克服弱点、战胜自己、超越自己（靠坚强意志+进取精神）；自强让青春奋进的步伐永不停歇</li>
 </ul>
 
 <h3>第二单元 做情绪情感的主人</h3>
 <ul>
-  <li><span class="keyword">情绪</span>：喜、怒、哀、惧四种基本情绪；受多方面因素影响</li>
+  <li><span class="keyword">情绪</span>：喜、怒、哀、惧四种基本情绪；受多方面因素影响（生理、心理、环境等）</li>
   <li><span class="keyword">调节情绪的方法</span>：<span class="point">改变认知评价、转移注意、合理宣泄、放松训练</span></li>
-  <li><span class="keyword">情感</span>：与情绪相关但更稳定、深刻（如爱国情感、正义感、责任感）</li>
-  <li>传递情感正能量：用自己的热情和行动影响环境</li>
+  <li><span class="keyword">情感</span>：与情绪相关但更稳定、深刻（如爱国情感、正义感、责任感）；情感影响我们的判断和选择</li>
+  <li>传递情感正能量：用自己的热情和行动影响环境，在情感体验中不断成长</li>
 </ul>
+
+<table>
+  <tr><th>情绪调节方法</th><th>具体做法</th><th>注意事项</th></tr>
+  <tr><td>改变认知评价</td><td>换个角度看问题，变消极为积极</td><td>需要理性分析，避免盲目乐观</td></tr>
+  <tr><td>转移注意</td><td>做感兴趣的事、运动、听音乐</td><td>不是逃避问题，适当后需面对</td></tr>
+  <tr><td>合理宣泄</td><td>倾诉、写日记、适当运动</td><td>不伤害他人，不破坏公物</td></tr>
+  <tr><td>放松训练</td><td>深呼吸、冥想、渐进式肌肉放松</td><td>适合紧张焦虑时使用</td></tr>
+</table>
 
 <h3>第三单元 在集体中成长</h3>
 <ul>
-  <li><span class="keyword">集体的力量</span>：集体可以完成个人无法完成的事，<span class="point">集体荣誉感</span></li>
-  <li>集体利益与个人利益：<span class="point">集体利益至上，同时尊重和保护个人正当利益</span></li>
-  <li>共建美好集体：遵守规则、民主协商、勇于担当</li>
-  <li><span class="keyword">集体主义</span>：发扬集体主义精神，反对小团体主义</li>
+  <li><span class="keyword">集体的力量</span>：集体可以完成个人无法完成的事，<span class="point">集体荣誉感</span>是推动集体进步的精神动力</li>
+  <li>集体利益与个人利益：<span class="point">集体利益至上，同时尊重和保护个人正当利益</span>；当二者冲突时，坚持集体主义</li>
+  <li>共建美好集体：遵守规则、民主协商、勇于担当、各尽其能、发挥所长</li>
+  <li><span class="keyword">集体主义</span>：发扬集体主义精神，反对小团体主义（小团体主义是扩大了的个人主义）</li>
 </ul>
 
 <h3>第四单元 法治天地</h3>
 <ul>
   <li><span class="keyword">法律的特征</span>：<span class="point">由国家制定或认可、由国家强制力保证实施、对全体社会成员具有普遍约束力</span></li>
-  <li>法律与道德的区别：法律靠国家强制力，道德靠内心信念和社会舆论</li>
-  <li><span class="keyword">未成年人保护</span>：<span class="point">家庭保护、学校保护、社会保护、司法保护、网络保护、政府保护</span></li>
-  <li>未成年人需要特殊保护的原因：身心不成熟、辨别是非能力弱、易受侵害</li>
-  <li><span class="keyword">法治</span>：依法对国家和社会事务进行治理，<span class="point">法治是治国理政的基本方式</span></li>
+  <li>法律与道德的区别：法律靠国家强制力，道德靠内心信念和社会舆论；法律调整的行为范围比道德窄</li>
+  <li><span class="keyword">未成年人保护</span>：<span class="point">家庭保护、学校保护、社会保护、司法保护、网络保护、政府保护</span>（六大保护体系）</li>
+  <li>未成年人需要特殊保护的原因：身心不成熟、辨别是非能力弱、易受侵害、需要特殊关爱</li>
+  <li><span class="keyword">法治</span>：依法对国家和社会事务进行治理，<span class="point">法治是治国理政的基本方式</span>；法治助推中国梦的实现</li>
 </ul>
+
+<table>
+  <tr><th>行为规范</th><th>产生方式</th><th>实施手段</th><th>调整范围</th><th>约束力</th></tr>
+  <tr><td>法律</td><td>国家制定或认可</td><td>国家强制力</td><td>全体社会成员</td><td>最强，普遍约束</td></tr>
+  <tr><td>道德</td><td>自发形成/社会共识</td><td>内心信念、舆论、习惯</td><td>范围更广</td><td>靠自觉</td></tr>
+  <tr><td>纪律</td><td>特定组织制定</td><td>组织内部处罚</td><td>组织成员</td><td>组织内部约束</td></tr>
+</table>
+
+<div class="box">
+<div class="label">例题：法律为什么对未成年人实施特殊保护？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 未成年人身心发育尚不成熟，自我保护能力较弱，辨别是非和自我控制能力不强。</p>
+<p>② 未成年人容易受到不良因素的影响和不法侵害，需要法律给予特殊保护。</p>
+<p>③ 未成年人的生存和发展事关人类的未来，保护未成年人就是保护国家和民族的明天。</p>
+<p>④ 我国已形成家庭保护、学校保护、社会保护、司法保护、网络保护、政府保护六大保护体系。</p>
+<p>⑤ 特殊保护≠过度保护，未成年人在受到保护的同时也要增强自我保护的意识和能力。</p>
+</div>
+</div>
 
 <!-- ============================================================ -->
 <h2>八年级上册 · 社会与责任</h2>
 
 <h3>第一单元 走进社会生活</h3>
 <ul>
-  <li><span class="keyword">个人与社会</span>：<span class="point">个人是社会的有机组成部分</span>，人的成长离不开社会</li>
-  <li><span class="keyword">亲社会行为</span>：帮助他人、关心社会、服务社会（在实践和交往中养成）</li>
+  <li><span class="keyword">个人与社会</span>：<span class="point">个人是社会的有机组成部分</span>，人的成长离不开社会；社会关系分为血缘关系、地缘关系、业缘关系</li>
+  <li><span class="keyword">亲社会行为</span>：帮助他人、关心社会、服务社会（在实践和交往中养成）；亲社会行为有利于获得他人和社会的接纳与认可</li>
   <li><span class="keyword">网络的作用</span>：
     <ul>
-      <li>积极：丰富日常生活（信息、交流、便利）、推动社会进步（经济、民主、文化）</li>
-      <li>消极：信息泄露、沉迷网络、网络诈骗、谣言传播</li>
+      <li>积极：丰富日常生活（信息获取更便捷、交流更畅通、生活更便利）、推动社会进步（经济发展、民主政治、文化传播）</li>
+      <li>消极：个人隐私容易被侵犯、沉迷网络影响学习和生活、网络诈骗和谣言传播扰乱社会秩序</li>
     </ul>
   </li>
-  <li><span class="point">合理利用网络</span>：提高媒介素养、学会信息筛选、遵守网络规则、传播正能量</li>
+  <li><span class="point">合理利用网络</span>：提高媒介素养、学会信息筛选、遵守网络规则、传播正能量；不信谣不传谣</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：如何看待网络的利与弊？</div>
+<p>【材料】某校学生利用网络开展"助农直播"，帮助当地农民销售滞销农产品；但也有一些学生沉迷网络游戏导致成绩下降。请结合所学知识谈谈网络的利与弊。</p>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 网络丰富日常生活：网络让信息传递和交流变得方便快捷，助农直播正是利用网络为社会发展做贡献的体现。</p>
+<p>② 网络推动社会进步：为经济发展注入新活力（直播带货），促进民主政治发展，推动文化传播。</p>
+<p>③ 网络也存在弊端：沉迷网络游戏会影响学习和身心健康；网络上存在虚假信息和诈骗行为。</p>
+<p>④ 合理利用网络：提高媒介素养，学会筛选有用信息，合理安排上网时间，自觉抵制不良诱惑。</p>
+<p>⑤ 传播网络正能量：遵守网络道德和法律，利用网络平台为社会进步贡献力量。</p>
+</div>
+</div>
 
 <h3>第二单元 遵守社会规则</h3>
 <ul>
-  <li><span class="keyword">社会秩序</span>：<span class="point">社会正常运行需要秩序</span>（社会管理秩序、生产秩序、交通秩序等）</li>
-  <li><span class="keyword">社会规则</span>：道德、纪律、法律等，<span class="point">规则保障秩序</span></li>
-  <li><span class="keyword">自由与规则</span>：<span class="point">自由不是为所欲为，受道德、纪律、法律约束</span>；规则保障自由的实现</li>
+  <li><span class="keyword">社会秩序</span>：<span class="point">社会正常运行需要秩序</span>（社会管理秩序、生产秩序、交通秩序、公共场所秩序等）</li>
+  <li><span class="keyword">社会规则</span>：道德、纪律、法律等，<span class="point">规则保障秩序</span>；规则需要人人遵守才有意义</li>
+  <li><span class="keyword">自由与规则</span>：<span class="point">自由不是为所欲为，受道德、纪律、法律约束</span>；社会规则划定了自由的边界，规则保障自由的实现</li>
   <li><span class="keyword">尊重他人</span>：积极关注重视他人、平等对待、学会换位思考、学会欣赏</li>
-  <li><span class="keyword">文明有礼</span>：语言文明、仪表端庄、举止文明</li>
-  <li><span class="keyword">诚信</span>：<span class="point">社会主义核心价值观的重要准则</span>；诚信是企业的无形资产</li>
+  <li><span class="keyword">文明有礼</span>：语言文明、仪表端庄、举止文明；文明有礼促进社会和谐，体现国家形象</li>
+  <li><span class="keyword">诚信</span>：<span class="point">社会主义核心价值观的重要准则</span>；诚信是企业的无形资产；诚信是一个人安身立命之本</li>
 </ul>
 
 <h4>违法与犯罪</h4>
@@ -164,68 +274,139 @@ table tr:nth-child(even){background:#f6f0fa}
   <tr><td>一般违法行为</td><td>较轻</td><td>行政法/民法</td><td>行政处罚/民事赔偿</td></tr>
   <tr><td>犯罪</td><td><span class="point">严重</span></td><td>刑法</td><td>刑罚处罚</td></tr>
 </table>
+
+<table>
+  <tr><th>违法行为类型</th><th>违反的法律</th><th>举例</th><th>后果</th></tr>
+  <tr><td>民事违法行为</td><td>民法典</td><td>欠债不还、侵犯他人名誉权</td><td>承担民事责任</td></tr>
+  <tr><td>行政违法行为</td><td>行政法</td><td>闯红灯、扰乱公共秩序</td><td>行政处罚（警告、罚款、拘留）</td></tr>
+  <tr><td>刑事违法行为（犯罪）</td><td>刑法</td><td>抢劫、故意伤害致人重伤</td><td>刑罚（管制、拘役、有期徒刑等）</td></tr>
+</table>
+
 <ul>
-  <li><span class="keyword">犯罪的三个基本特征</span>：<span class="point">严重社会危害性、刑事违法性、刑罚当罚性</span></li>
-  <li>刑罚分为<span class="point">主刑</span>（管制、拘役、有期徒刑、无期徒刑、死刑）和<span class="point">附加刑</span>（罚金、剥夺政治权利、没收财产）</li>
-  <li>法律服务机构：法律服务站、律师事务所、公证处</li>
-  <li>诉讼是维护合法权益的<span class="point">最后屏障</span>（民事诉讼、行政诉讼、刑事诉讼）</li>
+  <li><span class="keyword">犯罪的三个基本特征</span>：<span class="point">严重社会危害性、刑事违法性、刑罚当罚性</span>（三者缺一不可）</li>
+  <li>刑罚分为<span class="point">主刑</span>（管制、拘役、有期徒刑、无期徒刑、死刑）和<span class="point">附加刑</span>（罚金、剥夺政治权利、没收财产、驱逐出境）</li>
+  <li>法律服务机构：法律服务站、律师事务所、公证处、法律援助中心</li>
+  <li>诉讼是维护合法权益的<span class="point">最后屏障</span>（民事诉讼、行政诉讼、刑事诉讼三种类型）</li>
+  <li>青少年要珍惜美好生活，认清犯罪危害，远离犯罪，加强自我防范</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：青少年如何预防违法犯罪？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 认清犯罪的危害：犯罪不仅对受害者造成伤害，也会毁掉自己的人生和家庭幸福。</p>
+<p>② 杜绝不良行为：不良行为可能发展为违法犯罪，要从小事做起，避免沾染不良习气。</p>
+<p>③ 增强法治观念：学习法律知识，明白什么能做、什么不能做，依法规范自己的行为。</p>
+<p>④ 加强自我防范：提高辨别是非的能力，谨慎交友，自觉抵制不良诱惑。</p>
+<p>⑤ 学会依法维权：当合法权益受到侵害时，运用法律武器保护自己，不采取非法手段。</p>
+</div>
+</div>
 
 <h3>第三单元 勇担社会责任</h3>
 <ul>
-  <li><span class="keyword">责任</span>：对自己负责、对他人负责、对社会负责</li>
-  <li>责任来源于：对他人的承诺、职业要求、道德规范、法律规定</li>
-  <li><span class="point">不言代价与回报</span>：承担责任有付出也有回报（精神回报更可贵）</li>
-  <li><span class="keyword">关爱他人</span>：心怀善意、尽己所能、讲究策略（不伤害对方自尊）</li>
-  <li><span class="keyword">服务社会</span>：参加公益活动、社区服务、志愿活动</li>
+  <li><span class="keyword">责任</span>：对自己负责、对他人负责、对社会负责；责任是一个人分内应该做的事情</li>
+  <li>责任来源于：对他人的承诺、职业要求、道德规范、法律规定、公民身份</li>
+  <li><span class="point">不言代价与回报</span>：承担责任有付出也有回报（精神回报更可贵）；勇于承担责任的人会被他人尊重和认可</li>
+  <li><span class="keyword">关爱他人</span>：心怀善意、尽己所能、讲究策略（不伤害对方自尊，必要时保护自己）</li>
+  <li><span class="keyword">服务社会</span>：参加公益活动、社区服务、志愿活动；服务社会体现人生价值，促进个人全面发展</li>
 </ul>
 
 <h3>第四单元 维护国家利益</h3>
 <ul>
-  <li><span class="keyword">国家利益</span>：<span class="point">国家利益至上</span>，国家利益是人民利益的集中体现</li>
-  <li>国家利益与个人利益：从根本上<span class="point">是一致的</span>，必要时应当以国家利益为重</li>
+  <li><span class="keyword">国家利益</span>：<span class="point">国家利益至上</span>，国家利益是人民利益的集中体现；国家利益涉及政治、经济、文化、军事等领域</li>
+  <li>国家利益与个人利益：从根本上<span class="point">是一致的</span>，必要时应当以国家利益为重，把国家利益放在第一位</li>
   <li><span class="keyword">总体国家安全观</span>：以人民安全为宗旨，政治安全为根本，经济安全为基础，军事、文化、社会安全为保障</li>
-  <li>国家安全包括：政治安全、国土安全、军事安全、经济安全、文化安全、网络安全等</li>
-  <li><span class="point">维护国家安全</span>是每个公民的法定义务</li>
-  <li>国家强盛需要：创新驱动发展、全面深化改革、全面依法治国</li>
+  <li>国家安全包括：政治安全、国土安全、军事安全、经济安全、文化安全、网络安全、生态安全、资源安全、核安全等</li>
+  <li><span class="point">维护国家安全</span>是每个公民的法定义务（发现危害国家安全的行为应及时报告）</li>
+  <li>国家强盛需要：创新驱动发展、全面深化改革、全面依法治国、全面从严治党</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：青少年如何维护国家安全？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 增强国家安全意识：树立总体国家安全观，自觉维护国家安全，不做损害国家安全的事。</p>
+<p>② 遵守法律法规：严格遵守有关国家安全的法律规定，不泄露国家秘密。</p>
+<p>③ 提高防范意识：在涉外交往中保持警惕，不向陌生人透露内部信息，发现可疑行为及时举报。</p>
+<p>④ 学习相关知识：了解国家安全相关知识，增强辨别能力，防范境外势力渗透。</p>
+<p>⑤ 积极宣传监督：向身边的人宣传国家安全知识，对损害国家安全的行为勇于举报（12339举报电话）。</p>
+</div>
+</div>
 
 <!-- ============================================================ -->
 <h2>八年级下册 · 宪法与制度</h2>
 
 <h3>第一单元 坚持宪法至上</h3>
 <ul>
-  <li><span class="keyword">宪法原则</span>：<span class="point">国家一切权力属于人民</span>；尊重和保障人权</li>
-  <li><span class="keyword">宪法地位</span>：<span class="point">国家的根本法</span>，具有最高的法律效力</li>
-  <li>宪法与其他法律的关系：<span class="point">宪法是母法</span>，其他法律是子法（不能和宪法相抵触）</li>
-  <li>宪法的修改程序比普通法律更严格</li>
-  <li><span class="keyword">国家机构组织原则</span>：<span class="point">民主集中制</span></li>
+  <li><span class="keyword">宪法原则</span>：<span class="point">国家一切权力属于人民</span>；尊重和保障人权是宪法的一项基本原则</li>
+  <li><span class="keyword">宪法地位</span>：<span class="point">国家的根本法</span>，具有最高的法律效力和法律地位</li>
+  <li>宪法与其他法律的关系：<span class="point">宪法是母法</span>，其他法律是子法（不能和宪法相抵触）；宪法是其他法律的立法基础和依据</li>
+  <li>宪法的修改程序比普通法律更严格（须由全国人大常委会或1/5以上全国人大代表提议，并由全国人大以全体代表2/3以上多数通过）</li>
+  <li><span class="keyword">国家机构组织原则</span>：<span class="point">民主集中制</span>（民主基础上的集中和集中指导下的民主相结合）</li>
+  <li>宪法与我们每个人息息相关，我们要增强宪法意识，学习宪法、认同宪法、践行宪法</li>
 
 <img src="charts/politics_framework.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="知识框架">
 </ul>
+
+<div class="box">
+<div class="label">例题：为什么说宪法是国家的根本法？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 从内容上看：宪法所规定的内容是国家生活中带有全局性、根本性的问题（如国家性质、根本制度、根本任务等），而其他法律规定的是国家生活中的一般性问题。</p>
+<p>② 从法律效力上看：宪法具有最高的法律效力，是其他法律的立法基础和依据，其他法律不得与宪法相抵触。</p>
+<p>③ 从制定和修改程序上看：宪法的制定和修改程序比普通法律更加严格，体现了宪法的权威性。</p>
+<p>④ 宪法是国家法治统一的基础，全面依法治国首先要依宪治国。</p>
+</div>
+</div>
 
 <h3>第二单元 理解权利义务</h3>
 
 <h4>公民的基本权利</h4>
 <table>
-  <tr><th>类别</th><th>具体权利</th></tr>
-  <tr><td>政治权利和自由</td><td>选举权和被选举权（基本政治权利）、言论出版集会结社游行示威自由</td></tr>
-  <tr><td>人身自由</td><td>人身自由不受侵犯、人格尊严不受侵犯、住宅不受侵犯、通信自由</td></tr>
-  <tr><td>社会经济权利</td><td>财产权、劳动权、物质帮助权</td></tr>
-  <tr><td>文化教育权利</td><td>受教育权、文化权利（科研、文艺创作）</td></tr>
+  <tr><th>类别</th><th>具体权利</th><th>关键点</th></tr>
+  <tr><td>政治权利和自由</td><td>选举权和被选举权（基本政治权利）、言论出版集会结社游行示威自由</td><td>行使权利要在法律允许范围内</td></tr>
+  <tr><td>人身自由</td><td>人身自由不受侵犯、人格尊严不受侵犯、住宅不受侵犯、通信自由</td><td>人身自由是公民最基本、最重要的权利</td></tr>
+  <tr><td>社会经济权利</td><td>财产权、劳动权、物质帮助权</td><td>国家保障弱势群体的物质帮助权</td></tr>
+  <tr><td>文化教育权利</td><td>受教育权、文化权利（科研、文艺创作等）</td><td>受教育权兼具权利和义务双重属性</td></tr>
 </table>
 
 <h4>公民的基本义务</h4>
 <ul>
-  <li>遵守宪法法律、维护国家统一和民族团结</li>
-  <li>依法服兵役、依法纳税</li>
-  <li>劳动的义务、受教育的义务（既是权利也是义务）</li>
+  <li><b>遵守宪法法律</b>：保守国家秘密，爱护公共财产，遵守劳动纪律，遵守公共秩序，尊重社会公德</li>
+  <li><b>维护国家统一和民族团结</b>：维护国家统一是每个公民义不容辞的责任</li>
+  <li><b>依法服兵役</b>：保卫祖国、抵抗侵略是公民的神圣职责（兵役制度：义务兵与志愿兵相结合）</li>
+  <li><b>依法纳税</b>：税收是国家财政收入的主要来源，偷税漏税是违法行为</li>
+  <li><b>劳动的义务、受教育的义务</b>（既是权利也是义务）</li>
   <li>夫妻双方实行计划生育、父母抚养教育未成年子女、成年子女赡养扶助父母</li>
 </ul>
 
 <div class="box">
 <div class="label">权利义务关系</div>
-<p>公民的权利和义务<span class="point">相互依存、相互促进</span>。权利和义务是统一的，不能只享受权利不履行义务，也不能只承担义务不享受权利。</p>
+<p>公民的权利和义务<span class="point">相互依存、相互促进</span>。权利和义务是统一的——公民既是合法权利的享有者，又是法定义务的承担者；不能只享受权利不履行义务，也不能只承担义务不享受权利。</p>
+</div>
+
+<table>
+  <tr><th>对比维度</th><th>权利</th><th>义务</th></tr>
+  <tr><td>性质</td><td>公民可以自主选择是否行使</td><td>公民必须依法履行，不可放弃</td></tr>
+  <tr><td>关系</td><td colspan="2">权利和义务相互依存、相互促进；二者合一（如劳动、受教育）</td></tr>
+  <tr><td>原则</td><td colspan="2">公民在行使自由和权利时不得损害他人合法权益；依法履行义务，法律禁止的坚决不做</td></tr>
+</table>
+
+<div class="box">
+<div class="label">例题：如何看待公民的权利和义务？</div>
+<p>【材料】小张认为"我的权利我做主"，在小区公共区域私自搭建储物间，邻居劝阻他也不听。请结合所学知识对小张的行为进行评析。</p>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 小张的行为是错误的。公民在行使自由和权利的时候，不得损害国家的、社会的、集体的利益和其他公民的合法权利。</p>
+<p>② 小区公共区域属于全体业主共有，私自搭建侵害了其他业主的合法权利。</p>
+<p>③ 公民的权利和义务是统一的，享受权利的同时也要履行遵守社会公德和相关法律的义务。</p>
+<p>④ 小张应当停止侵权行为，拆除违建，恢复公共区域原状，依法维护邻里和谐。</p>
+<p>⑤ 这个案例启示我们：行使权利有界限，不能为所欲为；要依法行使权利，自觉履行义务。</p>
+</div>
 </div>
 
 <h3>第三单元 人民当家作主</h3>
@@ -234,32 +415,41 @@ table tr:nth-child(even){background:#f6f0fa}
 <ul>
   <li>人民行使国家权力的机关：<span class="point">全国人民代表大会（最高权力机关）+ 地方各级人大</span></li>
   <li>全国人大的职权：<span class="point">最高立法权、最高决定权、最高任免权、最高监督权</span></li>
-  <li>人大代表由人民选举产生，对人民负责，受人民监督</li>
+  <li>人大代表由人民选举产生，对人民负责，受人民监督；代表依法行使提案权、审议权、表决权、质询权</li>
+  <li>人民代表大会制度是坚持党的领导、人民当家作主、依法治国有机统一的根本政治制度安排</li>
 </ul>
 
 <h4>基本政治制度</h4>
 <ul>
-  <li><span class="keyword">中国共产党领导的多党合作和政治协商制度</span>：人民政协（政治协商、民主监督、参政议政）</li>
-  <li><span class="keyword">民族区域自治制度</span>：在少数民族聚居的地方实行区域自治</li>
-  <li><span class="keyword">基层群众自治制度</span>：村委会、居委会</li>
+  <li><span class="keyword">中国共产党领导的多党合作和政治协商制度</span>：人民政协围绕团结和民主两大主题，履行政治协商、民主监督、参政议政职能</li>
+  <li><span class="keyword">民族区域自治制度</span>：在少数民族聚居的地方实行区域自治，设立自治机关行使自治权</li>
+  <li><span class="keyword">基层群众自治制度</span>：村民委员会、城市居民委员会是基层群众性自治组织（不是行政机关）</li>
 </ul>
 
 <h4>基本经济制度</h4>
 <ul>
   <li>公有制为主体、多种所有制经济共同发展</li>
-  <li><span class="keyword">公有制</span>：国有经济（主导力量）、集体经济、混合所有制中的国有和集体成分</li>
-  <li><span class="keyword">非公有制</span>：个体经济、私营经济、外资经济（是社会主义市场经济的重要组成部分）</li>
+  <li><span class="keyword">公有制</span>：国有经济（国民经济的主导力量，控制国民经济命脉）、集体经济、混合所有制中的国有和集体成分</li>
+  <li><span class="keyword">非公有制</span>：个体经济、私营经济、外资经济（是社会主义市场经济的重要组成部分，在促进就业、增加税收等方面发挥重要作用）</li>
   <li>按劳分配为主体、多种分配方式并存</li>
-  <li>社会主义市场经济体制</li>
+  <li>社会主义市场经济体制：市场在资源配置中起决定性作用，更好发挥政府作用</li>
 </ul>
+
+<table>
+  <tr><th>经济成分</th><th>地位</th><th>举例</th><th>国家政策</th></tr>
+  <tr><td>国有经济</td><td>主导力量</td><td>中国石油、中国铁路、中国银行</td><td>保障发展</td></tr>
+  <tr><td>集体经济</td><td>公有制重要组成部分</td><td>农村合作社、乡镇企业</td><td>鼓励发展</td></tr>
+  <tr><td>私营/个体经济</td><td>非公有制，重要组成部分</td><td>小商店、民营企业</td><td>鼓励支持引导</td></tr>
+  <tr><td>外资经济</td><td>非公有制，重要组成部分</td><td>外商独资企业、中外合资</td><td>依法保护</td></tr>
+</table>
 
 <h3>第四单元 崇尚法治精神</h3>
 <ul>
-  <li><span class="keyword">自由</span>：在法律范围内的自由，<span class="point">自由不是无限制的</span></li>
-  <li><span class="keyword">平等</span>：<span class="point">法律面前人人平等</span>（同等情况同等对待、不同情况差别对待）</li>
-  <li><span class="keyword">公平</span>：权利公平、规则公平、机会公平</li>
+  <li><span class="keyword">自由</span>：在法律范围内的自由，<span class="point">自由不是无限制的</span>；法治与自由相互联系不可分割</li>
+  <li><span class="keyword">平等</span>：<span class="point">法律面前人人平等</span>（同等情况同等对待、不同情况差别对待）；平等是人类的崇高理想</li>
+  <li><span class="keyword">公平</span>：权利公平、规则公平、机会公平；公平是个人生存和发展的重要保障</li>
   <li><span class="keyword">正义</span>：正义是社会制度的首要价值，<span class="point">维护正义是每一个公民的责任</span></li>
-  <li>司法维护正义：公正司法是维护社会公平正义的最后一道防线</li>
+  <li>司法维护正义：公正司法是维护社会公平正义的最后一道防线；制度保障公平</li>
 </ul>
 
 <!-- ============================================================ -->
@@ -269,39 +459,68 @@ table tr:nth-child(even){background:#f6f0fa}
 
 <h4>一、改革开放在路上</h4>
 <ul>
-  <li>改革开放是<span class="point">关键抉择</span>，是强国之路、富民之路</li>
-  <li>经济体制改革：市场在资源配置中起<span class="point">决定性作用</span></li>
-  <li><span class="keyword">共同富裕</span>：中国特色社会主义的根本原则</li>
-  <li><span class="point">全面建成小康社会</span>（2020年）→ 全面建设社会主义现代化国家</li>
+  <li>改革开放是<span class="point">关键抉择</span>，是强国之路、富民之路；改革是社会主义制度的自我完善和发展</li>
+  <li>经济体制改革：市场在资源配置中起<span class="point">决定性作用</span>，更好发挥政府作用</li>
+  <li><span class="keyword">共同富裕</span>：中国特色社会主义的根本原则；共同富裕不是同步富裕，而是一个长期的过程</li>
+  <li><span class="point">全面建成小康社会</span>（2020年）→ 全面建设社会主义现代化国家（2035年基本实现现代化→2050年建成现代化强国）</li>
+  <li>改革开放使人民生活显著改善，综合国力显著增强，国际地位显著提高</li>
 </ul>
 
 <h4>二、创新驱动发展</h4>
 <ul>
-  <li><span class="keyword">创新是引领发展的第一动力</span></li>
+  <li><span class="keyword">创新是引领发展的第一动力</span>；创新是民族进步的灵魂，是国家兴旺发达的不竭动力</li>
   <li><span class="point">科技创新能力</span>已经成为综合国力竞争的决定性因素</li>
-  <li>我国科技现状：整体水平提升快，但仍存在<span class="point">卡脖子</span>问题</li>
+  <li>我国科技现状：整体水平提升快，在一些领域走在世界前列（高铁、航天、5G），但仍存在<span class="point">卡脖子</span>问题（芯片、高端制造等）</li>
   <li><span class="keyword">科教兴国战略、人才强国战略、创新驱动发展战略</span></li>
-  <li>企业是技术创新的主体</li>
+  <li>企业是技术创新的主体；要弘扬创新精神，尊重和保护知识产权</li>
+  <li>创新不限于科技领域，还包括制度创新、文化创新等</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：青少年如何培养创新精神？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 树立创新意识：认识到创新对国家发展和个人成长的重要性，敢于突破常规思路。</p>
+<p>② 认真学习科学文化知识：知识是创新的基础，只有掌握扎实的知识才能进行有效创新。</p>
+<p>③ 善于观察勤于思考：关注生活中的问题，积极思考解决方案，注重小发明小创造。</p>
+<p>④ 积极参加科技活动：参加科技创新大赛、机器人编程等实践活动，在实践中提升创新能力。</p>
+<p>⑤ 尊重和保护知识产权：学习相关法律知识，不抄袭他人成果，保护自己的创新成果。</p>
+</div>
+</div>
 
 <h3>第二单元 民主与法治</h3>
 <ul>
   <li><span class="keyword">社会主义民主</span>：<span class="point">全过程人民民主</span>，是最广泛、最真实、最管用的民主</li>
-  <li>民主形式：<span class="point">选举民主</span>（人大代表）+ <span class="point">协商民主</span>（我国社会主义民主政治的特有形式和独特优势）</li>
+  <li>民主形式：<span class="point">选举民主</span>（人大代表选举）+ <span class="point">协商民主</span>（我国社会主义民主政治的特有形式和独特优势，贯穿民主全过程）</li>
   <li>公民参与民主生活的途径：<span class="point">民主选举、民主决策、民主管理、民主监督</span></li>
-  <li><span class="keyword">全面依法治国</span>：<span class="point">科学立法、严格执法、公正司法、全民守法</span></li>
-  <li>法治政府建设：依法行政，建设法治政府</li>
-  <li>法治与德治相结合：<span class="point">法治体现道德理念，道德滋养法治精神</span></li>
+  <li><span class="keyword">全面依法治国</span>：<span class="point">科学立法、严格执法、公正司法、全民守法</span>（十六字方针）</li>
+  <li>法治政府建设：依法行政，建设法治政府；政务公开保障公民知情权和监督权</li>
+  <li>法治与德治相结合：<span class="point">法治体现道德理念，道德滋养法治精神</span>；法律与道德相辅相成</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：公民可以通过哪些途径参与民主生活？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 民主选举：依法参与人大代表选举，行使选举权和被选举权，选出代表人民意愿的代表。</p>
+<p>② 民主决策：通过社情民意反映制度、专家咨询制度、社会听证制度等参与公共决策。</p>
+<p>③ 民主管理：参与基层群众自治管理，如通过村委会、居委会参与社区事务管理。</p>
+<p>④ 民主监督：通过人大代表、新闻媒体、信访举报等途径行使监督权，促进政府依法行政。</p>
+<p>⑤ 公民参与民主生活需要具备社会责任感和主人翁意识，理性客观地表达诉求和意见。</p>
+</div>
+</div>
 
 <h3>第三单元 文明与家园</h3>
 
 <h4>一、文明传承</h4>
 <ul>
-  <li><span class="keyword">中华文化</span>：源远流长、博大精深（具有强大的<span class="point">生命力</span>）</li>
-  <li><span class="keyword">文化自信</span>：对自身文化价值的充分肯定和积极践行</li>
-  <li><span class="keyword">中华传统美德</span>：爱国、敬业、诚信、友善</li>
+  <li><span class="keyword">中华文化</span>：源远流长、博大精深，具有强大的<span class="point">生命力</span>（是世界上唯一没有中断的文明）</li>
+  <li><span class="keyword">文化自信</span>：对自身文化价值的充分肯定和积极践行，是更基础、更广泛、更深厚的自信</li>
+  <li><span class="keyword">中华传统美德</span>：爱国、敬业、诚信、友善；传统美德内涵丰富、博大精深</li>
   <li><span class="keyword">民族精神</span>的<span class="point">核心是爱国主义</span>，包括创造精神、奋斗精神、团结精神、梦想精神</li>
+  <li>民族精神在不同时期有不同表现：长征精神、雷锋精神、抗洪精神、抗疫精神、脱贫攻坚精神等</li>
   <li><span class="keyword">社会主义核心价值观</span>：
     <ul>
       <li>国家层面：<span class="point">富强、民主、文明、和谐</span></li>
@@ -309,27 +528,41 @@ table tr:nth-child(even){background:#f6f0fa}
       <li>公民层面：<span class="point">爱国、敬业、诚信、友善</span></li>
     </ul>
   </li>
+  <li>培育和践行社会主义核心价值观要落实到日常生活中，从小事做起</li>
 </ul>
 
 <h4>二、绿色发展</h4>
 <ul>
-  <li>我国人口现状：<span class="point">人口基数大、老龄化加剧</span>（三孩政策应对）</li>
-  <li>资源形势：总量丰富但人均不足，浪费破坏严重</li>
-  <li>环境形势：总体改善但仍严峻</li>
-  <li><span class="keyword">生态文明建设</span>：<span class="point">绿水青山就是金山银山</span></li>
-  <li>人与自然和谐共生：可持续发展、绿色发展、低碳生活</li>
+  <li>我国人口现状：<span class="point">人口基数大、老龄化加剧</span>（三孩政策应对人口老龄化）</li>
+  <li>资源形势：总量丰富但人均不足，浪费破坏严重（资源国情：我国是资源大国也是资源小国）</li>
+  <li>环境形势：总体改善但仍严峻，局部地区环境污染和生态破坏问题突出</li>
+  <li><span class="keyword">生态文明建设</span>：<span class="point">绿水青山就是金山银山</span>；坚持节约资源和保护环境的基本国策</li>
+  <li>人与自然和谐共生：可持续发展、绿色发展、低碳生活；坚持节约优先、保护优先、自然恢复为主的方针</li>
   <li>五大发展理念：<span class="point">创新、协调、绿色、开放、共享</span></li>
 </ul>
 
+<div class="box">
+<div class="label">例题：建设生态文明，青少年应该怎么做？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 树立绿色发展理念：学习和宣传环保知识，增强节约资源和保护环境的意识，践行"绿水青山就是金山银山"的理念。</p>
+<p>② 践行低碳生活方式：节约用水用电，减少使用一次性塑料制品，优先选择公共交通或骑行出行。</p>
+<p>③ 垃圾分类与回收：学习垃圾分类知识，将可回收物、有害垃圾、厨余垃圾和其他垃圾正确分类投放。</p>
+<p>④ 参与环保活动：积极参加植树造林、清洁社区等环保公益活动，以实际行动保护环境。</p>
+<p>⑤ 勇于监督举报：发现破坏环境的行为及时劝阻或向有关部门举报，依法维护生态环境。</p>
+</div>
+</div>
+
 <h3>第四单元 和谐与梦想</h3>
 <ul>
-  <li>民族关系：<span class="point">平等、团结、互助、和谐</span></li>
+  <li>民族关系：<span class="point">平等、团结、互助、和谐</span>（新型社会主义民族关系）</li>
   <li>处理民族关系的原则：<span class="point">民族平等、民族团结、各民族共同繁荣</span></li>
-  <li><span class="keyword">一国两制</span>："一个国家，两种制度"（港澳回归证明其正确性，台湾问题也适用）</li>
-  <li>解决台湾问题：<span class="point">坚持一个中国原则，实现祖国完全统一</span></li>
+  <li><span class="keyword">一国两制</span>："一个国家，两种制度"（港澳回归证明其正确性，台湾问题也适用）；"一国"是"两制"的前提和基础</li>
+  <li>解决台湾问题：<span class="point">坚持一个中国原则，实现祖国完全统一</span>；反对任何形式的"台独"分裂活动</li>
   <li><span class="keyword">中国梦</span>：<span class="point">国家富强、民族振兴、人民幸福</span></li>
-  <li>两个一百年目标：建党100年全面建成小康社会→建国100年全面建成社会主义现代化强国</li>
-  <li>实现中国梦必须：<span class="point">走中国道路（中国特色社会主义道路）</span>、弘扬中国精神、凝聚中国力量</li>
+  <li>两个一百年目标：建党100年全面建成小康社会（已实现）→ 建国100年全面建成社会主义现代化强国</li>
+  <li>实现中国梦必须：<span class="point">走中国道路（中国特色社会主义道路）</span>、弘扬中国精神（以爱国主义为核心的民族精神+以改革创新为核心的时代精神）、凝聚中国力量（全国各族人民大团结的力量）</li>
 </ul>
 
 <!-- ============================================================ -->
@@ -337,29 +570,127 @@ table tr:nth-child(even){background:#f6f0fa}
 
 <h3>第一单元 我们共同的世界</h3>
 <ul>
-  <li><span class="keyword">经济全球化</span>：商品、资本、技术在全球范围内流动（机遇与挑战并存）</li>
-  <li>文化多样性：<span class="point">各民族文化共同构成世界文化大花园</span>（差异是客观存在的，要尊重包容）</li>
-  <li><span class="keyword">和平与发展</span>是当今时代的主题</li>
-  <li><span class="point">全球性问题</span>：气候变化、贫富差距、恐怖主义、网络安全等需要各国合作应对</li>
-  <li>中国主张构建<span class="keyword">人类命运共同体</span></li>
+  <li><span class="keyword">经济全球化</span>：商品、资本、技术在全球范围内流动（机遇与挑战并存）；经济全球化改变了我们的生活</li>
+  <li>文化多样性：<span class="point">各民族文化共同构成世界文化大花园</span>（差异是客观存在的，要尊重包容、平等交流）</li>
+  <li><span class="keyword">和平与发展</span>是当今时代的主题；和平是发展的前提，发展是和平的基础</li>
+  <li><span class="point">全球性问题</span>：气候变化、贫富差距、恐怖主义、网络安全、重大传染病等需要各国合作应对</li>
+  <li>中国主张构建<span class="keyword">人类命运共同体</span>，提出"一带一路"倡议推动各国合作共赢</li>
+  <li>各国应坚持对话协商共建共享合作共赢交流互鉴，建设持久和平普遍安全共同繁荣开放包容清洁美丽的世界</li>
 </ul>
 
 <h3>第二单元 世界舞台上的中国</h3>
 <ul>
-  <li><span class="keyword">中国担当</span>：积极参与全球治理，提供中国方案和中国智慧</li>
-  <li><span class="keyword">一带一路</span>：丝绸之路经济带+21世纪海上丝绸之路（共商共建共享原则）</li>
-  <li>中国在国际事务中扮演着<span class="point">重要角色</span>（不是主导、不是霸主）</li>
-  <li><span class="keyword">中国影响</span>：中国文化影响力扩大、中国制造走向世界、中国方案受关注</li>
-  <li>机遇与挑战并存：增强忧患意识，抓住机遇，迎接挑战</li>
+  <li><span class="keyword">中国担当</span>：积极参与全球治理，提供中国方案和中国智慧（如全球发展倡议、全球安全倡议、全球文明倡议）</li>
+  <li><span class="keyword">一带一路</span>：丝绸之路经济带+21世纪海上丝绸之路（共商共建共享原则；政策沟通、设施联通、贸易畅通、资金融通、民心相通）</li>
+  <li>中国在国际事务中扮演着<span class="point">重要角色</span>（不是主导、不是霸主），是负责任的大国</li>
+  <li><span class="keyword">中国影响</span>：中国文化影响力扩大（汉语热、中国影视作品出海）、中国制造走向世界、中国方案受关注</li>
+  <li>机遇与挑战并存：增强忧患意识，抓住机遇，迎接挑战；中国的发展既面临新的风险也拥有广阔空间</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：中国在构建人类命运共同体中做出了哪些努力？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 提出"一带一路"倡议：推动沿线国家基础设施建设，促进贸易畅通和资金融通，实现共同发展。</p>
+<p>② 积极参与全球治理：在气候变化、反恐、维和等国际事务中发挥建设性作用，展现负责任大国担当。</p>
+<p>③ 推动国际合作抗疫：向国际社会提供疫苗和医疗物资援助，倡导构建人类卫生健康共同体。</p>
+<p>④ 提供中国方案：提出全球发展倡议、全球安全倡议、全球文明倡议，为全球治理贡献中国智慧。</p>
+<p>⑤ 坚持互利共赢：推动经济全球化朝着更加开放、包容、普惠、平衡、共赢的方向发展。</p>
+</div>
+</div>
 
 <h3>第三单元 走向未来的少年</h3>
 <ul>
-  <li><span class="keyword">职业选择</span>：考虑自身兴趣特长+社会需求+国家需要</li>
-  <li><span class="keyword">终身学习</span>：学习是终身的，不断更新知识结构</li>
-  <li>带着自信、自强、坚韧走向未来</li>
-  <li>个人命运与国家命运<span class="point">息息相关</span>，要将个人理想与国家发展相结合</li>
+  <li><span class="keyword">职业选择</span>：考虑自身兴趣特长+社会需求+国家需要；选择职业要树立正确的职业观，职业没有高低贵贱之分</li>
+  <li><span class="keyword">终身学习</span>：学习是终身的，不断更新知识结构；学习既是个人成长需要也是社会发展的要求</li>
+  <li>带着自信、自强、坚韧走向未来；培养敬业精神，干一行爱一行</li>
+  <li>个人命运与国家命运<span class="point">息息相关</span>，要将个人理想与国家发展、民族复兴相结合</li>
+  <li>当代青少年的历史使命：实现中华民族伟大复兴；要脚踏实地，从现在做起从点滴做起</li>
 </ul>
+
+<div class="box">
+<div class="label">例题：青少年如何将个人理想与国家发展相结合？</div>
+<button class="sol-toggle" onclick="toggleSol(this)">查看答案</button>
+<div class="sol-content">
+<p><b>参考答案：</b></p>
+<p>① 树立远大理想：将个人梦想融入中国梦，把个人前途与祖国命运紧密联系在一起。</p>
+<p>② 努力学习科学文化知识：提高自身素质，为将来服务社会、报效祖国打下坚实基础。</p>
+<p>③ 关注国家发展：了解国家大政方针，增强责任感和使命感，把个人发展融入到国家需要中去。</p>
+<p>④ 培养创新精神和实践能力：在实践中增长才干，为国家的科技进步和经济发展做贡献。</p>
+<p>⑤ 积极践行社会主义核心价值观：从身边小事做起，用实际行动服务社会、奉献祖国。</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>答题模板专区</h2>
+
+<div class="box">
+<div class="label">一、"看法类/认识类"答题模板</div>
+<p><b>设问方式</b>：如何看待……？谈谈你对……的认识/看法。</p>
+<p><b>答题思路</b>：<span class="point">是什么 + 为什么 + 怎么做</span></p>
+<ol>
+  <li><b>是什么</b>：判断对错，定性（正确的/错误的、积极的/消极的、合法的/违法的）</li>
+  <li><b>为什么</b>：说明理由——结合教材原理（地位、作用、意义/危害）</li>
+  <li><b>怎么做</b>：针对该问题提出解决措施（青少年/国家/社会/企业多角度）</li>
+</ol>
+<p><b>示例</b>：如何看待网络谣言？→ ①网络谣言是违法行为（是什么）。②谣言传播扰乱社会秩序、损害他人权益（为什么）。③青少年要不信谣不传谣，发现谣言及时举报；国家要加强监管依法打击（怎么做）。</p>
+</div>
+
+<div class="box">
+<div class="label">二、"做法类"答题模板</div>
+<p><b>设问方式</b>：青少年（国家/社会）应该怎么做？请你提出建议。</p>
+<p><b>青少年角度</b>：<span class="point">①树立××意识 ②学习××知识 ③践行××行动 ④宣传××理念 ⑤同××行为作斗争</span></p>
+<p><b>国家角度</b>：<span class="point">①完善××制度/法律 ②加大××投入 ③加强××监管 ④鼓励××创新 ⑤倡导××理念</span></p>
+<p><b>社会角度</b>：加强宣传教育、营造良好氛围、完善监督机制</p>
+<p><b>企业角度</b>：遵守法律法规、承担社会责任、加强技术创新</p>
+</div>
+
+<div class="box">
+<div class="label">三、"意义类/作用类"答题模板</div>
+<p><b>设问方式</b>：……有什么意义？……对……有什么作用？</p>
+<p><b>答题思路</b>：<span class="point">由近及远、由小到大、由直接到间接</span></p>
+<ol>
+  <li><b>对个人</b>：有利于增长知识/提高能力/培养品质/维护权益/促进健康成长</li>
+  <li><b>对社会/国家</b>：有利于促进社会和谐/推动法治建设/促进经济发展/提高综合国力</li>
+  <li><b>常用句式</b>：有利于……；促进了……；为……提供了保障</li>
+</ol>
+<p><b>常用关键词</b>：提高意识、增强能力、促进和谐、推动发展、保障权益、维护稳定、弘扬精神、传承文化</p>
+</div>
+
+<div class="box">
+<div class="label">四、"启示类"答题模板</div>
+<p><b>设问方式</b>：这件事给我们什么启示？</p>
+<p><b>答题思路</b>：<span class="point">从材料中提炼道理 + 联系自身谈做法</span></p>
+<ol>
+  <li><b>材料说明了什么</b>：归纳材料反映的核心道理/教训</li>
+  <li><b>我们应怎么做</b>：从青少年角度谈具体行动</li>
+</ol>
+<p><b>示例</b>：某学生因沉迷网络而走上盗窃道路的案例给我们的启示 → ①不良行为可能发展为违法犯罪，要防微杜渐（道理）。②要增强法治观念、自觉抵制不良诱惑、合理利用网络（做法）。</p>
+</div>
+
+<div class="box">
+<div class="label">五、"评析类"答题模板</div>
+<p><b>设问方式</b>：对……行为进行评析/评价。</p>
+<p><b>答题思路</b>：<span class="point">定性 + 论据 + 结论</span></p>
+<ol>
+  <li><b>定性</b>：判断该行为是否正确/合法/合理</li>
+  <li><b>论据</b>：说明理由——正确的行为（意义/作用），错误的行为（危害/后果），引用相关教材原理</li>
+  <li><b>结论</b>：正确的行为应学习和倡导，错误的行为应抵制和改正，并提出正确做法</li>
+</ol>
+</div>
+
+<div class="box">
+<div class="label">六、"原因类/必要性类"答题模板</div>
+<p><b>设问方式</b>：为什么要……？……的必要性是什么？</p>
+<p><b>答题思路</b>：<span class="point">现状 + 地位 + 作用/意义 + 法律依据</span></p>
+<ol>
+  <li><b>现状</b>：当前存在的问题/现实需要</li>
+  <li><b>地位</b>：该事物在法律/政策中的地位（如"重要组成部分""关键抉择"等）</li>
+  <li><b>作用/意义</b>：这样做的好处或重要性</li>
+  <li><b>法律依据</b>：宪法或相关法律的规定</li>
+</ol>
+</div>
 
 <!-- ============================================================ -->
 <h2>附录：高频考点速记</h2>
@@ -371,31 +702,58 @@ table tr:nth-child(even){background:#f6f0fa}
 ③ 人民代表大会制度是我国的根本政治制度<br>
 ④ 改革开放是强国之路，创新是引领发展的第一动力<br>
 ⑤ 全面依法治国是治国理政的基本方略<br>
-⑥ 社会主义核心价值观：富强民主文明和谐、自由平等公正法治、爱国敬业诚信友善</p>
+⑥ 社会主义核心价值观：富强民主文明和谐、自由平等公正法治、爱国敬业诚信友善<br>
+⑦ 中国梦的本质：国家富强、民族振兴、人民幸福<br>
+⑧ 五大发展理念：创新、协调、绿色、开放、共享<br>
+⑨ 总体国家安全观：以人民安全为宗旨，以政治安全为根本<br>
+⑩ 我国处理民族关系的基本原则：民族平等、民族团结、各民族共同繁荣</p>
 </div>
 
 <div class="box">
-<div class="label">常考"根本/基本/核心"</div>
+<div class="label">常考"根本/基本/核心/基础"</div>
 <p><b>根本政治制度</b>—人民代表大会制度 &nbsp;|&nbsp; <b>根本法</b>—宪法<br>
-<b>基本政治制度</b>—多党合作+民族区域自治+基层群众自治 &nbsp;|&nbsp; <b>基本经济制度</b>—公有制为主体多种所有制共同发展<br>
+<b>基本政治制度</b>—多党合作+民族区域自治+基层群众自治 &nbsp;|&nbsp; <b>基本经济制度</b>—公有制为主体多种所有制经济共同发展<br>
 <b>民族精神核心</b>—爱国主义 &nbsp;|&nbsp; <b>时代精神核心</b>—改革创新<br>
-<b>中国梦的本质</b>—国家富强、民族振兴、人民幸福</p>
+<b>中国梦的本质</b>—国家富强、民族振兴、人民幸福 &nbsp;|&nbsp; <b>综合国力竞争决定性因素</b>—科技创新能力<br>
+<b>立法机关</b>—全国人大及其常委会 &nbsp;|&nbsp; <b>最高行政机关</b>—国务院（中央人民政府）</p>
 </div>
 
 <div class="box">
 <div class="label">易混易错辨析</div>
 <p>① 全国人大是最高国家权力机关 ≠ 最高国家行政机关（国务院）<br>
-② 我国不是"根本大法"，宪法才是根本法<br>
+② 我国不是"根本大法"，宪法才是国家的根本法<br>
 ③ 创新是引领发展第一动力 ≠ 改革开放是强国之路（都是重要但不是同一概念）<br>
-④ 共同富裕 ≠ 同步富裕、同等富裕（是一个过程）<br>
-⑤ 依法治国 ≠ 以德治国（二者结合）<br>
-⑥ 一国两制下港澳台保持资本主义制度 ≠ 主体是社会主义</p>
+④ 共同富裕 ≠ 同步富裕、同等富裕（共同富裕是一个长期过程）<br>
+⑤ 依法治国 ≠ 以德治国（二者相辅相成，法治与德治相结合）<br>
+⑥ 一国两制下港、澳、台保持资本主义制度 ≠ 主体仍坚持社会主义<br>
+⑦ 国有经济是国民经济的主导力量 ≠ 公有制经济是主体（主导不等于主体）<br>
+⑧ 人民代表大会 ≠ 人民代表大会制度（前者是机关，后者是制度）<br>
+⑨ 公民 ≠ 人民（公民是法律概念，人民是政治概念；公民范围大于人民）<br>
+⑩ 罚款 ≠ 罚金（罚款是行政处罚，罚金是刑罚附加刑）<br>
+⑪ 拘留 ≠ 拘役（拘留是行政处罚，拘役是刑罚主刑）<br>
+⑫ 诉讼 ≠ 诉讼（民事诉讼"民告民"、行政诉讼"民告官"、刑事诉讼"官告民"）</p>
 </div>
 
 <div class="box">
 <div class="label">"做法类"答题模板</div>
 <p><b>青少年如何做</b>：①树立××意识 ②学习××知识 ③践行××行动 ④宣传××理念 ⑤同××行为作斗争</p>
 <p><b>国家如何做</b>：①完善××制度/法律 ②加大××投入 ③加强××监管 ④鼓励××创新 ⑤倡导××理念</p>
+</div>
+
+<div class="box">
+<div class="label">法律年龄考点速记</div>
+<table>
+  <tr><th>年龄</th><th>法律意义</th></tr>
+  <tr><td>0岁</td><td>出生起享有民事权利能力</td></tr>
+  <tr><td>6-7岁</td><td>开始接受义务教育</td></tr>
+  <tr><td>8岁</td><td>限制民事行为能力人（可以独立实施纯获利益的民事法律行为）</td></tr>
+  <tr><td>12岁</td><td>达到刑事责任年龄起点（犯故意杀人等罪须负刑事责任）</td></tr>
+  <tr><td>14岁</td><td>对故意杀人等八种严重犯罪负刑事责任</td></tr>
+  <tr><td>16岁</td><td>完全刑事责任年龄（所有犯罪都要负刑事责任）</td></tr>
+  <tr><td>16-18岁</td><td>可以参加工作（劳动法）</td></tr>
+  <tr><td>18岁</td><td>成年，享有完全民事行为能力、选举权和被选举权</td></tr>
+  <tr><td>男22/女20岁</td><td>法定婚龄</td></tr>
+</table>
 </div>
 
 <div class="footer">
@@ -422,6 +780,11 @@ function copyTxt(){
     document.body.removeChild(ta);
     hint.textContent = '✅ 已复制，分享给好友吧！';
   }
+}
+function toggleSol(btn){
+  var c = btn.nextElementSibling;
+  c.classList.toggle('open');
+  btn.textContent = c.classList.contains('open') ? '收起答案' : '查看答案';
 }
 </script>
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>

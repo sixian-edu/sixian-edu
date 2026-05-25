@@ -6,31 +6,600 @@
 body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
 .head{max-width:880px;margin:0 auto;padding:18px 20px 0}
 .head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#2d7d46}
 .head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
-.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#5EA890;font-weight:600}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#2d7d46;font-weight:600}
 .container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
-.top{background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #5EA890;padding:20px 24px}
-.top h2{font-size:18px;font-weight:700;color:#5EA890;margin-bottom:4px}
-.top .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:rgba(94,168,144,0.08);color:#5EA890;margin-bottom:10px}
-.top .kp{font-size:13px;color:#555;margin-bottom:8px;text-indent:2em;line-height:1.8}
-.top .kp strong{color:#5EA890}
-.top .ex{background:#f8f9fc;border-radius:8px;padding:11px 15px;margin:8px 0}
-.top .ex .q{font-weight:600;color:#5EA890;margin-bottom:2px;font-size:14px}
-.top .ex .a{color:#555;font-size:13px;padding-left:14px;border-left:3px solid #ddd;margin-top:3px}
-.top .ex .a strong{color:#5EA890}
-.top .hw{background:#f0f7ff;border-radius:8px;padding:10px 15px;margin:8px 0;font-size:13px}
-.top .hw .hw-q{margin-bottom:2px}
-.top .hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
-.chart-wrap{text-align:center;margin:10px 0}
+.f-section{background:#fff;border-radius:14px;padding:20px 24px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #2d7d46}
+.f-section h2{font-size:18px;font-weight:700;color:#2d7d46;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+.f-section h3{font-size:15px;font-weight:600;color:#444;margin:14px 0 8px}
+.f-section h4{font-size:14px;font-weight:600;color:#2d7d46;margin:10px 0 4px}
+.f-section p{font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+@media(max-width:600px){.f-grid{grid-template-columns:1fr}}
+.f-card{background:#f8f9fc;border-radius:10px;padding:12px 14px;border:1px solid #f0f0f0}
+.f-card .f-name{font-size:13px;font-weight:600;color:#2d3436;margin-bottom:3px}
+.f-card .f-val{font-size:14px;font-weight:700;color:#2d7d46;text-align:center;padding:5px;background:#fff;border-radius:6px}
+.f-card .f-desc{font-size:11px;color:#888;margin-top:2px}
+.chart-wrap{text-align:center;margin:12px 0}
 .chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
-@media(max-width:600px){.head h1{font-size:22px}}
-
-.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.ex{background:#f0f8f0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px}
+.ex .q{font-weight:600;color:#2d7d46;margin-bottom:4px}
+.ex .a{color:#555;font-size:12.5px;padding-left:12px;border-left:3px solid #ddd;margin-top:4px}
+.ex .a strong{color:#2d7d46}
+.hw{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px}
+.hw .hw-q{margin-bottom:3px}
+.hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px;color:#8d6e00;border-left:3px solid #fadb14}
+.note strong{color:#e74c3c}
+.tip{background:#eef7ee;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#2d7d46;border-left:3px solid #2d7d46}
+.tip strong{color:#c0392b}
+.warn{background:#fdf0f0;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#e74c3c;border-left:3px solid #e74c3c}
+.warn strong{color:#c0392b}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+table th{background:#2d7d46;color:#fff;padding:7px 10px;text-align:left;font-weight:600;font-size:12px}
+table td{padding:6px 10px;border-bottom:1px solid #eee}
+table tr:nth-child(even){background:#f0f8f0}
+.sol-btn{display:inline-block;font-size:11px;padding:2px 10px;border-radius:4px;background:#2d7d46;color:#fff;border:none;cursor:pointer;margin:4px 0}
+.sol-btn:hover{opacity:.85}
+ul{padding-left:20px;font-size:13.5px;color:#444;margin-bottom:8px}
+ul li{margin-bottom:4px}
+.footer{text-align:center;padding:16px;font-size:12px;color:#999}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#2d7d46);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
 .back-to-top.show{opacity:1;visibility:visible}
 .back-to-top:hover{opacity:.85;transform:translateY(-2px)}
 </style><script src="../js/theme.js"></script></head><body>
-<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中生物专题</h1><p class="sub">细胞 · 人体 · 遗传 · 进化 · 生态 共 <span>10</span> 专题</p></div>
-<div class="container"><div class="top"><h2>专题一：细胞的结构与功能</h2><span class="tag">细胞学</span><p class="kp"><strong>植物细胞结构</strong>：细胞壁（保护支持）、细胞膜（控制物质进出）、细胞质、细胞核（含遗传物质）、叶绿体（光合作用）、液泡（含细胞液）。<strong>动物细胞</strong>：有细胞膜、细胞质、细胞核，无细胞壁、液泡、叶绿体。<strong>细胞存活的条件</strong>：细胞膜要保持完整（控制物质进出）。<strong>细胞的生活</strong>：细胞膜控制物质进出→线粒体提供能量→叶绿体（植物）制造有机物→细胞核控制生命活动。</p><div class="chart-wrap"><img src="charts/topic_bio_cell.svg" alt=""><div class="cp">植物细胞（左）与动物细胞（右）结构对比</div></div><div class="ex"><div class="q">例：比较洋葱表皮细胞和人口腔上皮细胞在结构上的异同</div><div class="a"><strong>解：</strong>相同：都有细胞膜、细胞质、细胞核。不同：洋葱表皮细胞有细胞壁和液泡；口腔上皮细胞没有细胞壁、液泡和叶绿体。</div></div></div><div class="top"><h2>专题二：生物体的结构层次</h2><span class="tag">结构层次</span><p class="kp"><strong>细胞分裂</strong>：一个细胞分成两个。染色体先复制后均分，保证子细胞与母细胞染色体数目相同。<strong>细胞生长</strong>：细胞体积增大。<strong>细胞分化</strong>：形成形态功能不同的细胞群。<strong>组织</strong>：由形态相似、结构和功能相同的细胞联合在一起。植物组织：保护组织、营养组织、分生组织、输导组织。动物组织：上皮组织、肌肉组织、神经组织、结缔组织。<strong>器官</strong>：不同组织按一定次序组合成。植物六大器官：根茎叶（营养）、花果实种子（繁殖）。<strong>系统</strong>：动物体由八大系统构成。</p></div><div class="top"><h2>专题三：绿色植物的光合作用与呼吸作用</h2><span class="tag">植物学</span><p class="kp"><strong>光合作用</strong>：CO₂+H₂O→有机物+O₂（光、叶绿体）。场所：叶绿体。实质：合成有机物储存能量。<strong>呼吸作用</strong>：有机物+O₂→CO₂+H₂O+能量（有光无光均可）。场所：线粒体。实质：分解有机物释放能量。<strong>光合作用与呼吸作用的关系</strong>：互相依存、对立统一。白天光合作用>呼吸作用（有机物积累）；晚上只呼吸作用（有机物消耗）。<strong>应用</strong>：合理密植（充分利用光）、温室增施CO₂（提高产量）、低温/干燥储存粮食（抑制呼吸）。<strong>叶片结构</strong>：表皮(保护)→栅栏组织(叶绿体多)→海绵组织→叶脉(输导)→气孔(蒸腾/气体交换)。</p><div class="chart-wrap"><img src="charts/lab_leaf.svg" alt=""><div class="cp">叶片结构和叶绿体</div></div></div><div class="top"><h2>专题四：人体消化与呼吸系统</h2><span class="tag">人体生理</span><p class="kp"><strong>消化系统</strong>：口腔(淀粉初步消化)→食道→胃(蛋白质初步消化)→小肠(主要消化和吸收)→大肠(吸收水分)→肛门。<strong>三大营养物质的消化</strong>：淀粉→麦芽糖→葡萄糖；蛋白质→多肽→氨基酸；脂肪→脂肪微粒→甘油+脂肪酸。<strong>小肠适于吸收的特点</strong>：长(5-6m)、表面积大(皱襞和绒毛)、壁薄(仅一层细胞)、有丰富毛细血管。<strong>呼吸系统</strong>：鼻→咽→喉→气管→支气管→肺。<strong>肺泡适于气体交换的特点</strong>：数量多、壁薄(一层细胞)、壁外有丰富毛细血管。<strong>气体交换</strong>：肺泡与血液之间氧气和二氧化碳通过扩散作用交换。</p><div class="chart-wrap"><img src="charts/topic_bio_digest.svg" alt=""><div class="cp">人体消化系统示意</div></div></div><div class="top"><h2>专题五：人体循环与泌尿系统</h2><span class="tag">人体生理</span><p class="kp"><strong>血液循环</strong>：体循环（左心室→主动脉→全身→上下腔静脉→右心房）和肺循环（右心室→肺动脉→肺→肺静脉→左心房）。<strong>血液</strong>：血浆(90%水)+血细胞。红细胞（含血红蛋白，运输氧）、白细胞（吞噬病菌，免疫）、血小板（止血凝血）。<strong>血管类型</strong>：动脉（离心、壁厚、血流快）、静脉（回心、有瓣膜、血流慢）、毛细血管（壁薄、单行通过）。<strong>泌尿系统</strong>：肾脏(形成尿液)→输尿管→膀胱(暂时储存)→尿道。<strong>尿液形成</strong>：肾小球过滤（形成原尿，除血细胞和大分子蛋白）→肾小管重吸收（全部葡萄糖、大部分水、部分无机盐回血液）→形成终尿。</p></div><div class="top"><h2>专题六：人体神经与内分泌系统</h2><span class="tag">人体生理</span><p class="kp"><strong>神经系统</strong>：中枢神经系统（脑+脊髓）和周围神经系统（脑神经+脊神经）。<strong>神经元</strong>：神经细胞，包括细胞体和突起（树突、轴突）。<strong>反射</strong>：通过神经系统对外界刺激做出的规律性反应。反射弧：感受器→传入神经→神经中枢→传出神经→效应器。<strong>非条件反射</strong>：生来就有（缩手反射、膝跳反射）。<strong>条件反射</strong>：后天学习形成（望梅止渴、听到铃声分泌唾液）。<strong>内分泌系统</strong>：分泌激素。生长激素（垂体，促进生长）、甲状腺激素（促进代谢和发育）、胰岛素（胰岛，降低血糖—糖尿病）、肾上腺激素（心跳加快）。</p></div><div class="top"><h2>专题七：生殖与发育</h2><span class="tag">生殖发育</span><p class="kp"><strong>男性生殖系统</strong>：睾丸(产生精子、分泌雄性激素)、附睾、输精管、精囊、前列腺。<strong>女性生殖系统</strong>：卵巢(产生卵细胞、分泌雌性激素)、输卵管(受精场所)、子宫(胚胎发育场所)、阴道。<strong>受精与发育</strong>：精子和卵细胞在输卵管结合形成受精卵→分裂分化→植入子宫内膜(着床)→发育成胎儿→分娩。<strong>青春期发育</strong>：身高突增（显著特征）、生殖器官发育成熟（第一性征）、出现第二性征（女生乳房发育、男生喉结变声）、月经/遗精现象。<strong>青春期心理</strong>：独立意识增强、情绪波动大，要正确与异性交往。</p></div><div class="top"><h2>专题八：遗传与变异</h2><span class="tag">遗传学</span><p class="kp"><strong>遗传</strong>：亲子间的相似性。<strong>变异</strong>：亲子间及子代个体间的差异。<strong>基因、DNA、染色体</strong>：染色体位于细胞核中，由DNA和蛋白质组成。基因是有遗传效应的DNA片段。体细胞中染色体成对存在（人体23对），生殖细胞中成单存在（23条）。<strong>基因的显性和隐性</strong>：显性基因(大写字母)控制显性性状，隐性基因(小写字母)控制隐性性状。Dd×Dd→DD:Dd:dd=1:2:1，显性:隐性=3:1。<strong>性别决定</strong>：XX女、XY男。生男生女由父亲决定（概率各50%）。<strong>可遗传与不可遗传变异</strong>：由遗传物质改变引起的可遗传（基因突变、染色体变异），仅由环境引起的不遗传。</p></div><div class="top"><h2>专题九：生物进化</h2><span class="tag">进化</span><p class="kp"><strong>生命起源</strong>：原始大气→有机小分子→有机大分子→原始生命→原始单细胞生物（米勒实验证明无机物可形成氨基酸）。<strong>生物进化历程</strong>：由简单到复杂、由低等到高等、由水生到陆生。进化树：原始生命→藻类→苔藓→蕨类→种子植物（裸子→被子）；原始生命→无脊椎动物→鱼类→两栖类→爬行类→鸟类/哺乳类。<strong>自然选择</strong>（达尔文）：过度繁殖→生存斗争→遗传变异→适者生存。长颈鹿、抗药性细菌的形成：自然选择的结果。</p></div><div class="top"><h2>专题十：生态系统与生物圈</h2><span class="tag">生态</span><p class="kp"><strong>生态系统的组成</strong>：生物部分（生产者/消费者/分解者）+非生物部分（阳光/空气/水/土壤/温度等）。<strong>食物链和食物网</strong>：起点是生产者，箭头指向捕食者（能量流动方向）。物质和能量沿食物链流动，能量逐级递减（10%~20%传递效率），所以食物链一般不超过5个营养级。<strong>生态平衡</strong>：生态系统具有自动调节能力（有一定限度）。<strong>生物圈</strong>：地球上最大的生态系统（大气圈底部+水圈大部+岩石圈表面）。<strong>生物圈Ⅱ号实验</strong>：证明了目前人类无法建立替代地球的封闭生态系统。保护生物圈是每个人的责任。</p><div class="chart-wrap"><img src="charts/bio_energy_pyramid.svg" alt=""><div class="cp">能量金字塔（已有图表）</div></div></div></div><div class="footer" style="text-align:center;padding:20px;font-size:12px;color:#999">思贤学习站 · 济南市商河县</div><button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
-<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>初中生物专题</h1><p class="sub">细胞 · 结构层次 · 植物生理 · 人体系统 · 生殖遗传 · 进化生态 共 <span>8</span> 专题</p></div>
+<div class="container">
+
+<div class="note"><strong>使用说明：</strong>每个专题包含核心知识点、例题（点击"显示解析"看详解）、课后练习。标注<strong style="color:#e74c3c">⚠️</strong>的是高频易错点，请格外留意。专题顺序建议按序号学习，前后知识有衔接。</div>
+
+<!-- ════════════ 专题一：细胞的结构与功能 ════════════ -->
+<div class="f-section">
+<h2>专题一：细胞的结构与功能</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">细胞学基础</span>
+
+<p>细胞是生物体结构和功能的<strong>基本单位</strong>（除病毒外，生物体都由细胞构成）。初中阶段重点掌握植物细胞与动物细胞的<strong>结构异同</strong>、显微镜的使用方法以及细胞各部分结构的功能。</p>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_microscope.svg" alt="显微镜结构与成像">
+<div class="cp">显微镜的结构（左）和成像原理（右）——放大倍数越大，视野越暗、看到的细胞越少</div>
+</div>
+
+<h3>一、显微镜的使用</h3>
+<table>
+<tr><th>操作步骤</th><th>要点</th><th>注意事项</th></tr>
+<tr><td>取镜安放</td><td>右手握镜臂，左手托镜座</td><td>轻拿轻放，不可倾斜</td></tr>
+<tr><td>对光</td><td>选低倍物镜→大光圈→调反光镜</td><td>看到明亮圆形视野为成功</td></tr>
+<tr><td>放置标本</td><td>标本正对通光孔中央</td><td>压片夹压住玻片</td></tr>
+<tr><td>调焦观察</td><td>粗准焦螺旋下降→上升调焦→细准焦螺旋清晰</td><td>下降时眼睛注视物镜防压碎</td></tr>
+</table>
+
+<div class="f-grid">
+<div class="f-card"><div class="f-name">成像特点</div><div class="f-val">倒像（上下左右皆颠倒）</div><div class="f-desc">如"b"在视野中是"q"</div></div>
+<div class="f-card"><div class="f-name">放大倍数</div><div class="f-val">目镜 × 物镜</div><div class="f-desc">目镜越长倍数越小；物镜越长倍数越大</div></div>
+<div class="f-card"><div class="f-name">高倍镜换后变化</div><div class="f-val">视野变暗·细胞变少·变大</div><div class="f-desc">光线通过更少的细胞</div></div>
+<div class="f-card"><div class="f-name">玻片移动方向</div><div class="f-val">物像偏哪，玻片向哪移</div><div class="f-desc">因为成的是倒像</div></div>
+</div>
+
+<h3>二、植物细胞与动物细胞的比较</h3>
+<table>
+<tr><th>结构</th><th>植物细胞</th><th>动物细胞</th><th>主要功能</th></tr>
+<tr><td>细胞壁</td><td>✅ 有</td><td>❌ 无</td><td>保护和支持细胞</td></tr>
+<tr><td>细胞膜</td><td>✅ 有</td><td>✅ 有</td><td>控制物质进出</td></tr>
+<tr><td>细胞质</td><td>✅ 有</td><td>✅ 有</td><td>进行生命活动的场所</td></tr>
+<tr><td>细胞核</td><td>✅ 有</td><td>✅ 有</td><td>含遗传物质，控制生命活动</td></tr>
+<tr><td>叶绿体</td><td>✅ 有（绿色部分）</td><td>❌ 无</td><td>光合作用的场所</td></tr>
+<tr><td>液泡</td><td>✅ 有（大而明显）</td><td>❌ 无（或有小而多）</td><td>储存细胞液（色素、糖分等）</td></tr>
+<tr><td>线粒体</td><td>✅ 有</td><td>✅ 有</td><td>呼吸作用场所，提供能量</td></tr>
+</table>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_cell.svg" alt="动植物细胞对比">
+<div class="cp">植物细胞（左）与动物细胞（右）结构对比——记住：植物特有细胞壁、叶绿体、大液泡</div>
+</div>
+
+<div class="tip"><strong>记忆口诀：</strong>"壁叶泡，植物三宝；动植物都有，膜质核线粒"——植物细胞有细胞壁、叶绿体、大液泡，动物没有；细胞膜、细胞质、细胞核、线粒体两者都有。</div>
+
+<div class="warn"><strong>⚠️ 易错点：</strong>①植物根尖细胞（不见光的部分）<strong style="color:#e74c3c">没有叶绿体</strong>；②所有细胞都有线粒体，不是只有动物细胞才有；③细胞膜是"控制"物质进出而不是"阻止"——有用的进，有害的挡。</div>
+
+<div class="ex">
+<div class="q">【例题1】用显微镜观察洋葱表皮细胞，在视野中看到"b"字，实际玻片上写的是什么？若发现物像偏右上方，应往哪个方向移动玻片？</div>
+<div class="a"><strong>解析：</strong><br>
+(1) 显微镜成倒像，上下左右都颠倒。"b"旋转180°后是<strong>"q"</strong>。<br>
+(2) 物像偏右上方 → 实际物体在左下方 → 应将玻片向<strong>右上方</strong>移动（"物像偏哪，玻片向哪移"）。</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>速记法：</strong>想象把写有字的纸旋转180°——倒过来看。或者用字母对称法：b/q、p/d、上/下互变。</div>
+</div>
+
+<div class="ex">
+<div class="q">【例题2】菠菜叶放在开水中煮过，水变成绿色，而没煮过的菠菜叶放在冷水中，水不变绿，这是为什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>细胞膜能控制物质进出。煮过的菠菜细胞膜被破坏，失去了控制能力，细胞内的色素（叶绿素）渗出到水中，所以水变成绿色。没煮过的细胞膜完好，色素不能出来。<br>
+<strong>结论：</strong>细胞膜的功能——控制物质进出，但高温会破坏细胞膜的结构。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 显微镜的目镜为10×、物镜为40×时，放大倍数为多少？此时视野中看到4个细胞，若换为10×物镜还能看到约多少个？<br>
+• 制作洋葱表皮细胞临时装片时，为什么在载玻片上滴清水？而制作人口腔上皮细胞装片时却滴生理盐水？</div></div>
+</div>
+
+<!-- ════════════ 专题二：生物体的结构层次 ════════════ -->
+<div class="f-section">
+<h2>专题二：生物体的结构层次</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">从细胞到个体</span>
+
+<p>从<strong>受精卵</strong>发育成完整的生物体，经历了细胞分裂、细胞生长和细胞分化三个关键过程。理解"细胞→组织→器官→系统→个体"的层次关系是解题的基础。</p>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_mitosis.svg" alt="有丝分裂过程">
+<div class="cp">细胞有丝分裂四阶段——染色体先复制后均分，保证子细胞染色体数目与母细胞相同</div>
+</div>
+
+<h3>细胞增殖的三个过程</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">细胞分裂</div><div class="f-val">1个 → 2个 → 4个 →……</div><div class="f-desc">染色体先复制，再平分到两个子细胞中；子细胞与母细胞染色体数目相同</div></div>
+<div class="f-card"><div class="f-name">细胞生长</div><div class="f-val">细胞体积增大</div><div class="f-desc">细胞从外界吸收物质，合成自身物质，体积逐渐增大</div></div>
+<div class="f-card"><div class="f-name">细胞分化</div><div class="f-val">形成不同组织</div><div class="f-desc">细胞形态、结构和功能发生差异性变化，形成不同细胞群</div></div>
+</div>
+
+<h3>生物体的结构层次</h3>
+<table>
+<tr><th>层次</th><th>定义</th><th>举例（植物）</th><th>举例（动物）</th></tr>
+<tr><td><strong>细胞</strong></td><td>基本结构和功能单位</td><td>保卫细胞、表皮细胞</td><td>神经细胞、肌细胞</td></tr>
+<tr><td><strong>组织</strong></td><td>形态相似、结构和功能相同的细胞群</td><td>保护、营养、分生、输导</td><td>上皮、肌肉、神经、结缔</td></tr>
+<tr><td><strong>器官</strong></td><td>不同组织按一定次序结合</td><td>根、茎、叶、花、果实、种子</td><td>心脏、肝脏、胃、肺</td></tr>
+<tr><td><strong>系统</strong></td><td>能完成一整套生理功能的器官组合</td><td style="color:#999">（植物无系统层次）</td><td>消化、呼吸、循环、神经等</td></tr>
+<tr><td><strong>个体</strong></td><td>完整的生物体</td><td>一株蒲公英</td><td>一个人</td></tr>
+</table>
+
+<div class="tip"><strong>对比记忆：</strong>植物体结构层次：细胞→组织→器官→个体（<strong>无"系统"层次</strong>）；动物体结构层次：细胞→组织→器官→系统→个体。<br>
+植物组织和动物组织不要混淆：植物的"保护组织"≠动物的"上皮组织"，虽然功能相似但名称不同。</div>
+
+<div class="warn"><strong>⚠️ 易错点：</strong>①"一个细胞分成两个"就是细胞分裂，不是生长也不是分化；②癌细胞的根本特点是<strong>不受控制的细胞分裂</strong>；③细胞分化是<strong>不可逆</strong>的——分化后的细胞一般不能再回到分化前的状态。</div>
+
+<div class="ex">
+<div class="q">【例题】下列关于细胞分裂和分化的叙述，正确的是（  ）<br>
+A. 细胞分裂使细胞体积增大<br>
+B. 细胞分化使细胞数目增多<br>
+C. 分裂后的子细胞染色体数目减半<br>
+D. 细胞分化形成不同的组织</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>选<strong>D</strong>。<br>
+A❌ 细胞分裂使<strong>数目增多</strong>，细胞生长使体积增大。<br>
+B❌ 细胞分化使细胞<strong>种类增多</strong>，形成不同组织。<br>
+C❌ 细胞分裂时染色体先<strong>复制后均分</strong>，子细胞染色体数目<strong>不变</strong>。<br>
+D✅ 细胞分化的结果就是形成不同的组织。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 人受伤后，皮肤伤口能愈合修复，主要依靠什么生理过程？<br>
+• "藕断丝连"中的"丝"属于什么组织？番茄的果肉又属于什么组织？</div></div>
+</div>
+
+<!-- ════════════ 专题三：绿色植物的三大生理作用 ════════════ -->
+<div class="f-section">
+<h2>专题三：绿色植物的三大生理作用</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">植物生理</span>
+
+<p>绿色植物通过<strong>光合作用</strong>制造有机物、<strong>呼吸作用</strong>为生命活动提供能量、<strong>蒸腾作用</strong>促进水分吸收和运输。三大作用相互联系，是初中生物考试的重点和难点。</p>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_photo_resp.svg" alt="光合与呼吸">
+<div class="cp">光合作用（左）在叶绿体中进行，合成有机物、储存能量；呼吸作用（右）在线粒体中进行，分解有机物、释放能量</div>
+</div>
+
+<h3>光合作用与呼吸作用对比</h3>
+<table>
+<tr><th>比较项目</th><th>光合作用</th><th>呼吸作用</th></tr>
+<tr><td>场所</td><td>叶绿体</td><td>线粒体</td></tr>
+<tr><td>原料</td><td>CO₂ + H₂O</td><td>有机物 + O₂</td></tr>
+<tr><td>产物</td><td>有机物（淀粉）+ O₂</td><td>CO₂ + H₂O + 能量</td></tr>
+<tr><td>条件</td><td>必须有光</td><td>有光无光均可</td></tr>
+<tr><td>物质变化</td><td>无机物→有机物（合成）</td><td>有机物→无机物（分解）</td></tr>
+<tr><td>能量变化</td><td>储存能量</td><td>释放能量</td></tr>
+<tr><td>发生部位</td><td>含叶绿体的细胞</td><td>全部活细胞</td></tr>
+</table>
+
+<h4>蒸腾作用</h4>
+<p><strong>蒸腾作用</strong>：水分以气态从植物体内散发到体外的过程，主要通过<strong>气孔</strong>进行。气孔由<strong>保卫细胞</strong>控制开闭。</p>
+<p><strong>意义</strong>：①促进根部吸水 ②促进水分和无机盐在体内运输 ③降低叶片温度。</p>
+
+<div class="f-grid">
+<div class="f-card"><div class="f-name">影响光合作用的因素</div><div class="f-val">光照强度·CO₂浓度·温度</div><div class="f-desc">增加CO₂或延长光照→增产</div></div>
+<div class="f-card"><div class="f-name">影响呼吸作用的因素</div><div class="f-val">温度·水分·氧气浓度</div><div class="f-desc">低温、干燥、低氧→抑制呼吸</div></div>
+</div>
+
+<div class="warn"><strong>⚠️ 常考应用：</strong><br>
+①合理密植 → 充分利用光照（提高光合）<br>
+②温室增施"气肥"（CO₂）→ 提高光合产量<br>
+③低温储存粮食水果 → <strong>抑制呼吸</strong>，减少有机物消耗<br>
+④夜间降低温室温度 → 弱呼吸→净积累增加→增产<br>
+⑤带土移栽 → 保护根毛（保障吸收水分）；剪去部分枝叶 → <strong>降低蒸腾</strong>，减少水分流失</div>
+
+<div class="ex">
+<div class="q">【例题1】将一棵植物放在密闭的玻璃罩内，置于阳光下。测得罩内CO₂浓度在一天中的变化如下：6:00最高，14:00最低。请解释原因。</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong><br>
+6:00（清晨）最低，因为整晚只有呼吸作用→产生CO₂→浓度升高→此时浓度最高。<br>
+但注意：6:00时CO₂浓度<strong>最高</strong>（因为一夜的呼吸积累），6:00后太阳出来→光合开始→消耗CO₂。<br>
+14:00左右光照强→光合最旺盛→大量消耗CO₂→浓度达到<strong>最低</strong>。<br>
+<strong>核心规律：</strong>净光合 = 光合 - 呼吸。光照强→净光合高→CO₂消耗快。</div>
+</div>
+
+<div class="ex">
+<div class="q">【例题2】新疆的哈密瓜比内地的更甜，主要环境原因是什么？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>新疆地区<strong>昼夜温差大</strong>。<br>
+白天光照充足→光合作用旺盛→大量合成有机物（糖分）<br>
+夜晚温度低→呼吸作用弱→有机物消耗少<br>
+<strong>净积累 = 光合合成 - 呼吸消耗</strong>，因为消耗少，所以积累的糖分更多，哈密瓜更甜。<br>
+类似例子：北方的苹果比南方甜，也是这个道理。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 养鱼缸中常放入一些新鲜水草，有什么作用？<br>
+• 苹果树"环割"树皮后，切口上方会长出"瘤状物"，原因是？</div></div>
+</div>
+
+<!-- ════════════ 专题四：人体的营养、呼吸与消化 ════════════ -->
+<div class="f-section">
+<h2>专题四：人体的营养与呼吸</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">人体生理一</span>
+
+<p>人类需要从食物中获取<strong>六大营养物质</strong>（糖类、蛋白质、脂肪、维生素、无机盐、水），并通过消化系统将它们分解为可吸收的小分子物质，经呼吸系统获取氧气，为生命活动提供能量。</p>
+
+<h3>一、消化系统</h3>
+<table>
+<tr><th>器官</th><th>消化液</th><th>消化功能</th><th>吸收功能</th></tr>
+<tr><td>口腔</td><td>唾液（含唾液淀粉酶）</td><td>淀粉→麦芽糖（初步）</td><td>—</td></tr>
+<tr><td>咽、食道</td><td>—</td><td>运输食物</td><td>—</td></tr>
+<tr><td>胃</td><td>胃液（含胃蛋白酶）</td><td>蛋白质→多肽（初步）</td><td>少量水、酒精</td></tr>
+<tr><td>小肠</td><td>肠液、胰液、胆汁</td><td><strong>主要消化场所</strong>：淀粉→葡萄糖；蛋白质→氨基酸；脂肪→甘油+脂肪酸</td><td><strong>主要吸收场所</strong></td></tr>
+<tr><td>大肠</td><td>—</td><td>—</td><td>吸收少量水、无机盐、维生素</td></tr>
+</table>
+
+<p><strong>小肠适于吸收的结构特点</strong>：①长（5-6米） ②内表面有环形皱襞和绒毛（增大面积）③绒毛壁薄（仅一层细胞）④绒毛内有丰富的毛细血管。</p>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_digest.svg" alt="消化系统">
+<div class="cp">人体消化系统示意图——食物依次经过：口腔→咽→食道→胃→小肠→大肠→肛门</div>
+</div>
+
+<h3>二、呼吸系统</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">呼吸路径</div><div class="f-val">鼻→咽→喉→气管→支气管→肺</div><div class="f-desc">用鼻呼吸比用嘴呼吸好</div></div>
+<div class="f-card"><div class="f-name">气体交换场所</div><div class="f-val">肺泡（数量多·壁薄·有毛细血管）</div><div class="f-desc">扩散作用：O₂进血液，CO₂入肺泡</div></div>
+<div class="f-card"><div class="f-name">膈肌运动</div><div class="f-val">收缩→吸气；舒张→呼气</div><div class="f-desc">膈顶下降→胸廓扩大→肺内压↓→吸气</div></div>
+<div class="f-card"><div class="f-name">呼出气体成分</div><div class="f-val">O₂减少，CO₂增多</div><div class="f-desc">氮气含量不变（约78%）</div></div>
+</div>
+
+<div class="note"><strong>重要规律：</strong>三大营养物质的消化终产物——<strong>淀粉→葡萄糖、蛋白质→氨基酸、脂肪→甘油+脂肪酸</strong>。其中，<strong>胆汁</strong>不含消化酶，但对脂肪有<strong>乳化</strong>作用（物理性消化）。</div>
+
+<div class="ex">
+<div class="q">【例题】某病人吃进去的米饭中的淀粉，在体内经过哪些消化器官最终被吸收？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>淀粉的消化吸收路径：<br>
+口腔（唾液淀粉酶→麦芽糖）→ 胃（未消化）→ <strong>小肠</strong>（肠液/胰液中的淀粉酶、麦芽糖酶→<strong>葡萄糖</strong>）→ 从小肠绒毛<strong>吸收</strong>进入血液。<br>
+<strong>总结：</strong>淀粉的<strong>消化</strong>起始于口腔，<strong>彻底消化</strong>在小肠，<strong>吸收</strong>在小肠。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 为什么吃饭时不能大声说笑？<br>
+• 用鼻呼吸比用口呼吸好，请列举三条理由。<br>
+• 人体呼出的气体中含量最多的是氮气还是二氧化碳？</div></div>
+</div>
+
+<!-- ════════════ 专题五：人体的循环与泌尿 ════════════ -->
+<div class="f-section">
+<h2>专题五：人体的循环与泌尿系统</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">人体生理二</span>
+
+<p><strong>循环系统</strong>将消化吸收的营养物质和呼吸获得的氧气运送到全身各处，同时将代谢废物运走。<strong>泌尿系统</strong>负责将血液中的废物过滤排出，维持体内环境稳定。</p>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_circulation.svg" alt="血液循环">
+<div class="cp">血液循环分为体循环（全身）和肺循环（肺），两套循环同时进行，通过心脏相连</div>
+</div>
+
+<h3>血液循环</h3>
+<table>
+<tr><th>循环途径</th><th>起点</th><th>终点</th><th>血液变化</th><th>功能</th></tr>
+<tr><td><strong>体循环</strong></td><td>左心室</td><td>右心房</td><td>动脉血→静脉血</td><td>输送O₂和营养到全身；带走CO₂和废物</td></tr>
+<tr><td><strong>肺循环</strong></td><td>右心室</td><td>左心房</td><td>静脉血→动脉血</td><td>血液在肺泡处进行气体交换</td></tr>
+</table>
+
+<h4>血液的组成</h4>
+<table>
+<tr><th>成分</th><th>特点</th><th>功能</th><th>异常</th></tr>
+<tr><td>红细胞</td><td>含血红蛋白（Fe），无核</td><td>运输氧气</td><td>过少→贫血</td></tr>
+<tr><td>白细胞</td><td>有核，体积最大</td><td>吞噬病菌，免疫防御</td><td>过多→炎症</td></tr>
+<tr><td>血小板</td><td>无核，体积最小</td><td>止血凝血</td><td>过少→出血难止</td></tr>
+<tr><td>血浆</td><td>90%水，淡黄色</td><td>运输血细胞、营养、废物</td><td>—</td></tr>
+</table>
+
+<h3>泌尿系统</h3>
+<p><strong>肾脏</strong>是形成尿液的器官。每个肾脏有约100万个肾单位（肾脏的结构和功能单位）。<br>
+<strong>尿液形成过程：</strong></p>
+<div style="background:#f0f8f0;border-radius:8px;padding:12px 16px;margin:8px 0;font-size:13px">
+<strong>第一步（过滤）：</strong>血液流经肾小球→滤过→形成<strong>原尿</strong>（含葡萄糖、水、无机盐、尿素，不含血细胞和大分子蛋白）。<br>
+<strong>第二步（重吸收）：</strong>原尿流经肾小管→<strong>全部葡萄糖、大部分水、部分无机盐</strong>被重吸收回血液→剩余形成<strong>终尿</strong>。
+</div>
+
+<div class="warn"><strong>⚠️ 易错点：</strong>①血液≠血浆≠血清——<strong>血液=血浆+血细胞</strong>；<strong>血清=血浆-凝血因子</strong>；②<strong>动脉血</strong>含氧多、颜色鲜红；<strong>静脉血</strong>含氧少、颜色暗红——但肺动脉里流的是静脉血，肺静脉里流的是动脉血；③尿液中<strong>不含葡萄糖</strong>（正常情况），若尿液含葡萄糖可能是<strong>糖尿病</strong>或肾小管病变。</div>
+
+<div class="ex">
+<div class="q">【例题1】医生检验某病人的尿液，发现尿液中含有蛋白质和红细胞。推测可能是什么结构发生了病变？如果尿液中含有葡萄糖呢？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong><br>
+(1) 尿液中出现蛋白质和红细胞 → <strong>肾小球</strong>发生病变。<br>
+正常时肾小球过滤作用只允许小分子物质通过，血细胞和大分子蛋白不能通过。如果肾小球滤过膜受损，血细胞和蛋白质就会进入原尿。<br>
+(2) 尿液中出现葡萄糖 → 可能是<strong>肾小管</strong>病变（重吸收功能下降）或<strong>胰岛素分泌不足</strong>（血糖浓度过高，超出肾小管重吸收能力）。</div>
+</div>
+
+<div class="ex">
+<div class="q">【例题2】一个红细胞从右心室出发，依次经过哪些结构，最终到达左心房？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>右心室 → 肺动脉 → 肺部毛细血管（气体交换）→ 肺静脉 → <strong>左心房</strong><br>
+这条路径是<strong>肺循环</strong>路线。红细胞在肺部毛细血管处释放CO₂、结合O₂，血液由静脉血变为动脉血。<br>
+<strong>口诀：</strong>"右室出肺动，肺毛换气体，肺静脉回左房"。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 手背上的"青筋"是动脉还是静脉？为什么它是青色的？<br>
+• 人体消化吸收的营养物质，最先通过哪条血管到达心脏？<br>
+• 医生抽血化验时，针刺入的是什么血管？为什么选这种血管？</div></div>
+</div>
+
+<!-- ════════════ 专题六：人体调节 ════════════ -->
+<div class="f-section">
+<h2>专题六：人体的调节</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">人体生理三</span>
+
+<p>人体通过<strong>神经调节</strong>和<strong>激素调节</strong>来协调各系统的活动，使人体成为一个统一的整体。神经调节的特点是<strong>快速、精确</strong>；激素调节的特点是<strong>缓慢、持久</strong>。</p>
+
+<div class="chart-wrap">
+<img src="charts/topic_bio_reflex.svg" alt="反射弧结构">
+<div class="cp">反射弧五部分：感受器→传入神经→神经中枢→传出神经→效应器——任何一个环节中断，反射都不能完成</div>
+</div>
+
+<h3>神经调节</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">神经系统组成</div><div class="f-val">中枢 + 周围</div><div class="f-desc">中枢：脑（大脑/小脑/脑干）+ 脊髓；周围：脑神经 + 脊神经</div></div>
+<div class="f-card"><div class="f-name">神经元</div><div class="f-val">细胞体 + 突起（树突/轴突）</div><div class="f-desc">神经系统的结构和功能单位</div></div>
+<div class="f-card"><div class="f-name">反射</div><div class="f-val">神经系统对刺激的规律性反应</div><div class="f-desc">反射弧是反射的结构基础</div></div>
+<div class="f-card"><div class="f-name">大脑皮层功能</div><div class="f-val">感觉·运动·语言·视觉·听觉中枢</div><div class="f-desc">最高级神经中枢</div></div>
+</div>
+
+<table>
+<tr><th>反射类型</th><th>形成</th><th>神经中枢</th><th>举例</th><th>意义</th></tr>
+<tr><td><strong>非条件反射</strong></td><td>生来就有</td><td>脊髓/脑干（低级中枢）</td><td>缩手反射、膝跳反射、眨眼</td><td>基本生存保障</td></tr>
+<tr><td><strong>条件反射</strong></td><td>后天学习形成</td><td>大脑皮层（高级中枢）</td><td>望梅止渴、听到铃声分泌唾液</td><td>适应环境变化</td></tr>
+</table>
+
+<div class="note"><strong>大脑·小脑·脑干功能区分：</strong><br>
+<strong>大脑</strong>——感觉、运动、语言、思维（"司令部"）<br>
+<strong>小脑</strong>——维持身体平衡、协调运动（"醉汉走路不稳→小脑被酒精麻痹"）<br>
+<strong>脑干</strong>——心跳、呼吸等基本生命活动中枢（"生命中枢"）</div>
+
+<h3>激素调节</h3>
+<table>
+<tr><th>激素</th><th>分泌腺体</th><th>主要功能</th><th>异常</th></tr>
+<tr><td>生长激素</td><td>垂体</td><td>促进生长</td><td>幼年过少→侏儒症；过多→巨人症</td></tr>
+<tr><td>甲状腺激素</td><td>甲状腺</td><td>促进代谢和生长发育</td><td>幼年过少→呆小症；过多→甲亢</td></tr>
+<tr><td>胰岛素</td><td>胰岛（胰腺中）</td><td>降低血糖</td><td>不足→糖尿病（多饮多食多尿消瘦）</td></tr>
+<tr><td>肾上腺激素</td><td>肾上腺</td><td>使心跳加速、血压升高</td><td>"应急"反应</td></tr>
+</table>
+
+<div class="ex">
+<div class="q">【例题1】下列反射活动属于条件反射的是（  ）<br>
+A. 新生儿吮吸反射  B. 手碰到烫的东西缩回  C. 看到梅子分泌唾液  D. 强光下瞳孔缩小</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>选<strong>C</strong>。<br>
+条件反射是后天学习形成的。看到梅子分泌唾液需要"学会"梅子和酸味的关系——这是经验学习的结果。<br>
+A❌ 吮吸反射是<strong>生来就有</strong>的非条件反射。<br>
+B❌ 缩手反射是非条件反射，神经中枢在<strong>脊髓</strong>。<br>
+D❌ 瞳孔缩小是<strong>非条件反射</strong>。<br>
+<strong>区分方法：</strong>"需不需要学习？"需要→条件反射；不需要→非条件反射。</div>
+</div>
+
+<div class="ex">
+<div class="q">【例题2】某人在一次交通事故中受伤，虽能正常行走，但无法完成"走平衡木"动作。最可能是哪个结构受损？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong><strong>小脑</strong>受损。<br>
+小脑的功能是<strong>维持身体平衡、协调运动</strong>。走平衡木需要良好的平衡能力，所以小脑损伤的人无法完成。<br>
+<strong>典型症状对比：</strong>小脑受损→走路不稳、动作不协调；大脑受损→瘫痪（运动区受损）或失语（语言区受损）；脑干受损→心跳呼吸停止（最危险）。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• "谈虎色变"是什么反射？与"望梅止渴"有什么共同特点？<br>
+• 糖尿病患者为什么会出现"多饮多食多尿"的症状？胰岛素分泌不足为什么会引起血糖升高？</div></div>
+</div>
+
+<!-- ════════════ 专题七：生殖、发育与遗传 ════════════ -->
+<div class="f-section">
+<h2>专题七：生殖、发育与遗传</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">生命的延续</span>
+
+<p>生殖使物种<strong>得以延续</strong>，遗传和变异使生物<strong>既保持稳定又不断进化</strong>。本章是考试中与现代科技联系最紧密的部分。</p>
+
+<h3>一、生殖与发育</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">男性生殖系统</div><div class="f-val">睾丸（产生精子·分泌雄性激素）</div><div class="f-desc">附睾、输精管、精囊、前列腺</div></div>
+<div class="f-card"><div class="f-name">女性生殖系统</div><div class="f-val">卵巢（产生卵细胞·分泌雌性激素）</div><div class="f-desc">输卵管（受精场所）→子宫（胚胎发育场所）→阴道</div></div>
+<div class="f-card"><div class="f-name">受精→分娩过程</div><div class="f-val">受精卵→分裂→着床→胚胎→胎儿→分娩</div><div class="f-desc">在输卵管受精，在子宫发育</div></div>
+<div class="f-card"><div class="f-name">青春期变化</div><div class="f-val">身高突增·生殖器官成熟·第二性征出现</div><div class="f-desc">女生比男生早1-2年进入青春期</div></div>
+</div>
+
+<h3>二、遗传的物质基础</h3>
+<div style="background:#f0f8f0;border-radius:8px;padding:12px 16px;margin:8px 0;font-size:13px">
+<strong>染色体→DNA→基因</strong>三者的关系：<br>
+<strong>染色体</strong>（细胞核中，由DNA+蛋白质组成）内含有<strong>DNA</strong>（遗传信息的载体），DNA上有遗传效应的片段叫<strong>基因</strong>（控制生物性状的基本单位）。<br>
+👨‍👩‍👧‍👦 <strong>体细胞</strong>中染色体成对存在（人的体细胞有23对=46条），<strong>生殖细胞</strong>（精子/卵细胞）中染色体成单存在（23条）。
+</div>
+
+<div class="chart-wrap">
+<img src="charts/bio_jun_dna_gene.svg" alt="染色体DNA基因关系">
+<div class="cp">染色体、DNA、基因三者的关系——细胞核→染色体→DNA→基因（有遗传效应的DNA片段）</div>
+</div>
+
+<h3>三、基因的显性和隐性</h3>
+<table>
+<tr><th>概念</th><th>定义</th><th>遗传图解示例</th></tr>
+<tr><td><strong>显性基因</strong></td><td>控制显性性状（大写字母如D）</td><td rowspan="2">Dd × Dd → DD : Dd : dd = 1:2:1 → 显性:隐性 = 3:1</td></tr>
+<tr><td><strong>隐性基因</strong></td><td>控制隐性性状（小写字母如d）</td></tr>
+</table>
+
+<div class="chart-wrap">
+<img src="charts/bio_jun_mendel.svg" alt="遗传图解">
+<div class="cp">孟德尔豌豆杂交实验——高茎(D)对矮茎(d)为显性，子二代高茎:矮茎≈3:1</div>
+</div>
+
+<div class="tip"><strong>必考比例：</strong>①Dd × Dd → <strong>3:1</strong>（显性:隐性）；②Dd × dd → <strong>1:1</strong>（测交比例）；③男性精子含X或Y染色体（两种），女性卵细胞只含X染色体 → 生男生女概率 <strong>各50%</strong>。</div>
+
+<div class="warn"><strong>⚠️ 易错点：</strong>①"高茎:矮茎=3:1"是<strong>子二代</strong>（F₂）的比例，不是子一代——子一代全是高茎（Dd）；②一对夫妇生了一个女孩，下一胎生男孩的概率<strong>仍然是50%</strong>（每次独立）；③<strong>可遗传变异</strong>由遗传物质改变引起（基因突变、染色体变异等），<strong>不可遗传变异</strong>仅由环境引起（如晒黑、营养不良长不高）。</div>
+
+<div class="ex">
+<div class="q">【例题】人的双眼皮(A)对单眼皮(a)为显性。一对夫妇都是双眼皮，却生了一个单眼皮的孩子。请分析：<br>
+(1) 这对夫妇的基因型分别是什么？<br>
+(2) 若他们再生一个孩子，是双眼皮的概率是多少？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong><br>
+(1) 夫妇都是双眼皮，却生出单眼皮(aa)孩子→说明夫妇双方都携带隐性基因a→所以夫妇基因型都是<strong>Aa</strong>。<br>
+(2) Aa × Aa → AA:Aa:aa = 1:2:1，双眼皮(AA+Aa)占<strong>3/4（75%）</strong>。<br>
+<strong>规律：</strong>无中生有→父母都是杂合子Aa。即"双亲都显性，生出一个隐性的孩子→父母必为Aa"。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 人的体细胞中有46条染色体，精子、卵细胞、受精卵中各有多少条？<br>
+• 一对表现正常的夫妇（均为携带者）生了一个患白化病的孩子，若他们再生一个孩子，患病的概率是多少？</div></div>
+</div>
+
+<!-- ════════════ 专题八：进化与生态系统 ════════════ -->
+<div class="f-section">
+<h2>专题八：生物进化与生态系统</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">进化与生态</span>
+
+<p>生物进化的观点和生态系统的知识是认识生命世界的重要视角。<strong>自然选择</strong>学说解释了生物为什么会进化，<strong>生态系统</strong>的概念帮助我们理解生物与环境的关系。</p>
+
+<h3>一、生物进化</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">进化总趋势</div><div class="f-val">简单→复杂·低等→高等·水生→陆生</div><div class="f-desc">从单细胞到多细胞，从无脊椎到有脊椎</div></div>
+<div class="f-card"><div class="f-name">自然选择（达尔文）</div><div class="f-val">过度繁殖→生存斗争→遗传变异→适者生存</div><div class="f-desc">"物竞天择，适者生存"</div></div>
+<div class="f-card"><div class="f-name">植物进化顺序</div><div class="f-val">藻类→苔藓→蕨类→裸子→被子</div><div class="f-desc">从无种子到有种子，种子从裸露到有果皮</div></div>
+<div class="f-card"><div class="f-name">动物进化顺序</div><div class="f-val">鱼类→两栖类→爬行类→鸟类/哺乳类</div><div class="f-desc">从水生到陆生，从变温到恒温</div></div>
+</div>
+
+<div class="note"><strong>米勒实验的启示：</strong>模拟原始大气条件，用电火花（模拟闪电）合成了氨基酸等有机小分子→证明<strong>无机物可以转变为有机小分子</strong>。但米勒实验并未合成出原始生命，生命起源还需要更复杂的条件。</div>
+
+<h3>二、生态系统</h3>
+<p><strong>生态系统</strong> = <strong>生物部分</strong>（生产者+消费者+分解者） + <strong>非生物部分</strong>（阳光、空气、水、温度、土壤等）</p>
+
+<table>
+<tr><th>成分</th><th>定义</th><th>举例</th><th>作用</th></tr>
+<tr><td><strong>生产者</strong></td><td>能自己制造有机物</td><td>绿色植物、光合细菌</td><td>将太阳能→化学能，<strong>生态系统的基础</strong></td></tr>
+<tr><td><strong>消费者</strong></td><td>直接或间接以生产者为食</td><td>动物（植食/肉食/杂食）</td><td>促进物质循环和能量流动</td></tr>
+<tr><td><strong>分解者</strong></td><td>将有机物分解为无机物</td><td>细菌、真菌</td><td>将有机物→无机物回归环境，<strong>不可或缺</strong></td></tr>
+</table>
+
+<div class="warn"><strong>⚠️ 常考易错：</strong>①<strong>食物链</strong>的起点<strong>必须是生产者</strong>（不能从消费者开始）；②箭头指向捕食者→表示能量流动方向；③食物链中<strong>不包含分解者和非生物部分</strong>；④能量沿食物链<strong>逐级递减</strong>（10%-20%），所以食物链一般不超过5个营养级；⑤有毒物质沿食物链<strong>富集</strong>——营养级越高，体内毒物浓度越高。</div>
+
+<div class="chart-wrap">
+<img src="charts/bio_energy_pyramid.svg" alt="能量金字塔">
+<div class="cp">能量金字塔——能量从生产者到最高级消费者逐级递减，因此食物链营养级有限</div>
+</div>
+
+<div class="ex">
+<div class="q">【例题】在某草原生态系统中存在食物链：草→兔→狐→狼。如果狼被大量捕杀，请预测短期内兔的数量如何变化？</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>狼被大量捕杀后：<br>
+(1) 狼的<strong>天敌减少</strong>（狼少了）→狐的数量<strong>增加</strong>（狼对狐的压制减弱）<br>
+(2) 狐增加→兔的数量<strong>先减少</strong>（更多兔被狐捕食）<br>
+(3) 兔减少→狐因食物减少而减少→兔的数量<strong>后回升</strong>……最终达到新的<strong>动态平衡</strong>。<br>
+<strong>核心规律：</strong>生态系统的<strong>自动调节能力</strong>是有一定限度的，超过限度会破坏生态平衡。</div>
+</div>
+
+<div class="ex">
+<div class="q">【例题2】"稻花香里说丰年，听取蛙声一片。"请写出该农田生态系统中最短的一条食物链。</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>解析：</strong>最短的食物链：<strong>水稻→人</strong>（水稻→蛙→蛇→鹰也正确，但更长）。<br>
+食物链写作规范：<br>
+✅ <strong>水稻→人</strong>（箭头指向捕食者，起点是生产者）<br>
+❌ 水稻→害虫→蛙→蛇→鹰❌（虽然合理但不是最短）<br>
+<strong>注意：</strong>食物链中不写"吃"字，用箭头"→"表示"被吃"。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 为什么说分解者是生态系统中"不可缺少"的成分？如果没有分解者会怎样？<br>
+• 用自然选择学说解释：为什么农田中喷洒农药后，害虫数量先减少后回升？</div></div>
+</div>
+
+<!-- ════════════ 专题九：实验探究与科学方法 ════════════ -->
+<div class="f-section">
+<h2>专题九：实验探究与科学方法</h2>
+<span style="display:inline-block;font-size:11px;background:#e0f0e0;color:#2d7d46;padding:2px 10px;border-radius:4px;margin-bottom:8px">科学思维</span>
+
+<p>实验探究是生物学的重要研究方法。中考实验题主要考查<strong>对照实验的设计</strong>、<strong>变量的控制</strong>、<strong>实验现象的分析</strong>和<strong>结论的归纳</strong>。</p>
+
+<h3>科学探究的一般步骤</h3>
+<div style="display:flex;justify-content:space-between;margin:8px 0;flex-wrap:wrap;gap:4px;font-size:12px;text-align:center">
+<span style="flex:1;background:#3498db;color:#fff;padding:6px 4px;border-radius:6px;min-width:60px">提出问题</span>
+<span style="flex:1;background:#e67e22;color:#fff;padding:6px 4px;border-radius:6px;min-width:60px">作出假设</span>
+<span style="flex:1;background:#27ae60;color:#fff;padding:6px 4px;border-radius:6px;min-width:60px">制定计划</span>
+<span style="flex:1;background:#e74c3c;color:#fff;padding:6px 4px;border-radius:6px;min-width:60px">实施实验</span>
+<span style="flex:1;background:#9b59b6;color:#fff;padding:6px 4px;border-radius:6px;min-width:60px">得出结论</span>
+<span style="flex:1;background:#1abc9c;color:#fff;padding:6px 4px;border-radius:6px;min-width:60px">表达交流</span>
+</div>
+
+<h3>对照实验设计要点</h3>
+<table>
+<tr><th>关键参数</th><th>要求</th><th>举例（探究光对鼠妇的影响）</th></tr>
+<tr><td><strong>变量唯一</strong></td><td>除要研究的变量外，其他条件相同</td><td>只有"光照"不同，温度/湿度等全部相同</td></tr>
+<tr><td><strong>对照原则</strong></td><td>设置实验组和对照组</td><td>明亮组 vs 阴暗组</td></tr>
+<tr><td><strong>重复实验</strong></td><td>避免偶然性，提高可信度</td><td>每组用10只鼠妇而不是1只</td></tr>
+<tr><td><strong>样本足够</strong></td><td>数量不能太少</td><td>重复多次求平均值</td></tr>
+</table>
+
+<div class="note"><strong>常考实验方法：</strong><br>
+<strong>观察法</strong>——用感官或仪器观察（如用显微镜观察细胞）<br>
+<strong>调查法</strong>——明确目的和对象，制定方案（如调查校园植物种类）<br>
+<strong>实验法</strong>——控制变量，设置对照（如探究种子萌发的环境条件）<br>
+<strong>比较法</strong>——对比找出异同（如动植物细胞结构对比）</div>
+
+<div class="ex">
+<div class="q">【例题】现有某品牌洗手液，小明想验证它是否会影响大豆种子的萌发。请帮他设计实验方案。</div>
+<button class="sol-btn" onclick="toggleSol(this)">显示解析</button>
+<div class="a" style="display:none"><strong>实验方案：</strong><br>
+(1) 取两个培养皿，各放入等量相同的土壤。<br>
+(2) 各放入20粒（足够数量）大小相似、饱满的大豆种子。<br>
+(3) <strong>实验组：</strong>每天浇适量稀释的洗手液溶液；<strong>对照组：</strong>每天浇<strong>等量清水</strong>。<br>
+(4) 其他条件（温度、光照、通风等）<strong>完全相同</strong>。<br>
+(5) 每天观察记录种子的萌发数量，连续一周。<br>
+(6) <strong>结论：</strong>如果实验组萌发率明显低于对照组，说明洗手液会抑制大豆种子萌发。<br>
+<strong>注意：</strong>①变量唯一——只有溶液不同；②每组用多粒种子→避免偶然性；③设置对照组→证明效果是由洗手液引起的。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 在"探究绿叶在光下制造有机物"实验中：①为什么要把天竺葵先放在暗处一昼夜？②为什么要用黑纸片把叶片的一部分遮盖？③为什么要用酒精脱色？</div></div>
+</div>
+
+<!-- ════════════ 常见易错大汇总 ════════════ -->
+<div class="f-section">
+<h2>附录：高频易错点速查</h2>
+<span style="display:inline-block;font-size:11px;background:#fdf0f0;color:#e74c3c;padding:2px 10px;border-radius:4px;margin-bottom:8px">考前必看</span>
+
+<table>
+<tr><th>序号</th><th>易错点</th><th>正确理解</th></tr>
+<tr><td>1</td><td>细胞壁是"控制物质进出"</td><td>❌ 细胞壁只有保护和支持作用，<strong>控制物质进出的是细胞膜</strong></td></tr>
+<tr><td>2</td><td>植物所有细胞都有叶绿体</td><td>❌ <strong>只有绿色部分</strong>（如叶肉细胞）有叶绿体，<strong>根尖细胞没有</strong></td></tr>
+<tr><td>3</td><td>动物体也有"系统"层次</td><td>✅ 但植物体<strong>没有"系统"层次</strong>：细胞→组织→器官→个体</td></tr>
+<tr><td>4</td><td>动脉里流的是动脉血</td><td>❌ <strong>肺动脉</strong>里流的是<strong>静脉血</strong>（含氧少）；<strong>肺静脉</strong>里流的是<strong>动脉血</strong></td></tr>
+<tr><td>5</td><td>胆汁含消化酶能消化脂肪</td><td>❌ 胆汁<strong>不含消化酶</strong>，对脂肪起<strong>乳化</strong>作用（物理消化）</td></tr>
+<tr><td>6</td><td>尿液先形成在膀胱</td><td>❌ 肾脏形成尿液→输尿管→<strong>膀胱暂时储存</strong>→尿道排出</td></tr>
+<tr><td>7</td><td>条件反射的神经中枢在脊髓</td><td>❌ 条件反射神经中枢在<strong>大脑皮层</strong>；非条件反射可在脊髓/脑干</td></tr>
+<tr><td>8</td><td>生男生女由女方决定</td><td>❌ 男性产生X和Y两种精子，女性只产生X卵细胞→由<strong>男方</strong>决定</td></tr>
+<tr><td>9</td><td>食物链起点可从动物开始</td><td>❌ 食物链<strong>起点必须是生产者</strong>（绿色植物）</td></tr>
+<tr><td>10</td><td>变异都是可遗传的</td><td>❌ 只有<strong>遗传物质改变</strong>的变异才可遗传，环境引起的变异不可遗传</td></tr>
+</table>
+</div>
+
+</div>
+<div class="footer">思贤学习站 · 济南市商河县</div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>
+window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});
+function toggleSol(btn){var s=btn.nextElementSibling;while(s&&!s.classList.contains('a'))s=s.nextElementSibling;if(s){if(s.style.display==='none'){s.style.display='block';btn.textContent='隐藏解析'}else{s.style.display='none';btn.textContent='显示解析'}}}
+</script>
 </body></html>

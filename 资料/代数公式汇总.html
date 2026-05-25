@@ -1,120 +1,432 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>代数公式汇总 · 思贤学习站</title>
-<link rel="icon" href="../images/logo.png">
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>代数公式汇总 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
 .head{max-width:880px;margin:0 auto;padding:18px 20px 0}
 .head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#1a73e8}
 .head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
-.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#1a73e8;font-weight:600}
 .container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
-
-.f-section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #1a73e8}
-.f-section h2{font-size:18px;font-weight:700;color:#1a73e8;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #f0f0f0}
-.f-section h3{font-size:15px;font-weight:600;color:#444;margin:16px 0 10px}
-
-.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.f-section{background:#fff;border-radius:14px;padding:20px 24px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #1a73e8}
+.f-section h2{font-size:18px;font-weight:700;color:#1a73e8;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+.f-section h3{font-size:15px;font-weight:600;color:#444;margin:14px 0 8px}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
 @media(max-width:600px){.f-grid{grid-template-columns:1fr}}
-
-.f-card{background:#f8f9fc;border-radius:10px;padding:14px 16px;border:1px solid #f0f0f0}
-.f-card .f-name{font-size:14px;font-weight:600;color:#2d3436;margin-bottom:4px}
-.f-card .f-val{font-size:15px;font-weight:700;color:#1a73e8;text-align:center;padding:6px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif;letter-spacing:0.5px}
-.f-card .f-desc{font-size:12px;color:#888;margin-top:3px}
-
-.f-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
-.f-table th{background:#1a73e8;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:13px}
-.f-table td{padding:9px 14px;border-bottom:1px solid #f0f0f0}
-.f-table tr:nth-child(even){background:#f8f9fc}
-.f-table .fml{font-weight:700;color:#1a73e8;font-family:"Times New Roman",serif;font-size:15px}
-
-.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#8d6e00;border-left:3px solid #fadb14}
+.f-card{background:#f8f9fc;border-radius:10px;padding:12px 14px;border:1px solid #f0f0f0}
+.f-card .f-name{font-size:13px;font-weight:600;color:#2d3436;margin-bottom:3px}
+.f-card .f-val{font-size:15px;font-weight:700;color:#1a73e8;text-align:center;padding:5px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif}
+.f-card .f-desc{font-size:11px;color:#888;margin-top:2px}
+.f-card .f-ex{font-size:11px;color:#e67e22;margin-top:2px;font-weight:600}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.ex{background:#f0f7ff;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px}
+.ex .q{font-weight:600;color:#1a73e8;margin-bottom:4px}
+.ex .a{color:#555;font-size:12.5px;padding-left:12px;border-left:3px solid #ddd;margin-top:4px}
+.ex .a strong{color:#1a73e8}
+.hw{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px}
+.hw .hw-q{margin-bottom:3px}
+.hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px;color:#8d6e00;border-left:3px solid #fadb14}
 .note strong{color:#e74c3c}
-
-.footer{text-align:center;padding:20px;font-size:12px;color:#999}
-.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:4px;margin:1px}
-.tag.red{background:#fde8e8;color:#c0392b}
-.tag.blue{background:#e3f2fd;color:#1565c0}
-.tag.green{background:#e6f7e6;color:#2d7d46}
-.tag.orange{background:#fff3e0;color:#e65100}
-
-.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.tip{background:#f0f7ff;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#1a73e8;border-left:3px solid #1a73e8}
+.tip strong{color:#e74c3c}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+table th{background:#1a73e8;color:#fff;padding:7px 10px;text-align:left;font-weight:600;font-size:12px}
+table td{padding:6px 10px;border-bottom:1px solid #eee}
+table tr:nth-child(even){background:#f0f7ff}
+.sol-btn{display:inline-block;font-size:11px;padding:2px 10px;border-radius:4px;background:#1a73e8;color:#fff;border:none;cursor:pointer;margin:4px 0}
+.sol-btn:hover{opacity:.85}
+.formula-box{background:#f0f7ff;border-radius:8px;padding:8px 14px;margin:6px 0;border-left:3px solid #1a73e8}
+.formula-box .fm{font-size:14px;color:#1a73e8;font-weight:600;font-family:"Times New Roman",serif}
+.formula-box .fd{font-size:11px;color:#888}
+.footer{text-align:center;padding:16px;font-size:12px;color:#999}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#1a73e8);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
 .back-to-top.show{opacity:1;visibility:visible}
 .back-to-top:hover{opacity:.85;transform:translateY(-2px)}
-</style>
-<script src="../js/theme.js"></script>
-</head>
-<body>
-<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>代数公式汇总</h1><p class="sub">幂运算 · 乘法公式 · 因式分解 · 方程 · 函数 · 数列</p></div>
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>代数公式汇总</h1><p class="sub">幂运算 · 乘法公式 · 因式分解 · 方程 · 不等式 · 函数 · 数列 · 统计概率 共 <span>8</span> 专题</p></div>
 <div class="container">
-<div class="f-section"><h2>幂的运算法则</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">同底数幂相乘</div><div class="f-val">aᵐ · aⁿ = aᵐ⁺ⁿ</div><div class="f-desc">底数不变，指数相加</div></div>
-<div class="f-card"><div class="f-name">同底数幂相除</div><div class="f-val">aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a≠0)</div><div class="f-desc">底数不变，指数相减</div></div>
-<div class="f-card"><div class="f-name">幂的乘方</div><div class="f-val">(aᵐ)ⁿ = aᵐⁿ</div><div class="f-desc">底数不变，指数相乘</div></div>
-<div class="f-card"><div class="f-name">积的乘方</div><div class="f-val">(ab)ⁿ = aⁿ bⁿ</div><div class="f-desc">分别乘方后再相乘</div></div>
-<div class="f-card"><div class="f-name">零指数</div><div class="f-val">a⁰ = 1 (a≠0)</div><div class="f-desc">任何非零数的零次幂都等于 1</div></div>
-<div class="f-card"><div class="f-name">负指数</div><div class="f-val">a⁻ⁿ = 1/aⁿ</div><div class="f-desc">负指数等于正指数的倒数</div></div>
-<div class="f-card"><div class="f-name">分数指数</div><div class="f-val">aᵐⁿ = ⁿ√aᵐ</div><div class="f-desc">分子为指数，分母为根指数</div></div>
-</div></div>
-<div class="f-section"><h2>乘法公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">平方差公式</div><div class="f-val">(a+b)(a-b) = a² - b²</div><div class="f-desc">两数和乘以两数差等于平方差</div></div>
-<div class="f-card"><div class="f-name">完全平方和</div><div class="f-val">(a+b)² = a² + 2ab + b²</div><div class="f-desc">首平方、尾平方、二倍乘积在中央</div></div>
-<div class="f-card"><div class="f-name">完全平方差</div><div class="f-val">(a-b)² = a² - 2ab + b²</div><div class="f-desc">首平方、尾平方、负二倍乘积在中央</div></div>
-<div class="f-card"><div class="f-name">立方和</div><div class="f-val">(a+b)(a²-ab+b²) = a³ + b³</div><div class="f-desc">注意中间项符号</div></div>
-<div class="f-card"><div class="f-name">立方差</div><div class="f-val">(a-b)(a²+ab+b²) = a³ - b³</div><div class="f-desc">注意中间项符号</div></div>
-<div class="f-card"><div class="f-name">完全立方和</div><div class="f-val">(a+b)³ = a³+3a²b+3ab²+b³</div><div class="f-desc">二项式展开</div></div>
-<div class="f-card"><div class="f-name">完全立方差</div><div class="f-val">(a-b)³ = a³-3a²b+3ab²-b³</div><div class="f-desc">二项式展开</div></div>
-</div></div>
-<div class="f-section"><h2>因式分解方法</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">提公因式法</div><div class="f-val">ma + mb + mc = m(a+b+c)</div><div class="f-desc">各项有公因式时优先提取</div></div>
-<div class="f-card"><div class="f-name">平方差公式</div><div class="f-val">a² - b² = (a+b)(a-b)</div><div class="f-desc">两项均为平方且符号相反</div></div>
-<div class="f-card"><div class="f-name">完全平方</div><div class="f-val">a²±2ab+b² = (a±b)²</div><div class="f-desc">三项，首尾平方中间二倍乘积</div></div>
-<div class="f-card"><div class="f-name">十字相乘法</div><div class="f-val">x²+(p+q)x+pq = (x+p)(x+q)</div><div class="f-desc">二次项系数为 1</div></div>
-<div class="f-card"><div class="f-name">十字相乘法（一般）</div><div class="f-val">ax²+bx+c = (px+q)(rx+s)</div><div class="f-desc">pr=a, qs=c, ps+qr=b</div></div>
-<div class="f-card"><div class="f-name">分组分解法</div><div class="f-val">分组后提公因式或套公式</div><div class="f-desc">四项以上分组处理</div></div>
-<div class="f-card"><div class="f-name">立方和/差</div><div class="f-val">a³±b³ = (a±b)(a²∓ab+b²)</div><div class="f-desc">按公式直接分解</div></div>
-</div></div>
-<div class="f-section"><h2>一元二次方程</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">一般形式</div><div class="f-val">ax² + bx + c = 0 (a≠0)</div><div class="f-desc">二次项系数不为零</div></div>
-<div class="f-card"><div class="f-name">求根公式</div><div class="f-val">x = [-b ± √(b²-4ac)] / (2a)</div><div class="f-desc">万能公式，适用于所有一元二次方程</div></div>
-<div class="f-card"><div class="f-name">判别式</div><div class="f-val">Δ = b² - 4ac</div><div class="f-desc">Δ>0 两不等实根；Δ=0 两等根；Δ<0 无实根</div></div>
-<div class="f-card"><div class="f-name">韦达定理</div><div class="f-val">x₁ + x₂ = -b/a,  x₁x₂ = c/a</div><div class="f-desc">根与系数的关系（Δ≥0 时适用）</div></div>
-<div class="f-card"><div class="f-name">配方法</div><div class="f-val">x² + px = (x+p/2)² - (p/2)²</div><div class="f-desc">构造完全平方</div></div>
-</div></div>
-<div class="f-section"><h2>不等式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">基本性质1</div><div class="f-val">a > b ⇒ a±c > b±c</div><div class="f-desc">两边加减同一数，不等号方向不变</div></div>
-<div class="f-card"><div class="f-name">基本性质2</div><div class="f-val">a > b, c>0 ⇒ ac > bc</div><div class="f-desc">两边乘同一正数，不等号方向不变</div></div>
-<div class="f-card"><div class="f-name">基本性质3</div><div class="f-val">a > b, c<0 ⇒ ac < bc</div><div class="f-desc">两边乘同一负数，不等号方向<span class="tag red">改变</span></div></div>
-<div class="f-card"><div class="f-name">一元一次不等式</div><div class="f-val">ax + b > 0</div><div class="f-desc">解法与方程类似，注意乘除负数变号</div></div>
-<div class="f-card"><div class="f-name">一元二次不等式</div><div class="f-val">ax² + bx + c > 0</div><div class="f-desc">利用二次函数图象求解（大于取两边，小于取中间）</div></div>
-</div></div>
-<div class="f-section"><h2>函数公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">一次函数</div><div class="f-val">y = kx + b (k≠0)</div><div class="f-desc">k>0 递增，k<0 递减，b 为 y 轴截距</div></div>
-<div class="f-card"><div class="f-name">正比例函数</div><div class="f-val">y = kx (k≠0)</div><div class="f-desc">过原点，b=0 的特殊一次函数</div></div>
-<div class="f-card"><div class="f-name">反比例函数</div><div class="f-val">y = k/x (k≠0)</div><div class="f-desc">k>0 在一三象限，k<0 在二四象限</div></div>
-<div class="f-card"><div class="f-name">二次函数一般式</div><div class="f-val">y = ax²+bx+c (a≠0)</div><div class="f-desc">a>0 开口向上，a<0 开口向下</div></div>
-<div class="f-card"><div class="f-name">二次函数顶点式</div><div class="f-val">y = a(x-h)² + k</div><div class="f-desc">顶点坐标为 (h, k)</div></div>
-<div class="f-card"><div class="f-name">二次函数交点式</div><div class="f-val">y = a(x-x₁)(x-x₂)</div><div class="f-desc">x₁, x₂ 为与 x 轴交点横坐标</div></div>
-<div class="f-card"><div class="f-name">对称轴</div><div class="f-val">x = -b/(2a)</div><div class="f-desc">二次函数对称轴方程</div></div>
-<div class="f-card"><div class="f-name">顶点坐标</div><div class="f-val">(-b/(2a), (4ac-b²)/(4a))</div><div class="f-desc">二次函数顶点坐标公式</div></div>
-</div></div>
-<div class="f-section"><h2>数列与统计</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">等差数列通项</div><div class="f-val">aₙ = a₁ + (n-1)d</div><div class="f-desc">d 为公差</div></div>
-<div class="f-card"><div class="f-name">等差数列求和</div><div class="f-val">Sₙ = n(a₁+aₙ)/2 = na₁ + n(n-1)d/2</div><div class="f-desc">首项加末项乘以项数除以 2</div></div>
-<div class="f-card"><div class="f-name">等比数列通项</div><div class="f-val">aₙ = a₁ · qⁿ⁻¹</div><div class="f-desc">q 为公比</div></div>
-<div class="f-card"><div class="f-name">等比数列求和</div><div class="f-val">Sₙ = a₁(1-qⁿ)/(1-q) (q≠1)</div><div class="f-desc">q=1 时 Sₙ = na₁</div></div>
-<div class="f-card"><div class="f-name">算术平均数</div><div class="f-val">x̄ = (x₁+x₂+...+xₙ)/n</div><div class="f-desc">所有数据之和除以个数</div></div>
-<div class="f-card"><div class="f-name">方差</div><div class="f-val">s² = Σ(xᵢ-x̄)²/n</div><div class="f-desc">反映数据波动大小，方差越小越稳定</div></div>
-<div class="f-card"><div class="f-name">标准差</div><div class="f-val">s = √[Σ(xᵢ-x̄)²/n]</div><div class="f-desc">方差的算术平方根</div></div>
-</div></div>
+
+<!-- ════════════ 专题一：幂的运算法则 ════════════ -->
+<div class="f-section">
+<h2>专题一：幂的运算法则</h2>
+<span style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">计算基础</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">幂运算是代数运算的<strong>根基</strong>，整式的乘除、方程变换都离不开幂的运算。记住：幂运算的核心是"底数不变、指数操作"。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_algebra_exponents.svg" alt="幂运算层级">
+<div class="cp">幂运算层级关系与示例</div>
+</div>
+
+<div class="f-grid">
+<div class="f-card"><div class="f-name">同底数幂相乘</div><div class="f-val">aᵐ · aⁿ = aᵐ⁺ⁿ</div><div class="f-desc">底数不变，指数相加。如 x³·x² = x⁵</div></div>
+<div class="f-card"><div class="f-name">同底数幂相除</div><div class="f-val">aᵐ ÷ aⁿ = aᵐ⁻ⁿ (a≠0)</div><div class="f-desc">底数不变，指数相减。如 x⁵÷x² = x³</div></div>
+<div class="f-card"><div class="f-name">幂的乘方</div><div class="f-val">(aᵐ)ⁿ = aᵐⁿ</div><div class="f-desc">底数不变，指数相乘。如 (x²)³ = x⁶</div></div>
+<div class="f-card"><div class="f-name">积的乘方</div><div class="f-val">(ab)ⁿ = aⁿbⁿ</div><div class="f-desc">分别乘方。如 (2x)³ = 8x³</div></div>
+<div class="f-card"><div class="f-name">零指数幂</div><div class="f-val">a⁰ = 1 (a≠0)</div><div class="f-desc">任何非零数的0次幂=1。0⁰无意义</div></div>
+<div class="f-card"><div class="f-name">负整数指数</div><div class="f-val">a⁻ⁿ = 1/aⁿ (a≠0)</div><div class="f-desc">负指数=正指数的倒数。如 2⁻²=¼</div></div>
+<div class="f-card"><div class="f-name">分数指数（根式）</div><div class="f-val">a^(m/n) = ⁿ√aᵐ</div><div class="f-desc">分子为指数、分母为根指数</div></div>
+</div>
+
+<div class="tip"><strong>记忆技巧：</strong>同底数幂乘除对比记——"相乘指数加、相除指数减"；幂的乘方"指数相乘"。注意区分(aᵐ)ⁿ（幂的乘方）与aᵐ·aⁿ（同底数幂相乘）！</div>
+
+<div class="ex">
+<div class="q">【例题】计算：(1) x⁵·x³ (2) (a²)⁴ (3) (3a²b)² (4) 2⁻³</div>
+<div class="a"><strong>解：</strong><br>
+(1) x⁵·x³ = x⁵⁺³ = x⁸（同底数幂相乘，指数相加）<br>
+(2) (a²)⁴ = a²ˣ⁴ = a⁸（幂的乘方，指数相乘）<br>
+(3) (3a²b)² = 3²·a⁴·b² = 9a⁴b²（积的乘方，每个因式分别乘方）<br>
+(4) 2⁻³ = 1/2³ = 1/8（负指数化为正指数的倒数）</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">幂运算最容易错的是"(aᵐ)ⁿ"和"aᵐ·aⁿ"的混淆。口诀："外面有括号是指数相乘，没括号是指数相加"。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 计算：(1) x²·x⁴ (2) (x²)⁴ (3) x⁸÷x² (4) (-2a³b²)³</div></div>
+</div>
+
+<!-- ════════════ 专题二：乘法公式与因式分解 ════════════ -->
+<div class="f-section">
+<h2>专题二：乘法公式与因式分解</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">核心运算</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">乘法公式是代数运算的<strong>工具</strong>，而因式分解是乘法公式的<strong>逆运算</strong>。掌握它们之间的互逆关系，能大幅提升计算速度和准确率。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_algebra_square.svg" alt="乘法公式几何意义">
+<div class="cp">(a+b)² = a²+2ab+b² 的几何意义——面积分割法</div>
+</div>
+
+<h3>七个核心乘法公式</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">平方差公式</div><div class="f-val">(a+b)(a-b)=a²-b²</div><div class="f-desc">"两项平方作差"</div></div>
+<div class="f-card"><div class="f-name">完全平方和</div><div class="f-val">(a+b)²=a²+2ab+b²</div><div class="f-desc">"首平方+尾平方+二倍积"</div></div>
+<div class="f-card"><div class="f-name">完全平方差</div><div class="f-val">(a-b)²=a²-2ab+b²</div><div class="f-desc">中间符号为负</div></div>
+<div class="f-card"><div class="f-name">立方和</div><div class="f-val">(a+b)(a²-ab+b²)=a³+b³</div><div class="f-desc">注意ab前的符号是负</div></div>
+<div class="f-card"><div class="f-name">立方差</div><div class="f-val">(a-b)(a²+ab+b²)=a³-b³</div><div class="f-desc">与立方和对比记忆</div></div>
+<div class="f-card"><div class="f-name">完全立方和</div><div class="f-val">(a+b)³=a³+3a²b+3ab²+b³</div><div class="f-desc">二项式展开</div></div>
+<div class="f-card"><div class="f-name">完全立方差</div><div class="f-val">(a-b)³=a³-3a²b+3ab²-b³</div><div class="f-desc">注意符号交替</div></div>
+</div>
+
+<h3>因式分解五种方法</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">提公因式法</div><div class="f-val">ma+mb+mc=m(a+b+c)</div><div class="f-desc">先看是否有公因式可提</div></div>
+<div class="f-card"><div class="f-name">公式法</div><div class="f-val">逆用乘法公式分解</div><div class="f-desc">平方差/完全平方/立方和差</div></div>
+<div class="f-card"><div class="f-name">十字相乘法</div><div class="f-val">x²+(p+q)x+pq=(x+p)(x+q)</div><div class="f-desc">二次项系数为1时最常用</div></div>
+<div class="f-card"><div class="f-name">十字相乘（一般）</div><div class="f-val">ax²+bx+c拆成(px+q)(rx+s)</div><div class="f-desc">pr=a, qs=c, ps+qr=b</div></div>
+<div class="f-card"><div class="f-name">分组分解法</div><div class="f-val">分组后各自提取公因式</div><div class="f-desc">四项及以上时使用</div></div>
+</div>
+
+<div class="note"><strong>易错提醒：</strong>① (a+b)² = a²+2ab+b²，中间项有"2"！② 平方差公式中a和b可以是单项式也可以是多项式；③ 因式分解一定要分解到不能再分为止。</div>
+
+<div class="ex">
+<div class="q">【例题】分解因式：(1) x²-9 (2) x²+6x+9 (3) x²-5x+6 (4) 2x²-8</div>
+<div class="a"><strong>解：</strong><br>
+(1) x²-9 = (x+3)(x-3) —— 平方差公式<br>
+(2) x²+6x+9 = (x+3)² —— 完全平方公式<br>
+(3) x²-5x+6 = (x-2)(x-3) —— 十字相乘法（找两数积为6、和为-5）<br>
+(4) 2x²-8 = 2(x²-4) = 2(x+2)(x-2) —— 先提公因式再用平方差</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">因式分解的做题顺序口诀："一<span class="red">提</span>公因式、二<span class="red">套</span>公式、三<span class="red">十字</span>、四<span class="red">分组</span>"。按此顺序，不走弯路。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 计算：(1) (2x+1)(2x-1) (2) (3a-2b)²<br>
+• 分解因式：(1) a²-4b² (2) x²+8x+16 (3) x²-3x-10 (4) 3x³-12x</div></div>
+</div>
+
+<!-- ════════════ 专题三：方程与方程组 ════════════ -->
+<div class="f-section">
+<h2>专题三：方程与方程组</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">中考重点</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">方程是代数的<strong>核心工具</strong>——用方程来刻画数量关系，是解决实际问题的核心方法。一元二次方程的解法是重中之重。</p>
+
+<h3>一元一次方程</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">标准形式</div><div class="f-val">ax + b = 0 (a≠0)</div><div class="f-desc">解为 x = -b/a</div></div>
+</div>
+
+<h3>二元一次方程组</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">代入消元法</div><div class="f-val">用一个未知数表示另一个</div><div class="f-desc">适合某系数为±1时</div></div>
+<div class="f-card"><div class="f-name">加减消元法</div><div class="f-val">两方程加减消去一个元</div><div class="f-desc">系数成倍数关系时最方便</div></div>
+</div>
+
+<h3>一元二次方程 — 核心公式</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">一般形式</div><div class="f-val">ax²+bx+c=0 (a≠0)</div><div class="f-desc">a是二次项系数、b是一次项系数、c是常数</div></div>
+<div class="f-card"><div class="f-name">求根公式</div><div class="f-val">x=[-b±√(b²-4ac)]/(2a)</div><div class="f-desc">万能法，任何一元二次方程都可用</div></div>
+<div class="f-card"><div class="f-name">判别式</div><div class="f-val">Δ = b²-4ac</div><div class="f-desc">Δ>0两不等实根；Δ=0两等根；Δ<0无实根</div></div>
+<div class="f-card"><div class="f-name">韦达定理</div><div class="f-val">x₁+x₂=-b/a, x₁x₂=c/a</div><div class="f-desc">根与系数的关系（Δ≥0时适用）</div></div>
+</div>
+
+<div class="tip"><strong>记忆技巧：</strong>求根公式口诀——"负b加减根号下，b方减4ac，除以2a"。韦达定理——"两根和等于负b比a，两根积等于c比a"。</div>
+
+<div class="ex">
+<div class="q">【例题】解方程 x²-5x+6=0，并验证韦达定理。</div>
+<div class="a"><strong>解法一（因式分解）：</strong><br>
+x²-5x+6 = (x-2)(x-3) = 0 → x₁=2, x₂=3<br><br>
+<strong>解法二（求根公式）：</strong><br>
+a=1, b=-5, c=6<br>
+Δ = b²-4ac = 25-24 = 1 > 0<br>
+x = [5±1]/2 → x₁=3, x₂=2<br><br>
+<strong>韦达定理验证：</strong><br>
+x₁+x₂ = 2+3 = 5 = -(-5)/1 = 5 ✓<br>
+x₁·x₂ = 2×3 = 6 = 6/1 = 6 ✓</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">能用因式分解的优先用因式分解（更快），不能分解的用求根公式。考题中经常要求"用两种方法解"，所以两种方法都要熟练掌握。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 解方程：(1) x²-2x-3=0 (2) 2x²+3x-2=0 (3) x²-6x+9=0<br>
+• 已知一元二次方程 x²-4x+k=0 有两个相等的实数根，求k的值。</div></div>
+</div>
+
+<!-- ════════════ 专题四：不等式 ════════════ -->
+<div class="f-section">
+<h2>专题四：不等式</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">逻辑思维</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">不等式与方程最大的区别在于：方程等号两边操作一致，而不等式乘除负数时不等号方向<strong>会改变</strong>。这是最关键也是最易错的知识点。</p>
+
+<h3>不等式的基本性质</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">性质1</div><div class="f-val">a>b ⇒ a±c>b±c</div><div class="f-desc">两边同加/减同一数，不等号不变</div></div>
+<div class="f-card"><div class="f-name">性质2</div><div class="f-val">a>b, c>0 ⇒ ac>bc</div><div class="f-desc">乘正数不等号不变</div></div>
+<div class="f-card"><div class="f-name">性质3（关键！）</div><div class="f-val">a>b, c<0 ⇒ ac<bc</div><div class="f-desc">乘负数不等号<span style="color:#e74c3c;font-weight:700">改变方向</span>！</div></div>
+</div>
+
+<h3>不等式的解法</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">一元一次不等式</div><div class="f-val">ax+b>0或<0</div><div class="f-desc">解法同方程，注意系数为负时变号</div></div>
+<div class="f-card"><div class="f-name">一元二次不等式</div><div class="f-val">ax²+bx+c>0</div><div class="f-desc">利用二次函数图像：大于取两边、小于取中间</div></div>
+<div class="f-card"><div class="f-name">一元一次不等式组</div><div class="f-val">两个不等式的公共部分</div><div class="f-desc">口诀：同大取大、同小取小、大小小大中间找</div></div>
+</div>
+
+<div class="note"><strong>一级易错点：</strong>解不等式 -2x > 6 时，两边同除以 -2，不等号要改变方向 → x < -3。很多同学做成 x > -3 就错了！<br>
+<strong>检验方法：</strong>取一个"答案"代入原不等式，如果不成立说明方向错了。</div>
+
+<div class="ex">
+<div class="q">【例题】解不等式组：{ 2x-1 > 3, x+2 ≤ 5 }</div>
+<div class="a"><strong>解：</strong><br>
+由 2x-1 > 3 得 2x > 4 → x > 2<br>
+由 x+2 ≤ 5 得 x ≤ 3<br>
+∴ 不等式组的解集为 2 < x ≤ 3<br>
+<strong>数轴表示：</strong>在数轴上，2处画空心点（不含），3处画实心点（含），中间部分为解集。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">记牢不等式组的"同大取大、同小取小、大小小大中间找、大大小小找不到"口诀。本题是"x>2和x≤3"，属于"大小小大中间找"。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 解不等式：3x+7 > 2x-1<br>
+• 解不等式组：{ x-3>0, 2x+1<9 }，并用数轴表示解集。</div></div>
+</div>
+
+<!-- ════════════ 专题五：函数公式与图像 ════════════ -->
+<div class="f-section">
+<h2>专题五：函数公式与图像</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">数形结合</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">函数是中考的<strong>压轴题常客</strong>。一次函数、二次函数、反比例函数是初中必须掌握的三大函数，理解它们的图像特征是解题的关键。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_algebra_quadratic.svg" alt="二次函数图像">
+<div class="cp">二次函数 y = ax² + bx + c 的图像特征对比</div>
+</div>
+
+<h3>三大函数公式</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">一次函数</div><div class="f-val">y = kx+b (k≠0)</div><div class="f-desc">k>0递增、k<0递减；b为y截距</div></div>
+<div class="f-card"><div class="f-name">正比例函数</div><div class="f-val">y = kx (k≠0)</div><div class="f-desc">过原点(0,0)的一次函数</div></div>
+<div class="f-card"><div class="f-name">反比例函数</div><div class="f-val">y = k/x (k≠0)</div><div class="f-desc">双曲线；k>0一三象限、k<0二四象限</div></div>
+<div class="f-card"><div class="f-name">二次函数（一般式）</div><div class="f-val">y=ax²+bx+c (a≠0)</div><div class="f-desc">a>0开口向上、a<0开口向下</div></div>
+<div class="f-card"><div class="f-name">二次函数（顶点式）</div><div class="f-val">y=a(x-h)²+k</div><div class="f-desc">顶点(h,k)；h=-b/(2a), k=(4ac-b²)/(4a)</div></div>
+<div class="f-card"><div class="f-name">二次函数（交点式）</div><div class="f-val">y=a(x-x₁)(x-x₂)</div><div class="f-desc">x₁、x₂为与x轴交点横坐标</div></div>
+</div>
+
+<h3>函数图像关键特征</h3>
+<table>
+<tr><th>函数</th><th>图像形状</th><th>增减性</th><th>对称性</th></tr>
+<tr><td>一次函数</td><td>直线</td><td>k>0单调增；k<0单调减</td><td>/</td></tr>
+<tr><td>反比例函数</td><td>双曲线</td><td>k>0在各象限内递减；k<0递増</td><td>关于原点中心对称</td></tr>
+<tr><td>二次函数</td><td>抛物线</td><td>对称轴左侧与右侧增减相反</td><td>x=-b/(2a)</td></tr>
+</table>
+
+<div class="tip"><strong>关键理解：</strong>二次函数顶点式的三种变换——h控制左右平移（左加右减），k控制上下平移（上加下减），a控制开口方向和大小。</div>
+
+<div class="ex">
+<div class="q">【例题】已知二次函数 y = x² - 4x + 3，(1)求顶点坐标；(2)求与x轴交点；(3)当x取何值时，y>0？</div>
+<div class="a"><strong>解：</strong><br>
+(1) a=1, b=-4, c=3<br>
+对称轴 x = -b/(2a) = 4/2 = 2<br>
+顶点纵坐标 y = 2²-8+3 = -1 → 顶点(2,-1)<br><br>
+(2) 令y=0: x²-4x+3=0 → (x-1)(x-3)=0 → x₁=1, x₂=3<br>
+与x轴交于(1,0)和(3,0)<br><br>
+(3) 抛物线开口向上，与x轴交于1和3<br>
+∴ 当 x<1 或 x>3 时，y>0</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">二次函数题目的核心是找到"顶点、对称轴、与x轴交点"三个要素。把它们找到，函数的性质就清楚了。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 已知二次函数 y = -x² + 2x + 3，求顶点坐标和与x轴的交点，并判断开口方向。<br>
+• 一次函数 y=2x-4 与 x 轴、y 轴的交点坐标分别是什么？</div></div>
+</div>
+
+<!-- ════════════ 专题六：数列公式 ════════════ -->
+<div class="f-section">
+<h2>专题六：数列公式</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">规律探究</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">数列考查的是<strong>规律发现</strong>能力。等差和等比数列是两种最基本的数列模型，它们的通项公式和求和公式必须熟练掌握。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_algebra_sequences.svg" alt="数列规律">
+<div class="cp">等差数列与等比数列规律对比</div>
+</div>
+
+<h3>等差数列（差为定值）</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">通项公式</div><div class="f-val">aₙ = a₁ + (n-1)d</div><div class="f-desc">d为公差。aₙ = aₘ + (n-m)d</div></div>
+<div class="f-card"><div class="f-name">前n项和</div><div class="f-val">Sₙ = n(a₁+aₙ)/2</div><div class="f-desc">首项加末项乘以项数除以2</div></div>
+<div class="f-card"><div class="f-name">Sₙ的另一种形式</div><div class="f-val">Sₙ = na₁ + n(n-1)d/2</div><div class="f-desc">已知a₁和d时用</div></div>
+</div>
+
+<h3>等比数列（比为定值）</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">通项公式</div><div class="f-val">aₙ = a₁ · qⁿ⁻¹</div><div class="f-desc">q为公比（q≠0）</div></div>
+<div class="f-card"><div class="f-name">前n项和（q≠1）</div><div class="f-val">Sₙ = a₁(1-qⁿ)/(1-q)</div><div class="f-desc">注意分母符号不要写反</div></div>
+<div class="f-card"><div class="f-name">q=1的情况</div><div class="f-val">Sₙ = n·a₁</div><div class="f-desc">公比为1时就是常数数列</div></div>
+</div>
+
+<div class="note"><strong>易错提醒：</strong>① 使用等差求和公式时，注意n是项数不是末项序号；② 等比求和公式中q=1时单独处理；③ 等差数列的Sₙ是关于n的二次函数（无常数项）。</div>
+
+<div class="ex">
+<div class="q">【例题】已知等差数列{an}中，a₁=3，a₅=11，求通项公式和前10项的和。</div>
+<div class="a"><strong>解：</strong><br>
+a₅ = a₁ + 4d → 11 = 3 + 4d → 4d = 8 → d = 2<br>
+通项公式：aₙ = 3 + (n-1)×2 = 2n + 1<br><br>
+S₁₀ = 10(3+21)/2 = 10×24/2 = 120<br>
+或 S₁₀ = 10×3 + 10×9×2/2 = 30 + 90 = 120</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">求等差数列的关键是找到"首项a₁"和"公差d"。给了两个独立条件，列方程组即可解出。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 等差数列 -3, 1, 5, 9, ... 的第10项是多少？前10项和是多少？<br>
+• 等比数列 2, 4, 8, 16, ... 的第6项和前6项和分别是多少？</div></div>
+</div>
+
+<!-- ════════════ 专题七：统计与概率 ════════════ -->
+<div class="f-section">
+<h2>专题七：统计与概率</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">数据分析</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">统计与概率是<strong>应用型</strong>知识，中考中常以实际情境为载体考查。核心是理解数据特征量的意义，以及概率的计算方法。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_algebra_statistics.svg" alt="统计图表">
+<div class="cp">统计数据分析：均值相同方差不同、正态分布对比</div>
+</div>
+
+<h3>数据的集中趋势（中心位置）</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">算术平均数</div><div class="f-val">x̄ = Σxᵢ/n</div><div class="f-desc">所有数据之和÷数据个数。受极端值影响大</div></div>
+<div class="f-card"><div class="f-name">加权平均数</div><div class="f-val">x̄ = Σ(wᵢxᵢ)/Σwᵢ</div><div class="f-desc">各数据乘以权重再求和÷总权重</div></div>
+<div class="f-card"><div class="f-name">中位数</div><div class="f-val">排序后中间的数</div><div class="f-desc">n为奇数取中间；n为偶数取中间两数平均</div></div>
+<div class="f-card"><div class="f-name">众数</div><div class="f-val">出现次数最多的数据</div><div class="f-desc">可以不止一个，也可以没有</div></div>
+</div>
+
+<h3>数据的离散程度（波动大小）</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">极差</div><div class="f-val">R = max - min</div><div class="f-desc">最大值减最小值，最简单的波动度量</div></div>
+<div class="f-card"><div class="f-name">方差</div><div class="f-val">s² = Σ(xᵢ-x̄)²/n</div><div class="f-desc">各数据与平均数的差的平方和÷n。值越大越分散</div></div>
+<div class="f-card"><div class="f-name">标准差</div><div class="f-val">s = √s²</div><div class="f-desc">方差的算术平方根，单位与原始数据相同</div></div>
+</div>
+
+<h3>概率基础公式</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">等可能事件概率</div><div class="f-val">P(A) = m/n</div><div class="f-desc">m为A包含的基本事件数，n为总事件数</div></div>
+<div class="f-card"><div class="f-name">互斥事件</div><div class="f-val">P(A∪B)=P(A)+P(B)</div><div class="f-desc">A和B不能同时发生</div></div>
+<div class="f-card"><div class="f-name">对立事件</div><div class="f-val">P(Ā) = 1 - P(A)</div><div class="f-desc">A不发生的概率</div></div>
+</div>
+
+<div class="tip"><strong>理解要点：</strong>方差越大→数据越分散→越不稳定。在实际应用中，方差小意味着产品质量更稳定、运动员发挥更稳定。</div>
+
+<div class="ex">
+<div class="q">【例题】甲、乙两名同学的5次数学测验成绩如下：<br>
+甲：85, 90, 88, 92, 85（平均=88）<br>
+乙：70, 95, 85, 90, 100（平均=88）<br>
+两人平均分相同，谁的成绩更稳定？</div>
+<div class="a"><strong>解：</strong><br>
+s²甲 = [(85-88)²+(90-88)²+(88-88)²+(92-88)²+(85-88)²]/5<br>
+= (9+4+0+16+9)/5 = 38/5 = 7.6<br><br>
+s²乙 = [(70-88)²+(95-88)²+(85-88)²+(90-88)²+(100-88)²]/5<br>
+= (324+49+9+4+144)/5 = 530/5 = 106<br><br>
+7.6 < 106，所以甲的成绩更稳定。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">平均分相同的情况下，方差越小成绩越稳定。甲的方差远小于乙，说明甲是"稳定型"选手，乙是"波动型"选手。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 一组数据为：3, 5, 7, 9, 11，求平均数、中位数、极差、方差。<br>
+• 从1、2、3三个数字中随机抽取两个组成两位数，求组成的两位数是偶数的概率。</div></div>
+</div>
+
+<!-- ════════════ 专题八：代数综合应用与解题策略 ════════════ -->
+<div class="f-section">
+<h2>专题八：代数综合应用与解题策略</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#e3f2fd;color:#1a73e8;padding:2px 10px;border-radius:4px;margin-bottom:8px">提分必看</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">代数综合题往往把方程、函数、不等式融合在一起，考查学生的<span style="color:#1a73e8;font-weight:600">综合运用能力</span>。掌握以下解题策略，能帮助你在考场上快速找到突破口。</p>
+
+<h3>常见综合题型与解题策略</h3>
+<table>
+<tr><th>题型</th><th>特点</th><th>解题策略</th><th>示例</th></tr>
+<tr><td>方程-函数综合</td><td>给出函数图像上的点满足方程关系</td><td>将点的坐标代入函数解析式构造方程</td><td>抛物线上某点在直线y=2x+1上</td></tr>
+<tr><td>不等式-函数综合</td><td>求x取何值时函数值>0或<0</td><td>转化为解二次不等式，利用图像判断</td><td>求y=x²-4x+3>0的解集</td></tr>
+<tr><td>实际应用题</td><td>工程、行程、利润等问题</td><td>设未知数→列方程/不等式→求解→检验</td><td>某商品降价求最大利润</td></tr>
+<tr><td>规律探究题</td><td>给出数列或图形找规律</td><td>列出前几项→找通项公式→代入求解</td><td>摆火柴棍的规律探索</td></tr>
+</table>
+
+<h3>实际应用题建模流程</h3>
+<div class="formula-box">
+<div class="fm">审题→设未知数→找等量关系→列方程(组)→解方程(组)→检验→作答</div>
+<div class="fd">"检验"这一步最容易被忽略！要注意解的合理性（比如人数不能为负数、时间不能为负）</div>
+</div>
+
+<h3>典型的代数易错题型</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">分式方程增根</div><div class="f-val">解后必须检验</div><div class="f-desc">去分母后可能产生增根，代入公分母验证是否为0</div></div>
+<div class="f-card"><div class="f-name">二次方程讨论</div><div class="f-val">a≠0是前提</div><div class="f-desc">说"二次方程"时隐含a≠0；题目没说"二次"时要讨论a=0的情况</div></div>
+<div class="f-card"><div class="f-name">不等式变方向</div><div class="f-val">乘除负数要变号</div><div class="f-desc">最容易错的地方，没有之一！</div></div>
+</div>
+
+<div class="ex">
+<div class="q">【综合例题】某商店将进货单价为40元的商品按50元售出时，能卖出500件。已知每涨价1元，销售量就减少10件。问售价定为多少时，能使利润最大？最大利润是多少？</div>
+<div class="a"><strong>解：</strong>设涨价x元（x≥0），则售价为(50+x)元，销售量为(500-10x)件。<br>
+利润 y = (售价-进价)×销售量 = (50+x-40)(500-10x)<br>
+= (10+x)(500-10x)<br>
+= 5000 + 500x - 100x - 10x²<br>
+= -10x² + 400x + 5000<br>
+= -10(x² - 40x) + 5000<br>
+= -10(x² - 40x + 400) + 5000 + 4000<br>
+= -10(x-20)² + 9000<br><br>
+当x=20时，y取最大值9000元。<br>
+此时售价 = 50 + 20 = 70元。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">利润最值问题本质上是二次函数求最值。关键步骤：①正确列出利润表达式；②配方求顶点坐标；③检验x是否合理（此题x=20≥0合理）。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 将进货价为30元的商品以40元售出可卖600件，每涨价1元销量减少20件。求获得最大利润时的售价和最大利润。<br>
+• 回顾你最近做错的代数题，归类到以上"易错题型"中，针对性复习。</div></div>
+</div>
 
 </div>
-<div class="footer">思贤学习站 · 济南市商河县</div>
+<div class="footer">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
-<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<script>
+window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});
+function toggleSol(btn){var a=btn.parentElement;var sol=a.querySelectorAll('.a');for(var i=0;i<sol.length;i++){if(sol[i].style.display==='none'){sol[i].style.display='';btn.textContent='收起'}else if(sol[i]!==a.querySelector('.a:first-child')){sol[i].style.display='none';btn.textContent='看解析'}}}
+</script>
 </body>
 </html>

@@ -1,113 +1,430 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>物理公式汇总 · 思贤学习站</title>
-<link rel="icon" href="../images/logo.png">
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>物理公式汇总 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
 .head{max-width:880px;margin:0 auto;padding:18px 20px 0}
 .head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#c0392b}
 .head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
-.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}.head .sub span{color:#c0392b;font-weight:600}
 .container{max-width:880px;margin:0 auto;padding:12px 20px 40px}
-
-.f-section{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b}
-.f-section h2{font-size:18px;font-weight:700;color:#c0392b;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #f0f0f0}
-.f-section h3{font-size:15px;font-weight:600;color:#444;margin:16px 0 10px}
-
-.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.f-section{background:#fff;border-radius:14px;padding:20px 24px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b}
+.f-section h2{font-size:18px;font-weight:700;color:#c0392b;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+.f-section h3{font-size:15px;font-weight:600;color:#444;margin:14px 0 8px}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
 @media(max-width:600px){.f-grid{grid-template-columns:1fr}}
-
-.f-card{background:#f8f9fc;border-radius:10px;padding:14px 16px;border:1px solid #f0f0f0}
-.f-card .f-name{font-size:14px;font-weight:600;color:#2d3436;margin-bottom:4px}
-.f-card .f-val{font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:6px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif;letter-spacing:0.5px}
-.f-card .f-desc{font-size:12px;color:#888;margin-top:3px}
-
-.f-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
-.f-table th{background:#c0392b;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:13px}
-.f-table td{padding:9px 14px;border-bottom:1px solid #f0f0f0}
-.f-table tr:nth-child(even){background:#f8f9fc}
-.f-table .fml{font-weight:700;color:#c0392b;font-family:"Times New Roman",serif;font-size:15px}
-
-.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#8d6e00;border-left:3px solid #fadb14}
+.f-card{background:#f8f9fc;border-radius:10px;padding:12px 14px;border:1px solid #f0f0f0}
+.f-card .f-name{font-size:13px;font-weight:600;color:#2d3436;margin-bottom:3px}
+.f-card .f-val{font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:5px;background:#fff;border-radius:6px;font-family:"Times New Roman",serif}
+.f-card .f-desc{font-size:11px;color:#888;margin-top:2px}
+.chart-wrap{text-align:center;margin:10px 0}
+.chart-wrap img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.chart-wrap .cp{font-size:12px;color:#999;margin-top:2px}
+.ex{background:#fdf6f6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px}
+.ex .q{font-weight:600;color:#c0392b;margin-bottom:4px}
+.ex .a{color:#555;font-size:12.5px;padding-left:12px;border-left:3px solid #ddd;margin-top:4px}
+.ex .a strong{color:#c0392b}
+.hw{background:#f8f9fc;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px}
+.hw .hw-q{margin-bottom:3px}
+.hw .hw-a{color:#2d7d46;font-size:12px;margin-left:8px}
+.note{background:#fffbe6;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px;color:#8d6e00;border-left:3px solid #fadb14}
 .note strong{color:#e74c3c}
-
-.footer{text-align:center;padding:20px;font-size:12px;color:#999}
-.tag{display:inline-block;font-size:11px;background:#f0f0f0;color:#888;padding:0 8px;border-radius:4px;margin:1px}
-.tag.red{background:#fde8e8;color:#c0392b}
-.tag.blue{background:#e3f2fd;color:#1565c0}
-.tag.green{background:#e6f7e6;color:#2d7d46}
-.tag.orange{background:#fff3e0;color:#e65100}
-
-.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#5688CC);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.tip{background:#fff8e1;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#e67e22;border-left:3px solid #e67e22}
+.tip strong{color:#c0392b}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+table th{background:#c0392b;color:#fff;padding:7px 10px;text-align:left;font-weight:600;font-size:12px}
+table td{padding:6px 10px;border-bottom:1px solid #eee}
+table tr:nth-child(even){background:#fdf6f6}
+.sol-btn{display:inline-block;font-size:11px;padding:2px 10px;border-radius:4px;background:#c0392b;color:#fff;border:none;cursor:pointer;margin:4px 0}
+.sol-btn:hover{opacity:.85}
+.formula-box{background:#fdf6f6;border-radius:8px;padding:8px 14px;margin:6px 0;border-left:3px solid #c0392b}
+.formula-box .fm{font-size:14px;color:#c0392b;font-weight:600;font-family:"Times New Roman",serif}
+.formula-box .fd{font-size:11px;color:#888}
+.footer{text-align:center;padding:16px;font-size:12px;color:#999}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#c0392b);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
 .back-to-top.show{opacity:1;visibility:visible}
 .back-to-top:hover{opacity:.85;transform:translateY(-2px)}
-</style>
-<script src="../js/theme.js"></script>
-</head>
-<body>
-<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>物理公式汇总</h1><p class="sub">力学 · 热学 · 光学 · 电学 · 公式大全</p></div>
+</style><script src="../js/theme.js"></script></head><body>
+<div class="head"><a href="../资料库.html">&larr; 返回资料库</a><h1>物理公式汇总</h1><p class="sub">运动学 · 力学 · 浮力压强 · 功与能 · 简单机械 · 热学 · 电学 · 光学 共 <span>8</span> 专题</p></div>
 <div class="container">
-<div class="note"><strong>使用说明：</strong>公式中所有物理量均使用国际单位制（SI），注意单位换算。计算时先统一单位再代入。</div><div class="f-section"><h2>力学基础公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">速度</div><div class="f-val">v = s/t</div><div class="f-desc">s 路程(m)，t 时间(s)，v 速度(m/s)</div></div>
-<div class="f-card"><div class="f-name">速度换算</div><div class="f-val">1 m/s = 3.6 km/h</div><div class="f-desc">米每秒与千米每小时换算</div></div>
-<div class="f-card"><div class="f-name">密度</div><div class="f-val">ρ = m/V</div><div class="f-desc">m 质量(kg)，V 体积(m³)，ρ 密度(kg/m³)</div></div>
-<div class="f-card"><div class="f-name">重力</div><div class="f-val">G = mg (g=9.8N/kg)</div><div class="f-desc">质量 × 重力加速度，粗略计算 g 取 10</div></div>
-<div class="f-card"><div class="f-name">压强</div><div class="f-val">p = F/S</div><div class="f-desc">F 压力(N)，S 受力面积(m²)</div></div>
-<div class="f-card"><div class="f-name">液体压强</div><div class="f-val">p = ρgh</div><div class="f-desc">ρ 密度(kg/m³)，h 深度(m)</div></div>
-<div class="f-card"><div class="f-name">大气压</div><div class="f-val">p₀ = 1.013×10⁵ Pa</div><div class="f-desc">标准大气压值，76cmHg</div></div>
-</div></div>
-<div class="f-section"><h2>浮力公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">阿基米德原理</div><div class="f-val">F浮 = ρ液gV排</div><div class="f-desc">浮力等于排开液体所受重力</div></div>
-<div class="f-card"><div class="f-name">称重法</div><div class="f-val">F浮 = G - F示</div><div class="f-desc">空气中重力减去弹簧测力计示数</div></div>
-<div class="f-card"><div class="f-name">漂浮/悬浮</div><div class="f-val">F浮 = G (物体漂浮或悬浮时)</div><div class="f-desc">二力平衡，浮力等于重力</div></div>
-<div class="f-card"><div class="f-name">浮沉条件</div><div class="f-val">ρ物 < ρ液 上浮</div><div class="f-desc">密度关系决定物体浮沉</div></div>
-</div></div>
-<div class="f-section"><h2>简单机械</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">杠杆平衡条件</div><div class="f-val">F₁L₁ = F₂L₂</div><div class="f-desc">动力 × 动力臂 = 阻力 × 阻力臂</div></div>
-<div class="f-card"><div class="f-name">滑轮组拉力</div><div class="f-val">F = G总/n</div><div class="f-desc">n 为承担重物的绳子段数</div></div>
-<div class="f-card"><div class="f-name">滑轮组距离</div><div class="f-val">s = nh</div><div class="f-desc">绳子自由端移动距离 = n × 物体升高高度</div></div>
-<div class="f-card"><div class="f-name">斜面公式</div><div class="f-val">FL = Gh</div><div class="f-desc">理想斜面，不计摩擦</div></div>
-<div class="f-card"><div class="f-name">机械效率</div><div class="f-val">η = W有/W总 × 100%</div><div class="f-desc">有用功与总功的百分比</div></div>
-</div></div>
-<div class="f-section"><h2>功与能公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">功</div><div class="f-val">W = Fs (F 与 s 同向)</div><div class="f-desc">力 × 沿力方向移动的距离</div></div>
-<div class="f-card"><div class="f-name">功率</div><div class="f-val">P = W/t = Fv</div><div class="f-desc">功与做功时间之比</div></div>
-<div class="f-card"><div class="f-name">动能</div><div class="f-val">Eₖ = ½ mv²</div><div class="f-desc">质量越大、速度越大，动能越大</div></div>
-<div class="f-card"><div class="f-name">重力势能</div><div class="f-val">Eₚ = mgh</div><div class="f-desc">质量越大、高度越高，势能越大</div></div>
-<div class="f-card"><div class="f-name">弹性势能</div><div class="f-val">Eₘ = ½ kx²</div><div class="f-desc">k 劲度系数，x 形变量</div></div>
-<div class="f-card"><div class="f-name">机械能守恒</div><div class="f-val">Eₖ₁ + Eₚ₁ = Eₖ₂ + Eₚ₂</div><div class="f-desc">只有重力/弹力做功时守恒</div></div>
-</div></div>
-<div class="f-section"><h2>热学公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">比热容</div><div class="f-val">Q = cmΔt</div><div class="f-desc">c 比热容(J/(kg·℃))，Δt 温度变化量</div></div>
-<div class="f-card"><div class="f-name">热值</div><div class="f-val">Q = mq (固体/液体)</div><div class="f-desc">q 热值(J/kg)</div></div>
-<div class="f-card"><div class="f-name">热值（气体）</div><div class="f-val">Q = Vq</div><div class="f-desc">V 体积(m³)</div></div>
-<div class="f-card"><div class="f-name">热机效率</div><div class="f-val">η = W/Q放 × 100%</div><div class="f-desc">有用功与燃料释放热量之比</div></div>
-</div></div>
-<div class="f-section"><h2>电学公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">欧姆定律</div><div class="f-val">I = U/R</div><div class="f-desc">电流与电压成正比，与电阻成反比</div></div>
-<div class="f-card"><div class="f-name">串联总电阻</div><div class="f-val">R总 = R₁ + R₂ + ...</div><div class="f-desc">串联电阻越串越大</div></div>
-<div class="f-card"><div class="f-name">并联总电阻</div><div class="f-val">1/R总 = 1/R₁ + 1/R₂ + ...</div><div class="f-desc">并联电阻越并越小</div></div>
-<div class="f-card"><div class="f-name">电功</div><div class="f-val">W = UIt = I²Rt = U²t/R</div><div class="f-desc">电流做功的多少</div></div>
-<div class="f-card"><div class="f-name">电功率</div><div class="f-val">P = UI = I²R = U²/R</div><div class="f-desc">电流做功快慢</div></div>
-<div class="f-card"><div class="f-name">焦耳定律</div><div class="f-val">Q = I²Rt</div><div class="f-desc">电流通过导体产生的热量</div></div>
-<div class="f-card"><div class="f-name">串联分压</div><div class="f-val">U₁/U₂ = R₁/R₂</div><div class="f-desc">串联电路电压与电阻成正比</div></div>
-<div class="f-card"><div class="f-name">并联分流</div><div class="f-val">I₁/I₂ = R₂/R₁</div><div class="f-desc">并联电路电流与电阻成反比</div></div>
-</div></div>
-<div class="note"><strong>电学注意事项：</strong>（1）电流表要串联在电路中，电压表要并联；（2）家庭电路电压 220V，安全电压不高于 36V；（3）电能表读数最后一位为小数。</div><div class="f-section"><h2>光学公式</h2><div class="f-grid">
-<div class="f-card"><div class="f-name">反射定律</div><div class="f-val">∠入 = ∠反</div><div class="f-desc">三线共面、两线分居、两角相等</div></div>
-<div class="f-card"><div class="f-name">平面镜成像</div><div class="f-val">物距 = 像距</div><div class="f-desc">等大、等距、正立、虚像，对称</div></div>
-<div class="f-card"><div class="f-name">折射定律</div><div class="f-val">n = sini/sinr</div><div class="f-desc">折射率 = 入射角正弦 / 折射角正弦</div></div>
-<div class="f-card"><div class="f-name">凸透镜成像规律</div><div class="f-val">1/f = 1/u + 1/v</div><div class="f-desc">f 焦距，u 物距，v 像距</div></div>
-<div class="f-card"><div class="f-name">放大率</div><div class="f-val">m = |v/u| = 像高/物高</div><div class="f-desc">像与物的大小之比</div></div>
-</div></div>
+
+<div class="note"><strong>使用说明：</strong>公式中所有物理量均使用国际单位制（SI）。计算时先统一单位再代入。g在无特殊说明时取9.8N/kg（粗略计算取10N/kg）。</div>
+
+<!-- ════════════ 专题一：运动学公式 ════════════ -->
+<div class="f-section">
+<h2>专题一：运动学公式</h2>
+<span style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">运动基础</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">运动学研究的是物体运动的<strong>规律</strong>——不涉及力的分析，只描述运动的快慢和方向。匀速直线运动和匀变速直线运动是中考的考查重点。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_physics_kinematics.svg" alt="运动学公式">
+<div class="cp">匀变速直线运动 v-t 图像与关键公式</div>
+</div>
+
+<h3>基本运动公式</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">速度</div><div class="f-val">v = s/t</div><div class="f-desc">s路程(m)，t时间(s)，v速度(m/s)</div></div>
+<div class="f-card"><div class="f-name">速度换算</div><div class="f-val">1m/s = 3.6km/h</div><div class="f-desc">乘以3.6就是km/h；除以3.6就是m/s</div></div>
+<div class="f-card"><div class="f-name">平均速度</div><div class="f-val">v̄ = s总/t总</div><div class="f-desc">全程总路程 ÷ 总时间</div></div>
+<div class="f-card"><div class="f-name">匀速直线运动</div><div class="f-val">s = vt</div><div class="f-desc">速度不变的直线运动</div></div>
+</div>
+
+<h3>匀变速直线运动（高中衔接，初中理解）</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">速度-时间公式</div><div class="f-val">v = v₀ + at</div><div class="f-desc">v₀初速度，a加速度，t时间</div></div>
+<div class="f-card"><div class="f-name">位移公式</div><div class="f-val">s = v₀t + ½at²</div><div class="f-desc">初速度×时间 + ½加速度×时间平方</div></div>
+<div class="f-card"><div class="f-name">速度-位移公式</div><div class="f-val">v² - v₀² = 2as</div><div class="f-desc">不含时间的公式，常用</div></div>
+</div>
+
+<div class="tip"><strong>理解要点：</strong>v-t图像中图线下的"面积"就是位移（路程）。匀速直线运动的图线是水平直线，匀加速直线运动是倾斜直线。</div>
+
+<div class="ex">
+<div class="q">【例题】一辆汽车以20m/s的速度匀速行驶，突然发现前方有障碍物，司机紧急刹车。刹车后汽车做匀减速运动，加速度大小为5m/s²。求：<br>
+(1) 刹车后3秒钟汽车的速度；<br>
+(2) 刹车后6秒钟汽车的位移。</div>
+<div class="a"><strong>解：</strong><br>
+(1) v = v₀ + at = 20 + (-5)×3 = 20-15 = 5 (m/s)<br><br>
+(2) 先求停车时间：0 = 20 + (-5)×t → t = 4s<br>
+所以4秒时车已停下，6秒的位移等于4秒的位移。<br>
+s = v₀t + ½at² = 20×4 + ½×(-5)×4² = 80 - 40 = 40 (m)<br>
+或 s = (v²-v₀²)/(2a) = (0-400)/(-10) = 40 (m)</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">关键点：第(2)问必须先判断汽车几秒后停下。如果直接代入6秒，会算出负值——因为车早就停了！这类"先求停止时间"的问题一定要警惕。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 某物体做匀速直线运动，5秒内走了20米，求速度和平均速度。<br>
+• 一列火车长200m，以72km/h的速度匀速通过一座长1600m的桥，求通过桥梁需要多长时间？</div></div>
+</div>
+
+<!-- ════════════ 专题二：力学公式 ════════════ -->
+<div class="f-section">
+<h2>专题二：力学公式</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">核心专题</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">力学是物理学的<strong>根基</strong>。初中力学主要包括力的概念、重力、弹力、摩擦力的分析以及力的合成与平衡。力的<span style="color:#c0392b;font-weight:600">受力分析</span>是解决力学问题的第一步。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_physics_forces.svg" alt="受力分析">
+<div class="cp">水平面上物体的受力分析图——弄清每个力的方向</div>
+</div>
+
+<h3>力与运动</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">重力</div><div class="f-val">G = mg (g=9.8N/kg)</div><div class="f-desc">质量越大越重；粗略取g=10</div></div>
+<div class="f-card"><div class="f-name">弹力（胡克定律）</div><div class="f-val">F = kx</div><div class="f-desc">k劲度系数(N/m)，x形变量(m)</div></div>
+<div class="f-card"><div class="f-name">滑动摩擦力</div><div class="f-val">f = μN</div><div class="f-desc">μ动摩擦因数，N正压力</div></div>
+<div class="f-card"><div class="f-name">二力平衡</div><div class="f-val">F₁ = F₂</div><div class="f-desc">同体、等大、反向、共线</div></div>
+<div class="f-card"><div class="f-name">牛顿第一定律</div><div class="f-val">F=0时保持匀速或静止</div><div class="f-desc">惯性定律——力不是维持运动的原因</div></div>
+</div>
+
+<h3>力的合成</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">同向合力</div><div class="f-val">F = F₁+F₂</div><div class="f-desc">方向相同，合力等于两力之和</div></div>
+<div class="f-card"><div class="f-name">反向合力</div><div class="f-val">F = |F₁-F₂|</div><div class="f-desc">方向相反，合力等于两力之差</div></div>
+</div>
+
+<div class="note"><strong>易错提醒：</strong>① 重力总是竖直向下，不是垂直于接触面；② 摩擦力的方向与相对运动（趋势）方向相反，不是与运动方向相反；③ 相互接触不一定有弹力，需要挤压才行。</div>
+
+<div class="ex">
+<div class="q">【例题】一个质量为5kg的物体静止在水平桌面上，(1)求物体所受的重力；(2)若用20N的水平力拉物体，物体仍保持静止，求此时物体所受的摩擦力。</div>
+<div class="a"><strong>解：</strong><br>
+(1) G = mg = 5×9.8 = 49 (N)，方向竖直向下<br><br>
+(2) 物体静止，受力平衡。水平方向：拉力F=20N向右，摩擦力f向左。<br>
+由二力平衡得 f = F = 20 (N)，方向水平向左。<br>
+此时摩擦力为<strong>静摩擦力</strong>，不是滑动摩擦力。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">注意区分静摩擦力和滑动摩擦力！物体静止时受"静摩擦力"，大小由平衡条件决定（不一定等于μN）。只有当物体运动时，才用f=μN计算滑动摩擦力。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 一个质量为2kg的箱子放在水平地面上，用10N的力水平推它但没有推动，箱子受到的摩擦力是多少？<br>
+• 物体在月球上的重力是地球上的1/6，一个在地球上重600N的人在月球上的质量和重力分别是多少？</div></div>
+</div>
+
+<!-- ════════════ 专题三：浮力与压强 ════════════ -->
+<div class="f-section">
+<h2>专题三：浮力与压强</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">中考热点</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">浮力和压强是中考物理的<strong>高频考点</strong>，浮力的三种状态（漂浮、悬浮、沉底）是区分度最高的题型。阿基米德原理是浮力计算的核心。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_physics_buoyancy.svg" alt="浮力三种状态">
+<div class="cp">浮力三种状态对比：漂浮、悬浮、沉底</div>
+</div>
+
+<h3>压强公式</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">固体压强</div><div class="f-val">p = F/S</div><div class="f-desc">F压力(N)，S受力面积(m²)。压力的作用效果</div></div>
+<div class="f-card"><div class="f-name">液体压强</div><div class="f-val">p = ρgh</div><div class="f-desc">ρ液体密度，h深度。与液体重力无关！</div></div>
+<div class="f-card"><div class="f-name">标准大气压</div><div class="f-val">p₀ = 1.013×10⁵Pa</div><div class="f-desc">76cmHg汞柱。初中取1×10⁵Pa</div></div>
+</div>
+
+<h3>浮力公式与状态</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">阿基米德原理</div><div class="f-val">F浮 = ρ液gV排</div><div class="f-desc">浮力=排开液体所受重力。核心公式！</div></div>
+<div class="f-card"><div class="f-name">称重法测浮力</div><div class="f-val">F浮 = G - F示</div><div class="f-desc">空气中重力减去浸入液中测力计示数</div></div>
+<div class="f-card"><div class="f-name">漂浮/悬浮</div><div class="f-val">F浮 = G (物)</div><div class="f-desc">二力平衡，浮力等于物体重力</div></div>
+</div>
+
+<h3>浮沉条件（关键！）</h3>
+<table>
+<tr><th>状态</th><th>受力关系</th><th>密度关系</th><th>特征</th></tr>
+<tr><td>上浮→漂浮</td><td>F浮 > G</td><td>ρ物 < ρ液</td><td>最终露出部分体积，V排 < V物</td></tr>
+<tr><td>悬浮</td><td>F浮 = G</td><td>ρ物 = ρ液</td><td>可停留在液体中任意位置</td></tr>
+<tr><td>下沉→沉底</td><td>F浮 < G</td><td>ρ物 > ρ液</td><td>沉到容器底部，F浮 = G - N支</td></tr>
+</table>
+
+<div class="tip"><strong>理解要点：</strong>浮力大小只与"液体密度"和"排开液体的体积"有关，与物体本身的体积、质量、形状、材质无关。潜水艇是通过改变自身重力（注水/排水）来实现浮沉的。</div>
+
+<div class="ex">
+<div class="q">【例题】一个体积为0.1m³的物体，重800N，将其放入水中（ρ水=1.0×10³kg/m³，g=10N/kg）。求：<br>
+(1) 物体完全浸没时受到的浮力；<br>
+(2) 物体最终是漂浮、悬浮还是沉底？最终受到的浮力是多少？</div>
+<div class="a"><strong>解：</strong><br>
+(1) 完全浸没时 V排 = V物 = 0.1m³<br>
+F浮 = ρ水gV排 = 1.0×10³×10×0.1 = 1000 (N)<br><br>
+(2) 完全浸没时 F浮=1000N > G=800N，所以物体上浮，最终漂浮。<br>
+漂浮时二力平衡：F浮' = G = 800 (N)<br>
+此时 V排' = F浮'/(ρ水g) = 800/(1000×10) = 0.08 (m³)，即物体有0.02m³露出水面。</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">浮力题的做题顺序：①先求完全浸没时的浮力；②与重力比较判断浮沉状态；③根据最终状态再求浮力。漂浮时"浮力=重力"是重要等式。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 潜水艇在水下200m处受到的压强是多少？<br>
+• 一个木块的密度为0.6g/cm³，体积为500cm³，放入水中求木块受到的浮力。<br>
+• 人为什么从浅水区走向深水区时会感觉身体越来越"轻"？</div></div>
+</div>
+
+<!-- ════════════ 专题四：功与能 ════════════ -->
+<div class="f-section">
+<h2>专题四：功与能</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">能量守恒</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">功是力在空间上的积累，能是物体做功的本领。功与能的<strong>核心关系</strong>是：做功的过程就是能量转化的过程，做了多少功就有多少能量发生转化。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_physics_energy.svg" alt="能量转化">
+<div class="cp">能量守恒：各种形式的能量可以相互转化，总量保持不变</div>
+</div>
+
+<div class="f-grid">
+<div class="f-card"><div class="f-name">功</div><div class="f-val">W = Fs</div><div class="f-desc">F与s同向。F单位N，s单位m<br>F与s垂直时做功为0</div></div>
+<div class="f-card"><div class="f-name">功率</div><div class="f-val">P = W/t = Fv</div><div class="f-desc">W功(J)，t时间(s)。P=Fv用于匀速运动</div></div>
+<div class="f-card"><div class="f-name">动能</div><div class="f-val">Ek = ½mv²</div><div class="f-desc">质量m(kg)，速度v(m/s)。速度影响更大</div></div>
+<div class="f-card"><div class="f-name">重力势能</div><div class="f-val">Ep = mgh</div><div class="f-desc">质量m(kg)，高度h(m)。相对参考面</div></div>
+<div class="f-card"><div class="f-name">弹性势能</div><div class="f-val">Ee = ½kx²</div><div class="f-desc">k劲度系数，x形变量</div></div>
+<div class="f-card"><div class="f-name">机械能守恒</div><div class="f-val">Ek₁+Ep₁=Ek₂+Ep₂</div><div class="f-desc">只有重力/弹力做功时守恒</div></div>
+</div>
+
+<div class="note"><strong>易错提醒：</strong>① 提水桶水平走路——人对水桶不做功（力与距离垂直）；② 功率越大不代表做功越多，还和时间有关；③ 动能与速度平方成正比，速度加倍动能变为4倍。</div>
+
+<div class="ex">
+<div class="q">【例题】一辆质量为1.2t的小汽车以54km/h的速度匀速行驶，发动机的功率为60kW。求：<br>
+(1) 汽车的牵引力；<br>
+(2) 汽车行驶10分钟发动机做的功。</div>
+<div class="a"><strong>解：</strong><br>
+(1) v = 54km/h = 15m/s<br>
+由 P = Fv 得 F = P/v = 60000/15 = 4000 (N)<br><br>
+(2) t = 10min = 600s<br>
+W = Pt = 60000×600 = 3.6×10⁷ (J)<br>
+或 W = Fs = F·vt = 4000×15×600 = 3.6×10⁷ (J)</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">注意功率公式P=Fv的适用条件——必须是"匀速"或已知"牵引力"和"速度"的情况。用之前先统一单位（km/h→m/s）。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 一台起重机将重5×10⁴N的货物匀速提升10m，起重机做了多少功？<br>
+• 质量相同的铁球和木球从同一高度自由落下，不计阻力，落地时谁的动能大？</div></div>
+</div>
+
+<!-- ════════════ 专题五：简单机械 ════════════ -->
+<div class="f-section">
+<h2>专题五：简单机械</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">力学应用</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">简单机械是力学知识在生活中的<strong>应用</strong>。初中阶段主要学习杠杆、滑轮和斜面三种简单机械。机械效率反映的是机械做功的"有效程度"。</p>
+
+<h3>杠杆</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">杠杆平衡条件</div><div class="f-val">F₁L₁ = F₂L₂</div><div class="f-desc">动力×动力臂=阻力×阻力臂。核心公式！</div></div>
+<div class="f-card"><div class="f-name">省力杠杆</div><div class="f-val">L₁ > L₂ ⇒ F₁ < F₂</div><div class="f-desc">动力臂>阻力臂，省力但费距离</div></div>
+<div class="f-card"><div class="f-name">费力杠杆</div><div class="f-val">L₁ < L₂ ⇒ F₁ > F₂</div><div class="f-desc">动力臂<阻力臂，费力但省距离</div></div>
+</div>
+
+<h3>滑轮</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">定滑轮</div><div class="f-val">F = G, s = h</div><div class="f-desc">不省力但改变力的方向</div></div>
+<div class="f-card"><div class="f-name">动滑轮</div><div class="f-val">F = ½(G+G轮), s = 2h</div><div class="f-desc">省一半力但费一倍距离</div></div>
+<div class="f-card"><div class="f-name">滑轮组</div><div class="f-val">F = G总/n, s = nh</div><div class="f-desc">n为承担重物的绳子股数！</div></div>
+</div>
+
+<h3>机械效率</h3>
+<div class="formula-box">
+<div class="fm">η = W有/W总 × 100% = Gh/Fs × 100%</div>
+<div class="fd">W有=Gh（提升物体做的有用功）；W总=Fs（动力做的总功）</div>
+</div>
+
+<div class="tip"><strong>记忆技巧：</strong>"n的确定"——看绕过动滑轮的绳子有几段。不论绳子从哪绕，只看有几段绳子拉着动滑轮。</div>
+
+<div class="ex">
+<div class="q">【例题】用如图所示的滑轮组（n=3）将重600N的物体匀速提升2m，拉力F=250N。求：(1)有用功；(2)总功；(3)机械效率。</div>
+<div class="a"><strong>解：</strong><br>
+(1) W有 = Gh = 600×2 = 1200 (J)<br><br>
+(2) 绳子自由端移动距离 s = nh = 3×2 = 6 (m)<br>
+W总 = Fs = 250×6 = 1500 (J)<br><br>
+(3) η = W有/W总 × 100% = 1200/1500 × 100% = 80%</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">机械效率计算的关键是正确找出"n"——绳子股数。n哪里来？看图数一数有几段绳子拉着动滑轮。s=nh是必用公式。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 用一根长2m的木板搭成斜面，将重500N的货物推到1m高的车厢上，推力为300N，求斜面的机械效率。<br>
+• 使用动滑轮提重物，物体重100N，动滑轮重10N，绳子自由端的拉力至少是多大？</div></div>
+</div>
+
+<!-- ════════════ 专题六：热学公式 ════════════ -->
+<div class="f-section">
+<h2>专题六：热学公式</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">热能基础</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">热学研究的是<strong>热量</strong>的传递和转化。核心概念是比热容——不同物质"吸热能力"的差异，以及热值——燃料"放热能力"的度量。</p>
+
+<div class="f-grid">
+<div class="f-card"><div class="f-name">比热容（吸热放热）</div><div class="f-val">Q = cmΔt</div><div class="f-desc">c比热容[J/(kg·℃)]，m质量(kg)，Δt温度变化(℃)</div></div>
+<div class="f-card"><div class="f-name">热值（燃料燃烧）</div><div class="f-val">Q = mq (固体/液体)</div><div class="f-desc">q热值(J/kg)。m质量(kg)</div></div>
+<div class="f-card"><div class="f-name">热值（气体燃料）</div><div class="f-val">Q = Vq</div><div class="f-desc">V体积(m³)</div></div>
+<div class="f-card"><div class="f-name">热机效率</div><div class="f-val">η = W/Q放 × 100%</div><div class="f-desc">W有用功(J)，Q放燃料放热(J)</div></div>
+</div>
+
+<div class="note"><strong>易错提醒：</strong>① Δt = t末-t初，温度升高了用正值，降低了用负值；② 水的比热容为4.2×10³J/(kg·℃)，是常见物质中最大的——这解释了为什么海边昼夜温差比内陆小；③ 热机效率永远小于100%。</div>
+
+<div class="tip"><strong>生活应用：</strong>水的比热容大→做冷却剂（汽车水箱）、做取暖介质（暖气片）。相同质量的水和沙子，吸收相同热量，水升温慢——所以海边夏天凉爽冬天暖和。</div>
+
+<div class="ex">
+<div class="q">【例题】将质量为2kg、温度为20℃的水加热到100℃，需要吸收多少热量？水的比热容c=4.2×10³J/(kg·℃)。如果用热值为3×10⁷J/kg的煤气加热，热效率40%，需要多少煤气？</div>
+<div class="a"><strong>解：</strong><br>
+(1) Q吸 = cmΔt = 4.2×10³×2×(100-20) = 4.2×10³×2×80 = 6.72×10⁵ (J)<br><br>
+(2) η = Q吸/Q放 → Q放 = Q吸/η = 6.72×10⁵/0.4 = 1.68×10⁶ (J)<br>
+Q放 = mq → m煤 = Q放/q = 1.68×10⁶/(3×10⁷) = 0.056 (kg) = 56g</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">热效率类问题的解题链条：燃料放热(F)→有效利用的热量→水的吸热。效率就是"有用的/总的"。注意燃料的放热不一定全部被水吸收。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 质量为100g的铁块从80℃降到30℃，放出多少热量？（c铁=0.46×10³J/(kg·℃)）<br>
+• 太阳能热水器一天可吸收4.2×10⁶J的太阳能，效率为50%，可以将多少千克20℃的水加热到40℃？</div></div>
+</div>
+
+<!-- ════════════ 专题七：电学公式 ════════════ -->
+<div class="f-section">
+<h2>专题七：电学公式</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">核心压轴</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">电学是中考物理的<strong>压轴板块</strong>，欧姆定律和电功率的串并联电路分析是区分度最高的知识点。掌握串并联电路的特点是解题的关键。</p>
+
+<div class="chart-wrap">
+<img src="charts/formula_physics_circuits.svg" alt="电路对比">
+<div class="cp">串联电路与并联电路的对比分析</div>
+</div>
+
+<h3>欧姆定律</h3>
+<div class="formula-box">
+<div class="fm">I = U/R  ⇔  U = IR  ⇔  R = U/I</div>
+<div class="fd">电流与电压成正比、与电阻成反比。注意U-I-R是"同一段导体"上的三个量</div>
+</div>
+
+<h3>串并联电路特点对比</h3>
+<table>
+<tr><th>项目</th><th>串联</th><th>并联</th></tr>
+<tr><td>电流</td><td>I = I₁ = I₂（处处相等）</td><td>I = I₁+I₂（分流）</td></tr>
+<tr><td>电压</td><td>U = U₁+U₂（分压）</td><td>U = U₁ = U₂（各支路相等）</td></tr>
+<tr><td>总电阻</td><td>R = R₁+R₂（越串越大）</td><td>1/R=1/R₁+1/R₂（越并越小）</td></tr>
+<tr><td>比例关系</td><td>U₁/U₂ = R₁/R₂（正比分压）</td><td>I₁/I₂ = R₂/R₁（反比分流）</td></tr>
+</table>
+
+<h3>电功与电功率</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">电功（电流做功）</div><div class="f-val">W = UIt</div><div class="f-desc">U电压(V)，I电流(A)，t时间(s)。电功=消耗的电能</div></div>
+<div class="f-card"><div class="f-name">电功率</div><div class="f-val">P = UI = I²R = U²/R</div><div class="f-desc">三个公式灵活选用，注意"纯电阻电路"条件</div></div>
+<div class="f-card"><div class="f-name">焦耳定律</div><div class="f-val">Q = I²Rt</div><div class="f-desc">电流通过纯电阻产生的热量。普遍适用！</div></div>
+<div class="f-card"><div class="f-name">电功率单位</div><div class="f-val">1kW·h = 3.6×10⁶J</div><div class="f-desc">度(千瓦时)与焦耳的换算</div></div>
+</div>
+
+<div class="note"><strong>易错提醒：</strong>① P=U²/R和P=I²R只能在<strong>纯电阻电路</strong>中使用（电功全部转化为内能的电路）。电动机等非纯电阻电路只能用P=UI计算总功率；② 计算时注意U、I、R必须是同一段电路上的量（"同体性"）。</div>
+
+<div class="ex">
+<div class="q">【例题】标有"6V 3W"的小灯泡与一定值电阻串联接到9V电源上，灯泡正常发光。求：(1)电路中的电流；(2)定值电阻的阻值；(3)电阻消耗的功率。</div>
+<div class="a"><strong>解：</strong><br>
+(1) 灯泡正常发光时，U灯=6V，P灯=3W<br>
+I = P/U = 3/6 = 0.5 (A)<br><br>
+(2) 串联电路中 U总 = U灯 + U阻 → U阻 = 9-6 = 3 (V)<br>
+R阻 = U阻/I = 3/0.5 = 6 (Ω)<br><br>
+(3) P阻 = U阻×I = 3×0.5 = 1.5 (W)<br>
+或 P阻 = I²R = 0.5²×6 = 1.5 (W)</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">"正常发光"是电学题的关键信号——意味着灯泡的实际电压=额定电压、实际功率=额定功率。由此可求额定电流，进而解出其他量。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 两个电阻R₁=10Ω、R₂=20Ω串联在6V的电源上，求电路总电流和R₁两端的电压。<br>
+• "220V 1000W"的电热水壶正常工作时的电流和电阻各是多少？连续工作30分钟消耗多少度电？</div></div>
+</div>
+
+<!-- ════════════ 专题八：光学与声学 ════════════ -->
+<div class="f-section">
+<h2>专题八：光学与声学</h2>
+<span class="tag" style="display:inline-block;font-size:11px;background:#fde8e8;color:#c0392b;padding:2px 10px;border-radius:4px;margin-bottom:8px">波动知识</span>
+
+<p style="font-size:13.5px;color:#444;margin-bottom:8px;text-indent:2em;line-height:1.9">光学和声学虽然在中考中占比较小，但<strong>成像规律</strong>是区分度较高的考点，特别是凸透镜成像规律几乎每年都考。</p>
+
+<h3>光学公式与规律</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">反射定律</div><div class="f-val">∠入 = ∠反</div><div class="f-desc">三线共面、法线居中、两角相等。光路可逆</div></div>
+<div class="f-card"><div class="f-name">平面镜成像</div><div class="f-val">物距 = 像距</div><div class="f-desc">等大、等距、正立、虚像。物像关于镜面对称</div></div>
+<div class="f-card"><div class="f-name">折射规律</div><div class="f-val">n = sini/sinr</div><div class="f-desc">光从空气进入水/玻璃时折射角<入射角</div></div>
+<div class="f-card"><div class="f-name">透镜成像公式</div><div class="f-val">1/f = 1/u + 1/v</div><div class="f-desc">f焦距，u物距，v像距。初中理解规律即可</div></div>
+</div>
+
+<h3>凸透镜成像规律（核心！）</h3>
+<table>
+<tr><th>物距u</th><th>像距v</th><th>像的性质</th><th>应用</th></tr>
+<tr><td>u > 2f</td><td>f < v < 2f</td><td>倒立、缩小的实像</td><td>照相机</td></tr>
+<tr><td>u = 2f</td><td>v = 2f</td><td>倒立、等大的实像</td><td>测焦距法</td></tr>
+<tr><td>f < u < 2f</td><td>v > 2f</td><td>倒立、放大的实像</td><td>投影仪/幻灯机</td></tr>
+<tr><td>u = f</td><td>—</td><td>不成像（平行光出射）</td><td>平行光源</td></tr>
+<tr><td>u < f</td><td>|v| > u</td><td>正立、放大的虚像</td><td>放大镜</td></tr>
+</table>
+
+<h3>声学基础</h3>
+<div class="f-grid">
+<div class="f-card"><div class="f-name">声速公式</div><div class="f-val">v = s/t</div><div class="f-desc">空气中声速约340m/s（15℃）</div></div>
+<div class="f-card"><div class="f-name">声音三要素</div><div class="f-val">响度·音调·音色</div><div class="f-desc">响度看振幅、音调看频率、音色看材料结构</div></div>
+<div class="f-card"><div class="f-name">回声计算</div><div class="f-val">s = vt/2</div><div class="f-desc">t为发出到听到回声的时间，除以2才是单程</div></div>
+</div>
+
+<div class="tip"><strong>成像规律记忆口诀：</strong>"物近像远像变大，物远像近像变小。一倍焦距分虚实，二倍焦距分大小。"（u>f成实像，u<f成虚像；u>2f成缩小像，u<2f成放大像）</div>
+
+<div class="ex">
+<div class="q">【例题】一个凸透镜的焦距f=10cm。当物体放在距透镜25cm处时，成什么像？用在什么光学仪器上？</div>
+<div class="a"><strong>解：</strong><br>
+u=25cm，f=10cm。比较u与2f：2f=20cm<br>
+u > 2f → 成倒立、缩小的实像<br>
+像距范围：f < v < 2f，即 10cm < v < 20cm<br>
+应用：照相机</div>
+<button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+<div class="a" style="display:none">凸透镜成像题的做题顺序：①找焦距f；②看物距u在哪个区间；③对照表格找性质和应用。考前建议默写一遍凸透镜成像规律表。</div>
+</div>
+
+<div class="hw"><div class="hw-q">• 一个人站在平面镜前2m处，他的像到镜面的距离是多少？人向镜面前进1m后，像到人的距离是多少？<br>
+• 凸透镜的焦距是12cm，物体放在距透镜8cm处，能观察到什么性质？<br>
+• 某人对着一座山喊话，1.5秒后听到回声，求人到山的距离（声速340m/s）。</div></div>
+</div>
 
 </div>
-<div class="footer">思贤学习站 · 济南市商河县</div>
+<div class="footer">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
-<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<script>
+window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});
+function toggleSol(btn){var a=btn.parentElement;var sol=a.querySelectorAll('.a');for(var i=0;i<sol.length;i++){if(sol[i].style.display==='none'){sol[i].style.display='';btn.textContent='收起'}else if(sol[i]!==a.querySelector('.a:first-child')){sol[i].style.display='none';btn.textContent='看解析'}}}
+</script>
 </body>
 </html>

@@ -27,6 +27,11 @@ table th{background:#f0dcdc;font-weight:600;color:#c0392b}
 table tr:nth-child(even){background:#faf4f4}
 .footer{text-align:center;padding:24px 0 0;font-size:12px;color:#ccc;border-top:1px solid #eee;margin-top:30px}
 .chem{font-family:'Courier New',monospace}
+.sol{display:none;margin-top:8px;padding:10px 14px;background:#f0f8f0;border-radius:8px;border-left:3px solid #27ae60;font-size:13px;color:#2d3436}
+.sol-btn{display:inline-block;padding:4px 14px;background:#c0392b;color:#fff;border:none;border-radius:4px;font-size:12px;cursor:pointer;margin:4px 0}
+.sol-btn:hover{background:#a93226}
+.warn{background:#fffbe6;border-radius:8px;padding:10px 16px;margin:8px 0;border:1px solid #f0e6a0;font-size:13px}
+.warn .label{font-size:12px;font-weight:700;color:#d4a017;margin-bottom:2px}
 @media print{body{background:#fff;padding:0}.container{box-shadow:none;padding:20px}}
 @media (max-width:600px){.container{padding:20px 16px}}
 
@@ -48,58 +53,112 @@ table tr:nth-child(even){background:#faf4f4}
 
 <h4>一、物理变化与化学变化</h4>
 <ul>
-  <li><span class="keyword">物理变化</span>：没有新物质生成（如：破碎、融化、挥发、蒸发）</li>
-  <li><span class="keyword">化学变化</span>：有新物质生成（如：燃烧、生锈、变质、发酵）</li>
-  <li>化学变化<span class="point">一定伴随</span>物理变化（发光放热、颜色变化、生成气体沉淀）</li>
+  <li><span class="keyword">物理变化</span>：没有新物质生成（如：破碎、融化、挥发、蒸发、干冰升华、铁水铸锅、灯泡通电发光）</li>
+  <li><span class="keyword">化学变化</span>：有新物质生成（如：燃烧、生锈、变质、发酵、酿酒、光合作用、呼吸作用）</li>
+  <li>化学变化<span class="point">一定伴随</span>物理变化（发光放热、颜色变化、生成气体或沉淀），但物理变化不一定伴随化学变化</li>
+  <li>判断核心依据：<span class="point">有无新物质生成</span>（不是看现象，而是看本质）</li>
 </ul>
 
-<h4>二、实验基本操作</h4>
+<table>
+  <tr><th>比较项目</th><th>物理变化</th><th>化学变化</th></tr>
+  <tr><td>本质区别</td><td>无新物质生成</td><td>有新物质生成</td></tr>
+  <tr><td>宏观表现</td><td>形状、状态改变</td><td>发光、放热、变色、气体、沉淀</td></tr>
+  <tr><td>微观实质</td><td>分子间隔/运动改变,分子本身不变</td><td>分子分裂成原子,原子重新组合成新分子</td></tr>
+  <tr><td>联系</td><td colspan="2">化学变化中一定伴随物理变化</td></tr>
+  <tr><td>实例</td><td>玻璃破碎、水结冰、汽油挥发、铁丝弯曲</td><td>木炭燃烧、铁生锈、食物腐败、火药爆炸</td></tr>
+</table>
+
+<div class="warn">
+<div class="label">【易错陷阱】变化判断</div>
 <ul>
-  <li>药品取用：<span class="point">三不</span>（不触、不闻、不尝）、节约原则、剩余不放回原瓶</li>
-  <li>酒精灯：用<span class="point">外焰</span>加热，不可用嘴吹灭（用灯帽盖灭）</li>
-  <li>量筒读数：视线与凹液面<span class="point">最低处</span>相平 — 仰视读数偏小，俯视读数偏大</li>
-  <li>托盘天平：左物右码（药品不能直接放托盘，用纸或玻璃器皿）</li>
-  <li>加热试管：液体不超过1/3，试管倾斜45°，管口不对人</li>
-  <li>检查气密性：用手握法或注水法</li>
+  <li>❌ 有发光放热一定是化学变化 — 电灯通电发光放热为物理变化</li>
+  <li>❌ 有气体产生一定是化学变化 — 水沸腾产生水蒸气为物理变化</li>
+  <li>❌ 爆炸一定是化学变化 — 轮胎爆炸为物理变化（火药爆炸才是化学变化）</li>
+  <li>⚠ <b>口诀</b>：现象只是表象，本质看有无新物质生成</li>
 </ul>
+</div>
+
+<h4>二、化学实验基本操作</h4>
+<ul>
+  <li><span class="keyword">药品取用原则</span>：<span class="point">三不</span>（不触、不闻、不尝）、节约原则（按需取用）、剩余药品不放回原瓶（放入指定容器）</li>
+  <li><span class="keyword">酒精灯</span>：用<span class="point">外焰</span>加热（外焰温度最高），不可用嘴吹灭（用灯帽盖灭两次），酒精量不超过2/3、不少于1/4</li>
+  <li><span class="keyword">量筒</span>：视线与凹液面<span class="point">最低处</span>相平 — 仰视读数偏小（实际偏大），俯视读数偏大（实际偏小）</li>
+  <li><span class="keyword">托盘天平</span>：<span class="point">左物右码</span>，药品不能直接放托盘（用纸或玻璃器皿），精确到0.1g；左码右物时实际质量=砝码-游码</li>
+  <li><span class="keyword">加热试管</span>：液体不超1/3、试管倾斜45°、管口不对人、先预热后集中加热；固体试管口略下倾</li>
+  <li><span class="keyword">检查气密性</span>：用手握法（加热法）或注水法（液差法）— 有气泡冒出/形成水柱即气密性良好</li>
+  <li><span class="keyword">仪器洗净标准</span>：内壁附着的水既不聚成水滴也不成股流下</li>
+</ul>
+
+<div class="box">
+<div class="label">【例题】实验操作</div>
+<p>下列操作中正确的是（　）<br>
+A. 用嘴吹灭酒精灯　B. 用量筒溶解固体　C. 用外焰加热　D. 用剩药品放回原瓶</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看答案</button>
+<div class="sol">答案：C。<br>
+A酒精灯必须用灯帽盖灭（两次）；B量筒只能用于量取液体，不能用于溶解或反应；D剩余药品应放入指定容器，不可放回原瓶以免污染整瓶。A、B、D均为中考常考易错项。</div>
+</div>
 
 <!-- ============================================================ -->
 <h2>第二单元 我们周围的空气</h2>
 
 <h4>一、空气的成分</h4>
 <ul>
-  <li>空气中含量：<span class="point">N₂ 78%、O₂ 21%、稀有气体0.94%、CO₂ 0.03%</span></li>
-  <li><span class="keyword">测定空气中氧气含量</span>：用红磷燃烧（P + O₂ → P₂O₅白色固体），水面上升约1/5</li>
+  <li>空气成分及含量（体积分数）：<span class="point">N₂ 78%、O₂ 21%、稀有气体0.94%、CO₂ 0.03%、其他0.03%</span></li>
+  <li><span class="keyword">测定空气中O₂含量</span>：<span class="chem">4P + 5O₂ →(点燃) 2P₂O₅</span>（红磷燃烧产生大量白烟，冷却后水面上升约1/5）</li>
+  <li>实验推论：①O₂约占空气体积1/5；②N₂不支持燃烧（红磷剩余）；③N₂难溶于水（水面只上升1/5）</li>
 </ul>
+
+<div class="box">
+<div class="label">【易错注意】氧气含量测定实验</div>
+<p>⚠ 红磷必须足量，确保耗尽装置内全部O₂<br>
+⚠ 装置必须冷却至室温后再打开止水夹（否则气体膨胀，进入水体积偏小）<br>
+⚠ 不能用木炭、硫、铁丝代替红磷！木炭/硫生成气体（CO₂/SO₂），压强差不足；铁丝在空气中无法燃烧<br>
+⚠ 实验结果偏小的常见原因：红磷不足、未冷却打开、装置漏气</p>
+</div>
 
 <h4>二、空气污染与保护</h4>
 <ul>
   <li>有害气体：SO₂、NO₂、CO、O₃；可吸入颗粒物（PM2.5/PM10）</li>
-  <li>三大环境问题：<span class="point">酸雨（SO₂+NO₂）、温室效应（CO₂）、臭氧空洞</span></li>
+  <li>三大环境问题：<span class="point">酸雨（SO₂+NO₂，pH＜5.6）、温室效应（CO₂→全球变暖）、臭氧空洞（氟利昂→紫外线增强）</span></li>
+  <li>空气质量日报六项指标：SO₂、NO₂、CO、O₃、PM10、PM2.5</li>
 </ul>
 
 <h4>三、氧气</h4>
+
 <div class="box">
 <div class="label">氧气性质</div>
-<p><span class="point">物理性质</span>：无色无味气体，密度比空气略大，不易溶于水<br>
-<span class="point">化学性质</span>：助燃性（本身不燃烧），氧化性</p>
+<p><span class="point">物理性质</span>：无色无味气体，密度比空气略大（1.429g/L），不易溶于水（不易≠不溶，1L水溶30mL），液氧淡蓝色<br>
+<span class="point">化学性质</span>：<span class="keyword">助燃性</span>（本身不可燃）、<span class="keyword">氧化性</span>（强氧化剂），与金属/非金属剧烈反应</p>
 </div>
 
 <div class="box">
-<div class="label">氧气实验制取</div>
-<p><b>实验室制O₂</b>（三种方法）：</p>
-<ul>
-  <li><span class="chem">2KMnO₄ →(加热) K₂MnO₄ + MnO₂ + O₂↑</span>（固+固加热型，管口要略向下倾斜，棉花防止粉末堵塞）</li>
-  <li><span class="chem">2H₂O₂ →(MnO₂) 2H₂O + O₂↑</span>（固+液常温型，最简便）</li>
-  <li><span class="chem">2KClO₃ →(MnO₂,加热) 2KCl + 3O₂↑</span></li>
-</ul>
-<p>收集方法：向上排空气法（密度＞空气）、排水法（不易溶于水）<br>
-验满：带火星木条放瓶口，复燃即满</p>
+<div class="label">氧气实验制取（三种方法对比）</div>
+<table>
+  <tr><th>制取方法</th><th>化学方程式</th><th>装置类型</th><th>关键注意</th></tr>
+  <tr><td>KMnO₄分解</td><td>2KMnO₄→(△)K₂MnO₄+MnO₂+O₂↑</td><td>固+固加热</td><td>管口略下倾,棉花防粉末堵塞</td></tr>
+  <tr><td>H₂O₂分解</td><td>2H₂O₂→(MnO₂)2H₂O+O₂↑</td><td>固+液常温</td><td>最简便,不需加热,控制滴速</td></tr>
+  <tr><td>KClO₃分解</td><td>2KClO₃→(MnO₂,△)2KCl+3O₂↑</td><td>固+固加热</td><td>试管口不用棉花,纯KClO₃加热易炸</td></tr>
+</table>
+<p>收集方法：<span class="point">向上排空气法</span>（密度大于空气，较干燥）；<span class="point">排水法</span>（不易溶于水，更纯净）<br>
+验满：带火星木条放瓶口，复燃即满（排空气法）<br>
+检验：带火星木条伸入瓶内，复燃即证明是O₂</p>
 </div>
 
+<div class="box">
+<div class="label">催化剂（触媒）</div>
+<p><span class="keyword">催化剂</span>：在化学反应中能<span class="point">改变</span>反应速率，而本身的<span class="point">质量和化学性质</span>在反应前后都不变的物质。<br>
+记忆口诀：<span class="point">"一变二不变"</span> — 变的是反应速率，不变的是质量和化学性质。<br>
+⚠ 催化剂不能使生成物增多，只能缩短到达平衡的时间。<br>
+⚠ 催化剂具有专一性（一种催化剂通常只催化一种反应），如MnO₂对H₂O₂分解有效，但不能催化所有反应。</p>
+</div>
+
+<h4>四、基本反应类型</h4>
 <ul>
-  <li>化合反应：<span class="point">多变一</span>；分解反应：<span class="point">一变多</span></li>
-  <li>氧化反应：物质与氧发生的反应（剧烈氧化如燃烧，缓慢氧化如生锈）</li>
+  <li><span class="keyword">化合反应</span>：<span class="point">多变一</span>（A+B→AB），如 4P+5O₂→2P₂O₅</li>
+  <li><span class="keyword">分解反应</span>：<span class="point">一变多</span>（AB→A+B），如 2H₂O→(通电)2H₂↑+O₂↑</li>
+  <li><span class="keyword">氧化反应</span>：物质与氧发生的反应（注意：<span class="point">氧化反应不是基本反应类型</span>，是从得失氧角度分类）<br>
+  剧烈氧化：燃烧、爆炸；缓慢氧化：铁生锈、呼吸、食物腐败、农家肥腐熟</li>
+  <li>缓慢氧化可能引发自燃（如白磷暴露在空气中）</li>
 </ul>
 
 <!-- ============================================================ -->
@@ -107,42 +166,102 @@ table tr:nth-child(even){background:#faf4f4}
 
 <h4>一、分子和原子</h4>
 <ul>
-  <li><span class="keyword">分子的性质</span>：很小、不断运动（扩散）、有间隔（热胀冷缩）</li>
-  <li><span class="keyword">原子</span>：化学变化中的最小粒子，原子由<span class="point">质子、中子、电子</span>构成</li>
-  <li>分子由原子构成（如 H₂O 由 2个H 和 1个O 原子构成）</li>
+  <li><span class="keyword">分子的性质</span>：很小（肉眼不可见）、不断运动（扩散现象：花香、品红扩散）、有间隔（热胀冷缩、压缩气体、10mL水+10mL酒精＜20mL）</li>
+  <li><span class="keyword">原子</span>：化学变化中的<span class="point">最小</span>粒子（化学变化中不可再分）</li>
+  <li>分子由原子构成（如 H₂O 由 2个H 和 1个O 构成；CO₂由1个C和2个O构成）</li>
 </ul>
+
+<table>
+  <tr><th>比较项目</th><th>分子</th><th>原子</th></tr>
+  <tr><td>定义</td><td>保持物质化学性质的最小粒子</td><td>化学变化中的最小粒子</td></tr>
+  <tr><td>区别</td><td>化学变化中可再分（分裂成原子）</td><td>化学变化中不可再分</td></tr>
+  <tr><td>联系</td><td colspan="2">分子由原子构成；原子可直接构成物质（金属、稀有气体、金刚石等）</td></tr>
+  <tr><td>构成物质举例</td><td>水（H₂O）、CO₂、H₂、O₂、CH₄</td><td>Fe、Cu、Ne、He、C（金刚石）</td></tr>
+</table>
+
+<div class="box">
+<div class="label">【例题】分子原子辨析</div>
+<p>下列有关分子和原子的说法中正确的是（　）<br>
+A. 分子是保持物质性质的最小粒子<br>
+B. 原子是不能再分的粒子<br>
+C. 分子和原子都可以直接构成物质<br>
+D. 分子一定比原子大</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看答案</button>
+<div class="sol">答案：C。<br>
+A应为"化学性质"（物理性质如颜色、状态等单个分子无法保持）；B原子在化学变化中不可再分，但在物理层面可再分（核反应）；D分子和原子大小没有绝对比较关系（如H₂分子比Fe原子小得多）。</div>
+</div>
 
 <h4>二、原子的结构</h4>
 <ul>
-  <li><span class="keyword">原子核</span> = 质子（带正电）+ 中子（不带电）</li>
-  <li>核外电子（带负电）分层排布，最外层电子数<span class="point">≤4易失电子→金属</span>，<span class="point">≥4易得电子→非金属</span></li>
-  <li>原子中：<span class="keyword">质子数 = 核电荷数 = 核外电子数</span></li>
-  <li>相对原子质量 ≈ 质子数 + 中子数</li>
+  <li><span class="keyword">原子核</span> = 质子（+1，带正电）+ 中子（不带电）— 居于原子中心，体积很小但质量很大（核外电子质量可忽略）</li>
+  <li>核外电子（-1，带负电）分层排布：K层（第1层）≤2个，L层（第2层）≤8个，最外层电子数≤8</li>
+  <li>最外层电子数决定化学性质：<span class="point">≤4易失电子→金属元素</span>；<span class="point">≥4易得电子→非金属元素</span>；8（He为2）→稳定→稀有气体</li>
+  <li>原子中：<span class="keyword">质子数 = 核电荷数 = 核外电子数</span>（原子不显电性）</li>
+  <li>相对原子质量 ≈ 质子数 + 中子数（精确值：Ar = 某原子质量 / 碳-12原子质量×1/12）</li>
+  <li>同一原子中：质子数不一定等于中子数（如H有1个质子0个中子，C有6个质子6个中子）</li>
 </ul>
 
-<h4>三、元素</h4>
+<img src="charts/chem_atomic_radius.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="原子半径比较">
+
+<h4>三、离子</h4>
 <ul>
-  <li><span class="keyword">元素</span>：<span class="point">质子数相同</span>的一类原子的总称</li>
-  <li>地壳中含量前四：<span class="point">O、Si、Al、Fe</span>（氧硅铝铁）</li>
-  <li><span class="keyword">元素符号</span>：一大二小（如Na、Ca、Cl）</li>
+  <li><span class="keyword">离子</span>：带电的原子（或原子团）— 原子得失电子后形成</li>
+  <li><span class="keyword">阳离子</span>（带正电）：原子失电子 → 质子数＞电子数，如 Na⁺、Mg²⁺、Al³⁺、K⁺、Ca²⁺</li>
+  <li><span class="keyword">阴离子</span>（带负电）：原子得电子 → 质子数＜电子数，如 Cl⁻、O²⁻、S²⁻</li>
+  <li>记忆口诀：<span class="point">"阳失阴得"</span> — 金属失电子→阳离子，非金属得电子→阴离子</li>
+  <li>常见原子团离子：OH⁻、NO₃⁻、SO₄²⁻、CO₃²⁻、NH₄⁺</li>
 </ul>
 
-<h4>四、化合价</h4>
+<h4>四、元素</h4>
 <ul>
-  <li>常用化合价口诀：<span class="point">钾钠银氢+1价，钙镁钡锌+2价；氟氯溴碘-1价，氧-2来硫-2；铁有+2和+3，铝+3硅+4</span></li>
-  <li>化合物中正负化合价代数和为<span class="point">零</span></li>
-  <li><span class="keyword">化学式</span>：表示物质组成的式子（H₂O、NaCl、CO₂）</li>
+  <li><span class="keyword">元素</span>：<span class="point">质子数（核电荷数）相同</span>的一类原子总称 — 决定元素种类的是质子数</li>
+  <li>地壳中含量前四：<span class="point">O、Si、Al、Fe</span>（氧硅铝铁，谐音：养闺女贴）</li>
+  <li>生物细胞中含量前四：O、C、H、N</li>
+  <li>空气中含量最多的元素：N（78%N₂），其次为O（21%O₂）</li>
+  <li><span class="keyword">元素符号</span>：一大二小（如Na、Ca、Cl），表示一种元素、一个原子</li>
+  <li>元素周期表：横行=周期（7个），纵列=族（18列/16族），同周期电子层数相同，同族最外层电子数相同（化学性质相似）</li>
+</ul>
+
+<h4>五、化合价</h4>
+<ul>
+  <li>常用化合价口诀：<span class="point">钾钠银氢+1价，钙镁钡锌+2价；氟氯溴碘-1价，氧-2来硫-2；铁有+2和+3，铝+3硅+4，铜汞+2最常见</span></li>
+  <li>常见原子团化合价：OH⁻（-1）、NO₃⁻（-1）、SO₄²⁻（-2）、CO₃²⁻（-2）、NH₄⁺（+1）</li>
+  <li>规则：化合物中各元素正负化合价代数和为<span class="point">零</span>（单质中元素化合价为0）</li>
+  <li><span class="keyword">化学式</span>：表示物质组成的式子（H₂O、NaCl、CO₂、CaCO₃、NaOH）</li>
+  <li>根据化合价写化学式：<span class="point">正左负右、标价交叉、约简检验</span></li>
 </ul>
 
 <!-- ============================================================ -->
 <h2>第四单元 自然界的水</h2>
+
+<h4>一、水的净化</h4>
 <ul>
-  <li><span class="keyword">水的净化</span>：沉淀→过滤→吸附（活性炭）→消毒（氯气）→蒸馏（最高级）</li>
-  <li><span class="keyword">过滤</span>：<span class="point">一贴二低三靠</span>—滤纸紧贴漏斗壁；滤纸低于漏斗口、液面低于滤纸边缘；烧杯靠玻璃棒、玻璃棒靠三层滤纸、漏斗下端靠烧杯壁</li>
-  <li><span class="keyword">硬水与软水</span>：肥皂水区分（硬水泡沫少浮渣多）；硬水软化—煮沸或蒸馏</li>
-  <li><span class="keyword">电解水</span>：正极→O₂，负极→H₂（体积比1:2）<br>
-  <span class="chem">2H₂O →(通电) 2H₂↑ + O₂↑</span> — 证明水由<span class="point">氢、氧元素</span>组成</li>
+  <li>净化流程：<span class="point">沉淀→过滤→吸附→消毒→蒸馏</span></li>
+  <li>①沉淀：静置沉降或<span class="point">絮凝沉降</span>（加明矾KAl(SO₄)₂·12H₂O，吸附悬浮杂质使其沉降）</li>
+  <li>②过滤：<span class="keyword">一贴二低三靠</span>—滤纸紧贴漏斗壁（一贴）；滤纸低于漏斗口、液面低于滤纸边缘（二低）；烧杯靠玻璃棒、玻璃棒靠三层滤纸、漏斗下端靠烧杯壁（三靠）</li>
+  <li>③吸附：活性炭（疏松多孔，<span class="point">物理吸附</span>—吸附色素和异味，不能软化硬水）</li>
+  <li>④消毒：氯气（Cl₂）或ClO₂、O₃（化学变化，杀死微生物）</li>
+  <li>⑤蒸馏：利用沸点不同分离，所得水为<span class="point">蒸馏水（纯净物）</span>，净化程度最高</li>
 </ul>
+
+<h4>二、硬水与软水</h4>
+<ul>
+  <li>区分方法：加<span class="point">肥皂水</span>—软水泡沫多浮渣少，硬水泡沫少浮渣多</li>
+  <li>硬水软化：<span class="point">煮沸</span>（生活中）、<span class="point">蒸馏</span>（实验室）、离子交换法（工业）</li>
+  <li>硬水的危害：浪费肥皂（形成沉淀）、锅炉结垢（导热差→爆炸风险）、影响口感</li>
+</ul>
+
+<h4>三、电解水</h4>
+<div class="box">
+<div class="label">电解水实验</div>
+<p><span class="chem">2H₂O →(通电) 2H₂↑ + O₂↑</span></p>
+<ul>
+  <li>正极（接电源+）→<span class="point">O₂</span>（带火星木条复燃），负极（接电源-）→<span class="point">H₂</span>（点燃淡蓝色火焰）</li>
+  <li>体积比 V(H₂):V(O₂) = <span class="point">2:1</span>；质量比 m(H₂):m(O₂) = 1:8</li>
+  <li>实验结论：水由<span class="point">氢元素和氧元素</span>组成（不能说"水由氢气和氧气组成"）</li>
+  <li>为增强水的导电性，可加入少量NaOH或H₂SO₄（不能加NaCl，会产生Cl₂）</li>
+</ul>
+</div>
 
 <!-- ============================================================ -->
 <h2>第五单元 化学方程式</h2>
@@ -150,69 +269,125 @@ table tr:nth-child(even){background:#faf4f4}
 <h4>一、质量守恒定律</h4>
 <div class="box">
 <div class="label">质量守恒定律</div>
-<p><b>内容</b>：化学反应前后，参加反应的各物质质量总和 = 生成的各物质质量总和</p>
-<p><b>微观本质</b>：原子<span class="point">种类、数目、质量</span>三不变（只是原子重新组合）</p>
-<p><b>遵循原因</b>：化学反应是原子重新组合的过程，原子本身不变</p>
+<p><b>内容</b>：参加化学反应的各物质质量总和 = 生成的各物质质量总和</p>
+<p><b>微观本质</b>：化学反应前后<span class="point">原子种类、数目、质量</span>三不变（原子只是重新组合）</p>
+<p><b>宏观表现</b>：元素种类不变、元素质量不变、物质总质量不变；但物质种类一定变、分子种类一定变</p>
+<p>⚠ "参加"二字不能漏——未反应完的剩余部分不计入</p>
+<p>⚠ 有气体参加或生成的反应，在密闭容器中称量才守恒；敞口容器要考虑气体逸出或进入</p>
 </div>
 
-<h4>二、化学方程式的书写</h4>
+<h4>二、化学方程式的书写与配平</h4>
 <ul>
-  <li>书写步骤：<span class="point">写→配→注→等</span>（写化学式、配平、注条件↑↓、改等号）</li>
-  <li>配平方法：最小公倍数法、观察法、奇偶配平法、待定系数法</li>
+  <li>书写步骤：<span class="point">写→配→注→等</span>（写化学式、配平、标注条件↑↓、改等号）</li>
+  <li>配平方法：最小公倍数法（最常用）、观察法（适于简单反应）、奇偶配平法（氧元素）、待定系数法</li>
+  <li>条件标注：加热△、点燃、高温、催化剂；生成物标↑（气体）、↓（沉淀）</li>
 </ul>
 
+<h4>三、四种基本反应类型</h4>
+<table>
+  <tr><th>反应类型</th><th>形式</th><th>特征</th><th>实例</th></tr>
+  <tr><td>化合反应</td><td>A+B→AB</td><td>多变一</td><td>C+O₂→(点燃)CO₂、4P+5O₂→2P₂O₅</td></tr>
+  <tr><td>分解反应</td><td>AB→A+B</td><td>一变多</td><td>2H₂O→(通电)2H₂↑+O₂↑、2KMnO₄→(△)K₂MnO₄+MnO₂+O₂↑</td></tr>
+  <tr><td>置换反应</td><td>A+BC→AC+B</td><td>单换单</td><td>Fe+CuSO₄→FeSO₄+Cu、Zn+H₂SO₄→ZnSO₄+H₂↑</td></tr>
+  <tr><td>复分解反应</td><td>AB+CD→AD+CB</td><td>双交换、价不变</td><td>NaCl+AgNO₃→AgCl↓+NaNO₃</td></tr>
+</table>
+
 <div class="box">
-<div class="label">必考化学方程式</div>
-<p><b>碳和碳的氧化物</b>：<br>
-<span class="chem">C + O₂ →(点燃) CO₂ &nbsp; 2C + O₂ →(点燃) 2CO &nbsp; CO₂ + C →(高温) 2CO</span><br>
-<span class="chem">CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑ &nbsp; CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O</span></p>
-<p><b>金属</b>：<br>
-<span class="chem">Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂</span>（炼铁原理）<br>
-<span class="chem">Fe + CuSO₄ → FeSO₄ + Cu &nbsp; Zn + H₂SO₄ → ZnSO₄ + H₂↑</span></p>
-<p><b>燃烧</b>：<br>
-<span class="chem">CH₄ + 2O₂ →(点燃) CO₂ + 2H₂O &nbsp; C₂H₅OH + 3O₂ →(点燃) 2CO₂ + 3H₂O</span></p>
+<div class="label">【质量守恒计算】</div>
+<p>反应 2A + B₂ → 2C 中，已知A的相对原子质量为24，B的相对原子质量为16，求C的相对分子质量。</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看答案</button>
+<div class="sol">根据质量守恒，反应前后总质量相等。<br>
+左端总质量 = 2×24 + 2×16 = 48 + 32 = 80<br>
+2个C分子的总质量为80，所以一个C分子的相对分子质量 = 80 ÷ 2 = <b>40</b>。</div>
 </div>
+
+<h4>四、化学方程式的简单计算</h4>
+<ul>
+  <li>计算步骤：<span class="point">设→写→标→列→解→答</span>（设未知数、写方程式、标已知和未知、列比例式、求解、作答）</li>
+  <li>注意事项：代入的必须是<span class="point">纯净物质量</span>（若为溶液，代入溶质质量；若为不纯物，乘纯度）</li>
+  <li>计算格式：质量比对应，单位要统一</li>
+</ul>
 
 <!-- ============================================================ -->
 <h2>第六单元 碳和碳的氧化物</h2>
 
-<h4>一、碳单质</h4>
+<h4>一、碳单质的多样性</h4>
 <ul>
-  <li><span class="keyword">金刚石</span>：<span class="point">最硬</span>（切割），正八面体</li>
-  <li><span class="keyword">石墨</span>：<span class="point">最软之一</span>（铅笔芯），能导电（电极），有滑腻感（润滑剂）</li>
-  <li><span class="keyword">C₆₀</span>：足球烯，由分子构成</li>
-  <li>碳单质物理性质差异的原因：<span class="point">碳原子排列方式不同</span></li>
+  <li><span class="keyword">金刚石</span>：自然界<span class="point">最硬</span>的物质（切割玻璃、钻探），正八面体，网状结构</li>
+  <li><span class="keyword">石墨</span>：最软矿物之一（铅笔芯），能导电（电极），有滑腻感（润滑剂），层状结构—层间易滑动</li>
+  <li><span class="keyword">C₆₀</span>：足球烯/巴基球，由60个C原子构成球形分子（分子结构稳定）</li>
+  <li><span class="keyword">碳纳米管</span>：管状结构，强度高、导电性好</li>
+  <li>碳单质物理性质差异大的原因：<span class="point">碳原子的排列方式不同</span>（结构决定性质）</li>
+  <li>⚠ 金刚石和石墨都是碳单质，化学性质相同（同种元素组成），但物理性质不同</li>
 </ul>
 
 <h4>二、碳的化学性质</h4>
 <ul>
-  <li><span class="point">稳定性</span>：常温下稳定（古代字画保存千年）</li>
-  <li><span class="point">可燃性</span>：O₂充足→CO₂（放热多），O₂不足→CO（有毒）</li>
-  <li><span class="point">还原性</span>：<span class="chem">C + 2CuO →(高温) 2Cu + CO₂↑</span>（黑色变红色）</li>
+  <li><span class="point">稳定性</span>：常温下化学性质稳定（古代字画保存千年、档案用碳素墨水）</li>
+  <li><span class="point">可燃性</span>：O₂充足→CO₂（放热多），O₂不足→CO（有毒，蓝色火焰）</li>
+  <li><span class="point">还原性</span>：<span class="chem">C + 2CuO →(高温) 2Cu + CO₂↑</span>（黑色粉末→红色固体）<br>
+  碳能还原CuO、Fe₂O₃、CO₂等</li>
 </ul>
 
-<h4>三、二氧化碳 CO₂</h4>
-<ul>
-  <li>物理性质：无色无味，密度比空气大（可倾倒灭火），能溶于水</li>
-  <li>化学性质：不燃烧不支持燃烧（灭火）；与水反应（<span class="chem">CO₂ + H₂O → H₂CO₃</span>，碳酸使石蕊变红）；与石灰水反应（<span class="chem">CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O</span>）</li>
-  <li><span class="keyword">实验室制取</span>：<span class="chem">CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑</span>（固+液常温，向上排空气法，不用稀硫酸）</li>
-  <li>验满：燃着木条放瓶口，熄灭即满</li>
-</ul>
+<h4>三、CO₂与CO对比</h4>
+<table>
+  <tr><th>性质</th><th>二氧化碳 CO₂</th><th>一氧化碳 CO</th></tr>
+  <tr><td>物理性质</td><td>无色无味,密度＞空气,能溶于水</td><td>无色无味,密度≈空气,难溶于水</td></tr>
+  <tr><td>可燃性</td><td>不燃烧,不支持燃烧（灭火）</td><td>可燃烧,2CO+O₂→(点燃)2CO₂,蓝色火焰</td></tr>
+  <tr><td>还原性</td><td>无还原性</td><td>有还原性,CO+CuO→(△)Cu+CO₂</td></tr>
+  <tr><td>与水反应</td><td>CO₂+H₂O→H₂CO₃（碳酸使石蕊变红）</td><td>不反应</td></tr>
+  <tr><td>与石灰水</td><td>CO₂+Ca(OH)₂→CaCO₃↓+H₂O（变浑）</td><td>不反应</td></tr>
+  <tr><td>毒性</td><td>无毒（但浓度高会窒息）</td><td><span class="point">剧毒</span>（与血红蛋白结合,缺氧致死）</td></tr>
+  <tr><td>主要用途</td><td>灭火、干冰人工降雨、碳酸饮料</td><td>燃料、炼铁还原剂</td></tr>
+</table>
 
-<h4>四、一氧化碳 CO</h4>
+<div class="box">
+<div class="label">【实验室制CO₂】</div>
+<p>药品：<b>石灰石（或大理石）+ 稀盐酸</b><br>
+<span class="chem">CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑</span></p>
 <ul>
-  <li><span class="point">有毒</span>（与血红蛋白结合，缺氧致死）</li>
-  <li>可燃性：<span class="chem">2CO + O₂ →(点燃) 2CO₂</span>（蓝色火焰）</li>
-  <li>还原性：<span class="chem">CO + CuO →(加热) Cu + CO₂</span>（炼铁原理）</li>
+  <li>❌ 不用稀硫酸：生成CaSO₄微溶于水，覆盖在石灰石表面阻止反应持续</li>
+  <li>❌ 不用浓盐酸：浓盐酸易挥发→CO₂中混有HCl气体不纯</li>
+  <li>❌ 不用Na₂CO₃：反应剧烈，不易控制（一般不用于实验室制取）</li>
+  <li>收集：向上排空气法（密度大于空气，能溶于水故不用排水法）</li>
+  <li>验满：燃着木条放在集气瓶口，熄灭即满</li>
 </ul>
+</div>
+
+<div class="warn">
+<div class="label">【常见易错】CO与CO₂</div>
+<ul>
+  <li>CO₂通入紫色石蕊试液变红，不是因为CO₂显酸性，而是CO₂+H₂O→H₂CO₃（碳酸使石蕊变红）</li>
+  <li>除去CO中的CO₂：通过NaOH溶液（CO₂+2NaOH→Na₂CO₃+H₂O，CO不反应）</li>
+  <li>除去CO₂中的CO：通过灼热的CuO（CO+CuO→Cu+CO₂）</li>
+  <li>CO中毒急救：立即转移到通风处，严重者送医高压氧舱治疗</li>
+</ul>
+</div>
 
 <!-- ============================================================ -->
 <h2>第七单元 燃料及其利用</h2>
+
+<h4>一、燃烧与灭火</h4>
 <ul>
-  <li><span class="keyword">燃烧条件</span>：<span class="point">①可燃物 ②与O₂接触 ③温度达着火点</span>（三缺一不可）</li>
-  <li>灭火原理：消除任一条件（隔离、隔绝空气、降温）</li>
-  <li>化石燃料：<span class="point">煤（主要含C，"工业粮食"）、石油（主要含C、H，"工业血液"）、天然气（主要CH₄）</span></li>
-  <li>新能源：氢能、风能、太阳能、核能、地热能</li>
+  <li><span class="keyword">燃烧条件</span>：<span class="point">①可燃物 ②与O₂（空气）充分接触 ③温度达到着火点</span>（三者缺一不可）</li>
+  <li>着火点是物质的固有属性，<span class="point">不可降低</span>（不是"降低着火点"，是"降温至着火点以下"）</li>
+  <li>灭火原理（三个方向）：<span class="point">①清除可燃物 ②隔绝空气（O₂） ③降温至着火点以下</span></li>
+  <li>灭火器类型：干粉灭火器（一般火灾）、CO₂灭火器（图书档案/贵重设备）、水基灭火器（木材纸张）</li>
+</ul>
+
+<h4>二、化石燃料</h4>
+<ul>
+  <li><span class="keyword">煤</span>：主要含C（"工业粮食"），干馏→焦炭、煤焦油、煤气（化学变化）</li>
+  <li><span class="keyword">石油</span>：主要含C、H（"工业血液"），分馏→汽油、柴油、煤油、沥青（<span class="point">物理变化</span>，利用沸点不同分离）</li>
+  <li><span class="keyword">天然气</span>：主要成分CH₄（甲烷），<span class="chem">CH₄ + 2O₂ →(点燃) CO₂ + 2H₂O</span>（蓝色火焰，产生H₂O和CO₂）</li>
+  <li>化石燃料是不可再生能源，燃烧产生SO₂→酸雨、CO₂→温室效应</li>
+</ul>
+
+<h4>三、新能源</h4>
+<ul>
+  <li><span class="keyword">氢能</span>：<span class="chem">2H₂ + O₂ →(点燃) 2H₂O</span>，热值高、产物无污染（最清洁燃料），但制取成本高、储存运输困难</li>
+  <li><span class="keyword">乙醇（C₂H₅OH）</span>：<span class="chem">C₂H₅OH + 3O₂ →(点燃) 2CO₂ + 3H₂O</span>，可再生（粮食发酵制取）</li>
+  <li>其他新能源：<span class="point">风能、太阳能、核能、地热能、潮汐能、生物质能</span></li>
 </ul>
 
 <!-- ============================================================ -->
@@ -220,9 +395,10 @@ table tr:nth-child(even){background:#faf4f4}
 
 <h4>一、金属材料</h4>
 <ul>
-  <li>金属的物理共性：导电导热、延展性、金属光泽</li>
-  <li>合金比纯金属<span class="point">硬度更大、熔点更低、抗腐蚀更好</span></li>
-  <li>常见合金：生铁（含C 2-4.3%）、钢（含C 0.03-2%，性能更优）</li>
+  <li>金属的物理共性：导电性、导热性、延展性、金属光泽（⚠ 汞在常温下为液态，是唯一液态金属）</li>
+  <li><span class="keyword">合金</span>：一种金属与其他金属（或非金属）熔合而成的具有金属特性的混合物</li>
+  <li>合金性能优于纯金属：<span class="point">硬度更大、熔点更低、抗腐蚀更强</span></li>
+  <li>常见合金：<span class="keyword">生铁</span>（含C 2-4.3%，硬而脆）、<span class="keyword">钢</span>（含C 0.03-2%，韧性好）、<span class="keyword">黄铜</span>（Cu-Zn）、<span class="keyword">青铜</span>（Cu-Sn）、<span class="keyword">不锈钢</span>（Fe-Cr-Ni）</li>
 </ul>
 
 <h4>二、金属活动性顺序</h4>
@@ -234,32 +410,89 @@ table tr:nth-child(even){background:#faf4f4}
 <p>从左到右活动性逐渐减弱</p>
 </div>
 <ul>
-  <li>应用：①金属+酸→盐+H₂（前H金属）；②金属+盐→新金属+新盐（前置后）</li>
-  <li>验证金属活动性：三选二法、中间金属法</li>
+  <li>应用一：前H金属 + 酸 → 盐 + H₂↑（Mg、Al、Zn、Fe与酸反应产生H₂）</li>
+  <li>应用二：活泼金属 + 盐溶液 → 不活泼金属 + 新盐（Fe+CuSO₄→FeSO₄+Cu）</li>
+  <li>验证方法：<span class="point">三选二法</span>（取三种金属两两组合）、<span class="point">中间金属法</span></li>
+  <li>⚠ 特别注意：K、Ca、Na与酸反应过于剧烈，而且会先与水反应（2Na+2H₂O→2NaOH+H₂↑）</li>
 </ul>
 
-<h4>三、铁的冶炼与生锈</h4>
+<h4>三、铁的冶炼与铁生锈</h4>
 <ul>
-  <li>炼铁原理：<span class="chem">Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂</span>（还原反应）</li>
-  <li>铁生锈条件：<span class="point">Fe + O₂ + H₂O</span>（三者缺一不可）</li>
-  <li>防锈措施：涂油刷漆、镀金属、保持干燥、制成不锈钢</li>
+  <li>高炉炼铁原理（还原反应）：<span class="chem">Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂</span>（CO作还原剂）</li>
+  <li>铁生锈条件：<span class="point">Fe + O₂ + H₂O</span>（三者缺一不可），铁锈主要成分Fe₂O₃·xH₂O（红棕色疏松多孔）</li>
+  <li>防锈措施：涂漆/刷油（隔绝O₂和H₂O）、镀金属（镀锌/铬）、保持干燥、制成不锈钢（合金化）</li>
+  <li>铝的自我保护：Al与O₂反应生成致密Al₂O₃氧化膜，阻止进一步氧化（铝比铁活泼但更耐腐蚀）</li>
 </ul>
+
+<div class="box">
+<div class="label">【例题】金属活动性判断</div>
+<p>将X、Y、Z三种金属分别放入稀盐酸中，X、Y表面有气泡，Z无变化；将X放入YNO₃溶液中，X表面析出Y。则X、Y、Z的活动性顺序为？</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看答案</button>
+<div class="sol">分析思路：<br>
+① X、Y能与盐酸反应产生气体 → X、Y在H之前（活泼金属）<br>
+② Z不与盐酸反应 → Z在H之后（不活泼）<br>
+③ X能置换出Y（X + YNO₃ → XNO₃ + Y）→ X比Y活泼<br>
+∴ 活动性顺序：<b>X ＞ Y ＞ H ＞ Z</b></div>
+</div>
 
 <!-- ============================================================ -->
 <h2>第九单元 溶液</h2>
+
+<h4>一、溶液的基本概念</h4>
 <ul>
-  <li><span class="keyword">溶液</span>：均一稳定的混合物（溶质+溶剂）</li>
-  <li>乳化：洗涤剂除去油污（不是溶解，是<span class="point">乳化作用</span>）</li>
-  <li><span class="keyword">饱和溶液与不饱和溶液</span>的转化：<br>
-    饱和→不饱和：加溶剂、升温（大多）<br>
-    不饱和→饱和：加溶质、蒸发溶剂、降温（大多）</li>
-  <li><span class="keyword">溶解度</span>：一定温度下，100g溶剂中最多溶解的溶质质量</li>
+  <li><span class="keyword">溶液</span>：均一、稳定的混合物（溶质+溶剂）— 均一=各处浓度相同，稳定=不分层不沉淀</li>
+  <li><span class="keyword">乳化</span>：洗涤剂去油污不是溶解，是<span class="point">乳化作用</span>（将大油滴分散成小液滴，随水冲走）</li>
+  <li>溶解时的温度变化：NaCl溶解（温度几乎不变）、NaOH/浓H₂SO₄溶解（<span class="point">放热</span>）、NH₄NO₃溶解（<span class="point">吸热</span>）</li>
+</ul>
+
+<h4>二、饱和溶液与不饱和溶液</h4>
+<ul>
+  <li>转化：<br>
+    不饱和→饱和：<span class="point">加溶质、蒸发溶剂、降温</span>（大多数固体，气体相反）<br>
+    饱和→不饱和：<span class="point">加溶剂、升温</span>（大多数固体）</li>
+  <li>判断方法：继续加入该溶质，看是否溶解；或降低温度看是否有晶体析出</li>
+  <li>⚠ 饱和溶液不一定是浓溶液，不饱和溶液不一定是稀溶液（如Ca(OH)₂微溶，饱和溶液浓度很小）</li>
+</ul>
+
+<h4>三、溶解度</h4>
+<ul>
+  <li><span class="keyword">溶解度</span>：一定温度下，100g溶剂中最多溶解的溶质质量（单位g）</li>
+  <li>影响因素：内因=溶质和溶剂的本性；外因=温度（对气体还受压强影响）</li>
+  <li>气体溶解度：温度↑溶解度↓，压强↑溶解度↑（打开汽水瓶盖后压强减小→CO₂逸出）</li>
 
 <img src="charts/chem_solubility.svg" style="width:100%;max-width:480px;display:block;margin:12px auto" alt="溶解度曲线">
-  <li>溶解度曲线：交点→该温度下溶解度相等；陡→受温度影响大（如KNO₃）；缓→受温度影响小（如NaCl）</li>
-  <li>溶质质量分数 = <span class="point">溶质质量 / 溶液质量 × 100%</span></li>
-  <li>配制溶液步骤：<span class="point">计算→称量→溶解→装瓶</span></li>
+  <li>溶解度曲线应用：<br>
+    — 交点→该温度下两物质溶解度相等<br>
+    — 陡升型（KNO₃）→受温度影响大，提纯用<span class="point">降温结晶</span><br>
+    — 缓升型（NaCl）→受温度影响小，提纯用<span class="point">蒸发结晶</span><br>
+    — 下降型（Ca(OH)₂）→极少数，随温度升高溶解度降低</li>
 </ul>
+
+<h4>四、溶质质量分数</h4>
+<div class="box">
+<div class="label">核心公式</div>
+<p><b>溶质质量分数</b> = <span class="point">溶质质量 ÷ 溶液质量 × 100%</span></p>
+<p>溶液质量 = 溶质质量 + 溶剂质量 = 溶液体积 × 溶液密度</p>
+<p>稀释（配制）公式：<b>m₁ × a% = m₂ × b%</b>（稀释前后溶质质量不变）</p>
+<p>饱和溶液：溶质质量分数 = S/(100+S) × 100%（S为溶解度）</p>
+</div>
+<ul>
+  <li>配制溶液步骤（以NaCl溶液为例）：<span class="point">计算→称量→量取→溶解→装瓶贴标签</span></li>
+  <li>误差分析（均导致质量分数偏小）：<br>
+    溶质偏少—称量时左码右物、砝码生锈/沾污、药品潮解<br>
+    溶剂偏多—量取时仰视读数（实际量多的水）</li>
+</ul>
+
+<div class="box">
+<div class="label">【例题】溶液稀释计算</div>
+<p>用100g 98%的浓硫酸配制19.6%的稀硫酸，需要加水多少克？</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看答案</button>
+<div class="sol">稀释前后H₂SO₄溶质质量不变：<br>
+m(H₂SO₄) = 100g × 98% = 98g<br>
+稀释后溶液总质量 = 98g ÷ 19.6% = 500g<br>
+需要加水 = 500g - 100g = <b>400g</b><br>
+答：需要加水400克。</div>
+</div>
 
 <!-- ============================================================ -->
 <h2>第十单元 酸和碱</h2>
@@ -267,25 +500,58 @@ table tr:nth-child(even){background:#faf4f4}
 <h4>一、常见的酸</h4>
 <table>
   <tr><th>酸</th><th>化学式</th><th>性质</th><th>用途</th></tr>
-  <tr><td>盐酸</td><td>HCl</td><td>无色刺激味液体，挥发白雾</td><td>除锈、胃液助消化</td></tr>
-  <tr><td>硫酸</td><td>H₂SO₄</td><td>无色油状，<span class="point">浓硫酸有吸水性（干燥剂）和脱水性</span></td><td>化肥、除锈、电池</td></tr>
-  <tr><td>硝酸</td><td>HNO₃</td><td>强腐蚀性、强氧化性</td><td>化肥、炸药</td></tr>
+  <tr><td>盐酸</td><td>HCl</td><td>无色刺激性气味液体,挥发出HCl遇水蒸气→白雾</td><td>除锈、胃液助消化、制取Cl₂</td></tr>
+  <tr><td>硫酸</td><td>H₂SO₄</td><td>无色油状液体,<span class="point">浓硫酸有吸水性（干燥剂）和脱水性</span></td><td>化肥、除锈、蓄电池电解液</td></tr>
+  <tr><td>硝酸</td><td>HNO₃</td><td>强腐蚀性、强氧化性（遇金属一般不产生H₂）</td><td>化肥、炸药</td></tr>
 </table>
+
+<div class="warn">
+<div class="label">【必考】浓硫酸稀释</div>
+<p><span class="point">酸入水，沿壁倒，不断搅</span><br>
+浓硫酸遇水放出大量热，若将水倒入浓硫酸，水迅速沸腾导致酸液飞溅，十分危险！<br>
+若不慎将浓硫酸溅到皮肤上：先用大量水冲洗，再涂3%-5%的NaHCO₃溶液。</p>
+</div>
+
 <ul>
-  <li>稀释浓硫酸：<span class="point">酸入水，沿壁倒，不断搅</span>（放大量热，切不可水入酸！）</li>
-  <li>酸的化学通性：①使指示剂变色（紫色石蕊→红）②+活泼金属→盐+H₂ ③+金属氧化物→盐+H₂O ④+碱→盐+H₂O ⑤+某些盐→新酸+新盐</li>
+  <li><span class="keyword">酸的化学通性（五条）</span>：<br>
+  ① 使紫色石蕊变<span class="point">红</span>（无色酚酞不变色）；② +活泼金属→盐+H₂↑；③ +金属氧化物→盐+H₂O（除锈）；④ +碱→盐+H₂O（中和反应）；⑤ +某些盐→新酸+新盐</li>
 </ul>
 
 <h4>二、常见的碱</h4>
 <table>
-  <tr><th>碱</th><th>化学式</th><th>性质</th><th>用途</th></tr>
-  <tr><td>氢氧化钠</td><td>NaOH</td><td>白色固体，易潮解，强腐蚀性（"烧碱、火碱、苛性钠"）</td><td>造纸、肥皂、去油污</td></tr>
-  <tr><td>氢氧化钙</td><td>Ca(OH)₂</td><td>白色粉末，微溶（"熟石灰、消石灰"）</td><td>改良酸性土壤、建筑</td></tr>
+  <tr><th>碱</th><th>化学式</th><th>俗称/性质</th><th>用途</th></tr>
+  <tr><td>氢氧化钠</td><td>NaOH</td><td>烧碱、火碱、苛性钠；白色固体易潮解,强腐蚀性</td><td>造纸、肥皂、去油污</td></tr>
+  <tr><td>氢氧化钙</td><td>Ca(OH)₂</td><td>熟石灰、消石灰；白色粉末,微溶</td><td>改良酸性土壤、建筑、波尔多液</td></tr>
+  <tr><td>氢氧化铜</td><td>Cu(OH)₂</td><td>蓝色絮状沉淀</td><td>检验葡萄糖（→砖红Cu₂O↓）</td></tr>
+  <tr><td>氢氧化铁</td><td>Fe(OH)₃</td><td>红褐色沉淀</td><td>可溶性铁盐与碱反应产物</td></tr>
 </table>
+
 <ul>
-  <li>碱的化学通性：①使指示剂变色（紫色石蕊→蓝，无色酚酞→红）②+非金属氧化物→盐+H₂O ③+酸→盐+H₂O ④+某些盐→新碱+新盐</li>
-  <li><span class="keyword">中和反应</span>：酸+碱→盐+H₂O（<span class="point">放热</span>），实质是H⁺+OH⁻→H₂O</li>
-  <li><span class="keyword">pH</span>：pH＜7酸性，pH=7中性，pH＞7碱性；pH试纸测整数，不能润湿</li>
+  <li><span class="keyword">碱的化学通性（四条）</span>：<br>
+  ① 使紫色石蕊变<span class="point">蓝</span>、无色酚酞变<span class="point">红</span>；② +非金属氧化物→盐+H₂O（NaOH吸收CO₂→Na₂CO₃变质）；③ +酸→盐+H₂O；④ +某些盐→新碱+新盐</li>
+</ul>
+
+<h4>三、酸碱性质对比</h4>
+<table>
+  <tr><th>比较项目</th><th>酸</th><th>碱</th></tr>
+  <tr><td>石蕊变色</td><td>红</td><td>蓝</td></tr>
+  <tr><td>酚酞变色</td><td>不变色</td><td>红</td></tr>
+  <tr><td>与活泼金属反应</td><td>→盐+H₂↑</td><td>一般不反应</td></tr>
+  <tr><td>与金属氧化物反应</td><td>→盐+H₂O（除锈）</td><td>不反应</td></tr>
+  <tr><td>与非金属氧化物反应</td><td>不反应</td><td>→盐+H₂O（吸收CO₂）</td></tr>
+  <tr><td>与碱/酸反应</td><td>中和→盐+H₂O</td><td>中和→盐+H₂O</td></tr>
+  <tr><td>pH范围</td><td>＜7</td><td>＞7</td></tr>
+</table>
+
+<h4>四、中和反应与pH</h4>
+<ul>
+  <li><span class="keyword">中和反应</span>：酸 + 碱 → 盐 + H₂O（<span class="point">放热</span>）— 实质：<span class="point">H⁺ + OH⁻ → H₂O</span></li>
+  <li>中和反应应用：<br>
+    — 胃酸过多：吃含Al(OH)₃的药物（Al(OH)₃+3HCl→AlCl₃+3H₂O）<br>
+    — 改良酸性土壤：加熟石灰Ca(OH)₂<br>
+    — 处理工厂废水：酸碱中和达标排放</li>
+  <li><span class="keyword">pH</span>：pH＜7酸性（越小酸性越强），pH=7中性，pH＞7碱性（越大碱性越强）</li>
+  <li>pH试纸使用：玻璃棒蘸取待测液涂在试纸上，与标准比色卡比较（<span class="point">不能润湿</span>、只能读整数值、<span class="point">不能投入试液</span>）</li>
 </ul>
 
 <!-- ============================================================ -->
@@ -294,70 +560,306 @@ table tr:nth-child(even){background:#faf4f4}
 <h4>一、常见的盐</h4>
 <table>
   <tr><th>名称</th><th>化学式</th><th>俗称</th><th>用途</th></tr>
-  <tr><td>氯化钠</td><td>NaCl</td><td>食盐</td><td>调味、防腐、生理盐水</td></tr>
-  <tr><td>碳酸钠</td><td>Na₂CO₃</td><td><span class="point">纯碱、苏打</span></td><td>玻璃、造纸、洗涤剂</td></tr>
-  <tr><td>碳酸氢钠</td><td>NaHCO₃</td><td><span class="point">小苏打</span></td><td>发酵粉、治疗胃酸过多</td></tr>
-  <tr><td>碳酸钙</td><td>CaCO₃</td><td>石灰石</td><td>建筑、补钙剂</td></tr>
+  <tr><td>氯化钠</td><td>NaCl</td><td>食盐</td><td>调味、防腐、配制生理盐水(0.9%)</td></tr>
+  <tr><td>碳酸钠</td><td>Na₂CO₃</td><td><span class="point">纯碱、苏打</span>（是盐不是碱！）</td><td>玻璃、造纸、洗涤剂去油污</td></tr>
+  <tr><td>碳酸氢钠</td><td>NaHCO₃</td><td><span class="point">小苏打</span></td><td>发酵粉(产CO₂)、治疗胃酸过多</td></tr>
+  <tr><td>碳酸钙</td><td>CaCO₃</td><td>石灰石、大理石</td><td>建筑、补钙剂、实验室制CO₂</td></tr>
+  <tr><td>硫酸铜</td><td>CuSO₄</td><td>胆矾CuSO₄·5H₂O（蓝色）</td><td>配制波尔多液（+石灰）</td></tr>
+  <tr><td>高锰酸钾</td><td>KMnO₄</td><td>紫黑色固体</td><td>消毒杀菌、实验室制O₂</td></tr>
 </table>
+
+<div class="warn">
+<div class="label">【易错提醒】纯碱不是碱</div>
+<p>Na₂CO₃俗称"纯碱"，水溶液显碱性，但<span class="point">分类属于盐</span>（由金属阳离子Na⁺和酸根阴离子CO₃²⁻构成）。<br>
+酸、碱、盐分类：酸→电离出H⁺；碱→电离出OH⁻；盐→金属阳离子+酸根阴离子。</p>
+</div>
 
 <h4>二、复分解反应</h4>
 <ul>
   <li>通式：AB + CD → AD + CB（<span class="point">双交换、价不变</span>）</li>
-  <li>条件：产物中有<span class="point">沉淀、气体或水</span>生成</li>
+  <li>反应条件（满足其一即可）：产物中有<span class="point">沉淀↓、气体↑或水H₂O</span>生成</li>
+  <li>常见沉淀的颜色与化学式：<br>
+    白色：AgCl↓、BaSO₄↓（不溶于酸）、CaCO₃↓、Mg(OH)₂↓、BaCO₃↓、Al(OH)₃↓<br>
+    蓝色：Cu(OH)₂↓<br>
+    红褐色：Fe(OH)₃↓</li>
+  <li>Cl⁻检验：加AgNO₃溶液→白色沉淀（AgCl↓），再加稀HNO₃不溶解</li>
+  <li>SO₄²⁻检验：加Ba(NO₃)₂溶液→白色沉淀（BaSO₄↓），再加稀HNO₃不溶解</li>
+  <li>CO₃²⁻检验：加稀盐酸→产生气体通入石灰水→变浑浊</li>
 </ul>
 
 <h4>三、化学肥料</h4>
+<table>
+  <tr><th>类型</th><th>作用部位</th><th>缺乏症状</th><th>常见代表物</th></tr>
+  <tr><td>氮肥</td><td>促进叶生长</td><td>叶色发黄、生长瘦弱</td><td>CO(NH₂)₂（尿素）、NH₄HCO₃、NH₄Cl、(NH₄)₂SO₄</td></tr>
+  <tr><td>磷肥</td><td>促进根系和果实</td><td>叶暗绿或紫红、生长迟缓</td><td>过磷酸钙、磷矿粉</td></tr>
+  <tr><td>钾肥</td><td>增强抗倒伏</td><td>叶尖叶缘发黄、易倒伏</td><td>KCl、K₂SO₄、草木灰(主要K₂CO₃)</td></tr>
+  <tr><td>复合肥</td><td>多种营养</td><td>—</td><td>KNO₃、NH₄H₂PO₄、(NH₄)₂HPO₄</td></tr>
+</table>
 <ul>
-  <li><span class="keyword">氮肥</span>—促进叶生长（缺氮叶黄），如尿素CO(NH₂)₂</li>
-  <li><span class="keyword">磷肥</span>—促进根和果实（缺磷暗绿），如过磷酸钙</li>
-  <li><span class="keyword">钾肥</span>—促进抗倒伏（缺钾叶尖黄），如KCl、K₂SO₄</li>
-  <li><span class="keyword">复合肥</span>：含两种或以上营养元素，如KNO₃、NH₄H₂PO₄</li>
-  <li>鉴别铵态氮肥（NH₄⁺）：加熟石灰研磨，有<span class="point">氨味</span>（刺激性气味）</li>
+  <li>铵态氮肥（含NH₄⁺）鉴定：加熟石灰研磨→<span class="point">氨味（刺激性NH₃）</span>→证明含NH₄⁺</li>
+  <li>⚠ 铵态氮肥不能与碱性物质（草木灰、熟石灰）混用，否则NH₄⁺→NH₃逸出，肥效降低</li>
+  <li>⚠ 草木灰（K₂CO₃）水溶液显碱性</li>
 </ul>
 
 <!-- ============================================================ -->
 <h2>第十二单元 化学与生活</h2>
+
+<h4>一、六大营养素</h4>
 <ul>
-  <li>六大营养素：<span class="point">糖类、油脂、蛋白质、维生素、水、无机盐</span></li>
-  <li>供能物质：糖类（主要）、油脂（备用）、蛋白质</li>
-  <li><span class="keyword">有机合成材料</span>：塑料、合成纤维、合成橡胶（三大合成材料）</li>
-  <li>热固性塑料—不可重塑；热塑性塑料—可重塑</li>
-  <li>白色污染（塑料难降解）→ 减少使用、回收利用、使用可降解塑料</li>
+  <li>三大供能物质（顺序：主要→备用→构建）：<br>
+    <span class="point">糖类</span>（主要供能，米饭/馒头/面条）→ C₆H₁₂O₆（葡萄糖）+ O₂ → CO₂ + H₂O + 能量<br>
+    <span class="point">油脂</span>（备用能源，植物油/动物脂肪）→ 单位质量供能最多<br>
+    <span class="point">蛋白质</span>（构建和修复身体，肉/蛋/奶/豆）→ 构成细胞的基本物质</li>
+  <li>非供能但必不可少：<br>
+    <span class="point">维生素</span>（调节生理功能，水果/蔬菜；缺VA→夜盲，缺VC→坏血病）<br>
+    <span class="point">水</span>（占体重约60%-70%，参与一切代谢）<br>
+    <span class="point">无机盐</span>（Ca→骨骼发育，Fe→血红蛋白，缺Fe→贫血，I→甲状腺，缺I→大脖子病）</li>
+</ul>
+
+<h4>二、有机合成材料</h4>
+<ul>
+  <li>三大合成材料：<span class="point">塑料、合成纤维（涤纶/腈纶/尼龙）、合成橡胶</span></li>
+  <li>热塑性塑料（聚乙烯PE）— 加热熔化，可重塑；热固性塑料（酚醛树脂）— 加热不熔化，不可重塑</li>
+  <li>天然纤维与合成纤维鉴别：<span class="point">灼烧法</span>—棉花（烧纸味）、羊毛（烧焦羽毛味）、合成纤维（特殊气味，熔化球状）</li>
+  <li><span class="keyword">白色污染</span>：废弃塑料难降解—解决措施：减少使用（少用塑料袋）、重复使用、回收利用、研发可降解塑料</li>
 </ul>
 
 <!-- ============================================================ -->
-<h2>附录：必背与易错</h2>
+<h2>中考常考题型</h2>
 
 <div class="box">
-<div class="label">常见化学方程式汇总</div>
-<p><b>化合反应</b>：<br>
-<span class="chem">4P + 5O₂ →(点燃) 2P₂O₅</span>（冒白烟）<br>
-<span class="chem">3Fe + 2O₂ →(点燃) Fe₃O₄</span>（剧烈燃烧火星四射）<br>
-<span class="chem">2Mg + O₂ →(点燃) 2MgO</span>（耀眼白光）<br>
-<span class="chem">2H₂ + O₂ →(点燃) 2H₂O</span>（淡蓝色火焰）<br>
-<span class="chem">S + O₂ →(点燃) SO₂</span>（蓝紫色火焰，刺鼻）</p>
-<p><b>分解反应</b>：<br>
-<span class="chem">2H₂O₂ →(MnO₂) 2H₂O + O₂↑ &nbsp; 2KMnO₄ →(加热) K₂MnO₄ + MnO₂ + O₂↑</span><br>
-<span class="chem">2KClO₃ →(MnO₂,加热) 2KCl + 3O₂↑ &nbsp; 2H₂O →(通电) 2H₂↑ + O₂↑</span><br>
-<span class="chem">H₂CO₃ → H₂O + CO₂↑ &nbsp; CaCO₃ →(高温) CaO + CO₂↑</span></p>
+<div class="label">题型一：物质鉴别（只用一种试剂）</div>
+<p>如何鉴别蒸馏水、食盐水、稀盐酸三种无色液体？</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看解答</button>
+<div class="sol"><b>方案：</b>取三种液体各少量于试管中，分别滴加紫色石蕊试液。<br>
+蒸馏水→不变色（紫色）；食盐水（NaCl中性）→不变色；稀盐酸（酸性）→变红色。<br>
+剩余两种用AgNO₃溶液鉴别：食盐水产生白色沉淀AgCl↓，蒸馏水无变化。</div>
 </div>
 
 <div class="box">
-<div class="label">常考物质颜色</div>
-<p>红色：Cu（紫红）、Fe₂O₃（红棕）、红磷<br>
-黑色：C、CuO、MnO₂、Fe₃O₄、FeO<br>
-蓝色：CuSO₄·5H₂O（胆矾）、Cu(OH)₂沉淀<br>
-绿色：Cu₂(OH)₂CO₃（铜绿）<br>
-黄色：S（硫磺）、Fe³⁺溶液（棕黄）<br>
-白色：P₂O₅、MgO、CaO、Ca(OH)₂、NaCl、Na₂CO₃</p>
+<div class="label">题型二：CO₃²⁻检验</div>
+<p>如何证明某白色粉末中含有碳酸根离子？</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看解答</button>
+<div class="sol"><b>方法：</b>取少量样品于试管中，加入足量稀盐酸，将产生的气体通入澄清石灰水中。<br>
+现象：有气泡产生，石灰水变浑浊 → 证明含CO₃²⁻。<br>
+化学方程式：<span class="chem">CO₃²⁻ + 2H⁺ → H₂O + CO₂↑</span>；<span class="chem">CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O</span></div>
 </div>
 
 <div class="box">
-<div class="label">初中化学必背口诀</div>
-<p><b>常见元素化合价</b>：钾钠银氢+1价，钙镁钡锌+2价；氟氯溴碘-1价，通常氧-2硫-2；铁有+2和+3，铝+3硅+4，铜有+1和+2</p>
-<p><b>金属活动性顺序</b>：嫁给那美女，心铁惜千金，统共一百斤（K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au）</p>
-<p><b>过滤操作</b>：一贴二低三靠</p>
-<p><b>稀释浓硫酸</b>：酸入水，沿壁倒，不断搅拌</p>
+<div class="label">题型三：除杂题（括号内为杂质）</div>
+<p>① CO(CO₂) &emsp; ② CO₂(CO) &emsp; ③ NaCl(Na₂CO₃)</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看解答</button>
+<div class="sol"><b>① CO(CO₂)</b>：气体通过NaOH溶液（CO₂+2NaOH→Na₂CO₃+H₂O），再通过浓硫酸干燥。<br>
+<b>② CO₂(CO)</b>：气体通过灼热CuO（CO+CuO→Cu+CO₂）。<br>
+<b>③ NaCl(Na₂CO₃)</b>：加适量稀盐酸（Na₂CO₃+2HCl→2NaCl+H₂O+CO₂↑），蒸发结晶。<br>
+口诀：<span class="point">不增不减、易分离</span>（不引入新杂质、不减少主要成分、方法简便）。</div>
+</div>
+
+<div class="box">
+<div class="label">题型四：图像分析（pH变化）</div>
+<p>向一定量的稀盐酸中逐滴加入NaOH溶液，溶液的pH变化曲线如何？</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看解答</button>
+<div class="sol">图像特征：pH从＜7（盐酸酸性）开始 → 随着NaOH加入pH逐渐增大 → 恰好完全中和时pH=7（转折点） → 继续加NaOH则pH＞7（碱性）。<br>
+👉 曲线在pH=7处有一个"突变"区域，这是中和反应完全的特征，指示剂恰好变色（酚酞由无色→浅红）。</div>
+</div>
+
+<div class="box">
+<div class="label">题型五：化学方程式计算</div>
+<p>实验室用6.5g锌与足量稀硫酸反应（Zn + H₂SO₄ → ZnSO₄ + H₂↑），求：<br>
+(1) 生成氢气的质量是多少克？<br>
+(2) 标准状况下（H₂密度0.09g/L），生成氢气的体积是多少升？</p>
+<button class="sol-btn" onclick="toggleSol(this)">查看解答</button>
+<div class="sol">解：设生成H₂质量为x。<br>
+<span class="chem">Zn + H₂SO₄ → ZnSO₄ + H₂↑</span><br>
+65 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2<br>
+6.5g &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; x<br>
+比例式：65/6.5 = 2/x → x = <b>0.2g</b><br>
+(1) 生成H₂质量 = <b>0.2g</b><br>
+(2) V = m/ρ = 0.2g ÷ 0.09g/L = <b>2.22L</b><br>
+答：生成氢气0.2g，体积约2.22L。</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>常见易错陷阱汇总</h2>
+
+<div class="warn">
+<div class="label">陷阱一：物质变化判断</div>
+<ul>
+  <li>❌ 有发光放热一定是化学变化 → 电灯发光是物理变化</li>
+  <li>❌ 有气体产生一定是化学变化 → 水沸腾产生水蒸气是物理变化</li>
+  <li>❌ 爆炸一定是化学变化 → 轮胎爆炸是物理变化（火药爆炸才是化学变化）</li>
+  <li>❌ 颜色改变一定是化学变化 → 氧气变为液氧（无色→淡蓝）是物理变化</li>
+</ul>
+</div>
+
+<div class="warn">
+<div class="label">陷阱二：溶液与溶解度</div>
+<ul>
+  <li>❌ 均一稳定的液体都是溶液 → 水是纯净物，不是溶液</li>
+  <li>❌ 溶液都是无色透明的 → CuSO₄溶液蓝色、FeCl₃溶液棕黄、KMnO₄溶液紫红</li>
+  <li>❌ 溶液体积 = 溶质体积 + 溶剂体积 → 分子间有间隔，体积不具加和性（10mL水+10mL酒精＜20mL）</li>
+  <li>❌ 饱和溶液一定是浓溶液，不饱和一定是稀溶液 → Ca(OH)₂微溶，饱和溶液浓度很小</li>
+  <li>❌ 搅拌可以增大溶解度 → 搅拌只能加快溶解速率，不能改变溶解度</li>
+</ul>
+</div>
+
+<div class="warn">
+<div class="label">陷阱三：酸和碱</div>
+<ul>
+  <li>❌ Na₂CO₃叫纯碱 → 是盐不是碱（水溶液显碱性是因为CO₃²⁻水解）</li>
+  <li>❌ CO₂使石蕊变红 → CO₂不显酸性，是CO₂+H₂O→H₂CO₃使石蕊变红</li>
+  <li>❌ pH=0表示没有酸性 → pH=0是强酸性（c(H⁺)=1mol/L很大）</li>
+  <li>❌ 浓硫酸做干燥剂利用脱水性 → 利用吸水性（脱水性是化学变化，吸水性是物理变化）</li>
+  <li>❌ 酸碱中和生成盐和水，则生成盐和水的反应一定是中和反应 → 酸+金属氧化物→盐+水，不是中和反应</li>
+</ul>
+</div>
+
+<div class="warn">
+<div class="label">陷阱四：金属</div>
+<ul>
+  <li>❌ 铁与酸反应生成Fe³⁺ → 铁与稀盐酸/稀硫酸反应生成Fe²⁺（浅绿色），不是Fe³⁺（棕黄色）</li>
+  <li>❌ Cu与稀盐酸反应 → Cu在H之后，不与稀盐酸/稀硫酸反应</li>
+  <li>❌ Fe₂O₃→Fe是置换反应 → Fe₂O₃与CO反应不是置换（是氧化还原，生成两种化合物）</li>
+  <li>❌ 合金一定由金属组成 → 生铁/钢含C（非金属），所以合金至少含一种金属但可含非金属</li>
+  <li>❌ 铝耐腐蚀是因为铝不活泼 → 铝很活泼，但表面形成致密Al₂O₃氧化膜</li>
+</ul>
+</div>
+
+<div class="warn">
+<div class="label">陷阱五：实验操作</div>
+<ul>
+  <li>❌ 量筒俯视读数偏大 → 实际量取液体偏少（浓度偏大）</li>
+  <li>❌ 托盘天平左码右物 → 实际质量 = 砝码质量 - 游码质量（偏小）</li>
+  <li>❌ KMnO₄制O₂结束时先撤酒精灯 → 水倒吸炸裂试管（应先撤导管）</li>
+  <li>❌ 过滤时液面高于滤纸边缘 → 滤液浑浊（液体从滤纸和漏斗缝隙流下）</li>
+  <li>❌ pH试纸润湿后再测 → 稀释了待测液，结果不准确（酸性偏高，碱性偏低）</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>附录：必背化学方程式全集</h2>
+
+<div class="box">
+<div class="label">一、化合反应</div>
+<p><span class="chem">4P + 5O₂ →(点燃) 2P₂O₅</span>（大量白烟）<br>
+<span class="chem">3Fe + 2O₂ →(点燃) Fe₃O₄</span>（火星四射，生成黑色固体）<br>
+<span class="chem">2Mg + O₂ →(点燃) 2MgO</span>（耀眼白光，生成白色固体）<br>
+<span class="chem">2H₂ + O₂ →(点燃) 2H₂O</span>（淡蓝色火焰，唯一液态生成物）<br>
+<span class="chem">S + O₂ →(点燃) SO₂</span>（蓝紫色火焰，刺激性气味）<br>
+<span class="chem">C + O₂ →(点燃) CO₂</span>（充分燃烧）<br>
+<span class="chem">2C + O₂ →(点燃) 2CO</span>（不充分燃烧）<br>
+<span class="chem">2CO + O₂ →(点燃) 2CO₂</span>（蓝色火焰，CO剧毒）<br>
+<span class="chem">CO₂ + C →(高温) 2CO</span><br>
+<span class="chem">CaO + H₂O → Ca(OH)₂</span>（生石灰→熟石灰，放热）</p>
+</div>
+
+<div class="box">
+<div class="label">二、分解反应</div>
+<p><span class="chem">2H₂O₂ →(MnO₂) 2H₂O + O₂↑</span><br>
+<span class="chem">2KMnO₄ →(△) K₂MnO₄ + MnO₂ + O₂↑</span>（紫黑色→绿色+黑色）<br>
+<span class="chem">2KClO₃ →(MnO₂,△) 2KCl + 3O₂↑</span><br>
+<span class="chem">2H₂O →(通电) 2H₂↑ + O₂↑</span>（正O₂负H₂，体积比1:2）<br>
+<span class="chem">H₂CO₃ → H₂O + CO₂↑</span>（碳酸不稳定，易分解）<br>
+<span class="chem">CaCO₃ →(高温) CaO + CO₂↑</span>（石灰石煅烧分解）<br>
+<span class="chem">2HgO →(△) 2Hg + O₂↑</span>（红色粉末→银白液滴）<br>
+<span class="chem">Cu₂(OH)₂CO₃ →(△) 2CuO + H₂O + CO₂↑</span>（铜绿加热分解）</p>
+</div>
+
+<div class="box">
+<div class="label">三、置换反应</div>
+<p><span class="chem">Fe + CuSO₄ → FeSO₄ + Cu</span>（铁表面析出红色固体）<br>
+<span class="chem">Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag</span>（铜丝表面银白固体）<br>
+<span class="chem">Zn + H₂SO₄ → ZnSO₄ + H₂↑</span>（实验室制H₂，最常用）<br>
+<span class="chem">Zn + 2HCl → ZnCl₂ + H₂↑</span><br>
+<span class="chem">Fe + 2HCl → FeCl₂ + H₂↑</span>（铁溶解，溶液浅绿色）<br>
+<span class="chem">Mg + H₂SO₄ → MgSO₄ + H₂↑</span>（剧烈反应，大量气泡）<br>
+<span class="chem">Al + 3HCl → AlCl₃ + 3/2H₂↑</span>（铝与酸反应）<br>
+<span class="chem">C + 2CuO →(高温) 2Cu + CO₂↑</span>（黑色→红色）<br>
+<span class="chem">H₂ + CuO →(△) Cu + H₂O</span>（黑色变红色，管壁水珠）<br>
+<span class="chem">Fe + CuCl₂ → FeCl₂ + Cu</span></p>
+</div>
+
+<div class="box">
+<div class="label">四、复分解反应</div>
+<p><span class="chem">CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑</span>（实验室制CO₂）<br>
+<span class="chem">Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂↑</span>（CO₃²⁻检验）<br>
+<span class="chem">NaHCO₃ + HCl → NaCl + H₂O + CO₂↑</span>（小苏打治胃酸）<br>
+<span class="chem">Na₂CO₃ + Ca(OH)₂ → CaCO₃↓ + 2NaOH</span>（工业制NaOH）<br>
+<span class="chem">CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O</span>（CO₂检验，石灰水变浑）<br>
+<span class="chem">AgNO₃ + HCl → AgCl↓ + HNO₃</span>（Cl⁻检验，白色沉淀不溶于酸）<br>
+<span class="chem">BaCl₂ + H₂SO₄ → BaSO₄↓ + 2HCl</span>（SO₄²⁻检验，白色沉淀）<br>
+<span class="chem">Ba(NO₃)₂ + H₂SO₄ → BaSO₄↓ + 2HNO₃</span><br>
+<span class="chem">NaOH + HCl → NaCl + H₂O</span>（中和反应，放热）<br>
+<span class="chem">Ca(OH)₂ + H₂SO₄ → CaSO₄ + 2H₂O</span>（中和反应）<br>
+<span class="chem">Fe₂O₃ + 6HCl → 2FeCl₃ + 3H₂O</span>（除铁锈，溶液变棕黄）<br>
+<span class="chem">CuO + H₂SO₄ → CuSO₄ + H₂O</span>（黑色→蓝色溶液）<br>
+<span class="chem">Cu(OH)₂ + 2HCl → CuCl₂ + 2H₂O</span>（蓝色沉淀溶解）</p>
+</div>
+
+<div class="box">
+<div class="label">五、其他重要反应</div>
+<p><span class="chem">CH₄ + 2O₂ →(点燃) CO₂ + 2H₂O</span>（天然气燃烧）<br>
+<span class="chem">C₂H₅OH + 3O₂ →(点燃) 2CO₂ + 3H₂O</span>（酒精燃烧）<br>
+<span class="chem">Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂</span>（高炉炼铁）<br>
+<span class="chem">CuO + H₂ →(△) Cu + H₂O</span><br>
+<span class="chem">CuO + CO →(△) Cu + CO₂</span><br>
+<span class="chem">2NaOH + CO₂ → Na₂CO₃ + H₂O</span>（NaOH吸收CO₂变质）<br>
+<span class="chem">Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O</span>（石灰水检验CO₂）<br>
+<span class="chem">CaO + H₂O → Ca(OH)₂</span>（生石灰→熟石灰，放热）<br>
+<span class="chem">Na₂CO₃ + H₂O + CO₂ → 2NaHCO₃</span></p>
+</div>
+
+<!-- ============================================================ -->
+<h2>附录：必背口诀全集</h2>
+
+<div class="box">
+<div class="label">常见元素化合价（完整版）</div>
+<p>钾钠银氢+1价，钙镁钡锌+2价；<br>
+氟氯溴碘-1价，通常氧-2硫-2；<br>
+铁有+2和+3，铝+3硅+4，铜有+1和+2；<br>
+金+3来氮有变，锰有+2+4+6+7；<br>
+磷-3+3+5价，碳有+2和+4。</p>
+</div>
+
+<div class="box">
+<div class="label">金属活动性顺序（谐音记忆）</div>
+<p><b>嫁给那美女，心铁惜千金，统共一百斤</b><br>
+（K→Ca→Na→Mg→Al→Zn→Fe→Sn→Pb→(H)→Cu→Hg→Ag→Pt→Au）</p>
+</div>
+
+<div class="box">
+<div class="label">实验操作口诀合集</div>
+<p><b>过滤</b>：一贴二低三靠<br>
+<b>稀释浓硫酸</b>：酸入水，沿壁倒，不断搅拌<br>
+<b>气密性检查</b>：一握二看三冒泡<br>
+<b>加热固体</b>：试管略下倾，管口不对人，先预热后集中<br>
+<b>排水集气</b>：满水无泡倒立水中，导管伸入看气泡，瓶口出水已集满<br>
+<b>配制溶液</b>：计算称量再溶解，装瓶贴签要记清</p>
+</div>
+
+<div class="box">
+<div class="label">常见物质俗名与颜色</div>
+<p>NaOH——烧碱、火碱、苛性钠<br>
+Ca(OH)₂——熟石灰、消石灰<br>
+CaO——生石灰<br>
+Na₂CO₃——纯碱、苏打（⚠ 属于盐）<br>
+NaHCO₃——小苏打<br>
+CuSO₄·5H₂O——胆矾、蓝矾（蓝色）<br>
+FeSO₄·7H₂O——绿矾（浅绿）<br>
+CaCO₃——石灰石、大理石（白色）<br>
+CO₂固体——干冰<br>
+C₂H₅OH——酒精（乙醇）</p>
+</div>
+
+<div class="box">
+<div class="label">常考物质颜色（完整版）</div>
+<p><b>红色</b>：Cu（紫红）、Fe₂O₃（红棕）、红磷（暗红）、Fe(OH)₃↓（红褐）、P（红磷）<br>
+<b>黑色</b>：C粉、CuO、MnO₂、Fe₃O₄、FeO、Fe粉<br>
+<b>蓝色</b>：CuSO₄·5H₂O（胆矾）、Cu(OH)₂↓、CuSO₄溶液、液O₂（淡蓝）<br>
+<b>绿色</b>：Cu₂(OH)₂CO₃（铜绿）、FeSO₄溶液（浅绿）、FeCl₂溶液（浅绿）<br>
+<b>黄色</b>：S（硫磺）、FeCl₃溶液（棕黄）<br>
+<b>白色</b>：P₂O₅、MgO、CaO、Ca(OH)₂、NaCl、Na₂CO₃、CaCO₃、KCl、NaHCO₃、AgCl↓、BaSO₄↓、Mg(OH)₂↓<br>
+<b>紫色</b>：KMnO₄溶液（紫红）、石蕊试液</p>
 </div>
 
 <div class="footer">
@@ -366,6 +868,13 @@ table tr:nth-child(even){background:#faf4f4}
 
 </div>
 <script>
+function toggleSol(btn){
+  var sol = btn.nextElementSibling;
+  if(sol && sol.classList.contains('sol')){
+    if(sol.style.display==='block'){sol.style.display='none';btn.textContent='查看答案'}
+    else {sol.style.display='block';btn.textContent='收起答案'}
+  }
+}
 function switchTab(name, btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
