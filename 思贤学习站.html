@@ -119,6 +119,33 @@
         .cta-section .btn-outline { border: 2px solid var(--btn-outline-border); color: #fff; }
         .cta-section .btn-outline:hover { border-color: var(--btn-outline-hover); }
 
+        /* ── 公众号资料福利 ── */
+        .gzh-section { margin-bottom:48px }
+        .gzh-banner {
+            background: linear-gradient(135deg,#1a1a2e,#2d2d5e);
+            border-radius:20px; padding:36px 40px; display:flex; align-items:center; gap:36px; position:relative; overflow:hidden;
+        }
+        .gzh-banner::before {
+            content:''; position:absolute; inset:0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(86,136,204,0.10) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(209,128,128,0.08) 0%, transparent 50%);
+        }
+        .gzh-left { flex:1; position:relative; z-index:1 }
+        .gzh-left h2 { color:#fff; font-size:22px; margin-bottom:6px }
+        .gzh-left .gzh-sub { color:rgba(255,255,255,0.6); font-size:13px; margin-bottom:14px }
+        .gzh-left .gzh-list { list-style:none; padding:0; margin:0 0 16px }
+        .gzh-left .gzh-list li { color:rgba(255,255,255,0.85); font-size:13px; padding:4px 0; padding-left:20px; position:relative }
+        .gzh-left .gzh-list li::before { content:'✓'; position:absolute; left:0; color:#73BFAA; font-weight:700 }
+        .gzh-left .gzh-tip { display:inline-block; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); padding:5px 16px; border-radius:8px; font-size:12px; color:rgba(255,255,255,0.6) }
+        .gzh-left .gzh-tip strong { color:#E8A060 }
+        .gzh-right { flex:0 0 auto; position:relative; z-index:1; text-align:center }
+        .gzh-right img { width:110px; height:110px; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.2) }
+        .gzh-right p { color:rgba(255,255,255,0.5); font-size:11px; margin-top:5px }
+        @media (max-width:640px) {
+            .gzh-banner { flex-direction:column-reverse; text-align:center; padding:28px 20px }
+            .gzh-left .gzh-list li { text-align:left }
+        }
+
         @media (max-width: 768px) {
             .subj-grid { grid-template-columns: repeat(3, 1fr); }
             .featured-grid { grid-template-columns: 1fr; }
@@ -224,6 +251,30 @@
                 <h2>错题变资料，进步看得见</h2>
                 <p>拍照录入错题，AI 生成变式训练题，输出专属学习报告。<br>帮助孩子举一反三，巩固薄弱知识点。</p>
                 <a class="btn btn-dark" href="算法助学.html">了解详情 →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ 关注公众号领资料 ════ -->
+    <div class="gzh-section">
+        <div class="gzh-banner">
+            <div class="gzh-left">
+                <h2>📚 关注公众号，免费领中考冲刺资料大礼包</h2>
+                <p class="gzh-sub">一次性打包所有精华资源，助孩子高效备考·稳步提分</p>
+                <ul class="gzh-list">
+                    <li>近5年山东省中考真题+全科详解（PDF可打印）</li>
+                    <li>各科知识思维导图·公式大全（考前速记手册）</li>
+                    <li>中考易错题集锦·高频考点归纳</li>
+                    <li>各科满分作文精选·阅读理解高分模板</li>
+                    <li>初中古诗文全篇背诵默写（附赏析）</li>
+                    <li>寒假/暑假复习计划表+百日冲刺时间规划</li>
+                    <li>高中预科衔接资料（考后暑假提前学）</li>
+                </ul>
+                <span class="gzh-tip">💡 关注后回复 <strong>「大礼包」</strong> 即可免费领取 · 持续更新</span>
+            </div>
+            <div class="gzh-right">
+                <img src="images/qr-gongzhonghao.jpg" alt="公众号二维码">
+                <p>扫码关注 · 免费领取</p>
             </div>
         </div>
     </div>
