@@ -159,6 +159,56 @@
             .subj-grid { grid-template-columns: repeat(2, 1fr); }
             .resource-grid { grid-template-columns: 1fr; }
         }
+        /* ── 孔庙祈福 Banner ── */
+        .kmqf-section { margin-bottom:48px; }
+        .kmqf-banner {
+            background: linear-gradient(135deg,#1a0808 0%,#2d0f0f 40%,#1a0808 100%);
+            border-radius:20px; padding:36px 32px; position:relative; overflow:hidden;
+            text-align:center;
+        }
+        .kmqf-banner::before {
+            content:''; position:absolute; inset:0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 80%, rgba(201,168,76,0.05) 0%, transparent 40%);
+        }
+        .kmqf-glow { position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:300px; height:120px; background:radial-gradient(ellipse,rgba(201,168,76,0.08) 0%,transparent 60%); pointer-events:none; animation:kmqfBreathe 4s ease-in-out infinite; }
+        @keyframes kmqfBreathe { 0%,100%{opacity:0.5} 50%{opacity:1} }
+        .kmqf-badge {
+            display:inline-block; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.2);
+            padding:3px 14px; border-radius:14px; font-size:11px; color:#c9a84c; letter-spacing:2px; margin-bottom:14px; position:relative; z-index:1;
+            font-family:'Noto Serif SC',serif;
+        }
+        .kmqf-title {
+            font-family:'Ma Shan Zheng','STKaiti','KaiTi',cursive;
+            font-size:clamp(32px,8vw,48px); color:#c9a84c; letter-spacing:6px;
+            text-shadow:0 0 30px rgba(201,168,76,0.2); position:relative; z-index:1;
+            line-height:1.3; margin-bottom:6px;
+        }
+        .kmqf-sub {
+            font-size:clamp(13px,3vw,15px); color:rgba(201,168,76,0.6); letter-spacing:4px;
+            position:relative; z-index:1; margin-bottom:6px; font-family:'Noto Serif SC',serif;
+        }
+        .kmqf-desc {
+            font-size:13px; color:rgba(255,255,255,0.5); line-height:1.8; max-width:420px;
+            margin:0 auto 20px; position:relative; z-index:1; font-family:'Noto Serif SC',serif;
+        }
+        .kmqf-btn {
+            display:inline-block; position:relative; z-index:1;
+            font-family:'Ma Shan Zheng','STKaiti','KaiTi',cursive;
+            font-size:clamp(18px,4vw,22px); color:#ffd700; letter-spacing:4px;
+            padding:12px 40px; background:linear-gradient(135deg,rgba(60,30,10,0.9),rgba(40,20,5,0.95));
+            border:1.5px solid rgba(201,168,76,0.4); border-radius:4px; text-decoration:none;
+            transition:all .3s; overflow:hidden;
+        }
+        .kmqf-btn:hover { border-color:rgba(201,168,76,0.7); background:linear-gradient(135deg,rgba(80,40,15,0.9),rgba(50,25,8,0.95)); transform:translateY(-2px); }
+        .kmqf-btn::after {
+            content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+            background:linear-gradient(90deg,transparent,rgba(255,215,0,0.1),transparent);
+            animation:kmqfShine 3s ease-in-out infinite;
+        }
+        @keyframes kmqfShine { 0%{left:-100%} 50%{left:100%} 100%{left:100%} }
+        .kmqf-divider { width:80px; height:1px; margin:10px auto 14px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent); position:relative; z-index:1; }
     </style>
 <script src="js/theme.js"></script></head>
 <body>
@@ -252,6 +302,19 @@
                 <p>拍照录入错题，AI 生成变式训练题，输出专属学习报告。<br>帮助孩子举一反三，巩固薄弱知识点。</p>
                 <a class="btn btn-dark" href="算法助学.html">了解详情 →</a>
             </div>
+        </div>
+    </div>
+
+    <!-- ════ 孔庙祈福 ════ -->
+    <div class="kmqf-section">
+        <div class="kmqf-banner">
+            <div class="kmqf-glow"></div>
+            <div class="kmqf-badge">✨ 限时活动</div>
+            <div class="kmqf-title">孔庙祈福</div>
+            <div class="kmqf-sub">文运昌隆 · 金榜题名 · 学业顺遂</div>
+            <div class="kmqf-divider"></div>
+            <div class="kmqf-desc">为学子求一支上上签<br>沉浸式国风祈福 · 生成专属祈福海报</div>
+            <a class="kmqf-btn" href="孔庙祈福.html">开始祈福 →</a>
         </div>
     </div>
 
