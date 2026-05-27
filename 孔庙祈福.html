@@ -197,7 +197,7 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .name-input-wrap input:focus{border-color:#c9a84c;}
 
 /* ===== POSTER ===== */
-#poster{position:fixed;left:-9999px;top:0;width:420px;height:680px;background:linear-gradient(175deg,#8B0000 0%,#5C0000 35%,#3D0000 100%);overflow:hidden;font-family:'STSong','SimSun','Noto Serif SC',serif;}
+#poster{position:fixed;left:-9999px;top:0;width:420px;height:680px;background:linear-gradient(175deg,#C0392B 0%,#922B21 40%,#641E16 100%);overflow:hidden;font-family:'STSong','SimSun','Noto Serif SC',serif;}
 /* Subtle radial glow */
 .poster-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:380px;height:380px;background:radial-gradient(ellipse,rgba(255,215,0,0.08) 0%,rgba(255,215,0,0.02) 40%,transparent 70%);pointer-events:none;z-index:1;}
 /* 万字纹 background */
@@ -815,9 +815,9 @@ function renderPosterDirect() {
 
       // Background gradient
       var grad = ctx.createLinearGradient(0, 0, 0, 680);
-      grad.addColorStop(0, '#8B0000');
-      grad.addColorStop(0.35, '#5C0000');
-      grad.addColorStop(1, '#3D0000');
+      grad.addColorStop(0, '#C0392B');
+      grad.addColorStop(0.35, '#922B21');
+      grad.addColorStop(1, '#641E16');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 420, 680);
 
