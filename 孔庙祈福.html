@@ -197,7 +197,7 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .name-input-wrap input:focus{border-color:#c9a84c;}
 
 /* ===== POSTER ===== */
-#poster{position:fixed;left:-9999px;top:0;width:420px;height:680px;background:linear-gradient(175deg,#8B0000 0%,#5C0000 35%,#3D0000 100%);overflow:hidden;font-family:'Noto Serif SC',serif;}
+#poster{position:fixed;left:-9999px;top:0;width:420px;height:680px;background:linear-gradient(175deg,#8B0000 0%,#5C0000 35%,#3D0000 100%);overflow:hidden;font-family:'STSong','SimSun','Noto Serif SC',serif;}
 /* Subtle radial glow */
 .poster-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:380px;height:380px;background:radial-gradient(ellipse,rgba(255,215,0,0.08) 0%,rgba(255,215,0,0.02) 40%,transparent 70%);pointer-events:none;z-index:1;}
 /* 万字纹 background */
@@ -208,23 +208,19 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .poster-border::before{content:'';position:absolute;top:-5px;left:-5px;right:-5px;bottom:-5px;border:1px solid rgba(255,215,0,0.15);}
 .poster-border::after{content:'';position:absolute;top:5px;left:5px;right:5px;bottom:5px;border:1px solid rgba(255,215,0,0.15);}
 
-/* 回纹 corners - larger and more visible */
-.poster-corner{position:absolute;width:40px;height:40px;z-index:3;opacity:0.7;}
-.poster-corner svg{width:100%;height:100%;filter:drop-shadow(0 0 4px rgba(255,215,0,0.2));}
-.poster-corner.tl{top:8px;left:8px;}
-.poster-corner.tr{top:8px;right:8px;}
-.poster-corner.tr svg{transform:scaleX(-1);}
-.poster-corner.bl{bottom:8px;left:8px;}
-.poster-corner.bl svg{transform:scaleY(-1);}
-.poster-corner.br{bottom:8px;right:8px;}
-.poster-corner.br svg{transform:scale(-1,-1);}
+/* Corner decorations - CSS only */
+.poster-corner{position:absolute;width:24px;height:24px;z-index:3;}
+.poster-corner.tl{top:14px;left:14px;border-top:2px solid rgba(255,215,0,0.5);border-left:2px solid rgba(255,215,0,0.5);}
+.poster-corner.tr{top:14px;right:14px;border-top:2px solid rgba(255,215,0,0.5);border-right:2px solid rgba(255,215,0,0.5);}
+.poster-corner.bl{bottom:14px;left:14px;border-bottom:2px solid rgba(255,215,0,0.5);border-left:2px solid rgba(255,215,0,0.5);}
+.poster-corner.br{bottom:14px;right:14px;border-bottom:2px solid rgba(255,215,0,0.5);border-right:2px solid rgba(255,215,0,0.5);}
 
 /* ===== POSTER PLAQUE ===== */
 .poster-plaque-wrap{position:absolute;top:32px;left:50%;transform:translateX(-50%);z-index:5;width:230px;}
 .poster-plaque{position:relative;background:linear-gradient(180deg,#1a0808,#2a0f0a);border:2px solid rgba(255,215,0,0.5);border-radius:3px;padding:12px 0 10px;text-align:center;box-shadow:0 0 30px rgba(255,215,0,0.1),inset 0 0 30px rgba(139,80,0,0.1);}
 .poster-plaque::before{content:'';position:absolute;top:-5px;left:-5px;right:-5px;bottom:-5px;border:1px solid rgba(255,215,0,0.2);}
 .poster-plaque::after{content:'';position:absolute;top:2px;left:2px;right:2px;bottom:2px;border:1px solid rgba(255,215,0,0.08);}
-.poster-plaque-text{font-family:'Ma Shan Zheng',cursive;font-size:24px;color:#FFD700;letter-spacing:14px;text-shadow:0 0 20px rgba(255,215,0,0.25);padding-left:14px;}
+.poster-plaque-text{font-family:'STKaiti','KaiTi','Ma Shan Zheng',cursive;font-size:24px;color:#FFD700;letter-spacing:14px;text-shadow:0 0 20px rgba(255,215,0,0.25);padding-left:14px;}
 .poster-plaque-line-top{position:absolute;top:-7px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.4),transparent);}
 .poster-plaque-line-bottom{position:absolute;bottom:-7px;left:12%;right:12%;height:1.5px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.3),transparent);}
 .poster-plaque-screw{position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(255,215,0,0.35);border:1px solid rgba(255,215,0,0.25);box-shadow:0 0 4px rgba(255,215,0,0.1);}
@@ -237,9 +233,13 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 
 /* ===== LANTERNS ===== */
 .poster-lantern{position:absolute;z-index:6;pointer-events:none;}
-.poster-lantern svg{width:100%;height:100%;filter:drop-shadow(0 0 8px rgba(255,200,0,0.15));}
-.poster-lantern.left{top:66px;left:16px;width:32px;}
-.poster-lantern.right{top:66px;right:16px;width:32px;}
+.poster-lantern.left{top:62px;left:14px;}
+.poster-lantern.right{top:62px;right:14px;}
+.lantern-body{width:22px;position:relative;display:flex;flex-direction:column;align-items:center;}
+.lantern-line{width:1px;height:10px;background:rgba(255,215,0,0.4);}
+.lantern-top{width:18px;height:4px;background:rgba(255,215,0,0.3);border-radius:1px;}
+.lantern-glow{width:14px;height:18px;background:rgba(200,50,50,0.45);border-radius:50%;margin:1px 0;box-shadow:0 0 8px rgba(255,200,0,0.08);}
+.lantern-bottom{width:14px;height:3px;background:rgba(255,215,0,0.25);border-radius:1px;}
 
 /* ===== FORTUNE CONTENT ===== */
 .poster-main{position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);text-align:center;width:82%;z-index:4;}
@@ -252,22 +252,21 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .fortune-medallion-dots{position:absolute;top:-2px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
 .fortune-medallion-dots span{width:3px;height:3px;border-radius:50%;background:rgba(255,215,0,0.25);}
 .fortune-medallion-dots.bot{bottom:-2px;top:auto;}
-.poster-level{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Ma Shan Zheng',cursive;font-size:60px;line-height:1;text-shadow:0 0 40px rgba(255,215,0,0.2),0 0 80px rgba(255,215,0,0.1);}
+.poster-level{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'STKaiti','KaiTi','Ma Shan Zheng',cursive;font-size:60px;line-height:1;text-shadow:0 0 40px rgba(255,215,0,0.2),0 0 80px rgba(255,215,0,0.1);}
 .poster-level.gold{color:#FFD700;}
 .poster-level.purple{color:#FFD700;}
 .poster-level.crimson{color:#FFD700;}
-.poster-level-text{font-family:'Ma Shan Zheng',cursive;font-size:26px;color:#FFD700;letter-spacing:8px;margin-top:42px;margin-bottom:10px;text-shadow:0 0 25px rgba(255,215,0,0.15);opacity:0.9;}
+.poster-level-text{font-family:'STKaiti','KaiTi','Ma Shan Zheng',cursive;font-size:26px;color:#FFD700;letter-spacing:8px;margin-top:42px;margin-bottom:10px;text-shadow:0 0 25px rgba(255,215,0,0.15);opacity:0.9;}
 
 /* Auspicious clouds */
-.poster-cloud{position:absolute;z-index:3;pointer-events:none;}
-.poster-cloud svg{width:100%;height:100%;}
-.poster-cloud.c1{top:18%;left:6%;width:60px;opacity:0.15;filter:drop-shadow(0 0 4px rgba(255,215,0,0.06));}
-.poster-cloud.c2{top:12%;right:4%;width:72px;opacity:0.18;transform:scaleX(-1);filter:drop-shadow(0 0 4px rgba(255,215,0,0.06));}
-.poster-cloud.c3{top:52%;left:2%;width:52px;opacity:0.12;filter:drop-shadow(0 0 4px rgba(255,215,0,0.06));}
-.poster-cloud.c4{top:68%;right:6%;width:64px;opacity:0.14;transform:scaleX(-1);filter:drop-shadow(0 0 4px rgba(255,215,0,0.06));}
-.poster-cloud.c5{top:38%;right:2%;width:44px;opacity:0.1;filter:drop-shadow(0 0 4px rgba(255,215,0,0.06));}
+.poster-cloud{position:absolute;z-index:3;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(255,215,0,0.12),rgba(255,215,0,0.02) 60%,transparent);}
+.poster-cloud.c1{top:16%;left:5%;width:80px;height:40px;opacity:0.15;}
+.poster-cloud.c2{top:10%;right:3%;width:100px;height:50px;opacity:0.18;}
+.poster-cloud.c3{top:50%;left:1%;width:70px;height:35px;opacity:0.12;}
+.poster-cloud.c4{top:66%;right:4%;width:80px;height:40px;opacity:0.14;}
+.poster-cloud.c5{top:36%;right:1%;width:60px;height:30px;opacity:0.10;}
 
-.poster-poem-line{font-family:'Noto Serif SC',serif;font-size:15px;color:rgba(255,235,200,0.7);line-height:2;letter-spacing:3px;margin:6px 0 14px;}
+.poster-poem-line{font-family:'STSong','SimSun','Noto Serif SC',serif;font-size:15px;color:rgba(255,235,200,0.7);line-height:2;letter-spacing:3px;margin:6px 0 14px;}
 
 /* Decorative divider */
 .poster-divider-wrap{position:relative;height:16px;margin:0 auto 10px;width:200px;display:flex;align-items:center;justify-content:center;}
@@ -277,17 +276,17 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .poster-divider-diamond{width:8px;height:8px;border:1px solid rgba(255,215,0,0.35);transform:rotate(45deg);background:rgba(255,215,0,0.06);position:relative;z-index:1;}
 
 .poster-footer{position:absolute;bottom:130px;left:0;width:100%;text-align:center;z-index:4;}
-.poster-name-text{font-family:'Ma Shan Zheng',cursive;font-size:20px;color:rgba(255,215,0,0.6);letter-spacing:5px;margin-bottom:4px;text-shadow:0 0 12px rgba(255,215,0,0.1);}
-.poster-date-text{font-family:'Noto Serif SC',serif;font-size:13px;color:rgba(255,215,0,0.3);letter-spacing:3px;}
+.poster-name-text{font-family:'STKaiti','KaiTi','Ma Shan Zheng',cursive;font-size:20px;color:rgba(255,215,0,0.6);letter-spacing:5px;margin-bottom:4px;text-shadow:0 0 12px rgba(255,215,0,0.1);}
+.poster-date-text{font-family:'STSong','SimSun','Noto Serif SC',serif;font-size:13px;color:rgba(255,215,0,0.3);letter-spacing:3px;}
 
 /* Brand bar on poster */
-.poster-brand{position:absolute;bottom:94px;left:0;width:100%;text-align:center;font-size:11px;color:rgba(255,215,0,0.35);letter-spacing:3px;font-family:'Noto Serif SC',serif;z-index:4;}
+.poster-brand{position:absolute;bottom:94px;left:0;width:100%;text-align:center;font-size:11px;color:rgba(255,215,0,0.35);letter-spacing:3px;font-family:'STSong','SimSun','Noto Serif SC',serif;z-index:4;}
 
 /* QR row */
 .poster-qr-row{position:absolute;bottom:18px;left:0;width:100%;display:flex;justify-content:center;align-items:flex-end;gap:48px;padding:0 30px;z-index:4;}
 .poster-qr-item{text-align:center;position:relative;}
-.poster-qr-item img{display:block;width:42px;height:42px;image-rendering:pixelated;}
-.poster-qr-label{font-size:9px;color:rgba(255,215,0,0.35);margin-top:6px;letter-spacing:2px;line-height:1.2;}
+.poster-qr-item img{display:block;width:42px;height:42px;}
+.poster-qr-label{font-size:9px;color:rgba(255,215,0,0.35);margin-top:6px;letter-spacing:2px;line-height:1.2;font-family:'STSong','SimSun','Noto Serif SC',serif;}
 
 /* ===== POSTER MODAL ===== */
 .poster-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
@@ -442,13 +441,13 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
   <div class="poster-glow"></div>
   <div class="poster-border"></div>
   <!-- 回纹 corners -->
-  <div class="poster-corner tl"><svg viewBox="0 0 40 40"><path d="M3 3 h26 v5 h-21 v16 h5 v-11 h7 v5 h-3 v7 h-5 v-7 h-9 z" fill="rgba(255,215,0,0.5)"/><path d="M32 8 h5 v27 h-27 v-5 h22 v-22z" fill="rgba(255,215,0,0.25)"/></svg></div>
-  <div class="poster-corner tr"><svg viewBox="0 0 40 40"><path d="M3 3 h26 v5 h-21 v16 h5 v-11 h7 v5 h-3 v7 h-5 v-7 h-9 z" fill="rgba(255,215,0,0.5)"/><path d="M32 8 h5 v27 h-27 v-5 h22 v-22z" fill="rgba(255,215,0,0.25)"/></svg></div>
-  <div class="poster-corner bl"><svg viewBox="0 0 40 40"><path d="M3 3 h26 v5 h-21 v16 h5 v-11 h7 v5 h-3 v7 h-5 v-7 h-9 z" fill="rgba(255,215,0,0.5)"/><path d="M32 8 h5 v27 h-27 v-5 h22 v-22z" fill="rgba(255,215,0,0.25)"/></svg></div>
-  <div class="poster-corner br"><svg viewBox="0 0 40 40"><path d="M3 3 h26 v5 h-21 v16 h5 v-11 h7 v5 h-3 v7 h-5 v-7 h-9 z" fill="rgba(255,215,0,0.5)"/><path d="M32 8 h5 v27 h-27 v-5 h22 v-22z" fill="rgba(255,215,0,0.25)"/></svg></div>
+  <div class="poster-corner tl"></div>
+  <div class="poster-corner tr"></div>
+  <div class="poster-corner bl"></div>
+  <div class="poster-corner br"></div>
   <!-- 灯笼 -->
-  <div class="poster-lantern left"><svg viewBox="0 0 32 60"><path d="M14 2 h4 v5 h-4 z" fill="#FFD700" opacity="0.5"/><path d="M10 7 h12 v38 h-12 z" fill="rgba(255,50,50,0.6)" stroke="#FFD700" stroke-width="0.5" opacity="0.7"/><path d="M10 7 h12 v4 h-12 z" fill="rgba(255,215,0,0.3)"/><path d="M10 41 h12 v4 h-12 z" fill="rgba(255,215,0,0.3)"/><line x1="16" y1="45" x2="16" y2="55" stroke="#FFD700" stroke-width="0.5" opacity="0.4"/><circle cx="16" cy="30" r="4" fill="none" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/><circle cx="16" cy="30" r="10" fill="none" stroke="#FFD700" stroke-width="0.3" opacity="0.15"/></svg></div>
-  <div class="poster-lantern right"><svg viewBox="0 0 32 60"><path d="M14 2 h4 v5 h-4 z" fill="#FFD700" opacity="0.5"/><path d="M10 7 h12 v38 h-12 z" fill="rgba(255,50,50,0.6)" stroke="#FFD700" stroke-width="0.5" opacity="0.7"/><path d="M10 7 h12 v4 h-12 z" fill="rgba(255,215,0,0.3)"/><path d="M10 41 h12 v4 h-12 z" fill="rgba(255,215,0,0.3)"/><line x1="16" y1="45" x2="16" y2="55" stroke="#FFD700" stroke-width="0.5" opacity="0.4"/><circle cx="16" cy="30" r="4" fill="none" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/><circle cx="16" cy="30" r="10" fill="none" stroke="#FFD700" stroke-width="0.3" opacity="0.15"/></svg></div>
+  <div class="poster-lantern left"><div class="lantern-body"><div class="lantern-line"></div><div class="lantern-top"></div><div class="lantern-glow"></div><div class="lantern-bottom"></div></div></div>
+  <div class="poster-lantern right"><div class="lantern-body"><div class="lantern-line"></div><div class="lantern-top"></div><div class="lantern-glow"></div><div class="lantern-bottom"></div></div></div>
   <!-- 匾额 -->
   <div class="poster-plaque-wrap">
     <div class="poster-plaque-line-top"></div>
@@ -463,11 +462,11 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
   </div>
   <div class="poster-seal"><span>祈福</span></div>
   <!-- 祥云（散落分布） -->
-  <div class="poster-cloud c1"><svg viewBox="0 0 80 60"><path d="M8,40 Q18,10 45,18 Q55,4 70,12 Q75,6 78,16 Q82,12 80,32 Q78,46 58,44 L22,46 Q2,50 8,40Z" fill="#FFD700"/></svg></div>
-  <div class="poster-cloud c2"><svg viewBox="0 0 80 60"><path d="M8,40 Q18,10 45,18 Q55,4 70,12 Q75,6 78,16 Q82,12 80,32 Q78,46 58,44 L22,46 Q2,50 8,40Z" fill="#FFD700"/></svg></div>
-  <div class="poster-cloud c3"><svg viewBox="0 0 64 46"><path d="M6,32 Q14,8 36,14 Q44,3 56,10 Q60,5 62,12 Q65,10 64,26 Q62,36 46,34 L18,36 Q2,40 6,32Z" fill="#FFD700"/></svg></div>
-  <div class="poster-cloud c4"><svg viewBox="0 0 80 60"><path d="M8,40 Q18,10 45,18 Q55,4 70,12 Q75,6 78,16 Q82,12 80,32 Q78,46 58,44 L22,46 Q2,50 8,40Z" fill="#FFD700"/></svg></div>
-  <div class="poster-cloud c5"><svg viewBox="0 0 56 40"><path d="M5,28 Q12,7 32,12 Q38,3 48,8 Q52,4 54,10 Q56,8 55,22 Q54,32 40,30 L15,32 Q2,35 5,28Z" fill="#FFD700"/></svg></div>
+  <div class="poster-cloud c1"></div>
+  <div class="poster-cloud c2"></div>
+  <div class="poster-cloud c3"></div>
+  <div class="poster-cloud c4"></div>
+  <div class="poster-cloud c5"></div>
   <!-- Main content -->
   <div class="poster-main">
     <div class="fortune-medallion">
@@ -815,6 +814,12 @@ async function generatePoster() {
   btn.textContent = '生成中...';
   btn.disabled = true;
 
+  // Show loading toast
+  var toast = document.createElement('div');
+  toast.textContent = '正在生成海报...';
+  toast.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.8);color:#c9a84c;padding:16px 32px;border-radius:6px;z-index:200;font-family:"Noto Serif SC",serif;font-size:16px;letter-spacing:2px;border:1px solid rgba(201,168,76,0.3);';
+  document.body.appendChild(toast);
+
   // Update poster content
   const poster = document.getElementById('poster');
   const levelEl = document.getElementById('posterLevel');
@@ -867,17 +872,23 @@ async function generatePoster() {
 
     await sleep(100);
 
-    const canvas = await html2canvas(poster, {
-      scale: 3,
-      useCORS: true,
-      allowTaint: false,
-      backgroundColor: null,
-      x: 0,
-      y: 0,
-      width: 420,
-      height: 680,
-      logging: false
-    });
+    const isMobile = window.innerWidth < 768;
+    var canvas = await Promise.race([
+      html2canvas(poster, {
+        scale: isMobile ? 2 : 3,
+        useCORS: true,
+        allowTaint: false,
+        backgroundColor: null,
+        x: 0,
+        y: 0,
+        width: 420,
+        height: 680,
+        logging: false
+      }),
+      new Promise(function(_, reject) {
+        setTimeout(function() { reject(new Error('timeout')); }, 15000);
+      })
+    ]);
 
     // Hide poster
     poster.style.left = '-9999px';
@@ -885,6 +896,7 @@ async function generatePoster() {
     poster.style.position = 'fixed';
 
     // Show in modal
+    if (toast.parentNode) toast.parentNode.removeChild(toast);
     const modal = document.getElementById('posterModal');
     const img = document.getElementById('posterImage');
     img.src = canvas.toDataURL('image/png');
@@ -892,7 +904,24 @@ async function generatePoster() {
 
   } catch (e) {
     console.error('Poster failed:', e);
-    alert('生成失败，请重试');
+    // Fallback: try rendering at lower scale
+    try {
+      poster.style.left = '0';
+      poster.style.top = '0';
+      await sleep(50);
+      const fallbackCanvas = await html2canvas(poster, {
+        scale: 1, useCORS: true, allowTaint: true,
+        backgroundColor: null, width: 420, height: 680, logging: false
+      });
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+      const modal = document.getElementById('posterModal');
+      document.getElementById('posterImage').src = fallbackCanvas.toDataURL('image/png');
+      modal.classList.add('active');
+    } catch (e2) {
+      console.error('Poster fallback also failed:', e2);
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+      alert('网络不稳定，生成失败。请截图保存 🙏');
+    }
     poster.style.left = '-9999px';
   }
 
