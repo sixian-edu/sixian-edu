@@ -544,22 +544,45 @@ function showScreen(id) {
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-// ===== BELL SOUND =====
-const bellAudios = [];
-(function preloadBells() {
+// ===== BELL SOUND (Web Audio API — instant on mobile) =====
+let bellBuffers = [];
+if (window.AudioContext || window.webkitAudioContext) {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  // Prefetch & decode in background — no blocking
+  (function preload() {
+    for (let i = 1; i <= 5; i++) {
+      fetch('assets/bells/' + i + '.mp3')
+        .then(r => r.arrayBuffer())
+        .then(buf => ctx.decodeAudioData(buf))
+        .then(buf => { if (buf) bellBuffers.push(buf); })
+        .catch(() => {});
+    }
+  })();
+  function playBell() {
+    try {
+      if (!bellBuffers.length) return;
+      if (ctx.state === 'suspended') ctx.resume();
+      const src = ctx.createBufferSource();
+      src.buffer = bellBuffers[Math.floor(Math.random() * bellBuffers.length)];
+      src.connect(ctx.destination);
+      src.start(0);
+    } catch(e) {}
+  }
+} else {
+  // Fallback — older browsers without Web Audio API
+  const fallbackAudios = [];
   for (let i = 1; i <= 5; i++) {
     const a = new Audio('assets/bells/' + i + '.mp3');
-    a.preload = 'auto';
-    a.volume = 1.0;
-    bellAudios.push(a);
+    a.preload = 'auto'; a.volume = 1.0;
+    fallbackAudios.push(a);
   }
-})();
-function playBell() {
-  try {
-    const a = bellAudios[Math.floor(Math.random() * bellAudios.length)];
-    a.currentTime = 0;
-    a.play().catch(() => {});
-  } catch(e) {}
+  function playBell() {
+    try {
+      const a = fallbackAudios[Math.floor(Math.random() * fallbackAudios.length)];
+      a.currentTime = 0;
+      a.play().catch(() => {});
+    } catch(e) {}
+  }
 }
 
 // ===== MAIN FORTUNE FLOW =====
