@@ -31,6 +31,8 @@
         .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: inline-block; }
         .card { background: #fff; border-radius: 16px; padding: 28px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 28px; }
         .card p { font-size: 14px; color: #555; margin-bottom: 10px; }
+        .card ul { padding-left: 20px; }
+        .card ul li { font-size: 14px; color: #555; margin-bottom: 6px; }
         .price-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
         .price-table th, .price-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
         .price-table th { font-weight: 600; color: #636e72; font-size: 13px; letter-spacing: 1px; }
@@ -50,6 +52,7 @@
         .cta-banner .btn { display: inline-block; background: #fff; color: var(--primary-dark); padding: 10px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
         .footer { text-align: center; padding: 24px 20px; font-size: 13px; color: #888; border-top: 1px solid #eee; }
         .tag-special { font-size: 12px; padding: 3px 14px; border-radius: 20px; font-weight: 700; background: linear-gradient(90deg, #e67e22, #f39c12); color: #fff; }
+        .tag-bio { font-size: 12px; padding: 3px 14px; border-radius: 20px; font-weight: 700; background: linear-gradient(90deg, #27ae60, #2ecc71); color: #fff; }
         @media (max-width: 600px) {
             .profile { flex-direction: column; align-items: center; text-align: center; padding: 28px 20px; }
             .profile .contact-row { justify-content: center; }
@@ -71,18 +74,20 @@
 <div class="container">
     <div class="profile">
         <div class="avatar-wrapper">
-            <img class="avatar" src="../images/wang_teacher.jpg" alt="王老师">
+            <img class="avatar" src="../images/new_teacher.jpg" alt="王老师">
         </div>
         <div class="info">
             <div class="name">王老师</div>
-            <div class="title">济南大学 英语专业 研究生 · 教龄 2 年 · 累计辅导学生 25+ 人次</div>
+            <div class="title">山东师范大学 毕业 · 教龄 2 年 · 累计辅导学生 30+ 人次</div>
             <div class="tag-list">
-                <span class="tag-special">★ 擅长：英语</span>
+                <span class="tag-special">★ 擅长：生物</span>
+                <span class="tag-bio">生物专项</span>
+                <span class="tag">小学数学</span>
                 <span class="tag">小学英语</span>
+                <span class="tag">初中数学</span>
+                <span class="tag">初中生物</span>
                 <span class="tag">初中英语</span>
-                <span class="tag">自然拼读</span>
-                <span class="tag">语法基础</span>
-                <span class="tag">口语训练</span>
+                <span class="tag">高中生物</span>
             </div>
             <div class="contact-row">
                 <div class="contact-item"><span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></div>
@@ -92,9 +97,9 @@
     </div>
     <div class="card">
         <div class="section-title">个人简介</div>
-        <p>济南大学英语专业研究生毕业，专业八级水平，发音标准。从事英语家教两年，擅长小学和初中英语教学，对自然拼读和语法教学有独到方法。</p>
-        <p>摒弃死记硬背，注重培养语感和学习兴趣。通过情境对话、英文歌曲、绘本阅读等方式让孩子在快乐中学习英语，建立自信。</p>
-        <p>教学耐心细致，善于鼓励孩子开口说英语。针对不同基础的学生制定个性化学习计划，帮助多名学生从厌学转变为主动学习。</p>
+        <p>山东师范大学毕业，持有高级中学教师资格证（生物）。从事家教工作两年，累计辅导学生 30 余人次，涵盖小学至高中各学段。</p>
+        <p>生物学科是教学强项，擅长将抽象的生物概念（细胞结构、遗传规律、生态系统等）用生动直观的方式讲解，帮助学生建立学科思维。对初高中生物考点把握精准，多名学生经过辅导后成绩显著提升。</p>
+        <p>同时具备小学数学、英语辅导能力，教学耐心细致，善于因材施教。针对不同基础的学生制定个性化学习计划，注重培养学习兴趣和良好的学习习惯。</p>
     </div>
     <div class="card">
         <div class="section-title">收费标准</div>
@@ -103,8 +108,9 @@
                 <tr><th>年级</th><th>科目</th><th>收费标准</th></tr>
             </thead>
             <tbody>
-                <tr><td>小学</td><td>英语（拼读 / 同步）</td><td>100 <small>元/小时</small></td></tr>
-                <tr><td>初中</td><td>英语（语法 / 阅读）</td><td>130 <small>元/小时</small></td></tr>
+                <tr><td>小学</td><td>数学 / 英语</td><td>100 <small>元/小时</small></td></tr>
+                <tr><td>初中</td><td>数学 / 生物 / 英语</td><td>150 <small>元/小时</small></td></tr>
+                <tr><td>高中</td><td>生物</td><td>200 <small>元/小时</small></td></tr>
                 <tr class="free-row"><td colspan="2">首次体验</td><td>免费试听一节课</td></tr>
             </tbody>
         </table>
@@ -113,19 +119,27 @@
         <div class="section-title">家长反馈</div>
         <div class="review-item">
             <div class="review-header">
-                <span class="review-name">李妈妈</span>
+                <span class="review-name">赵妈妈</span>
                 <span class="review-rating">★★★★★</span>
             </div>
-            <div class="review-meta">四年级 · 英语（辅导一学期）</div>
-            <div class="review-text">孩子之前英语完全没兴趣，单词记不住。王老师用自然拼读的方法教，孩子慢慢能自己读单词了，现在每天主动读英语绘本。期末考试从 60 分提到了 88 分。</div>
+            <div class="review-meta">初二 · 生物（辅导一学期）</div>
+            <div class="review-text">孩子生物一直学不懂，细胞分裂和遗传题完全不会做。王老师用图解和模型讲解，孩子说终于开窍了。期末生物从 50 多分提到了 85 分，排名进步了十几名，太感谢王老师了。</div>
         </div>
         <div class="review-item">
             <div class="review-header">
-                <span class="review-name">陈爸爸</span>
+                <span class="review-name">孙妈妈</span>
                 <span class="review-rating">★★★★★</span>
             </div>
-            <div class="review-meta">初一 · 英语（辅导两个月）</div>
-            <div class="review-text">孩子小学英语底子薄，上了初中跟不上。王老师从音标和基础语法补起，两个月下来孩子能跟上课堂进度了，月考从 50 分提到了 76 分，进步很明显。</div>
+            <div class="review-meta">高一 · 生物（辅导三个月）</div>
+            <div class="review-text">高中生物和初中完全不是一个难度，孩子刚上高一就跟不上了。王老师把知识点梳理得很清楚，每节课都有总结和练习，三个月下来孩子月考生物考了 78 分，班级中上游了，继续跟着学。</div>
+        </div>
+        <div class="review-item">
+            <div class="review-header">
+                <span class="review-name">刘妈妈</span>
+                <span class="review-rating">★★★★★</span>
+            </div>
+            <div class="review-meta">四年级 · 数学（辅导半年）</div>
+            <div class="review-text">孩子数学基础差，应用题读不懂题。王老师很有耐心，一步步引导孩子分析题目，现在孩子做题思路清晰多了，数学从 70 分提到了 92 分，最重要的是不再害怕数学了。</div>
         </div>
     </div>
     <div class="cta-banner">
@@ -154,13 +168,21 @@
 <script>
 (function() {
   var url = window.location.origin + window.location.pathname;
-  // 已分享过则直接显示联系方式
+  var shareTxt = '📚 思贤学习站——学习资源 · AI 工具 · 课程笔记 · 考试整理。快来了解～ ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
   if (localStorage.getItem('sx_shared')) {
     var ts = document.querySelectorAll('.contact-trigger');
     for (var i = 0; i < ts.length; i++) {
       ts[i].outerHTML = '<b>155-6412-8008</b>';
     }
   }
+
   window.openShareWall = function() {
     if (localStorage.getItem('sx_shared')) return;
     if (window._shareTimeout) clearTimeout(window._shareTimeout);
@@ -172,7 +194,6 @@
     copyBtn.classList.remove('copied');
     copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
 
-    // 离开后再回来：检查之前是否复制过
     var t = localStorage.getItem('sx_copy_time');
     if (t && Date.now() - Number(t) >= 10000) {
       hasCopied = true;
@@ -182,6 +203,7 @@
       copyHint.textContent = '✅ 点击下方按钮查看联系方式';
     }
   };
+
   copyBtn.addEventListener('click', function() {
     if (window._shareTimeout) clearTimeout(window._shareTimeout);
     var text = shareTextEl.textContent;
@@ -205,6 +227,7 @@
       document.body.removeChild(ta); done();
     }
   });
+
   sharedBtn.addEventListener('click', function() {
     if (!hasCopied) return;
     localStorage.setItem('sx_shared', '1');
@@ -215,6 +238,7 @@
       triggers[i].outerHTML = '<b>155-6412-8008</b>';
     }
   });
+
   overlay.addEventListener('click', function(e) {
     if (e.target === this) {
       overlay.classList.remove('active');
