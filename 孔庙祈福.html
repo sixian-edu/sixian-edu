@@ -283,10 +283,10 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .poster-brand{position:absolute;bottom:94px;left:0;width:100%;text-align:center;font-size:11px;color:rgba(255,215,0,0.35);letter-spacing:3px;font-family:'STSong','SimSun','Noto Serif SC',serif;z-index:4;}
 
 /* QR row */
-.poster-qr-row{position:absolute;bottom:18px;left:0;width:100%;display:flex;justify-content:center;align-items:flex-end;gap:48px;padding:0 30px;z-index:4;}
-.poster-qr-item{text-align:center;position:relative;}
-.poster-qr-item img{display:block;width:42px;height:42px;}
-.poster-qr-label{font-size:9px;color:rgba(255,215,0,0.35);margin-top:6px;letter-spacing:2px;line-height:1.2;font-family:'STSong','SimSun','Noto Serif SC',serif;}
+.poster-qr-row{position:absolute;bottom:14px;left:0;width:100%;text-align:center;z-index:4;}
+.poster-qr-item{display:inline-block;text-align:center;}
+.poster-qr-item img{display:block;width:52px;height:52px;margin:0 auto;}
+.poster-qr-label{font-size:10px;color:rgba(255,215,0,0.5);margin-top:5px;letter-spacing:3px;line-height:1.2;font-family:'STSong','SimSun','Noto Serif SC',serif;}
 
 /* ===== POSTER MODAL ===== */
 .poster-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
@@ -493,11 +493,7 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
   <div class="poster-qr-row">
     <div class="poster-qr-item">
       <img id="posterQRSixian" alt="QR" />
-      <div class="poster-qr-label">关注思贤</div>
-    </div>
-    <div class="poster-qr-item">
-      <img id="posterQRCode" alt="QR" />
-      <div class="poster-qr-label">扫码祈福</div>
+      <div class="poster-qr-label">进站祈福</div>
     </div>
   </div>
 </div>
@@ -810,9 +806,12 @@ function populateFortune(data) {
 function renderPosterDirect() {
   return new Promise(function(resolve, reject) {
     try {
+      var S = 2; // scale factor for sharpness on HiDPI
+      var W = 420 * S, H = 680 * S;
       var c = document.createElement('canvas');
-      c.width = 420; c.height = 680;
+      c.width = W; c.height = H;
       var ctx = c.getContext('2d');
+      ctx.scale(S, S);
 
       // Background gradient
       var grad = ctx.createLinearGradient(0, 0, 0, 680);
@@ -834,14 +833,13 @@ function renderPosterDirect() {
       // Corner decorations
       ctx.strokeStyle = 'rgba(255,215,0,0.5)';
       ctx.lineWidth = 2;
-      // TL
       ctx.beginPath(); ctx.moveTo(18, 14); ctx.lineTo(18, 38); ctx.lineTo(42, 38); ctx.stroke();
-      // TR
       ctx.beginPath(); ctx.moveTo(402, 14); ctx.lineTo(402, 38); ctx.lineTo(378, 38); ctx.stroke();
-      // BL
       ctx.beginPath(); ctx.moveTo(18, 666); ctx.lineTo(18, 642); ctx.lineTo(42, 642); ctx.stroke();
-      // BR
       ctx.beginPath(); ctx.moveTo(402, 666); ctx.lineTo(402, 642); ctx.lineTo(378, 642); ctx.stroke();
+
+      // Re-apply scale for text rendering
+      ctx.setTransform(S, 0, 0, S, 0, 0);
 
       var level = currentFortune.level;
       var title = currentFortune.title;
@@ -941,11 +939,14 @@ function renderPosterDirect() {
 
       // Generate separate image with name/date/QR using helper canvas
       var finalCanvas = document.createElement('canvas');
-      finalCanvas.width = 420; finalCanvas.height = 680;
+      finalCanvas.width = W; finalCanvas.height = H;
       var fctx = finalCanvas.getContext('2d');
 
-      // Copy poster image
-      fctx.drawImage(c, 0, 0);
+      // Copy poster image (scaled to full canvas)
+      fctx.drawImage(c, 0, 0, W, H);
+
+      // Switch to logical coordinate space for text drawing
+      fctx.scale(S, S);
 
       // Name
       fctx.fillStyle = 'rgba(255,215,0,0.6)';
@@ -964,25 +965,18 @@ function renderPosterDirect() {
       fctx.font = '11px "STSong","SimSun","Noto Serif SC",serif';
       fctx.fillText('思贤学习站 · 陪你一起成长', 210, 592);
 
-      // QR codes
-      var qrSize = 38;
-      var qrY = 620;
-      // Left QR (思贤)
+      // QR code (centered)
+      var qrSize = 44;
+      var qrX = 210 - qrSize / 2;
+      var qrY = 610;
       var qr1 = document.getElementById('posterQRSixian');
       if (qr1 && qr1.src) {
-        try { fctx.drawImage(qr1, 130, qrY, qrSize, qrSize); } catch(e) {}
+        try { fctx.drawImage(qr1, qrX, qrY, qrSize, qrSize); } catch(e) {}
       }
-      fctx.fillStyle = 'rgba(255,215,0,0.35)';
-      fctx.font = '9px "STSong","SimSun","Noto Serif SC",serif';
+      fctx.fillStyle = 'rgba(255,215,0,0.5)';
+      fctx.font = '11px "STSong","SimSun","Noto Serif SC",serif';
       fctx.textAlign = 'center';
-      fctx.fillText('关注思贤', 149, qrY + qrSize + 12);
-
-      // Right QR (祈福)
-      var qr2 = document.getElementById('posterQRCode');
-      if (qr2 && qr2.src) {
-        try { fctx.drawImage(qr2, 252, qrY, qrSize, qrSize); } catch(e) {}
-      }
-      fctx.fillText('扫码祈福', 271, qrY + qrSize + 12);
+      fctx.fillText('进站祈福', 210, qrY + qrSize + 13);
 
       // Show final result
       var finalDataUrl = finalCanvas.toDataURL('image/png');
@@ -1070,7 +1064,6 @@ async function generatePoster() {
       document.getElementById(imgId).src = c.toDataURL();
     } catch(e) {}
   }
-  genGoldQR(window.location.href, 'posterQRCode');
   genGoldQR('https://sixian-edu.github.io', 'posterQRSixian');
 
   try {
@@ -1085,7 +1078,7 @@ async function generatePoster() {
     const isMobile = window.innerWidth < 768;
     var canvas = await Promise.race([
       html2canvas(poster, {
-        scale: isMobile ? 2 : 3,
+        scale: isMobile ? 4 : 5,
         useCORS: true,
         allowTaint: false,
         backgroundColor: null,
@@ -1096,7 +1089,7 @@ async function generatePoster() {
         logging: false
       }),
       new Promise(function(_, reject) {
-        setTimeout(function() { reject(new Error('timeout')); }, 15000);
+        setTimeout(function() { reject(new Error('timeout')); }, 20000);
       })
     ]);
 
