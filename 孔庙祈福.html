@@ -220,6 +220,9 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 .poster-capture-container .capture-qr img{width:64px;height:64px;display:block;margin:0 auto;}
 .poster-capture-container .capture-qr-label{font-family:'Noto Serif SC',serif;font-size:11px;color:#8b6914;letter-spacing:2px;margin-top:4px;}
 
+/* ===== POSTER SEAL (stamp overlay for captured poster) ===== */
+.poster-seal{width:120px;height:120px;position:absolute;bottom:8px;right:5px;transform:rotate(-25deg);z-index:5;pointer-events:none;}
+
 /* ===== POSTER MODAL ===== */
 .poster-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
 .poster-modal.active{display:flex;}
@@ -744,7 +747,24 @@ async function generatePoster() {
       el.style.transform = 'translateY(0)';
     });
     var seal = clone.querySelector('.fortune-seal');
-    if (seal) { seal.style.opacity = '1'; seal.style.animation = 'none'; }
+    if (seal) {
+      seal.outerHTML = '<div class="poster-seal" style="opacity:1">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" style="display:block">' +
+          '<path d="M 7,5 L 24,4 L 40,6 L 57,3 L 74,5 L 91,4 L 108,6 L 125,3 L 141,5 L 158,3 L 175,5 L 192,6 L 194,24 L 196,40 L 193,57 L 195,74 L 197,91 L 194,108 L 196,125 L 194,141 L 196,158 L 194,175 L 193,192 L 175,194 L 158,196 L 141,193 L 124,195 L 107,197 L 90,194 L 73,196 L 56,194 L 40,196 L 23,194 L 6,193 L 4,175 L 6,158 L 3,141 L 5,124 L 3,107 L 5,90 L 3,73 L 5,56 L 3,40 L 5,23 L 7,5 Z" fill="none" stroke="#c41e3a" stroke-width="4.5" opacity="0.85" stroke-linejoin="round"/>' +
+          '<path d="M 16,15 L 34,14 L 51,16 L 67,14 L 84,16 L 100,14 L 116,16 L 133,14 L 149,16 L 166,14 L 182,15 L 184,34 L 186,51 L 183,67 L 185,84 L 184,100 L 186,116 L 183,133 L 185,149 L 184,166 L 183,182 L 166,184 L 149,186 L 133,183 L 116,185 L 100,184 L 84,186 L 67,183 L 51,185 L 34,184 L 16,183 L 14,166 L 16,149 L 13,133 L 15,116 L 14,100 L 16,84 L 13,67 L 15,51 L 14,34 L 15,16 Z" fill="none" stroke="#c41e3a" stroke-width="2" opacity="0.6" stroke-linejoin="round"/>' +
+          '<path d="M 100,16 Q 98,55 101,100 Q 103,145 100,184" fill="none" stroke="#c41e3a" stroke-width="1.5" opacity="0.35"/>' +
+          '<path d="M 16,100 Q 55,98 100,101 Q 145,103 184,100" fill="none" stroke="#c41e3a" stroke-width="1.5" opacity="0.35"/>' +
+          '<circle cx="195" cy="10" r="1.2" fill="#c41e3a" opacity="0.4"/>' +
+          '<circle cx="8" cy="192" r="0.8" fill="#c41e3a" opacity="0.35"/>' +
+          '<circle cx="192" cy="192" r="1" fill="#c41e3a" opacity="0.3"/>' +
+          '<circle cx="10" cy="8" r="0.6" fill="#c41e3a" opacity="0.25"/>' +
+          '<text x="50" y="57" text-anchor="middle" dominant-baseline="central" font-family="\'Ma Shan Zheng\',cursive" font-size="52" fill="#c41e3a" opacity="0.88" transform="rotate(-0.8 50 57)">榜</text>' +
+          '<text x="150" y="57" text-anchor="middle" dominant-baseline="central" font-family="\'Ma Shan Zheng\',cursive" font-size="52" fill="#c41e3a" opacity="0.88" transform="rotate(0.6 150 57)">有</text>' +
+          '<text x="50" y="143" text-anchor="middle" dominant-baseline="central" font-family="\'Ma Shan Zheng\',cursive" font-size="52" fill="#c41e3a" opacity="0.88" transform="rotate(0.5 50 143)">上</text>' +
+          '<text x="150" y="143" text-anchor="middle" dominant-baseline="central" font-family="\'Ma Shan Zheng\',cursive" font-size="52" fill="#c41e3a" opacity="0.88" transform="rotate(-0.4 150 143)">名</text>' +
+        '</svg>' +
+      '</div>';
+    }
     // Remove unwanted child elements
     clone.querySelectorAll('.name-input-wrap, .result-actions').forEach(function(el) { el.remove(); });
     // Remove the "探索思贤学习站" link at bottom
