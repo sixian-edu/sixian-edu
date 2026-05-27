@@ -806,6 +806,216 @@ function populateFortune(data) {
   document.getElementById('fortuneAdvice').textContent = data.advice;
 }
 
+// ===== DIRECT CANVAS POSTER (FALLBACK) =====
+function renderPosterDirect() {
+  return new Promise(function(resolve, reject) {
+    try {
+      var c = document.createElement('canvas');
+      c.width = 420; c.height = 680;
+      var ctx = c.getContext('2d');
+
+      // Background gradient
+      var grad = ctx.createLinearGradient(0, 0, 0, 680);
+      grad.addColorStop(0, '#8B0000');
+      grad.addColorStop(0.35, '#5C0000');
+      grad.addColorStop(1, '#3D0000');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 420, 680);
+
+      // Gold borders
+      ctx.strokeStyle = 'rgba(255,215,0,0.4)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(10, 10, 400, 660);
+      ctx.strokeStyle = 'rgba(255,215,0,0.15)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(5, 5, 410, 670);
+      ctx.strokeRect(15, 15, 390, 650);
+
+      // Corner decorations
+      ctx.strokeStyle = 'rgba(255,215,0,0.5)';
+      ctx.lineWidth = 2;
+      // TL
+      ctx.beginPath(); ctx.moveTo(18, 14); ctx.lineTo(18, 38); ctx.lineTo(42, 38); ctx.stroke();
+      // TR
+      ctx.beginPath(); ctx.moveTo(402, 14); ctx.lineTo(402, 38); ctx.lineTo(378, 38); ctx.stroke();
+      // BL
+      ctx.beginPath(); ctx.moveTo(18, 666); ctx.lineTo(18, 642); ctx.lineTo(42, 642); ctx.stroke();
+      // BR
+      ctx.beginPath(); ctx.moveTo(402, 666); ctx.lineTo(402, 642); ctx.lineTo(378, 642); ctx.stroke();
+
+      var level = currentFortune.level;
+      var title = currentFortune.title;
+      var poem = currentFortune.poem;
+      var name = document.getElementById('nameInput').value.trim() || '善信';
+      var now = new Date();
+      var dateStr = '甲辰年' + (now.getMonth() + 1) + '月' + now.getDate() + '日';
+
+      // Plaque: 孔庙祈福
+      ctx.fillStyle = 'rgba(26,8,8,0.85)';
+      roundRect(ctx, 95, 32, 230, 44, 3);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,215,0,0.5)';
+      ctx.lineWidth = 2;
+      roundRect(ctx, 95, 32, 230, 44, 3);
+      ctx.stroke();
+      ctx.fillStyle = '#FFD700';
+      ctx.font = '22px "STKaiti","KaiTi","Ma Shan Zheng",cursive,serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('孔 庙 祈 福', 210, 55);
+
+      // Fortune medallion
+      var cx = 210, cy = 200;
+      // Outer circle
+      ctx.beginPath();
+      ctx.arc(cx, cy, 80, 0, Math.PI * 2);
+      var mg = ctx.createRadialGradient(cx-15, cy-15, 5, cx, cy, 80);
+      mg.addColorStop(0, 'rgba(255,215,0,0.12)');
+      mg.addColorStop(0.6, 'rgba(139,80,0,0.08)');
+      mg.addColorStop(1, 'transparent');
+      ctx.fillStyle = mg;
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,215,0,0.3)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      // Ring
+      ctx.beginPath();
+      ctx.arc(cx, cy, 84, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,215,0,0.12)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(cx, cy, 76, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,215,0,0.1)';
+      ctx.setLineDash([3, 6]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      // Fortune level text
+      ctx.fillStyle = '#FFD700';
+      ctx.font = '54px "STKaiti","KaiTi","Ma Shan Zheng",cursive,serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(level, 210, 205);
+      // Shadow glow
+      ctx.shadowColor = 'rgba(255,215,0,0.2)';
+      ctx.shadowBlur = 30;
+      ctx.fillText(level, 210, 205);
+      ctx.shadowBlur = 0;
+
+      // Fortune title
+      ctx.fillStyle = '#FFD700';
+      ctx.font = '24px "STKaiti","KaiTi","Ma Shan Zheng",cursive,serif';
+      ctx.fillText(title, 210, 310);
+
+      // Poem first line
+      var firstLine = poem.split('\n')[0];
+      ctx.fillStyle = 'rgba(255,235,200,0.7)';
+      ctx.font = '14px "STSong","SimSun","Noto Serif SC",serif';
+      ctx.fillText(firstLine, 210, 348);
+
+      // Divider
+      ctx.strokeStyle = 'rgba(255,215,0,0.3)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(110, 366); ctx.lineTo(310, 366);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(110, 370); ctx.lineTo(310, 370);
+      ctx.stroke();
+      // Diamond
+      ctx.save();
+      ctx.translate(210, 368);
+      ctx.rotate(Math.PI / 4);
+      ctx.strokeStyle = 'rgba(255,215,0,0.35)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(-4, -4, 8, 8);
+      ctx.restore();
+
+      // Save as image for poster
+      var dataUrl = c.toDataURL('image/png');
+
+      // Show in modal
+      var modal = document.getElementById('posterModal');
+      document.getElementById('posterImage').src = dataUrl;
+      modal.classList.add('active');
+
+      // Generate separate image with name/date/QR using helper canvas
+      var finalCanvas = document.createElement('canvas');
+      finalCanvas.width = 420; finalCanvas.height = 680;
+      var fctx = finalCanvas.getContext('2d');
+
+      // Copy poster image
+      fctx.drawImage(c, 0, 0);
+
+      // Name
+      fctx.fillStyle = 'rgba(255,215,0,0.6)';
+      fctx.font = '18px "STKaiti","KaiTi","Ma Shan Zheng",cursive,serif';
+      fctx.textAlign = 'center';
+      fctx.textBaseline = 'middle';
+      fctx.fillText('善信 · ' + name, 210, 535);
+
+      // Date
+      fctx.fillStyle = 'rgba(255,215,0,0.3)';
+      fctx.font = '12px "STSong","SimSun","Noto Serif SC",serif';
+      fctx.fillText(dateStr + ' · 孔庙祈福', 210, 560);
+
+      // Brand
+      fctx.fillStyle = 'rgba(255,215,0,0.35)';
+      fctx.font = '11px "STSong","SimSun","Noto Serif SC",serif';
+      fctx.fillText('思贤学习站 · 陪你一起成长', 210, 592);
+
+      // QR codes
+      var qrSize = 38;
+      var qrY = 620;
+      // Left QR (思贤)
+      var qr1 = document.getElementById('posterQRSixian');
+      if (qr1 && qr1.src) {
+        try { fctx.drawImage(qr1, 130, qrY, qrSize, qrSize); } catch(e) {}
+      }
+      fctx.fillStyle = 'rgba(255,215,0,0.35)';
+      fctx.font = '9px "STSong","SimSun","Noto Serif SC",serif';
+      fctx.textAlign = 'center';
+      fctx.fillText('关注思贤', 149, qrY + qrSize + 12);
+
+      // Right QR (祈福)
+      var qr2 = document.getElementById('posterQRCode');
+      if (qr2 && qr2.src) {
+        try { fctx.drawImage(qr2, 252, qrY, qrSize, qrSize); } catch(e) {}
+      }
+      fctx.fillText('扫码祈福', 271, qrY + qrSize + 12);
+
+      // Show final result
+      var finalDataUrl = finalCanvas.toDataURL('image/png');
+      document.getElementById('posterImage').src = finalDataUrl;
+      modal.classList.add('active');
+
+      // Clean up poster HTML element rendering attempt
+      var el = document.getElementById('poster');
+      el.style.left = '-9999px';
+      el.style.top = '0';
+      el.style.position = 'fixed';
+
+      resolve();
+    } catch(e) {
+      reject(e);
+    }
+  });
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
 // ===== POSTER GENERATION =====
 async function generatePoster() {
   if (!currentFortune) return;
@@ -904,21 +1114,13 @@ async function generatePoster() {
 
   } catch (e) {
     console.error('Poster failed:', e);
-    // Fallback: try rendering at lower scale
+    // Fallback: render poster directly on canvas (no html2canvas needed)
     try {
-      poster.style.left = '0';
-      poster.style.top = '0';
-      await sleep(50);
-      const fallbackCanvas = await html2canvas(poster, {
-        scale: 1, useCORS: true, allowTaint: true,
-        backgroundColor: null, width: 420, height: 680, logging: false
-      });
       if (toast.parentNode) toast.parentNode.removeChild(toast);
-      const modal = document.getElementById('posterModal');
-      document.getElementById('posterImage').src = fallbackCanvas.toDataURL('image/png');
-      modal.classList.add('active');
-    } catch (e2) {
-      console.error('Poster fallback also failed:', e2);
+      await renderPosterDirect();
+      return;
+    } catch (e3) {
+      console.error('Direct canvas also failed:', e3);
       if (toast.parentNode) toast.parentNode.removeChild(toast);
       alert('网络不稳定，生成失败。请截图保存 🙏');
     }
