@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>刻意练习 - 思贤学习站</title>
+    <style>
+        .method-article { max-width: 800px; margin: 0 auto; padding: 20px 20px 48px; }
+        .article-hero {
+            text-align: center; padding: 40px 20px 30px;
+            background: var(--hero-gradient);
+            margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .article-hero h1 { font-size: 28px; margin-bottom: 6px; letter-spacing: 1px; color: var(--hero-text); }
+        .article-hero p { font-size: 14px; color: var(--hero-subtext); max-width: 500px; margin: 0 auto; }
+        .article-hero .article-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .article-hero .article-tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(86,136,204,0.1); color: #5688CC; border: 1px solid rgba(86,136,204,0.3);
+        }
+        .back-link { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; }
+        .back-link a { color: #888; font-size: 14px; text-decoration: none; }
+        .back-link a:hover { color: var(--primary); }
+        .article-card {
+            background: var(--card-bg, #fff); border-radius: 16px; padding: 28px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .article-card h2 { font-size: 20px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); color: var(--body-text, #333); }
+        .article-card h3 { font-size: 16px; margin: 18px 0 8px; color: var(--body-text, #333); }
+        .article-card p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 12px; }
+        .article-card ul { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ul li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card ol { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ol li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card .highlight-box { background: #f0f7ff; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+        .article-card .highlight-box p { margin-bottom: 4px; font-size: 13px; }
+        .article-card .highlight-box strong { color: var(--primary-dark); }
+        .article-card .chart-wrap { text-align: center; margin: 20px 0; }
+        .article-card .chart-wrap img { max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .article-card .chart-wrap .caption { font-size: 12px; color: #999; margin-top: 6px; }
+        .article-card .tip-box { background: #fff8e6; border-left: 4px solid #f39c12; padding: 14px 18px; border-radius: 8px; margin: 14px 0; }
+        .article-card .tip-box p { font-size: 13px; margin-bottom: 2px; }
+        @media (max-width: 600px) { .article-card { padding: 20px 16px; } .article-hero h1 { font-size: 22px; } }
+    </style>
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="nav">
+    <a href="../思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="../思贤学习站.html">首页</a>
+    <a href="../学习专区.html">学习专区</a>
+    <a href="../孔庙祈福.html" style="color:#d4a017;font-weight:700;">孔庙祈福</a>
+    <a href="../算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="../资料库.html">资源库</a>
+    <a href="../成长社区.html">成长社区</a>
+    <a href="../关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
+</div>
+<div class="article-hero">
+    <h1>刻意练习</h1>
+    <p>有目的的练习 + 即时反馈 + 不断挑战舒适区</p>
+    <div class="article-tags"><span>🎯 如何提高效率</span><span>科学方法</span></div>
+</div>
+<div class="back-link"><a href="../学习方法.html">&larr; 返回学习方法</a></div>
+<div class="method-article">
+<div class="article-card">
+<h2>一万小时定律的真相</h2><p>很多人听说过一万小时定律——在任何领域达到专家水平需要一万小时的练习。但关键不是所有练习都算数。普通练一万小时，和刻意练一千小时，效果完全不同。</p><div class="chart-wrap"><img src="images/skill_acquisition.svg" alt="刻意练习与普通练习的技能成长曲线对比"><div class="caption">图：刻意练习与普通练习的技能成长曲线对比</div></div>
+</div>
+<div class="article-card">
+<h2>什么是刻意练习？</h2><p>心理学家安德斯·艾利克森提出了刻意练习的概念：</p><h3>1. 有明确的目标</h3><p>不是我要做得更好，而是我要在10分钟内做完这5道二次函数题全对。</p><h3>2. 在舒适区边缘练习</h3><p>总是在做已经会的东西不会进步。总是在做完全不会的东西会崩溃。刻意练习是比自己当前水平难一点点的任务。</p><h3>3. 需要即时反馈</h3><p>做完一道题立刻对答案、做错立刻分析原因。反馈越及时，进步越快。</p><h3>4. 需要反复修正</h3><p>刻意练习不是做很多题，而是做错了→分析原因→针对性改进→再试。</p>
+</div>
+<div class="article-card">
+<h2>如何在日常学习中应用？</h2><ul><li>刷题时：不要只做擅长的题型——专攻你的弱项题型</li><li>每次练习后：花同样时间分析错因</li><li>建立错题专攻本：把同一类错误集中攻克</li><li>每周回顾：这周在哪个知识点上取得了突破？下周要突破哪里？</li></ul><div class="tip-box"><p>刻意练习比较费脑，每天坚持1-2小时就足够了。其余时间做常规复习即可。</p></div>
+</div>
+</div>
+<div class="footer"><p>思贤学习站 - 济南市商河县 - <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p></div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">&uarr;</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📖 思贤学习站——学习方法 · ' + document.title.replace(' - 思贤学习站','') + '。学会怎么学，比学什么更重要。 ' + url;
+  var hasCopied = false, overlay = document.getElementById('shareOverlay'), shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn'), copyHint = document.getElementById('copyHint'), sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b>155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt; overlay.classList.add('active'); hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案'; copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) { hasCopied = true; sharedBtn.disabled = false; copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }
+  };
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now()); copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return; localStorage.setItem('sx_shared', '1'); overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) triggers[i].outerHTML = '<b>155-6412-8008</b>';
+  });
+  overlay.addEventListener('click', function(e) { if (e.target === this) { overlay.classList.remove('active'); if (window._shareTimeout) clearTimeout(window._shareTimeout); } });
+})();
+</script>
+</body>
+</html>

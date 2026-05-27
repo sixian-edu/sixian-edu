@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>艾宾浩斯遗忘曲线 - 思贤学习站</title>
+    <style>
+        .method-article { max-width: 800px; margin: 0 auto; padding: 20px 20px 48px; }
+        .article-hero {
+            text-align: center; padding: 40px 20px 30px;
+            background: var(--hero-gradient);
+            margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .article-hero h1 { font-size: 28px; margin-bottom: 6px; letter-spacing: 1px; color: var(--hero-text); }
+        .article-hero p { font-size: 14px; color: var(--hero-subtext); max-width: 500px; margin: 0 auto; }
+        .article-hero .article-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .article-hero .article-tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(86,136,204,0.1); color: #5688CC; border: 1px solid rgba(86,136,204,0.3);
+        }
+        .back-link { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; }
+        .back-link a { color: #888; font-size: 14px; text-decoration: none; }
+        .back-link a:hover { color: var(--primary); }
+        .article-card {
+            background: var(--card-bg, #fff); border-radius: 16px; padding: 28px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .article-card h2 { font-size: 20px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); color: var(--body-text, #333); }
+        .article-card h3 { font-size: 16px; margin: 18px 0 8px; color: var(--body-text, #333); }
+        .article-card p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 12px; }
+        .article-card ul { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ul li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card ol { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ol li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card .highlight-box { background: #f0f7ff; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+        .article-card .highlight-box p { margin-bottom: 4px; font-size: 13px; }
+        .article-card .highlight-box strong { color: var(--primary-dark); }
+        .article-card .chart-wrap { text-align: center; margin: 20px 0; }
+        .article-card .chart-wrap img { max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .article-card .chart-wrap .caption { font-size: 12px; color: #999; margin-top: 6px; }
+        .article-card .tip-box { background: #fff8e6; border-left: 4px solid #f39c12; padding: 14px 18px; border-radius: 8px; margin: 14px 0; }
+        .article-card .tip-box p { font-size: 13px; margin-bottom: 2px; }
+        @media (max-width: 600px) { .article-card { padding: 20px 16px; } .article-hero h1 { font-size: 22px; } }
+    </style>
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="nav">
+    <a href="../思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="../思贤学习站.html">首页</a>
+    <a href="../学习专区.html">学习专区</a>
+    <a href="../孔庙祈福.html" style="color:#d4a017;font-weight:700;">孔庙祈福</a>
+    <a href="../算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="../资料库.html">资源库</a>
+    <a href="../成长社区.html">成长社区</a>
+    <a href="../关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
+</div>
+<div class="article-hero">
+    <h1>艾宾浩斯遗忘曲线</h1>
+    <p>科学复习节奏——记忆规律与最佳复习间隔</p>
+    <div class="article-tags"><span>🧠 记忆方法</span><span>科学记忆</span></div>
+</div>
+<div class="back-link"><a href="../学习方法.html">&larr; 返回学习方法</a></div>
+<div class="method-article">
+<div class="article-card">
+<h2>什么是艾宾浩斯遗忘曲线？</h2><p>德国心理学家赫尔曼·艾宾浩斯在1885年发表了一项开创性研究：他用无意义音节作为记忆材料，绘制出了著名的遗忘曲线。</p><p>这条曲线揭示了一个惊人的事实：我们遗忘的速度比想象中快得多。</p><div class="chart-wrap"><img src="images/ebbinghaus.svg" alt="艾宾浩斯遗忘曲线——红色标记为最佳复习时间点"><div class="caption">图：艾宾浩斯遗忘曲线——红色标记为最佳复习时间点</div></div>
+</div>
+<div class="article-card">
+<h2>遗忘曲线的关键发现</h2><div class="highlight-box"><p>关键数据：学完20分钟后遗忘约42%；1小时后遗忘约56%；1天后遗忘约67%；2天后遗忘约72%；1个月后遗忘约79%</p></div><p>如果不复习，一个月后你几乎会忘掉学过的80%。这是所有人大脑的正常规律。</p>
+</div>
+<div class="article-card">
+<h2>最佳复习间隔（5次复习法）</h2><ol><li>第一次复习：学习后1小时——趁刚学完快速回顾要点（10分钟）</li><li>第二次复习：学习后1天——回忆主要内容（15分钟）</li><li>第三次复习：学习后3天——重点复习模糊的部分（15分钟）</li><li>第四次复习：学习后7天——整体回顾形成长期记忆（20分钟）</li><li>第五次复习：学习后15-30天——让知识进入永久记忆（20分钟）</li></ol><div class="tip-box"><p>每次复习时间不需要很长——5-15分钟即可，但必须在正确的时间点进行。每次复习相当于重新激活记忆的痕迹。</p></div>
+</div>
+</div>
+<div class="footer"><p>思贤学习站 - 济南市商河县 - <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p></div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">&uarr;</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📖 思贤学习站——学习方法 · ' + document.title.replace(' - 思贤学习站','') + '。学会怎么学，比学什么更重要。 ' + url;
+  var hasCopied = false, overlay = document.getElementById('shareOverlay'), shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn'), copyHint = document.getElementById('copyHint'), sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b>155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt; overlay.classList.add('active'); hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案'; copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) { hasCopied = true; sharedBtn.disabled = false; copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }
+  };
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now()); copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return; localStorage.setItem('sx_shared', '1'); overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) triggers[i].outerHTML = '<b>155-6412-8008</b>';
+  });
+  overlay.addEventListener('click', function(e) { if (e.target === this) { overlay.classList.remove('active'); if (window._shareTimeout) clearTimeout(window._shareTimeout); } });
+})();
+</script>
+</body>
+</html>

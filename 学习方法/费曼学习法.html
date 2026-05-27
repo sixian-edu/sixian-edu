@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>费曼学习法 - 思贤学习站</title>
+    <style>
+        .method-article { max-width: 800px; margin: 0 auto; padding: 20px 20px 48px; }
+        .article-hero {
+            text-align: center; padding: 40px 20px 30px;
+            background: var(--hero-gradient);
+            margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .article-hero h1 { font-size: 28px; margin-bottom: 6px; letter-spacing: 1px; color: var(--hero-text); }
+        .article-hero p { font-size: 14px; color: var(--hero-subtext); max-width: 500px; margin: 0 auto; }
+        .article-hero .article-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .article-hero .article-tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(86,136,204,0.1); color: #5688CC; border: 1px solid rgba(86,136,204,0.3);
+        }
+        .back-link { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; }
+        .back-link a { color: #888; font-size: 14px; text-decoration: none; }
+        .back-link a:hover { color: var(--primary); }
+        .article-card {
+            background: var(--card-bg, #fff); border-radius: 16px; padding: 28px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .article-card h2 { font-size: 20px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); color: var(--body-text, #333); }
+        .article-card h3 { font-size: 16px; margin: 18px 0 8px; color: var(--body-text, #333); }
+        .article-card p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 12px; }
+        .article-card ul { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ul li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card ol { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ol li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card .highlight-box { background: #f0f7ff; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+        .article-card .highlight-box p { margin-bottom: 4px; font-size: 13px; }
+        .article-card .highlight-box strong { color: var(--primary-dark); }
+        .article-card .chart-wrap { text-align: center; margin: 20px 0; }
+        .article-card .chart-wrap img { max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .article-card .chart-wrap .caption { font-size: 12px; color: #999; margin-top: 6px; }
+        .article-card .tip-box { background: #fff8e6; border-left: 4px solid #f39c12; padding: 14px 18px; border-radius: 8px; margin: 14px 0; }
+        .article-card .tip-box p { font-size: 13px; margin-bottom: 2px; }
+        @media (max-width: 600px) { .article-card { padding: 20px 16px; } .article-hero h1 { font-size: 22px; } }
+    </style>
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="nav">
+    <a href="../思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="../思贤学习站.html">首页</a>
+    <a href="../学习专区.html">学习专区</a>
+    <a href="../孔庙祈福.html" style="color:#d4a017;font-weight:700;">孔庙祈福</a>
+    <a href="../算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="../资料库.html">资源库</a>
+    <a href="../成长社区.html">成长社区</a>
+    <a href="../关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
+</div>
+<div class="article-hero">
+    <h1>费曼学习法</h1>
+    <p>“教给别人”——检验是否真懂的黄金标准</p>
+    <div class="article-tags"><span>🎯 如何提高效率</span><span>热门方法</span></div>
+</div>
+<div class="back-link"><a href="../学习方法.html">&larr; 返回学习方法</a></div>
+<div class="method-article">
+<div class="article-card">
+<h2>什么是费曼学习法？</h2><p>费曼学习法以著名物理学家理查德·费曼命名。费曼以能够把最复杂的物理学概念用最简单的话讲清楚而闻名。</p><div class="highlight-box"><p>“如果你不能简单地解释它，说明你还没有真正理解它。”</p></div><p>费曼学习法不是一种技巧，而是一种检验是否真懂的思维框架。</p>
+</div>
+<div class="article-card">
+<h2>费曼学习法四步法</h2><h3>第一步：选择一个概念</h3><p>拿出一张白纸，在顶部写下你要学习的概念。</p><h3>第二步：假装教给别人</h3><p>想象你在教一个完全不懂这个领域的人。用最直白的语言，把这个概念解释清楚。不能用专业术语，必须用大白话。</p><h3>第三步：发现盲区，回头学习</h3><p>在解释过程中，你会发现有些地方讲不清楚。这就是你没真懂的地方。回到教材重新学习。</p><h3>第四步：简化和类比</h3><p>尝试用生活中的类比。比如DNA像一本说明书——这种类比就是费曼学习法的精髓。</p>
+</div>
+<div class="article-card">
+<h2>为什么如此有效？</h2><p>它强迫你从知道变成理解。知道是我看到过这个知识，理解是我能用这个知识解释新问题。</p><p>很多同学把我读过当作我会了。费曼学习法无情地戳破这种错觉——如果你说不出来，你就是没真懂。</p><div class="tip-box"><p>每天学完一个知识点后，花5分钟用费曼法给自己讲一遍。坚持两周，你会发现自己对知识的掌握深度明显提升。</p></div>
+</div>
+</div>
+<div class="footer"><p>思贤学习站 - 济南市商河县 - <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p></div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">&uarr;</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📖 思贤学习站——学习方法 · ' + document.title.replace(' - 思贤学习站','') + '。学会怎么学，比学什么更重要。 ' + url;
+  var hasCopied = false, overlay = document.getElementById('shareOverlay'), shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn'), copyHint = document.getElementById('copyHint'), sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b>155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt; overlay.classList.add('active'); hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案'; copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) { hasCopied = true; sharedBtn.disabled = false; copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }
+  };
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now()); copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return; localStorage.setItem('sx_shared', '1'); overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) triggers[i].outerHTML = '<b>155-6412-8008</b>';
+  });
+  overlay.addEventListener('click', function(e) { if (e.target === this) { overlay.classList.remove('active'); if (window._shareTimeout) clearTimeout(window._shareTimeout); } });
+})();
+</script>
+</body>
+</html>

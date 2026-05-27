@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>专注力训练 - 思贤学习站</title>
+    <style>
+        .method-article { max-width: 800px; margin: 0 auto; padding: 20px 20px 48px; }
+        .article-hero {
+            text-align: center; padding: 40px 20px 30px;
+            background: var(--hero-gradient);
+            margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .article-hero h1 { font-size: 28px; margin-bottom: 6px; letter-spacing: 1px; color: var(--hero-text); }
+        .article-hero p { font-size: 14px; color: var(--hero-subtext); max-width: 500px; margin: 0 auto; }
+        .article-hero .article-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .article-hero .article-tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(86,136,204,0.1); color: #5688CC; border: 1px solid rgba(86,136,204,0.3);
+        }
+        .back-link { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; }
+        .back-link a { color: #888; font-size: 14px; text-decoration: none; }
+        .back-link a:hover { color: var(--primary); }
+        .article-card {
+            background: var(--card-bg, #fff); border-radius: 16px; padding: 28px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .article-card h2 { font-size: 20px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); color: var(--body-text, #333); }
+        .article-card h3 { font-size: 16px; margin: 18px 0 8px; color: var(--body-text, #333); }
+        .article-card p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 12px; }
+        .article-card ul { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ul li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card ol { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ol li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card .highlight-box { background: #f0f7ff; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+        .article-card .highlight-box p { margin-bottom: 4px; font-size: 13px; }
+        .article-card .highlight-box strong { color: var(--primary-dark); }
+        .article-card .chart-wrap { text-align: center; margin: 20px 0; }
+        .article-card .chart-wrap img { max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .article-card .chart-wrap .caption { font-size: 12px; color: #999; margin-top: 6px; }
+        .article-card .tip-box { background: #fff8e6; border-left: 4px solid #f39c12; padding: 14px 18px; border-radius: 8px; margin: 14px 0; }
+        .article-card .tip-box p { font-size: 13px; margin-bottom: 2px; }
+        @media (max-width: 600px) { .article-card { padding: 20px 16px; } .article-hero h1 { font-size: 22px; } }
+    </style>
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="nav">
+    <a href="../思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="../思贤学习站.html">首页</a>
+    <a href="../学习专区.html">学习专区</a>
+    <a href="../孔庙祈福.html" style="color:#d4a017;font-weight:700;">孔庙祈福</a>
+    <a href="../算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="../资料库.html">资源库</a>
+    <a href="../成长社区.html">成长社区</a>
+    <a href="../关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
+</div>
+<div class="article-hero">
+    <h1>专注力训练</h1>
+    <p>如何进入心流状态，保持高度专注</p>
+    <div class="article-tags"><span>🎯 如何提高效率</span><span>核心能力</span></div>
+</div>
+<div class="back-link"><a href="../学习方法.html">&larr; 返回学习方法</a></div>
+<div class="method-article">
+<div class="article-card">
+<h2>专注力：被忽视的最强学习力</h2><p>你有没有这样的经历：坐在书桌前两小时，真正学进去的只有20分钟？这不是你不行，而是专注力需要训练。</p><p>科学研究表明，人的专注力随时间的推移呈倒U型曲线——前5分钟逐渐进入状态，10-40分钟达到高峰，之后开始下降。</p><div class="chart-wrap"><img src="images/attention_curve.svg" alt="专注力随时间的变化规律"><div class="caption">图：专注力随时间的变化规律</div></div>
+</div>
+<div class="article-card">
+<h2>为什么你无法专注？</h2><p>无法专注通常有三个原因：</p><ul><li>环境干扰：手机通知、家人说话、书桌杂乱。这些是外部因素，最容易解决。</li><li>任务太难/太简单：太难会想逃避，太简单会走神。最佳状态是任务难度比当前能力高一点点。</li><li>大脑疲劳：连续学习不休息，专注力资源被耗尽。就像肌肉一样，专注力也需要恢复。</li></ul>
+</div>
+<div class="article-card">
+<h2>进入心流状态的五步法</h2><p>心流（Flow）是心理学家米哈里·契克森米哈赖提出的概念——当人完全沉浸在某项活动中时，会忘记时间流逝，体验到高度的愉悦和效率。</p><ol><li>清除干扰：手机静音放远，书桌只留当前任务相关物品</li><li>设定明确目标：做完这5道题比学数学更容易进入状态</li><li>设置时间框：告诉自己只专注25分钟，时间到了就休息</li><li>从简单开始：先做一道简单的热身题，让大脑进入工作模式</li><li>接受走神：走神是正常的，发现了轻轻把注意力拉回来。不要自责，自责只会消耗更多精力</li></ol><div class="tip-box"><p>训练计划：第一周每天坚持15分钟无干扰学习，第二周20分钟，逐步增加到45分钟。每次完成后记录感受，你会看到自己的进步。</p></div>
+</div>
+</div>
+<div class="footer"><p>思贤学习站 - 济南市商河县 - <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p></div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">&uarr;</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📖 思贤学习站——学习方法 · ' + document.title.replace(' - 思贤学习站','') + '。学会怎么学，比学什么更重要。 ' + url;
+  var hasCopied = false, overlay = document.getElementById('shareOverlay'), shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn'), copyHint = document.getElementById('copyHint'), sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b>155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt; overlay.classList.add('active'); hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案'; copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) { hasCopied = true; sharedBtn.disabled = false; copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }
+  };
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now()); copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return; localStorage.setItem('sx_shared', '1'); overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) triggers[i].outerHTML = '<b>155-6412-8008</b>';
+  });
+  overlay.addEventListener('click', function(e) { if (e.target === this) { overlay.classList.remove('active'); if (window._shareTimeout) clearTimeout(window._shareTimeout); } });
+})();
+</script>
+</body>
+</html>

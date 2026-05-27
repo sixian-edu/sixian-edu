@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>番茄工作法 - 思贤学习站</title>
+    <style>
+        .method-article { max-width: 800px; margin: 0 auto; padding: 20px 20px 48px; }
+        .article-hero {
+            text-align: center; padding: 40px 20px 30px;
+            background: var(--hero-gradient);
+            margin-bottom: 10px; position: relative; overflow: hidden;
+        }
+        .article-hero h1 { font-size: 28px; margin-bottom: 6px; letter-spacing: 1px; color: var(--hero-text); }
+        .article-hero p { font-size: 14px; color: var(--hero-subtext); max-width: 500px; margin: 0 auto; }
+        .article-hero .article-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .article-hero .article-tags span {
+            font-size: 12px; padding: 4px 14px; border-radius: 12px;
+            background: rgba(86,136,204,0.1); color: #5688CC; border: 1px solid rgba(86,136,204,0.3);
+        }
+        .back-link { max-width: 800px; margin: 0 auto; padding: 16px 20px 0; }
+        .back-link a { color: #888; font-size: 14px; text-decoration: none; }
+        .back-link a:hover { color: var(--primary); }
+        .article-card {
+            background: var(--card-bg, #fff); border-radius: 16px; padding: 28px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .article-card h2 { font-size: 20px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); color: var(--body-text, #333); }
+        .article-card h3 { font-size: 16px; margin: 18px 0 8px; color: var(--body-text, #333); }
+        .article-card p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 12px; }
+        .article-card ul { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ul li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card ol { padding-left: 20px; margin-bottom: 12px; }
+        .article-card ol li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 4px; }
+        .article-card .highlight-box { background: #f0f7ff; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+        .article-card .highlight-box p { margin-bottom: 4px; font-size: 13px; }
+        .article-card .highlight-box strong { color: var(--primary-dark); }
+        .article-card .chart-wrap { text-align: center; margin: 20px 0; }
+        .article-card .chart-wrap img { max-width: 100%; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .article-card .chart-wrap .caption { font-size: 12px; color: #999; margin-top: 6px; }
+        .article-card .tip-box { background: #fff8e6; border-left: 4px solid #f39c12; padding: 14px 18px; border-radius: 8px; margin: 14px 0; }
+        .article-card .tip-box p { font-size: 13px; margin-bottom: 2px; }
+        @media (max-width: 600px) { .article-card { padding: 20px 16px; } .article-hero h1 { font-size: 22px; } }
+    </style>
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+<div class="nav">
+    <a href="../思贤学习站.html" class="logo-text">思贤学习站</a>
+    <a href="../思贤学习站.html">首页</a>
+    <a href="../学习专区.html">学习专区</a>
+    <a href="../孔庙祈福.html" style="color:#d4a017;font-weight:700;">孔庙祈福</a>
+    <a href="../算法助学.html">AI工具 <span class="nav-tag">免费体验</span></a>
+    <a href="../资料库.html">资源库</a>
+    <a href="../成长社区.html">成长社区</a>
+    <a href="../关于.html">关于</a><button class="theme-btn" onclick="toggleTheme()" title="切换主题">🎨</button>
+</div>
+<div class="article-hero">
+    <h1>番茄工作法</h1>
+    <p>25分钟专注 + 5分钟休息，简单到不可能失败的专注力训练法</p>
+    <div class="article-tags"><span>⏰ 时间管理</span><span>热门方法</span></div>
+</div>
+<div class="back-link"><a href="../学习方法.html">&larr; 返回学习方法</a></div>
+<div class="method-article">
+<div class="article-card">
+<h2>什么是番茄工作法？</h2><p>番茄工作法（Pomodoro Technique）由意大利人弗朗西斯科·西里洛（Francesco Cirillo）在20世纪80年代创立。他使用一个番茄形状的厨房计时器来管理自己的学习时间，由此得名。</p><p>这个方法的核心思想极其简单：</p><div class="highlight-box"><p>把大块的学习任务拆分成25分钟的小段，每段结束后休息5分钟，每4段后进行一次长休息（15-30分钟）。</p></div><div class="chart-wrap"><img src="images/pomodoro.svg" alt="番茄工作法的标准时间结构"><div class="caption">图：番茄工作法的标准时间结构</div></div>
+</div>
+<div class="article-card">
+<h2>为什么番茄工作法有效？</h2><p>大脑的注意力资源是有限的。科学研究表明，大多数人的持续专注时间在20-40分钟之间。超过这个范围，专注力会显著下降，学习效率也随之降低。</p><p>番茄工作法解决了两大问题：</p><ul><li>拖延：25分钟看起来很短，“只学25分钟”的心理负担比“学一下午”小得多，更容易开始</li><li>疲劳：定期的休息让大脑得到恢复，保持长时间的高效状态</li></ul><div class="highlight-box"><p>核心原理：短期冲刺 + 及时恢复 = 可持续的高效学习</p></div>
+</div>
+<div class="article-card">
+<h2>操作方法：四步上手</h2><h3>第一步：准备</h3><p>确定你要做的学习任务，拿一个计时器（手机计时器即可），设定25分钟。</p><h3>第二步：专注</h3><p>开始计时，全神贯注于当前任务。如果有杂念或别人打扰，快速记下来，然后立即回到学习中。25分钟内不要做任何与学习无关的事。</p><h3>第三步：休息</h3><p>计时器响了，立刻停止。休息5分钟——站起来走走、喝水、伸展身体。不要刷手机（屏幕会干扰休息效果）。</p><h3>第四步：循环</h3><p>每完成4个番茄钟，进行一次15-30分钟的长休息。此时可以放松大脑，或处理之前记下的杂事。</p>
+</div>
+<div class="article-card">
+<h2>常见问题与技巧</h2><ul><li>中间被打断了怎么办？如果被打断，这个番茄钟作废，重新开始一个。</li><li>25分钟太短/太长？可根据个人情况调整到20-45分钟，但要固定下来不要变。</li><li>提前完成了任务？利用剩余时间复习或预习，不要提前结束。</li><li>进入心流不想停下来？先休息5分钟，如果回来后还想继续，再开启新的番茄钟。</li></ul><div class="tip-box"><p>建议每天开始时记录自己完成了多少个番茄钟，一周后你就能看到自己的专注时间总量。很多同学发现，知道自己在被记录，本身就能提高专注力。</p></div>
+</div>
+</div>
+<div class="footer"><p>思贤学习站 - 济南市商河县 - <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p></div>
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">&uarr;</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-icon">🔗</div>
+    <h3>分享即可获取联系方式</h3>
+    <p class="share-desc">将此网站分享给微信好友或发到朋友圈</p>
+    <div class="share-msg-box"><p id="shareText"></p></div>
+    <button class="copy-btn" id="copyBtn">📋 复制分享文案</button>
+    <p class="copy-hint" id="copyHint">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="shared-btn" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+<script>
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📖 思贤学习站——学习方法 · ' + document.title.replace(' - 思贤学习站','') + '。学会怎么学，比学什么更重要。 ' + url;
+  var hasCopied = false, overlay = document.getElementById('shareOverlay'), shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn'), copyHint = document.getElementById('copyHint'), sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b>155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    shareTextEl.textContent = shareTxt; overlay.classList.add('active'); hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案'; copyBtn.classList.remove('copied');
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+    var t = localStorage.getItem('sx_copy_time');
+    if (t && Date.now() - Number(t) >= 10000) { hasCopied = true; sharedBtn.disabled = false; copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied'); copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }
+  };
+  copyBtn.addEventListener('click', function() {
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now()); copyBtn.textContent = '✅ 已复制'; copyBtn.classList.add('copied');
+      copyHint.textContent = '⏳ 检测到转发朋友圈，自动获取联系方式...';
+      window._shareTimeout = setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return; localStorage.setItem('sx_shared', '1'); overlay.classList.remove('active');
+    if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) triggers[i].outerHTML = '<b>155-6412-8008</b>';
+  });
+  overlay.addEventListener('click', function(e) { if (e.target === this) { overlay.classList.remove('active'); if (window._shareTimeout) clearTimeout(window._shareTimeout); } });
+})();
+</script>
+</body>
+</html>
