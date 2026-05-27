@@ -67,8 +67,8 @@ html,body{width:100%;height:100%;overflow-x:hidden;font-family:'Noto Serif SC',s
 
 /* ===== HOME SCREEN ===== */
 .home-content{position:relative;z-index:1;text-align:center;padding:30px 20px;width:100%;max-width:480px;}
-.main-title{display:inline-grid;grid-template-columns:1fr 1fr;font-family:'Ma Shan Zheng',cursive;font-size:clamp(56px,16vw,100px);color:#c9a84c;text-shadow:0 0 40px rgba(201,168,76,0.3),0 0 80px rgba(201,168,76,0.15),0 4px 8px rgba(0,0,0,0.5);line-height:1.1;letter-spacing:0;position:relative;animation:titleGlow 3s ease-in-out infinite;}
-.main-title span{text-align:center;padding:0 8px;}
+.main-title{display:flex;flex-wrap:wrap;width:2.4em;margin:0 auto;font-family:'Ma Shan Zheng',cursive;font-size:clamp(56px,16vw,100px);color:#c9a84c;text-shadow:0 0 40px rgba(201,168,76,0.3),0 0 80px rgba(201,168,76,0.15),0 4px 8px rgba(0,0,0,0.5);line-height:1.1;letter-spacing:0;position:relative;animation:titleGlow 3s ease-in-out infinite;}
+.main-title span{flex:0 0 50%;text-align:center;box-sizing:border-box;padding:0 4px;}
 @keyframes titleGlow{0%,100%{text-shadow:0 0 40px rgba(201,168,76,0.3),0 0 80px rgba(201,168,76,0.15),0 4px 8px rgba(0,0,0,0.5);}50%{text-shadow:0 0 60px rgba(201,168,76,0.5),0 0 120px rgba(201,168,76,0.25),0 4px 8px rgba(0,0,0,0.5);}}
 .subtitle{font-family:'ZCOOL XiaoWei','Noto Serif SC',serif;font-size:clamp(16px,4vw,22px);color:#d4b96a;margin-top:12px;letter-spacing:6px;opacity:0.9;font-weight:400;}
 .divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:28px auto;}
@@ -827,7 +827,7 @@ function populateFortune(data) {
 function renderPosterDirect() {
   return new Promise(function(resolve, reject) {
     try {
-      var S = 2; // scale factor for sharpness on HiDPI
+      var S = 4; // scale factor for sharpness on HiDPI
       var W = 420 * S, H = 680 * S;
       var c = document.createElement('canvas');
       c.width = W; c.height = H;
@@ -1099,7 +1099,7 @@ async function generatePoster() {
     const isMobile = window.innerWidth < 768;
     var canvas = await Promise.race([
       html2canvas(poster, {
-        scale: isMobile ? 4 : 5,
+        scale: isMobile ? 2 : 3,
         useCORS: true,
         allowTaint: false,
         backgroundColor: null,
