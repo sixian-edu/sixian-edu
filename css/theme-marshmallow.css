@@ -123,3 +123,17 @@
 .cta-section .btn-outline {
   color: #FF9EBB;
 }
+
+/* ── 选择老师页：固定为蓝色主题色 ── */
+.teacher-card .btn,
+.badge-level,
+#f-all:checked ~ .filter-bar label[for="f-all"],
+#f-primary:checked ~ .filter-bar label[for="f-primary"],
+#f-middle:checked ~ .filter-bar label[for="f-middle"],
+#f-high:checked ~ .filter-bar label[for="f-high"] {
+  background: #4A7AB8;
+}
+.badge-level { background: #3D78B8; }
+.cta-banner { background: linear-gradient(135deg, #5688CC 0%, #5BA0C0 50%, #73BFAA 100%); }
+.cta-banner p { color: #fff; }
+.cta-banner .btn { color: #4A7AB8; }
