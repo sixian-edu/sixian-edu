@@ -15,22 +15,23 @@ GRAY_LIGHT = '#ecf0f1'
 DARK = '#2c3e50'
 
 # ─── Chart 1: 解题思维流程图 ───
-fig, ax = plt.subplots(figsize=(8, 3.5))
-ax.set_xlim(0, 10); ax.set_ylim(0, 3)
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.set_xlim(0, 10); ax.set_ylim(0, 3.5)
 ax.axis('off')
 
 boxes = [
-    (0.3, 1.8, 1.2, 0.8, '① 审题\n圈关键量', '#c0392b'),
-    (2.0, 1.8, 1.2, 0.8, '② 识别\n物理模型', '#2980b9'),
-    (3.7, 1.8, 1.2, 0.8, '③ 选择\n对应公式', '#27ae60'),
-    (5.4, 1.8, 1.2, 0.8, '④ 代入\n计算求解', '#e67e22'),
-    (7.1, 1.8, 1.2, 0.8, '⑤ 检查\n单位&结果', '#8e44ad'),
+    (0.3, 1.8, 1.3, 1.0, '1 审题\n圈关键量', PHY_RED),
+    (2.1, 1.8, 1.3, 1.0, '2 识别\n物理模型', '#2980b9'),
+    (3.9, 1.8, 1.3, 1.0, '3 选择\n对应公式', '#27ae60'),
+    (5.7, 1.8, 1.3, 1.0, '4 代入\n计算求解', '#e67e22'),
+    (7.5, 1.8, 1.3, 1.0, '5 检查\n单位和结果', '#8e44ad'),
 ]
 for (x, y, w, h, txt, color) in boxes:
-    rect = mpatches.FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.1",
-                                     facecolor=color, edgecolor='white', linewidth=2, alpha=0.85)
+    rect = mpatches.FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.15",
+                                     facecolor=color, edgecolor='white', linewidth=2.5, alpha=0.85)
     ax.add_patch(rect)
-    ax.text(x+w/2, y+h/2, txt, ha='center', va='center', fontsize=9, color='white', fontweight='bold', linespacing=1.4)
+    ax.text(x+w/2, y+h/2, txt, ha='center', va='center', fontsize=13, color='white',
+            fontweight='bold', linespacing=1.5)
 
 for i in range(len(boxes)-1):
     x1 = boxes[i][0] + boxes[i][2]
@@ -38,145 +39,168 @@ for i in range(len(boxes)-1):
     x2 = boxes[i+1][0]
     y2 = boxes[i+1][1] + boxes[i+1][3]/2
     ax.annotate('', xy=(x2-0.05, y2), xytext=(x1+0.05, y1),
-                arrowprops=dict(arrowstyle='->', color=GRAY, lw=2))
+                arrowprops=dict(arrowstyle='->', color=GRAY, lw=2.5, shrinkA=5, shrinkB=5))
 
-ax.text(5, 0.4, '每做一题，跑一遍流程，形成肌肉记忆', ha='center', fontsize=10, color=DARK,
-        bbox=dict(boxstyle='round,pad=0.3', facecolor=GRAY_LIGHT, edgecolor='none'))
-ax.text(5, 2.95, '中考物理解题思维流程图', ha='center', fontsize=11, fontweight='bold', color=DARK)
+ax.text(5, 0.5, '每做一题跑一遍流程，养成解题肌肉记忆', ha='center', fontsize=13, color=DARK,
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=GRAY_LIGHT, edgecolor='none'))
+ax.text(5, 3.3, '中考物理解题思维流程图', ha='center', fontsize=15, fontweight='bold', color=DARK)
 plt.tight_layout()
-plt.savefig(os.path.join(out, 'phy_score_flow.svg'), bbox_inches='tight', dpi=150)
+plt.savefig(os.path.join(out, 'phy_score_flow.svg'), bbox_inches='tight', dpi=180)
 plt.close()
+print('1/6 flow done')
 
 # ─── Chart 2: 常见物理模型分类 ───
-fig, ax = plt.subplots(figsize=(7, 4))
+fig, ax = plt.subplots(figsize=(8, 4.5))
 ax.axis('off')
 
 categories = [
-    ('力学模型', ['受力平衡模型', '压强浮力模型', '机械功与功率', '简单机械'], '#c0392b'),
-    ('电学模型', ['欧姆定律模型', '电功率模型', '电路故障分析', '电磁感应模型'], '#2980b9'),
-    ('热学模型', ['物态变化模型', '内能比热容', '热值计算'], '#e67e22'),
-    ('光学模型', ['反射成像模型', '折射与透镜', '凸透镜成像'], '#8e44ad'),
+    ('力学模型', ['受力平衡', '压强浮力', '功和功率', '简单机械', '密度测量'], '#c0392b'),
+    ('电学模型', ['欧姆定律', '电功率计算', '电路故障', '电磁感应', '家庭电路'], '#2980b9'),
+    ('热学模型', ['物态变化', '内能和比热容', '热值计算', '分子动理论'], '#e67e22'),
+    ('光学模型', ['反射定律', '平面镜成像', '折射规律', '凸透镜成像'], '#8e44ad'),
 ]
-colors_pale = {'#c0392b':'#fadbd8', '#2980b9':'#d4e6f1', '#e67e22':'#fdebd0', '#8e44ad':'#e8daef'}
+pale_map = {'#c0392b':'#fadbd8', '#2980b9':'#d4e6f1', '#e67e22':'#fdebd0', '#8e44ad':'#e8daef'}
 
-y_start = 3.6
+y_start = 3.8
 for ci, (title, items, color) in enumerate(categories):
-    y = y_start - ci * 0.8
-    ax.text(0.2, y, title, fontsize=10, fontweight='bold', color=color)
+    y = y_start - ci * 0.9
+    ax.text(0.3, y, title, fontsize=14, fontweight='bold', color=color, va='center')
     for j, item in enumerate(items):
-        ax.text(2.0 + j * 1.2, y, item, fontsize=8, ha='center',
-                bbox=dict(boxstyle='round,pad=0.15', facecolor=colors_pale[color],
-                          edgecolor=color, alpha=0.8))
+        ax.text(2.2 + j * 1.4, y, item, fontsize=12, ha='center', va='center',
+                bbox=dict(boxstyle='round,pad=0.25', facecolor=pale_map[color],
+                          edgecolor=color, linewidth=1.5))
 
-ax.text(3.5, 3.95, '中考物理常见模型分类', ha='center', fontsize=12, fontweight='bold', color=DARK)
-ax.text(0.2, -0.1, '识别模型 = 知道考什么 = 选对公式', fontsize=10, color=DARK,
-        bbox=dict(boxstyle='round,pad=0.2', facecolor=GRAY_LIGHT, edgecolor='none'))
-plt.savefig(os.path.join(out, 'phy_score_model.svg'), bbox_inches='tight', dpi=150)
+ax.text(4.2, 4.3, '中考物理常见模型分类速查', ha='center', fontsize=16, fontweight='bold', color=DARK)
+ax.text(0.3, -0.2, '识别模型 = 知道考什么 = 选对公式', fontsize=13, color=DARK,
+        bbox=dict(boxstyle='round,pad=0.3', facecolor=GRAY_LIGHT, edgecolor='none'))
+plt.savefig(os.path.join(out, 'phy_score_model.svg'), bbox_inches='tight', dpi=180)
 plt.close()
+print('2/6 model done')
 
 # ─── Chart 3: 公式选择策略 ───
+fig, ax = plt.subplots(figsize=(8, 4.5))
+ax.axis('off')
+
+# Redesigned as a clean 2-column comparison: 所求量 → 公式
+sections = [
+    ('力学', [
+        ('重力', 'G = mg'),
+        ('密度', 'ρ = m / V'),
+        ('压强', 'p = F / S'),
+        ('液体压强', 'p = ρ g h'),
+        ('浮力', 'F浮 = ρ g V排'),
+    ]),
+    ('电学', [
+        ('欧姆定律', 'I = U / R'),
+        ('电功率', 'P = U I'),
+        ('电功', 'W = U I t'),
+        ('焦耳定律', 'Q = I² R t'),
+        ('电阻串联', 'R = R1 + R2'),
+    ]),
+    ('热学', [
+        ('吸放热', 'Q = c m Δt'),
+        ('热值', 'Q = m q'),
+    ]),
+    ('光学', [
+        ('像距公式', '1/f = 1/u + 1/v'),
+        ('折射率', 'n = sin i / sin r'),
+    ]),
+]
+
+y_base = 3.8
+for si, (sec_name, formulas) in enumerate(sections):
+    x = 0.3 + si * 2.0
+    ax.text(x + 0.8, y_base + 0.15, sec_name, fontsize=13, fontweight='bold', color=PHY_RED, ha='center')
+    for fi, (name, formula) in enumerate(formulas):
+        y = y_base - 0.4 - fi * 0.45
+        # formula box
+        ax.text(x + 0.8, y, name, fontsize=10, va='center', ha='center', color=DARK)
+        ax.text(x + 0.8, y - 0.28, formula, fontsize=11, va='center', ha='center', color=PHY_RED,
+                fontweight='bold',
+                bbox=dict(boxstyle='round,pad=0.2', facecolor='#fdf2f2', edgecolor=PHY_RED, linewidth=1))
+
+ax.text(4.2, 4.35, '公式定位速查表', ha='center', fontsize=16, fontweight='bold', color=DARK)
+ax.text(4.2, 4.05, '根据所求量直接查找对应公式', ha='center', fontsize=12, color=GRAY)
+plt.savefig(os.path.join(out, 'phy_score_formula.svg'), bbox_inches='tight', dpi=180)
+plt.close()
+print('3/6 formula done')
+
+# ─── Chart 4: 选择题技巧 ───
 fig, ax = plt.subplots(figsize=(7, 4))
 ax.axis('off')
 
-formulas = [
-    ('已知: m, g  求: G', 'G = mg', '重力'),
-    ('已知: rho, V  求: m', 'm = rho V', '质量'),
-    ('已知: F, S  求: p', 'p = F/S', '压强'),
-    ('已知: rho, g, h  求: p', 'p = rho g h', '液体压强'),
-    ('已知: rho, g, V排  求: F浮', 'F浮 = rho g V排', '浮力'),
-    ('已知: U, I  求: R', 'R = U/I', '电阻'),
-    ('已知: U, I  求: P', 'P = UI', '电功率'),
-    ('已知: m, c, DeltaT  求: Q', 'Q = cmDeltaT', '热量'),
-]
-
-ax.text(0.3, 3.6, '已知条件 --->', fontsize=9, fontweight='bold', color=DARK)
-ax.text(4.2, 3.6, '公式', fontsize=9, fontweight='bold', color='#c0392b')
-ax.text(5.8, 3.6, '--- > 所求', fontsize=9, fontweight='bold', color=DARK)
-ax.plot([0.1, 6.8], [3.5, 3.5], color=GRAY, lw=0.5)
-
-for i, (cond, formula, target) in enumerate(formulas):
-    y = 3.2 - i * 0.37
-    ax.text(0.3, y, cond, fontsize=7.5, color=DARK)
-    ax.text(4.2, y, formula, fontsize=8, color='#c0392b', fontweight='bold',
-            bbox=dict(boxstyle='round,pad=0.1', facecolor='#fadbd8', edgecolor='none'))
-    ax.text(5.8, y, target, fontsize=7.5, color='#27ae60')
-
-ax.text(3.5, 3.95, '公式选择策略: 已知 rarr 公式 rarr 所求', ha='center', fontsize=11, fontweight='bold', color=DARK)
-plt.savefig(os.path.join(out, 'phy_score_formula.svg'), bbox_inches='tight', dpi=150)
-plt.close()
-
-# ─── Chart 4: 选择题技巧 ───
-fig, ax = plt.subplots(figsize=(7, 3.5))
-ax.axis('off')
-
 tips = [
-    ('排除法', '排除明显错误选项', '#c0392b', 90),
-    ('量纲法', '检查单位是否匹配', '#2980b9', 75),
-    ('极限法', '取极端值判断', '#27ae60', 65),
-    ('特殊值法', '代入简单数值验证', '#e67e22', 55),
-    ('图像法', '画示意图辅助', '#8e44ad', 50),
+    ('排除法', '排除明显\n错误选项', '#c0392b', 90),
+    ('量纲法', '检查单位\n是否匹配', '#2980b9', 75),
+    ('极限法', '取极端值\n快速判断', '#27ae60', 65),
+    ('特殊值法', '代入简单数\n验证选项', '#e67e22', 55),
+    ('图像法', '画示意图\n找规律', '#8e44ad', 50),
 ]
 
 for i, (name, desc, color, hits) in enumerate(tips):
     x = 0.3 + i * 1.35
-    ax.bar(x, hits, width=0.8, color=color, alpha=0.75, edgecolor='white', linewidth=1)
-    ax.text(x, hits + 3, f'{hits}%', ha='center', fontsize=9, fontweight='bold', color=color)
-    ax.text(x, -5, name, ha='center', fontsize=9, fontweight='bold', color=DARK)
-    ax.text(x, -14, desc, ha='center', fontsize=7, color=GRAY)
+    ax.bar(x, hits, width=0.7, color=color, alpha=0.8, edgecolor='white', linewidth=1.5)
+    ax.text(x, hits + 3, f'{hits}%', ha='center', fontsize=13, fontweight='bold', color=color)
+    ax.text(x, -6, name, ha='center', fontsize=14, fontweight='bold', color=DARK)
+    ax.text(x, -18, desc, ha='center', fontsize=10, color=GRAY, linespacing=1.3)
 
-ax.set_ylim(-22, 105)
-ax.text(3.5, 105, '选择题实用技巧', ha='center', fontsize=11, fontweight='bold', color=DARK)
-ax.text(3.5, 95, '(命中率因题型而异，综合使用效果更好)', ha='center', fontsize=8, color=GRAY)
-plt.savefig(os.path.join(out, 'phy_score_mc.svg'), bbox_inches='tight', dpi=150)
+ax.set_ylim(-28, 110)
+ax.text(3.5, 108, '选择题实用技巧及命中率', ha='center', fontsize=16, fontweight='bold', color=DARK)
+ax.text(3.5, 97, '综合使用多种技巧命中率更高', ha='center', fontsize=11, color=GRAY)
+plt.savefig(os.path.join(out, 'phy_score_mc.svg'), bbox_inches='tight', dpi=180)
 plt.close()
+print('4/6 mc done')
 
-# ─── Chart 5: 计算题步骤得分 ───
-fig, ax = plt.subplots(figsize=(6.5, 3.5))
+# ─── Chart 5: 计算题步骤分 ───
+fig, ax = plt.subplots(figsize=(8, 3.5))
 ax.axis('off')
 
 steps = [
-    ('写公式', '列出所用公式', '2分', '#c0392b'),
-    ('代数据', '代入数值带单位', '2分', '#e74c3c'),
-    ('算结果', '正确算出结果', '1分', '#2980b9'),
-    ('写单位', '结果后加单位', '0.5分', '#27ae60'),
-    ('做答', '写答: ......', '0.5分', '#8e44ad'),
+    ('写公式', '列出原始公式\n得 2 分', PHY_RED),
+    ('代数据', '代入数值和单位\n得 2 分', '#e74c3c'),
+    ('算结果', '正确算出\n得 1 分', '#2980b9'),
+    ('写单位', '结果加单位\n得 0.5 分', '#27ae60'),
+    ('作答', '写答:...\n得 0.5 分', '#8e44ad'),
 ]
 
-for i, (step, detail, score, color) in enumerate(steps):
-    x = 0.2 + i * 1.2
-    rect = mpatches.FancyBboxPatch((x, 1.5), 1.0, 0.7, boxstyle="round,pad=0.1",
-                                     facecolor=color, edgecolor='white', linewidth=1.5, alpha=0.8)
+for i, (step, detail, color) in enumerate(steps):
+    x = 0.3 + i * 1.5
+    rect = mpatches.FancyBboxPatch((x, 1.2), 1.2, 1.0, boxstyle="round,pad=0.15",
+                                     facecolor=color, edgecolor='white', linewidth=2, alpha=0.8)
     ax.add_patch(rect)
-    ax.text(x+0.5, 1.85, step, ha='center', va='center', fontsize=9, color='white', fontweight='bold')
-    ax.text(x+0.5, 1.55, detail, ha='center', va='top', fontsize=7, color=GRAY)
-    ax.text(x+0.5, 2.35, score, ha='center', fontsize=9, color=color, fontweight='bold')
+    ax.text(x+0.6, 1.7, step, ha='center', va='center', fontsize=14, color='white', fontweight='bold')
+    ax.text(x+0.6, 1.2, detail, ha='center', va='top', fontsize=10, color='white', alpha=0.9, linespacing=1.3)
     if i < len(steps) - 1:
-        ax.annotate('', xy=(x+1.1, 1.85), xytext=(x+1.0, 1.85),
-                    arrowprops=dict(arrowstyle='->', color=GRAY, lw=1.5))
+        ax.annotate('', xy=(x+1.35, 1.7), xytext=(x+1.2, 1.7),
+                    arrowprops=dict(arrowstyle='->', color=GRAY, lw=2.5))
 
-ax.text(3.25, 3.2, '计算题步骤分策略', ha='center', fontsize=11, fontweight='bold', color=DARK)
-ax.text(3.25, 2.85, '写对公式+代数据 = 保底4分', ha='center', fontsize=9, color='#c0392b')
-plt.savefig(os.path.join(out, 'phy_score_calc.svg'), bbox_inches='tight', dpi=150)
+ax.text(0.3, 2.8, '即使算不出最终结果', fontsize=11, color=DARK, fontweight='bold')
+ax.text(4.0, 2.8, '写对公式 + 代入数据', fontsize=11, color=PHY_RED, fontweight='bold')
+ax.text(7.2, 2.8, '也能拿 4/6 分', fontsize=11, color='#27ae60', fontweight='bold')
+ax.text(4.2, 3.3, '计算题步骤分策略', ha='center', fontsize=16, fontweight='bold', color=DARK)
+
+plt.savefig(os.path.join(out, 'phy_score_calc.svg'), bbox_inches='tight', dpi=180)
 plt.close()
+print('5/6 calc done')
 
-# ─── Chart 6: 实验题常见题型分布 ───
-fig, ax = plt.subplots(figsize=(6.5, 3.5))
+# ─── Chart 6: 实验题题型分布 ───
+fig, ax = plt.subplots(figsize=(7, 3.5))
 ax.axis('off')
 
 exp_types = [
-    ('实验原理题', '考实验依据', 25, '#c0392b'),
-    ('步骤设计题', '考操作顺序', 20, '#2980b9'),
-    ('数据分析题', '考读图读表', 25, '#27ae60'),
-    ('误差分析题', '考误差原因', 15, '#e67e22'),
-    ('结论表述题', '考总结结论', 15, '#8e44ad'),
+    ('实验原理题', '考实验的物理依据', 25, PHY_RED),
+    ('步骤设计题', '考操作顺序规范', 20, '#2980b9'),
+    ('数据分析题', '考读图描点找规律', 25, '#27ae60'),
+    ('误差分析题', '考误差原因和改进', 15, '#e67e22'),
+    ('结论表述题', '考实验结论总结', 15, '#8e44ad'),
 ]
 
 ax.set_xlim(0, 35); ax.set_ylim(-0.5, 5.5)
 for i, (name, desc, pct, color) in enumerate(exp_types):
-    ax.barh(i, pct, height=0.55, color=color, alpha=0.75, edgecolor='white')
-    ax.text(pct + 0.5, i, f'{pct}%', va='center', fontsize=10, fontweight='bold', color=color)
-    ax.text(-0.3, i + 0.3, name, ha='left', va='bottom', fontsize=9, fontweight='bold', color=DARK)
-    ax.text(10, i - 0.15, desc, ha='left', va='top', fontsize=7.5, color=GRAY)
+    ax.barh(i, pct, height=0.55, color=color, alpha=0.8, edgecolor='white', linewidth=1.5)
+    ax.text(pct + 0.5, i, f'{pct}%', va='center', fontsize=13, fontweight='bold', color=color)
+    ax.text(-0.3, i + 0.3, name, ha='left', va='bottom', fontsize=12, fontweight='bold', color=DARK)
+    ax.text(10, i - 0.15, desc, ha='left', va='top', fontsize=10, color=GRAY)
 
 ax.set_yticks(range(5))
 ax.set_yticklabels([])
@@ -185,9 +209,10 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 ax.tick_params(left=False)
 
-ax.text(17.5, 5.8, '实验探究题常见题型分布', ha='center', fontsize=11, fontweight='bold', color=DARK)
-ax.text(17.5, 5.3, '原理题和数据分析题占比最高，是复习重点', ha='center', fontsize=8.5, color=GRAY)
-plt.savefig(os.path.join(out, 'phy_score_exp.svg'), bbox_inches='tight', dpi=150)
+ax.text(17.5, 5.7, '实验探究题题型分布', ha='center', fontsize=16, fontweight='bold', color=DARK)
+ax.text(17.5, 5.2, '原理题和数据分析题占比最高，复习重点', ha='center', fontsize=11, color=GRAY)
+plt.savefig(os.path.join(out, 'phy_score_exp.svg'), bbox_inches='tight', dpi=180)
 plt.close()
+print('6/6 exp done')
 
-print("All 6 charts generated!")
+print('\nAll 6 charts regenerated!')
