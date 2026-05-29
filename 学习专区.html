@@ -64,6 +64,13 @@
         .status-tag.ready { background: rgba(136,192,152,0.15); color: #5EA890; }
         .status-tag.soon { background: rgba(217,168,104,0.15); color: #B88848; }
 
+        .zone.collapsible .zone-header { cursor: pointer; user-select: none; }
+        .zone.collapsible .zone-header .toggle-indicator {
+            margin-left: auto; font-size: 16px; transition: transform .3s; opacity: .7; flex-shrink: 0;
+        }
+        .zone.collapsible.collapsed .zone-body { display: none; }
+        .zone.collapsible.collapsed .toggle-indicator { transform: rotate(-90deg); }
+
         @media (max-width: 768px) {
             .topic-grid { grid-template-columns: 1fr 1fr; }
             .hero h1 { font-size: 26px; }
@@ -113,13 +120,14 @@
 <div class="container">
 
     <!-- ════════════ 学习方法 ════════════ -->
-    <div class="zone">
+    <div class="zone collapsible collapsed">
         <div class="zone-header" style="background:linear-gradient(135deg,#e67e22,#d35400)">
             <div class="z-icon">🧠</div>
             <div>
                 <h2>学习方法</h2>
                 <p>时间管理 · 记忆技巧 · 笔记方法 · 专注力 · 科学作息 · 戒手机</p>
             </div>
+            <span class="toggle-indicator">▼</span>
         </div>
         <div class="zone-body">
 
@@ -167,13 +175,14 @@
     </div>
 
     <!-- ════════════ 小学成长 ════════════ -->
-    <div class="zone">
+    <div class="zone collapsible collapsed">
         <div class="zone-header" style="background:linear-gradient(135deg,#73BFAA,#5EA890)">
             <div class="z-icon">🌱</div>
             <div>
                 <h2>小学成长</h2>
                 <p>学习习惯 · 数学思维 · 阅读积累 · 英语启蒙</p>
             </div>
+            <span class="toggle-indicator">▼</span>
         </div>
         <div class="zone-body">
 
@@ -518,6 +527,14 @@
     if (e.target === this) {
       overlay.classList.remove('active');
       if (window._shareTimeout) clearTimeout(window._shareTimeout);
+    }
+  });
+
+  // collapsible zones
+  document.addEventListener('click', function(e) {
+    var header = e.target.closest('.collapsible > .zone-header');
+    if (header) {
+      header.parentElement.classList.toggle('collapsed');
     }
   });
 })();
