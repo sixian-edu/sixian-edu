@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>中考化学急救包 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;background:#f8f9fc;color:#2d3436;line-height:1.8}
+.back-link{max-width:880px;margin:0 auto;padding:14px 20px 0}
+.back-link a{color:#888;font-size:13px;text-decoration:none}
+.back-link a:hover{color:#d35400}
+.header{max-width:880px;margin:0 auto;padding:0 20px}
+.header h1{font-size:28px;color:#1a1a2e;margin:10px 0 4px;border-left:4px solid #d35400;padding-left:14px}
+.header .sub{font-size:13px;color:#999;margin-bottom:6px}
+.header .tags{margin-bottom:12px}
+.header .tags span{display:inline-block;font-size:11px;padding:2px 10px;border-radius:10px;background:#fdebd0;color:#d35400;margin-right:6px;margin-bottom:4px}
+.container{max-width:880px;margin:0 auto;padding:10px 20px 40px}
+
+.sec-title{font-size:20px;font-weight:700;color:#1a1a2e;margin:28px 0 12px;padding-left:14px;border-left:4px solid #d35400}
+.sec-title .sec-num{font-size:12px;color:#fff;background:#d35400;border-radius:8px;padding:0 8px;margin-right:8px;font-weight:600;vertical-align:middle}
+
+.kp,.info-box{background:#fff;border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #e67e22;font-size:14px;color:#444}
+.kp strong{color:#d35400}
+.kp .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:#fdebd0;color:#d35400;margin-right:4px;font-weight:600}
+.kp .warn{background:#fff3cd;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #f39c12}
+.kp .warn strong{color:#e67e22}
+.kp .tip{background:#eafaf1;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #27ae60}
+.kp .tip strong{color:#27ae60}
+.kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+.kp table th,.kp table td{border:1px solid #e0e0e0;padding:6px 10px;text-align:center}
+.kp table th{background:#d35400;color:#fff;font-weight:600}
+.kp table tr:nth-child(even){background:#fef9e7}
+.kp ul{padding-left:20px;margin:6px 0}
+.kp ul li{margin-bottom:4px}
+
+.chart-box{background:#fff;border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 12px rgba(0,0,0,0.05);font-size:13px}
+.chart-box .chart-title{text-align:center;font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.chart-box .chart-sub{text-align:center;font-size:12px;color:#999;margin-bottom:12px}
+
+.inline-bar{display:flex;align-items:center;margin:4px 0}
+.inline-bar .bar-label{width:80px;font-size:12px;color:#444;font-weight:600;flex-shrink:0}
+.inline-bar .bar-track{flex:1;height:20px;background:#ecf0f1;border-radius:10px;overflow:hidden;position:relative}
+.inline-bar .bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;color:#fff;font-weight:600}
+
+.inline-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px;margin:8px 0}
+.inline-flow .flow-step{padding:10px 6px;border-radius:8px;color:#fff;font-size:12px;font-weight:600;text-align:center;min-width:70px;flex:1}
+.inline-flow .flow-arrow{font-size:18px;color:#999;flex-shrink:0}
+
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}
+.grid-4 .g-item{border-radius:8px;padding:10px 6px;text-align:center;color:#fff;font-size:12px;font-weight:600}
+
+.chem-table{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.chem-table .ct-item{padding:6px 10px;border-radius:6px;font-size:13px;display:flex;justify-content:space-between}
+.ct-cat{font-weight:600;color:#1a1a2e}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}}
+
+.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.color-grid .cg-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:#fff;border:1px solid #eee;font-size:12px}
+.color-grid .cg-swatch{width:24px;height:24px;border-radius:6px;flex-shrink:0;border:1px solid #ddd}
+
+.ex{background:#fff;border-radius:14px;padding:14px 20px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border-left:4px solid #2980b9}
+.ex .q{font-weight:600;color:#1a1a2e;margin-bottom:4px;font-size:14px}
+.ex .q .q-label{display:inline-block;background:#2980b9;color:#fff;font-size:10px;padding:0 8px;border-radius:4px;margin-right:6px;font-weight:700}
+.ex .a{color:#555;font-size:13px;padding:8px 12px;margin-top:6px;background:#f0f7ff;border-radius:8px;display:none;line-height:1.7}
+.ex .a.show{display:block}
+.ex .a strong{color:#d35400}
+.ex .a .point{display:inline-block;background:#27ae60;color:#fff;font-size:10px;padding:0 6px;border-radius:3px;margin-right:4px}
+.ex .sol-btn{display:inline-block;margin-top:6px;padding:3px 14px;font-size:12px;color:#2980b9;background:#eaf2f8;border:none;border-radius:6px;cursor:pointer}
+.ex .sol-btn:hover{background:#d4e6f1}
+
+.hw{background:#fff;border-radius:14px;padding:14px 20px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border-left:4px solid #27ae60}
+.hw .hw-q{font-size:13px;color:#444;margin-bottom:4px;padding:4px 0}
+.hw .hw-q .hw-label{display:inline-block;background:#27ae60;color:#fff;font-size:10px;padding:0 8px;border-radius:4px;margin-right:6px;font-weight:700}
+.hw .hw-a{color:#27ae60;font-size:12px;padding:6px 12px;margin:4px 0 8px 20px;background:#eafaf1;border-radius:6px;display:none;line-height:1.6}
+.hw .hw-a.show{display:block}
+.hw .sol-btn{display:inline-block;margin:2px 0 6px 20px;padding:2px 12px;font-size:11px;color:#27ae60;background:#eafaf1;border:none;border-radius:6px;cursor:pointer}
+.hw .sol-btn:hover{background:#d5f5e3}
+
+.urgent-box{background:linear-gradient(135deg,#fff8f0,#fff);border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #e74c3c;font-size:14px}
+.urgent-box strong{color:#e74c3c}
+.urgent-box .big-num{font-size:28px;font-weight:700;color:#e74c3c;display:inline-block;margin:0 4px}
+
+.footer{text-align:center;padding:28px 20px;font-size:12px;color:#999;border-top:1px solid #eee;margin-top:10px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#d35400);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+.share-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center}
+.share-overlay.show{display:flex}
+.share-box{background:#fff;border-radius:16px;padding:28px 32px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
+.share-box h3{font-size:18px;color:#1a1a2e;margin-bottom:6px}
+.share-box p{font-size:13px;color:#666;margin-bottom:12px;line-height:1.6}
+.share-box .btn{display:inline-block;padding:8px 20px;border-radius:8px;border:none;font-size:13px;cursor:pointer;margin:4px;min-width:120px;font-weight:600}
+.share-box .btn-primary{background:#d35400;color:#fff}
+.share-box .btn-primary:disabled{background:#ccc;cursor:not-allowed}
+.share-box .btn-secondary{background:#f0f0f0;color:#666}
+.share-box .close-btn{position:absolute;top:12px;right:16px;font-size:22px;color:#999;cursor:pointer;background:none;border:none}
+@media(max-width:600px){
+  .header h1{font-size:22px}
+  .container{padding:10px 14px 30px}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .chem-table,.color-grid{grid-template-columns:1fr}
+}
+</style>
+<script src="../js/theme.js"></script></head>
+<body>
+
+<div class="back-link"><a href="../资料库.html">&larr; 返回资料库</a></div>
+<div class="header">
+  <h1>🧪 中考化学急救包</h1>
+  <p class="sub">45分→75分的秘密 · 考前冲刺干货 · 背了就能拿分</p>
+  <div class="tags">
+    <span>🔥 急救干货</span><span>📝 必背基础</span><span>⚗️ 核心方程式</span><span>📊 计算模板</span>
+    <span>🔬 实验套路</span><span>🎯 推断突破口</span><span>⚠️ 避坑指南</span>
+  </div>
+</div>
+<div class="container">
+
+<!-- ════════════════════════ 第01关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">01</span>背熟这些——基础不丢分</div>
+
+<div class="kp">
+  <span class="tag">必背1</span> <strong>1-20号元素名称与符号</strong>
+  <table>
+    <tr><th>H</th><th>He</th><th>Li</th><th>Be</th><th>B</th><th>C</th><th>N</th><th>O</th><th>F</th><th>Ne</th></tr>
+    <tr><td>氢</td><td>氦</td><td>锂</td><td>铍</td><td>硼</td><td>碳</td><td>氮</td><td>氧</td><td>氟</td><td>氖</td></tr>
+    <tr><th>Na</th><th>Mg</th><th>Al</th><th>Si</th><th>P</th><th>S</th><th>Cl</th><th>Ar</th><th>K</th><th>Ca</th></tr>
+    <tr><td>钠</td><td>镁</td><td>铝</td><td>硅</td><td>磷</td><td>硫</td><td>氯</td><td>氩</td><td>钾</td><td>钙</td></tr>
+  </table>
+  <div class="warn"><strong>💡 必考：</strong>H、C、N、O、Na、Mg、Al、Fe、Cu、Zn 这10个符号必须会写！</div>
+</div>
+
+<div class="kp">
+  <span class="tag">必背2</span> <strong>化合价口诀（背熟，写出化学式必备）</strong>
+  <div class="chart-box">
+    <div class="chart-title">📐 常见化合价速查</div>
+    <div class="grid-4">
+      <div class="g-item" style="background:#e74c3c">+1价<br>H⁺ K⁺ Na⁺<br>Ag⁺</div>
+      <div class="g-item" style="background:#e67e22">+2价<br>Ca²⁺ Mg²⁺<br>Ba²⁺ Zn²⁺</div>
+      <div class="g-item" style="background:#2980b9">+3价<br>Al³⁺ Fe³⁺</div>
+      <div class="g-item" style="background:#8e44ad">变价<br>Fe²⁺/Fe³⁺<br>C²⁺/C⁴⁺</div>
+      <div class="g-item" style="background:#27ae60">-1价<br>Cl⁻ OH⁻<br>NO₃⁻</div>
+      <div class="g-item" style="background:#16a085">-2价<br>O²⁻ SO₄²⁻<br>CO₃²⁻</div>
+      <div class="g-item" style="background:#c0392b">-3价<br>PO₄³⁻</div>
+      <div class="g-item" style="background:#7f8c8d">单质<br>0价</div>
+    </div>
+    <div class="chart-sub">一价氢氯钾钠银，二价氧钙钡镁锌，三铝四硅五氮磷，二三铁二四碳，二四六硫都齐全</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">必背3</span> <strong>金属活动性顺序（推断题必用）</strong>
+  <div class="chart-box">
+    <div class="inline-flow">
+      <div class="flow-step" style="background:#e74c3c">K</div>
+      <div class="flow-step" style="background:#e74c3c">Ca</div>
+      <div class="flow-step" style="background:#e74c3c">Na</div>
+      <div class="flow-step" style="background:#e74c3c">Mg</div>
+      <div class="flow-step" style="background:#e74c3c">Al</div>
+      <div class="flow-step" style="background:#e67e22">Zn</div>
+      <div class="flow-step" style="background:#e67e22">Fe</div>
+      <div class="flow-step" style="background:#e67e22">Sn</div>
+      <div class="flow-step" style="background:#e67e22">Pb</div>
+      <div class="flow-step" style="background:#7f8c8d">(H)</div>
+      <div class="flow-step" style="background:#2980b9">Cu</div>
+      <div class="flow-step" style="background:#2980b9">Hg</div>
+      <div class="flow-step" style="background:#2980b9">Ag</div>
+      <div class="flow-step" style="background:#2980b9">Pt</div>
+      <div class="flow-step" style="background:#2980b9">Au</div>
+    </div>
+    <div class="chart-sub">← 活动性由强到弱 ｜ 排在前面的金属能把后面的从盐溶液中置换出来</div>
+  </div>
+  <div class="tip"><strong>技巧：</strong>排在H前面的金属 + 酸 = H₂↑（中考最爱考Zn+H₂SO₄、Fe+HCl）</div>
+</div>
+
+<div class="kp">
+  <span class="tag">必背4</span> <strong>溶解性口诀（判断复分解反应能否发生）</strong>
+  <p>钾钠铵盐全都溶，硝酸盐类也相同；盐酸盐除银亚汞，硫酸盐除钡和铅；碳酸盐溶钾钠铵，碱溶钾钠钡钙铵。</p>
+  <div class="tip"><strong>核心：</strong>复分解反应的条件——生成物中有沉淀↓、气体↑或水H₂O，满足一个就发生！</div>
+</div>
+
+<!-- ════════════════════════ 第02关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">02</span>核心方程式——考来考去就这些</div>
+
+<div class="kp">
+  <span class="tag">方程式</span> <strong>中考必考20个化学方程式分类速查</strong>
+  <div class="chart-box">
+    <div class="chart-title">⚗️ 核心方程式分类速查表</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:#fdebd0;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#d35400;font-size:13px;margin-bottom:6px">🔥 氧气</div>
+        <div style="font-size:12px;color:#555;line-height:2">2KMnO₄ →△ K₂MnO₄+MnO₂+O₂↑<br>2H₂O₂ →MnO₂ 2H₂O+O₂↑<br>2KClO₃ →MnO₂/△ 2KCl+3O₂↑<br>2Mg+O₂ →点燃 2MgO<br>3Fe+2O₂ →点燃 Fe₃O₄</div>
+      </div>
+      <div style="background:#d4e6f1;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#2980b9;font-size:13px;margin-bottom:6px">💨 碳和碳的氧化物</div>
+        <div style="font-size:12px;color:#555;line-height:2">C+O₂ →点燃 CO₂<br>2C+O₂ →点燃 2CO<br>CO₂+H₂O → H₂CO₃<br>CO₂+Ca(OH)₂ → CaCO₃↓+H₂O<br>2CO+O₂ →点燃 2CO₂<br>CO+CuO →△ Cu+CO₂</div>
+      </div>
+      <div style="background:#e8daef;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#8e44ad;font-size:13px;margin-bottom:6px">⚙️ 金属</div>
+        <div style="font-size:12px;color:#555;line-height:2">Fe+CuSO₄ → FeSO₄+Cu<br>Zn+H₂SO₄ → ZnSO₄+H₂↑<br>Fe₂O₃+3CO →高温 2Fe+3CO₂<br>Fe+H₂SO₄ → FeSO₄+H₂↑<br>CuO+H₂ →△ Cu+H₂O</div>
+      </div>
+      <div style="background:#d5f5e3;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#27ae60;font-size:13px;margin-bottom:6px">🧪 酸碱盐</div>
+        <div style="font-size:12px;color:#555;line-height:2">NaOH+HCl → NaCl+H₂O<br>CaCO₃+2HCl → CaCl₂+H₂O+CO₂↑<br>Na₂CO₃+2HCl → 2NaCl+H₂O+CO₂↑<br>NaHCO₃+HCl → NaCl+H₂O+CO₂↑<br>AgNO₃+HCl → AgCl↓+HNO₃</div>
+      </div>
+    </div>
+    <div class="chart-sub">制O₂(3种) · 制CO₂ · 制H₂ 是实验题必考，反应原理必须背熟</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">配平</span> <strong>最小公倍数法配平三步走</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#e74c3c">① 找出出现次数最多的原子</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#e67e22">② 求最小公倍数定系数</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#27ae60">③ 依次配平其他原子</div>
+  </div>
+  <div class="tip"><strong>例：</strong>Fe₂O₃+CO → Fe+CO₂，先配O：Fe₂O₃+3CO → 2Fe+3CO₂ ✓</div>
+</div>
+
+<!-- ════════════════════════ 第03关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">03</span>计算题模板——套进去就得分</div>
+
+<div class="urgent-box">
+  <strong>⚠️ 计算题必知：</strong>化学计算满分<span class="big-num">6</span>分，套对模板至少拿<span class="big-num">4</span>分！代入质量必须是纯净物质量！
+</div>
+
+<div class="kp">
+  <span class="tag">模板1</span> <strong>化学方程式计算（标准六步法）</strong>
+  <div class="chart-box">
+    <div class="inline-flow">
+      <div class="flow-step" style="background:#e74c3c">❶ 设未知数</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#e67e22">❷ 写方程式</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#d4a017">❸ 标已知、未知</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#2980b9">❹ 列比例式</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#27ae60">❺ 求解</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#8e44ad">❻ 答</div>
+    </div>
+    <div class="chart-title" style="margin-top:8px">📝 示例：6g镁在O₂中燃烧，求生成MgO的质量</div>
+    <div style="background:#f8f9fc;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+      <strong>设</strong>生成MgO质量为x &nbsp;|&nbsp; <strong>写</strong> 2Mg + O₂ →点燃 2MgO<br>
+      <strong>标</strong> 48 : 80 = 6g : x &nbsp;|&nbsp; <strong>列</strong> 48/6 = 80/x<br>
+      <strong>解</strong> x = 80×6÷48 = <strong>10g</strong> &nbsp;|&nbsp; <strong>答</strong> 生成MgO质量为10g
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">模板2</span> <strong>含杂质的计算（先换算成纯净物）</strong>
+  <p><strong>公式：</strong>m(纯净物) = m(混合物) × 纯度（质量分数）</p>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>含CaCO₃ 80%的石灰石100g高温煅烧，制得CaO多少克？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>m(CaCO₃)=100×80%=80g。CaCO₃ →高温 CaO+CO₂↑<br>100 : 56 = 80 : x → x = 56×80÷100 = <strong>44.8g</strong><br><span class="point">✔</span> 答：生成CaO 44.8g</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">模板3</span> <strong>溶液质量分数计算</strong>
+  <p><strong>公式：</strong>w = m(溶质) ÷ m(溶液) × 100% &nbsp;|&nbsp; 稀释：m₁w₁ = m₂w₂</p>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>将20g NaCl放入80g水中全部溶解，求质量分数。再加水20g稀释后的质量分数？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>原来：w=20÷(20+80)=<strong>20%</strong><br>稀释后：w=20÷(100+20)=<strong>16.7%</strong><br><span class="point">✔</span> 注意：稀释溶剂质量增加，溶质质量不变</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">易错</span> <strong>质量守恒定律计算</strong>
+  <p>反应前后总质量不变，生成气体或沉淀时注意质量差法。</p>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>10g CaCO₃与足量HCl反应，生成CO₂多少克？反应后溶液质量增加了多少？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑<br>100g CaCO₃生成44g CO₂ → 10g生成<strong>4.4g</strong> CO₂<br>溶液增重 = 10 - 4.4 = <strong>5.6g</strong><br><span class="point">✔</span> 生成的气体逸出，是质量减少的原因</div>
+  </div>
+</div>
+
+<!-- ════════════════════════ 第04关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">04</span>实验题套路——万变不离其宗</div>
+
+<div class="kp">
+  <span class="tag">套路1</span> <strong>气体制取装置选择（实验题第一问必考）</strong>
+  <div class="chart-box">
+    <div class="chart-title">🧪 三种气体发生装置对比</div>
+    <div class="two-col">
+      <div style="background:#fdebd0;border-radius:8px;padding:10px;font-size:12px">
+        <div style="font-weight:700;color:#d35400;margin-bottom:4px">固固加热型</div>
+        <div><strong>适用：</strong>加热KMnO₄、加热KClO₃+MnO₂</div>
+        <div><strong>装置：</strong>铁架台+酒精灯+大试管(管口略向下)</div>
+        <div><strong>注意：</strong>试管口放棉花(KMnO₄)，先移导管再熄灯</div>
+      </div>
+      <div style="background:#d4e6f1;border-radius:8px;padding:10px;font-size:12px">
+        <div style="font-weight:700;color:#2980b9;margin-bottom:4px">固液常温型</div>
+        <div><strong>适用：</strong>H₂O₂+MnO₂制O₂、制CO₂、制H₂</div>
+        <div><strong>装置：</strong>锥形瓶+长颈漏斗+双孔塞</div>
+        <div><strong>注意：</strong>长颈漏斗末端要液封（伸入液面下）</div>
+      </div>
+    </div>
+    <div class="chart-title" style="margin-top:8px">📥 收集装置选择</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+      <div style="background:#e74c3c;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <div style="font-weight:700">排水法</div>
+        <div style="opacity:.9">O₂、H₂（不溶于水）</div>
+      </div>
+      <div style="background:#2980b9;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <div style="font-weight:700">向上排空气</div>
+        <div style="opacity:.9">O₂、CO₂（密度 > 空气）</div>
+      </div>
+      <div style="background:#27ae60;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <div style="font-weight:700">向下排空气</div>
+        <div style="opacity:.9">H₂（密度 < 空气）</div>
+      </div>
+    </div>
+    <div class="chart-sub">制取装置题口诀：固固加热→选大试管｜固液常温→选锥形瓶｜密度大→向上排气</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">套路2</span> <strong>实验操作"先"与"后"（选择题必考）</strong>
+  <div class="chart-box">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
+      <div style="background:#fdebd0;border-radius:8px;padding:10px">
+        <strong style="color:#d35400">🔸 制取气体</strong>
+        <div style="margin-top:4px;line-height:2">
+          ✅ <strong>先</strong>检查气密性 <strong>后</strong>装药品<br>
+          ✅ <strong>先</strong>通气体(CO/H₂) <strong>后</strong>点燃酒精灯<br>
+          ✅ <strong>先</strong>移导管 <strong>后</strong>熄灯（防倒吸）
+        </div>
+      </div>
+      <div style="background:#d4e6f1;border-radius:8px;padding:10px">
+        <strong style="color:#2980b9">🔸 实验操作</strong>
+        <div style="margin-top:4px;line-height:2">
+          ✅ <strong>先</strong>预热 <strong>后</strong>集中加热<br>
+          ✅ <strong>先</strong>通CO <strong>后</strong>加热CuO（排空气防爆）<br>
+          ✅ <strong>先</strong>熄灯 <strong>后</strong>停通CO（防氧化）
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">套路3</span> <strong>常见实验现象描述模板</strong>
+  <table>
+    <tr><th>实验</th><th>现象关键词</th><th>满分描述</th></tr>
+    <tr><td>红磷燃烧</td><td>大量白烟</td><td>产生大量白烟，放热</td></tr>
+    <tr><td>铁在O₂中燃烧</td><td>火星四射</td><td>剧烈燃烧，火星四射，生成黑色固体</td></tr>
+    <tr><td>CO还原CuO</td><td>黑变红</td><td>黑色粉末逐渐变红，生成使石灰水变浑浊的气体</td></tr>
+    <tr><td>CO₂通入石蕊</td><td>变红</td><td>紫色石蕊溶液变红（CO₂+H₂O→H₂CO₃）</td></tr>
+    <tr><td>NaOH溶液滴酚酞</td><td>变红</td><td>无色酚酞溶液变红（碱性）</td></tr>
+    <tr><td>铁与CuSO₄反应</td><td>红色固体</td><td>铁表面覆盖一层红色固体，溶液由蓝变浅绿</td></tr>
+  </table>
+  <div class="tip"><strong>套路：</strong>现象描述 = 反应物变化 + 生成物特征 + 能量变化（放热/吸热）</div>
+</div>
+
+<!-- ════════════════════════ 第05关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">05</span>推断题突破口——颜色·现象·条件</div>
+
+<div class="kp">
+  <span class="tag">突破口1</span> <strong>特征颜色速查（推断题关键线索）</strong>
+  <div class="chart-box">
+    <div class="color-grid">
+      <div class="cg-item"><div class="cg-swatch" style="background:#1a1a1a"></div><div><strong>黑色固体</strong>：C、CuO、Fe₃O₄、MnO₂、Fe粉</div></div>
+      <div class="cg-item"><div class="cg-swatch" style="background:#c0392b"></div><div><strong>红色固体</strong>：Cu、Fe₂O₃、红磷P</div></div>
+      <div class="cg-item"><div class="cg-swatch" style="background:#3498db"></div><div><strong>蓝色溶液</strong>：CuSO₄、CuCl₂、Cu(NO₃)₂</div></div>
+      <div class="cg-item"><div class="cg-swatch" style="background:#f1c40f"></div><div><strong>黄色溶液</strong>：FeCl₃（含Fe³⁺）</div></div>
+      <div class="cg-item"><div class="cg-swatch" style="background:#2ecc71"></div><div><strong>浅绿溶液</strong>：FeSO₄、FeCl₂（含Fe²⁺）</div></div>
+      <div class="cg-item"><div class="cg-swatch" style="background:#ecf0f1;border-color:#ccc"></div><div><strong>白色沉淀</strong>：CaCO₃↓、BaSO₄↓、AgCl↓、Mg(OH)₂↓</div></div>
+    </div>
+    <div class="chart-sub">🔥 看到"黑色+红色" → CuO/C → Cu 是中考最常考的组合</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">突破口2</span> <strong>特征反应现象</strong>
+  <table>
+    <tr><th>现象</th><th>推断结论</th></tr>
+    <tr><td>使澄清石灰水变浑浊</td><td>气体为CO₂</td></tr>
+    <tr><td>使带火星木条复燃</td><td>气体为O₂</td></tr>
+    <tr><td>使无水CuSO₄由白变蓝</td><td>产物中有水H₂O</td></tr>
+    <tr><td>点燃产生淡蓝色火焰</td><td>气体为H₂（或CO、CH₄）</td></tr>
+    <tr><td>通入AgNO₃产生白色沉淀</td><td>溶液中有Cl⁻</td></tr>
+    <tr><td>加入BaCl₂产生白色沉淀</td><td>溶液中有SO₄²⁻</td></tr>
+    <tr><td>加稀盐酸产生使石灰水变浑浊的气体</td><td>含有CO₃²⁻（碳酸盐）</td></tr>
+  </table>
+</div>
+
+<div class="kp">
+  <span class="tag">突破口3</span> <strong>物质转化关系常见"题眼"</strong>
+  <div style="background:#fef9e7;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+    🔑 A →<span style="color:#27ae60">通电</span>→ H₂ + O₂ &nbsp;→ A是<strong>水</strong><br>
+    🔑 A →<span style="color:#e74c3c">高温</span>→ CaO + CO₂↑ &nbsp;→ A是<strong>CaCO₃</strong><br>
+    🔑 A →<span style="color:#e67e22">MnO₂</span>→ H₂O + O₂↑ &nbsp;→ A是<strong>H₂O₂</strong><br>
+    🔑 最常见的液体 → <strong>H₂O</strong> ｜ 最常见的固体 → <strong>C</strong><br>
+    🔑 最常见的金属 → <strong>Fe</strong> ｜ 最常用的溶剂 → <strong>H₂O</strong>
+  </div>
+</div>
+
+<!-- ════════════════════════ 第06关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">06</span>选择题陷阱——出题人挖的坑</div>
+
+<div class="kp">
+  <span class="tag">陷阱类型</span> <strong>五大常见陷阱</strong>
+  <div class="chart-box">
+    <div class="inline-bar">
+      <span class="bar-label">概念混淆</span>
+      <div class="bar-track"><div class="bar-fill" style="width:85%;background:#e74c3c">85%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">操作顺序</span>
+      <div class="bar-track"><div class="bar-fill" style="width:75%;background:#e67e22">75%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">过量/少量</span>
+      <div class="bar-track"><div class="bar-fill" style="width:70%;background:#f1c40f;color:#444">70%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">图像判断</span>
+      <div class="bar-track"><div class="bar-fill" style="width:65%;background:#2980b9">65%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">实验评价</span>
+      <div class="bar-track"><div class="bar-fill" style="width:60%;background:#8e44ad">60%</div></div>
+    </div>
+    <div class="chart-sub">这些陷阱在选择题中反复出现，记住套路就能一眼识破</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱1</span>下列变化属于化学变化的是：A. 干冰升华 B. 酒精挥发 C. 铁生锈 D. 电灯发光</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 混淆物理变化和化学变化。<br>✅ 选C。有新物质生成才是化学变化。干冰升华、酒精挥发、电灯发光都是物理变化。<br><span class="point">✔</span> <strong>口诀：</strong>"生锈腐败燃烧冶炼"是化学变化，"挥发融化升华溶解"是物理变化。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱2</span>下列说法正确的是：A. 原子是不能再分的最小粒子 B. 分子是保持物质性质的最小粒子 C. 由同种元素组成的物质是单质 D. 水和冰是由同种分子构成的</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 每个选项都有坑。<br>A错——原子还可以分成原子核和电子。<br>B错——分子保持的是<strong>化学性质</strong>，不是全部性质。<br>C错——同种元素可能组成混合物（如O₂和O₃混合）。<br>✅ D对——水和冰的化学式都是H₂O，分子相同。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱3</span>实验室制取CO₂时，下列试剂能选用的是：A. 碳酸钙和稀硫酸 B. 碳酸钠和稀盐酸 C. 大理石和稀盐酸 D. 石灰石和浓盐酸</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 选试剂要同时考虑"反应速度"和"气体纯度"。<br>A错——CaCO₃+H₂SO₄反应生成CaSO₄微溶，覆盖在表面阻止反应继续。<br>B错——Na₂CO₃+HCl反应太快，不易控制。<br>✅ C对——大理石+HCl反应速度适中，适合实验室制取。<br>D错——浓盐酸挥发性强，使CO₂中混有HCl气体。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱4</span>20℃时，将40g NaCl放入100g水中，充分溶解后得到溶液的质量为（已知20℃时NaCl溶解度为36g）：A. 140g B. 136g C. 40g D. 100g</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 审题！给了溶解度，说明40g不能全部溶解！<br>20℃时100g水最多溶36g NaCl → 溶液质量=100+36=<strong>136g</strong><br>✅ 选B。多出的4g NaCl没有溶解，不计算在溶液质量中。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱5</span>区别CO和H₂，最好的方法是：A. 闻气味 B. 点燃后观察火焰颜色 C. 点燃后检验产物 D. 通入紫色石蕊试液</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ CO和H₂都是无色无味（A排除），点燃都是淡蓝色火焰（B排除），都不与石蕊反应（D排除）。<br>✅ 选C。CO燃烧产物是CO₂（使石灰水变浑浊），H₂燃烧产物是H₂O（使无水CuSO₄变蓝）。<br><span class="point">✔</span> <strong>核心：</strong>鉴别气体要利用<strong>燃烧产物的差异</strong>！</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱6</span>用pH试纸测定某溶液的pH时，规范的操作是：A. 将pH试纸浸入溶液中 B. 用玻璃棒蘸取溶液滴在pH试纸上 C. 将溶液倒在pH试纸上 D. 将pH试纸先用水润湿再测</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ pH试纸使用方法的陷阱。<br>A和C错——不能把试纸浸入或倒入溶液，会污染试剂。<br>D错——用水润湿会稀释待测液，导致pH不准（酸性偏大、碱性偏小）。<br>✅ 选B。用<strong>洁净干燥的玻璃棒</strong>蘸取溶液滴在pH试纸上，与标准比色卡对比。</div>
+</div>
+
+<!-- ════════════════════════ 第07关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">07</span>考场策略——多抢20分的方法</div>
+
+<div class="kp">
+  <span class="tag">策略1</span> <strong>时间分配（中考化学60分钟）</strong>
+  <div class="chart-box">
+    <div class="inline-bar">
+      <span class="bar-label">选择题(20分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:25%;background:#e74c3c">15分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">填空简答(30分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:30%;background:#e67e22">18分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">实验探究(30分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:30%;background:#2980b9">18分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">计算(6分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:12%;background:#27ae60">7分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">检查</span>
+      <div class="bar-track"><div class="bar-fill" style="width:5%;background:#8e44ad">2分钟</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">策略2</span> <strong>做题顺序与蒙题技巧</strong>
+  <table>
+    <tr><th>题型</th><th>策略</th></tr>
+    <tr><td>选择题</td><td>先易后难。超过2分钟没思路先跳过，最后回来蒙。</td></tr>
+    <tr><td>填空题</td><td>化学方程式写完后马上检查配平+条件+↑↓符号！</td></tr>
+    <tr><td>实验题</td><td>先看问题再看实验描述，带着问题读材料效率最高。</td></tr>
+    <tr><td>推断题</td><td>从特征颜色/现象切入，画物质转化关系图。</td></tr>
+    <tr><td>计算题</td><td>先写方程式，再列比例式，最后代数字。过程分很重要！</td></tr>
+  </table>
+  <div class="warn"><strong>⚠️ 蒙题原则：</strong>不会的选C/最长的选项/看起来最专业的表述（但能算一定要算！）</div>
+</div>
+
+<div class="kp">
+  <span class="tag">策略3</span> <strong>考前24小时速记清单</strong>
+  <div class="urgent-box">
+    <strong>🔥 进考场前必看：</strong><br>
+    ① 1-20号元素符号<br>
+    ② 化合价口诀<br>
+    ③ 金属活动性顺序<br>
+    ④ 制O₂/CO₂/H₂的三个方程式<br>
+    ⑤ 计算六步法模板<br>
+    ⑥ CO₂检验（石灰水）、O₂检验（带火星木条）<br>
+    ⑦ 七大特征颜色（黑色/红色固体等）
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>思贤学习站 · 陪你一起成长 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-box">
+    <button class="close-btn" onclick="closeShareWall()">&times;</button>
+    <h3>🔗 分享即可获取联系方式</h3>
+    <p>将此网站分享给微信好友或发到朋友圈</p>
+    <p id="shareText" style="background:#f8f9fc;padding:10px;border-radius:8px;font-size:12px;color:#555;word-break:break-all"></p>
+    <button class="btn btn-primary" id="copyBtn">📋 复制分享文案</button>
+    <p id="copyHint" style="font-size:11px;color:#999">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="btn btn-primary" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+
+<script>
+function toggleSol(btn) {
+  var a = btn.parentElement.querySelector('.a, .hw-a');
+  if (a) {
+    a.classList.toggle('show');
+    btn.textContent = a.classList.contains('show') ? '👁 收起解析' : '👁 查看解析';
+  }
+}
+
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '🧪 中考化学急救包——45分→75分的秘密干货！考前必看！ ' + url;
+  var hasCopied = false;
+  var overlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) {
+      ts[i].outerHTML = '<b class="contact-phone">155-6412-8008</b>';
+    }
+  }
+
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    shareTextEl.textContent = shareTxt;
+    overlay.classList.add('show');
+    hasCopied = false;
+    sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+  };
+  window.closeShareWall = function() {
+    overlay.classList.remove('show');
+  };
+
+  copyBtn.addEventListener('click', function() {
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制';
+      copyHint.textContent = '⏳ 检测到转发朋友圈，请等待10秒...';
+      setTimeout(function() {
+        hasCopied = true;
+        sharedBtn.disabled = false;
+        copyHint.textContent = '✅ 点击下方按钮查看联系方式';
+      }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    overlay.classList.remove('show');
+    var triggers = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < triggers.length; i++) {
+      triggers[i].outerHTML = '<b class="contact-phone">155-6412-8008</b>';
+    }
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) closeShareWall();
+  });
+})();
+</script>
+</body>
+</html>
