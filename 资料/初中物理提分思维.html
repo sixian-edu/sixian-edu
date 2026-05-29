@@ -624,6 +624,126 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="hw-a"><strong>快速判断：</strong>A"一定"和D"总是"有问题可能性最大！物理题中，<strong>绝对化表述</strong>（都、总是、一定、任何、所有）往往是错的，因为物理规律大多有条件限制。<br>B"可能"最可能是正确答案（温和表述，留有余地）。</div>
 </div>
 
+
+<!-- ====== 第九节 ====== -->
+<div class="sec-title"><span class="sec-num">09</span>出题人陷阱——专治各种想当然</div>
+
+<div class="kp">
+  <strong>核心原则：</strong>中考物理出题人最擅长“挖坑”——看着简单，一做就错。这些坑都是有规律的，提前踩一遍，考场上就不会再掉进去。
+  <br><br>
+  <span class="tag">常见陷阱类型</span><br>
+  <strong>① 单位陷阱：</strong>故意给非标准单位（cm、g、min），不换算就直接代公式→全错。<br>
+  <strong>② 隐含条件忽略：</strong>“光滑”“轻质”“匀速”“漂浮”“忽略温度对电阻的影响”——这些不是白写的！<br>
+  <strong>③ 概念混淆：</strong>把压力和重力混为一谈、额定功率当成实际功率、质量重量分不清。<br>
+  <strong>④ 定势思维：</strong>平时做的题都是这样，考试换个问法就不认识了。<br>
+  <strong>⑤ 多余条件干扰：</strong>故意给一个用不上的条件，看你敢不敢忽略它。<br>
+  <div class="step"><strong>防坑口诀：</strong>先看单位再看条件，概念不清一定完蛋；出题人比你狡，多留个眼心准没亏。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱1</span>一个质量为50g的鸡蛋，受到的重力是多少？（g=10N/kg）<br>大部分人的第一反应：50×10=500N ✗</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">单位坑</span> <strong>g和kg！</strong>质量单位是g，重力公式G=mg中m的单位必须是kg！<br>
+    <strong>正确：</strong>m=50g=0.05kg，G=mg=0.05×10=<strong>0.5N</strong><br>
+    <strong>错误答案500N：</strong>差了1000倍，一个鸡蛋500N相当于50kg的物体——想想就知道不可能！<br>
+    <span class="point">防坑</span> 看到质量先看单位！g→kg要÷1000，t→kg要×1000。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱2</span>用10N的水平推力推一个重100N的箱子，箱子没动。此时箱子受到的摩擦力是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">概念坑</span> <strong>静摩擦力和重力无关！</strong>很多同学看到100N就条件反射去算摩擦力。<br>
+    "没动"→静止→受力平衡→水平方向：推力=静摩擦力<br>
+    → f = F推 = <strong>10N</strong>（和100N的物重半毛钱关系都没有！）<br>
+    <span class="point">防坑</span> 受力分析要分开看：水平方向和竖直方向互不干扰。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱3</span>一物体在20N的水平拉力下沿水平面匀速运动，若将拉力增大到30N，此时物体受到的摩擦力是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">条件变化坑</span> <strong>滑动摩擦力与拉力无关！</strong>只要压力和接触面不变，滑动摩擦力就不变。<br>
+    匀速时：f=F拉=20N<br>
+    拉力增到30N时：压力不变、接触面不变 → f不变，仍为<strong>20N</strong><br>
+    此时物体受力不平衡，将做<strong>加速运动</strong><br>
+    <span class="point">防坑</span> 记死：滑动摩擦力的大小由压力和粗糙程度决定，跟拉力大小、速度大小都没有关系！
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱4</span>甲、乙两个实心球，甲的密度是乙的2倍，乙的质量是甲的4倍，则甲的体积是乙的：<br>A. 1/8 &emsp; B. 1/2 &emsp; C. 2倍 &emsp; D. 8倍</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">比例坑</span> 很多人被“甲的是乙的”“乙的是甲的”绕晕。<br>
+    <strong>设值法：</strong>设ρ甲=2, ρ乙=1；m乙=4, m甲=1<br>
+    V甲=m甲/ρ甲=1/2=0.5；V乙=m乙/ρ乙=4/1=4<br>
+    V甲/V乙=0.5/4=<strong>1/8 → 答案A</strong><br>
+    <span class="point">防坑</span> 比例题谁绕谁设值，设成简单整数秒出答案。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱5</span>将一铁块从水中提出来，在铁块逐渐露出水面的过程中，铁块受到的浮力如何变化？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">定势思维坑</span> 很多人背过“浮力与深度无关”就套用到这里。<br>
+    但“与深度无关”的前提是<strong>V排不变</strong>（完全浸没时）！<br>
+    铁块露出水面 → <strong>V排减小</strong> → F浮=ρgV排 → <strong>浮力逐渐变小</strong><br>
+    <span class="point">防坑</span> 浮力看V排！ V排不变→浮力不变；V排变→浮力变。不要死记“浮力与深度无关”。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱6</span>一个标有“6V 3W”的灯泡，如果接在3V的电源上，它的实际功率是多少？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">公式坑</span> 功率与电压是<strong>平方</strong>关系，不是正比关系！<br>
+    <strong>正确：</strong>先求电阻 R=U²/P=6²/3=12Ω<br>
+    P实=U实²/R=3²/12=<strong>0.75W</strong><br>
+    电压减半→功率变为1/4，不是1/2！<br>
+    <span class="point">防坑</span> 用 P=U²/R 这个形式时，R不变，P与U²成正比。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱7</span>当物距为20cm时在光屏上得到倒立放大的实像，则癏距可能是：<br>A. 5cm &emsp; B. 10cm &emsp; C. 15cm &emsp; D. 20cm</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">推理坑</span> “倒立放大实像” → f &lt; u &lt; 2f<br>
+    已知u=20cm，所以：f &lt; 20 &lt; 2f → 10 &lt; f &lt; 20<br>
+    四个选项中，只有<strong>C. 15cm</strong>符合条件<br>
+    <span class="point">防坑</span> 记牢：一焦分虚实，二焦分大小；物近像远像变大，物远像近像变小。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱8</span>一个人用50N的力提着重30N的物体在水平地面上匀速走了5m，他对物体做了多少功？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">做功条件坑</span> 做功的两个条件：<strong>有力、在力的方向上有距离</strong>。<br>
+    提力方向是<strong>竖直向上</strong>，走的距离是<strong>水平方向</strong>。<br>
+    提力方向与运动方向<strong>垂直</strong> → 提力方向上没有移动距离 → <strong>不做功！</strong><br>
+    <strong>正确答案：0J</strong><br>
+    <span class="point">防坑</span> 看到“做功”克问自己：方向呢？力跟距离方向垂直→不做功。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱9</span>将“220V 40W”和“220V 100W”并联接入220V电路中，哪个更亮？</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">串并联混淆坑</span> 前面讲过串联时电阻大的更亮，但现在是<strong>并联</strong>！<br>
+    并联时各支路电压相等（都是220V）→ 都正常发光 → <strong>100W的更亮</strong>（额定功率越大越亮）<br>
+    串联看电阻（电阻大的亮），并联看功率（功率大的亮），完全不同！<br>
+    <span class="point">防坑</span> 拿到题先看是串联还是并联！两个结论完全不同，千万别混。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱10</span>两个完全相同的烧杯，分别装有质量相等的水和酒精。将同一个木块放入水中漂浮，放入酒精中沉底。木块在两种液体中受到的浮力大小关系是？<br>A. 水中大 &emsp; B. 酒精中大 &emsp; C. 一样大 &emsp; D. 无法判断</div>
+  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
+  <div class="a"><span class="point">综合坑</span> 看到“同一个木块”→质量相同<br>
+    水中：<strong>漂浮</strong> → F浮水 = G木<br>
+    酒精中：<strong>沉底</strong> → F浮酒 &lt; G木<br>
+    → F浮水 > F浮酒 → <strong>A. 水中大</strong><br>
+    <span class="point">防坑</span> 浮力不只看液体密度，更要看物体在液体中的<strong>状态</strong>。漂浮时F浮=G，这是个超好用的等量关系！</div>
+</div>
+
 </div><!-- /container -->
 
 <div class="footer">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
