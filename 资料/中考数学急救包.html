@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>中考数学急救包 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;background:#f8f9fc;color:#2d3436;line-height:1.8}
+.back-link{max-width:880px;margin:0 auto;padding:14px 20px 0}
+.back-link a{color:#888;font-size:13px;text-decoration:none}
+.back-link a:hover{color:#2c6fbb}
+.header{max-width:880px;margin:0 auto;padding:0 20px}
+.header h1{font-size:28px;color:#1a1a2e;margin:10px 0 4px;border-left:4px solid #2c6fbb;padding-left:14px}
+.header .sub{font-size:13px;color:#999;margin-bottom:6px}
+.header .tags{margin-bottom:12px}
+.header .tags span{display:inline-block;font-size:11px;padding:2px 10px;border-radius:10px;background:#d6e4f0;color:#2c6fbb;margin-right:6px;margin-bottom:4px}
+.container{max-width:880px;margin:0 auto;padding:10px 20px 40px}
+
+.sec-title{font-size:20px;font-weight:700;color:#1a1a2e;margin:28px 0 12px;padding-left:14px;border-left:4px solid #2c6fbb}
+.sec-title .sec-num{font-size:12px;color:#fff;background:#2c6fbb;border-radius:8px;padding:0 8px;margin-right:8px;font-weight:600;vertical-align:middle}
+
+.kp,.info-box{background:#fff;border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #2c6fbb;font-size:14px;color:#444}
+.kp strong{color:#2c6fbb}
+.kp .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:#d6e4f0;color:#2c6fbb;margin-right:4px;font-weight:600}
+.kp .warn{background:#fff3cd;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #f39c12}
+.kp .warn strong{color:#e67e22}
+.kp .tip{background:#eafaf1;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #27ae60}
+.kp .tip strong{color:#27ae60}
+.kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+.kp table th,.kp table td{border:1px solid #e0e0e0;padding:6px 10px;text-align:center}
+.kp table th{background:#2c6fbb;color:#fff;font-weight:600}
+.kp table tr:nth-child(even){background:#eaf2f9}
+.kp ul{padding-left:20px;margin:6px 0}
+.kp ul li{margin-bottom:4px}
+
+.chart-box{background:#fff;border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 12px rgba(0,0,0,0.05);font-size:13px}
+.chart-box .chart-title{text-align:center;font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.chart-box .chart-sub{text-align:center;font-size:12px;color:#999;margin-bottom:12px}
+
+.inline-bar{display:flex;align-items:center;margin:4px 0}
+.inline-bar .bar-label{width:80px;font-size:12px;color:#444;font-weight:600;flex-shrink:0}
+.inline-bar .bar-track{flex:1;height:20px;background:#ecf0f1;border-radius:10px;overflow:hidden;position:relative}
+.inline-bar .bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;color:#fff;font-weight:600}
+
+.inline-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px;margin:8px 0}
+.inline-flow .flow-step{padding:10px 6px;border-radius:8px;color:#fff;font-size:12px;font-weight:600;text-align:center;min-width:70px;flex:1}
+.inline-flow .flow-arrow{font-size:18px;color:#999;flex-shrink:0}
+
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}
+.grid-4 .g-item{border-radius:8px;padding:10px 6px;text-align:center;color:#fff;font-size:12px;font-weight:600}
+@media(max-width:600px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}}
+
+.ex{background:#fff;border-radius:14px;padding:14px 20px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border-left:4px solid #2c6fbb}
+.ex .q{font-weight:600;color:#1a1a2e;margin-bottom:4px;font-size:14px}
+.ex .q .q-label{display:inline-block;background:#2c6fbb;color:#fff;font-size:10px;padding:0 8px;border-radius:4px;margin-right:6px;font-weight:700}
+.ex .a{color:#555;font-size:13px;padding:8px 12px;margin-top:6px;background:#eaf2f9;border-radius:8px;display:none;line-height:1.7}
+.ex .a.show{display:block}
+.ex .a strong{color:#2c6fbb}
+.ex .a .point{display:inline-block;background:#27ae60;color:#fff;font-size:10px;padding:0 6px;border-radius:3px;margin-right:4px}
+.ex .sol-btn{display:inline-block;margin-top:6px;padding:3px 14px;font-size:12px;color:#2c6fbb;background:#eaf2f9;border:none;border-radius:6px;cursor:pointer}
+.ex .sol-btn:hover{background:#d4e3f3}
+
+.urgent-box{background:linear-gradient(135deg,#f0f7ff,#fff);border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #e74c3c;font-size:14px}
+.urgent-box strong{color:#e74c3c}
+.urgent-box .big-num{font-size:28px;font-weight:700;color:#e74c3c;display:inline-block;margin:0 4px}
+
+.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.formula-grid .fg-item{border-radius:8px;padding:12px;font-size:13px;line-height:1.8;text-align:center}
+.formula-grid .fg-title{font-weight:700;margin-bottom:4px;font-size:14px}
+
+.geo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.geo-grid .gg-item{border-radius:8px;padding:10px;font-size:12px;line-height:1.7;border:1px solid #e0e0e0}
+.geo-grid .gg-item .gg-title{font-weight:700;margin-bottom:2px;font-size:13px}
+
+.func-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:8px 0}
+.func-grid .fc-item{border-radius:8px;padding:10px;font-size:12px;line-height:1.6;text-align:center}
+@media(max-width:600px){.func-grid{grid-template-columns:1fr}}
+
+.footer{text-align:center;padding:28px 20px;font-size:12px;color:#999;border-top:1px solid #eee;margin-top:10px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#2c6fbb);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+.share-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center}
+.share-overlay.show{display:flex}
+.share-box{background:#fff;border-radius:16px;padding:28px 32px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
+.share-box h3{font-size:18px;color:#1a1a2e;margin-bottom:6px}
+.share-box p{font-size:13px;color:#666;margin-bottom:12px;line-height:1.6}
+.share-box .btn{display:inline-block;padding:8px 20px;border-radius:8px;border:none;font-size:13px;cursor:pointer;margin:4px;min-width:120px;font-weight:600}
+.share-box .btn-primary{background:#2c6fbb;color:#fff}
+.share-box .btn-primary:disabled{background:#ccc;cursor:not-allowed}
+.share-box .btn-secondary{background:#f0f0f0;color:#666}
+.share-box .close-btn{position:absolute;top:12px;right:16px;font-size:22px;color:#999;cursor:pointer;background:none;border:none}
+@media(max-width:600px){
+  .header h1{font-size:22px}
+  .container{padding:10px 14px 30px}
+}
+</style>
+<script src="../js/theme.js"></script></head>
+<body>
+
+<div class="back-link"><a href="../资料库.html">&larr; 返回资料库</a></div>
+<div class="header">
+  <h1>📐 中考数学急救包</h1>
+  <p class="sub">40分→70分的秘密 · 考前冲刺干货 · 公式速查 + 答题模板</p>
+  <div class="tags">
+    <span>🔥 急救干货</span><span>📊 数与式</span><span>📈 函数</span><span>📐 几何</span>
+    <span>🔢 方程</span><span>📋 计算模板</span><span>⚠️ 避坑</span>
+  </div>
+</div>
+<div class="container">
+
+<!-- ════════════════════════ 01 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">01</span>必背公式——数与代数</div>
+
+<div class="kp">
+  <span class="tag">乘法公式</span> <strong>三大必背代数公式</strong>
+  <div class="chart-box">
+    <div class="formula-grid">
+      <div class="fg-item" style="background:#d6e4f0">
+        <div class="fg-title">平方差公式</div>
+        (a+b)(a-b) = a² - b²
+      </div>
+      <div class="fg-item" style="background:#d6e4f0">
+        <div class="fg-title">完全平方和</div>
+        (a+b)² = a² + 2ab + b²
+      </div>
+      <div class="fg-item" style="background:#d6e4f0">
+        <div class="fg-title">完全平方差</div>
+        (a-b)² = a² - 2ab + b²
+      </div>
+      <div class="fg-item" style="background:#d6e4f0">
+        <div class="fg-title">立方和公式</div>
+        a³+b³ = (a+b)(a²-ab+b²)
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">幂运算</span> <strong>幂的运算法则</strong>
+  <div class="chart-box">
+    <div class="grid-4">
+      <div class="g-item" style="background:#2c6fbb">aᵐ·aⁿ<br>= aᵐ⁺ⁿ</div>
+      <div class="g-item" style="background:#2980b9">aᵐ÷aⁿ<br>= aᵐ⁻ⁿ</div>
+      <div class="g-item" style="background:#3498db">(aᵐ)ⁿ<br>= aᵐⁿ</div>
+      <div class="g-item" style="background:#5dade2">(ab)ⁿ<br>= aⁿbⁿ</div>
+    </div>
+    <div class="chart-sub">a⁰ = 1（a≠0）｜a⁻ᵖ = 1/aᵖ（a≠0）</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">根式</span> <strong>二次根式核心</strong>
+  <div class="chart-box">
+    <div class="two-col">
+      <div style="background:#d6e4f0;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+        <strong>乘法：</strong>√a · √b = √ab (a,b≥0)<br>
+        <strong>除法：</strong>√a ÷ √b = √(a/b) (a≥0,b>0)<br>
+        <strong>化简：</strong>√12 = 2√3<br>
+        最简二次根式：被开方数不含开得尽的因数
+      </div>
+      <div style="background:#eaf2f9;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+        <strong>分母有理化：</strong><br>
+        1/√2 = √2/2<br>
+        1/(√3-1) = (√3+1)/2<br>
+        <span class="point" style="display:inline-block;padding:1px 6px;font-size:10px">✔</span> 分子分母同乘分母的共轭
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">绝对值</span> <strong>绝对值与数轴</strong>
+  <p>|a| = a（a≥0），|a| = -a（a&lt;0）<br>|a|的几何意义：数轴上表示a的点到原点的距离<br><strong>重要性质：</strong>|a+b| ≤ |a| + |b|（三角不等式）</p>
+</div>
+
+<!-- ════════════════════════ 02 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">02</span>必背公式——几何</div>
+
+<div class="kp">
+  <span class="tag">三角形</span> <strong>三角形核心定理</strong>
+  <div class="geo-grid">
+    <div class="gg-item" style="background:#eaf2f9">
+      <div class="gg-title">🔺 内角和</div>
+      三角形三个内角之和 = 180°<br>
+      外角 = 不相邻两内角之和
+    </div>
+    <div class="gg-item" style="background:#eaf2f9">
+      <div class="gg-title">📐 勾股定理</div>
+      a² + b² = c²（c为斜边）<br>
+      常见勾股数：3-4-5, 5-12-13, 8-15-17
+    </div>
+    <div class="gg-item" style="background:#eaf2f9">
+      <div class="gg-title">🔗 中位线</div>
+      三角形中位线平行且等于<br>第三边的一半
+    </div>
+    <div class="gg-item" style="background:#eaf2f9">
+      <div class="gg-title">⚖️ 重心</div>
+      三条中线交于重心<br>重心将中线分为2:1
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">全等相似</span> <strong>全等三角形判定</strong>
+  <table>
+    <tr><th>判定</th><th>条件</th><th>速记</th></tr>
+    <tr><td>SSS</td><td>三边对应相等</td><td>边边边</td></tr>
+    <tr><td>SAS</td><td>两边及其夹角对应相等</td><td>边角边</td></tr>
+    <tr><td>ASA</td><td>两角及其夹边对应相等</td><td>角边角</td></tr>
+    <tr><td>AAS</td><td>两角及一角的对边对应相等</td><td>角角边</td></tr>
+    <tr><td>HL</td><td>斜边+一条直角边（直角三角形）</td><td>斜边直角边</td></tr>
+  </table>
+  <div class="chart-box">
+    <div class="chart-title">🔗 相似三角形判定（与全等对应但要求"对应成比例"）</div>
+    <p>① 两角对应相等（AA）→ <strong>最常用！</strong>拿两对角相等就够了<br>
+    ② 两边对应成比例且夹角相等<br>
+    ③ 三边对应成比例</p>
+    <div class="chart-sub">相似比 = 对应边之比 ｜ 面积比 = 相似比的平方</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">四边形</span> <strong>四边形性质对比</strong>
+  <table>
+    <tr><th>四边形</th><th>边</th><th>角</th><th>对角线</th><th>对称性</th></tr>
+    <tr><td>平行四边形</td><td>对边平行相等</td><td>对角相等</td><td>互相平分</td><td>中心对称</td></tr>
+    <tr><td>矩形</td><td>对边平行相等</td><td>四角=90°</td><td>相等且互相平分</td><td>轴+中心</td></tr>
+    <tr><td>菱形</td><td>四边相等</td><td>对角相等</td><td>垂直平分</td><td>轴+中心</td></tr>
+    <tr><td>正方形</td><td>四边相等</td><td>四角=90°</td><td>相等垂直平分</td><td>轴+中心</td></tr>
+  </table>
+</div>
+
+<div class="kp">
+  <span class="tag">圆</span> <strong>圆的核心定理</strong>
+  <div class="two-col">
+    <div style="background:#d6e4f0;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+      <strong>圆周角定理</strong><br>
+      同弧所对圆周角 = 圆心角的一半<br>
+      直径所对圆周角 = 90°<br>
+      同弧所对圆周角相等
+    </div>
+    <div style="background:#eaf2f9;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+      <strong>切线性质</strong><br>
+      切线垂直于过切点的半径<br>
+      切线长定理：两切线长相等<br>
+      弦切角 = 所夹弧所对圆周角
+    </div>
+  </div>
+  <div class="warn"><strong>⚠️ 垂径定理：</strong>垂直于弦的直径平分弦，且平分所对的两条弧</div>
+</div>
+
+<!-- ════════════════════════ 03 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">03</span>数与式急救——别在这些基础题上丢分</div>
+
+<div class="kp">
+  <span class="tag">实数</span> <strong>实数分类速记</strong>
+  <div class="chart-box">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:#d6e4f0;border-radius:8px;padding:10px;font-size:13px">
+        <strong style="color:#2c6fbb">有理数（Q）</strong><br>
+        整数：-2, -1, 0, 1, 2<br>
+        分数：½, -¾, 0.333...<br>
+        <span class="point" style="display:inline-block;padding:1px 6px;font-size:10px">✔</span> 可化为分数形式
+      </div>
+      <div style="background:#eaf2f9;border-radius:8px;padding:10px;font-size:13px">
+        <strong style="color:#2c6fbb">无理数</strong><br>
+        π, √2, √3, √5<br>
+        0.1010010001...<br>
+        <span class="point" style="display:inline-block;padding:1px 6px;font-size:10px">✔</span> 无限不循环小数
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">分式</span> <strong>分式有条件限制</strong>
+  <div class="urgent-box">
+    <strong>🔥 中考最爱考这个：分式有意义的条件</strong><br>
+    分式 A/B 有意义的条件：<strong>分母 ≠ 0！</strong><br>
+    分式 A/B 值为0的条件：<strong>分子 = 0 且 分母 ≠ 0</strong>（两个条件缺一不可！）
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>分式 (x²-4)/(x-2) 的值为0时，x的值为：A. ±2 B. 2 C. -2 D. 0</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>分子=0 → x²-4=0 → x=±2。还需分母≠0 → x-2≠0 → x≠2。<br>所以只能取<strong>x=-2</strong>，选C。<br><span class="point">✔</span> <strong>易错：</strong>忘记验分母！x=2时分母为0分式无意义。</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">科学记数法</span> <strong>科学记数法 = a×10ⁿ</strong>
+  <p>
+    要求：1 ≤ |a| &lt; 10<br>
+    <strong>大数：</strong>n=位数-1。如 23000 = 2.3×10⁴<br>
+    <strong>小数：</strong>n=负的连续0的个数。如 0.00056 = 5.6×10⁻⁴<br>
+    <strong>易错：</strong>万=10⁴，亿=10⁸，10万=10⁵
+  </p>
+</div>
+
+<!-- ════════════════════════ 04 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">04</span>方程与不等式——解题基本功</div>
+
+<div class="kp">
+  <span class="tag">一元二次</span> <strong>一元二次方程 ax²+bx+c=0（a≠0）</strong>
+  <div class="chart-box">
+    <div class="two-col">
+      <div style="background:#d6e4f0;border-radius:8px;padding:12px;font-size:13px;line-height:2">
+        <strong>三种解法</strong><br>
+        <strong>① 因式分解：</strong>x²-5x+6=0 → (x-2)(x-3)=0 → x=2或3<br>
+        <strong>② 公式法：</strong>x = [-b ± √(b²-4ac)] / 2a<br>
+        <strong>③ 配方法：</strong>x²-6x+8=0 → (x-3)²=1 → x=4或2
+      </div>
+      <div style="background:#eaf2f9;border-radius:8px;padding:12px;font-size:13px;line-height:2">
+        <strong>判别式 Δ = b²-4ac</strong><br>
+        <strong style="color:#27ae60">Δ &gt; 0</strong> → 两个不等实根<br>
+        <strong style="color:#f39c12">Δ = 0</strong> → 两个相等实根<br>
+        <strong style="color:#e74c3c">Δ &lt; 0</strong> → 无实根
+      </div>
+    </div>
+  </div>
+  <div class="tip"><strong>韦达定理：</strong>x₁+x₂ = -b/a，x₁x₂ = c/a（知道一根就可求另一根！）</div>
+</div>
+
+<div class="kp">
+  <span class="tag">不等式</span> <strong>不等式性质（最易错！）</strong>
+  <div class="urgent-box">
+    <strong>🔥 不等号方向改变——唯一触发条件：</strong><br>
+    两边同时<strong>乘以或除以一个负数</strong>，不等号方向<strong>必须反转</strong>！
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>解不等式：-2x + 4 &gt; 6</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>-2x + 4 &gt; 6 → -2x &gt; 2 → x &lt; <strong>-1</strong><br><span class="point">✔</span> 除以-2时不等号反转！&gt; 变成 &lt;</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">分式方程</span> <strong>分式方程必须验根！</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#2c6fbb">❶ 去分母<br><span style="font-size:10px">两边乘最简公分母</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#2980b9">❷ 解整式方程</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#e74c3c">❸ 验根！<br><span style="font-size:10px">代入最简公分母≠0</span></div>
+  </div>
+  <div class="warn"><strong>⚠️ 验根是必考坑！</strong>代入使公分母=0的是增根，必须舍去。</div>
+</div>
+
+<!-- ════════════════════════ 05 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">05</span>函数急救——拿分关键</div>
+
+<div class="kp">
+  <span class="tag">三大函数</span> <strong>一次函数 · 反比例 · 二次函数</strong>
+  <div class="chart-box">
+    <div class="func-grid">
+      <div class="fc-item" style="background:#2c6fbb;color:#fff">
+        <strong>📈 一次函数</strong><br>
+        y = kx + b<br>
+        k&gt;0→上升<br>
+        k&lt;0→下降<br>
+        b→截距
+      </div>
+      <div class="fc-item" style="background:#e67e22;color:#fff">
+        <strong>📊 反比例</strong><br>
+        y = k/x<br>
+        k&gt;0→一三象限<br>
+        k&lt;0→二四象限<br>
+        |k|越大离轴越远
+      </div>
+      <div class="fc-item" style="background:#27ae60;color:#fff">
+        <strong>🎯 二次函数</strong><br>
+        y = ax²+bx+c<br>
+        a&gt;0→开口向上<br>
+        a&lt;0→开口向下<br>
+        对称轴 x=-b/2a
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">二次函数</span> <strong>二次函数顶点与最值</strong>
+  <div class="chart-box">
+    <div class="two-col">
+      <div style="background:#d6e4f0;border-radius:8px;padding:12px;font-size:13px;line-height:2">
+        <strong>三种表达式</strong><br>
+        ① 一般式：y=ax²+bx+c<br>
+        ② 顶点式：y=a(x-h)²+k → 顶点(h,k)<br>
+        ③ 交点式：y=a(x-x₁)(x-x₂)
+      </div>
+      <div style="background:#eaf2f9;border-radius:8px;padding:12px;font-size:13px;line-height:2">
+        <strong>顶点公式</strong><br>
+        h = -b/(2a)（对称轴）<br>
+        k = (4ac-b²)/(4a)（最值）<br>
+        a&gt;0有最小值，a&lt;0有最大值
+      </div>
+    </div>
+    <div class="chart-sub">平移口诀：左加右减（x），上加下减（y）</div>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>抛物线 y = x² - 4x + 3 的顶点坐标和对称轴是？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>a=1, b=-4, c=3<br>对称轴 x = -b/2a = 4/2 = <strong>2</strong><br>顶点 y = 2²-4×2+3 = 4-8+3 = <strong>-1</strong><br>顶点坐标 <strong>(2, -1)</strong><br><span class="point">✔</span> 也可用配方法：y=(x-2)²-1，直接看出顶点(2,-1)</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">函数应用</span> <strong>一次函数应用题套路</strong>
+  <div class="urgent-box">
+    <strong>🔥 利润/方案类应用题：</strong><br>
+    ① 设自变量x（如销量、时间）<br>
+    ② 找等量关系列函数 y = kx + b<br>
+    ③ 求最值/交点（利用一次函数增减性）
+  </div>
+</div>
+
+<!-- ════════════════════════ 06 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">06</span>几何急救——坐标系与图形</div>
+
+<div class="kp">
+  <span class="tag">坐标</span> <strong>平面直角坐标系核心</strong>
+  <div class="grid-4">
+    <div class="g-item" style="background:#2c6fbb">第一象限<br>(+, +)</div>
+    <div class="g-item" style="background:#2980b9">第二象限<br>(-, +)</div>
+    <div class="g-item" style="background:#e67e22">第三象限<br>(-, -)</div>
+    <div class="g-item" style="background:#27ae60">第四象限<br>(+, -)</div>
+  </div>
+  <p>
+    <strong>两点距离：</strong>|AB| = √[(x₁-x₂)² + (y₁-y₂)²]<br>
+    <strong>中点公式：</strong>((x₁+x₂)/2, (y₁+y₂)/2)
+  </p>
+</div>
+
+<div class="kp">
+  <span class="tag">相似应用</span> <strong>相似三角形的典型应用——测高</strong>
+  <div class="chart-box">
+    利用相似可测高度：同一时刻，物高与影长成正比<br>
+    <strong>旗杆高度 / 旗杆影长 = 木棍高度 / 木棍影长</strong>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>同一时刻，2m高的木棍影长1.5m，教学楼影长12m，求楼高。</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>设楼高h，则 h/12 = 2/1.5<br>h = 12 × 2 ÷ 1.5 = <strong>16m</strong><br><span class="point">✔</span> 相似三角形对应边成比例</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">圆的公式</span> <strong>圆的周长面积</strong>
+  <div class="two-col">
+    <div style="background:#d6e4f0;border-radius:8px;padding:10px;font-size:13px;line-height:2;text-align:center">
+      <strong>周长</strong><br>
+      C = 2πr = πd
+    </div>
+    <div style="background:#eaf2f9;border-radius:8px;padding:10px;font-size:13px;line-height:2;text-align:center">
+      <strong>面积</strong><br>
+      S = πr²
+    </div>
+  </div>
+  <p><strong>扇形弧长：</strong>l = nπr/180 &nbsp;|&nbsp; <strong>扇形面积：</strong>S = nπr²/360 = ½lr</p>
+</div>
+
+<!-- ════════════════════════ 07 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">07</span>计算模板——套流程得分</div>
+
+<div class="urgent-box">
+  <strong>⚠️ 数学计算题通常6-10分，写出关键步骤就有一半分！</strong>不要跳步，每一步都有分！
+</div>
+
+<div class="kp">
+  <span class="tag">解一元二次</span> <strong>配方法标准流程</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#2c6fbb">❶ 移项<br>常数项移到右边</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#2980b9">❷ 系数化1<br>二次项系数→1</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#3498db">❸ 配方<br>加(b/2)²</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#27ae60">❹ 开方求解</div>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>解方程：x² + 6x - 7 = 0（配方法）</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong><br>x² + 6x = 7<br>x² + 6x + 9 = 7 + 9<br>(x + 3)² = 16<br>x + 3 = ±4<br>x₁ = 1，x₂ = <strong>-7</strong><br><span class="point">✔</span> 配方法步骤：移→配（加一次项系数一半的平方）→开方→解</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">解应用题</span> <strong>列方程解应用题五步法</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#e74c3c">❶ 设未知数<br><span style="font-size:10px">设x</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#e67e22">❷ 找等量关系<br><span style="font-size:10px">关键句</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#f39c12;color:#444">❸ 列方程</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#3498db">❹ 解方程</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#27ae60">❺ 检验作答<br><span style="font-size:10px">检验合理性</span></div>
+  </div>
+  <div class="chart-sub">不要把"设"和"答"写反了！设的不带单位，答的要带</div>
+</div>
+
+<div class="kp">
+  <span class="tag">几何证明</span> <strong>几何证明题标准框架</strong>
+  <div class="chart-box">
+    <div style="background:#eaf2f9;border-radius:8px;padding:12px;font-size:13px;line-height:2">
+      <strong>∵（因为）</strong> → 写出已知条件、已证结论<br>
+      <strong>∴（所以）</strong> → 写出推出的结论，每一步注明理由<br>
+      <strong>常用理由：</strong>已知、定义、定理（如"三角形内角和180°""对顶角相等""平行线性质"）
+    </div>
+  </div>
+  <div class="tip"><strong>技巧：</strong>倒着推！从要证明的结论出发，想"要证这个，需要先证哪个条件"。</div>
+</div>
+
+<!-- ════════════════════════ 08 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">08</span>选择题陷阱——出题人挖的坑</div>
+
+<div class="kp">
+  <span class="tag">陷阱类型</span> <strong>六大高频陷阱命中率</strong>
+  <div class="chart-box">
+    <div class="inline-bar">
+      <span class="bar-label">分式验根</span>
+      <div class="bar-track"><div class="bar-fill" style="width:85%;background:#e74c3c">85%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">不等式方向</span>
+      <div class="bar-track"><div class="bar-fill" style="width:80%;background:#e67e22">80%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">绝对值分类</span>
+      <div class="bar-track"><div class="bar-fill" style="width:75%;background:#f1c40f;color:#444">75%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">二次根式条件</span>
+      <div class="bar-track"><div class="bar-fill" style="width:70%;background:#2c6fbb">70%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">分类讨论</span>
+      <div class="bar-track"><div class="bar-fill" style="width:65%;background:#8e44ad">65%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">函数图像判断</span>
+      <div class="bar-track"><div class="bar-fill" style="width:60%;background:#27ae60">60%</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱1</span>√16 的平方根是：A. 4 B. ±4 C. 2 D. ±2</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 分不清"√16"和"√16的平方根"。<br>√16 = 4（算术平方根），4的平方根 = <strong>±2</strong><br>✅ 选D。<br><span class="point">✔</span> <strong>规律：</strong>先算出√16的值再求平方根。负数没有平方根！</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱2</span>若关于x的一元二次方程 kx² - 6x + 9 = 0 有两个不相等的实数根，则k的取值范围：A. k&lt;1 B. k≠0 C. k&lt;1且k≠0 D. k≤1且k≠0</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 只考虑Δ却忘了二次项系数≠0。<br>Δ = 36-36k &gt; 0 → k &lt; 1。且二次项系数 k ≠ 0。<br>✅ 选C。<br><span class="point">✔</span> <strong>注意：</strong>凡是"一元二次"方程，隐含a≠0条件！</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱3</span>等腰三角形一边等于5，另一边等于8，则它的周长是：A. 18 B. 21 C. 18或21 D. 13</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 没分类讨论哪条是腰。<br>① 腰=5，底=8 → 周长=5+5+8=<strong>18</strong><br>② 腰=8，底=5 → 周长=8+8+5=<strong>21</strong><br>✅ 选C。<br><span class="point">✔</span> <strong>等腰三角形必分类：</strong>谁是腰谁是底，还要验证两边之和大于第三边！</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱4</span>下列运算正确的是：A. √2 + √3 = √5 B. 2√3 - √3 = 2 C. √9 = ±3 D. √8 = 2√2</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 根式运算法则混淆。<br>A错：√2+√3不能合并，√5≠√2+√3<br>B错：2√3-√3 = √3，不是2<br>C错：√9 = 3（算术平方根只取非负），±3是9的平方根<br>✅ 选D。√8 = 2√2<br><span class="point">✔</span> <strong>根式运算：</strong>同类根式才能合并，算术平方根只有一个非负值</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱5</span>一次函数y=kx+b的图像经过第一、二、四象限，则：A. k&gt;0,b&gt;0 B. k&gt;0,b&lt;0 C. k&lt;0,b&gt;0 D. k&lt;0,b&lt;0</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 各象限对应的k、b符号记反。<br>一二四象限 → 图像从左向右下降（k&lt;0），与y轴正半轴相交（b&gt;0）<br>✅ 选C。<br><span class="point">✔</span> <strong>口诀：</strong>k&gt;0过一三，k&lt;0过二四；b&gt;0交正半轴，b&lt;0交负半轴</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱6</span>已知|a| = 3, |b| = 5，且a·b &lt; 0，求a+b的值：A. 8 B. -8 C. 2 D. ±2</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 忽略了负数的可能性。<br>|a|=3 → a=±3；|b|=5 → b=±5<br>a·b&lt;0 → a,b异号<br>a+b = 3+(-5) = -2 或 (-3)+5 = 2<br>✅ 选D。<br><span class="point">✔</span> <strong>绝对值题：</strong>看到绝对值就要想到正负两种情况，再看条件排除。</div>
+</div>
+
+<!-- ════════════════════════ 09 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">09</span>考场策略——多抢20分</div>
+
+<div class="kp">
+  <span class="tag">策略1</span> <strong>时间分配（中考数学120分钟）</strong>
+  <div class="chart-box">
+    <div class="inline-bar">
+      <span class="bar-label">选择题(30分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:25%;background:#2c6fbb">30分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">填空题(18分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:15%;background:#2980b9">18分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">解答题(72分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:45%;background:#e67e22">54分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">检查</span>
+      <div class="bar-track"><div class="bar-fill" style="width:15%;background:#27ae60">18分钟</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">策略2</span> <strong>答题顺序——先易后难，多拿分</strong>
+  <table>
+    <tr><th>题型</th><th>策略</th></tr>
+    <tr><td>选择题 1-10</td><td>前6题送分题，必须全对。后4题超过2分钟没思路先蒙一个</td></tr>
+    <tr><td>填空题 11-16</td><td>注意：有多个空格的别漏填！单位别漏写！</td></tr>
+    <tr><td>解答题 17-20</td><td>基础解答题，步骤要完整，每一步都有分</td></tr>
+    <tr><td>解答题 21-23</td><td>中档题，写出第一问也有分，别空着</td></tr>
+    <tr><td>压轴题 24-25</td><td>能写几步写几步！写"解""设"就可能有1分</td></tr>
+  </table>
+</div>
+
+<div class="kp">
+  <span class="tag">策略3</span> <strong>检查清单——交卷前必看</strong>
+  <div class="urgent-box">
+    <strong>🔥 交卷前5分钟快速检查：</strong><br>
+    ① 单位有没有漏写（cm/m/s²/°）<br>
+    ② 分式方程验根了没有<br>
+    ③ 一元二次方程a≠0条件考虑了吗<br>
+    ④ 等腰三角形分类讨论了吗<br>
+    ⑤ 不等号方向反转对了没有<br>
+    ⑥ √ 开出来的是正数还是±<br>
+    ⑦ 答题卡涂了没有（最重要！）
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">策略4</span> <strong>考前24小时速记清单</strong>
+  <div class="urgent-box">
+    <strong>🔥 进考场前必看：</strong><br>
+    ① 平方差：(a+b)(a-b)=a²-b²<br>
+    ② 完全平方：(a±b)²=a²±2ab+b²<br>
+    ③ Δ=b²-4ac（判根个数的工具）<br>
+    ④ 韦达定理：x₁+x₂=-b/a, x₁x₂=c/a<br>
+    ⑤ 二次函数顶点：x=-b/2a<br>
+    ⑥ 勾股数：3-4-5, 5-12-13<br>
+    ⑦ 分式有意义→分母≠0／分式值为0→分子=0且分母≠0<br>
+    ⑧ 不等号乘除负数要反转！<br>
+    ⑨ <strong>不要空题！写上步骤就有分！</strong>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>思贤学习站 · 陪你一起成长 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-box">
+    <button class="close-btn" onclick="closeShareWall()">&times;</button>
+    <h3>🔗 分享即可获取联系方式</h3>
+    <p>将此网站分享给微信好友或发到朋友圈</p>
+    <p id="shareText" style="background:#f8f9fc;padding:10px;border-radius:8px;font-size:12px;color:#555;word-break:break-all"></p>
+    <button class="btn btn-primary" id="copyBtn">📋 复制分享文案</button>
+    <p id="copyHint" style="font-size:11px;color:#999">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="btn btn-primary" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+
+<script>
+function toggleSol(btn) {
+  var a = btn.parentElement.querySelector('.a, .hw-a');
+  if (a) {
+    a.classList.toggle('show');
+    btn.textContent = a.classList.contains('show') ? '👁 收起解析' : '👁 查看解析';
+  }
+}
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '📐 中考数学急救包——40分→70分的秘密干货！公式速查+答题模板+避坑指南！ ' + url;
+  var hasCopied = false;
+  var shareOverlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b class="contact-phone">155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    shareTextEl.textContent = shareTxt;
+    shareOverlay.classList.add('show');
+    hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+  };
+  window.closeShareWall = function() { shareOverlay.classList.remove('show'); };
+  copyBtn.addEventListener('click', function() {
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制';
+      copyHint.textContent = '⏳ 检测到转发朋友圈，请等待10秒...';
+      setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    shareOverlay.classList.remove('show');
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b class="contact-phone">155-6412-8008</b>';
+  });
+  shareOverlay.addEventListener('click', function(e) { if (e.target === this) closeShareWall(); });
+})();
+</script>
+</body>
+</html>
