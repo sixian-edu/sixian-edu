@@ -124,19 +124,18 @@
   color: #FF9EBB;
 }
 
-/* ── 选择老师页：固定为蓝色主题色 ── */
+/* ── 选择老师页：棉花糖主题专属 ── */
+.card-tags .tag { background: #F0E0E6; color: #C06080; }
+.filter-bar label { background: #F5E8EC; color: #C06080; }
 .teacher-card .btn,
 .badge-level,
 #f-all:checked ~ .filter-bar label[for="f-all"],
 #f-primary:checked ~ .filter-bar label[for="f-primary"],
 #f-middle:checked ~ .filter-bar label[for="f-middle"],
 #f-high:checked ~ .filter-bar label[for="f-high"] {
-  background: #4A7AB8;
+  background: var(--primary-dark);
 }
-.badge-level { background: #3D78B8; }
-.cta-banner { background: linear-gradient(135deg, #5688CC 0%, #5BA0C0 50%, #73BFAA 100%); }
-.cta-banner p { color: #fff; }
-.cta-banner .btn { color: #4A7AB8; }
+.badge-level { background: var(--primary-deeper); }
 
 /* ── 选择老师页：取消 card 子元素的圆角/阴影覆盖 ── */
 .teacher-card .card-top,

@@ -23,7 +23,6 @@ function removeTheme(id) {
 
 function toggleTheme() {
   var current = localStorage.getItem('sx_theme') || 'blue';
-
   removeTheme('theme-pink');
   removeTheme('theme-marshmallow');
 

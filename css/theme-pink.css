@@ -40,15 +40,15 @@
   --brand-gradient: linear-gradient(135deg, #1a1a2e 0%, #2d1b36 50%, #1a1a2e 100%);
 }
 
-/* ── 选择老师页：固定为蓝色主题色 ── */
+/* ── 选择老师页：粉色主题专属 ── */
+.card-tags .tag { background: #EBE0F5; color: #6B4F8A; }
+.filter-bar label { background: #F0EAF5; color: #6B4F8A; }
 .teacher-card .btn,
 .badge-level,
 #f-all:checked ~ .filter-bar label[for="f-all"],
 #f-primary:checked ~ .filter-bar label[for="f-primary"],
 #f-middle:checked ~ .filter-bar label[for="f-middle"],
 #f-high:checked ~ .filter-bar label[for="f-high"] {
-  background: #4A7AB8;
+  background: var(--primary-dark);
 }
-.badge-level { background: #3D78B8; }
-.cta-banner { background: linear-gradient(135deg, #5688CC 0%, #5BA0C0 50%, #73BFAA 100%); }
-.cta-banner .btn { color: #4A7AB8; }
+.badge-level { background: var(--primary-deeper); }
