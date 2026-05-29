@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>中考物理急救包 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;background:#f8f9fc;color:#2d3436;line-height:1.8}
+.back-link{max-width:880px;margin:0 auto;padding:14px 20px 0}
+.back-link a{color:#888;font-size:13px;text-decoration:none}
+.back-link a:hover{color:#c0392b}
+.header{max-width:880px;margin:0 auto;padding:0 20px}
+.header h1{font-size:28px;color:#1a1a2e;margin:10px 0 4px;border-left:4px solid #c0392b;padding-left:14px}
+.header .sub{font-size:13px;color:#999;margin-bottom:6px}
+.header .tags{margin-bottom:12px}
+.header .tags span{display:inline-block;font-size:11px;padding:2px 10px;border-radius:10px;background:#fadbd8;color:#c0392b;margin-right:6px;margin-bottom:4px}
+.container{max-width:880px;margin:0 auto;padding:10px 20px 40px}
+
+.sec-title{font-size:20px;font-weight:700;color:#1a1a2e;margin:28px 0 12px;padding-left:14px;border-left:4px solid #c0392b}
+.sec-title .sec-num{font-size:12px;color:#fff;background:#c0392b;border-radius:8px;padding:0 8px;margin-right:8px;font-weight:600;vertical-align:middle}
+
+.kp,.info-box{background:#fff;border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b;font-size:14px;color:#444}
+.kp strong{color:#c0392b}
+.kp .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:#fadbd8;color:#c0392b;margin-right:4px;font-weight:600}
+.kp .warn{background:#fff3cd;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #f39c12}
+.kp .warn strong{color:#e67e22}
+.kp .tip{background:#eafaf1;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #27ae60}
+.kp .tip strong{color:#27ae60}
+.kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+.kp table th,.kp table td{border:1px solid #e0e0e0;padding:6px 10px;text-align:center}
+.kp table th{background:#c0392b;color:#fff;font-weight:600}
+.kp table tr:nth-child(even){background:#fdf2f2}
+.kp ul{padding-left:20px;margin:6px 0}
+.kp ul li{margin-bottom:4px}
+
+.chart-box{background:#fff;border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 12px rgba(0,0,0,0.05);font-size:13px}
+.chart-box .chart-title{text-align:center;font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.chart-box .chart-sub{text-align:center;font-size:12px;color:#999;margin-bottom:12px}
+
+.inline-bar{display:flex;align-items:center;margin:4px 0}
+.inline-bar .bar-label{width:80px;font-size:12px;color:#444;font-weight:600;flex-shrink:0}
+.inline-bar .bar-track{flex:1;height:20px;background:#ecf0f1;border-radius:10px;overflow:hidden;position:relative}
+.inline-bar .bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;color:#fff;font-weight:600}
+
+.inline-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px;margin:8px 0}
+.inline-flow .flow-step{padding:10px 6px;border-radius:8px;color:#fff;font-size:12px;font-weight:600;text-align:center;min-width:70px;flex:1}
+.inline-flow .flow-arrow{font-size:18px;color:#999;flex-shrink:0}
+
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}
+.grid-4 .g-item{border-radius:8px;padding:10px 6px;text-align:center;color:#fff;font-size:12px;font-weight:600}
+@media(max-width:600px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}}
+
+.ex{background:#fff;border-radius:14px;padding:14px 20px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border-left:4px solid #2980b9}
+.ex .q{font-weight:600;color:#1a1a2e;margin-bottom:4px;font-size:14px}
+.ex .q .q-label{display:inline-block;background:#2980b9;color:#fff;font-size:10px;padding:0 8px;border-radius:4px;margin-right:6px;font-weight:700}
+.ex .a{color:#555;font-size:13px;padding:8px 12px;margin-top:6px;background:#f0f7ff;border-radius:8px;display:none;line-height:1.7}
+.ex .a.show{display:block}
+.ex .a strong{color:#c0392b}
+.ex .a .point{display:inline-block;background:#27ae60;color:#fff;font-size:10px;padding:0 6px;border-radius:3px;margin-right:4px}
+.ex .sol-btn{display:inline-block;margin-top:6px;padding:3px 14px;font-size:12px;color:#2980b9;background:#eaf2f8;border:none;border-radius:6px;cursor:pointer}
+.ex .sol-btn:hover{background:#d4e6f1}
+
+.hw{background:#fff;border-radius:14px;padding:14px 20px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border-left:4px solid #27ae60}
+.hw .hw-q{font-size:13px;color:#444;margin-bottom:4px;padding:4px 0}
+.hw .hw-q .hw-label{display:inline-block;background:#27ae60;color:#fff;font-size:10px;padding:0 8px;border-radius:4px;margin-right:6px;font-weight:700}
+.hw .hw-a{color:#27ae60;font-size:12px;padding:6px 12px;margin:4px 0 8px 20px;background:#eafaf1;border-radius:6px;display:none;line-height:1.6}
+.hw .hw-a.show{display:block}
+.hw .sol-btn{display:inline-block;margin:2px 0 6px 20px;padding:2px 12px;font-size:11px;color:#27ae60;background:#eafaf1;border:none;border-radius:6px;cursor:pointer}
+.hw .sol-btn:hover{background:#d5f5e3}
+
+.urgent-box{background:linear-gradient(135deg,#fff5f5,#fff);border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b;font-size:14px}
+.urgent-box strong{color:#c0392b}
+.urgent-box .big-num{font-size:28px;font-weight:700;color:#c0392b;display:inline-block;margin:0 4px}
+
+.lens-table{display:grid;grid-template-columns:1fr;gap:2px;margin:8px 0;font-size:13px}
+.lens-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px}
+.lens-row div{padding:6px 8px;text-align:center;border-radius:4px}
+@media(max-width:600px){.lens-row{grid-template-columns:1fr 1fr}}
+
+.footer{text-align:center;padding:28px 20px;font-size:12px;color:#999;border-top:1px solid #eee;margin-top:10px}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#c0392b);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+.share-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center}
+.share-overlay.show{display:flex}
+.share-box{background:#fff;border-radius:16px;padding:28px 32px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
+.share-box h3{font-size:18px;color:#1a1a2e;margin-bottom:6px}
+.share-box p{font-size:13px;color:#666;margin-bottom:12px;line-height:1.6}
+.share-box .btn{display:inline-block;padding:8px 20px;border-radius:8px;border:none;font-size:13px;cursor:pointer;margin:4px;min-width:120px;font-weight:600}
+.share-box .btn-primary{background:#c0392b;color:#fff}
+.share-box .btn-primary:disabled{background:#ccc;cursor:not-allowed}
+.share-box .btn-secondary{background:#f0f0f0;color:#666}
+.share-box .close-btn{position:absolute;top:12px;right:16px;font-size:22px;color:#999;cursor:pointer;background:none;border:none}
+@media(max-width:600px){
+  .header h1{font-size:22px}
+  .container{padding:10px 14px 30px}
+}
+</style>
+<script src="../js/theme.js"></script></head>
+<body>
+
+<div class="back-link"><a href="../资料库.html">&larr; 返回资料库</a></div>
+<div class="header">
+  <h1>⚡ 中考物理急救包</h1>
+  <p class="sub">45分→75分的秘密 · 考前冲刺干货 · 公式速查 + 答题模板</p>
+  <div class="tags">
+    <span>🔥 急救干货</span><span>📐 核心公式</span><span>⚖️ 力学</span><span>💡 电学</span>
+    <span>🔦 光学</span><span>🔥 热学</span><span>📊 计算模板</span><span>⚠️ 避坑</span>
+  </div>
+</div>
+<div class="container">
+
+<!-- ════════════════════════ 第01关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">01</span>背熟公式——拿分第一步</div>
+
+<div class="kp">
+  <span class="tag">力学</span> <strong>7个必背力学公式</strong>
+  <div class="chart-box">
+    <div class="chart-title">📐 核心力学公式速查</div>
+    <div class="two-col">
+      <div style="background:#fdf2f2;border-radius:8px;padding:10px;font-size:12px;line-height:2.2">
+        ⚡ v = s/t &nbsp; 速度（m/s）<br>
+        ⚡ ρ = m/V &nbsp; 密度（g/cm³）<br>
+        ⚡ G = mg &nbsp; 重力（N）<br>
+        ⚡ p = F/S &nbsp; 固体压强（Pa）<br>
+        ⚡ p = ρgh &nbsp; 液体压强（Pa）
+      </div>
+      <div style="background:#fdf2f2;border-radius:8px;padding:10px;font-size:12px;line-height:2.2">
+        ⚡ F浮 = ρgV排 &nbsp; 浮力（N）<br>
+        ⚡ W = Fs &nbsp; 功（J）<br>
+        ⚡ P = W/t = Fv &nbsp; 功率（W）<br>
+        ⚡ η = W有/W总×100% 机械效率<br>
+        ⚡ F₁L₁ = F₂L₂ &nbsp; 杠杆平衡
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">电学</span> <strong>6个必背电学公式</strong>
+  <div class="chart-box">
+    <div class="chart-title">💡 核心电学公式速查</div>
+    <div class="two-col">
+      <div style="background:#d4e6f1;border-radius:8px;padding:10px;font-size:12px;line-height:2.2">
+        ⚡ I = U/R &nbsp; 欧姆定律<br>
+        ⚡ P = UI &nbsp; 电功率（W）<br>
+        ⚡ W = UIt &nbsp; 电功（J）
+      </div>
+      <div style="background:#d4e6f1;border-radius:8px;padding:10px;font-size:12px;line-height:2.2">
+        ⚡ Q = I²Rt &nbsp; 焦耳定律<br>
+        ⚡ 串联：U=U₁+U₂, R=R₁+R₂<br>
+        ⚡ 并联：I=I₁+I₂, 1/R=1/R₁+1/R₂
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">单位</span> <strong>必记单位换算</strong>
+  <div class="chart-box">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+      <div style="background:#fdebd0;border-radius:8px;padding:10px;text-align:center;font-size:12px">
+        <strong style="color:#d35400">速度</strong><br>1m/s = 3.6km/h
+      </div>
+      <div style="background:#d5f5e3;border-radius:8px;padding:10px;text-align:center;font-size:12px">
+        <strong style="color:#27ae60">密度</strong><br>1g/cm³ = 10³kg/m³
+      </div>
+      <div style="background:#e8daef;border-radius:8px;padding:10px;text-align:center;font-size:12px">
+        <strong style="color:#8e44ad">电能</strong><br>1kW·h = 3.6×10⁶J
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════ 第02关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">02</span>力学急救——拿分大头</div>
+
+<div class="kp">
+  <span class="tag">受力分析</span> <strong>三步受力分析法</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#e74c3c">❶ 确定对象<br><span style="font-size:10px;opacity:.8">研究谁分析谁</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#e67e22">❷ 画重力<span style="font-size:10px;opacity:.8">（竖直向下）</span><br>画接触力<span style="font-size:10px;opacity:.8">（弹力摩擦）</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#27ae60">❸ 判断状态<br><span style="font-size:10px;opacity:.8">静止→合力为零</span></div>
+  </div>
+  <div class="tip"><strong>口诀：</strong>一重二弹三摩擦，最后再来看其他。静止匀速合力零，加速减速合力不零。</div>
+</div>
+
+<div class="kp">
+  <span class="tag">压强</span> <strong>三种压强对比</strong>
+  <div class="chart-box">
+    <div class="two-col">
+      <div style="background:#fdf2f2;border-radius:8px;padding:10px;font-size:12px">
+        <strong style="color:#c0392b">固体压强</strong><br>
+        p = F/S<br>
+        F是压力（水平面=G）<br>
+        S是受力面积<br>
+        <span class="point" style="display:inline-block;padding:1px 6px;font-size:10px">✔</span> 单位：Pa
+      </div>
+      <div style="background:#d4e6f1;border-radius:8px;padding:10px;font-size:12px">
+        <strong style="color:#2980b9">液体压强</strong><br>
+        p = ρgh<br>
+        与深度/密度有关<br>
+        与方向无关<br>
+        <span class="point" style="display:inline-block;padding:1px 6px;font-size:10px">✔</span> 越深压强越大
+      </div>
+    </div>
+    <div class="chart-sub">标准大气压 p₀ = 1.013×10⁵Pa ≈ 10⁵Pa ≈ 10m水柱产生的压强</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">浮力</span> <strong>浮力四种计算方法</strong>
+  <table>
+    <tr><th>方法</th><th>公式</th><th>适用场景</th></tr>
+    <tr><td>称重法</td><td>F浮 = G - F示</td><td>弹簧测力计挂物体浸入液体</td></tr>
+    <tr><td>阿基米德</td><td>F浮 = G排 = ρ液gV排</td><td>已知V排或ρ液</td></tr>
+    <tr><td>漂浮/悬浮</td><td>F浮 = G物</td><td>物体漂浮或悬浮时</td></tr>
+    <tr><td>压力差法</td><td>F浮 = F向上 - F向下</td><td>已知上下表面压力</td></tr>
+  </table>
+  <div class="warn"><strong>⚠️ 浮沉条件：</strong>ρ物 &lt; ρ液 → 漂浮 ｜ ρ物 = ρ液 → 悬浮 ｜ ρ物 &gt; ρ液 → 下沉</div>
+</div>
+
+<div class="kp">
+  <span class="tag">简单机械</span> <strong>杠杆与滑轮速记</strong>
+  <div class="two-col">
+    <div style="background:#fef9e7;border-radius:8px;padding:10px;font-size:12px">
+      <strong style="color:#d4a017">杠杆</strong><br>
+      F₁L₁ = F₂L₂<br>
+      L₁>L₂ → 省力杠杆（撬棍）<br>
+      L₁&lt;L₂ → 费力杠杆（镊子）<br>
+      L₁=L₂ → 等臂杠杆（天平）
+    </div>
+    <div style="background:#e8daef;border-radius:8px;padding:10px;font-size:12px">
+      <strong style="color:#8e44ad">滑轮</strong><br>
+      定滑轮：不省力，改变方向<br>
+      动滑轮：省一半力，不改变方向<br>
+      滑轮组：F = G/n（n为绳段数）
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════ 第03关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">03</span>电学急救——电路分析是命脉</div>
+
+<div class="kp">
+  <span class="tag">电路识别</span> <strong>串并联电路特点对比</strong>
+  <div class="chart-box">
+    <div class="two-col">
+      <div style="background:#fdf2f2;border-radius:8px;padding:12px;font-size:12px">
+        <strong style="color:#c0392b">🔗 串联</strong>
+        <div style="line-height:2;margin-top:4px">
+          I = I₁ = I₂<br>
+          U = U₁ + U₂<br>
+          R = R₁ + R₂<br>
+          U₁/U₂ = R₁/R₂
+        </div>
+      </div>
+      <div style="background:#d4e6f1;border-radius:8px;padding:12px;font-size:12px">
+        <strong style="color:#2980b9">🔀 并联</strong>
+        <div style="line-height:2;margin-top:4px">
+          I = I₁ + I₂<br>
+          U = U₁ = U₂<br>
+          1/R = 1/R₁ + 1/R₂<br>
+          I₁/I₂ = R₂/R₁
+        </div>
+      </div>
+    </div>
+    <div class="chart-sub">串联分压（电阻越大分压越多）｜并联分流（电阻越大电流越小）</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">欧姆定律</span> <strong>I=U/R 的应用</strong>
+  <div class="urgent-box">
+    <strong>🔥 已知两个求第三个：</strong><br>
+    I = U/R &nbsp;→&nbsp; 已知电压、电阻求电流<br>
+    U = IR &nbsp;→&nbsp; 已知电流、电阻求电压<br>
+    R = U/I &nbsp;→&nbsp; 已知电压、电流求电阻
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>R₁=6Ω与R₂=4Ω串联接12V电源，求电流和R₂两端电压</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>R总=6+4=10Ω，I=12/10=<strong>1.2A</strong><br>U₂=IR₂=1.2×4=<strong>4.8V</strong><br><span class="point">✔</span> 串联分压，电阻越大分压越多</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">电功率</span> <strong>额定功率与实际功率</strong>
+  <div class="chart-box">
+    <div style="background:#fef9e7;border-radius:8px;padding:10px;font-size:13px;line-height:2">
+      <strong>P = UI</strong>（通用）→ P = I²R（串联）→ P = U²/R（并联）<br>
+      <strong>灯泡亮度由实际功率决定！</strong>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>"220V 40W"灯泡接110V电源，实际功率是多少？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>R=U²/P=220²/40=1210Ω。P实=U实²/R=110²/1210=<strong>10W</strong><br><span class="point">✔</span> 电压减半，功率降为¼！灯丝电阻不变是关键。</div>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>标有"6V 3W"的小灯泡正常发光时电流和电阻是多少？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>I=P/U=3/6=<strong>0.5A</strong>，R=U/I=6/0.5=<strong>12Ω</strong><br><span class="point">✔</span> 或者用R=U²/P=36/3=12Ω</div>
+  </div>
+</div>
+
+<!-- ════════════════════════ 第04关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">04</span>声光热速查——不丢分</div>
+
+<div class="kp">
+  <span class="tag">光学</span> <strong>凸透镜成像规律（选择题必考！）</strong>
+  <div class="chart-box">
+    <div class="chart-title">🔦 凸透镜成像规律速查</div>
+    <div style="background:#c0392b;color:#fff;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:6px 8px;border-radius:6px 6px 0 0;font-size:12px;font-weight:600;text-align:center">
+      <div>物距u</div><div>像距v</div><div>像的性质</div><div>应用</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:6px 8px;font-size:12px;text-align:center;background:#fdf2f2">
+      <div><strong>u &gt; 2f</strong></div><div>f &lt; v &lt; 2f</div><div>倒立缩小实像</div><div><strong>📷 照相机</strong></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:6px 8px;font-size:12px;text-align:center">
+      <div><strong>u = 2f</strong></div><div>v = 2f</div><div>倒立等大实像</div><div>测焦距</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:6px 8px;font-size:12px;text-align:center;background:#fdf2f2">
+      <div><strong>f &lt; u &lt; 2f</strong></div><div>v &gt; 2f</div><div>倒立放大实像</div><div><strong>📽️ 投影仪</strong></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:6px 8px;font-size:12px;text-align:center">
+      <div><strong>u = f</strong></div><div>—</div><div>不成像</div><div>平行光源</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:6px 8px;font-size:12px;text-align:center;background:#fdf2f2;border-radius:0 0 6px 6px">
+      <div><strong>u &lt; f</strong></div><div>|v| &gt; u</div><div>正立放大虚像</div><div><strong>🔍 放大镜</strong></div>
+    </div>
+    <div class="chart-sub">口诀：一倍焦距分虚实，二倍焦距分大小；物近像远像变大（实像），物近像近像变小（虚像）</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">光学</span> <strong>反射与折射核心</strong>
+  <div class="two-col">
+    <div style="background:#fdf2f2;border-radius:8px;padding:10px;font-size:12px">
+      <strong style="color:#c0392b">光的反射定律</strong><br>
+      ① 三线共面<br>
+      ② 两线分居<br>
+      ③ 反射角=入射角<br>
+      <strong>平面镜成像</strong>：等大、等距、正立虚像
+    </div>
+    <div style="background:#d4e6f1;border-radius:8px;padding:10px;font-size:12px">
+      <strong style="color:#2980b9">光的折射</strong><br>
+      空气→水：折射角&lt;入射角<br>
+      水→空气：折射角&gt;入射角<br>
+      <strong>空气角大</strong>（不管入射还是折射，空气中的角更大）
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">热学</span> <strong>物态变化 + 比热容</strong>
+  <div class="chart-box">
+    <div class="chart-title">🔥 物态变化六种</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+      <div style="background:#e74c3c;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <strong>熔化</strong><br>固→液<br>吸热
+      </div>
+      <div style="background:#2980b9;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <strong>凝固</strong><br>液→固<br>放热
+      </div>
+      <div style="background:#e67e22;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <strong>汽化</strong><br>液→气<br>吸热
+      </div>
+      <div style="background:#27ae60;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <strong>液化</strong><br>气→液<br>放热
+      </div>
+      <div style="background:#8e44ad;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <strong>升华</strong><br>固→气<br>吸热
+      </div>
+      <div style="background:#7f8c8d;border-radius:8px;padding:8px;color:#fff;text-align:center;font-size:12px">
+        <strong>凝华</strong><br>气→固<br>放热
+      </div>
+    </div>
+  </div>
+  <p><strong>比热容：</strong>Q = cmΔt（c水=4.2×10³J/kg·℃最大）<br><strong>热值：</strong>Q = mq（燃料完全燃烧放热）</p>
+</div>
+
+<div class="kp">
+  <span class="tag">声学</span> <strong>声现象速记</strong>
+  <p>① 声音由振动产生 ② 声速：340m/s（空气）③ 三大特征：响度（振幅）、音调（频率）、音色（材质）④ 减弱噪声：声源处、传播过程中、人耳处</p>
+</div>
+
+<!-- ════════════════════════ 第05关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">05</span>计算题模板——套公式得分</div>
+
+<div class="urgent-box">
+  <strong>⚠️ 计算题必知：</strong>物理计算通常<span class="big-num">6-8</span>分，写出公式就有一半分！不要空着！
+</div>
+
+<div class="kp">
+  <span class="tag">力学计算</span> <strong>力学计算三步走</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#e74c3c">❶ 写公式<br><span style="font-size:10px">找对公式</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#e67e22">❷ 代数据<br><span style="font-size:10px">带单位代入</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#27ae60">❸ 算结果<br><span style="font-size:10px">结果+单位</span></div>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>质量为60kg的人站立时每只脚与地面接触面积150cm²，求对地面的压强（g=10N/kg）</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>G=mg=60×10=600N → p=F/S=600/(2×0.015)=<strong>20000Pa</strong><br><span class="point">✔</span> 注意：站立时两只脚着地，S=2×150cm²=300cm²=0.03m²</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">电学计算</span> <strong>电学计算三步走</strong>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#2980b9">❶ 判断串并联</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#e67e22">❷ 应用I=U/R</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:#27ae60">❸ 算P/W/Q</div>
+  </div>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>一盏"220V 100W"的灯泡正常发光10小时，消耗多少度电？灯丝电阻多大？</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>W=Pt=0.1kW×10h=<strong>1kW·h</strong>=1度电<br>R=U²/P=220²/100=<strong>484Ω</strong><br><span class="point">✔</span> 注意：用kW·h时功率要换算成kW，时间用h</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">热量计算</span> <strong>热学计算公式</strong>
+  <p><strong>吸放热：</strong>Q = cmΔt &nbsp;|&nbsp; <strong>燃料燃烧：</strong>Q = mq</p>
+  <div class="ex">
+    <div class="q"><span class="q-label">例</span>2kg水从20℃加热到100℃需吸收多少热量？c水=4.2×10³J/(kg·℃)</div>
+    <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+    <div class="a"><strong>解：</strong>Q=cmΔt=4.2×10³×2×(100-20)=<strong>6.72×10⁵J</strong><br><span class="point">✔</span> 代入时注意单位：c用J/(kg·℃)，m用kg，Δt用℃</div>
+  </div>
+</div>
+
+<!-- ════════════════════════ 第06关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">06</span>实验题套路——实验原理+步骤+结论</div>
+
+<div class="kp">
+  <span class="tag">测密度</span> <strong>测量物质密度实验</strong>
+  <div class="chart-box">
+    <div class="inline-flow">
+      <div class="flow-step" style="background:#e74c3c">❶ 天平测质量m</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#e67e22">❷ 量筒排水法测V</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#27ae60">❸ ρ=m/V计算</div>
+    </div>
+    <div class="chart-sub">先测质量再测体积（顺序不能颠倒，否则水残留影响质量）</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">探究浮力</span> <strong>浮力大小与哪些因素有关</strong>
+  <p>① 与液体密度有关（ρ液越大F浮越大）② 与排开液体体积有关（V排越大F浮越大）③ 与浸没深度无关</p>
+</div>
+
+<div class="kp">
+  <span class="tag">测电功率</span> <strong>伏安法测小灯泡电功率</strong>
+  <div class="chart-box">
+    <div class="inline-flow">
+      <div class="flow-step" style="background:#2980b9">❶ 连电路<br><span style="font-size:10px">串联电流表</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#e67e22">❷ 调电压<br><span style="font-size:10px">调滑动变阻器</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#27ae60">❸ 读U、I<br><span style="font-size:10px">计算P=UI</span></div>
+    </div>
+    <div class="chart-sub">连接时开关断开，滑动变阻器调到最大阻值</div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">凸透镜成像</span> <strong>凸透镜成像实验</strong>
+  <p><strong>器材：</strong>光具座、凸透镜、蜡烛、光屏<br><strong>步骤：</strong>调节烛焰、透镜、光屏中心在同一高度 → 移动透镜改变物距 → 移动光屏找到清晰的像<br><strong>结论：</strong>参照上方成像规律表</p>
+</div>
+
+<!-- ════════════════════════ 第07关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">07</span>选择题陷阱——出题人挖的坑</div>
+
+<div class="kp">
+  <span class="tag">陷阱类型</span> <strong>五大常见陷阱命中率</strong>
+  <div class="chart-box">
+    <div class="inline-bar">
+      <span class="bar-label">概念混淆</span>
+      <div class="bar-track"><div class="bar-fill" style="width:80%;background:#e74c3c">80%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">单位换算</span>
+      <div class="bar-track"><div class="bar-fill" style="width:75%;background:#e67e22">75%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">图像题</span>
+      <div class="bar-track"><div class="bar-fill" style="width:70%;background:#f1c40f;color:#444">70%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">浮沉条件</span>
+      <div class="bar-track"><div class="bar-fill" style="width:65%;background:#2980b9">65%</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">电路故障</span>
+      <div class="bar-track"><div class="bar-fill" style="width:60%;background:#8e44ad">60%</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱1</span>下列物体中，质量约为50g的是：A. 一个鸡蛋 B. 一本物理书 C. 一张课桌 D. 一支铅笔</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 对常见物体质量缺乏概念。<br>✅ 选A。一个鸡蛋约50g。常见估算：人50-80kg、物理书200-300g、课桌10-20kg、铅笔5-10g。<br><span class="point">✔</span> <strong>估算题技巧：</strong>用熟悉的参照物对比（如一斤=500g）</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱2</span>关于惯性，下列说法正确的是：A. 物体速度越大惯性越大 B. 运动的物体有惯性，静止的没有 C. 一切物体都有惯性 D. 只有不受力时才有惯性</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 误以为惯性与速度有关。<br>✅ 选C。<strong>一切物体在任何状态下都有惯性</strong>，惯性大小只与质量有关，与速度、是否受力、是否运动无关。<br><span class="point">✔</span> 质量越大惯性越大，越难改变运动状态。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱3</span>甲乙两块铁，甲的体积是乙的3倍，则它们的密度之比是：A. 1:1 B. 3:1 C. 1:3 D. 9:1</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 看到体积比就直接选密度比。<br>✅ 选A。密度是物质的<strong>特性</strong>，同种材料密度相同，与体积和质量无关。<br><span class="point">✔</span> <strong>规律：</strong>同种物质密度相同，不同物质密度一般不同。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱4</span>一个物体放在水平桌面上，下列哪对力是平衡力：A. 物体重力和桌面对物体的支持力 B. 物体重力和物体对桌面的压力</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 混淆平衡力与相互作用力。<br>✅ 选A。<strong>平衡力：</strong>作用在<strong>同一物体</strong>上、等大、反向、共线。B中重力和压力作用在不同物体上（重力在物体上，压力在桌面上），是相互作用力。<br><span class="point">✔</span> <strong>判断口诀：</strong>同体等大反向共线是平衡力，异体等大反向共线相互作用。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱5</span>将一木块放入水中，木块漂浮在水面；若将木块露出水面的部分切去，剩余部分将：A. 下沉 B. 悬浮 C. 上浮最终漂浮 D. 无法确定</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 以为切掉后剩余部分会下沉。<br>✅ 选C。木块密度&lt;水，切掉露出部分后，剩余部分重力减小，但F浮不变（V排不变），F浮>G物，所以会上浮，最终再次漂浮。<br><span class="point">✔</span> <strong>规律：</strong>漂浮物切去露出部分后，剩余部分仍会上浮直至漂浮。</div>
+</div>
+
+<div class="ex">
+  <div class="q"><span class="q-label">陷阱6</span>在如图电路中，闭合开关后发现灯泡不亮，电流表无示数，电压表有示数且接近电源电压，故障可能是：A. 灯丝断了 B. 开关短路 C. 电压表坏了 D. 电流表坏了</div>
+  <button class="sol-btn" onclick="toggleSol(this)">👁 查看解析</button>
+  <div class="a"><strong>陷阱：</strong>⚠️ 电路故障分析。<br>✅ 选A。电流表无示数→电路断路；电压表有示数且接近电源电压→电压表与电源连通，说明<strong>灯泡处断路</strong>（灯丝断了）。<br><span class="point">✔</span> <strong>规律：</strong>断路的灯泡两端电压=电源电压（电压表测断路处）</div>
+</div>
+
+<!-- ════════════════════════ 第08关 ════════════════════════ -->
+<div class="sec-title"><span class="sec-num">08</span>考场策略——多抢20分</div>
+
+<div class="kp">
+  <span class="tag">策略1</span> <strong>时间分配（中考物理70分钟）</strong>
+  <div class="chart-box">
+    <div class="inline-bar">
+      <span class="bar-label">选择题(24分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:25%;background:#e74c3c">18分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">填空题(20分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:20%;background:#e67e22">14分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">作图/实验(26分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:30%;background:#2980b9">20分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">计算题(20分)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:20%;background:#27ae60">14分钟</div></div>
+    </div>
+    <div class="inline-bar">
+      <span class="bar-label">检查</span>
+      <div class="bar-track"><div class="bar-fill" style="width:6%;background:#8e44ad">4分钟</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="kp">
+  <span class="tag">策略2</span> <strong>答题顺序与技巧</strong>
+  <table>
+    <tr><th>题型</th><th>策略</th></tr>
+    <tr><td>选择题</td><td>先易后难，超过2分钟没思路先蒙一个标记，有时间再回来</td></tr>
+    <tr><td>填空题</td><td>注意单位！填完检查数值后面有没有单位</td></tr>
+    <tr><td>作图题</td><td>力的示意图：标大小方向作用点；光路图：画法线</td></tr>
+    <tr><td>实验题</td><td>实验原理（公式）+步骤（器材操作）+结论（规律表述）</td></tr>
+    <tr><td>计算题</td><td><strong>先写公式！</strong>代入带单位的数值，结果写单位</td></tr>
+  </table>
+</div>
+
+<div class="kp">
+  <span class="tag">策略3</span> <strong>考前24小时速记清单</strong>
+  <div class="urgent-box">
+    <strong>🔥 进考场前必看：</strong><br>
+    ① 7个力学公式 + 6个电学公式<br>
+    ② 单位换算：1m/s=3.6km/h, 1g/cm³=10³kg/m³<br>
+    ③ 凸透镜成像规律（一倍焦距分虚实，二倍焦距分大小）<br>
+    ④ 串并联电路特点（串联分压、并联分流）<br>
+    ⑤ 浮沉条件（ρ物 &lt; ρ液→漂浮）<br>
+    ⑥ 惯性只与质量有关<br>
+    ⑦ 写出公式就有一半的分！<strong>不要空题！</strong>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>思贤学习站 · 陪你一起成长 · <span class="contact-trigger" onclick="openShareWall()">获取联系方式</span></p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});</script>
+
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-box">
+    <button class="close-btn" onclick="closeShareWall()">&times;</button>
+    <h3>🔗 分享即可获取联系方式</h3>
+    <p>将此网站分享给微信好友或发到朋友圈</p>
+    <p id="shareText" style="background:#f8f9fc;padding:10px;border-radius:8px;font-size:12px;color:#555;word-break:break-all"></p>
+    <button class="btn btn-primary" id="copyBtn">📋 复制分享文案</button>
+    <p id="copyHint" style="font-size:11px;color:#999">复制后粘贴发送给微信好友或发到朋友圈</p>
+    <button class="btn btn-primary" id="sharedBtn" disabled>我已分享，查看联系方式 →</button>
+  </div>
+</div>
+
+<script>
+function toggleSol(btn) {
+  var a = btn.parentElement.querySelector('.a, .hw-a');
+  if (a) {
+    a.classList.toggle('show');
+    btn.textContent = a.classList.contains('show') ? '👁 收起解析' : '👁 查看解析';
+  }
+}
+(function() {
+  var url = window.location.origin + window.location.pathname;
+  var shareTxt = '⚡ 中考物理急救包——45分→75分的秘密干货！公式速查+答题模板+避坑指南！ ' + url;
+  var hasCopied = false;
+  var shareOverlay = document.getElementById('shareOverlay');
+  var shareTextEl = document.getElementById('shareText');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyHint = document.getElementById('copyHint');
+  var sharedBtn = document.getElementById('sharedBtn');
+  if (localStorage.getItem('sx_shared')) {
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b class="contact-phone">155-6412-8008</b>';
+  }
+  window.openShareWall = function() {
+    if (localStorage.getItem('sx_shared')) return;
+    shareTextEl.textContent = shareTxt;
+    shareOverlay.classList.add('show');
+    hasCopied = false; sharedBtn.disabled = true;
+    copyBtn.textContent = '📋 复制分享文案';
+    copyHint.textContent = '复制后粘贴发送给微信好友或发到朋友圈';
+  };
+  window.closeShareWall = function() { shareOverlay.classList.remove('show'); };
+  copyBtn.addEventListener('click', function() {
+    var text = shareTextEl.textContent;
+    function done() {
+      localStorage.setItem('sx_copy_time', Date.now());
+      copyBtn.textContent = '✅ 已复制';
+      copyHint.textContent = '⏳ 检测到转发朋友圈，请等待10秒...';
+      setTimeout(function() { hasCopied = true; sharedBtn.disabled = false; copyHint.textContent = '✅ 点击下方按钮查看联系方式'; }, 10000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done); }
+    else { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+  });
+  sharedBtn.addEventListener('click', function() {
+    if (!hasCopied) return;
+    localStorage.setItem('sx_shared', '1');
+    shareOverlay.classList.remove('show');
+    var ts = document.querySelectorAll('.contact-trigger');
+    for (var i = 0; i < ts.length; i++) ts[i].outerHTML = '<b class="contact-phone">155-6412-8008</b>';
+  });
+  shareOverlay.addEventListener('click', function(e) { if (e.target === this) closeShareWall(); });
+})();
+</script>
+</body>
+</html>
