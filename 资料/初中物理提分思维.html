@@ -14,16 +14,13 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 .header .tags span{display:inline-block;font-size:11px;padding:2px 10px;border-radius:10px;background:#fadbd8;color:#c0392b;margin-right:6px;margin-bottom:4px}
 .container{max-width:880px;margin:0 auto;padding:10px 20px 40px}
 
-.sec-title{font-size:20px;font-weight:700;color:#1a1a2e;margin:28px 0 12px;padding-left:14px;border-left:4px solid #c0392b;position:relative}
+.sec-title{font-size:20px;font-weight:700;color:#1a1a2e;margin:28px 0 12px;padding-left:14px;border-left:4px solid #c0392b}
 .sec-title .sec-num{font-size:12px;color:#c0392b;background:#fadbd8;border-radius:8px;padding:0 8px;margin-right:8px;font-weight:600;vertical-align:middle}
 
-.kp{background:#fff;border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b;font-size:14px;color:#444}
+.kp,.info-box{background:#fff;border-radius:14px;padding:18px 22px;margin:10px 0 14px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:4px solid #c0392b;font-size:14px;color:#444}
 .kp strong{color:#c0392b}
-.kp .highlight{background:#fff3cd;padding:1px 4px;border-radius:3px;font-weight:600}
 .kp .tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:4px;background:#fadbd8;color:#c0392b;margin-right:4px;font-weight:600}
-.kp .formula{display:block;text-align:center;font-size:16px;color:#c0392b;font-weight:700;padding:8px;margin:6px 0;background:#fdf2f2;border-radius:8px;font-family:"Times New Roman",serif;letter-spacing:1px}
 .kp .step{background:#f8f9fc;border-radius:8px;padding:10px 15px;margin:6px 0;font-size:13px;border-left:3px solid #c0392b}
-.kp .step strong{color:#c0392b}
 .kp .warn{background:#fff3cd;border-radius:8px;padding:8px 14px;margin:6px 0;font-size:13px;border-left:3px solid #f39c12}
 .kp .warn strong{color:#e67e22}
 .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
@@ -32,7 +29,35 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 .kp table tr:nth-child(even){background:#fdf2f2}
 .kp ul{padding-left:20px;margin:6px 0}
 .kp ul li{margin-bottom:4px}
-.kp ul li strong{color:#c0392b}
+
+/* inline chart styles */
+.chart-box{background:#fff;border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 12px rgba(0,0,0,0.05);font-size:13px}
+.chart-box .chart-title{text-align:center;font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.chart-box .chart-sub{text-align:center;font-size:12px;color:#999;margin-bottom:12px}
+
+.inline-bar{display:flex;align-items:center;margin:4px 0}
+.inline-bar .bar-label{width:80px;font-size:12px;color:#444;font-weight:600;flex-shrink:0}
+.inline-bar .bar-track{flex:1;height:20px;background:#ecf0f1;border-radius:10px;overflow:hidden;position:relative}
+.inline-bar .bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;color:#fff;font-weight:600;transition:width .3s}
+
+.inline-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px;margin:8px 0}
+.inline-flow .flow-step{padding:10px 6px;border-radius:8px;color:#fff;font-size:12px;font-weight:600;text-align:center;min-width:70px;flex:1}
+.inline-flow .flow-arrow{font-size:18px;color:#999;flex-shrink:0}
+
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}
+.grid-4 .g-item{border-radius:8px;padding:10px 6px;text-align:center;color:#fff;font-size:12px;font-weight:600}
+
+.step-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:3px;margin:8px 0}
+.step-bar .s-item{border-radius:8px;padding:8px 4px;text-align:center;color:#fff;min-width:60px;flex:1;font-size:11px}
+.step-bar .s-item .s-name{font-size:13px;font-weight:700}
+.step-bar .s-item .s-score{font-size:10px;opacity:.85}
+.step-bar .s-arrow{font-size:18px;color:#999;display:flex;align-items:center}
+
+.h-bar-group{display:flex;align-items:center;margin:5px 0}
+.h-bar-group .h-label{width:90px;font-size:12px;font-weight:600;color:#444;flex-shrink:0}
+.h-bar-group .h-bar-track{flex:1;height:22px;background:#ecf0f1;border-radius:11px;overflow:hidden}
+.h-bar-group .h-bar-fill{height:100%;border-radius:11px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;color:#fff;font-size:11px;font-weight:600;transition:width .3s}
+.h-bar-group .h-bar-desc{width:130px;font-size:11px;color:#999;padding-left:8px;flex-shrink:0}
 
 .ex{background:#fff;border-radius:14px;padding:14px 20px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border-left:4px solid #2980b9}
 .ex .q{font-weight:600;color:#1a1a2e;margin-bottom:4px;font-size:14px}
@@ -52,16 +77,10 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 .hw .sol-btn{display:inline-block;margin:2px 0 6px 20px;padding:2px 12px;font-size:11px;color:#27ae60;background:#eafaf1;border:none;border-radius:6px;cursor:pointer}
 .hw .sol-btn:hover{background:#d5f5e3}
 
-.chart-wrap{text-align:center;margin:16px 0}
-.chart-wrap img{max-width:100%;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
-.chart-wrap .cp{font-size:12px;color:#999;margin-top:3px}
-
 .footer{text-align:center;padding:28px 20px;font-size:12px;color:#999;border-top:1px solid #eee;margin-top:10px}
-
 .back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--back-to-top-bg,#c0392b);color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
 .back-to-top.show{opacity:1;visibility:visible}
 .back-to-top:hover{opacity:.85;transform:translateY(-2px)}
-
 .share-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center}
 .share-overlay.show{display:flex}
 .share-box{background:#fff;border-radius:16px;padding:28px 32px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
@@ -72,19 +91,22 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 .share-box .btn-primary{background:#c0392b;color:#fff}
 .share-box .btn-primary:disabled{background:#ccc;cursor:not-allowed}
 .share-box .btn-secondary{background:#f0f0f0;color:#666}
-.share-box .btn-secondary:hover{background:#e0e0e0}
 .share-box .countdown{font-size:24px;font-weight:700;color:#c0392b;margin:4px 0}
 .share-box .close-btn{position:absolute;top:12px;right:16px;font-size:22px;color:#999;cursor:pointer;background:none;border:none}
 .contact-trigger{display:inline-block;margin-top:8px;padding:8px 24px;background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:600}
-.contact-trigger:hover{opacity:.9}
 .contact-phone{display:inline-block;margin-top:8px;padding:8px 24px;background:linear-gradient(135deg,#27ae60,#2ecc71);color:#fff;border-radius:8px;font-size:16px;font-weight:700;letter-spacing:1px}
-
 @media(max-width:600px){
   .header h1{font-size:22px}
   .container{padding:10px 14px 30px}
-  .kp{padding:14px 16px}
+  .kp,.info-box{padding:14px 16px}
   .ex,.hw{padding:12px 14px}
   .share-box{padding:20px 16px}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .step-bar .s-item{min-width:50px;font-size:10px}
+  .inline-flow{flex-wrap:wrap}
+  .inline-flow .flow-step{min-width:55px}
+  .h-bar-group .h-label{width:65px;font-size:11px}
+  .h-bar-group .h-bar-desc{display:none}
 }
 </style><script src="../js/theme.js"></script></head>
 <body>
@@ -100,7 +122,23 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 
 <div class="container">
 
-<div class="chart-wrap"><img src="charts/phy_score_flow.svg" alt="解题思维流程图"><div class="cp">中考物理解题五步法——做题前默念一遍</div></div>
+<!-- 解题思维流程图 - inline HTML -->
+<div class="chart-box">
+  <div class="chart-title">中考物理解题思维流程图</div>
+  <div class="chart-sub">做题前默念一遍，形成肌肉记忆</div>
+  <div class="inline-flow">
+    <div class="flow-step" style="background:#c0392b">① 审题<br>圈关键量</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step" style="background:#2980b9">② 识别<br>物理模型</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step" style="background:#27ae60">③ 选择<br>对应公式</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step" style="background:#e67e22">④ 代入<br>计算求解</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step" style="background:#8e44ad">⑤ 检查<br>单位和结果</div>
+  </div>
+  <div style="text-align:center;margin-top:8px;padding:8px;background:#f8f9fc;border-radius:8px;font-size:13px;color:#2c3e50">每做一题跑一遍流程，养成解题肌肉记忆</div>
+</div>
 
 <!-- ====== 第一节 ====== -->
 <div class="sec-title"><span class="sec-num">01</span>审题思维——读三遍法</div>
@@ -168,7 +206,18 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="step"><strong>实战技巧：</strong>读完题先问自己三个问题——①这是什么板块？②这是什么模型？③用什么公式？问完再动笔。</div>
 </div>
 
-<div class="chart-wrap"><img src="charts/phy_score_model.svg" alt="常见物理模型分类"><div class="cp">中考物理五大板块模型分类，建立"模型库"思维</div></div>
+<!-- 模型分类 - 内联网格 -->
+<div class="chart-box">
+  <div class="chart-title">中考物理常见模型分类速查</div>
+  <div class="chart-sub">识别模型 = 知道考什么 = 选对公式</div>
+  <div class="grid-4">
+    <div class="g-item" style="background:#c0392b">力学模型<br><span style="font-size:10px;opacity:.85">受力平衡 · 压强浮力<br>功和功率 · 简单机械</span></div>
+    <div class="g-item" style="background:#2980b9">电学模型<br><span style="font-size:10px;opacity:.85">欧姆定律 · 电功率<br>电路故障 · 电磁感应</span></div>
+    <div class="g-item" style="background:#e67e22">热学模型<br><span style="font-size:10px;opacity:.85">物态变化 · 内能和比热容<br>热值计算 · 分子动理论</span></div>
+    <div class="g-item" style="background:#8e44ad">光学模型<br><span style="font-size:10px;opacity:.85">反射定律 · 平面镜成像<br>折射规律 · 凸透镜成像</span></div>
+  </div>
+  <div style="text-align:center;margin-top:10px;padding:8px;background:#f8f9fc;border-radius:8px;font-size:13px;color:#2c3e50">看到题先归类：力学就去想受力和运动 → 电学就去想电路和功率 → 热学就去想吸放热</div>
+</div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例1</span>将标有"6V 3W"和"6V 6W"的两盏灯串联在 6V 的电源上，哪盏灯更亮？</div>
@@ -179,36 +228,26 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
     ③ 灯泡亮度由<strong>实际功率</strong>决定（不是额定功率！）<br>
     <br><strong>解：</strong>R₁=U²/P₁=6²/3=12Ω，R₂=U²/P₂=6²/6=6Ω<br>
     串联电流 I=U/R总=6/(12+6)=1/3 A<br>
-    P实₁=I²R₁=(1/3)²×12=4/3≈1.33W<br>
-    P实₂=I²R₂=(1/3)²×6=2/3≈0.67W<br>
+    P实₁=I²R₁=(1/3)²×12≈1.33W，P实₂=I²R₂=(1/3)²×6≈0.67W<br>
     P实₁ > P实₂ → "6V 3W"的灯更亮<br>
     <span class="point">易错</span> 额定功率大的灯在串联时反而不亮——串联看电阻，电阻大的实际功率大！
   </div>
 </div>
 
 <div class="ex">
-  <div class="q"><span class="q-label">例2</span>一个木块放在水平桌面上，用弹簧测力计水平拉动木块做匀速直线运动，示数为2N。若在木块上加一个砝码，再用弹簧测力计拉动木块做匀速直线运动，示数会如何变化？</div>
+  <div class="q"><span class="q-label">例2</span>一个木块放在水平桌面上，用弹簧测力计水平拉动木块做匀速直线运动，示数为2N。若在木块上加一个砝码，再用弹簧测力计水平拉动木块做匀速直线运动，示数会如何变化？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
   <div class="a"><strong>模型识别：</strong>"匀速直线运动" → 受力平衡 → 拉力 = 摩擦力<br>
     "加砝码" → 压力增大 → 滑动摩擦力增大<br>
     → 弹簧测力计示数<strong>变大</strong><br>
-    <span class="point">考点</span> 滑动摩擦力大小只与压力和接触面粗糙程度有关。加砝码增大压力，摩擦力增大。
+    <span class="point">考点</span> 滑动摩擦力大小只与压力和接触面粗糙程度有关。
   </div>
 </div>
 
 <div class="hw">
   <div class="hw-q"><span class="hw-label">练1</span>一个重 5N 的物体放入水中后漂浮在水面上，它排开水的体积是多少？（g=10N/kg）</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>模型：</strong>"漂浮" → 浮力模型 → F浮=G<br>
-    F浮=5N，F浮=ρ水gV排<br>
-    V排=F浮/(ρ水g)=5/(1.0×10³×10)=5×10⁻⁴m³=500cm³</div>
-</div>
-
-<div class="hw">
-  <div class="hw-q"><span class="hw-label">练2</span>R₁=4Ω与R₂=6Ω并联接入电路，干路电流为2A，求电源电压和通过R₁的电流。</div>
-  <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>模型：</strong>"并联" → 并联电路模型 → 各支路电压相等<br>
-    R总=1/(1/4+1/6)=12/5=2.4Ω，U=I干R总=2×2.4=4.8V，I₁=U/R₁=4.8/4=1.2A</div>
+  <div class="hw-a"><strong>模型：</strong>"漂浮" → 浮力模型 → F浮=G<br>F浮=5N，F浮=ρ水gV排 → V排=5/(1.0×10³×10)=5×10⁻⁴m³=500cm³</div>
 </div>
 
 <!-- ====== 第三节 ====== -->
@@ -221,22 +260,61 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   ① <strong>明确目标：</strong>题要你求什么？（压强？电流？浮力？热量？）<br>
   ② <strong>列出公式：</strong>求这个量需要知道哪些条件？<br>
   ③ <strong>查找已知：</strong>题目给了哪些？缺的能不能间接求出来？<br>
-  <span class="tag">单位检验</span> 代入前检查：cm²→m²，g→kg，min→s，km/h→m/s<br>
+  <span class="tag">单位检验</span> 代入前检查：cm²→m²，g→kg，min→s，km/h→m/s
   <div class="step"><strong>应试技巧：</strong>公式写原始形式（如 p=F/S），不要跳步，每代一个数字都带单位，既方便检查又方便拿步骤分。</div>
 </div>
 
-<div class="chart-wrap"><img src="charts/phy_score_formula.svg" alt="公式选择策略"><div class="cp">公式定位速查表——根据所求量直接查找对应公式</div></div>
+<!-- 公式速查表 - 内联表格 -->
+<div class="chart-box">
+  <div class="chart-title">公式定位速查表</div>
+  <div class="chart-sub">根据所求量直接查找对应公式</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    <div style="flex:1;min-width:160px;background:#fdf2f2;border-radius:10px;padding:10px">
+      <div style="text-align:center;font-weight:700;color:#c0392b;margin-bottom:6px;font-size:13px">力学</div>
+      <table style="width:100%;font-size:12px">
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #fadbd8">重力</td><td style="padding:3px 5px;border-bottom:1px solid #fadbd8;color:#c0392b;font-weight:600;text-align:center">G = mg</td></tr>
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #fadbd8">密度</td><td style="padding:3px 5px;border-bottom:1px solid #fadbd8;color:#c0392b;font-weight:600;text-align:center">ρ = m / V</td></tr>
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #fadbd8">压强</td><td style="padding:3px 5px;border-bottom:1px solid #fadbd8;color:#c0392b;font-weight:600;text-align:center">p = F / S</td></tr>
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #fadbd8">液体压强</td><td style="padding:3px 5px;border-bottom:1px solid #fadbd8;color:#c0392b;font-weight:600;text-align:center">p = ρ g h</td></tr>
+        <tr><td style="padding:3px 5px">浮力</td><td style="padding:3px 5px;color:#c0392b;font-weight:600;text-align:center">F浮 = ρ g V排</td></tr>
+      </table>
+    </div>
+    <div style="flex:1;min-width:160px;background:#eaf2f8;border-radius:10px;padding:10px">
+      <div style="text-align:center;font-weight:700;color:#2980b9;margin-bottom:6px;font-size:13px">电学</div>
+      <table style="width:100%;font-size:12px">
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1">欧姆定律</td><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1;color:#2980b9;font-weight:600;text-align:center">I = U / R</td></tr>
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1">电功率</td><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1;color:#2980b9;font-weight:600;text-align:center">P = U I</td></tr>
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1">电功</td><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1;color:#2980b9;font-weight:600;text-align:center">W = U I t</td></tr>
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1">焦耳定律</td><td style="padding:3px 5px;border-bottom:1px solid #d4e6f1;color:#2980b9;font-weight:600;text-align:center">Q = I² R t</td></tr>
+        <tr><td style="padding:3px 5px">电阻串联</td><td style="padding:3px 5px;color:#2980b9;font-weight:600;text-align:center">R = R1 + R2</td></tr>
+      </table>
+    </div>
+    <div style="flex:1;min-width:120px;background:#fef9e7;border-radius:10px;padding:10px">
+      <div style="text-align:center;font-weight:700;color:#e67e22;margin-bottom:6px;font-size:13px">热学</div>
+      <table style="width:100%;font-size:12px">
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #fdebd0">吸放热</td><td style="padding:3px 5px;border-bottom:1px solid #fdebd0;color:#e67e22;font-weight:600;text-align:center">Q = c m Δt</td></tr>
+        <tr><td style="padding:3px 5px">热值</td><td style="padding:3px 5px;color:#e67e22;font-weight:600;text-align:center">Q = m q</td></tr>
+      </table>
+    </div>
+    <div style="flex:1;min-width:120px;background:#f4ecf7;border-radius:10px;padding:10px">
+      <div style="text-align:center;font-weight:700;color:#8e44ad;margin-bottom:6px;font-size:13px">光学</div>
+      <table style="width:100%;font-size:12px">
+        <tr><td style="padding:3px 5px;border-bottom:1px solid #e8daef">像距公式</td><td style="padding:3px 5px;border-bottom:1px solid #e8daef;color:#8e44ad;font-weight:600;text-align:center">1/f=1/u+1/v</td></tr>
+        <tr><td style="padding:3px 5px">折射率</td><td style="padding:3px 5px;color:#8e44ad;font-weight:600;text-align:center">n = sin i / sin r</td></tr>
+      </table>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:8px;padding:6px;background:#f8f9fc;border-radius:8px;font-size:12px;color:#666">要求什么 → 找到对应板块 → 选公式 → 代数据</div>
+</div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例1</span>标有"220V 100W"的灯泡接在 110V 的电路中，求它的实际功率。</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
   <div class="a"><strong>公式定位三步法：</strong><br>
     <strong>① 目标：</strong>P实（实际功率）<br>
-    <strong>② 备选公式：</strong>P=UI（缺I），P=I²R（缺I），P=U²/R（缺R但U已知）<br>
+    <strong>② 备选公式：</strong>P=UI（缺I），P=I²R（缺I），P=U²/R（R不变，U已知）→ 先用P=U²/R<br>
     <strong>③ 缺什么找什么：</strong>需要R，R不变——用额定状态求R<br>
-    <br>
-    R=U额²/P额=220²/100=484Ω（灯泡电阻固定）<br>
-    P实=U实²/R=110²/484=25W<br>
+    R=U额²/P额=220²/100=484Ω，P实=U实²/R=110²/484=25W<br>
     <span class="point">规律</span> 电压减半 → 功率变为原来的1/4<br>
     <span class="point">易错</span> 不能用 P实=(U实/U额)×P额 算！功率与电压的平方成正比。
   </div>
@@ -245,22 +323,14 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 <div class="ex">
   <div class="q"><span class="q-label">例2</span>质量为2kg的某种物质，温度从20°C升高到40°C时吸收了 1.68×10⁵J 的热量，求这种物质的比热容。</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>公式定位：</strong><br>
-    <strong>目标：</strong>比热容c<br>
-    <strong>公式：</strong>Q=cmΔt → c=Q/(m·Δt)<br>
-    <strong>已知：</strong>Q=1.68×10⁵J，m=2kg，Δt=40-20=20°C<br>
-    c=1.68×10⁵/(2×20)=4200 J/(kg·°C)<br>
-    <span class="point">结果</span> 4200J/(kg·°C) → 这是水的比热容！
-  </div>
+  <div class="a"><strong>定位：</strong>目标→比热容c；公式→Q=cmΔt → c=Q/(m·Δt)<br>
+    c=1.68×10⁵/(2×20)=4200 J/(kg·°C) → 这是水的比热容！</div>
 </div>
 
 <div class="hw">
   <div class="hw-q"><span class="hw-label">练1</span>某电热水壶功率1500W，正常工作10分钟消耗多少电能？合多少度电？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>定位：</strong>目标→电功W，公式→W=Pt<br>
-    <strong>思路1：</strong>P=1500W，t=600s → W=1500×600=9×10⁵J<br>
-    <strong>思路2：</strong>P=1.5kW，t=1/6h → W=1.5×(1/6)=0.25kWh<br>
-    1kWh=3.6×10⁶J，0.25×3.6×10⁶=9×10⁵J ✓</div>
+  <div class="hw-a"><strong>定位：</strong>目标→电功W；公式→W=Pt<br>P=1.5kW，t=1/6h → W=1.5×(1/6)=0.25kWh<br>或 P=1500W，t=600s → W=1500×600=9×10⁵J=0.25kWh ✓</div>
 </div>
 
 <!-- ====== 第四节 ====== -->
@@ -277,52 +347,55 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="step"><strong>中考选择题平均只有2分钟一题，所以——</strong>①读完题先排除1-2个明显错的 ②用技巧在剩下里选 ③不确定的先标记，做完再回看。</div>
 </div>
 
-<div class="chart-wrap"><img src="charts/phy_score_mc.svg" alt="选择题技巧"><div class="cp">选择题各技巧实用命中率，综合使用效果更好</div></div>
+<!-- 选择题技巧 - 内联条形图 -->
+<div class="chart-box">
+  <div class="chart-title">选择题实用技巧及命中率</div>
+  <div class="chart-sub">综合使用多种技巧命中率更高</div>
+  <div class="inline-bar">
+    <span class="bar-label">排除法</span>
+    <div class="bar-track"><div class="bar-fill" style="width:90%;background:#c0392b">90%</div></div>
+  </div>
+  <div class="inline-bar">
+    <span class="bar-label">量纲法</span>
+    <div class="bar-track"><div class="bar-fill" style="width:75%;background:#2980b9">75%</div></div>
+  </div>
+  <div class="inline-bar">
+    <span class="bar-label">极限法</span>
+    <div class="bar-track"><div class="bar-fill" style="width:65%;background:#27ae60">65%</div></div>
+  </div>
+  <div class="inline-bar">
+    <span class="bar-label">特殊值法</span>
+    <div class="bar-track"><div class="bar-fill" style="width:55%;background:#e67e22">55%</div></div>
+  </div>
+  <div class="inline-bar">
+    <span class="bar-label">图像法</span>
+    <div class="bar-track"><div class="bar-fill" style="width:50%;background:#8e44ad">50%</div></div>
+  </div>
+  <div style="text-align:center;margin-top:8px;font-size:11px;color:#999">命中率因题型而异，综合使用效果最好</div>
+</div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例1</span>关于惯性，下列说法正确的是：<br>A. 物体只有静止时才有惯性 &emsp; B. 物体运动速度越大惯性越大<br>C. 物体受力越大惯性越大 &emsp; D. 一切物体在任何情况下都有惯性</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>排除法：</strong><br>
-    A：静止才有惯性？→ 运动的也有 → ✗排除<br>
-    B：速度越大惯性越大？→ 惯性只与质量有关 → ✗排除<br>
-    C：受力越大惯性越大？→ 惯性是固有属性，与受力无关 → ✗排除<br>
-    D：一切物体在任何情况下都有惯性 → 正确 ✓<br>
-    <span class="point">答案</span> <strong>D</strong>
-  </div>
+  <div class="a"><strong>排除法：</strong>A：静止才有惯性？→ 运动的也有 → ✗ &emsp; B：速度越大惯性越大？→ 惯性只与质量有关 → ✗<br>C：受力越大惯性越大？→ 惯性是固有属性 → ✗ &emsp; D：正确 → ✓<br><span class="point">答案</span> <strong>D</strong></div>
 </div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例2</span>甲、乙质量之比3:2，吸收相同热量后升高的温度之比4:3，则比热容之比为：<br>A. 1:2 &emsp; B. 2:1 &emsp; C. 9:8 &emsp; D. 8:9</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>方法一（特殊值法）：</strong>设m甲=3, m乙=2, Δt甲=4, Δt乙=3, Q甲=Q乙=1<br>
-    c=Q/(m·Δt) → c甲:c乙 = (1/12):(1/6) = 1:2<br>
-    <strong>方法二（公式法）：</strong>c甲/c乙=(Q/m甲Δt甲)/(Q/m乙Δt乙)= (1/3×4)/(1/2×3)=2/4=1/2<br>
-    <span class="point">答案</span> <strong>A</strong>
-  </div>
+  <div class="a"><strong>特殊值法：</strong>设m甲=3,m乙=2,Δt甲=4,Δt乙=3,Q甲=Q乙=1<br>c甲:c乙=(1/12):(1/6)=1:2 → <span class="point">答案</span> <strong>A</strong></div>
 </div>
 
 <div class="ex">
-  <div class="q"><span class="q-label">例3</span>（较难）在如图所示的电路中，电源电压不变。闭合开关后，当滑动变阻器的滑片P向右移动时，下列说法正确的是：<br>A. 电流表示数变大，电压表示数变大<br>B. 电流表示数变小，电压表示数变小<br>C. 电流表示数变小，电压表示数变大<br>D. 电流表示数不变，电压表示数变大</div>
+  <div class="q"><span class="q-label">例3</span>（较难）滑片P向右移动时，接入电阻变大。电流表和电压表示数如何变化？<br>A. A↑ V↑ &emsp; B. A↓ V↓ &emsp; C. A↓ V↑ &emsp; D. A不变 V↑</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>排除法+极限法：</strong><br>
-    ① 滑片右移→接入电阻变大→总电阻变大→电流变小 → 排除A、D<br>
-    ② 现在B和C都选电流变小，分歧在电压表<br>
-    ③ 极限法：假设滑片移到最右端，R₂最大，分到的电压最大 → U₂变大<br>
-    C正确 ✓<br>
-    <span class="point">答案</span> <strong>C</strong>（串联分压：电阻越大分压越多）
-  </div>
+  <div class="a"><strong>排除法+极限法：</strong>滑片右移→电阻变大→电流变小→排除A、D。极限法：假设移到最右→R₂最大→分压最大→U₂变大 → <span class="point">答案</span> <strong>C</strong></div>
 </div>
 
 <div class="hw">
   <div class="hw-q"><span class="hw-label">练1</span>下列做法中为了减小压强的是：A.刀刃磨薄 B.铁轨铺枕木上 C.针尖做很尖 D.压路机碾子很重</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>排除法：</strong>A刀刃薄→受力面积小→压强大 ✗ &emsp; C针尖尖→受力面积小→压强大 ✗ &emsp; D碾子重→压力大→压强大 ✗<br>B枕木→增大受力面积→<strong>压强减小 ✓ 答案：B</strong></div>
-</div>
-
-<div class="hw">
-  <div class="hw-q"><span class="hw-label">练2</span>甲、乙两物体运动速度之比为2:3，运动时间之比为5:4，则通过的路程之比为：<br>A. 5:6 &emsp; B. 6:5 &emsp; C. 8:15 &emsp; D. 15:8</div>
-  <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>特殊值法：</strong>v甲=2, v乙=3, t甲=5, t乙=4 → s甲=10, s乙=12 → s甲:s乙=10:12=<strong>5:6 答案：A</strong></div>
+  <div class="hw-a"><strong>排除法：</strong>A、C受力面积小→压强大✗ &emsp; D压力大→压强大✗<br>B枕木→增大受力面积→<strong>压强减小 ✓ 答案：B</strong></div>
 </div>
 
 <!-- ====== 第五节 ====== -->
@@ -336,64 +409,56 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <span class="tag">②代数据</span> 代入数值和单位，如 G=50×10（2分）<br>
   <span class="tag">③算结果</span> 计算出正确结果（1分）<br>
   <span class="tag">④写单位</span> 结果后加单位（0.5分）<br>
-  <span class="tag">⑤作答</span> 写"答：……"（0.5分）<br>
+  <span class="tag">⑤作答</span> 写"答：……"（0.5分）
   <div class="warn"><strong>重要：</strong>即使不会做完整道题，也要把能写的步骤写上去！比如读题发现是力学题，先把G=mg写上去，题目给质量了就能拿2分。千万不要空着！</div>
-  <div class="step"><strong>考场策略：</strong>①先做会做的，确保拿分 ②遇到卡壳的题，把公式写上去再思考 ③每步写清楚，不要跳步 ④最后检查单位是否统一</div>
 </div>
 
-<div class="chart-wrap"><img src="charts/phy_score_calc.svg" alt="计算题步骤得分"><div class="cp">计算题每一步的分值——写对公式+代数据就保底4分</div></div>
+<!-- 步骤分 - 内联流程图 -->
+<div class="chart-box">
+  <div class="chart-title">计算题步骤分策略</div>
+  <div style="text-align:center;margin:8px 0">
+    <div class="step-bar">
+      <div class="s-item" style="background:#c0392b"><div class="s-name">写公式</div><div class="s-score">2分</div></div>
+      <div class="s-arrow">→</div>
+      <div class="s-item" style="background:#e74c3c"><div class="s-name">代数据</div><div class="s-score">2分</div></div>
+      <div class="s-arrow">→</div>
+      <div class="s-item" style="background:#2980b9"><div class="s-name">算结果</div><div class="s-score">1分</div></div>
+      <div class="s-arrow">→</div>
+      <div class="s-item" style="background:#27ae60"><div class="s-name">写单位</div><div class="s-score">0.5分</div></div>
+      <div class="s-arrow">→</div>
+      <div class="s-item" style="background:#8e44ad"><div class="s-name">作答</div><div class="s-score">0.5分</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:6px;padding:8px;background:#f8f9fc;border-radius:8px;font-size:13px">
+    <strong>写对公式 + 代入数据 = 保底4分</strong>（总分6分）
+  </div>
+</div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例1</span>一辆质量1.5t的小汽车在水平公路上匀速行驶，受到的阻力是车重的0.05倍。求：（1）汽车的重力 （2）汽车的牵引力</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
   <div class="a"><strong>满分答卷（6分）：</strong><br>
-    <strong>已知：</strong>m=1.5t=1500kg，g=10N/kg，f=0.05G，匀速行驶<br><br>
-    <strong>（1）求重力 G</strong><br>
-    <strong>解：</strong>公式 G=mg ·············· ①写公式（2分）<br>
-    &emsp;&emsp;&emsp;=1500×10 ·········· ②代数据（2分）<br>
-    &emsp;&emsp;&emsp;=15000N ············ ③结果+单位（0.5分）<br><br>
-    <strong>（2）求牵引力 F</strong><br>
-    匀速 → 受力平衡 → F=f=0.05G<br>
-    F=0.05×15000 ················· 写公式+代数据（1分）<br>
-    &emsp;=750N ···························· 结果+单位（0.5分）<br><br>
-    <strong>答：</strong>汽车重力为15000N，牵引力为750N。<br>
-    <span class="point">总分</span> <strong>6/6分</strong>
-  </div>
+    <strong>已知：</strong>m=1.5t=1500kg，g=10N/kg，f=0.05G，匀速行驶<br>
+    <strong>（1）</strong>公式 G=mg =1500×10=15000N &emsp; ①写公式(2分) ②代数据(2分) ③结果+单位(0.5分)<br>
+    <strong>（2）</strong>匀速→受力平衡→F=f=0.05G=0.05×15000=750N &emsp; 写公式+代数据(1分) 结果+单位(0.5分)<br>
+    <strong>答：</strong>重力15000N，牵引力750N。<span class="point">总分</span> <strong>6/6分</strong></div>
 </div>
 
 <div class="ex">
-  <div class="q"><span class="q-label">例2</span>电路图中R₁=10Ω与R₂=20Ω串联，电源电压6V。求：（1）电路中的电流 （2）R₂两端的电压</div>
+  <div class="q"><span class="q-label">例2</span>（半会不会怎么办）把2kg水从20°C加热到100°C，求吸收的热量。[c水=4.2×10³J/(kg·°C)]</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>即使你第（2）问不会，也要把第（1）问做完！</strong><br><br>
-    <strong>（1）求电流 I</strong><br>
-    R总=R₁+R₂=10+20=30Ω &emsp; I=U/R总=6/30=0.2A<br><br>
-    <strong>（2）求U₂（两种方法）</strong><br>
-    方法一：U₂=IR₂=0.2×20=4V<br>
-    方法二：串联分压 U₂=(R₂/R总)×U=(20/30)×6=4V<br>
-    <span class="point">提分点</span> 第（1）问求出I后，第（2）问可以直接用，不要重复计算。
-  </div>
-</div>
-
-<div class="ex">
-  <div class="q"><span class="q-label">例3</span>（半会不会怎么办）把2kg水从20°C加热到100°C，求吸收的热量。[c水=4.2×10³J/(kg·°C)]</div>
-  <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>如果你忘了公式——先写可能的公式，排除错误的：</strong><br>
-    ✗ Q=cm（漏了Δt）→ 单位不对<br>
-    ✗ Q=mΔt（漏了c）→ 数值不对<br>
-    ✓ Q=cmΔt！<br>
-    <strong>标准步骤：</strong><br>
-    Q=cm(t-t₀)=4.2×10³×2×(100-20)=6.72×10⁵J<br>
-    答：水吸收的热量为6.72×10⁵J。<br>
-    <span class="point">技巧</span> 不确定公式时，用<b>单位检验法</b>——检查等号两边单位是否一致。
+  <div class="a"><strong>如果你忘了公式——用单位检验：</strong><br>
+    ✗ Q=cm（漏了Δt）→ 单位J? ✗ &emsp; ✗ Q=mΔt（漏了c）→ 数值不对 ✗<br>
+    ✓ Q=cmΔt=4.2×10³×2×(100-20)=6.72×10⁵J ✓<br>
+    <span class="point">技巧</span> 不确定公式时，检查等号两边单位是否一致！
   </div>
 </div>
 
 <div class="hw">
   <div class="hw-q"><span class="hw-label">练1</span>一个重50N的物体在水平地面上受到20N水平拉力做匀速运动，求：（1）摩擦力 （2）若拉力减为10N，摩擦力是多少？此时物体做什么运动？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>（1）匀速→受力平衡：</strong>f=F拉=20N<br>
-    <strong>（2）关键：</strong>摩擦力大小只与压力和接触面有关，与拉力无关→f不变=20N<br>
-    此时F拉=10N &lt; f=20N → 物体做<strong>减速运动</strong>（最终静止）<br>
+  <div class="hw-a"><strong>（1）</strong>匀速→f=F拉=20N<br>
+    <strong>（2）</strong>摩擦力与拉力无关→f不变=20N。此时F拉=10N &lt; f → 物体<strong>减速运动</strong><br>
     <span class="point">提分点</span> 第二问不能想当然"减速→摩擦力变小"，要先判断摩擦力是否改变！</div>
 </div>
 
@@ -415,38 +480,65 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="step"><strong>实验题"三个一定"：</strong>①一定先写原理（公式） ②一定注意控制变量 ③一定用物理语言表述结论，不要口语化。</div>
 </div>
 
-<div class="chart-wrap"><img src="charts/phy_score_exp.svg" alt="实验题题型分布"><div class="cp">实验探究题题型分布——原理题和数据分析题占一半</div></div>
+<!-- 实验题题型 - 内联横向条形图 -->
+<div class="chart-box">
+  <div class="chart-title">实验探究题题型分布</div>
+  <div class="chart-sub">原理题和数据分析题占比最高，是复习重点</div>
+  <div class="h-bar-group">
+    <span class="h-label">实验原理题</span>
+    <div class="h-bar-track"><div class="h-bar-fill" style="width:25%;background:#c0392b">25%</div></div>
+    <span class="h-bar-desc">考实验的物理依据</span>
+  </div>
+  <div class="h-bar-group">
+    <span class="h-label">数据分析题</span>
+    <div class="h-bar-track"><div class="h-bar-fill" style="width:25%;background:#27ae60">25%</div></div>
+    <span class="h-bar-desc">考读图描点找规律</span>
+  </div>
+  <div class="h-bar-group">
+    <span class="h-label">步骤设计题</span>
+    <div class="h-bar-track"><div class="h-bar-fill" style="width:20%;background:#2980b9">20%</div></div>
+    <span class="h-bar-desc">考操作顺序规范</span>
+  </div>
+  <div class="h-bar-group">
+    <span class="h-label">误差分析题</span>
+    <div class="h-bar-track"><div class="h-bar-fill" style="width:15%;background:#e67e22">15%</div></div>
+    <span class="h-bar-desc">考误差原因和改进</span>
+  </div>
+  <div class="h-bar-group">
+    <span class="h-label">结论表述题</span>
+    <div class="h-bar-track"><div class="h-bar-fill" style="width:15%;background:#8e44ad">15%</div></div>
+    <span class="h-bar-desc">考实验结论总结</span>
+  </div>
+</div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例1</span>在"测量小灯泡额定功率"实验中，灯泡标有"2.5V"：<br>（1）实验原理？（2）连接电路时开关和滑动变阻器分别应处于什么状态？（3）闭合开关，灯不亮，电流表有示数，电压表无示数，故障原因可能是？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>（1）实验原理：</strong>P=UI。用电压表测U，电流表测I，相乘得P。<br>
-    <strong>（2）操作规范：</strong>①开关<strong>断开</strong>（防止短路烧坏电源）；②滑动变阻器调到<strong>阻值最大处</strong>（保护电路）<br>
-    <strong>（3）故障分析：</strong>电流表有示数→电路通；电压表无示数→灯泡两端无电压→最可能<strong>灯泡短路</strong>（电压表也被短路了）<br>
-    <span class="point">套路</span> 电路故障题：电流表有示数→短路故障；电流表无示数→断路故障
-  </div>
+  <div class="a"><strong>（1）原理：</strong>P=UI。电压表测U，电流表测I，相乘得P。<br>
+    <strong>（2）规范：</strong>①开关<strong>断开</strong> ②滑动变阻器调到<strong>阻值最大处</strong><br>
+    <strong>（3）故障：</strong>电流表有示数→电路通；电压表无示数→灯泡两端无电压→最可能<strong>灯泡短路</strong><br>
+    <span class="point">套路</span> 电路故障题：电流表有示数→短路故障；电流表无示数→断路故障</div>
 </div>
 
 <div class="ex">
   <div class="q"><span class="q-label">例2</span>用天平和量筒测金属块密度。测得质量78g，量筒中水30mL，放入金属块后40mL。若先测体积再称质量，密度偏大还是偏小？为什么？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>（1）密度计算：</strong>V=40-30=10mL=10cm³，ρ=78/10=7.8g/cm³<br>
-    <strong>（2）误差分析（重要！）：</strong>先测体积→金属块沾水→再测质量时质量<strong>偏大</strong>→ρ=m/V→分子偏大→<strong>密度偏大</strong><br>
-    <span class="point">模板</span> 误差分析三步：①哪个操作变了 → ②哪个测量值偏大/偏小 → ③代入公式分析结果的变化
-  </div>
+  <div class="a"><strong>（1）密度：</strong>V=10cm³，ρ=78/10=7.8g/cm³<br>
+    <strong>（2）误差分析：</strong>先测体积→金属块沾水→质量<strong>偏大</strong>→ρ=m/V→分子偏大→<strong>密度偏大</strong><br>
+    <span class="point">模板</span> 误差分析三步：①哪个操作变了 → ②哪个测量值偏大/偏小 → ③代入公式分析结果</div>
 </div>
 
 <div class="hw">
   <div class="hw-q"><span class="hw-label">练1</span>在"研究滑动摩擦力大小与哪些因素有关"的实验中：（1）为什么用测力计水平匀速拉动木块？（2）加砝码后拉力变大，说明什么？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
   <div class="hw-a"><strong>（1）</strong>匀速→受力平衡→拉力=摩擦力，通过测力计示数间接知道摩擦力。<br>
-    <strong>（2）</strong>接触面粗糙程度相同时，<strong>压力越大，滑动摩擦力越大</strong>（控制变量法表述）。</div>
+    <strong>（2）</strong>接触面粗糙程度相同时，<strong>压力越大，滑动摩擦力越大</strong>（控制变量法）。</div>
 </div>
 
 <div class="hw">
-  <div class="hw-q"><span class="hw-label">练2</span>伏安法测电阻实验中，若电压表完好但电流表损坏，能否用一个定值电阻R₀和剩余的器材完成测量？简述方法。</div>
+  <div class="hw-q"><span class="hw-label">练2</span>伏安法测电阻实验中，若电压表完好但电流表损坏，能否用一个定值电阻R₀完成测量？简述方法。</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>特殊方法测电阻：</strong>可以——将R₀与待测电阻Rx串联，用电压表分别测出R₀和Rx两端电压U₀和Ux。串联电流相等：I=U₀/R₀=Ux/Rx → Rx=(Ux/U₀)R₀。<br>
+  <div class="hw-a"><strong>特殊方法：</strong>可以——将R₀与Rx串联，用电压表分别测U₀和Ux。串联电流相等：I=U₀/R₀=Ux/Rx → Rx=(Ux/U₀)R₀。<br>
     <span class="point">套路</span> 缺电流表→串联用电压表；缺电压表→并联用电流表。</div>
 </div>
 
@@ -468,11 +560,11 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
 <div class="ex">
   <div class="q"><span class="q-label">例1</span>一个重5N的物体静止在水平桌面上，画出它对桌面的压力示意图。</div>
   <button class="sol-btn" onclick="toggleSol(this)">看解析</button>
-  <div class="a"><strong>规范作图步骤：</strong><br>
-    ① 受力物体是桌面，所以力的作用点画在<strong>接触面上</strong>（不是画在物体重心！）<br>
+  <div class="a"><strong>规范作图：</strong><br>
+    ① 压力的作用点画在<strong>接触面上</strong>（不是画在物体重心！）<br>
     ② 方向：垂直于桌面向下<br>
     ③ 标字母 F 和大小 F=5N<br>
-    ④ 线段长度适当，箭头清晰<br>
+    ④ 箭头清晰，线段长度适当<br>
     <span class="point">易错</span> "压力示意图"和"重力示意图"的区别——压力作用点在接触面，重力在重心！
   </div>
 </div>
@@ -483,18 +575,11 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="a"><strong>填空题技巧：</strong>看清填空位置前后的文字，确定用词是否准确。<br>
     ① 光从空气→水中：折射角<strong>小于</strong>入射角（空气→水，速度变慢，偏向法线）<br>
     ② 入射角增大→折射角也<strong>增大</strong>（但不一定是正比）<br>
-    <span class="point">套路</span> 填空题填"增大""减小"时，注意是否需要加"逐渐"或"先……后……"。
-  </div>
+    <span class="point">套路</span> 填空题填"增大""减小"时，注意是否需要加"逐渐"或"先……后……"。</div>
 </div>
 
 <div class="hw">
-  <div class="hw-q"><span class="hw-label">练1</span>画出图中杠杆的动力臂L₁和阻力臂L₂（支点在O点，动力F₁方向向下，阻力F₂方向向上）。</div>
-  <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>力臂画法：</strong>①从支点O向力的作用线作垂线 ②垂线用<strong>虚线</strong> ③标<strong>直角符号</strong> ④用大括号标出力臂范围，标L₁/L₂</div>
-</div>
-
-<div class="hw">
-  <div class="hw-q"><span class="hw-label">练2</span>（填空）家庭电路中，控制电灯的开关应接在________线上；三孔插座的第三个孔（最上面的孔）接________线。</div>
+  <div class="hw-q"><span class="hw-label">练1</span>（填空）家庭电路中，控制电灯的开关应接在________线上；三孔插座的第三个孔（最上面的孔）接________线。</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
   <div class="hw-a">①开关接<strong>火线</strong>（断开开关后灯不带电，安全）②三孔插座上孔接<strong>地线</strong>（左零右火上接地）</div>
 </div>
@@ -512,13 +597,13 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
     <tr><td>填空题</td><td>6-8题</td><td>10分钟</td><td>注意单位和用词准确</td></tr>
     <tr><td>作图题</td><td>2-3题</td><td>5分钟</td><td>尺规作图，规范清晰</td></tr>
     <tr><td>实验探究题</td><td>2-3题</td><td>12分钟</td><td>原理→步骤→数据→误差→结论</td></tr>
-    <tr><td>计算题</td><td>2-3题</td><td>13分钟</td><td>写公式→代数据→结果，难的就写前半部分</td></tr>
+    <tr><td>计算题</td><td>2-3题</td><td>13分钟</td><td>写公式→代数据→结果，难的写前半部分</td></tr>
     <tr><td>检查</td><td>—</td><td>5分钟</td><td>查漏补缺、核对单位、确认填涂</td></tr>
   </table>
-  <div class="step"><strong>分级做题策略：</strong><br>
+  <div class="step"><strong>三级做题策略：</strong><br>
     <strong>第一遍（30分钟）：</strong>做所有<strong>会做</strong>的题，确保全对。<br>
     <strong>第二遍（20分钟）：</strong>做<strong>不确定</strong>的题，把能写的步骤都写上去。<br>
-    <strong>第三遍（5分钟）：</strong>做<strong>完全不会</strong>的题，选择题用排除法蒙一个，计算题写公式。<br>
+    <strong>第三遍（5分钟）：</strong>做<strong>完全不会</strong>的题，选择题用排除法蒙，计算题写公式。<br>
     <strong>最后5分钟：</strong>检查答题卡填涂、单位、姓名考号。</div>
   <div class="warn"><strong>血的教训：</strong>千万不要在一道题上死磕超过5分钟！一道选择题耽误了，后面三道大题的时间就没了。</div>
 </div>
@@ -529,30 +614,26 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="a"><strong>最优策略：</strong><br>
     ① <strong>先花1分钟审题</strong>——判断哪道题更容易拿分<br>
     ② <strong>如果计算题思路清晰：</strong>先写公式和代数据（保底4分），再去对付实验题<br>
-    ③ <strong>如果实验题更简单：</strong>先快速写完实验题（只要写对原理和结论就有3-4分），剩下的时间回来补计算题的步骤<br>
-    <span class="point">核心</span> 不要死磕一道题！最后10分钟的目标是"多道题都拿部分分"而不是"一道题拿全分"。
-  </div>
+    ③ <strong>如果实验题更简单：</strong>先快速写完实验题（写对原理和结论就有3-4分），剩下的时间回来补计算题的步骤<br>
+    <span class="point">核心</span> 最后10分钟的目标是"多道题都拿部分分"而不是"一道题拿全分"。</div>
 </div>
 
 <div class="hw">
   <div class="hw-q"><span class="hw-label">思维练习</span>你在考试中发现某道选择题选项A"一定"、B"可能"、C"不可能"、D"总是"，哪几个选项出问题的可能性最大？为什么？</div>
   <button class="sol-btn" onclick="toggleSol(this)">看答案</button>
-  <div class="hw-a"><strong>快速判断：</strong>A"一定"和D"总是"有问题可能性最大！物理题中，<strong>绝对化表述</strong>（都、总是、一定、任何、所有）往往是错的，因为物理规律大多有条件限制。<br>
-    B"可能"最可能是正确答案（温和表述，留有余地）。</div>
+  <div class="hw-a"><strong>快速判断：</strong>A"一定"和D"总是"有问题可能性最大！物理题中，<strong>绝对化表述</strong>（都、总是、一定、任何、所有）往往是错的，因为物理规律大多有条件限制。<br>B"可能"最可能是正确答案（温和表述，留有余地）。</div>
 </div>
 
 </div><!-- /container -->
 
-<!-- Footer -->
 <div class="footer">思贤学习站 · 济南市商河县 · 155-6412-8008</div>
 
-<!-- Share Wall -->
 <div class="share-overlay" id="shareOverlay">
   <div class="share-box" style="position:relative">
     <button class="close-btn" onclick="closeShareWall()">×</button>
     <h3>获取联系方式</h3>
     <p>分享思贤学习站给一位需要的同学，即可解锁老师电话</p>
-    <textarea id="shareText" readonly>我在思贤学习站学习「中考物理提分思维」专题，从审题到检查共8节完整攻略，干货满满！你也来看看 → https://sixian-edu.github.io/sixian-edu/</textarea>
+    <textarea id="shareText" readonly>我在思贤学习站学习「中考物理提分思维」专题，从审题到检查共8节完整攻略，干货满满！思贤学习站 · 济南商河</textarea>
     <button class="btn btn-primary" id="copyBtn" onclick="copyShareText()">复制分享文案</button>
     <div class="countdown" id="countdown"></div>
     <button class="btn btn-primary" id="sharedBtn" disabled onclick="markShared()">我已分享</button>
@@ -565,7 +646,6 @@ body{font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;backgr
   <div class="contact-phone" id="contactPhone" style="display:none">155-6412-8008</div>
 </div>
 
-<!-- Back to Top -->
 <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
 
 <script>
@@ -580,7 +660,6 @@ window.addEventListener('scroll', function(){
   var bt = document.querySelector('.back-to-top');
   if (bt) bt.classList.toggle('show', window.scrollY > 300);
 });
-
 function openShareWall(){ document.getElementById('shareOverlay').classList.add('show'); }
 function closeShareWall(){ document.getElementById('shareOverlay').classList.remove('show'); }
 function copyShareText(){
