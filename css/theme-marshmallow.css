@@ -137,3 +137,14 @@
 .cta-banner { background: linear-gradient(135deg, #5688CC 0%, #5BA0C0 50%, #73BFAA 100%); }
 .cta-banner p { color: #fff; }
 .cta-banner .btn { color: #4A7AB8; }
+
+/* ── 选择老师页：取消 card 子元素的圆角/阴影覆盖 ── */
+.teacher-card .card-top,
+.teacher-card .card-bottom,
+.teacher-card .card-name,
+.teacher-card .card-edu,
+.teacher-card .card-tags,
+.teacher-card .card-badges {
+  box-shadow: none;
+  border-radius: 0;
+}
