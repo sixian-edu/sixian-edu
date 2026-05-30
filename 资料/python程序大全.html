@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Python 程序大全 · 大学专区 · 思贤学习站</title><link rel="icon" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#2d3436;line-height:1.7}
+.head{max-width:960px;margin:0 auto;padding:18px 20px 0}
+.head a{color:#888;font-size:13px;text-decoration:none}
+.head a:hover{color:#5688CC}
+.head h1{font-size:26px;color:#1a1a2e;margin:6px 0 2px}
+.head .sub{font-size:13px;color:#999;margin-bottom:8px}
+.head .sub span{color:#5688CC;font-weight:600}
+.container{max-width:960px;margin:0 auto;padding:12px 20px 40px}
+
+/* ── 目录 ── */
+.toc{background:#fff;border-radius:14px;padding:20px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.toc h2{font-size:16px;color:#1a1a2e;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #5688CC}
+.toc ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 20px}
+.toc ul li{font-size:13px}
+.toc ul li a{color:#5688CC;text-decoration:none}
+.toc ul li a:hover{text-decoration:underline}
+.toc ul li .num{color:#999;margin-right:4px}
+
+/* ── 章节 ── */
+.chapter{background:#fff;border-radius:14px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.05);overflow:hidden}
+.chapter h2{font-size:18px;font-weight:700;padding:16px 24px;margin:0;display:flex;align-items:center;gap:10px}
+.chapter h2 .ch-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;color:#fff;font-size:15px;flex-shrink:0}
+.prog{border-top:1px solid #eee;padding:16px 24px}
+.prog:last-child{border-bottom:none}
+.prog h3{font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:4px}
+.prog h3 .prog-num{display:inline-block;background:#5688CC;color:#fff;font-size:11px;padding:0 8px;border-radius:4px;margin-right:6px;vertical-align:middle}
+.prog .desc{font-size:13px;color:#888;margin-bottom:8px}
+.prog .io{font-size:12px;color:#666;background:#f8f9fc;border-radius:6px;padding:6px 12px;margin-bottom:8px;border-left:3px solid #5688CC}
+
+/* ── 代码块 ── */
+.code-wrap{position:relative;margin:6px 0}
+.code-wrap .btn-copy{position:absolute;top:6px;right:6px;font-size:11px;padding:3px 10px;border-radius:4px;border:1px solid #ddd;background:#fff;color:#666;cursor:pointer;opacity:0;transition:opacity .2s;z-index:2}
+.code-wrap:hover .btn-copy{opacity:1}
+.code-wrap .btn-copy:hover{background:#5688CC;color:#fff;border-color:#5688CC}
+.code-wrap .btn-copy.copied{background:#27ae60;color:#fff;border-color:#27ae60}
+pre{background:#1e1e2e;color:#cdd6f4;border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.6;overflow-x:auto;font-family:"Cascadia Code","Fira Code","Consolas",monospace;tab-size:4}
+pre .kw{color:#cba6f7}pre .fu{color:#89b4fa}pre .st{color:#a6e3a1}pre .cm{color:#6c7086;font-style:italic}
+pre .op{color:#89dceb}pre .nu{color:#fab387}pre .bu{color:#f38ba8}pre .tp{color:#f9e2af}
+pre .output{color:#585b70}
+
+/* ── 返回顶部 ── */
+.back-to-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:#5688CC;color:#fff;border:none;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:999;display:flex;align-items:center;justify-content:center}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{opacity:.85;transform:translateY(-2px)}
+
+@media(max-width:768px){
+  .toc ul{grid-template-columns:1fr}
+  .head h1{font-size:22px}
+  .prog{padding:14px 16px}
+  .chapter h2{padding:14px 16px;font-size:16px}
+  pre{font-size:12px;padding:10px 12px}
+}
+
+/* ── 大学专区横幅 ── */
+.uni-banner{background:linear-gradient(135deg,#8899CC,#7A88C0);color:#fff;border-radius:14px;padding:20px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.uni-banner h2{font-size:18px;margin-bottom:4px}
+.uni-banner p{font-size:13px;opacity:.85}
+.uni-banner .tag{display:inline-block;background:rgba(255,255,255,0.2);padding:2px 12px;border-radius:10px;font-size:11px;margin-top:6px}
+</style><script src="../js/theme.js"></script></head><body>
+
+<div class="head">
+<a href="../学习专区.html">&larr; 返回学习专区</a>
+<h1>Python 程序大全</h1>
+<p class="sub">Python 程序设计课程·全部PPT代码整理·期末复习背诵版 共 <span>12</span> 章 · <span>80+</span> 个程序</p>
+</div>
+
+<div class="container">
+
+<!-- ════ 横幅 ════ -->
+<div class="uni-banner">
+<h2>🎓 大学专区 · Python 程序设计</h2>
+<p>本页整理了课程全部 PPT 中出现的所有 Python 程序代码，按章节分类。期末从这些代码中随机抽考，务必全部手敲过关。</p>
+<span class="tag">🐍 共 12 章 · 期末必考</span>
+</div>
+
+<!-- ════ 目录 ════ -->
+<div class="toc">
+<h2>📑 目录</h2>
+<ul>
+<li><a href="#ch2"><span class="num">02.</span>表达式与输入输出</a></li>
+<li><a href="#ch3"><span class="num">03.</span>流程控制</a></li>
+<li><a href="#ch4"><span class="num">04.</span>列表</a></li>
+<li><a href="#ch5"><span class="num">05.</span>元组·字典·集合·字符串</a></li>
+<li><a href="#ch6"><span class="num">06.</span>函数</a></li>
+<li><a href="#ch7"><span class="num">07.</span>函数进阶与递归</a></li>
+<li><a href="#ch8"><span class="num">08.</span>模块</a></li>
+<li><a href="#ch9"><span class="num">09.</span>面向对象</a></li>
+<li><a href="#ch10"><span class="num">10.</span>文件操作</a></li>
+<li><a href="#ch11"><span class="num">11.</span>异常处理</a></li>
+<li><a href="#ch12"><span class="num">12.</span>NumPy 科学计算</a></li>
+<li><a href="#ch13"><span class="num">13.</span>机器学习入门</a></li>
+</ul>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第2章 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch2">
+<h2><span class="ch-num" style="background:#8899CC">02</span> 表达式与输入输出</h2>
+
+<div class="prog">
+<h3><span class="prog-num">1</span> 基本输入输出</h3>
+<p class="desc">使用 print() 输出、input() 输入、format() 格式化</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># 单行注释</span>
+<span class="fu">print</span>(<span class="st">"welcome to learn python"</span>)      <span class="cm"># 输出</span>
+
+x = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'请输入一个整数: '</span>))
+y = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'请输入一个整数: '</span>))
+z = x + y
+<span class="fu">print</span>(<span class="st">'{}+{}={}'</span>.<span class="fu">format</span>(x, y, z))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">2</span> 变量交换</h3>
+<p class="desc">Python 特有的多重赋值实现变量交换</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>x = <span class="fu">input</span>(<span class="st">'请输入x: '</span>)
+y = <span class="fu">input</span>(<span class="st">'请输入y: '</span>)
+<span class="fu">print</span>(<span class="st">'交换前x={},y={}'</span>.<span class="fu">format</span>(x, y))
+x, y = y, x
+<span class="fu">print</span>(<span class="st">'交换后x={},y={}'</span>.<span class="fu">format</span>(x, y))
+<span class="cm"># 输出: 交换前x=5,y=6 → 交换后x=6,y=5</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">3</span> 圆周长与面积计算</h3>
+<p class="desc">从 math 模块导入 π，浮点数格式化</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">from</span> math <span class="kw">import</span> pi <span class="kw">as</span> PI
+r = <span class="bu">float</span>(<span class="fu">input</span>(<span class="st">'请输入半径: '</span>))
+circle = <span class="nu">2</span> * PI * r
+area = PI * r * r
+<span class="fu">print</span>(<span class="st">'半径为：{:.2f}，周长为：{:.2f}，面积为：{:.2f}'</span>.<span class="fu">format</span>(r, circle, area))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">4</span> 多个输出参数</h3>
+<p class="desc">print 的 sep 和 end 参数</p>
+<div class="io">输入: hello</div>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>X = <span class="fu">input</span>()
+<span class="fu">print</span>(X, X, X, <span class="st">'a'</span>, sep=<span class="st">','</span>, end=<span class="st">';'</span>)
+<span class="cm"># 输入 hello → 输出: hello,hello,hello,a;</span></pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第3章：流程控制 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch3">
+<h2><span class="ch-num" style="background:#7A88C0">03</span> 流程控制</h2>
+
+<div class="prog">
+<h3><span class="prog-num">5</span> if-else 判断奇偶</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>n1 = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'enter a number: '</span>))
+<span class="kw">if</span> n1 % <span class="nu">2</span> == <span class="nu">0</span>:
+    <span class="fu">print</span>(<span class="st">'{}是偶数'</span>.<span class="fu">format</span>(n1))
+<span class="kw">else</span>:
+    <span class="fu">print</span>(<span class="st">'{}是奇数'</span>.<span class="fu">format</span>(n1))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">6</span> if-else 成绩及格判断</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>score = <span class="bu">float</span>(<span class="fu">input</span>(<span class="st">'enter a score: '</span>))
+<span class="kw">if</span> score >= <span class="nu">60</span>:
+    <span class="fu">print</span>(<span class="st">'成绩{}及格'</span>.<span class="fu">format</span>(score))
+<span class="kw">else</span>:
+    <span class="fu">print</span>(<span class="st">'成绩{}不及格'</span>.<span class="fu">format</span>(score))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">7</span> 登录验证</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>user_name = <span class="fu">input</span>(<span class="st">'enter username: '</span>)
+pw = <span class="fu">input</span>(<span class="st">'enter password: '</span>)
+<span class="kw">if</span> user_name == <span class="st">'admin'</span> <span class="kw">and</span> pw == <span class="st">'123'</span>:
+    <span class="fu">print</span>(<span class="st">'登录成功!'</span>)
+<span class="kw">else</span>:
+    <span class="fu">print</span>(<span class="st">'用户名或密码错误'</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">8</span> if-elif-else 成绩等级（推荐）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>score = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'enter a score: '</span>))
+<span class="kw">if</span> score > <span class="nu">100</span> <span class="kw">or</span> score < <span class="nu">0</span>:
+    <span class="fu">print</span>(<span class="st">'输入错误'</span>)
+<span class="kw">elif</span> score >= <span class="nu">90</span>:
+    <span class="fu">print</span>(<span class="st">'优秀'</span>)
+<span class="kw">elif</span> score >= <span class="nu">80</span>:
+    <span class="fu">print</span>(<span class="st">'良好'</span>)
+<span class="kw">elif</span> score >= <span class="nu">70</span>:
+    <span class="fu">print</span>(<span class="st">'中等'</span>)
+<span class="kw">elif</span> score >= <span class="nu">60</span>:
+    <span class="fu">print</span>(<span class="st">'及格'</span>)
+<span class="kw">else</span>:
+    <span class="fu">print</span>(<span class="st">'不及格'</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">9</span> if 嵌套实现成绩等级</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>score = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'enter a score: '</span>))
+<span class="kw">if</span> score > <span class="nu">100</span> <span class="kw">or</span> score < <span class="nu">0</span>:
+    <span class="fu">print</span>(<span class="st">'输入错误'</span>)
+<span class="kw">else</span>:
+    <span class="kw">if</span> score >= <span class="nu">90</span>:
+        <span class="fu">print</span>(<span class="st">'优秀'</span>)
+    <span class="kw">else</span>:
+        <span class="kw">if</span> score >= <span class="nu">80</span>:
+            <span class="fu">print</span>(<span class="st">'良好'</span>)
+        <span class="kw">else</span>:
+            <span class="kw">if</span> score >= <span class="nu">70</span>:
+                <span class="fu">print</span>(<span class="st">'中等'</span>)
+            <span class="kw">else</span>:
+                <span class="kw">if</span> score >= <span class="nu">60</span>:
+                    <span class="fu">print</span>(<span class="st">'及格'</span>)
+                <span class="kw">else</span>:
+                    <span class="fu">print</span>(<span class="st">'不及格'</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">10</span> while 循环 + break</h3>
+<p class="desc">找出300以内能被19整除的最大正整数</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">300</span>, <span class="nu">0</span>, -<span class="nu">1</span>):
+    <span class="kw">if</span> i % <span class="nu">19</span> == <span class="nu">0</span>:
+        <span class="fu">print</span>(<span class="st">'300以内能被19整除的最大正整数是：'</span>, i)
+        <span class="kw">break</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">11</span> for 循环 + continue</h3>
+<p class="desc">输出1-10之间的奇数</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">1</span>, <span class="nu">11</span>):
+    <span class="kw">if</span> i % <span class="nu">2</span> == <span class="nu">0</span>:
+        <span class="kw">continue</span>
+    <span class="fu">print</span>(i, end=<span class="st">' '</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">12</span> 九九乘法表（for 嵌套）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">1</span>, <span class="nu">10</span>):
+    <span class="kw">for</span> j <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">1</span>, i + <span class="nu">1</span>):
+        <span class="fu">print</span>(<span class="st">'%d*%d=%-2d '</span> % (i, j, i * j), end=<span class="st">''</span>)
+    <span class="fu">print</span>()</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">13</span> 九九乘法表（while 嵌套）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>i = <span class="nu">1</span>
+<span class="kw">while</span> i <= <span class="nu">9</span>:
+    j = <span class="nu">1</span>
+    <span class="kw">while</span> j <= i:
+        <span class="fu">print</span>(<span class="st">'%d*%d=%-2d '</span> % (i, j, i * j), end=<span class="st">''</span>)
+        j += <span class="nu">1</span>
+    <span class="fu">print</span>()
+    i += <span class="nu">1</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">14</span> 随机数猜数字</h3>
+<p class="desc">桌面文件 first 1.py - 随机猜数字游戏</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> random
+num = random.<span class="fu">randint</span>(<span class="nu">1</span>, <span class="nu">10</span>)
+
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">10</span>):
+    <span class="kw">if</span> i == num:
+        <span class="fu">print</span>(<span class="st">"congratulations!"</span>)
+    <span class="kw">else</span>:
+        <span class="fu">print</span>(<span class="st">"please try again"</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">15</span> for 遍历字符串</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">for</span> ch <span class="kw">in</span> <span class="st">'hello'</span>:
+    <span class="fu">print</span>(ch, end=<span class="st">', '</span>)  <span class="cm"># h, e, l, l, o,</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">15</span> 1-100 奇数和</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>s = <span class="nu">0</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">1</span>, <span class="nu">101</span>, <span class="nu">2</span>):
+    s += i
+<span class="fu">print</span>(<span class="st">'1到100之间所有奇数和为：'</span>, s)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">16</span> 1-100 偶数和（while）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>s = i = <span class="nu">0</span>
+<span class="kw">while</span> i <= <span class="nu">100</span>:
+    <span class="kw">if</span> i % <span class="nu">2</span> == <span class="nu">0</span>:
+        s += i
+    i += <span class="nu">1</span>
+<span class="fu">print</span>(<span class="st">'1到100之间所有偶数和是：'</span>, s)</pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第4章：列表 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch4">
+<h2><span class="ch-num" style="background:#B89AD4">04</span> 列表</h2>
+
+<div class="prog">
+<h3><span class="prog-num">17</span> 列表推导式</h3>
+<p class="desc">找出所有大于等于60的数 / 所有偶数</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>score = [<span class="nu">40</span>, <span class="nu">55</span>, <span class="nu">78</span>, <span class="nu">89</span>, <span class="nu">90</span>, <span class="nu">89</span>, <span class="nu">99</span>, <span class="nu">67</span>, <span class="nu">90</span>, <span class="nu">92</span>]
+
+<span class="cm"># 找出所有大于等于60的数</span>
+passed = [x <span class="kw">for</span> x <span class="kw">in</span> score <span class="kw">if</span> x >= <span class="nu">60</span>]
+<span class="fu">print</span>(passed)  <span class="cm"># [78, 89, 90, 89, 99, 67, 90, 92]</span>
+
+<span class="cm"># 找出所有的偶数</span>
+evens = [x <span class="kw">for</span> x <span class="kw">in</span> score <span class="kw">if</span> x % <span class="nu">2</span> == <span class="nu">0</span>]
+<span class="fu">print</span>(evens)  <span class="cm"># [40, 78, 90, 90, 90, 92]</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">18</span> 列表切片</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># 使用切片修改前3个元素</span>
+lst = [<span class="nu">1</span>, <span class="nu">2</span>, <span class="nu">3</span>, <span class="nu">4</span>, <span class="nu">5</span>]
+lst[:<span class="nu">3</span>] = [<span class="nu">10</span>, <span class="nu">20</span>, <span class="nu">30</span>]
+
+<span class="cm"># 使用切片修改下标为0、5、10的元素</span>
+lst[<span class="nu">0</span>::<span class="nu">5</span>] = [<span class="nu">100</span>, <span class="nu">200</span>]</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">19</span> 嵌套列表推导式</h3>
+<p class="desc">3种颜色中随机选择2种的所有组合</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>colors = (<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>)
+combine = [(colors[i], colors[j]) <span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="bu">len</span>(colors))
+           <span class="kw">for</span> j <span class="kw">in</span> <span class="fu">range</span>(i + <span class="nu">1</span>, <span class="bu">len</span>(colors))]
+<span class="fu">print</span>(<span class="st">'3种颜色中随机选择2种的组合有：'</span>)
+<span class="kw">for</span> c <span class="kw">in</span> combine:
+    <span class="fu">print</span>(c, end=<span class="st">' '</span>)</pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第5章：元组·字典·集合·字符串 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch5">
+<h2><span class="ch-num" style="background:#C8AAE0">05</span> 元组 · 字典 · 集合 · 字符串</h2>
+
+<div class="prog">
+<h3><span class="prog-num">20</span> 字典字符统计</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>str1 = <span class="st">'helloPython'</span>
+mydict = {}       <span class="cm"># 设置一个空字典</span>
+<span class="kw">for</span> ch <span class="kw">in</span> str1:   <span class="cm"># 统计各字符出现次数</span>
+    mydict[ch] = mydict.get(ch, <span class="nu">0</span>) + <span class="nu">1</span>
+<span class="fu">print</span>(<span class="st">'各字符出现的次数：'</span>)
+<span class="kw">for</span> k <span class="kw">in</span> mydict:
+    <span class="fu">print</span>(k, mydict[k], sep=<span class="st">':'</span>, end=<span class="st">' '</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">21</span> ROT13 加密/解密</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>k = <span class="st">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'</span>
+v = <span class="st">'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'</span>
+text = <span class="st">'She has 2 sisters'</span>
+mydict = <span class="bu">dict</span>(<span class="fu">zip</span>(k, v))
+ciphertext = [mydict.get(ch) <span class="kw">if</span> ch <span class="kw">in</span> mydict <span class="kw">else</span> ch <span class="kw">for</span> ch <span class="kw">in</span> text]
+<span class="kw">for</span> ch <span class="kw">in</span> ciphertext:
+    <span class="fu">print</span>(ch, end=<span class="st">''</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">22</span> 集合运算（公益活动）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>students = {<span class="st">'王芳'</span>, <span class="st">'刘明'</span>, <span class="st">'赵宇'</span>, <span class="st">'张月'</span>, <span class="st">'孙朋'</span>, <span class="st">'张敏'</span>}
+spring = {<span class="st">'刘明'</span>, <span class="st">'赵宇'</span>, <span class="st">'孙朋'</span>, <span class="st">'张敏'</span>}       <span class="cm"># 参加爱泉护泉</span>
+green_out = {<span class="st">'王芳'</span>, <span class="st">'赵宇'</span>, <span class="st">'孙朋'</span>}         <span class="cm"># 参加绿色出行</span>
+<span class="fu">print</span>(<span class="st">'两个公益活动都参加的学生有：'</span>, spring & green_out)
+<span class="fu">print</span>(<span class="st">'一个公益活动也没参加的学生有：'</span>, students - (spring | green_out))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">23</span> 字典推导式统计字母</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>str_demo = <span class="st">'I have 1 book.She has 2 books.'</span>
+str_demo = str_demo.<span class="fu">lower</span>()
+result = {ch: str_demo.<span class="fu">count</span>(ch) <span class="kw">for</span> ch <span class="kw">in</span> str_demo <span class="kw">if</span> ch.<span class="fu">isalpha</span>()}
+<span class="fu">print</span>(<span class="st">'各英文字母出现的次数为：'</span>)
+<span class="kw">for</span> k <span class="kw">in</span> result:
+    <span class="fu">print</span>(k, result[k], sep=<span class="st">':'</span>, end=<span class="st">' '</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">24</span> 随机密码生成</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">from</span> string <span class="kw">import</span> ascii_letters, digits
+<span class="kw">from</span> random <span class="kw">import</span> choice
+x = ascii_letters + digits
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">5</span>):
+    <span class="fu">print</span>(<span class="st">''</span>.<span class="fu">join</span>([choice(x) <span class="kw">for</span> j <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">10</span>)]))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">25</span> 随机密码（不重复抽样）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">from</span> string <span class="kw">import</span> ascii_letters, digits
+<span class="kw">from</span> random <span class="kw">import</span> sample
+x = ascii_letters + digits
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">5</span>):
+    <span class="fu">print</span>(<span class="st">''</span>.<span class="fu">join</span>(sample(x, <span class="nu">10</span>)))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">26</span> 凯撒密码（translate 实现）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">from</span> string <span class="kw">import</span> ascii_lowercase <span class="kw">as</span> lowers
+<span class="kw">from</span> string <span class="kw">import</span> ascii_uppercase <span class="kw">as</span> uppers
+<span class="kw">from</span> string <span class="kw">import</span> ascii_letters <span class="kw">as</span> letters
+k = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'enter k:'</span>))
+text = <span class="st">'She has 2 sisters.'</span>
+destination = lowers[k:] + lowers[:k] + uppers[k:] + uppers[:k]
+table = <span class="st">''</span>.<span class="fu">maketrans</span>(letters, destination)
+cipher = text.<span class="fu">translate</span>(table)
+<span class="fu">print</span>(<span class="st">'明文是：%s</span><span class="kw">\n</span><span class="st">密文是：%s'</span> % (text, cipher))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">27</span> 天气统计（字典 + split）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>weather = <span class="st">'sunny,windy,sunny,rainy,rainy,windy,sunny,windy,sunny,windy'</span>
+wlist = weather.<span class="fu">split</span>(<span class="st">','</span>)
+result = {w: wlist.<span class="fu">count</span>(w) <span class="kw">for</span> w <span class="kw">in</span> <span class="bu">set</span>(wlist)}
+<span class="fu">print</span>(<span class="st">'天气:次数'</span>)
+<span class="kw">for</span> k, v <span class="kw">in</span> result.<span class="fu">items</span>():
+    <span class="fu">print</span>(k, v, sep=<span class="st">':'</span>)</pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第6章：函数 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch6">
+<h2><span class="ch-num" style="background:#8899CC">06</span> 函数</h2>
+
+<div class="prog">
+<h3><span class="prog-num">28</span> 基本函数定义与调用</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">avg</span>(n1, n2):
+    <span class="kw">return</span> (n1 + n2) / <span class="nu">2</span>
+
+<span class="fu">print</span>(avg(<span class="nu">3</span>, <span class="nu">4</span>))  <span class="cm"># 3.5</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">29</span> 无参函数</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">print_head</span>():
+    <span class="fu">print</span>(<span class="st">'*'</span> * <span class="nu">20</span>)
+    <span class="fu">print</span>(<span class="st">'学生信息管理系统'</span>)
+    <span class="fu">print</span>(<span class="st">'*'</span> * <span class="nu">20</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">30</span> 多返回值</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">fun_demo</span>(n):
+    <span class="kw">return</span> n**<span class="nu">2</span>, n**<span class="nu">3</span>, n**<span class="nu">4</span>
+
+a, b, c = <span class="fu">fun_demo</span>(<span class="nu">10</span>)
+<span class="fu">print</span>(a, b, c)  <span class="cm"># 100 1000 10000</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">31</span> 默认参数</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">fun_demo</span>(name, score=<span class="nu">60</span>):
+    <span class="fu">print</span>(<span class="st">'name:%s,score:%d'</span> % (name, score))
+
+<span class="fu">fun_demo</span>(<span class="st">'张三'</span>)         <span class="cm"># name:张三,score:60</span>
+<span class="fu">fun_demo</span>(<span class="st">'李四'</span>, <span class="nu">90</span>)      <span class="cm"># name:李四,score:90</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">32</span> 可变参数 *args</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">fun_demo</span>(arg1, *args):
+    <span class="fu">print</span>(<span class="st">'arg1={},arg2={}'</span>.<span class="fu">format</span>(arg1, args))
+
+<span class="fu">fun_demo</span>(<span class="nu">3</span>)             <span class="cm"># arg1=3,arg2=()</span>
+<span class="fu">fun_demo</span>(<span class="nu">3</span>, <span class="nu">4</span>, <span class="nu">5</span>, <span class="nu">6</span>, <span class="st">'a'</span>)  <span class="cm"># arg1=3,arg2=(4, 5, 6, 'a')</span>
+<span class="fu">fun_demo</span>(<span class="nu">3</span>, <span class="nu">4</span>)         <span class="cm"># arg1=3,arg2=(4,)</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">33</span> 关键字参数 **kwargs</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">fun_demo</span>(arg1, **args):
+    <span class="fu">print</span>(<span class="st">'arg1={},arg2={}'</span>.<span class="fu">format</span>(arg1, args))
+
+<span class="fu">fun_demo</span>(<span class="nu">3</span>)                         <span class="cm"># arg1=3,arg2={}</span>
+<span class="fu">fun_demo</span>(<span class="nu">3</span>, x=<span class="nu">5</span>, y=<span class="nu">6</span>)              <span class="cm"># arg1=3,arg2={'x': 5, 'y': 6}</span>
+<span class="fu">fun_demo</span>(<span class="nu">3</span>, score=<span class="nu">70</span>)              <span class="cm"># arg1=3,arg2={'score': 70}</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">34</span> 可变参数求平均值</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">avg</span>(*args):
+    <span class="kw">if</span> <span class="bu">len</span>(args) == <span class="nu">0</span>:
+        <span class="kw">return</span> <span class="tp">None</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> <span class="bu">sum</span>(args) / <span class="bu">len</span>(args)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">35</span> lambda 函数</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># lambda 作为返回值</span>
+<span class="kw">def</span> <span class="fu">make</span>():
+    <span class="kw">return</span> <span class="kw">lambda</span> x: x * <span class="nu">2</span>
+
+f = <span class="fu">make</span>()
+<span class="fu">print</span>(f(<span class="nu">5</span>))  <span class="cm"># 10</span></pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第7章：函数进阶与递归 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch7">
+<h2><span class="ch-num" style="background:#7A88C0">07</span> 函数进阶 · 作用域 · 递归</h2>
+
+<div class="prog">
+<h3><span class="prog-num">36</span> 全局变量与局部变量</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>count = <span class="nu">10</span>               <span class="cm"># 全局变量</span>
+<span class="kw">def</span> <span class="fu">func_demo</span>(m, n):
+    count = m + n        <span class="cm"># 局部变量</span>
+    <span class="fu">print</span>(<span class="st">'函数内部count='</span>, count)
+
+<span class="fu">func_demo</span>(<span class="nu">7</span>, <span class="nu">10</span>)   <span class="cm"># 函数内部count= 17</span>
+<span class="fu">print</span>(count)        <span class="cm"># 10（全局变量不变）</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">37</span> global 关键字</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>count = <span class="nu">10</span>                <span class="cm"># 全局变量</span>
+<span class="kw">def</span> <span class="fu">func_demo</span>(m, n):
+    <span class="kw">global</span> count
+    count = m + n           <span class="cm"># 修改全局变量</span>
+    <span class="fu">print</span>(<span class="st">'函数内部count='</span>, count)
+
+<span class="fu">func_demo</span>(<span class="nu">7</span>, <span class="nu">10</span>)          <span class="cm"># 函数内部count= 17</span>
+<span class="fu">print</span>(count)               <span class="cm"># 17（全局变量被修改）</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">38</span> nonlocal 关键字（嵌套函数）</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>count = <span class="nu">100</span>         <span class="cm"># 全局变量</span>
+<span class="kw">def</span> <span class="fu">func_out</span>():
+    count = <span class="nu">1</span>        <span class="cm"># 外部函数的局部变量</span>
+    <span class="kw">def</span> <span class="fu">func_in</span>():
+        <span class="kw">nonlocal</span> count
+        count = <span class="nu">12</span>   <span class="cm"># 修改外部函数的count</span>
+        <span class="fu">print</span>(<span class="st">'在func_in中，count= '</span>, count)
+    <span class="fu">func_in</span>()
+    <span class="fu">print</span>(<span class="st">'在func_out中，count= '</span>, count)
+
+<span class="fu">func_out</span>()
+<span class="fu">print</span>(<span class="st">'全局count='</span>, count)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">39</span> 内部函数实现组合数 C(m,n)</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">cmn</span>(m, n):             <span class="cm"># 外部函数</span>
+    <span class="kw">def</span> <span class="fu">fac_demo</span>(n):      <span class="cm"># 内部函数：求阶乘</span>
+        f = <span class="nu">1</span>
+        <span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">1</span>, n + <span class="nu">1</span>):
+            f *= i
+        <span class="kw">return</span> f
+    <span class="kw">return</span> <span class="fu">fac_demo</span>(m) / (<span class="fu">fac_demo</span>(n) * <span class="fu">fac_demo</span>(m - n))
+
+<span class="fu">print</span>(<span class="st">'c(5,2)='</span>, <span class="fu">cmn</span>(<span class="nu">5</span>, <span class="nu">2</span>))  <span class="cm"># 10.0</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">40</span> 递归求阶乘</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">fac</span>(n):
+    <span class="kw">if</span> n == <span class="nu">1</span>:
+        <span class="kw">return</span> <span class="nu">1</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> n * <span class="fu">fac</span>(n - <span class="nu">1</span>)
+
+<span class="fu">print</span>(<span class="st">' 5!= '</span>, <span class="fu">fac</span>(<span class="nu">5</span>))  <span class="cm"># 120</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">41</span> 汉诺塔</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">hanoi</span>(n, a, b, c):
+    <span class="kw">if</span> n == <span class="nu">1</span>:
+        <span class="fu">print</span>(<span class="st">'{}----->{}'</span>.<span class="fu">format</span>(a, c))
+    <span class="kw">else</span>:
+        <span class="fu">hanoi</span>(n - <span class="nu">1</span>, a, c, b)
+        <span class="fu">print</span>(<span class="st">'{}----->{}'</span>.<span class="fu">format</span>(a, c))
+        <span class="fu">hanoi</span>(n - <span class="nu">1</span>, b, a, c)
+
+<span class="fu">print</span>(<span class="st">'3个盘子的移动过程：'</span>)
+<span class="fu">hanoi</span>(<span class="nu">3</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">42</span> 回文判断</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">IsPalindrome</span>(text):
+    <span class="kw">return</span> text == text[::<span class="op">-</span><span class="nu">1</span>]
+
+str_demo = <span class="fu">input</span>(<span class="st">'enter a string:'</span>)
+<span class="kw">if</span> <span class="fu">IsPalindrome</span>(str_demo):
+    <span class="fu">print</span>(<span class="st">'字符串"{}"是回文'</span>.<span class="fu">format</span>(str_demo))
+<span class="kw">else</span>:
+    <span class="fu">print</span>(<span class="st">'字符串"{}"不是回文'</span>.<span class="fu">format</span>(str_demo))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">43</span> 求所有素因子</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">AllPrime</span>(m):     <span class="cm"># 求所有素因子</span>
+    <span class="kw">def</span> <span class="fu">IsPrime</span>(n):  <span class="cm"># 判断一个数是否是素数</span>
+        <span class="kw">return</span> <span class="nu">0</span> <span class="kw">not</span> <span class="kw">in</span> [<span class="nu">0</span> <span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">2</span>, n) <span class="kw">if</span> n % i == <span class="nu">0</span>]
+    <span class="kw">return</span> [i <span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">2</span>, m) <span class="kw">if</span> m % i == <span class="nu">0</span> <span class="kw">and</span> <span class="fu">IsPrime</span>(i)]
+
+m = <span class="bu">int</span>(<span class="fu">input</span>(<span class="st">'enter a number:'</span>))
+<span class="fu">print</span>(<span class="st">'{}的素因子有{}'</span>.<span class="fu">format</span>(m, <span class="fu">AllPrime</span>(m)))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">44</span> 循环移位</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">shift</span>(lst, k):     <span class="cm"># 循环移位</span>
+    <span class="kw">return</span> lst[k:] + lst[:k]
+
+<span class="fu">print</span>(<span class="fu">shift</span>([<span class="nu">1</span>, <span class="nu">2</span>, <span class="nu">3</span>, <span class="nu">4</span>, <span class="nu">5</span>], <span class="nu">2</span>))  <span class="cm"># [3, 4, 5, 1, 2]</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">45</span> 统计字母和数字个数</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">def</span> <span class="fu">count</span>(s):
+    alpha = num = <span class="nu">0</span>
+    <span class="kw">for</span> ch <span class="kw">in</span> s:
+        <span class="kw">if</span> ch.<span class="fu">isalpha</span>():
+            alpha += <span class="nu">1</span>
+        <span class="kw">elif</span> ch.<span class="fu">isdigit</span>():
+            num += <span class="nu">1</span>
+    <span class="kw">return</span> alpha, num
+
+str_demo = <span class="fu">input</span>(<span class="st">'enter a string:'</span>)
+alpha, num = <span class="fu">count</span>(str_demo)
+<span class="fu">print</span>(<span class="st">'字符串中字母个数是{},数字个数是{}'</span>.<span class="fu">format</span>(alpha, num))</pre></div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第8章：模块 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch8">
+<h2><span class="ch-num" style="background:#B89AD4">08</span> 模块</h2>
+
+<div class="prog">
+<h3><span class="prog-num">46</span> 自定义模块与 __name__</h3>
+<p class="desc">demo.py（被引用的模块）</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># demo.py</span>
+<span class="kw">def</span> <span class="fu">myadd</span>(a, b):
+    <span class="kw">return</span> a + b
+
+<span class="fu">print</span>(<span class="st">'独立运行和引入时都会执行:'</span>, <span class="fu">myadd</span>(<span class="nu">3</span>, <span class="nu">4</span>))
+<span class="kw">if</span> __name__ == <span class="st">'__main__'</span>:
+    <span class="fu">print</span>(<span class="st">'只在独立运行时执行:'</span>, <span class="fu">myadd</span>(<span class="nu">3</span>, <span class="nu">4</span>))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">47</span> 导入模块</h3>
+<p class="desc">test.py（主程序）</p>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># test.py</span>
+<span class="kw">from</span> demo <span class="kw">import</span> myadd
+<span class="fu">print</span>(<span class="st">'调用模块:'</span>, <span class="fu">myadd</span>(<span class="nu">3</span>, <span class="nu">4</span>))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">48</span> 包的使用</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># 方式一</span>
+<span class="kw">from</span> package1 <span class="kw">import</span> demo
+<span class="fu">print</span>(demo.<span class="fu">myadd</span>(<span class="nu">3</span>, <span class="nu">4</span>))
+
+<span class="cm"># 方式二</span>
+<span class="kw">import</span> package1.demo
+<span class="fu">print</span>(package1.demo.<span class="fu">myadd</span>(<span class="nu">3</span>, <span class="nu">4</span>))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">49</span> 石头剪刀布游戏</h3>
+<div class="io">输入：石头/剪刀/布 → 输出：电脑出拳结果 + 胜负</div>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> random
+n = random.<span class="fu">randint</span>(<span class="nu">0</span>, <span class="nu">2</span>)  <span class="cm"># 0=石头 1=剪刀 2=布</span>
+<span class="cm"># ... 判断玩家输入与电脑输出 ...</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">50</span> 模块导入方式总结</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> 模块名           <span class="cm"># 完整导入，使用模块名.函数名</span>
+<span class="kw">from</span> 模块名 <span class="kw">import</span> 函数  <span class="cm"># 直接导入函数，不需要前缀</span>
+<span class="kw">from</span> 模块名 <span class="kw">import</span> *    <span class="cm"># 导入所有（不推荐）</span>
+<span class="kw">import</span> 模块名 <span class="kw">as</span> 别名    <span class="cm"># 起别名，如 import numpy as np</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">51</span> 迭代器与生成器</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">xxx</span>:
+    <span class="kw">def</span> <span class="fu">__init__</span>(self):
+        <span class="kw">pass</span>
+    <span class="kw">def</span> <span class="fu">__iter__</span>(self):
+        <span class="kw">pass</span>
+    <span class="kw">def</span> <span class="fu">__next__</span>(self):
+        <span class="kw">pass</span>
+
+<span class="cm"># 生成器示例</span>
+<span class="kw">def</span> <span class="fu">fib</span>(max):
+    a, b = <span class="nu">0</span>, <span class="nu">1</span>
+    <span class="kw">while</span> a < max:
+        <span class="kw">yield</span> a
+        a, b = b, a + b
+
+<span class="kw">for</span> n <span class="kw">in</span> <span class="fu">fib</span>(<span class="nu">15</span>):
+    <span class="fu">print</span>(n)  <span class="cm"># 0 1 1 2 3 5 8 13</span></pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第9章：面向对象 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch9">
+<h2><span class="ch-num" style="background:#C8AAE0">09</span> 面向对象</h2>
+
+<div class="prog">
+<h3><span class="prog-num">52</span> 简单类定义</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student1</span>:
+    <span class="kw">def</span> <span class="fu">out</span>(self):              <span class="cm"># 方法成员</span>
+        <span class="fu">print</span>(<span class="st">'I am a student'</span>)
+
+stu = Student1()
+stu.<span class="fu">out</span>()  <span class="cm"># I am a student</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">53</span> 类数据成员</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student2</span>:
+    school = <span class="st">'SDNU'</span>          <span class="cm"># 数据成员</span>
+    <span class="kw">def</span> <span class="fu">out</span>(self):            <span class="cm"># 方法成员</span>
+        <span class="fu">print</span>(<span class="st">'I am a student'</span>)
+        <span class="fu">print</span>(<span class="st">'My school is '</span>, Student2.school)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">54</span> 构造方法 __init__</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:
+    school = <span class="st">'SDNU'</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, name):
+        self.name = name
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'name:'</span>, self.name)
+        <span class="fu">print</span>(<span class="st">'school:'</span>, Student.school)
+
+stu = Student(<span class="st">'张三'</span>)
+stu.<span class="fu">out</span>()
+<span class="cm"># name: 张三</span>
+<span class="cm"># school: SDNU</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">55</span> 析构方法 __del__</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:
+    school = <span class="st">'SDNU'</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, name):
+        self.name = name
+        <span class="fu">print</span>(<span class="st">'对象初始化...'</span>)
+    <span class="kw">def</span> <span class="fu">__del__</span>(self):
+        <span class="fu">print</span>(<span class="st">'对象销毁...'</span>)
+
+stu = Student(<span class="st">'张三'</span>)   <span class="cm"># 对象初始化...</span>
+<span class="kw">del</span> stu                    <span class="cm"># 对象销毁...</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">56</span> 类方法与静态方法</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:
+    school = <span class="st">'SDNU'</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, name):
+        self.name = name
+    <span class="kw">def</span> <span class="fu">out</span>(self):                          <span class="cm"># 实例方法</span>
+        <span class="fu">print</span>(<span class="st">'name:'</span>, self.name)
+
+    <span class="fu">@classmethod</span>
+    <span class="kw">def</span> <span class="fu">outSchool</span>(cls):                     <span class="cm"># 类方法</span>
+        <span class="fu">print</span>(<span class="st">'类方法中：school:'</span>, Student.school)
+
+    <span class="fu">@staticmethod</span>
+    <span class="kw">def</span> <span class="fu">static_out</span>():                       <span class="cm"># 静态方法</span>
+        <span class="fu">print</span>(<span class="st">'静态方法中：school: '</span>, Student.school)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">57</span> 私有成员</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:
+    school = <span class="st">'SDNU'</span>     <span class="cm"># 公有类成员</span>
+    __fee = <span class="nu">4800</span>           <span class="cm"># 私有类成员（__开头）</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, name, pw):
+        self.name = name
+        self.__pw = pw      <span class="cm"># 私有实例成员</span>
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'name:'</span>, self.name)
+        <span class="fu">print</span>(<span class="st">'pw:'</span>, self.__pw)
+        <span class="fu">print</span>(<span class="st">'fee:'</span>, Student.__fee)
+
+stu = Student(<span class="st">'张三'</span>, <span class="st">'123456'</span>)
+stu.<span class="fu">out</span>()
+<span class="cm"># print(stu.__pw)  # 报错！私有成员不能直接访问</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">58</span> property 属性</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Test</span>:
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, value):
+        self.__value = value
+    <span class="kw">def</span> <span class="fu">__get</span>(self):
+        <span class="kw">return</span> self.__value
+    <span class="kw">def</span> <span class="fu">__set</span>(self, v):
+        <span class="kw">if</span> <span class="nu">0</span> <= v <= <span class="nu">100</span>:
+            self.__value = v
+        <span class="kw">else</span>:
+            <span class="fu">print</span>(<span class="st">'error'</span>)
+    value = <span class="bu">property</span>(__get, __set)  <span class="cm"># 定义属性</span>
+
+t = Test(<span class="nu">50</span>)
+<span class="fu">print</span>(t.value)   <span class="cm"># 50（自动调用 __get）</span>
+t.value = <span class="nu">80</span>     <span class="cm"># 自动调用 __set</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">59</span> 单继承</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:                              <span class="cm"># 父类</span>
+    school = <span class="st">'SDNU'</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, name):
+        self.__name = name
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'name:'</span>, self.__name)
+        <span class="fu">print</span>(<span class="st">'school:'</span>, Student.school)
+
+<span class="kw">class</span> <span class="fu">MiddleStudent</span>(Student):                <span class="cm"># 子类</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, name, grade):
+        <span class="bu">super</span>().<span class="fu">__init__</span>(name)               <span class="cm"># 调用父类构造</span>
+        self.__grade = grade
+    <span class="kw">def</span> <span class="fu">out</span>(self):                           <span class="cm"># 方法重写</span>
+        <span class="bu">super</span>().<span class="fu">out</span>()
+        <span class="fu">print</span>(<span class="st">'grade:'</span>, self.__grade)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">60</span> 多继承</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'我是学生'</span>)
+
+<span class="kw">class</span> <span class="fu">Person</span>:
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'我是中国人'</span>)
+
+<span class="kw">class</span> <span class="fu">MiddleStudent</span>(Person, Student):     <span class="cm"># 多继承，优先 Person</span>
+    <span class="kw">pass</span>
+
+m = MiddleStudent()
+m.<span class="fu">out</span>()  <span class="cm"># 我是中国人（继承顺序决定）</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">61</span> 方法重写与多态</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Student</span>:         <span class="cm"># 父类</span>
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'我是学生'</span>)
+
+<span class="kw">class</span> <span class="fu">MiddleStudent</span>(Student):   <span class="cm"># 子类1</span>
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'我是中学生'</span>)
+
+<span class="kw">class</span> <span class="fu">PrimaryStudent</span>(Student):  <span class="cm"># 子类2</span>
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'我是小学生'</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">62</span> 运算符重载</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">class</span> <span class="fu">Vector</span>:
+    <span class="kw">def</span> <span class="fu">__init__</span>(self, a, b):
+        self.__a = a
+        self.__b = b
+    <span class="kw">def</span> <span class="fu">out</span>(self):
+        <span class="fu">print</span>(<span class="st">'Vector({},{})'</span>.<span class="fu">format</span>(self.__a, self.__b))
+    <span class="kw">def</span> <span class="fu">__add__</span>(self, other):          <span class="cm"># 重载 + 运算符</span>
+        <span class="kw">return</span> Vector(self.__a + other.__a, self.__b + other.__b)
+    <span class="kw">def</span> <span class="fu">__repr__</span>(self):                <span class="cm"># 重载字符串表示</span>
+        <span class="kw">return</span> <span class="st">'This is a Vector'</span>
+    __str__ = __repr__
+
+v1 = Vector(<span class="nu">1</span>, <span class="nu">2</span>)
+v2 = Vector(<span class="nu">3</span>, <span class="nu">4</span>)
+v3 = v1 + v2    <span class="cm"># 实际调用 Vector.__add__(v1, v2)</span></pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第10章：文件操作 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch10">
+<h2><span class="ch-num" style="background:#8899CC">10</span> 文件操作</h2>
+
+<div class="prog">
+<h3><span class="prog-num">63</span> 文件属性查看</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>fp = <span class="bu">open</span>(<span class="st">'d:/test1.txt'</span>, <span class="st">'r'</span>)
+<span class="fu">print</span>(<span class="st">'当前缓冲区对象：'</span>, fp.buffer)
+<span class="fu">print</span>(<span class="st">'当前文件是否关闭：'</span>, fp.closed)
+<span class="fu">print</span>(<span class="st">'当前文件打开模式：'</span>, fp.mode)
+<span class="fu">print</span>(<span class="st">'当前打开的文件：'</span>, fp.name)
+fp.<span class="fu">close</span>()</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">64</span> with 语句逐行读取</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/test1.txt'</span>, <span class="st">'r'</span>) <span class="kw">as</span> fp:
+    <span class="kw">for</span> line <span class="kw">in</span> fp:
+        <span class="fu">print</span>(line.<span class="fu">strip</span>())</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">65</span> 文件复制</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/test1.txt'</span>, <span class="st">'r'</span>) <span class="kw">as</span> src, \
+     <span class="bu">open</span>(<span class="st">'d:/test1_bak.txt'</span>, <span class="st">'w'</span>) <span class="kw">as</span> dst:
+    <span class="kw">for</span> line <span class="kw">in</span> src:
+        dst.<span class="fu">write</span>(line)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">66</span> 读取数字文件并排序</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># 读取 data.txt （每行一个整数）→ 排序 → 写入 data_asc.txt</span>
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/data.txt'</span>, <span class="st">'r'</span>) <span class="kw">as</span> fp:
+    data = fp.<span class="fu">readlines</span>()
+    data = [<span class="bu">int</span>(line.<span class="fu">strip</span>()) <span class="kw">for</span> line <span class="kw">in</span> data]
+    data.<span class="fu">sort</span>()
+data = [<span class="bu">str</span>(i) + <span class="st">'\n'</span> <span class="kw">for</span> i <span class="kw">in</span> data]
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/data_asc.txt'</span>, <span class="st">'w'</span>) <span class="kw">as</span> fp:
+    fp.<span class="fu">writelines</span>(data)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">67</span> 逗号分隔数字文件排序</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># data7.txt 格式：用逗号分隔的数字</span>
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/data7.txt'</span>, <span class="st">'r'</span>) <span class="kw">as</span> fp:
+    data = fp.<span class="fu">read</span>().<span class="fu">split</span>(<span class="st">','</span>)
+    data = <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, data))
+    data.<span class="fu">sort</span>(reverse=<span class="tp">True</span>)
+data = <span class="st">','</span>.<span class="fu">join</span>(<span class="bu">map</span>(<span class="bu">str</span>, data))
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/data2_desc.txt'</span>, <span class="st">'w'</span>) <span class="kw">as</span> fp:
+    fp.<span class="fu">write</span>(data)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">68</span> pickle 序列化</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> pickle
+students = [[<span class="st">'1001'</span>, <span class="st">'张明'</span>, <span class="st">'男'</span>, <span class="nu">23</span>],
+            [<span class="st">'1002'</span>, <span class="st">'王芳'</span>, <span class="st">'女'</span>, <span class="nu">22</span>],
+            [<span class="st">'1003'</span>, <span class="st">'刘明'</span>, <span class="st">'男'</span>, <span class="nu">24</span>]]
+
+<span class="cm"># 写入</span>
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/students.dat'</span>, <span class="st">'wb'</span>) <span class="kw">as</span> fp:
+    pickle.<span class="fu">dump</span>(students, fp)
+
+<span class="cm"># 读取</span>
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/students.dat'</span>, <span class="st">'rb'</span>) <span class="kw">as</span> fp:
+    datas = pickle.<span class="fu">load</span>(fp)
+<span class="kw">for</span> data <span class="kw">in</span> datas:
+    <span class="fu">print</span>(data)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">69</span> 为文件添加行号</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>fn = <span class="st">'d:/ch308.py'</span>                                                 <span class="cm"># 原文件</span>
+newfn = fn[:<span class="op">-</span><span class="nu">3</span>] + <span class="st">'_new.py'</span>                                   <span class="cm"># 新文件名</span>
+<span class="kw">with</span> <span class="bu">open</span>(fn, <span class="st">'r'</span>, encoding=<span class="st">'utf-8'</span>) <span class="kw">as</span> fp:
+    lines = fp.<span class="fu">readlines</span>()
+lines = [<span class="bu">str</span>(index) + <span class="st">'   '</span> + line
+         <span class="kw">for</span> index, line <span class="kw">in</span> <span class="fu">enumerate</span>(lines, <span class="nu">1</span>)]
+<span class="kw">with</span> <span class="bu">open</span>(newfn, <span class="st">'w'</span>, encoding=<span class="st">'utf-8'</span>) <span class="kw">as</span> fp:
+    fp.<span class="fu">writelines</span>(lines)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">70</span> 学生成绩处理</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># 写入学生成绩</span>
+students = [<span class="st">'王芳,89,98,78\n'</span>, <span class="st">'刘梅,90,80,98\n'</span>, <span class="st">'孙明,87,67,76\n'</span>]
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/score.txt'</span>, <span class="st">'w'</span>) <span class="kw">as</span> fp:
+    fp.<span class="fu">writelines</span>(students)
+
+<span class="cm"># 读取并计算平均分</span>
+<span class="kw">with</span> <span class="bu">open</span>(<span class="st">'d:/score.txt'</span>, <span class="st">'r'</span>) <span class="kw">as</span> fp1, \
+     <span class="bu">open</span>(<span class="st">'d:/result.txt'</span>, <span class="st">'w'</span>) <span class="kw">as</span> fp2:
+    <span class="kw">for</span> line <span class="kw">in</span> fp1:
+        stuname = line.<span class="fu">strip</span>().<span class="fu">split</span>(<span class="st">','</span>)[<span class="nu">0</span>]                   <span class="cm"># 取出学生姓名</span>
+        score = <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, line.<span class="fu">strip</span>().<span class="fu">split</span>(<span class="st">','</span>)[<span class="nu">1</span>:]))  <span class="cm"># 取成绩</span>
+        aver = <span class="bu">round</span>(<span class="bu">sum</span>(score) / <span class="bu">len</span>(score), <span class="nu">2</span>)             <span class="cm"># 平均分</span>
+        fp2.<span class="fu">write</span>(<span class="st">'{},{}</span><span class="kw">\n</span><span class="st">'</span>.<span class="fu">format</span>(stuname, aver))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">71</span> 批量文件改名</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> os
+path = <span class="st">'d:/temp'</span>                                   <span class="cm"># 指定目录</span>
+os.<span class="fu">chdir</span>(path)
+fnlist = [fn <span class="kw">for</span> fn <span class="kw">in</span> os.<span class="fu">listdir</span>()
+          <span class="kw">if</span> os.<span class="bu">path</span>.<span class="fu">isfile</span>(fn) <span class="kw">and</span> fn.<span class="fu">endswith</span>(<span class="st">'.txt'</span>)]
+<span class="kw">for</span> fn <span class="kw">in</span> fnlist:
+    newname = fn[:<span class="op">-</span><span class="nu">4</span>] + <span class="st">'_new.txt'</span>                  <span class="cm"># 新文件名</span>
+    os.<span class="fu">rename</span>(fn, newname)</pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第11章：异常处理 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch11">
+<h2><span class="ch-num" style="background:#7A88C0">11</span> 异常处理</h2>
+
+<div class="prog">
+<h3><span class="prog-num">72</span> try-except 处理除零错误</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>n1 = <span class="bu">eval</span>(<span class="fu">input</span>(<span class="st">'enter a number: '</span>))
+n2 = <span class="bu">eval</span>(<span class="fu">input</span>(<span class="st">'enter a number: '</span>))
+<span class="kw">try</span>:
+    result = n1 / n2
+<span class="kw">except</span> ZeroDivisionError <span class="kw">as</span> ex:
+    <span class="fu">print</span>(ex)        <span class="cm"># division by zero</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">73</span> try-except-else</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>n1 = <span class="bu">eval</span>(<span class="fu">input</span>(<span class="st">'enter a number: '</span>))
+n2 = <span class="bu">eval</span>(<span class="fu">input</span>(<span class="st">'enter a number: '</span>))
+<span class="kw">try</span>:
+    result = n1 / n2
+<span class="kw">except</span> ZeroDivisionError <span class="kw">as</span> ex:
+    <span class="fu">print</span>(ex)
+<span class="kw">else</span>:                              <span class="cm"># 没有异常时执行</span>
+    <span class="fu">print</span>(<span class="st">'{}/{}={} '</span>.<span class="fu">format</span>(n1, n2, result))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">74</span> 多种异常处理</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>n1 = <span class="bu">eval</span>(<span class="fu">input</span>(<span class="st">'enter a number:'</span>))
+n2 = <span class="bu">eval</span>(<span class="fu">input</span>(<span class="st">'enter a number:'</span>))
+<span class="kw">try</span>:
+    result = n1 / n2
+<span class="kw">except</span> ZeroDivisionError:
+    <span class="fu">print</span>(<span class="st">'除数不能为0'</span>)
+<span class="kw">except</span> Exception:                  <span class="cm"># 捕获其他所有异常</span>
+    <span class="fu">print</span>(<span class="st">'除数和被除数应为数值型'</span>)
+<span class="kw">else</span>:
+    <span class="fu">print</span>(<span class="st">'{}/{}={}'</span>.<span class="fu">format</span>(n1, n2, result))
+<span class="kw">finally</span>:                           <span class="cm"># 无论是否异常都执行</span>
+    <span class="fu">print</span>(<span class="st">'the end'</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">75</span> 异常处理 + while 循环计算1-100和</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>mysum = <span class="nu">0</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fu">range</span>(<span class="nu">100</span>):
+    <span class="kw">try</span>:
+        mysum += i
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+<span class="fu">print</span>(<span class="st">"1到100的和是："</span>, mysum)</pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第12章：NumPy -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch12">
+<h2><span class="ch-num" style="background:#B89AD4">12</span> NumPy 科学计算</h2>
+
+<div class="prog">
+<h3><span class="prog-num">76</span> 创建数组的各种方式</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+
+a = np.<span class="fu">array</span>([<span class="nu">1</span>, <span class="nu">2</span>, <span class="nu">3</span>, <span class="nu">4</span>])              <span class="cm"># 从列表创建</span>
+b = np.<span class="fu">arange</span>(<span class="nu">0</span>, <span class="nu">12</span>)                   <span class="cm"># 0~11 数组</span>
+c = np.<span class="fu">linspace</span>(<span class="nu">0</span>, <span class="nu">1</span>, <span class="nu">5</span>)               <span class="cm"># 0~1 分5份</span>
+d = np.<span class="fu">logspace</span>(<span class="nu">0</span>, <span class="nu">3</span>, <span class="nu">4</span>)               <span class="cm"># 对数等比</span>
+e = np.<span class="fu">zeros</span>((<span class="nu">3</span>, <span class="nu">4</span>))                   <span class="cm"># 全零矩阵</span>
+f = np.<span class="fu">ones</span>((<span class="nu">2</span>, <span class="nu">3</span>))                    <span class="cm"># 全一矩阵</span>
+g = np.<span class="fu">eye</span>(<span class="nu">4</span>)                           <span class="cm"># 单位矩阵</span>
+h = np.<span class="fu">diag</span>([<span class="nu">1</span>, <span class="nu">2</span>, <span class="nu">3</span>])                 <span class="cm"># 对角矩阵</span>
+i = np.<span class="fu">random</span>.<span class="fu">randint</span>(<span class="nu">1</span>, <span class="nu">10</span>, size=(<span class="nu">3</span>, <span class="nu">3</span>))  <span class="cm"># 随机整数矩阵</span>
+
+<span class="fu">print</span>(a, b, c, d, e, f, g, h, i, sep=<span class="st">'\n'</span>)
+<span class="fu">print</span>(<span class="st">'shape:'</span>, a.shape)              <span class="cm"># 查看形状</span>
+<span class="fu">print</span>(<span class="st">'dtype:'</span>, a.dtype)              <span class="cm"># 查看数据类型</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">77</span> 数组索引与切片</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>a = np.<span class="fu">arange</span>(<span class="nu">0</span>, <span class="nu">60</span>, <span class="nu">10</span>).<span class="fu">reshape</span>(-<span class="nu">1</span>, <span class="nu">1</span>) + np.<span class="fu">arange</span>(<span class="nu">0</span>, <span class="nu">6</span>)
+<span class="cm"># 结果：</span>
+<span class="cm"># [[ 0  1  2  3  4  5]</span>
+<span class="cm">#  [10 11 12 13 14 15]</span>
+<span class="cm">#  [20 21 22 23 24 25]</span>
+<span class="cm">#  [30 31 32 33 34 35]</span>
+<span class="cm">#  [40 41 42 43 44 45]</span>
+<span class="cm">#  [50 51 52 53 54 55]]</span>
+
+<span class="fu">print</span>(a[<span class="nu">0</span>, <span class="nu">3</span>:<span class="nu">5</span>])     <span class="cm"># [3 4]</span>
+<span class="fu">print</span>(a[<span class="nu">4</span>:, <span class="nu">4</span>:])      <span class="cm"># [[44 45] [54 55]]</span>
+<span class="fu">print</span>(a[<span class="nu">2</span>::<span class="nu">2</span>, ::<span class="nu">2</span>])    <span class="cm"># [[20 22 24] [40 42 44]]</span>
+
+<span class="cm"># 花式索引（复制数据，不共享内存）</span>
+b = a[[<span class="nu">3</span>, <span class="nu">3</span>, -<span class="nu">3</span>, <span class="nu">8</span>]]
+b[<span class="nu">2</span>] = <span class="nu">100</span>  <span class="cm"># 不会影响原数组 a</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">78</span> 改变数组形状</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>arr = np.<span class="fu">arange</span>(<span class="nu">12</span>)
+<span class="fu">print</span>(arr.<span class="fu">reshape</span>(<span class="nu">3</span>, <span class="nu">4</span>))   <span class="cm"># 重塑为 3×4</span>
+<span class="fu">print</span>(arr.<span class="fu">ravel</span>())           <span class="cm"># 展平（共享内存）</span>
+<span class="fu">print</span>(arr.<span class="fu">flatten</span>())         <span class="cm"># 展平（副本，独立内存）</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">79</span> 矩阵运算</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>matr1 = np.<span class="fu">mat</span>(<span class="st">"1 2 3;4 5 6;7 8 9"</span>)     <span class="cm"># 创建矩阵</span>
+<span class="fu">print</span>(<span class="st">'创建的矩阵为：'</span>, matr1)
+matr2 = matr1 * <span class="nu">3</span>                         <span class="cm"># 矩阵与数相乘</span>
+<span class="fu">print</span>(<span class="st">'矩阵相加结果为：'</span>, matr1 + matr2)
+<span class="fu">print</span>(<span class="st">'矩阵相乘结果为：'</span>, matr1 * matr2)   <span class="cm"># 矩阵乘法</span>
+<span class="fu">print</span>(<span class="st">'对应元素相乘：'</span>, np.<span class="fu">multiply</span>(matr1, matr2))
+<span class="fu">print</span>(<span class="st">'转置：'</span>, matr1.<span class="fu">T</span>)
+<span class="fu">print</span>(<span class="st">'逆矩阵：'</span>, matr1.<span class="fu">I</span>)
+<span class="fu">print</span>(<span class="st">'二维数组视图：'</span>, matr1.<span class="fu">A</span>)
+
+<span class="cm"># array 与 mat 的区别</span>
+a = np.<span class="fu">array</span>([[<span class="nu">1</span>,<span class="nu">2</span>],[<span class="nu">3</span>,<span class="nu">4</span>]])
+b = np.<span class="fu">array</span>([[<span class="nu">5</span>,<span class="nu">6</span>],[<span class="nu">7</span>,<span class="nu">8</span>]])
+<span class="fu">print</span>(a * b)               <span class="cm"># array: 对应元素乘</span>
+<span class="fu">print</span>(np.<span class="fu">dot</span>(a, b))        <span class="cm"># array: 矩阵乘</span>
+c = np.<span class="fu">mat</span>(a)
+d = np.<span class="fu">mat</span>(b)
+<span class="fu">print</span>(c * d)               <span class="cm"># mat: 矩阵乘</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">80</span> 比较运算与逻辑运算</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>x = np.<span class="fu">array</span>([<span class="nu">1</span>, <span class="nu">3</span>, <span class="nu">5</span>])
+y = np.<span class="fu">array</span>([<span class="nu">2</span>, <span class="nu">3</span>, <span class="nu">4</span>])
+<span class="fu">print</span>(x < y)         <span class="cm"># [ True False False]</span>
+<span class="fu">print</span>(x == y)        <span class="cm"># [False  True False]</span>
+<span class="fu">print</span>(np.<span class="fu">all</span>(x == y)) <span class="cm"># False（逻辑 and）</span>
+<span class="fu">print</span>(np.<span class="fu">any</span>(x == y)) <span class="cm"># True（逻辑 or）</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">81</span> 广播机制</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="cm"># 形状不同时，NumPy 自动广播</span>
+arr1 = np.<span class="fu">array</span>([[<span class="nu">0</span>,<span class="nu">0</span>,<span class="nu">0</span>],[<span class="nu">1</span>,<span class="nu">1</span>,<span class="nu">1</span>],[<span class="nu">2</span>,<span class="nu">2</span>,<span class="nu">2</span>],[<span class="nu">3</span>,<span class="nu">3</span>,<span class="nu">3</span>]])  <span class="cm"># shape=(4,3)</span>
+arr2 = np.<span class="fu">array</span>([<span class="nu">1</span>, <span class="nu">2</span>, <span class="nu">3</span>])                              <span class="cm"># shape=(3,)</span>
+<span class="fu">print</span>(arr1 + arr2)  <span class="cm"># 自动广播：arr2 沿行方向复制</span>
+
+arr2 = np.<span class="fu">array</span>([<span class="nu">1</span>, <span class="nu">2</span>, <span class="nu">3</span>, <span class="nu">4</span>]).<span class="fu">reshape</span>((<span class="nu">4</span>, <span class="nu">1</span>))       <span class="cm"># shape=(4,1)</span>
+<span class="fu">print</span>(arr1 + arr2)  <span class="cm"># 自动广播：arr2 沿列方向复制</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">82</span> 文件读写</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+arr = np.<span class="fu">arange</span>(<span class="nu">100</span>).<span class="fu">reshape</span>(<span class="nu">10</span>, <span class="nu">10</span>)
+
+<span class="cm"># 二进制格式</span>
+np.<span class="fu">save</span>(<span class="st">"../tmp/save_arr"</span>, arr)                  <span class="cm"># 单个数组</span>
+loaded = np.<span class="fu">load</span>(<span class="st">"../tmp/save_arr.npy"</span>)
+
+<span class="cm"># 多个数组</span>
+np.<span class="fu">savez</span>(<span class="st">'../tmp/savez_arr'</span>, arr1, arr2)
+data = np.<span class="fu">load</span>(<span class="st">"../tmp/savez_arr.npz"</span>)
+<span class="fu">print</span>(data[<span class="st">'arr_0'</span>])  <span class="cm"># 第一个数组</span>
+
+<span class="cm"># 文本格式</span>
+np.<span class="fu">savetxt</span>(<span class="st">"../tmp/arr.txt"</span>, arr, fmt=<span class="st">"%d"</span>, delimiter=<span class="st">","</span>)
+loaded = np.<span class="fu">loadtxt</span>(<span class="st">"../tmp/arr.txt"</span>, delimiter=<span class="st">","</span>)</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">83</span> 排序函数</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>arr = np.<span class="fu">array</span>([<span class="nu">2</span>, <span class="nu">3</span>, <span class="nu">6</span>, <span class="nu">8</span>, <span class="nu">0</span>, <span class="nu">7</span>])
+<span class="fu">print</span>(arr.<span class="fu">argsort</span>())      <span class="cm"># [4 0 1 2 5 3]（排序后的下标）</span>
+
+a = np.<span class="fu">array</span>([<span class="nu">3</span>,<span class="nu">2</span>,<span class="nu">6</span>,<span class="nu">4</span>,<span class="nu">5</span>])
+b = np.<span class="fu">array</span>([<span class="nu">50</span>,<span class="nu">30</span>,<span class="nu">40</span>,<span class="nu">20</span>,<span class="nu">10</span>])
+c = np.<span class="fu">array</span>([<span class="nu">400</span>,<span class="nu">300</span>,<span class="nu">600</span>,<span class="nu">100</span>,<span class="nu">200</span>])
+d = np.<span class="fu">lexsort</span>((a, b, c))  <span class="cm"># 按最后一列 c 排序</span>
+<span class="fu">print</span>(<span class="bu">list</span>(<span class="fu">zip</span>(a[d], b[d], c[d])))
+<span class="cm"># [(4, 20, 100), (5, 10, 200), (2, 30, 300), (3, 50, 400), (6, 40, 600)]</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">84</span> 统计函数</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>arr = np.<span class="fu">arange</span>(<span class="nu">20</span>).<span class="fu">reshape</span>(<span class="nu">4</span>, <span class="nu">5</span>)
+<span class="fu">print</span>(<span class="st">'和：'</span>, np.<span class="fu">sum</span>(arr))
+<span class="fu">print</span>(<span class="st">'纵轴和：'</span>, arr.<span class="fu">sum</span>(axis=<span class="nu">0</span>))  <span class="cm"># 沿着列</span>
+<span class="fu">print</span>(<span class="st">'横轴和：'</span>, arr.<span class="fu">sum</span>(axis=<span class="nu">1</span>))  <span class="cm"># 沿着行</span>
+<span class="fu">print</span>(<span class="st">'均值：'</span>, np.<span class="fu">mean</span>(arr))
+<span class="fu">print</span>(<span class="st">'标准差：'</span>, np.<span class="fu">std</span>(arr))
+<span class="fu">print</span>(<span class="st">'方差：'</span>, np.<span class="fu">var</span>(arr))
+<span class="fu">print</span>(<span class="st">'最小值：'</span>, np.<span class="fu">min</span>(arr))
+<span class="fu">print</span>(<span class="st">'最大值：'</span>, np.<span class="fu">max</span>(arr))
+<span class="fu">print</span>(<span class="st">'最小元素下标：'</span>, np.<span class="fu">argmin</span>(arr))
+<span class="fu">print</span>(<span class="st">'累计和：'</span>, np.<span class="fu">cumsum</span>(arr))
+<span class="fu">print</span>(<span class="st">'累计积：'</span>, np.<span class="fu">cumprod</span>(arr))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">85</span> 去重与重复</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>names = np.<span class="fu">array</span>([<span class="st">'小明'</span>, <span class="st">'小黄'</span>, <span class="st">'小花'</span>, <span class="st">'小明'</span>, <span class="st">'小黄'</span>])
+<span class="fu">print</span>(np.<span class="fu">unique</span>(names))   <span class="cm"># ['小明' '小花' '小黄']</span>
+
+arr = np.<span class="fu">arange</span>(<span class="nu">5</span>)
+<span class="fu">print</span>(np.<span class="fu">tile</span>(arr, <span class="nu">3</span>))     <span class="cm"># [0 1 2 3 4 0 1 2 3 4 0 1 2 3 4]（整体重复）</span>
+
+mat = np.<span class="fu">random</span>.<span class="fu">randint</span>(<span class="nu">0</span>, <span class="nu">10</span>, size=(<span class="nu">3</span>, <span class="nu">3</span>))
+<span class="fu">print</span>(mat.<span class="fu">repeat</span>(<span class="nu">2</span>, axis=<span class="nu">0</span>))  <span class="cm"># 每行重复2次</span>
+<span class="fu">print</span>(mat.<span class="fu">repeat</span>(<span class="nu">2</span>, axis=<span class="nu">1</span>))  <span class="cm"># 每列重复2次</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">86</span> 多项式</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>a = np.<span class="fu">array</span>([<span class="nu">1.0</span>, <span class="nu">0</span>, -<span class="nu">2</span>, <span class="nu">1</span>])  <span class="cm"># 系数：x³ - 2x + 1</span>
+p = np.<span class="fu">poly1d</span>(a)
+<span class="fu">print</span>(p)                    <span class="cm"># 显示多项式</span>
+<span class="fu">print</span>(p(<span class="nu">0.5</span>))               <span class="cm"># 计算 x=0.5 时的值</span>
+<span class="fu">print</span>(p.<span class="fu">deriv</span>())             <span class="cm"># 求导：3x² - 2</span>
+<span class="fu">print</span>(p.<span class="fu">integ</span>())             <span class="cm"># 积分：0.25x⁴ - x² + x</span>
+<span class="fu">print</span>(np.<span class="fu">roots</span>(p))            <span class="cm"># 求根</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">87</span> 鸢尾花花萼长度分析</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre>iris_sepal_length = np.<span class="fu">loadtxt</span>(<span class="st">"../data/iris_sepal_length.csv"</span>,
+                               delimiter=<span class="st">","</span>)
+<span class="fu">print</span>(<span class="st">'花萼长度表为：'</span>, iris_sepal_length)
+iris_sepal_length.<span class="fu">sort</span>()
+<span class="fu">print</span>(<span class="st">'去重后：'</span>, np.<span class="fu">unique</span>(iris_sepal_length))
+<span class="fu">print</span>(<span class="st">'总和：'</span>, np.<span class="fu">sum</span>(iris_sepal_length))
+<span class="fu">print</span>(<span class="st">'均值：'</span>, np.<span class="fu">mean</span>(iris_sepal_length))
+<span class="fu">print</span>(<span class="st">'标准差：'</span>, np.<span class="fu">std</span>(iris_sepal_length))
+<span class="fu">print</span>(<span class="st">'最小值/最大值：'</span>, np.<span class="fu">min</span>(iris_sepal_length), np.<span class="fu">max</span>(iris_sepal_length))</pre></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- 第13章：机器学习 -->
+<!-- ════════════════════════════════════ -->
+<div class="chapter" id="ch13">
+<h2><span class="ch-num" style="background:#C8AAE0">13</span> 机器学习入门</h2>
+
+<div class="prog">
+<h3><span class="prog-num">88</span> 线性回归预测房价</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
+<span class="kw">from</span> sklearn <span class="kw">import</span> linear_model
+
+<span class="cm"># 数据：房屋面积 → 价格</span>
+x = np.<span class="fu">array</span>([<span class="nu">150</span>, <span class="nu">200</span>, <span class="nu">250</span>, <span class="nu">300</span>, <span class="nu">350</span>, <span class="nu">400</span>, <span class="nu">600</span>])
+y = np.<span class="fu">array</span>([<span class="nu">6450</span>, <span class="nu">7450</span>, <span class="nu">8450</span>, <span class="nu">9450</span>, <span class="nu">11450</span>, <span class="nu">15450</span>, <span class="nu">18450</span>])
+
+<span class="cm"># 可视化</span>
+plt.<span class="fu">scatter</span>(x, y, color=<span class="st">'blue'</span>)
+plt.<span class="fu">show</span>()
+
+<span class="cm"># 训练模型</span>
+area = <span class="nu">238.5</span>
+X = x.<span class="fu">reshape</span>(-<span class="nu">1</span>, <span class="nu">1</span>)
+model = linear_model.<span class="fu">LinearRegression</span>()
+model.<span class="fu">fit</span>(X, y)
+<span class="fu">print</span>(model.<span class="fu">predict</span>([[area]]))  <span class="cm"># 预测238.5平米的房价</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">89</span> kNN 对鸢尾花分类</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> sklearn.datasets
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> train_test_split
+<span class="kw">from</span> sklearn.neighbors <span class="kw">import</span> KNeighborsClassifier
+<span class="kw">from</span> sklearn <span class="kw">import</span> metrics
+
+dataset = sklearn.datasets.<span class="fu">load_iris</span>()
+X, y = dataset.data, dataset.target
+X_train, X_test, y_train, y_test = <span class="fu">train_test_split</span>(
+    X, y, test_size=<span class="nu">0.2</span>, random_state=<span class="nu">3</span>
+)
+
+model = KNeighborsClassifier()          <span class="cm"># 建立 kNN 模型</span>
+model.<span class="fu">fit</span>(X_train, y_train)            <span class="cm"># 训练</span>
+y_pred = model.<span class="fu">predict</span>(X_test)          <span class="cm"># 预测</span>
+<span class="fu">print</span>(y_pred)                           <span class="cm"># 预测结果</span>
+<span class="fu">print</span>(<span class="st">'acc: %.3f'</span> % (metrics.<span class="fu">accuracy_score</span>(y_test, y_pred)))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">90</span> 交叉验证</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> KFold, cross_val_score
+dataset = sklearn.datasets.<span class="fu">load_iris</span>()
+X, y = dataset.data, dataset.target
+
+model = KNeighborsClassifier()
+kfold = KFold(n_splits=<span class="nu">5</span>, random_state=<span class="nu">3</span>)
+results = <span class="fu">cross_val_score</span>(model, X, y, cv=kfold, scoring=<span class="st">'accuracy'</span>)
+<span class="fu">print</span>(<span class="st">"acc: %.3f (%.3f)"</span> % (results.<span class="fu">mean</span>(), results.<span class="fu">std</span>()))
+<span class="cm"># acc: 0.913 (0.083)</span></pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">91</span> 波士顿房价线性回归</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> LinearRegression
+<span class="kw">from</span> sklearn.datasets <span class="kw">import</span> load_boston
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> train_test_split
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> *
+
+boston = <span class="fu">load_boston</span>()
+X_train, X_test, y_train, y_test = <span class="fu">train_test_split</span>(
+    boston.data, boston.target, test_size=<span class="nu">0.2</span>
+)
+
+model = LinearRegression()
+model.<span class="fu">fit</span>(X_train, y_train)
+y_pred = model.<span class="fu">predict</span>(X_test)
+
+<span class="fu">print</span>(<span class="st">'平均绝对误差：'</span>, <span class="fu">mean_absolute_error</span>(y_test, y_pred))
+<span class="fu">print</span>(<span class="st">'均方误差：'</span>, <span class="fu">mean_squared_error</span>(y_test, y_pred))
+<span class="fu">print</span>(<span class="st">'R方值：'</span>, <span class="fu">r2_score</span>(y_test, y_pred))</pre></div>
+</div>
+
+<div class="prog">
+<h3><span class="prog-num">92</span> 读取鸢尾花数据探索</h3>
+<div class="code-wrap"><button class="btn-copy" onclick="copyCode(this)">复制</button>
+<pre><span class="kw">import</span> sklearn.datasets
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+dataset = sklearn.datasets.<span class="fu">load_iris</span>()
+df = pd.<span class="fu">DataFrame</span>(data=dataset.data, columns=dataset.feature_names)
+df.columns = df.columns.<span class="fu">str</span>.<span class="fu">strip</span>(<span class="st">' (cm)'</span>)
+df[<span class="st">'class'</span>] = dataset.target
+
+<span class="fu">print</span>(df.<span class="fu">head</span>())       <span class="cm"># 前5行</span>
+<span class="fu">print</span>(df.<span class="fu">info</span>())        <span class="cm"># 基本信息</span>
+<span class="fu">print</span>(df.<span class="fu">describe</span>())   <span class="cm"># 描述性统计</span>
+<span class="fu">print</span>(df.<span class="fu">groupby</span>(<span class="st">'class'</span>).<span class="fu">count</span>())  <span class="cm"># 类别分布</span>
+
+correlations = df.<span class="fu">corr</span>(method=<span class="st">'pearson'</span>)  <span class="cm"># 相关性分析</span>
+<span class="fu">print</span>(correlations)</pre></div>
+</div>
+</div>
+
+</div>  <span class="cm">&lt;!-- /.container --&gt;</span>
+
+<div class="footer" style="text-align:center;padding:20px;color:#999;font-size:13px;border-top:1px solid #eee;margin-top:20px">
+<p>思贤学习站 · 陪你一起成长</p>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
+<script>
+window.addEventListener('scroll',function(){document.querySelector('.back-to-top').classList.toggle('show',window.scrollY>300)});
+
+function copyCode(btn){
+  var pre = btn.nextElementSibling;
+  var text = pre.textContent;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){
+      btn.textContent='已复制';
+      btn.classList.add('copied');
+      setTimeout(function(){btn.textContent='复制';btn.classList.remove('copied')},2000);
+    });
+  }else{
+    var ta=document.createElement('textarea');
+    ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent='已复制';btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='复制';btn.classList.remove('copied')},2000);
+  }
+}
+</script>
+</body>
+</html>
